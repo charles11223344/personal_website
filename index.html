@@ -2,188 +2,76 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Junhui (Charles) Chen | Full-Stack Developer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Learn more about Junhui (Charles) Chen, a full-stack developer passionate about building scalable, user-friendly web apps with a personal touch." />
+  <meta name="keywords" content="Junhui Charles Chen, full-stack developer, about me, Toronto, React, SEO, portfolio" />
+  <title>About Me | Junhui (Charles) Chen</title>
   <style>
-    :root {
-      --primary: #764ba2;
-      --secondary: #667eea;
-      --background: #f4f4f8;
-      --text-dark: #1a1a1a;
-      --text-light: #ffffff;
-      --card-bg: #ffffff;
-    }
-    * {
-      box-sizing: border-box;
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f5fa;
+      color: #333;
+      line-height: 1.6;
       margin: 0;
       padding: 0;
     }
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--background);
-      color: var(--text-dark);
-      line-height: 1.6;
-    }
-    header {
-      background: linear-gradient(135deg, var(--secondary), var(--primary));
-      color: var(--text-light);
-      padding: 2rem;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.5rem;
-    }
-    header p {
-      margin-top: 0.5rem;
-      font-size: 1.1rem;
-    }
     .container {
-      max-width: 960px;
+      max-width: 800px;
       margin: auto;
       padding: 2rem;
     }
-    section {
-      margin-bottom: 3rem;
+    h1 {
+      color: #764ba2;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
     }
     h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: var(--primary);
+      color: #667eea;
+      margin-top: 2rem;
     }
-    .card {
-      background: var(--card-bg);
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-      margin-bottom: 1.5rem;
+    .highlight {
+      color: #764ba2;
+      font-weight: bold;
     }
-    ul {
-      margin-left: 1rem;
+    .cta {
+      margin-top: 2rem;
     }
-    a {
-      color: var(--secondary);
+    .cta a {
       text-decoration: none;
-    }
-    .contact a {
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-    footer {
-      background: #333;
+      background: linear-gradient(45deg, #667eea, #764ba2);
       color: white;
-      text-align: center;
-      padding: 1rem;
-    }
-    .btn-download {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.7rem 1.5rem;
-      background: linear-gradient(45deg, var(--secondary), var(--primary));
-      color: white;
+      padding: 12px 24px;
       border-radius: 30px;
-      font-weight: 600;
-      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+    .cta a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Junhui (Charles) Chen</h1>
-    <p>Full-Stack Developer | Toronto, ON | 647-204-9755 | <a href="mailto:charleswork2022@gmail.com" style="color:white;">charleswork2022@gmail.com</a></p>
-    <p><a href="https://github.com/charles11223344">GitHub</a> | <a href="https://www.linkedin.com/in/junhui-charles-chen-40b62ba9/">LinkedIn</a></p>
-  </header>
-
   <div class="container">
-    <section>
-      <h2>Professional Profile</h2>
-      <div class="card">
-        <p>Full-stack developer with proven web application development and automation expertise, specializing in creating high-performance solutions that drive business value. Demonstrated success in improving application performance and user satisfaction through innovative technical solutions and UI/UX enhancements.</p>
-      </div>
-    </section>
+    <h1>Hi, I'm Junhui (Charles) Chen</h1>
+    <p>I’m a <span class="highlight">full-stack developer</span> based in Toronto who enjoys building thoughtful, high-performance web applications. I specialize in crafting experiences that balance creativity with functionality.</p>
 
-    <section>
-      <h2>Technical Skills</h2>
-      <div class="card">
-        <ul>
-          <li><strong>Frontend:</strong> JavaScript, TypeScript, HTML5, CSS3</li>
-          <li><strong>Backend:</strong> Java, Python, C++, PHP</li>
-          <li><strong>Testing & QA:</strong> Selenium, Cypress, Charles Proxy, Postman, SOAP, qTest</li>
-          <li><strong>Databases:</strong> MySQL, PostgreSQL, MongoDB</li>
-          <li><strong>Tools:</strong> Git, GitHub, Bitbucket, SourceTree, Jira, Grafana, Jenkins, IntelliJ, VS Code</li>
-          <li><strong>Methodologies:</strong> Agile, Scrum, Test-Driven Development (TDD)</li>
-        </ul>
-      </div>
-    </section>
+    <h2>What Drives Me</h2>
+    <p>I believe that technology should be both powerful and user-friendly. My journey started with curiosity about how websites work, and it has grown into a career driven by building things that make people's lives easier — and more delightful to use.</p>
 
-    <section>
-      <h2>Professional Experience</h2>
-      <div class="card">
-        <h3>Campaign Automation Developer – Sunlife Financial</h3>
-        <p><em>Toronto, ON | Aug 2022 – Present</em></p>
-        <ul>
-          <li>Optimized Sunlife Advisor Web app, improving performance by 6% using React.</li>
-          <li>Deployed responsive, accessible Client Web features.</li>
-          <li>Led Cypress-based testing achieving 90% test coverage and reduced manual testing by 40%.</li>
-          <li>Improved advisor satisfaction through collaborative UX enhancements.</li>
-          <li>Mentored junior developers in React and TDD practices.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Full-Stack Developer – Academic Projects</h3>
-        <p><em>Brock University | Jan 2020 – Aug 2022</em></p>
-        <ul>
-          <li>Built AI-powered chatbot in Python handling 1000+ interactions/day with 95% accuracy.</li>
-          <li>Developed RESTful APIs with Node.js/Express for real-time gaming systems.</li>
-          <li>Optimized MongoDB usage for high-volume queries.</li>
-          <li>Led Agile sprints and daily standups for project workflow.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Math/CS Tutor – Brock University</h3>
-        <p><em>Toronto, ON | Sep 2020 – Apr 2021</em></p>
-        <ul>
-          <li>One-on-one tutoring in advanced math/CS improving student grades by 10%.</li>
-          <li>Created study guides for complex programming topics.</li>
-          <li>Maintained student progress logs and insights.</li>
-        </ul>
-      </div>
-    </section>
+    <h2>What I Do</h2>
+    <p>I work primarily with <strong>JavaScript, React, Python,</strong> and testing tools like <strong>Cypress</strong>. I’m currently focused on building scalable frontend architectures and exploring technical SEO best practices for single-page apps.</p>
 
-    <section>
-      <h2>Education</h2>
-      <div class="card">
-        <p><strong>Bachelor of Computer Science (Honours)</strong><br>Brock University | Sep 2019 – Aug 2022</p>
-      </div>
-    </section>
+    <h2>Outside of Code</h2>
+    <p>When I’m not coding, you’ll find me exploring new frameworks, mentoring junior devs, or enjoying a good cup of coffee while sketching UI ideas.</p>
 
-    <section>
-      <h2>Awards & Recognition</h2>
-      <div class="card">
-        <ul>
-          <li>The Leading the Way Bursary (2022)</li>
-          <li>The Muriel and Arnold Bennett Student Bursary (2020)</li>
-        </ul>
-      </div>
-    </section>
+    <h2>Let's Connect</h2>
+    <p>If you're looking for someone to collaborate on a project or help you boost your site’s SEO performance, feel free to reach out!</p>
 
-    <section class="contact">
-      <h2>Contact</h2>
-      <div class="card">
-        <p>Email: <a href="mailto:charleswork2022@gmail.com">charleswork2022@gmail.com</a></p>
-        <p>Phone: <a href="tel:+16472049755">647-204-9755</a></p>
-        <p>GitHub: <a href="https://github.com/charles11223344">github.com/charles11223344</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/junhui-charles-chen-40b62ba9/">Junhui Charles Chen</a></p>
-        <!-- Optional: PDF Resume Link -->
-        <!-- <a class="btn-download" href="path-to-resume.pdf" download>Download My Resume (PDF)</a> -->
-      </div>
-    </section>
+    <div class="cta">
+      <a href="contact.html">Get In Touch</a>
+    </div>
   </div>
-
-  <footer>
-    &copy; 2025 Junhui (Charles) Chen. All rights reserved.
-  </footer>
 </body>
 </html>
