@@ -3,75 +3,94 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Learn more about Junhui (Charles) Chen, a full-stack developer passionate about building scalable, user-friendly web apps with a personal touch." />
-  <meta name="keywords" content="Junhui Charles Chen, full-stack developer, about me, Toronto, React, SEO, portfolio" />
-  <title>About Me | Junhui (Charles) Chen</title>
+  <title>Charles | Lemon-Themed Animation</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f5f5fa;
-      color: #333;
-      line-height: 1.6;
       margin: 0;
       padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fffce6;
+      color: #333;
+      overflow-x: hidden;
     }
     .container {
-      max-width: 800px;
-      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 100vh;
       padding: 2rem;
     }
     h1 {
-      color: #764ba2;
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 1rem;
+      color: #f4c430;
+      animation: fadeInDown 1s ease-in-out forwards;
     }
-    h2 {
-      color: #667eea;
-      margin-top: 2rem;
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      animation: fadeInUp 1.5s ease-in-out forwards;
     }
-    .highlight {
-      color: #764ba2;
-      font-weight: bold;
+    .lemon {
+      width: 200px;
+      height: auto;
+      margin: 2rem 0;
+      animation: float 3s ease-in-out infinite;
     }
-    .cta {
-      margin-top: 2rem;
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
     }
-    .cta a {
-      text-decoration: none;
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .btn {
       background: linear-gradient(45deg, #667eea, #764ba2);
       color: white;
       padding: 12px 24px;
+      border: none;
       border-radius: 30px;
       font-weight: bold;
-      display: inline-block;
-      transition: all 0.3s ease;
+      text-decoration: none;
+      transition: transform 0.3s ease;
     }
-    .cta a:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Hi, I'm Junhui (Charles) Chen</h1>
-    <p>I’m a <span class="highlight">full-stack developer</span> based in Toronto who enjoys building thoughtful, high-performance web applications. I specialize in crafting experiences that balance creativity with functionality.</p>
-
-    <h2>What Drives Me</h2>
-    <p>I believe that technology should be both powerful and user-friendly. My journey started with curiosity about how websites work, and it has grown into a career driven by building things that make people's lives easier — and more delightful to use.</p>
-
-    <h2>What I Do</h2>
-    <p>I work primarily with <strong>JavaScript, React, Python,</strong> and testing tools like <strong>Cypress</strong>. I’m currently focused on building scalable frontend architectures and exploring technical SEO best practices for single-page apps.</p>
-
-    <h2>Outside of Code</h2>
-    <p>When I’m not coding, you’ll find me exploring new frameworks, mentoring junior devs, or enjoying a good cup of coffee while sketching UI ideas.</p>
-
-    <h2>Let's Connect</h2>
-    <p>If you're looking for someone to collaborate on a project or help you boost your site’s SEO performance, feel free to reach out!</p>
-
-    <div class="cta">
-      <a href="contact.html">Get In Touch</a>
-    </div>
+    <h1>Hi, I'm Charles 🍋</h1>
+    <img class="lemon" src="Screenshot 2025-06-23 at 5.21.40 PM.png" alt="Lemon Logo">
+    <p>
+      I’m a full-stack developer with a zest for clean code, UI/UX, and automation. Just like this lemon — fresh, bright, and full of purpose — I bring clarity and energy to every project I work on.
+    </p>
+    <a href="https://www.linkedin.com/in/junhui-charles-chen-40b62ba9/" class="btn">Read My Story</a>
   </div>
 </body>
 </html>
