@@ -313,12 +313,13 @@
     .form {
     max-width: 500px;
     margin: 50px auto;
-    padding: 30px 24px; /* Make left/right padding equal */
+    padding: 30px 24px; /* Equal left/right padding */
     background-color: #f9f9ff;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     font-family: 'Segoe UI', sans-serif;
-    box-sizing: border-box; /* Ensure padding is included in width */
+    box-sizing: border-box; /* Ensures padding is included in width */
+    display: block
   }
     /* Responsive */
     @media (max-width: 900px) {
@@ -331,6 +332,11 @@
       .lemon { width: 100px; }
       nav { gap: 1rem; font-size: 1rem; }
     }
+      @media (max-width: 600px) {
+    form {
+      padding: 18px 10px; /* Reduce padding on small screens */
+    }
+  }
   </style>
   <!-- Font Awesome for icons -->
   <script src="https://kit.fontawesome.com/4b8e5e8b5d.js" crossorigin="anonymous"></script>
