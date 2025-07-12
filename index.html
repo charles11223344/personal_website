@@ -394,19 +394,67 @@
   <section class="section" id="contact">
     <h2>Contact Me</h2>
    <!-- modify this form HTML and place wherever you want your form -->
-<form
-  action="https://formspree.io/f/xwpbgzna"
-  method="POST"
->
+<style>
+  form {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #f9f9ff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #333;
+  }
+
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+  }
+
+  input[type="email"]:focus,
+  textarea:focus {
+    outline: none;
+    border-color: #7b61ff;
+    box-shadow: 0 0 5px rgba(123, 97, 255, 0.3);
+  }
+
+  button[type="submit"] {
+    background-color: #7b61ff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #684fdd;
+  }
+</style>
+
+<form action="https://formspree.io/f/xwpbgzna" method="POST">
   <label>
-    Your email:
-    <input type="email" name="email">
+    Your Email:
+    <input type="email" name="email" required>
   </label>
   <label>
-    Your message:
-    <textarea name="message"></textarea>
+    Your Message:
+    <textarea name="message" rows="5" required></textarea>
   </label>
-  <!-- your other form fields go here -->
   <button type="submit">Send</button>
 </form>
     <div id="contact-status" style="margin-top:1rem;font-weight:bold;color:var(--accent2);"></div>
