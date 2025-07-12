@@ -351,42 +351,45 @@
     </nav>
   </header>
   <section class="hero" id="home">
-  
-<div id="weather" style="margin: 1.5rem 0; font-size: 1.2rem; color: var(--accent2);"></div>
-    <img class="lemon" src="lemon.png" alt="Lemon Logo">
-    <h1>Hi, I'm Charles 🍋</h1>
-    <h2>Full-Stack Developer & UI/UX Enthusiast</h2>
-    <p>
-      I’m a full-stack developer with a zest for clean code, UI/UX, and automation.<br>
-      Just like this lemon — fresh, bright, and full of purpose — I bring clarity and energy to every project I work on.
-    </p>
-    <a href="https://www.linkedin.com/in/junhui-charles-chen-40b62ba9/" class="btn" target="_blank">Read My Story</a>
-    <script>
-  // Replace with your OpenWeatherMap API key and desired city
-  const apiKey = '6e1b361dced41472a3f5607ae7a81d3c';
-  const city = 'Toronto'; // or any city you want
+  <div id="weather" style="margin: 1.5rem 0; font-size: 1.2rem; color: var(--accent2);"></div>
+  <img class="lemon" src="lemon.png" alt="Lemon Logo">
+  <h1>Hi, I'm Charles 🍋</h1>
+  <h2>Full-Stack Developer & UI/UX Enthusiast</h2>
+  <p>
+    I’m a full-stack developer with a zest for clean code, UI/UX, and automation.<br>
+    Just like this lemon — fresh, bright, and full of purpose — I bring clarity and energy to every project I work on.
+  </p>
+  <a href="https://www.linkedin.com/in/junhui-charles-chen-40b62ba9/" class="btn" target="_blank">Read My Story</a>
+  <script>
+    // Replace with your OpenWeatherMap API key and desired city
+    const apiKey = '6e1b361dced41472a3f5607ae7a81d3c';
+    const city = 'Toronto'; // or any city you want
 
-  function displayWeather(data) {
-    const weatherDiv = document.getElementById('weather');
-    if (!weatherDiv) return;
-    const temp = Math.round(data.main.temp);
-    const desc = data.weather[0].description;
-    const icon = data.weather[0].icon;
-    weatherDiv.innerHTML = `
-      <img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${desc}" style="vertical-align:middle;width:48px;height:48px;">
-      <span style="vertical-align:middle;">${city}: ${temp}°C, ${desc}</span>
-    `;
-  }
-
-  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
-    .then(response => response.json())
-    .then(data => displayWeather(data))
-    .catch(() => {
+    function displayWeather(data) {
       const weatherDiv = document.getElementById('weather');
-      if (weatherDiv) weatherDiv.textContent = "Weather unavailable.";
-    });
-</script>
-  </section>
+      if (!weatherDiv) return;
+      if (data.cod !== 200) {
+        weatherDiv.textContent = "Weather unavailable.";
+        return;
+      }
+      const temp = Math.round(data.main.temp);
+      const desc = data.weather[0].description;
+      const icon = data.weather[0].icon;
+      weatherDiv.innerHTML = `
+        <img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${desc}" style="vertical-align:middle;width:48px;height:48px;">
+        <span style="vertical-align:middle;">${city}: ${temp}°C, ${desc}</span>
+      `;
+    }
+
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
+      .then(response => response.json())
+      .then(data => displayWeather(data))
+      .catch(() => {
+        const weatherDiv = document.getElementById('weather');
+        if (weatherDiv) weatherDiv.textContent = "Weather unavailable.";
+      });
+  </script>
+</section>
 
   <section class="section" id="skills">
     <h2>Skills</h2>
