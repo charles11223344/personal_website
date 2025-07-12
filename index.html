@@ -393,12 +393,22 @@
 
   <section class="section" id="contact">
     <h2>Contact Me</h2>
-    <form class="contact-form" autocomplete="off" onsubmit="return sendMail(event)">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn contact-btn">Send Message</button>
-    </form>
+   <!-- modify this form HTML and place wherever you want your form -->
+<form
+  action="https://formspree.io/f/xwpbgzna"
+  method="POST"
+>
+  <label>
+    Your email:
+    <input type="email" name="email">
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
+  <!-- your other form fields go here -->
+  <button type="submit">Send</button>
+</form>
     <div id="contact-status" style="margin-top:1rem;font-weight:bold;color:var(--accent2);"></div>
   </section>
 
