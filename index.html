@@ -351,8 +351,6 @@
     </nav>
   </header>
   <section class="hero" id="home">
-  <div id="crypto-prices" style="margin: 1.5rem 0; font-size: 1.2rem; color: var(--accent2);"></div>
-  <img src="https://cdn.pixabay.com/photo/2017/01/31/13/14/flow-2029326_1280.png" alt="Flow" style="width:120px;display:block;margin:2rem auto;">
   <div id="weather" style="margin: 1.5rem 0; font-size: 1.2rem; color: var(--accent2);"></div>
   <img class="lemon" src="lemon.png" alt="Lemon Logo">
   <h1>Hi, I'm Charles 🍋</h1>
@@ -365,7 +363,7 @@
   <script>
     // Replace with your OpenWeatherMap API key and desired city
     const apiKey = '6e1b361dced41472a3f5607ae7a81d3c';
-    const city = 'Toronto, CA'; // or any city you want
+    const city = 'Toronto,CA'; // or any city you want
 
     function displayWeather(data) {
       const weatherDiv = document.getElementById('weather');
@@ -391,30 +389,6 @@
         if (weatherDiv) weatherDiv.textContent = "Weather unavailable.";
       });
   </script>
-  <script>
-  function displayCrypto(data) {
-    const div = document.getElementById('crypto-prices');
-    if (!div) return;
-    if (!data.bitcoin || !data.ethereum) {
-      div.textContent = "Crypto prices unavailable.";
-      return;
-    }
-    div.innerHTML = `
-      <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="BTC" style="width:32px;vertical-align:middle;margin-right:8px;">
-      <b>BTC</b>: $${data.bitcoin.cad.toLocaleString()} CAD &nbsp;&nbsp;
-      <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="ETH" style="width:32px;vertical-align:middle;margin-right:8px;">
-      <b>ETH</b>: $${data.ethereum.cad.toLocaleString()} CAD
-    `;
-  }
-
-  fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=cad')
-    .then(r => r.json())
-    .then(data => displayCrypto(data))
-    .catch(() => {
-      const div = document.getElementById('crypto-prices');
-      if (div) div.textContent = "Crypto prices unavailable.";
-    });
-</script>
 </section>
 
   <section class="section" id="skills">
