@@ -389,7 +389,6 @@
         const weatherDiv = document.getElementById('weather');
         if (weatherDiv) weatherDiv.textContent = "Weather unavailable.";
       });
-      <script src="https://kit.fontawesome.com/4b8e5e8b5d.js" crossorigin="anonymous">
   </script>
 </section>
 
@@ -522,27 +521,29 @@
   </footer>
 
   <script>
+
     // Smooth scroll for nav
-    document.querySelectorAll('nav a').forEach(link => {
+    document.querySelectorAll('nav a').forEach(function(link) {
       link.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
         if (href.startsWith('#')) {
           e.preventDefault();
-          document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+          document.querySelectorAll('nav a').forEach(function(a) { a.classList.remove('active'); });
           this.classList.add('active');
           document.querySelector(href).scrollIntoView({behavior: 'smooth'});
         }
       });
     });
 
-    // Contact form fake send
+    // Contact form fake send (if you want to use it, add onsubmit="sendMail(event)" to your form)
     function sendMail(event) {
       event.preventDefault();
       document.getElementById('contact-status').textContent = "Thank you for your message! 🍋";
       event.target.reset();
       return false;
     }
-    function displayCrypto(data) {
+
+     function displayCrypto(data) {
     const div = document.getElementById('crypto-prices');
     if (!div) return;
     if (!data.bitcoin || !data.ethereum) {
@@ -550,20 +551,19 @@
       return;
     }
     div.innerHTML = `
-      <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="BTC" style="width:32px;vertical-align:middle;margin-right:8px;">
+      <img src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png" alt="BTC" style="width:32px;vertical-align:middle;margin-right:8px;">
       <b>BTC</b>: $${data.bitcoin.cad.toLocaleString()} CAD &nbsp;&nbsp;
-      <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="ETH" style="width:32px;vertical-align:middle;margin-right:8px;">
+      <img src="https://assets.coingecko.com/coins/images/279/large/ethereum.png" alt="ETH" style="width:32px;vertical-align:middle;margin-right:8px;">
       <b>ETH</b>: $${data.ethereum.cad.toLocaleString()} CAD
     `;
   }
 
   fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=cad')
-    .then(r => r.json())
-    .then(data => displayCrypto(data))
-    .catch(() => {
+    .then(function(r) { return r.json(); })
+    .then(function(data) { displayCrypto(data); })
+    .catch(function() {
       const div = document.getElementById('crypto-prices');
       if (div) div.textContent = "Crypto prices unavailable.";
     });
   </script>
-</body>
 </html>
