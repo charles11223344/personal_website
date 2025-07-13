@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Charles | Lemon-Themed Portfolio</title>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400|Roboto:400,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <style>
     :root {
       --lemon: #f4c430;
@@ -388,6 +389,7 @@
         const weatherDiv = document.getElementById('weather');
         if (weatherDiv) weatherDiv.textContent = "Weather unavailable.";
       });
+      <script src="https://kit.fontawesome.com/4b8e5e8b5d.js" crossorigin="anonymous">
   </script>
 </section>
 
@@ -513,6 +515,7 @@
       <a href="mailto:charlesdataaws@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
 
     </div>
+    <div id="crypto-prices" style="margin: 1.5rem 0; font-size: 1.2rem; color: var(--accent2);"></div>
     <div>
       &copy; 2025 Charles Chen. Made with <span style="color:var(--lemon);">🍋</span> and code.
     </div>
@@ -539,6 +542,28 @@
       event.target.reset();
       return false;
     }
+    function displayCrypto(data) {
+    const div = document.getElementById('crypto-prices');
+    if (!div) return;
+    if (!data.bitcoin || !data.ethereum) {
+      div.textContent = "Crypto prices unavailable.";
+      return;
+    }
+    div.innerHTML = `
+      <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="BTC" style="width:32px;vertical-align:middle;margin-right:8px;">
+      <b>BTC</b>: $${data.bitcoin.cad.toLocaleString()} CAD &nbsp;&nbsp;
+      <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="ETH" style="width:32px;vertical-align:middle;margin-right:8px;">
+      <b>ETH</b>: $${data.ethereum.cad.toLocaleString()} CAD
+    `;
+  }
+
+  fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=cad')
+    .then(r => r.json())
+    .then(data => displayCrypto(data))
+    .catch(() => {
+      const div = document.getElementById('crypto-prices');
+      if (div) div.textContent = "Crypto prices unavailable.";
+    });
   </script>
 </body>
 </html>
