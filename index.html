@@ -753,6 +753,27 @@
       outline: none;
     }
 
+    .visitor-counter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      color: #ffffff;
+      font-size: 0.92rem;
+      font-weight: 800;
+    }
+
+    .visitor-counter span {
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.06);
+      padding: 7px 10px;
+    }
+
+    .visitor-counter strong {
+      color: #fff3a3;
+      margin-left: 4px;
+    }
+
     @media (max-width: 960px) {
       .nav-wrap {
         align-items: flex-start;
@@ -1108,6 +1129,11 @@
         <strong>Lemon 美股手记</strong><br />
         <span>美股研究、视频脚本、公众号文章同步。Charles 出品。</span>
       </div>
+      <div class="visitor-counter" aria-live="polite">
+        <span>访问量 <strong id="page-view-count">--</strong></span>
+        <span>访客 <strong id="visitor-count">--</strong></span>
+        <span id="visitor-counter-status">统计待配置</span>
+      </div>
       <div class="footer-links">
         <a href="https://github.com/charles11223344" target="_blank" rel="noopener">GitHub</a>
         <a href="https://linkedin.com/in/junhui-charles-chen-40b62ba9/" target="_blank" rel="noopener">LinkedIn</a>
@@ -1151,6 +1177,8 @@
     const STOCK_REFRESH_INTERVAL_MS = 30000;
     // Fill this with your deployed Cloudflare Worker URL to enable 30-second live quote refresh.
     const LIVE_QUOTES_ENDPOINT = "https://lemon-quota-proxy.charlesdataaws.workers.dev/";
+    // Fill this with your deployed visitor counter Worker URL to show page views and visitors.
+    const VISITOR_COUNTER_ENDPOINT = "";
     const stockSymbols = fallbackStockData.symbols.map(function(item) {
       return item.symbol;
     });
@@ -1400,6 +1428,67 @@
         const div = document.getElementById("crypto-prices");
         if (div) div.textContent = "Crypto prices unavailable.";
       });
+
+    function visitorCounterUrl(path) {
+      if (!VISITOR_COUNTER_ENDPOINT) return null;
+      return new URL(path, VISITOR_COUNTER_ENDPOINT).toString();
+    }
+
+    function visitorId() {
+      const key = "lemonVisitorId";
+      try {
+        let id = window.localStorage.getItem(key);
+        if (!id) {
+          id = window.crypto && window.crypto.randomUUID
+            ? window.crypto.randomUUID()
+            : String(Date.now()) + "-" + Math.random().toString(16).slice(2);
+          window.localStorage.setItem(key, id);
+        }
+        return id;
+      } catch (error) {
+        return "session-" + Math.random().toString(16).slice(2);
+      }
+    }
+
+    function setVisitorCounterStatus(message) {
+      const status = document.getElementById("visitor-counter-status");
+      if (status) status.textContent = message;
+    }
+
+    function renderVisitorStats(data) {
+      const pageViews = document.getElementById("page-view-count");
+      const visitors = document.getElementById("visitor-count");
+      if (pageViews) pageViews.textContent = formatNumber(data.pageViews, { maximumFractionDigits: 0 });
+      if (visitors) visitors.textContent = formatNumber(data.visitors, { maximumFractionDigits: 0 });
+      setVisitorCounterStatus(data.countedVisitor ? "新访客" : "已统计");
+    }
+
+    function recordVisit() {
+      const url = visitorCounterUrl("/hit");
+      if (!url) {
+        setVisitorCounterStatus("统计待配置");
+        return;
+      }
+
+      fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          visitorId: visitorId(),
+          path: window.location.pathname
+        })
+      })
+        .then(function(response) {
+          if (!response.ok) throw new Error("Visitor counter unavailable");
+          return response.json();
+        })
+        .then(renderVisitorStats)
+        .catch(function() {
+          setVisitorCounterStatus("统计不可用");
+        });
+    }
+
+    recordVisit();
   </script>
 </body>
 </html>

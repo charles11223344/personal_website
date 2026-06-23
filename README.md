@@ -49,6 +49,24 @@ const LIVE_QUOTES_ENDPOINT = "https://your-worker.workers.dev/";
 https://your-worker.workers.dev/?symbols=SPX,SPY,QQQ,SPCX,MU,NVDA,AAPL,MSFT,GOOGL,AMZN,META,TSLA,AMD,AVGO,PLTR,TSM
 ```
 
+## 访问统计
+
+页脚已预留访问统计展示：总访问量和匿名访客数。默认未配置时显示“统计待配置”。
+
+访问统计需要单独部署 `workers/visitor-counter.js`，并在 Cloudflare Worker 里绑定一个 KV namespace：
+
+- KV binding name: `VISITOR_COUNTER`
+- Worker route: `POST /hit` 会记录一次访问
+- Worker route: `GET /stats` 会读取当前统计
+
+部署完成后，把 `index.html` 里的 `VISITOR_COUNTER_ENDPOINT` 改成你的 Worker URL：
+
+```js
+const VISITOR_COUNTER_ENDPOINT = "https://your-counter-worker.workers.dev/";
+```
+
+这个计数器不会保存 IP。页面只会在浏览器本地生成一个匿名 visitor ID，用来粗略区分访客。Cloudflare KV 不是强一致计数器，高并发场景需要换 Durable Object 或 D1。
+
 ## 部署
 
 这个站点只有静态文件，可以直接通过 GitHub Pages 或任意静态托管服务部署。当前自定义域名配置保留在 `CNAME`。
