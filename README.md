@@ -8,6 +8,7 @@
 - 每日美股数据：页面读取 `data/stocks.json`，展示 SPX、SPY、QQQ、SPCX、MU、NVDA 等观察列表。
 - Lemon 品牌：继续使用 `lemon.png` 作为页眉、首屏和站点品牌图。
 - 文章归档：预留给微信公众号存量文章同步，后续可按主题、标签和日期整理。
+- 独立文章页：公众号文章放在 `articles/` 目录，首页文章卡片链接到对应页面。
 - Vlog 脚本：把长文观点转成适合视频号、YouTube 或短视频的脚本结构。
 - 天气模块：使用无密钥的 Open-Meteo 接口显示 Toronto 当前天气。
 - 比特币数据：保留原页面的 CoinGecko 实时价格模块，显示 BTC 和 ETH 的 CAD 报价。
@@ -26,6 +27,16 @@ py scripts/update_stock_data.py
 ```
 
 如果要调整观察列表，编辑 `scripts/update_stock_data.py` 里的 `WATCHLIST`。
+
+## 添加公众号文章
+
+新增文章建议放到 `articles/` 目录，然后在首页 `#articles` 区块新增或更新文章卡片。
+
+当前已添加：
+
+- `articles/2026-06-21-ai-hardware-week.html`
+
+公众号二维码图片请保存为项目根目录的 `wechat-qr.jpg`。文章页会自动读取这个文件；如果文件不存在，会显示提示占位。
 
 ## 准实时股票刷新
 

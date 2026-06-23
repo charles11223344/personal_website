@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="2026-06-21 下周美股市场的剧本：AI硬件进入验货周。Lemon 美股手记文章归档。" />
+  <title>下周美股市场的剧本：AI硬件进入验货周 | Lemon 美股手记</title>
+  <style>
+    :root {
+      --ink: #111318;
+      --muted: #59606b;
+      --paper: #f7f8f6;
+      --surface: #ffffff;
+      --line: #d9ded8;
+      --green: #0f8f63;
+      --gold: #c08a26;
+      --lemon: #f4d33f;
+      --lemon-soft: #f3edcf;
+      --shadow: 0 18px 45px rgba(17, 19, 24, 0.09);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.78;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(217, 222, 216, 0.9);
+      background: rgba(247, 248, 246, 0.92);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-wrap,
+    .article-wrap,
+    .footer-inner {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav-wrap {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 900;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      object-position: center 22%;
+      border-radius: var(--radius);
+      border: 1px solid rgba(17, 19, 24, 0.18);
+      background: var(--lemon-soft);
+    }
+
+    .brand span {
+      display: grid;
+      line-height: 1.1;
+    }
+
+    .brand small {
+      color: var(--gold);
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 800;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 8px 12px;
+      background: #ffffff;
+    }
+
+    .article-hero {
+      padding: 72px 0 36px;
+      background:
+        linear-gradient(90deg, rgba(17, 19, 24, 0.92), rgba(17, 19, 24, 0.72)),
+        url("../market-vlog-hero.png");
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
+    }
+
+    .article-hero p {
+      margin: 0 0 14px;
+      color: #d7e7de;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 860px;
+      margin: 0;
+      font-size: clamp(2.35rem, 6vw, 4.8rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      color: #eef3f0;
+      font-weight: 800;
+    }
+
+    .meta span,
+    .meta a {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 999px;
+      padding: 5px 10px;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    main {
+      padding: 42px 0 70px;
+    }
+
+    .content-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 250px;
+      gap: 32px;
+      align-items: start;
+    }
+
+    article {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      padding: clamp(24px, 4vw, 42px);
+    }
+
+    article p {
+      margin: 0 0 1.1em;
+      font-size: 1.05rem;
+    }
+
+    article h2 {
+      margin: 2em 0 0.75em;
+      font-size: 1.45rem;
+      line-height: 1.28;
+    }
+
+    .lead {
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .stock-pool {
+      display: grid;
+      gap: 12px;
+      margin: 22px 0;
+    }
+
+    .pool-row {
+      border-left: 4px solid var(--green);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      background: #f6faf8;
+      padding: 12px 14px;
+    }
+
+    .pool-row strong {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .disclaimer {
+      margin-top: 30px;
+      padding: 16px;
+      border-radius: var(--radius);
+      background: #fffaf1;
+      color: #7c6034;
+      font-size: 0.95rem;
+    }
+
+    .side-panel {
+      position: sticky;
+      top: 92px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .qr-card,
+    .toc-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+
+    .qr-card h2,
+    .toc-card h2 {
+      margin: 0 0 10px;
+      font-size: 1.08rem;
+    }
+
+    .qr-card img {
+      width: 100%;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .qr-card .qr-placeholder {
+      display: none;
+      border: 1px dashed var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      color: var(--muted);
+      background: #fbfcfb;
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    .qr-card.missing img {
+      display: none;
+    }
+
+    .qr-card.missing .qr-placeholder {
+      display: block;
+    }
+
+    .toc-card a {
+      display: block;
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 800;
+      padding: 6px 0;
+    }
+
+    .site-footer {
+      background: #111318;
+      color: #d8dddc;
+      padding: 30px 0;
+    }
+
+    .site-footer a {
+      color: #ffffff;
+      font-weight: 800;
+    }
+
+    @media (max-width: 820px) {
+      .content-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .side-panel {
+        position: static;
+      }
+
+      .qr-card img {
+        max-width: 240px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="../index.html" aria-label="Lemon 美股手记首页">
+        <img src="../lemon.png" alt="Lemon logo" />
+        <span>
+          <strong>Lemon 美股手记</strong>
+          <small>Market Vlog</small>
+        </span>
+      </a>
+      <a class="nav-link" href="../index.html#articles">返回文章归档</a>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-wrap">
+      <p>2026-06-21 · 美股周度剧本</p>
+      <h1>下周美股市场的剧本：AI硬件进入验货周</h1>
+      <div class="meta">
+        <span>作者：柠檬</span>
+        <span>主题：AI硬件 / 宏观 / 股票池</span>
+        <a href="https://mp.weixin.qq.com/s/U-p6MHaV0bXYlf55ahVH_Q" target="_blank" rel="noopener">微信公众号原文</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="article-wrap content-layout">
+      <article>
+        <p class="lead">大家好，我是柠檬，老规矩，如果你不想看分析，可以拉到最下面看股票池。</p>
+
+        <p>我先说我的看法：下周美股还能看多，但不能无脑追高。现在市场不是不相信AI，而是开始问一个更现实的问题：AI订单到底能不能变成收入、利润和现金流？</p>
+
+        <p>这周最重要的不是指数涨不涨，而是三条线：MU财报、QCOM投资者日、PCE通胀数据。这三个东西会决定AI硬件是继续扩散，还是高位兑现。</p>
+
+        <h2 id="macro">宏观：油价、通胀和利率链条</h2>
+
+        <p>先说宏观。周末美伊谈判和霍尔木兹海峡又有反复，油价重新被推起来。这个事情不要当普通新闻看。真正的链条是：霍尔木兹风险 → 油价上涨 → 通胀预期上升 → 美债收益率上升 → 科技股估值承压。如果布油继续站上82美元，10年期美债收益率冲4.5%，那AI硬件再强，也会被利率压一下。</p>
+
+        <p>所以我下周第一眼不是看NVDA，而是看油价和10年美债。只要这两个不失控，AI主线就还有机会。</p>
+
+        <h2 id="events">公司事件：MU 和 QCOM</h2>
+
+        <p>公司事件里，最关键的是MU。Micron不是普通存储股，它是AI行情的验货员。NVDA已经证明GPU需求是真的，但MU要证明的是：AI服务器有没有真的把HBM、DRAM、NAND带进涨价周期。</p>
+
+        <p>如果MU财报强、指引强，那资金可能继续扩散到WDC、STX、AMAT、LRCX、KLAC、ASML。但如果财报前涨太多，财报后好消息兑现，也别觉得奇怪。</p>
+
+        <p>第二个重点是QCOM。这只票我觉得有预期差。市场以前把它当手机芯片股，所以估值一直不高。但这次Investor Day如果能讲清楚数据中心AI、边缘AI、工业AI、汽车AI，甚至给出客户和收入目标，那QCOM就有机会从“手机周期股”切到“低估值AI硬件股”。这条线我会顺着看AVGO、MRVL、AMD、NXPI、ADI、MCHP。</p>
+
+        <p>NVDA当然还是核心，但现在没必要天天重复吹。真正健康的行情，不是NVDA一个人涨，而是AI硬件继续扩散。我要看的是：NVDA稳住，MU确认存储涨价，MRVL/AVGO确认ASIC和网络芯片强，GLW/COHR/LITE确认光互联继续走，VRT/ETN确认电力液冷被机构承接。</p>
+
+        <h2 id="themes">下周最关注的三条 AI 扩散线</h2>
+
+        <p>第一，AI存储和设备：MU、WDC、STX、AMAT、LRCX、KLAC、ASML。逻辑是HBM和DRAM涨价，如果MU确认供需紧张，这条链会继续被资金挖。</p>
+
+        <p>第二，AI光互联：GLW、COHR、LITE、APH、TEL、MRVL。AI数据中心不是只有GPU，数据传输同样是瓶颈。800G、1.6T、CPO、硅光、InP这些方向，短线可能还会反复炒。</p>
+
+        <p>第三，AI电力和液冷：VRT、ETN、GEV、CEG、OKLO。这条线没有MU那么刺激，但更像机构会持续配置的方向。AI数据中心最后都要买电、买冷却、买配电、买变压器。</p>
+
+        <p>至于SpaceX，我会看，但不会上头。它现在不是估值交易，是情绪和流动性交易。涨的时候能带动FOMO，跌的时候也可能拖累高beta科技股。所以它更像市场温度计，不是普通股票。</p>
+
+        <h2 id="pool">我的下周股票池</h2>
+
+        <div class="stock-pool">
+          <div class="pool-row">
+            <strong>激进核心</strong>
+            <span>MU、QCOM、MRVL、GLW、COHR、VRT。</span>
+          </div>
+          <div class="pool-row">
+            <strong>稳健AI基础设施</strong>
+            <span>NVDA、AVGO、AMAT、LRCX、ETN、APH、TEL。</span>
+          </div>
+          <div class="pool-row">
+            <strong>能源对冲</strong>
+            <span>XOM、CVX、SLB、XLE。</span>
+          </div>
+          <div class="pool-row">
+            <strong>指数确认</strong>
+            <span>SMH、QQQ、IWM、RSP。</span>
+          </div>
+        </div>
+
+        <p>敲黑板！！交易上我不会追最热的尖顶。最好的节奏是：油价不失控、10年美债稳住、SMH继续强于QQQ，AI硬件回踩不破再看机会。</p>
+
+        <p>如果MU财报后sell the news，或者10年美债破4.5%，或者VIX冲上20，那就别硬扛，该锁利就锁利。</p>
+
+        <p><strong>一句话总结：</strong>AI行情没结束，但下周开始验货。能交出订单、利润和指引的继续涨；只会讲故事、短线涨太多的，小心被兑现。</p>
+
+        <div class="disclaimer">本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。</div>
+      </article>
+
+      <aside class="side-panel">
+        <section class="qr-card">
+          <h2>公众号二维码</h2>
+          <img src="../wechat-qr.jpg" alt="柠檬公众号二维码" onerror="this.closest('.qr-card').classList.add('missing')" />
+          <div class="qr-placeholder">请把二维码图片保存为项目根目录的 <strong>wechat-qr.jpg</strong>，这里会自动显示。</div>
+        </section>
+
+        <section class="toc-card">
+          <h2>文章目录</h2>
+          <a href="#macro">宏观链条</a>
+          <a href="#events">MU 与 QCOM</a>
+          <a href="#themes">AI 扩散线</a>
+          <a href="#pool">下周股票池</a>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <strong>Lemon 美股手记</strong><br />
+      <span>原文同步自微信公众号。<a href="../index.html">返回首页</a></span>
+    </div>
+  </footer>
+</body>
+</html>
