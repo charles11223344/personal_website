@@ -246,15 +246,21 @@
       width: min(1180px, calc(100% - 32px));
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 1px;
-      background: var(--line);
+      grid-template-columns: minmax(0, 1fr);
+      background: var(--surface);
     }
 
     .market-chip {
       min-height: 84px;
       padding: 17px 18px;
       background: var(--surface);
+    }
+
+    .weather-chip {
+      display: grid;
+      grid-template-columns: minmax(130px, 0.25fr) minmax(0, 0.45fr) minmax(0, 0.3fr);
+      align-items: center;
+      gap: 16px;
     }
 
     .market-chip span {
@@ -280,6 +286,8 @@
 
     .market-chip.weather-chip strong {
       color: var(--blue);
+      margin-top: 0;
+      font-size: 1.35rem;
     }
 
     .stock-board {
@@ -882,6 +890,11 @@
         gap: 4px;
       }
 
+      .weather-chip {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+
       .stock-toolbar {
         flex-direction: column;
       }
@@ -949,28 +962,8 @@
       </div>
     </section>
 
-    <section class="market-strip" aria-label="内容观察池">
+    <section class="market-strip" aria-label="Toronto 天气">
       <div class="market-strip-inner">
-        <div class="market-chip">
-          <span>关注主线</span>
-          <strong>AI 基础设施</strong>
-          <em>Capex · GPU · Cloud</em>
-        </div>
-        <div class="market-chip">
-          <span>研究框架</span>
-          <strong>财报质量</strong>
-          <em>Revenue · Margin · Guidance</em>
-        </div>
-        <div class="market-chip">
-          <span>风险变量</span>
-          <strong>利率与美元</strong>
-          <em>Fed · CPI · Liquidity</em>
-        </div>
-        <div class="market-chip">
-          <span>仓位原则</span>
-          <strong>先看失效点</strong>
-          <em>Thesis · Risk · Review</em>
-        </div>
         <div class="market-chip weather-chip" aria-live="polite">
           <span>Toronto 天气</span>
           <strong id="weather-current">加载中</strong>
