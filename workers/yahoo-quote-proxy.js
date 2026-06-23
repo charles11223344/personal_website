@@ -45,6 +45,22 @@ function rounded(value) {
   return value === null ? null : Math.round(value * 100) / 100;
 }
 
+function volumeFromQuote(quote, latestIndex, meta, options = {}) {
+  const latestVolume = asNumber(quote.volume && quote.volume[latestIndex]);
+  const regularMarketVolume = asNumber(meta.regularMarketVolume);
+
+  if (options.aggregateVolume) {
+    const totalVolume = (quote.volume || []).reduce((total, value) => {
+      const volume = asNumber(value);
+      return total + (volume || 0);
+    }, 0);
+    if (totalVolume > 0) return totalVolume;
+  }
+
+  if (regularMarketVolume && regularMarketVolume > 0) return regularMarketVolume;
+  return latestVolume;
+}
+
 function compactSymbols(value) {
   return String(value || "")
     .split(",")
@@ -73,7 +89,7 @@ async function fetchYahooChart(yahooSymbol, range = "1d", interval = "1m") {
   return result;
 }
 
-function quoteFromChart(symbol, config, chart) {
+function quoteFromChart(symbol, config, chart, options = {}) {
   const timestamps = chart.timestamp || [];
   const quote = chart.indicators && chart.indicators.quote && chart.indicators.quote[0];
   if (!timestamps.length || !quote) throw new Error("No quote rows");
@@ -105,7 +121,7 @@ function quoteFromChart(symbol, config, chart) {
     high: rounded(asNumber(quote.high && quote.high[latestIndex])),
     low: rounded(asNumber(quote.low && quote.low[latestIndex])),
     close: rounded(close),
-    volume: asNumber(quote.volume && quote.volume[latestIndex]),
+    volume: volumeFromQuote(quote, latestIndex, meta, options),
     change: rounded(change),
     changePercent: rounded(changePercent)
   };
@@ -115,7 +131,7 @@ async function buildQuote(symbol) {
   const config = WATCHLIST[symbol] || { yahoo: symbol, name: symbol, kind: "stock" };
   try {
     const intraday = await fetchYahooChart(config.yahoo, "1d", "1m");
-    return quoteFromChart(symbol, config, intraday);
+    return quoteFromChart(symbol, config, intraday, { aggregateVolume: true });
   } catch (intradayError) {
     const daily = await fetchYahooChart(config.yahoo, "5d", "1d");
     return quoteFromChart(symbol, config, daily);
