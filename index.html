@@ -643,6 +643,41 @@
       color: #d8dddc;
     }
 
+    .wechat-qr-block {
+      margin-bottom: 20px;
+      border-radius: var(--radius);
+      background: #ffffff;
+      color: var(--ink);
+      padding: 14px;
+    }
+
+    .wechat-qr-block strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 0.98rem;
+    }
+
+    .wechat-qr-block img {
+      width: min(180px, 100%);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+    }
+
+    .wechat-qr-block .qr-fallback {
+      display: none;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .wechat-qr-block.missing img {
+      display: none;
+    }
+
+    .wechat-qr-block.missing .qr-fallback {
+      display: block;
+    }
+
     .newsletter form {
       display: grid;
       gap: 12px;
@@ -1106,6 +1141,11 @@
           </div>
         </div>
         <aside class="newsletter" id="contact">
+          <div class="wechat-qr-block">
+            <strong>扫码关注公众号</strong>
+            <img src="qrcode_for_gh_67e79458da9e_258.jpg" alt="柠檬公众号二维码" onerror="this.closest('.wechat-qr-block').classList.add('missing')" />
+            <span class="qr-fallback">请把二维码图片保存到项目根目录。</span>
+          </div>
           <h3>订阅与合作</h3>
           <p>留下邮箱或你想看的美股主题，我会优先同步相关内容。</p>
           <form action="https://formspree.io/f/xwpbgzna" method="POST">
