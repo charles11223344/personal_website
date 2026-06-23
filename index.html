@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Charles 美股手记，记录美股市场观察、财报拆解、投资复盘和视频笔记。" />
-  <title>Charles 美股手记 | 美股 Vlog 与投资笔记</title>
+  <meta name="description" content="Lemon 美股手记，记录美股市场观察、财报拆解、投资复盘和视频笔记。" />
+  <title>Lemon 美股手记 | 美股 Vlog 与投资笔记</title>
   <style>
     :root {
       --ink: #111318;
@@ -18,6 +18,8 @@
       --gold: #c08a26;
       --blue: #315e8c;
       --btc: #f7931a;
+      --lemon: #f4d33f;
+      --lemon-soft: #f3edcf;
       --shadow: 0 18px 45px rgba(17, 19, 24, 0.09);
       --radius: 8px;
     }
@@ -76,16 +78,28 @@
       white-space: nowrap;
     }
 
-    .brand-mark {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
+    .brand-logo {
+      width: 52px;
+      height: 52px;
+      object-fit: cover;
+      object-position: center 22%;
+      border-radius: var(--radius);
+      border: 1px solid rgba(17, 19, 24, 0.18);
+      background: var(--lemon-soft);
+    }
+
+    .brand-text {
       display: grid;
-      place-items: center;
-      background: var(--ink);
-      color: var(--surface);
-      font-size: 0.9rem;
+      gap: 1px;
+      line-height: 1.05;
+    }
+
+    .brand-text small {
+      color: var(--gold);
+      font-size: 0.76rem;
       font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .nav-links {
@@ -137,6 +151,32 @@
       font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+    }
+
+    .hero-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+      color: #fff8d7;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-brand img {
+      width: 108px;
+      height: 86px;
+      object-fit: cover;
+      object-position: center 18%;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, 0.36);
+      background: var(--lemon-soft);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-brand span {
+      padding-bottom: 2px;
+      border-bottom: 3px solid var(--lemon);
     }
 
     .hero h1 {
@@ -206,7 +246,7 @@
       width: min(1180px, calc(100% - 32px));
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 1px;
       background: var(--line);
     }
@@ -236,6 +276,124 @@
       font-style: normal;
       font-weight: 800;
       font-size: 0.88rem;
+    }
+
+    .market-chip.weather-chip strong {
+      color: var(--blue);
+    }
+
+    .stock-board {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .stock-toolbar {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--line);
+      background: #fbfcfb;
+    }
+
+    .stock-toolbar p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .stock-status {
+      text-align: right;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 800;
+      min-width: 190px;
+    }
+
+    .stock-live-status {
+      margin-top: 4px;
+      color: var(--green-dark);
+    }
+
+    .stock-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+    }
+
+    .stock-card {
+      min-height: 164px;
+      padding: 17px;
+      background: var(--surface);
+    }
+
+    .stock-card.error {
+      background: #fff8f6;
+    }
+
+    .stock-symbol {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .stock-symbol strong {
+      display: block;
+      font-size: 1.22rem;
+      line-height: 1;
+    }
+
+    .stock-symbol span {
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-align: right;
+    }
+
+    .stock-name {
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      min-height: 42px;
+    }
+
+    .stock-price {
+      margin-top: 14px;
+      font-size: 1.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    .stock-change {
+      margin-top: 6px;
+      font-size: 0.94rem;
+      font-weight: 900;
+    }
+
+    .stock-change.up {
+      color: var(--green);
+    }
+
+    .stock-change.down {
+      color: var(--red);
+    }
+
+    .stock-change.flat {
+      color: var(--muted);
+    }
+
+    .stock-meta {
+      margin-top: 11px;
+      display: grid;
+      gap: 2px;
+      color: var(--muted);
+      font-size: 0.82rem;
     }
 
     main {
@@ -608,6 +766,7 @@
       }
 
       .market-strip-inner,
+      .stock-grid,
       .thesis-grid,
       .article-grid,
       .video-grid,
@@ -638,6 +797,7 @@
       }
 
       .market-strip-inner,
+      .stock-grid,
       .thesis-grid,
       .article-grid,
       .video-grid,
@@ -654,6 +814,15 @@
         align-items: flex-start;
         flex-direction: column;
         gap: 4px;
+      }
+
+      .stock-toolbar {
+        flex-direction: column;
+      }
+
+      .stock-status {
+        text-align: left;
+        min-width: 0;
       }
     }
 
@@ -676,12 +845,16 @@
 <body>
   <header class="site-header">
     <div class="nav-wrap">
-      <a class="brand" href="#home" aria-label="Charles 美股手记首页">
-        <span class="brand-mark">C</span>
-        <span>Charles 美股手记</span>
+      <a class="brand" href="#home" aria-label="Lemon 美股手记首页">
+        <img class="brand-logo" src="lemon.png" alt="Lemon logo" />
+        <span class="brand-text">
+          <strong>Lemon 美股手记</strong>
+          <small>Market Vlog</small>
+        </span>
       </a>
       <nav class="nav-links" aria-label="主导航">
         <a href="#market">市场笔记</a>
+        <a href="#stocks">美股数据</a>
         <a href="#articles">文章</a>
         <a href="#vlog">Vlog</a>
         <a href="#wechat-sync">公众号同步</a>
@@ -694,6 +867,10 @@
   <main>
     <section class="hero" id="home">
       <div class="hero-inner">
+        <div class="hero-brand" aria-label="Lemon 品牌">
+          <img src="lemon.png" alt="Lemon logo" />
+          <span>Lemon Market Notes</span>
+        </div>
         <p class="eyebrow">US Equities · Earnings · Vlog Notes</p>
         <h1>把美股研究写成长期可追踪的手记。</h1>
         <p class="hero-copy">
@@ -727,6 +904,44 @@
           <span>仓位原则</span>
           <strong>先看失效点</strong>
           <em>Thesis · Risk · Review</em>
+        </div>
+        <div class="market-chip weather-chip" aria-live="polite">
+          <span>Toronto 天气</span>
+          <strong id="weather-current">加载中</strong>
+          <em id="weather-detail">Open-Meteo</em>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="stocks">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>每日美股数据</h2>
+          <p>每天美股收盘后自动更新一组常看的指数、ETF 和主流个股，方便写文章和做视频复盘时快速引用。</p>
+        </div>
+        <div class="stock-board">
+          <div class="stock-toolbar">
+            <div>
+              <strong>观察列表</strong>
+              <p>默认覆盖 SPX、SPY、QQQ、SPCX、MU、NVDA、AAPL、MSFT、GOOGL、AMZN、META、TSLA、AMD、AVGO、PLTR、TSM。</p>
+            </div>
+            <div class="stock-status">
+              <div id="stocks-updated">等待数据更新</div>
+              <div id="stocks-source">data/stocks.json</div>
+              <div id="stocks-live-status" class="stock-live-status">实时刷新待配置</div>
+            </div>
+          </div>
+          <div class="stock-grid" id="stock-grid" aria-live="polite">
+            <article class="stock-card">
+              <div class="stock-symbol">
+                <strong>Loading</strong>
+                <span>Daily</span>
+              </div>
+              <p class="stock-name">正在加载美股数据...</p>
+              <div class="stock-price">--</div>
+              <div class="stock-change flat">等待更新</div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -890,8 +1105,8 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div>
-        <strong>Charles 美股手记</strong><br />
-        <span>美股研究、视频脚本、公众号文章同步。</span>
+        <strong>Lemon 美股手记</strong><br />
+        <span>美股研究、视频脚本、公众号文章同步。Charles 出品。</span>
       </div>
       <div class="footer-links">
         <a href="https://github.com/charles11223344" target="_blank" rel="noopener">GitHub</a>
@@ -910,6 +1125,254 @@
         target.scrollIntoView({ behavior: "smooth", block: "start" });
       });
     });
+
+    const fallbackStockData = {
+      updatedAt: null,
+      source: "等待 GitHub Actions 更新",
+      symbols: [
+        { symbol: "SPX", sourceSymbol: "^GSPC", name: "S&P 500 Index", kind: "index" },
+        { symbol: "SPY", sourceSymbol: "SPY", name: "SPDR S&P 500 ETF", kind: "etf" },
+        { symbol: "QQQ", sourceSymbol: "QQQ", name: "Invesco QQQ ETF", kind: "etf" },
+        { symbol: "SPCX", sourceSymbol: "SPCX", name: "SPCX", kind: "stock" },
+        { symbol: "MU", sourceSymbol: "MU", name: "Micron Technology", kind: "stock" },
+        { symbol: "NVDA", sourceSymbol: "NVDA", name: "NVIDIA", kind: "stock" },
+        { symbol: "AAPL", sourceSymbol: "AAPL", name: "Apple", kind: "stock" },
+        { symbol: "MSFT", sourceSymbol: "MSFT", name: "Microsoft", kind: "stock" },
+        { symbol: "GOOGL", sourceSymbol: "GOOGL", name: "Alphabet Class A", kind: "stock" },
+        { symbol: "AMZN", sourceSymbol: "AMZN", name: "Amazon", kind: "stock" },
+        { symbol: "META", sourceSymbol: "META", name: "Meta Platforms", kind: "stock" },
+        { symbol: "TSLA", sourceSymbol: "TSLA", name: "Tesla", kind: "stock" },
+        { symbol: "AMD", sourceSymbol: "AMD", name: "Advanced Micro Devices", kind: "stock" },
+        { symbol: "AVGO", sourceSymbol: "AVGO", name: "Broadcom", kind: "stock" },
+        { symbol: "PLTR", sourceSymbol: "PLTR", name: "Palantir", kind: "stock" },
+        { symbol: "TSM", sourceSymbol: "TSM", name: "Taiwan Semiconductor", kind: "stock" }
+      ]
+    };
+    const STOCK_REFRESH_INTERVAL_MS = 60000;
+    // Fill this with your deployed Cloudflare Worker URL to enable 60-second live quote refresh.
+    const LIVE_QUOTES_ENDPOINT = "";
+    const stockSymbols = fallbackStockData.symbols.map(function(item) {
+      return item.symbol;
+    });
+    let liveStockTimer = null;
+
+    function escapeHtml(value) {
+      return String(value ?? "").replace(/[&<>"']/g, function(character) {
+        return {
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          "\"": "&quot;",
+          "'": "&#39;"
+        }[character];
+      });
+    }
+
+    function formatNumber(value, options) {
+      const number = Number(value);
+      if (!Number.isFinite(number)) return "--";
+      return new Intl.NumberFormat("en-US", options).format(number);
+    }
+
+    function formatPrice(item) {
+      const close = Number(item.close);
+      if (!Number.isFinite(close)) return "--";
+      const formatted = formatNumber(close, {
+        minimumFractionDigits: close >= 1000 ? 0 : 2,
+        maximumFractionDigits: close >= 1000 ? 2 : 2
+      });
+      return item.kind === "index" ? formatted : "$" + formatted;
+    }
+
+    function formatVolume(value) {
+      const volume = Number(value);
+      if (!Number.isFinite(volume) || volume <= 0) return "成交量 --";
+      return "成交量 " + new Intl.NumberFormat("en-US", {
+        notation: "compact",
+        maximumFractionDigits: 1
+      }).format(volume);
+    }
+
+    function formatStockDate(value) {
+      if (!value) return "等待首次更新";
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return value;
+      return date.toLocaleString("zh-CN", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit"
+      });
+    }
+
+    function renderStocks(data, note) {
+      const grid = document.getElementById("stock-grid");
+      const updated = document.getElementById("stocks-updated");
+      const source = document.getElementById("stocks-source");
+      const liveStatus = document.getElementById("stocks-live-status");
+      if (!grid) return;
+
+      const symbols = Array.isArray(data.symbols) ? data.symbols : [];
+      if (updated) updated.textContent = "更新时间 " + formatStockDate(data.updatedAt);
+      if (source) source.textContent = note || data.source || "data/stocks.json";
+      if (liveStatus && data.liveStatus) liveStatus.textContent = data.liveStatus;
+
+      grid.innerHTML = symbols.map(function(item) {
+        const change = Number(item.change);
+        const percent = Number(item.changePercent);
+        const hasChange = Number.isFinite(change) && Number.isFinite(percent);
+        const direction = hasChange ? (change > 0 ? "up" : change < 0 ? "down" : "flat") : "flat";
+        const changePrefix = hasChange && change > 0 ? "+" : "";
+        const percentPrefix = hasChange && percent > 0 ? "+" : "";
+        const changeText = hasChange
+          ? `${changePrefix}${change.toFixed(2)} (${percentPrefix}${percent.toFixed(2)}%)`
+          : "等待更新";
+        const quoteDate = item.date ? `报价日 ${escapeHtml(item.date)}` : "报价日 --";
+        const errorClass = item.error ? " error" : "";
+
+        return `
+          <article class="stock-card${errorClass}">
+            <div class="stock-symbol">
+              <strong>${escapeHtml(item.symbol)}</strong>
+              <span>${escapeHtml(item.kind || "stock")}</span>
+            </div>
+            <p class="stock-name">${escapeHtml(item.name || item.symbol)}</p>
+            <div class="stock-price">${formatPrice(item)}</div>
+            <div class="stock-change ${direction}">${escapeHtml(changeText)}</div>
+            <div class="stock-meta">
+              <span>${quoteDate}</span>
+              <span>${escapeHtml(formatVolume(item.volume))}</span>
+              ${item.error ? `<span>${escapeHtml(item.error)}</span>` : ""}
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function fetchStockSnapshot() {
+      return fetch("data/stocks.json", { cache: "no-store" })
+        .then(function(response) {
+          if (!response.ok) throw new Error("Stock data unavailable");
+          return response.json();
+        });
+    }
+
+    function liveQuotesUrl() {
+      if (!LIVE_QUOTES_ENDPOINT) return null;
+      const url = new URL(LIVE_QUOTES_ENDPOINT, window.location.href);
+      url.searchParams.set("symbols", stockSymbols.join(","));
+      url.searchParams.set("_", Date.now().toString());
+      return url.toString();
+    }
+
+    function fetchLiveStocks() {
+      const url = liveQuotesUrl();
+      if (!url) return Promise.reject(new Error("Live quote endpoint not configured"));
+      return fetch(url, { cache: "no-store" })
+        .then(function(response) {
+          if (!response.ok) throw new Error("Live quote endpoint unavailable");
+          return response.json();
+        });
+    }
+
+    function setLiveStockStatus(message) {
+      const liveStatus = document.getElementById("stocks-live-status");
+      if (liveStatus) liveStatus.textContent = message;
+    }
+
+    function refreshLiveStocks() {
+      return fetchLiveStocks()
+        .then(function(data) {
+          data.liveStatus = "实时刷新中 · 每 60 秒";
+          renderStocks(data, data.source || "Live quote endpoint");
+        })
+        .catch(function() {
+          setLiveStockStatus("实时刷新失败，保留每日快照");
+        });
+    }
+
+    function startLiveStockRefresh() {
+      if (!LIVE_QUOTES_ENDPOINT) {
+        setLiveStockStatus("实时接口未配置，当前显示每日快照");
+        return;
+      }
+      refreshLiveStocks();
+      if (liveStockTimer) window.clearInterval(liveStockTimer);
+      liveStockTimer = window.setInterval(refreshLiveStocks, STOCK_REFRESH_INTERVAL_MS);
+    }
+
+    fetchStockSnapshot()
+      .then(function(response) {
+        response.liveStatus = LIVE_QUOTES_ENDPOINT ? "准备实时刷新" : "实时接口未配置，当前显示每日快照";
+        renderStocks(response);
+        startLiveStockRefresh();
+      })
+      .catch(function() {
+        fallbackStockData.liveStatus = "本地数据未加载";
+        renderStocks(fallbackStockData, "本地数据未加载，等待自动任务生成");
+        startLiveStockRefresh();
+      });
+
+    const weatherDescriptions = {
+      0: "晴朗",
+      1: "大致晴朗",
+      2: "局部多云",
+      3: "阴天",
+      45: "有雾",
+      48: "雾凇",
+      51: "小毛毛雨",
+      53: "毛毛雨",
+      55: "较强毛毛雨",
+      56: "冻毛毛雨",
+      57: "较强冻毛毛雨",
+      61: "小雨",
+      63: "中雨",
+      65: "大雨",
+      66: "冻雨",
+      67: "较强冻雨",
+      71: "小雪",
+      73: "中雪",
+      75: "大雪",
+      77: "雪粒",
+      80: "小阵雨",
+      81: "阵雨",
+      82: "强阵雨",
+      85: "小阵雪",
+      86: "强阵雪",
+      95: "雷暴",
+      96: "雷暴伴小冰雹",
+      99: "雷暴伴强冰雹"
+    };
+
+    function displayWeather(data) {
+      const currentEl = document.getElementById("weather-current");
+      const detailEl = document.getElementById("weather-detail");
+      if (!currentEl || !detailEl || !data.current) return;
+
+      const current = data.current;
+      const temp = Math.round(current.temperature_2m);
+      const desc = weatherDescriptions[current.weather_code] || "天气更新";
+      const humidity = Math.round(current.relative_humidity_2m);
+      const wind = Math.round(current.wind_speed_10m);
+
+      currentEl.textContent = `${temp}°C · ${desc}`;
+      detailEl.textContent = `湿度 ${humidity}% · 风速 ${wind} km/h`;
+    }
+
+    fetch("https://api.open-meteo.com/v1/forecast?latitude=43.6532&longitude=-79.3832&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&timezone=America%2FToronto")
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+        displayWeather(data);
+      })
+      .catch(function() {
+        const currentEl = document.getElementById("weather-current");
+        const detailEl = document.getElementById("weather-detail");
+        if (currentEl) currentEl.textContent = "天气不可用";
+        if (detailEl) detailEl.textContent = "稍后再试";
+      });
 
     function displayCrypto(data) {
       const div = document.getElementById("crypto-prices");
