@@ -1,28 +1,27 @@
-Lemon-Themed Portfolio 🍋
+# Charles 美股手记
 
-Welcome to my personal portfolio website! This site is a vibrant, lemon-inspired showcase of my skills, projects, and professional journey as a full-stack developer and UI/UX enthusiast. Built with modern HTML, CSS, and JavaScript, it features interactive widgets, responsive design, and a playful yet professional aesthetic.
+这是一个静态个人网站，用来归档美股研究、微信公众号文章、视频脚本和市场复盘。
 
-Features
+## 内容结构
 
-- Lemon-Themed Design: A fresh, bright, and energetic look inspired by lemons, reflecting my approach to development—clean, purposeful, and full of zest.
-- Responsive Layout: The site adapts beautifully to all screen sizes, ensuring a great experience on desktop and mobile devices.
-- Weather Widget: Real-time weather information for your chosen city, powered by the OpenWeatherMap API.
-- Hiding Crypto Prices: Live Bitcoin and Ethereum prices in CAD, fetched from the CoinGecko API and displayed with official coin icons.
-- Skills & Projects: A detailed list of my technical skills and selected projects, with links to GitHub repositories.
-- Timeline: Highlights of my professional milestones and achievements.
-- Testimonials: Feedback from colleagues and collaborators.
-- Contact Form: A simple, secure contact form powered by Formspree for easy communication.
+- 美股市场笔记：财报拆解、行业叙事、估值坐标和交易复盘。
+- 文章归档：预留给微信公众号存量文章同步，后续可按主题、标签和日期整理。
+- Vlog 脚本：把长文观点转成适合视频号、YouTube 或短视频的脚本结构。
+- 比特币数据：保留原页面的 CoinGecko 实时价格模块，显示 BTC 和 ETH 的 CAD 报价。
+- 订阅与合作：继续使用 Formspree 表单收集邮箱和留言。
 
-How It Works
+## 部署
 
-- The weather widget fetches current data from OpenWeatherMap using your API key and displays temperature, description, and icon.
-- The crypto widget fetches live prices for Bitcoin and Ethereum from CoinGecko and displays them with their respective logos.
-- All sections are styled for clarity and visual appeal, using CSS custom properties and animations.
+这个站点只有静态文件，可以直接通过 GitHub Pages 或任意静态托管服务部署。当前自定义域名配置保留在 `CNAME`。
 
-License
+## 下一步
 
-This project is open-source and free to use for personal and educational purposes. If you use or modify this template, a mention or link back would be appreciated.
+公众号文章同步可以先整理成一份表格或 JSON：
 
----
+- 标题
+- 发布日期
+- 原文链接
+- 主题标签
+- 摘要
 
-Thank you for visiting my portfolio. If you have any questions or would like to collaborate, feel free to reach out via the contact form or connect with me on [LinkedIn](https://linkedin.com/in/junhui-charles-chen-40b62ba9/).
+之后可以把这些数据拆成独立文章页，或继续保持单页归档。

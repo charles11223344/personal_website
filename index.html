@@ -1,569 +1,942 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Charles | Lemon-Themed Portfolio</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400|Roboto:400,300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Charles 美股手记，记录美股市场观察、财报拆解、投资复盘和视频笔记。" />
+  <title>Charles 美股手记 | 美股 Vlog 与投资笔记</title>
   <style>
     :root {
-      --lemon: #f4c430;
-      --lemon-light: #fff9d6;
-      --lemon-dark: #e1b200;
-      --accent: #667eea;
-      --accent2: #764ba2;
-      --bg: #fffce6;
-      --text: #333;
-      --white: #fff;
-      --shadow: 0 2px 12px rgba(244, 196, 48, 0.08);
-      --radius: 20px;
-      --transition: 0.3s cubic-bezier(.25,.8,.25,1);
+      --ink: #111318;
+      --muted: #59606b;
+      --paper: #f7f8f6;
+      --surface: #ffffff;
+      --line: #d9ded8;
+      --green: #0f8f63;
+      --green-dark: #076346;
+      --red: #c64a3d;
+      --gold: #c08a26;
+      --blue: #315e8c;
+      --btc: #f7931a;
+      --shadow: 0 18px 45px rgba(17, 19, 24, 0.09);
+      --radius: 8px;
     }
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Roboto', 'Segoe UI', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100%;
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
       scroll-behavior: smooth;
     }
+
     body {
-      overflow-x: hidden;
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.6;
     }
-    header {
-      width: 100vw;
-      background: linear-gradient(90deg, var(--lemon), var(--accent2) 90%);
-      color: var(--white);
-      padding: 2rem 0 1rem 0;
-      box-shadow: 0 4px 24px rgba(244, 196, 48, 0.12);
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .site-header {
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 20;
+      border-bottom: 1px solid rgba(217, 222, 216, 0.9);
+      background: rgba(247, 248, 246, 0.92);
+      backdrop-filter: blur(14px);
     }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 1.1rem;
-    }
-    nav a {
-      color: var(--white);
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: 10px;
-      transition: background var(--transition), color var(--transition);
-    }
-    nav a:hover, nav a.active {
-      background: var(--white);
-      color: var(--lemon-dark);
-    }
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 70vh;
-      text-align: center;
-      padding: 3rem 1rem 2rem 1rem;
-      background: linear-gradient(180deg, var(--lemon-light) 60%, var(--bg) 100%);
-      position: relative;
-    }
-    .lemon {
-      width: 180px;
-      height: auto;
-      margin: 2rem 0 1rem 0;
-      animation: float 3s ease-in-out infinite;
-      filter: drop-shadow(0 8px 24px rgba(244, 196, 48, 0.18));
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0);}
-      50% { transform: translateY(-18px);}
-    }
-    .hero h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 3.2rem;
-      color: var(--lemon-dark);
-      margin-bottom: 0.5rem;
-      animation: fadeInDown 1s ease-in-out forwards;
-      letter-spacing: 1px;
-    }
-    .hero h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.7rem;
-      color: var(--accent2);
-      margin-bottom: 1.5rem;
-      font-weight: 400;
-      animation: fadeInDown 1.2s ease-in-out forwards;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto 1.5rem auto;
-      animation: fadeInUp 1.5s ease-in-out forwards;
-    }
-    .btn {
-      background: linear-gradient(45deg, var(--accent), var(--accent2));
-      color: var(--white);
-      padding: 14px 32px;
-      border: none;
-      border-radius: 30px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
-      margin: 0.5rem;
-      display: inline-block;
-      font-size: 1.1rem;
-      box-shadow: 0 2px 12px rgba(102, 126, 234, 0.12);
-      cursor: pointer;
-    }
-    .btn:hover {
-      transform: scale(1.07);
-      box-shadow: 0 10px 24px rgba(102, 126, 234, 0.18);
-      background: linear-gradient(45deg, var(--accent2), var(--accent));
-    }
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-30px);}
-      to { opacity: 1; transform: translateY(0);}
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px);}
-      to { opacity: 1; transform: translateY(0);}
-    }
-    .section {
-      background: var(--lemon-light);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      margin: 2.5rem auto;
-      padding: 2.5rem 2rem;
-      max-width: 900px;
-      width: 95vw;
-      animation: fadeInUp 2s ease-in-out forwards;
-      position: relative;
-    }
-    .section h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2rem;
-      color: var(--accent2);
-      margin-bottom: 1.2rem;
-      letter-spacing: 1px;
-    }
-    .skills-list, .projects-list, .timeline-list, .testimonials-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      list-style: none;
-      padding: 0;
-      margin: 1rem 0 0 0;
-    }
-    .skills-list li, .projects-list li, .timeline-list li, .testimonials-list li {
-      background: var(--lemon);
-      color: var(--white);
-      padding: 0.7rem 1.5rem;
-      border-radius: 20px;
-      font-weight: 500;
-      font-size: 1.05rem;
-      box-shadow: 0 2px 8px rgba(244, 196, 48, 0.15);
-      margin-bottom: 0.5rem;
-      transition: background var(--transition), color var(--transition);
-    }
-    .projects-list li {
-      background: var(--accent);
-      color: var(--white);
-      min-width: 220px;
-      text-align: left;
-      position: relative;
-      cursor: pointer;
-    }
-    .projects-list li:hover {
-      background: var(--accent2);
-    }
-    .projects-list li a {
-      color: inherit;
-      text-decoration: none;
-      font-weight: 600;
-      display: block;
-    }
-    .projects-list li .desc {
-      font-size: 0.98rem;
-      font-weight: 400;
-      color: #e0e0e0;
-      margin-top: 0.3rem;
-    }
-    .timeline-list {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.5rem;
-    }
-    .timeline-list li {
-      background: var(--white);
-      color: var(--accent2);
-      border-left: 5px solid var(--lemon);
-      border-radius: 0 20px 20px 0;
-      margin-bottom: 1rem;
-      padding: 1rem 1.5rem;
-      box-shadow: 0 2px 8px rgba(244, 196, 48, 0.10);
-      width: 100%;
-      max-width: 700px;
-      position: relative;
-    }
-    .timeline-list li .year {
-      font-weight: bold;
-      color: var(--lemon-dark);
-      margin-right: 1rem;
-    }
-    .testimonials-list {
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
-    }
-    .testimonials-list li {
-      background: var(--white);
-      color: var(--accent2);
-      border-radius: var(--radius);
-      box-shadow: 0 2px 12px rgba(244, 196, 48, 0.10);
-      padding: 1.5rem 2rem;
-      max-width: 600px;
-      font-style: italic;
-      position: relative;
-    }
-    .testimonials-list li::before {
-      content: "“";
-      font-size: 2.5rem;
-      color: var(--lemon);
-      position: absolute;
-      left: 1rem;
-      top: 0.5rem;
-    }
-    .testimonials-list li .author {
-      display: block;
-      margin-top: 1rem;
-      font-weight: bold;
-      color: var(--accent);
-      font-style: normal;
-    }
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.2rem;
-      max-width: 500px;
+
+    .nav-wrap {
+      width: min(1180px, calc(100% - 32px));
       margin: 0 auto;
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
     }
-    .contact-form input, .contact-form textarea {
-      width: 100%;
-      padding: 0.9rem 1rem;
-      border-radius: 12px;
-      border: 1px solid #e0e0e0;
-      font-size: 1rem;
-      font-family: inherit;
-      background: var(--white);
-      transition: border var(--transition), box-shadow var(--transition);
+
+    .brand {
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--ink);
+      color: var(--surface);
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.94rem;
+      font-weight: 700;
+      padding: 8px 10px;
+      border-radius: 999px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--ink);
+      background: #e9eee9;
       outline: none;
     }
-    .contact-form input:focus, .contact-form textarea:focus {
-      border: 1.5px solid var(--lemon);
-      box-shadow: 0 2px 8px rgba(244, 196, 48, 0.10);
+
+    .hero {
+      min-height: min(760px, calc(100svh - 108px));
+      display: grid;
+      align-items: end;
+      background-image:
+        linear-gradient(90deg, rgba(8, 12, 18, 0.9) 0%, rgba(8, 12, 18, 0.74) 38%, rgba(8, 12, 18, 0.18) 78%),
+        url("market-vlog-hero.png");
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
     }
-    .contact-form textarea {
-      min-height: 120px;
+
+    .hero-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 82px 0 76px;
+    }
+
+    .eyebrow {
+      margin: 0 0 16px;
+      color: #d7e7de;
+      font-size: 0.92rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(2.65rem, 7vw, 6.2rem);
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      max-width: 650px;
+      margin: 22px 0 0;
+      color: #eef3f0;
+      font-size: clamp(1rem, 2vw, 1.24rem);
+    }
+
+    .hero-actions {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      min-height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      padding: 11px 16px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .button.primary {
+      background: var(--green);
+      color: #ffffff;
+    }
+
+    .button.primary:hover,
+    .button.primary:focus-visible {
+      background: var(--green-dark);
+    }
+
+    .button.secondary {
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.55);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .market-strip {
+      border-block: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .market-strip-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+    }
+
+    .market-chip {
+      min-height: 84px;
+      padding: 17px 18px;
+      background: var(--surface);
+    }
+
+    .market-chip span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.84rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+    }
+
+    .market-chip strong {
+      display: block;
+      margin-top: 3px;
+      font-size: 1.12rem;
+    }
+
+    .market-chip em {
+      color: var(--green);
+      font-style: normal;
+      font-weight: 800;
+      font-size: 0.88rem;
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    .section {
+      padding: 76px 0;
+    }
+
+    .section.alt {
+      background: #ffffff;
+    }
+
+    .section-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 30px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.35rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .thesis-grid,
+    .article-grid,
+    .video-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .thesis-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .article-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .video-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .panel,
+    .article-card,
+    .video-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .panel {
+      padding: 20px;
+      min-height: 210px;
+    }
+
+    .panel-number {
+      display: inline-flex;
+      width: 32px;
+      height: 32px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #e7f3ee;
+      color: var(--green-dark);
+      font-weight: 900;
+      font-size: 0.86rem;
+    }
+
+    .panel h3,
+    .article-card h3,
+    .video-card h3 {
+      margin: 16px 0 8px;
+      line-height: 1.28;
+      letter-spacing: 0;
+    }
+
+    .panel p,
+    .article-card p,
+    .video-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .article-card,
+    .video-card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      min-height: 100%;
+    }
+
+    .article-topline {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 18px 0;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 800;
+    }
+
+    .article-card h3,
+    .article-card p {
+      padding-inline: 18px;
+    }
+
+    .article-card p {
+      padding-bottom: 20px;
+    }
+
+    .tag-row {
+      margin-top: auto;
+      padding: 0 18px 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 9px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 800;
+      background: #fbfcfb;
+    }
+
+    .video-art {
+      min-height: 186px;
+      display: grid;
+      place-items: center;
+      background:
+        linear-gradient(135deg, rgba(15, 143, 99, 0.88), rgba(49, 94, 140, 0.82)),
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.16) 0 1px, transparent 1px 46px);
+      color: #ffffff;
+    }
+
+    .play-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.86);
+      display: grid;
+      place-items: center;
+      font-size: 1.7rem;
+      background: rgba(0, 0, 0, 0.18);
+    }
+
+    .video-card h3,
+    .video-card p {
+      padding-inline: 20px;
+    }
+
+    .video-card p {
+      padding-bottom: 20px;
+    }
+
+    .sync-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.58fr);
+      gap: 30px;
+      align-items: start;
+    }
+
+    .sync-copy {
+      max-width: 720px;
+    }
+
+    .sync-copy h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.35rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .sync-copy p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .sync-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .sync-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-left: 4px solid var(--green);
+      background: #ffffff;
+      padding: 13px 15px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    .sync-item strong {
+      min-width: 84px;
+    }
+
+    .sync-item span {
+      color: var(--muted);
+    }
+
+    .newsletter {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--ink);
+      color: #ffffff;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .newsletter h3 {
+      margin: 0 0 8px;
+      font-size: 1.4rem;
+    }
+
+    .newsletter p {
+      margin: 0 0 18px;
+      color: #d8dddc;
+    }
+
+    .newsletter form {
+      display: grid;
+      gap: 12px;
+    }
+
+    .newsletter input,
+    .newsletter textarea {
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: var(--radius);
+      padding: 12px 13px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      font: inherit;
+    }
+
+    .newsletter input::placeholder,
+    .newsletter textarea::placeholder {
+      color: #bfc7c5;
+    }
+
+    .newsletter textarea {
+      min-height: 110px;
       resize: vertical;
     }
-    .contact-form button {
-      align-self: flex-end;
-      margin-top: 0.5rem;
+
+    .newsletter button {
+      justify-self: start;
+      border: 0;
+      cursor: pointer;
     }
-    footer {
-      background: var(--accent2);
-      color: var(--white);
-      text-align: center;
-      padding: 2rem 0 1rem 0;
-      font-size: 1.1rem;
-      margin-top: 3rem;
-      border-radius: 30px 30px 0 0;
-      box-shadow: 0 -2px 24px rgba(102, 126, 234, 0.10);
+
+    .crypto-wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 0.78fr) minmax(300px, 0.42fr);
+      gap: 28px;
+      align-items: center;
     }
-    .socials {
-      margin: 1rem 0;
+
+    .crypto-copy h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.35rem);
+      line-height: 1.05;
+    }
+
+    .crypto-copy p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .crypto-box {
+      border: 1px solid rgba(247, 147, 26, 0.34);
+      border-radius: var(--radius);
+      background: #fffaf1;
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+
+    .crypto-box small {
+      display: block;
+      color: #7c6034;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      margin-bottom: 12px;
+    }
+
+    #crypto-prices {
+      color: var(--ink);
+      font-size: 1.05rem;
+      line-height: 2.1;
+    }
+
+    #crypto-prices img {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    .disclaimer {
+      margin-top: 18px;
+      color: #7c6034;
+      font-size: 0.9rem;
+    }
+
+    .site-footer {
+      background: #111318;
+      color: #d8dddc;
+      padding: 34px 0;
+    }
+
+    .footer-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
       display: flex;
-      justify-content: center;
-      gap: 1.5rem;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
-    .socials a {
-      color: var(--lemon);
-      font-size: 2rem;
-      transition: color var(--transition);
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .footer-links a {
+      color: #ffffff;
       text-decoration: none;
+      font-weight: 800;
     }
-    .socials a:hover {
-      color: var(--white);
+
+    .footer-links a:hover,
+    .footer-links a:focus-visible {
+      color: #a8dbc9;
+      outline: none;
     }
-    /* Scrollbar styling */
-    ::-webkit-scrollbar {
-      width: 10px;
-      background: var(--lemon-light);
+
+    @media (max-width: 960px) {
+      .nav-wrap {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 14px 0;
+        gap: 10px;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .market-strip-inner,
+      .thesis-grid,
+      .article-grid,
+      .video-grid,
+      .sync-layout,
+      .crypto-wrap {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .sync-layout,
+      .crypto-wrap {
+        align-items: stretch;
+      }
     }
-    ::-webkit-scrollbar-thumb {
-      background: var(--lemon);
-      border-radius: 10px;
+
+    @media (max-width: 680px) {
+      .nav-links a {
+        padding: 7px 8px;
+        font-size: 0.88rem;
+      }
+
+      .hero {
+        min-height: 72svh;
+        background-position: 64% center;
+      }
+
+      .hero-inner {
+        padding: 58px 0 52px;
+      }
+
+      .market-strip-inner,
+      .thesis-grid,
+      .article-grid,
+      .video-grid,
+      .sync-layout,
+      .crypto-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 56px 0;
+      }
+
+      .sync-item {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 4px;
+      }
     }
-    .form {
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 30px 24px; /* Equal left/right padding */
-    background-color: #f9f9ff;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    font-family: 'Segoe UI', sans-serif;
-    box-sizing: border-box; /* Ensures padding is included in width */
-    display: block
-  }
-    /* Responsive */
-    @media (max-width: 900px) {
-      .section { max-width: 98vw; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .button {
+        transition: none;
+      }
+
+      .button:hover,
+      .button:focus-visible {
+        transform: none;
+      }
     }
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 2rem; }
-      .hero h2 { font-size: 1.1rem; }
-      .section { padding: 1rem; }
-      .lemon { width: 100px; }
-      nav { gap: 1rem; font-size: 1rem; }
-    }
-      @media (max-width: 600px) {
-    form {
-      padding: 18px 10px; /* Reduce padding on small screens */
-    }
-  }
   </style>
-  <!-- Font Awesome for icons -->
-  <script src="https://kit.fontawesome.com/4b8e5e8b5d.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="#home" class="active">Home</a>
-      <a href="#skills">Skills</a>
-      <a href="#timeline">Timeline</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-  <section class="hero" id="home">
-  <div id="weather" style="margin: 1.5rem 0; font-size: 1.2rem; color: var(--accent2);"></div>
-  <img class="lemon" src="lemon.png" alt="Lemon Logo">
-  <h1>Hi, I'm Charles 🍋</h1>
-  <h2>Full-Stack Developer & UI/UX Enthusiast</h2>
-  <p>
-    I’m a full-stack developer with a zest for clean code, UI/UX, and automation.<br>
-    Just like this lemon — fresh, bright, and full of purpose — I bring clarity and energy to every project I work on.
-  </p>
-  <a href="https://www.linkedin.com/in/junhui-charles-chen-40b62ba9/" class="btn" target="_blank">Read My Story</a>
-  <script>
-    // Replace with your OpenWeatherMap API key and desired city
-    const apiKey = '6e1b361dced41472a3f5607ae7a81d3c';
-    const city = 'Toronto,CA'; // or any city you want
-
-    function displayWeather(data) {
-      const weatherDiv = document.getElementById('weather');
-      if (!weatherDiv) return;
-      if (data.cod !== 200) {
-        weatherDiv.textContent = "Weather unavailable.";
-        return;
-      }
-      const temp = Math.round(data.main.temp);
-      const desc = data.weather[0].description;
-      const icon = data.weather[0].icon;
-      weatherDiv.innerHTML = `
-        <img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${desc}" style="vertical-align:middle;width:48px;height:48px;">
-        <span style="vertical-align:middle;">${city}: ${temp}°C, ${desc}</span>
-      `;
-    }
-
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
-      .then(response => response.json())
-      .then(data => displayWeather(data))
-      .catch(() => {
-        const weatherDiv = document.getElementById('weather');
-        if (weatherDiv) weatherDiv.textContent = "Weather unavailable.";
-      });
-  </script>
-</section>
-
-  <section class="section" id="skills">
-    <h2>Skills</h2>
-    <ul class="skills-list">
-      <li>JavaScript</li>
-      <li>TypeScript</li>
-      <li>Python</li>
-      <li>React</li>
-      <li>Node.js</li>
-      <li>UI/UX Design</li>
-      <li>Automation</li>
-      <li>Azure</li>
-      <li>Git & GitHub</li>
-      <li>HTML5 & CSS3</li>
-      <li>Figma</li>
-      <li>REST APIs</li>
-      <li>SQL & NoSQL</li>
-      <li>Docker</li>
-      <li>CI/CD</li>
-    </ul>
-  </section>
-
-
-
-  <section class="section" id="timeline">
-    <h2>Timeline</h2>
-    <ul class="timeline-list">
-      <li>
-        <span class="year">2024</span>
-        Joined <b>Azure Developer Community</b> and contributed to open-source projects.
-      </li>
-      <li>
-        <span class="year">2023</span>
-        Graduated with a degree in Computer Science.
-      </li>
-      <li>
-        <span class="year">2022</span>
-        Interned at <b>Fruitful Tech</b>, building UI components and automations.
-      </li>
-      <li>
-        <span class="year">2021</span>
-        Started my journey in web development and open source.
-      </li>
-    </ul>
-  </section>
-
-
-  <section class="section" id="contact">
-    <h2>Contact Me</h2>
-   <!-- modify this form HTML and place wherever you want your form -->
-<style>
-  form {
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 30px;
-    background-color: #f9f9ff;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    font-family: 'Segoe UI', sans-serif;
-  }
-
-  label {
-    display: block;
-    margin-bottom: 20px;
-    font-size: 16px;
-    color: #333;
-  }
-
-  input[type="email"],
-  textarea {
-    width: 100%;
-    padding: 12px;
-    margin-top: 6px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 14px;
-    transition: border-color 0.3s;
-  }
-
-  input[type="email"]:focus,
-  textarea:focus {
-    outline: none;
-    border-color: #7b61ff;
-    box-shadow: 0 0 5px rgba(123, 97, 255, 0.3);
-  }
-
-  button[type="submit"] {
-    background-color: #7b61ff;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-
-  button[type="submit"]:hover {
-    background-color: #684fdd;
-  }
-</style>
-
-<form class="contact-form" action="https://formspree.io/f/xwpbgzna" method="POST">
-  <label>
-    Your Email:
-    <input type="email" name="email" required>
-  </label>
-  <label>
-    Your Message:
-    <textarea name="message" rows="5" required></textarea>
-  </label>
-  <button type="submit">Send</button>
-</form>
-    <div id="contact-status" style="margin-top:1rem;font-weight:bold;color:var(--accent2);"></div>
-  </section>
-
-  <footer>
-    <div class="socials">
-      <a href="https://github.com/charles11223344" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-      <a href="https://linkedin.com/in/junhui-charles-chen-40b62ba9/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="mailto:charlesdataaws@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="#home" aria-label="Charles 美股手记首页">
+        <span class="brand-mark">C</span>
+        <span>Charles 美股手记</span>
+      </a>
+      <nav class="nav-links" aria-label="主导航">
+        <a href="#market">市场笔记</a>
+        <a href="#articles">文章</a>
+        <a href="#vlog">Vlog</a>
+        <a href="#wechat-sync">公众号同步</a>
+        <a href="#bitcoin">比特币数据</a>
+        <a href="#contact">联系</a>
+      </nav>
     </div>
-    <div id="crypto-prices" style="margin: 1.5rem 0; font-size: 1.2rem; color: var(--accent2);"></div>
-    <div>
-      &copy; 2025 Charles Chen. Made with <span style="color:var(--lemon);">🍋</span> and code.
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <p class="eyebrow">US Equities · Earnings · Vlog Notes</p>
+        <h1>把美股研究写成长期可追踪的手记。</h1>
+        <p class="hero-copy">
+          从财报、估值、行业叙事到交易复盘，这里同步整理我在微信公众号里的美股文章，也会沉淀成更适合网页阅读的视频脚本和市场笔记。
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#articles">查看文章归档</a>
+          <a class="button secondary" href="#wechat-sync">同步公众号内容</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="market-strip" aria-label="内容观察池">
+      <div class="market-strip-inner">
+        <div class="market-chip">
+          <span>关注主线</span>
+          <strong>AI 基础设施</strong>
+          <em>Capex · GPU · Cloud</em>
+        </div>
+        <div class="market-chip">
+          <span>研究框架</span>
+          <strong>财报质量</strong>
+          <em>Revenue · Margin · Guidance</em>
+        </div>
+        <div class="market-chip">
+          <span>风险变量</span>
+          <strong>利率与美元</strong>
+          <em>Fed · CPI · Liquidity</em>
+        </div>
+        <div class="market-chip">
+          <span>仓位原则</span>
+          <strong>先看失效点</strong>
+          <em>Thesis · Risk · Review</em>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="market">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>市场笔记</h2>
+          <p>把每天看到的噪音压缩成几个可复盘的问题：增长是不是真的，估值靠什么支撑，市场正在奖励什么，风险在哪里发生变化。</p>
+        </div>
+        <div class="thesis-grid">
+          <article class="panel">
+            <span class="panel-number">01</span>
+            <h3>财报拆解</h3>
+            <p>关注收入结构、毛利率、经营杠杆、订单和管理层指引，不只看 EPS 是否 beat。</p>
+          </article>
+          <article class="panel">
+            <span class="panel-number">02</span>
+            <h3>行业叙事</h3>
+            <p>从 AI、云、半导体、软件和消费龙头里找长期变量，避免只追当天涨跌。</p>
+          </article>
+          <article class="panel">
+            <span class="panel-number">03</span>
+            <h3>估值坐标</h3>
+            <p>用增长、利润率、现金流和再投资空间校准估值，而不是孤立看 PE 高低。</p>
+          </article>
+          <article class="panel">
+            <span class="panel-number">04</span>
+            <h3>交易复盘</h3>
+            <p>记录买入逻辑、退出条件和仓位变化，把判断沉淀成下一次决策的材料。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="articles">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>文章归档</h2>
+          <p>公众号里的长文会逐步迁移到这里，按主题重新整理摘要、图表和关键结论。</p>
+        </div>
+        <div class="article-grid">
+          <article class="article-card">
+            <div class="article-topline">
+              <span>财报研究</span>
+              <span>即将同步</span>
+            </div>
+            <h3>AI 资本开支背后的真实受益链</h3>
+            <p>从云厂商、芯片、服务器、电力和软件端拆解 AI 投资周期的传导路径。</p>
+            <div class="tag-row">
+              <span class="tag">AI</span>
+              <span class="tag">半导体</span>
+              <span class="tag">云计算</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>公司观察</span>
+              <span>即将同步</span>
+            </div>
+            <h3>大型科技股还能不能继续消化估值</h3>
+            <p>比较收入增速、利润率、回购和现金流，观察 Magnificent 7 的分化。</p>
+            <div class="tag-row">
+              <span class="tag">Mega Cap</span>
+              <span class="tag">估值</span>
+              <span class="tag">现金流</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>宏观框架</span>
+              <span>即将同步</span>
+            </div>
+            <h3>利率、通胀和盈利预期如何影响美股</h3>
+            <p>把 Fed、美元、长端利率和盈利修正放在同一张决策表里看。</p>
+            <div class="tag-row">
+              <span class="tag">Fed</span>
+              <span class="tag">CPI</span>
+              <span class="tag">盈利预期</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="vlog">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>Vlog 脚本</h2>
+          <p>视频内容会围绕一个清晰问题展开：一家公司、一份财报、一个行业变量，或者一次完整交易复盘。</p>
+        </div>
+        <div class="video-grid">
+          <article class="video-card">
+            <div class="video-art" aria-hidden="true">
+              <span class="play-icon">▶</span>
+            </div>
+            <h3>盘后 10 分钟：把一份财报拆成三句话</h3>
+            <p>适合视频号和 YouTube Shorts 的短脚本格式，先讲结论，再讲证据。</p>
+          </article>
+          <article class="video-card">
+            <div class="video-art" aria-hidden="true">
+              <span class="play-icon">▶</span>
+            </div>
+            <h3>周末复盘：本周市场到底在交易什么</h3>
+            <p>按指数、行业、个股和宏观变量复盘，留下下一周的观察清单。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="wechat-sync">
+      <div class="section-inner sync-layout">
+        <div class="sync-copy">
+          <h2>微信公众号同步</h2>
+          <p>
+            存量文章会按“公司研究、财报复盘、宏观框架、交易笔记”四类迁移。网页端会保留原文链接，同时补上更短的摘要、标签和后续复盘入口。
+          </p>
+          <div class="sync-list">
+            <div class="sync-item">
+              <strong>第一步</strong>
+              <span>整理公众号文章标题、发布日期、原文链接和主题标签。</span>
+            </div>
+            <div class="sync-item">
+              <strong>第二步</strong>
+              <span>把长文转成网页归档结构，方便搜索和长期引用。</span>
+            </div>
+            <div class="sync-item">
+              <strong>第三步</strong>
+              <span>把重点文章扩展成视频脚本、图表和季度复盘。</span>
+            </div>
+          </div>
+        </div>
+        <aside class="newsletter" id="contact">
+          <h3>订阅与合作</h3>
+          <p>留下邮箱或你想看的美股主题，我会优先同步相关内容。</p>
+          <form action="https://formspree.io/f/xwpbgzna" method="POST">
+            <input type="email" name="email" placeholder="你的邮箱" aria-label="你的邮箱" required />
+            <textarea name="message" placeholder="想看什么主题，例如 NVDA 财报、软件股估值、周末复盘" aria-label="留言" required></textarea>
+            <button class="button primary" type="submit">发送</button>
+          </form>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="bitcoin">
+      <div class="section-inner crypto-wrap">
+        <div class="crypto-copy">
+          <p class="eyebrow" style="color: var(--gold);">Crypto Data</p>
+          <h2>比特币数据</h2>
+          <p>保留原页面的 CoinGecko 数据接口，继续显示 BTC 和 ETH 的 CAD 报价，作为跨资产风险偏好的参考。</p>
+        </div>
+        <div class="crypto-box">
+          <small>COINGECKO LIVE PRICE</small>
+          <div id="crypto-prices">正在加载加密货币价格...</div>
+          <p class="disclaimer">内容仅用于学习和记录，不构成投资建议。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>Charles 美股手记</strong><br />
+        <span>美股研究、视频脚本、公众号文章同步。</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/charles11223344" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/junhui-charles-chen-40b62ba9/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:charlesdataaws@gmail.com">Email</a>
+      </div>
     </div>
   </footer>
 
   <script>
-
-    // Smooth scroll for nav
-    document.querySelectorAll('nav a').forEach(function(link) {
-      link.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (href.startsWith('#')) {
-          e.preventDefault();
-          document.querySelectorAll('nav a').forEach(function(a) { a.classList.remove('active'); });
-          this.classList.add('active');
-          document.querySelector(href).scrollIntoView({behavior: 'smooth'});
-        }
+    document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+      link.addEventListener("click", function(event) {
+        const target = document.querySelector(this.getAttribute("href"));
+        if (!target) return;
+        event.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
       });
     });
 
-    // Contact form fake send (if you want to use it, add onsubmit="sendMail(event)" to your form)
-    function sendMail(event) {
-      event.preventDefault();
-      document.getElementById('contact-status').textContent = "Thank you for your message! 🍋";
-      event.target.reset();
-      return false;
+    function displayCrypto(data) {
+      const div = document.getElementById("crypto-prices");
+      if (!div) return;
+      if (!data.bitcoin || !data.ethereum) {
+        div.textContent = "Crypto prices unavailable.";
+        return;
+      }
+      div.innerHTML = `
+        <img src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png" alt="BTC">
+        <b>BTC</b>: $${data.bitcoin.cad.toLocaleString()} CAD<br>
+        <img src="https://assets.coingecko.com/coins/images/279/large/ethereum.png" alt="ETH">
+        <b>ETH</b>: $${data.ethereum.cad.toLocaleString()} CAD
+      `;
     }
 
-     function displayCrypto(data) {
-    const div = document.getElementById('crypto-prices');
-    if (!div) return;
-    if (!data.bitcoin || !data.ethereum) {
-      div.textContent = "Crypto prices unavailable.";
-      return;
-    }
-    div.innerHTML = `
-      <img src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png" alt="BTC" style="width:32px;vertical-align:middle;margin-right:8px;">
-      <b>BTC</b>: $${data.bitcoin.cad.toLocaleString()} CAD &nbsp;&nbsp;
-      <img src="https://assets.coingecko.com/coins/images/279/large/ethereum.png" alt="ETH" style="width:32px;vertical-align:middle;margin-right:8px;">
-      <b>ETH</b>: $${data.ethereum.cad.toLocaleString()} CAD
-    `;
-  }
-
-  fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=cad')
-    .then(function(r) { return r.json(); })
-    .then(function(data) { displayCrypto(data); })
-    .catch(function() {
-      const div = document.getElementById('crypto-prices');
-      if (div) div.textContent = "Crypto prices unavailable.";
-    });
+    fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=cad")
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+        displayCrypto(data);
+      })
+      .catch(function() {
+        const div = document.getElementById("crypto-prices");
+        if (div) div.textContent = "Crypto prices unavailable.";
+      });
   </script>
+</body>
 </html>
