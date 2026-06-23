@@ -36,7 +36,7 @@ py scripts/update_stock_data.py
 
 - `articles/2026-06-21-ai-hardware-week.html`
 
-公众号二维码图片当前使用项目根目录的 `qrcode_for_gh_67e79458da9e_258.jpg`。首页和文章页都会读取这个文件；如果文件不存在，会显示提示占位。
+公众号二维码图片当前使用项目根目录的 `qrcode.jpg`。首页和文章页都会读取这个文件；如果文件不存在，会显示提示占位。
 
 ## 准实时股票刷新
 
