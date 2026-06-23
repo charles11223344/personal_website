@@ -169,7 +169,7 @@ export default {
       updatedAt: new Date().toISOString(),
       source: "Yahoo Finance chart endpoint via Cloudflare Worker",
       sourceUrl: YAHOO_CHART_URL,
-      refreshSeconds: 60,
+      refreshSeconds: 30,
       symbols: quotes
     });
   }

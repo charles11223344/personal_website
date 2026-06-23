@@ -1148,8 +1148,8 @@
         { symbol: "TSM", sourceSymbol: "TSM", name: "Taiwan Semiconductor", kind: "stock" }
       ]
     };
-    const STOCK_REFRESH_INTERVAL_MS = 60000;
-    // Fill this with your deployed Cloudflare Worker URL to enable 60-second live quote refresh.
+    const STOCK_REFRESH_INTERVAL_MS = 30000;
+    // Fill this with your deployed Cloudflare Worker URL to enable 30-second live quote refresh.
     const LIVE_QUOTES_ENDPOINT = "https://lemon-quota-proxy.charlesdataaws.workers.dev/";
     const stockSymbols = fallbackStockData.symbols.map(function(item) {
       return item.symbol;
@@ -1284,7 +1284,7 @@
     function refreshLiveStocks() {
       return fetchLiveStocks()
         .then(function(data) {
-          data.liveStatus = "实时刷新中 · 每 60 秒";
+          data.liveStatus = "实时刷新中 · 每 30 秒";
           renderStocks(data, data.source || "Live quote endpoint");
         })
         .catch(function() {

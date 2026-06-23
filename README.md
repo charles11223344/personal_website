@@ -29,7 +29,7 @@ py scripts/update_stock_data.py
 
 ## 准实时股票刷新
 
-`index.html` 已预留前端轮询逻辑：先加载 `data/stocks.json`，如果配置了实时接口，就会在页面打开后立即刷新一次，并每 60 秒刷新一次。
+`index.html` 已预留前端轮询逻辑：先加载 `data/stocks.json`，如果配置了实时接口，就会在页面打开后立即刷新一次，并每 30 秒刷新一次。
 
 由于 GitHub Pages 是纯静态站，浏览器不能稳定地直接跨域请求 Yahoo Finance。仓库里提供了一个 Cloudflare Worker 代理示例：
 
