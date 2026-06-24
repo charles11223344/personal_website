@@ -663,6 +663,17 @@
       gap: 10px;
     }
 
+    .sync-actions .button.secondary {
+      color: var(--ink);
+      border-color: var(--line);
+      background: #ffffff;
+    }
+
+    .sync-actions .button.secondary:hover,
+    .sync-actions .button.secondary:focus-visible {
+      background: #eef3f0;
+    }
+
     .newsletter {
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -1156,21 +1167,15 @@
       <div class="section-inner sync-layout">
         <div class="sync-copy">
           <h2>微信公众号同步</h2>
-          <!-- <p>
-            存量文章会按“公司研究、财报复盘、宏观框架、交易笔记”四类迁移。网页端会保留原文链接，同时补上更短的摘要、标签和后续复盘入口。
+          <p>
+            公众号是首发渠道，网站用来做长期归档和复盘。我会把重点文章整理成网页版本，保留原文链接，并补上更清晰的标签、股票池和后续追踪入口。
           </p>
-          <div class="sync-list">
-            <div class="sync-item">
-              <strong>第一步</strong>
-              <span>整理公众号文章标题、发布日期、原文链接和主题标签。</span>
-            </div>
-            <div class="sync-item">
-              <strong>第二步</strong>
-              <span>把长文转成网页归档结构，方便搜索和长期引用。</span>
-            </div>
-            <div class="sync-item">
-              <strong>第三步</strong>
-              <span>把重点文章扩展成视频脚本、图表和季度复盘。</span> -->
+          <div class="sync-highlight">
+            <h3>最新同步</h3>
+            <p>2026-06-21：下周美股市场的剧本：AI硬件进入验货周</p>
+            <div class="sync-actions">
+              <a class="button primary" href="articles/2026-06-21-ai-hardware-week.html">阅读网页版本</a>
+              <a class="button secondary" href="https://mp.weixin.qq.com/s/U-p6MHaV0bXYlf55ahVH_Q" target="_blank" rel="noopener">打开公众号原文</a>
             </div>
           </div>
         </div>
@@ -1180,8 +1185,8 @@
             <img src="qrcode.jpg" alt="柠檬公众号二维码" onerror="this.closest('.wechat-qr-block').classList.add('missing')" />
             <span class="qr-fallback">请把二维码图片保存到项目根目录。</span>
           </div>
-          <h3>订阅与合作</h3>
-          <p>留下邮箱或你想看的美股主题，我会优先同步相关内容。</p>
+          <h3>订阅与留言</h3>
+          <p>想看某家公司、财报或行业线，可以直接留言。我会优先整理成文章或复盘。</p>
           <form action="https://formspree.io/f/xwpbgzna" method="POST">
             <input type="email" name="email" placeholder="你的邮箱" aria-label="你的邮箱" required />
             <textarea name="message" placeholder="想看什么主题，例如 NVDA 财报、软件股估值、周末复盘" aria-label="留言" required></textarea>
