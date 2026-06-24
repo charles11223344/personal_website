@@ -34,6 +34,7 @@ py scripts/update_stock_data.py
 
 当前已添加：
 
+- `articles/2026-06-23-midweek-mu-earnings.html`
 - `articles/2026-06-21-ai-hardware-week.html`
 
 公众号二维码图片当前使用项目根目录的 `qrcode.jpg`。首页和文章页都会读取这个文件；如果文件不存在，会显示提示占位。

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="2026-06-23 周中总结：美光财报前，我们先别急着否定自己。Lemon 美股手记文章归档。" />
+  <title>周中总结：美光财报前，我们先别急着否定自己 | Lemon 美股手记</title>
+  <style>
+    :root {
+      --ink: #111318;
+      --muted: #59606b;
+      --paper: #f7f8f6;
+      --surface: #ffffff;
+      --line: #d9ded8;
+      --green: #0f8f63;
+      --gold: #c08a26;
+      --lemon: #f4d33f;
+      --lemon-soft: #f3edcf;
+      --shadow: 0 18px 45px rgba(17, 19, 24, 0.09);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.78;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(217, 222, 216, 0.9);
+      background: rgba(247, 248, 246, 0.92);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-wrap,
+    .article-wrap,
+    .footer-inner {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav-wrap {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 900;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      object-position: center 22%;
+      border-radius: var(--radius);
+      border: 1px solid rgba(17, 19, 24, 0.18);
+      background: var(--lemon-soft);
+    }
+
+    .brand span {
+      display: grid;
+      line-height: 1.1;
+    }
+
+    .brand small {
+      color: var(--gold);
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 800;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 8px 12px;
+      background: #ffffff;
+    }
+
+    .article-hero {
+      padding: 72px 0 36px;
+      background:
+        linear-gradient(90deg, rgba(17, 19, 24, 0.92), rgba(17, 19, 24, 0.72)),
+        url("../market-vlog-hero.png");
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
+    }
+
+    .article-hero p {
+      margin: 0 0 14px;
+      color: #d7e7de;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 860px;
+      margin: 0;
+      font-size: clamp(2.35rem, 6vw, 4.8rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      color: #eef3f0;
+      font-weight: 800;
+    }
+
+    .meta span,
+    .meta a {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 999px;
+      padding: 5px 10px;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    main {
+      padding: 42px 0 70px;
+    }
+
+    .content-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 250px;
+      gap: 32px;
+      align-items: start;
+    }
+
+    article {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      padding: clamp(24px, 4vw, 42px);
+    }
+
+    article p {
+      margin: 0 0 1.1em;
+      font-size: 1.05rem;
+    }
+
+    article h2 {
+      margin: 2em 0 0.75em;
+      font-size: 1.45rem;
+      line-height: 1.28;
+    }
+
+    .lead {
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .note-box {
+      display: grid;
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .note-row {
+      border-left: 4px solid var(--green);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      background: #f6faf8;
+      padding: 12px 14px;
+    }
+
+    .note-row strong {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .disclaimer {
+      margin-top: 30px;
+      padding: 16px;
+      border-radius: var(--radius);
+      background: #fffaf1;
+      color: #7c6034;
+      font-size: 0.95rem;
+    }
+
+    .side-panel {
+      position: sticky;
+      top: 92px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .qr-card,
+    .toc-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+
+    .qr-card h2,
+    .toc-card h2 {
+      margin: 0 0 10px;
+      font-size: 1.08rem;
+    }
+
+    .qr-card img {
+      width: 100%;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .qr-card .qr-placeholder {
+      display: none;
+      border: 1px dashed var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      color: var(--muted);
+      background: #fbfcfb;
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    .qr-card.missing img {
+      display: none;
+    }
+
+    .qr-card.missing .qr-placeholder {
+      display: block;
+    }
+
+    .toc-card a {
+      display: block;
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 800;
+      padding: 6px 0;
+    }
+
+    .site-footer {
+      background: #111318;
+      color: #d8dddc;
+      padding: 30px 0;
+    }
+
+    .site-footer a {
+      color: #ffffff;
+      font-weight: 800;
+    }
+
+    @media (max-width: 820px) {
+      .content-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .side-panel {
+        position: static;
+      }
+
+      .qr-card img {
+        max-width: 240px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="../index.html" aria-label="Lemon 美股手记首页">
+        <img src="../lemon.png" alt="Lemon logo" />
+        <span>
+          <strong>Lemon 美股手记</strong>
+          <small>Market Vlog</small>
+        </span>
+      </a>
+      <a class="nav-link" href="../index.html#articles">返回文章归档</a>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-wrap">
+      <p>2026-06-23 · 周中总结</p>
+      <h1>美光财报前，我们先别急着否定自己</h1>
+      <div class="meta">
+        <span>作者：柠檬</span>
+        <span>主题：MU / AI硬件 / 风险控制</span>
+        <a href="https://mp.weixin.qq.com/s/rBcl2g46toqjYhQU9VVdHg" target="_blank" rel="noopener">微信公众号原文</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="article-wrap content-layout">
+      <article>
+        <p class="lead">今天我其实不想一上来就装得很冷静。因为我知道，很多人今天账户很难看。</p>
+
+        <p>不是亏一点点，是那种打开账户，心里咯噔一下，然后整个人都不想说话的那种难看。</p>
+
+        <p>MU、MRVL、QCOM、NVDA、SNDK、SOXL，前面涨得最猛的AI硬件线，今天被一起按下来。纳指跌，费半更惨，韩国那边SK海力士、三星也出事，卖压一路从亚洲滚到美股。</p>
+
+        <h2 id="selloff">今天这场跌，先别急着骂自己</h2>
+
+        <p>如果你今天亏钱了，先别急着骂自己。更不要因为一天两天的大跌，就觉得自己不适合投资。</p>
+
+        <p>市场最残酷的地方就在这里：它从来不会提前跟你打招呼。前一天大家还在讨论AI硬件扩散、MU财报、HBM涨价，第二天它就直接给你一根大阴线。你觉得自己被针对了，其实不是。市场谁都不认识，它只是把最拥挤的地方先砸一遍。</p>
+
+        <p>今天这场跌，不是因为AI突然没需求了，也不是因为所有公司一夜之间变垃圾了。真正的问题是：前面涨太快，仓位太挤，杠杆太多，预期太满。</p>
+
+        <p>韩国那边就是一个活生生的例子。很多散户用杠杆产品追SK海力士和三星，一旦下跌触发强平，不是想不想卖的问题，是系统逼你卖。然后这种抛压传到美股，MU、SNDK、MRVL、NVDA这些同板块的票自然跟着挨刀。</p>
+
+        <p>所以你看，今天不是单纯基本面崩了。今天更像是市场在清理杠杆，顺便把那些只靠情绪撑起来的仓位全部拉出来拷问一遍。</p>
+
+        <h2 id="valuation">不能用便宜的安慰骗自己</h2>
+
+        <p>但我们也不能骗自己说“没事，跌了就一定会涨回来”。这句话太便宜，也太不负责。</p>
+
+        <p>现在的美股，已经不是去年那种闭眼买AI就能赚钱的环境了。10年期美债还在4.5%附近，美元很强，资金成本很高。高利率时代，市场不会一直免费给你做梦。</p>
+
+        <p>以前买AI，大家只问一句：有没有故事？现在市场问的是：有没有订单？有没有毛利率？有没有现金流？有没有能力把AI资本开支变成真正的利润？</p>
+
+        <p>这就是为什么美光财报这么重要。MU不是普通财报，它现在是整个AI存储链的考试。</p>
+
+        <h2 id="mu">MU 财报是 AI 存储链的考试</h2>
+
+        <p>如果MU财报强，指引更强，管理层继续说HBM供不应求，DRAM和NAND价格还能撑住，那今天这波跌，很可能就是一次很痛的洗杠杆。</p>
+
+        <p>但如果MU财报只是“还可以”，或者管理层开始讲供给改善、扩产节奏、价格压力，那市场就会马上怀疑：是不是AI存储最肥的一段已经提前炒完了？</p>
+
+        <p>所以我现在不会叫大家闭眼抄底。也不会叫大家恐慌割肉。我更想说的是：今天亏钱的人，先停下来，把账户重新分一遍。</p>
+
+        <h2 id="positions">把账户重新分三类</h2>
+
+        <div class="note-box">
+          <div class="note-row">
+            <strong>第一类：真正理解的核心仓</strong>
+            <span>比如NVDA、AVGO、MU这种你知道它赚什么钱、风险在哪里的公司。</span>
+          </div>
+          <div class="note-row">
+            <strong>第二类：因为FOMO追进去的情绪仓</strong>
+            <span>比如看到别人赚钱、群里一直喊、自己怕踏空才买的票。</span>
+          </div>
+          <div class="note-row">
+            <strong>第三类：期权、杠杆ETF、SOXL这类高波动仓位</strong>
+            <span>这类仓位最重要的是先活下来，不要让一次波动把你打到无法翻身。</span>
+          </div>
+        </div>
+
+        <p>这三类不能混在一起看。核心仓跌了，要看逻辑有没有变。情绪仓跌了，要承认自己当时可能是上头了。杠杆仓跌了，最重要的是先活下来，不要让一次波动把你打到无法翻身。</p>
+
+        <p>我知道这话不好听，但比安慰你“都会涨回来”更有用。市场里亏钱不可怕，真正可怕的是亏了以后乱动。</p>
+
+        <p>今天大跌，明天追空；明天反弹，又追高；来回几次，本来只是回撤，最后变成真正的伤口。</p>
+
+        <h2 id="checklist">接下来我看什么</h2>
+
+        <p>我的节奏很简单：先看MU财报。再看NVDA能不能稳住。再看MRVL、AVGO、QCOM有没有资金回流。最后看SMH能不能重新跑赢QQQ。</p>
+
+        <p>如果MU财报后好消息出来还能涨，说明资金愿意回来接AI硬件。如果好消息出来反而高开低走，那就说明预期太满，后面还要震。如果指引里出现供给松动或者价格压力，那就别硬扛，市场会继续重新定价。</p>
+
+        <h2 id="mindset">最后</h2>
+
+        <p>最后，我想认真说一句。如果你今天亏了很多钱，不要因为这一天否定自己！</p>
+
+        <p>投资这条路，没人是靠一次判断赢到最后的。真正能留下来的人，不是从不亏钱的人，而是亏钱之后还能冷静复盘、不乱加杠杆、不用情绪做决定的人。</p>
+
+        <p>AI主线没有死。告诉自己，闭眼赚钱的阶段结束了。后面市场只奖励能交作业的公司，也只奖励能控制仓位的人。</p>
+
+        <p>今天难受就难受，没关系的。我们不要灰心，更不要报复性交易。账户可以回撤，心态不能爆仓啊。</p>
+
+        <p><strong>明天我们继续看MU怎么交卷。</strong></p>
+
+        <div class="disclaimer">本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。</div>
+      </article>
+
+      <aside class="side-panel">
+        <section class="qr-card">
+          <h2>公众号二维码</h2>
+          <img src="../qrcode.jpg" alt="柠檬公众号二维码" onerror="this.closest('.qr-card').classList.add('missing')" />
+          <div class="qr-placeholder">请把二维码图片保存到项目根目录，这里会自动显示。</div>
+        </section>
+
+        <section class="toc-card">
+          <h2>文章目录</h2>
+          <a href="#selloff">今天这场跌</a>
+          <a href="#valuation">不能骗自己</a>
+          <a href="#mu">MU 财报</a>
+          <a href="#positions">账户三分类</a>
+          <a href="#checklist">接下来看什么</a>
+          <a href="#mindset">最后</a>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <strong>Lemon 美股手记</strong><br />
+      <span>原文同步自微信公众号。<a href="../index.html">返回首页</a></span>
+    </div>
+  </footer>
+</body>
+</html>
