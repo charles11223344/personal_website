@@ -246,8 +246,9 @@
       width: min(1180px, calc(100% - 32px));
       margin: 0 auto;
       display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      background: var(--surface);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
     }
 
     .market-chip {
@@ -256,11 +257,11 @@
       background: var(--surface);
     }
 
-    .weather-chip {
+    .weather-chip,
+    .fx-chip {
       display: grid;
-      grid-template-columns: minmax(130px, 0.25fr) minmax(0, 0.45fr) minmax(0, 0.3fr);
-      align-items: center;
-      gap: 16px;
+      align-content: center;
+      gap: 4px;
     }
 
     .market-chip span {
@@ -286,6 +287,12 @@
 
     .market-chip.weather-chip strong {
       color: var(--blue);
+      margin-top: 0;
+      font-size: 1.35rem;
+    }
+
+    .market-chip.fx-chip strong {
+      color: var(--green-dark);
       margin-top: 0;
       font-size: 1.35rem;
     }
@@ -962,12 +969,22 @@
       </div>
     </section>
 
-    <section class="market-strip" aria-label="Toronto 天气">
+    <section class="market-strip" aria-label="天气和汇率">
       <div class="market-strip-inner">
         <div class="market-chip weather-chip" aria-live="polite">
           <span>Toronto 天气</span>
           <strong id="weather-current">加载中</strong>
           <em id="weather-detail">Open-Meteo</em>
+        </div>
+        <div class="market-chip fx-chip" aria-live="polite">
+          <span>美元兑加币</span>
+          <strong id="usd-cad-rate">加载中</strong>
+          <em id="usd-cad-detail">1 USD = ? CAD</em>
+        </div>
+        <div class="market-chip fx-chip" aria-live="polite">
+          <span>加币 / 人民币</span>
+          <strong id="cad-cny-rate">加载中</strong>
+          <em id="cny-cad-detail">1 CAD = ? CNY</em>
         </div>
       </div>
     </section>
@@ -1443,6 +1460,47 @@
         const detailEl = document.getElementById("weather-detail");
         if (currentEl) currentEl.textContent = "天气不可用";
         if (detailEl) detailEl.textContent = "稍后再试";
+      });
+
+    function displayExchangeRates(data) {
+      const usdCadEl = document.getElementById("usd-cad-rate");
+      const usdCadDetailEl = document.getElementById("usd-cad-detail");
+      const cadCnyEl = document.getElementById("cad-cny-rate");
+      const cnyCadDetailEl = document.getElementById("cny-cad-detail");
+      const rates = data && data.rates;
+      if (!rates || !rates.CAD || !rates.CNY) throw new Error("Exchange rates unavailable");
+
+      const usdCad = Number(rates.CAD);
+      const usdCny = Number(rates.CNY);
+      const cadCny = usdCny / usdCad;
+      const cnyCad = usdCad / usdCny;
+      const updated = data.time_last_update_utc
+        ? new Date(data.time_last_update_utc).toLocaleDateString("zh-CN", { month: "2-digit", day: "2-digit" })
+        : "实时汇率";
+
+      if (usdCadEl) usdCadEl.textContent = `1 USD = ${usdCad.toFixed(4)} CAD`;
+      if (usdCadDetailEl) usdCadDetailEl.textContent = `更新 ${updated}`;
+      if (cadCnyEl) cadCnyEl.textContent = `1 CAD = ${cadCny.toFixed(4)} CNY`;
+      if (cnyCadDetailEl) cnyCadDetailEl.textContent = `1 CNY = ${cnyCad.toFixed(4)} CAD`;
+    }
+
+    fetch("https://open.er-api.com/v6/latest/USD")
+      .then(function(response) {
+        if (!response.ok) throw new Error("Exchange rate request failed");
+        return response.json();
+      })
+      .then(function(data) {
+        displayExchangeRates(data);
+      })
+      .catch(function() {
+        const usdCadEl = document.getElementById("usd-cad-rate");
+        const usdCadDetailEl = document.getElementById("usd-cad-detail");
+        const cadCnyEl = document.getElementById("cad-cny-rate");
+        const cnyCadDetailEl = document.getElementById("cny-cad-detail");
+        if (usdCadEl) usdCadEl.textContent = "汇率不可用";
+        if (usdCadDetailEl) usdCadDetailEl.textContent = "稍后再试";
+        if (cadCnyEl) cadCnyEl.textContent = "汇率不可用";
+        if (cnyCadDetailEl) cnyCadDetailEl.textContent = "稍后再试";
       });
 
     function displayCrypto(data) {
