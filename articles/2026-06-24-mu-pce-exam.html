@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="2026-06-24 MU点燃AI硬件，但是PCE才是真正考官啊。Lemon 美股手记文章归档。" />
+  <title>MU点燃AI硬件，但是PCE才是真正考官啊 | Lemon 美股手记</title>
+  <style>
+    :root {
+      --ink: #111318;
+      --muted: #59606b;
+      --paper: #f7f8f6;
+      --surface: #ffffff;
+      --line: #d9ded8;
+      --green: #0f8f63;
+      --gold: #c08a26;
+      --lemon-soft: #f3edcf;
+      --shadow: 0 18px 45px rgba(17, 19, 24, 0.09);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.78;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(217, 222, 216, 0.9);
+      background: rgba(247, 248, 246, 0.92);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-wrap,
+    .article-wrap,
+    .footer-inner {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav-wrap {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 900;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      object-position: center 22%;
+      border-radius: var(--radius);
+      border: 1px solid rgba(17, 19, 24, 0.18);
+      background: var(--lemon-soft);
+    }
+
+    .brand span {
+      display: grid;
+      line-height: 1.1;
+    }
+
+    .brand small {
+      color: var(--gold);
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 800;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 8px 12px;
+      background: #ffffff;
+    }
+
+    .article-hero {
+      padding: 72px 0 36px;
+      background:
+        linear-gradient(90deg, rgba(17, 19, 24, 0.92), rgba(17, 19, 24, 0.72)),
+        url("../market-vlog-hero.png");
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
+    }
+
+    .article-hero p {
+      margin: 0 0 14px;
+      color: #d7e7de;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 860px;
+      margin: 0;
+      font-size: clamp(2.35rem, 6vw, 4.8rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      color: #eef3f0;
+      font-weight: 800;
+    }
+
+    .meta span,
+    .meta a {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 999px;
+      padding: 5px 10px;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    main {
+      padding: 42px 0 70px;
+    }
+
+    .content-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 250px;
+      gap: 32px;
+      align-items: start;
+    }
+
+    article {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      padding: clamp(24px, 4vw, 42px);
+    }
+
+    article p {
+      margin: 0 0 1.1em;
+      font-size: 1.05rem;
+    }
+
+    article h2 {
+      margin: 2em 0 0.75em;
+      font-size: 1.45rem;
+      line-height: 1.28;
+    }
+
+    .lead {
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .watch-list {
+      display: grid;
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .watch-row {
+      border-left: 4px solid var(--green);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      background: #f6faf8;
+      padding: 12px 14px;
+    }
+
+    .watch-row strong {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .disclaimer {
+      margin-top: 30px;
+      padding: 16px;
+      border-radius: var(--radius);
+      background: #fffaf1;
+      color: #7c6034;
+      font-size: 0.95rem;
+    }
+
+    .side-panel {
+      position: sticky;
+      top: 92px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .qr-card,
+    .toc-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+
+    .qr-card h2,
+    .toc-card h2 {
+      margin: 0 0 10px;
+      font-size: 1.08rem;
+    }
+
+    .qr-card img {
+      width: 100%;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .qr-card .qr-placeholder {
+      display: none;
+      border: 1px dashed var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      color: var(--muted);
+      background: #fbfcfb;
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    .qr-card.missing img {
+      display: none;
+    }
+
+    .qr-card.missing .qr-placeholder {
+      display: block;
+    }
+
+    .toc-card a {
+      display: block;
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 800;
+      padding: 6px 0;
+    }
+
+    .site-footer {
+      background: #111318;
+      color: #d8dddc;
+      padding: 30px 0;
+    }
+
+    .site-footer a {
+      color: #ffffff;
+      font-weight: 800;
+    }
+
+    @media (max-width: 820px) {
+      .content-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .side-panel {
+        position: static;
+      }
+
+      .qr-card img {
+        max-width: 240px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="../index.html" aria-label="Lemon 美股手记首页">
+        <img src="../lemon.png" alt="Lemon logo" />
+        <span>
+          <strong>Lemon 美股手记</strong>
+          <small>Market Vlog</small>
+        </span>
+      </a>
+      <a class="nav-link" href="../index.html#articles">返回文章归档</a>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-wrap">
+      <p>2026-06-24 · 美股盘前剧本</p>
+      <h1>MU点燃AI硬件，但是PCE才是真正考官啊</h1>
+      <div class="meta">
+        <span>作者：柠檬</span>
+        <span>主题：MU / PCE / AI硬件</span>
+        <a href="https://mp.weixin.qq.com/s/Zhlut_nrlLXRw17LovrGDA" target="_blank" rel="noopener">微信公众号原文</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="article-wrap content-layout">
+      <article>
+        <p class="lead">明后两天美股不是简单看涨跌，而是一次非常典型的“AI基本面利好”硬刚“鹰派美联储”的行情。</p>
+
+        <h2 id="mu">MU 点燃 AI 硬件</h2>
+
+        <p>今晚最大的主角肯定是美光 MU。财报不是普通好，而是直接证明 AI 存储需求真的硬：HBM、DRAM、NAND 都在涨价，客户也愿意签长期协议。这说明 AI 资本开支已经不只是利好 NVDA，而是开始外溢到存储、设备、光互联、电力这些更宽的链条。</p>
+
+        <p>所以明天开盘，半导体和 AI 硬件大概率会先被资金点火，MU、NVDA、AVGO、MRVL、AMAT、LRCX、KLAC 这些名字都会被重点盯上。</p>
+
+        <p>不想大家太上头。</p>
+
+        <h2 id="pce">PCE 才是真正考官</h2>
+
+        <p>因为真正决定明天行情质量的，不是 MU 涨多少，而是 PCE 数据出来以后，10年期美债收益率怎么走。如果 PCE 温和，收益率不冲 4.5%，那 AI 硬件这波修复可以继续扩散；如果 PCE 偏热，收益率重新往上顶，那科技股很容易出现高开低走，甚至早盘越兴奋，午后越危险。</p>
+
+        <p>周五我更看重二次确认。半年末、季末调仓叠加周末地缘风险，机构很可能会边拉边换仓。所以不要只看一天涨幅，要看 MU 高开后能不能守住，SMH 能不能强过 QQQ，NVDA、AVGO、MRVL 有没有一起跟。</p>
+
+        <p>我的判断很简单：现在市场不再奖励只会讲故事的公司，而是只奖励真正有订单、有涨价权、有毛利率、有现金流的公司。</p>
+
+        <p>明后两天关键词就一个：别追高。</p>
+
+        <h2 id="watchlist">重点关注股票走向</h2>
+
+        <div class="watch-list">
+          <div class="watch-row">
+            <strong>AI核心 / 半导体主线</strong>
+            <span>MU、NVDA、AVGO、MRVL、SMH、SOXX</span>
+          </div>
+          <div class="watch-row">
+            <strong>存储链</strong>
+            <span>SNDK、WDC、STX</span>
+          </div>
+          <div class="watch-row">
+            <strong>半导体设备</strong>
+            <span>AMAT、LRCX、KLAC、ASML</span>
+          </div>
+          <div class="watch-row">
+            <strong>光互联 / 高速连接</strong>
+            <span>COHR、LITE、CRDO、ALAB、GLW</span>
+          </div>
+          <div class="watch-row">
+            <strong>AI电力 / 数据中心基础设施</strong>
+            <span>VRT、ETN、GEV</span>
+          </div>
+          <div class="watch-row">
+            <strong>宏观对冲观察</strong>
+            <span>GLD、GDX、XOM、CVX、LMT</span>
+          </div>
+        </div>
+
+        <h2 id="confirmation">我看哪五个确认方向</h2>
+
+        <p>我会重点看 MU、SMH、NVDA、AVGO、MRVL 这五个确认市场方向：如果它们一起强，AI修复是真的；如果只有 MU 自己冲，其他不跟，就要小心利好兑现。</p>
+
+        <div class="disclaimer">本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。</div>
+      </article>
+
+      <aside class="side-panel">
+        <section class="qr-card">
+          <h2>公众号二维码</h2>
+          <img src="../qrcode.jpg" alt="柠檬公众号二维码" onerror="this.closest('.qr-card').classList.add('missing')" />
+          <div class="qr-placeholder">请把二维码图片保存到项目根目录，这里会自动显示。</div>
+        </section>
+
+        <section class="toc-card">
+          <h2>文章目录</h2>
+          <a href="#mu">MU 点燃 AI硬件</a>
+          <a href="#pce">PCE 才是真正考官</a>
+          <a href="#watchlist">重点关注股票</a>
+          <a href="#confirmation">方向确认</a>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <strong>Lemon 美股手记</strong><br />
+      <span>原文同步自微信公众号。<a href="../index.html">返回首页</a></span>
+    </div>
+  </footer>
+</body>
+</html>
