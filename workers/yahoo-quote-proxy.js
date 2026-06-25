@@ -45,6 +45,30 @@ function rounded(value) {
   return value === null ? null : Math.round(value * 100) / 100;
 }
 
+function tradingSessionFromTimestamp(meta, timestamp) {
+  const periods = meta.currentTradingPeriod || {};
+  const seconds = Math.floor(timestamp / 1000);
+  const order = [
+    ["pre", "pre"],
+    ["regular", "regular"],
+    ["post", "post"]
+  ];
+
+  for (const [key, label] of order) {
+    const period = periods[key];
+    if (period && seconds >= period.start && seconds < period.end) return label;
+  }
+
+  return "closed";
+}
+
+function previousCloseForChange(meta, session) {
+  const regularMarketPrice = asNumber(meta.regularMarketPrice);
+  const previousClose = asNumber(meta.chartPreviousClose);
+  if (session === "post" && regularMarketPrice !== null) return regularMarketPrice;
+  return previousClose;
+}
+
 function volumeFromQuote(quote, latestIndex, meta, options = {}) {
   const latestVolume = asNumber(quote.volume && quote.volume[latestIndex]);
   const regularMarketVolume = asNumber(meta.regularMarketVolume);
@@ -70,10 +94,11 @@ function compactSymbols(value) {
     .slice(0, 30);
 }
 
-async function fetchYahooChart(yahooSymbol, range = "1d", interval = "1m") {
+async function fetchYahooChart(yahooSymbol, range = "1d", interval = "1m", options = {}) {
   const url = new URL(`${YAHOO_CHART_URL}/${encodeURIComponent(yahooSymbol)}`);
   url.searchParams.set("range", range);
   url.searchParams.set("interval", interval);
+  if (options.includePrePost) url.searchParams.set("includePrePost", "true");
 
   const response = await fetch(url.toString(), {
     headers: { "User-Agent": "Mozilla/5.0 quote-proxy" },
@@ -105,10 +130,11 @@ function quoteFromChart(symbol, config, chart, options = {}) {
 
   const meta = chart.meta || {};
   const close = asNumber(quote.close[latestIndex]);
-  const previousClose = asNumber(meta.chartPreviousClose);
+  const timestamp = timestamps[latestIndex] * 1000;
+  const session = options.includePrePost ? tradingSessionFromTimestamp(meta, timestamp) : "regular";
+  const previousClose = previousCloseForChange(meta, session);
   const change = previousClose ? close - previousClose : null;
   const changePercent = previousClose && change !== null ? (change / previousClose) * 100 : null;
-  const timestamp = timestamps[latestIndex] * 1000;
 
   return {
     symbol,
@@ -117,6 +143,10 @@ function quoteFromChart(symbol, config, chart, options = {}) {
     sourceSymbol: config.yahoo,
     currency: meta.currency,
     date: new Date(timestamp).toISOString().slice(0, 10),
+    quoteTime: new Date(timestamp).toISOString(),
+    session,
+    marketState: meta.marketState || null,
+    hasPrePostMarketData: Boolean(meta.hasPrePostMarketData),
     open: rounded(asNumber(quote.open && quote.open[latestIndex])),
     high: rounded(asNumber(quote.high && quote.high[latestIndex])),
     low: rounded(asNumber(quote.low && quote.low[latestIndex])),
@@ -130,8 +160,8 @@ function quoteFromChart(symbol, config, chart, options = {}) {
 async function buildQuote(symbol) {
   const config = WATCHLIST[symbol] || { yahoo: symbol, name: symbol, kind: "stock" };
   try {
-    const intraday = await fetchYahooChart(config.yahoo, "1d", "1m");
-    return quoteFromChart(symbol, config, intraday, { aggregateVolume: true });
+    const intraday = await fetchYahooChart(config.yahoo, "1d", "1m", { includePrePost: true });
+    return quoteFromChart(symbol, config, intraday, { aggregateVolume: true, includePrePost: true });
   } catch (intradayError) {
     const daily = await fetchYahooChart(config.yahoo, "5d", "1d");
     return quoteFromChart(symbol, config, daily);

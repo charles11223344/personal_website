@@ -1301,6 +1301,26 @@
       return item.kind === "index" ? formatted : "$" + formatted;
     }
 
+    function formatQuoteSession(item) {
+      const sessionLabels = {
+        pre: "盘前",
+        regular: "盘中",
+        post: "盘后",
+        closed: "收盘"
+      };
+      return sessionLabels[item.session] || item.kind || "stock";
+    }
+
+    function formatPriceLabel(item) {
+      const sessionLabels = {
+        pre: "盘前价",
+        regular: "盘中价",
+        post: "盘后价",
+        closed: "收盘价"
+      };
+      return sessionLabels[item.session] || "价格";
+    }
+
     function formatVolume(value) {
       const volume = Number(value);
       if (!Number.isFinite(volume) || volume <= 0) return "成交量 --";
@@ -1345,17 +1365,21 @@
         const changeText = hasChange
           ? `${changePrefix}${change.toFixed(2)} (${percentPrefix}${percent.toFixed(2)}%)`
           : "等待更新";
-        const quoteDate = item.date ? `报价日 ${escapeHtml(item.date)}` : "报价日 --";
+        const quoteDate = item.quoteTime
+          ? `报价时间 ${formatStockDate(item.quoteTime)}`
+          : item.date ? `报价日 ${escapeHtml(item.date)}` : "报价日 --";
+        const session = formatQuoteSession(item);
+        const priceLabel = formatPriceLabel(item);
         const errorClass = item.error ? " error" : "";
 
         return `
           <article class="stock-card${errorClass}">
             <div class="stock-symbol">
               <strong>${escapeHtml(item.symbol)}</strong>
-              <span>${escapeHtml(item.kind || "stock")}</span>
+              <span>${escapeHtml(session)}</span>
             </div>
             <p class="stock-name">${escapeHtml(item.name || item.symbol)}</p>
-            <div class="stock-price">${formatPrice(item)}</div>
+            <div class="stock-price">${escapeHtml(priceLabel)} ${formatPrice(item)}</div>
             <div class="stock-change ${direction}">${escapeHtml(changeText)}</div>
             <div class="stock-meta">
               <span>${quoteDate}</span>
