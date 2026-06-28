@@ -16,7 +16,12 @@ const WATCHLIST = {
   AMD: { yahoo: "AMD", name: "Advanced Micro Devices", kind: "stock" },
   AVGO: { yahoo: "AVGO", name: "Broadcom", kind: "stock" },
   PLTR: { yahoo: "PLTR", name: "Palantir", kind: "stock" },
-  TSM: { yahoo: "TSM", name: "Taiwan Semiconductor", kind: "stock" }
+  TSM: { yahoo: "TSM", name: "Taiwan Semiconductor", kind: "stock" },
+  VIX: { yahoo: "^VIX", name: "CBOE Volatility Index", kind: "risk" },
+  US10Y: { yahoo: "^TNX", name: "US 10Y Treasury Yield", kind: "yield" },
+  DXY: { yahoo: "DX-Y.NYB", name: "US Dollar Index", kind: "currency" },
+  WTI: { yahoo: "CL=F", name: "WTI Crude Oil Futures", kind: "commodity" },
+  GOLD: { yahoo: "GC=F", name: "Gold Futures", kind: "commodity" }
 };
 
 const CORS_HEADERS = {

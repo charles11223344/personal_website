@@ -305,6 +305,121 @@
       overflow: hidden;
     }
 
+    .risk-radar {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #111318;
+      color: #ffffff;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .risk-radar-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .risk-radar-head p {
+      margin: 4px 0 0;
+      color: #c8d1cf;
+      font-size: 0.93rem;
+    }
+
+    .risk-radar-status {
+      min-width: 190px;
+      color: #d8dddc;
+      text-align: right;
+      font-size: 0.86rem;
+      font-weight: 800;
+    }
+
+    .risk-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 1px;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .risk-card {
+      min-height: 164px;
+      padding: 17px;
+      background: #171b22;
+    }
+
+    .risk-card.warning {
+      background: #241b17;
+    }
+
+    .risk-card.supportive {
+      background: #13211c;
+    }
+
+    .risk-card.error {
+      background: #2a1818;
+    }
+
+    .risk-card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .risk-card-top strong {
+      display: block;
+      font-size: 1.18rem;
+      line-height: 1;
+    }
+
+    .risk-card-top span {
+      color: #c8d1cf;
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-align: right;
+    }
+
+    .risk-name {
+      min-height: 40px;
+      margin: 8px 0 0;
+      color: #c8d1cf;
+      font-size: 0.9rem;
+    }
+
+    .risk-value {
+      margin-top: 12px;
+      font-size: 1.45rem;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    .risk-change {
+      margin-top: 6px;
+      font-size: 0.93rem;
+      font-weight: 900;
+    }
+
+    .risk-change.up {
+      color: #f1a77d;
+    }
+
+    .risk-change.down {
+      color: #86d9b3;
+    }
+
+    .risk-change.flat {
+      color: #c8d1cf;
+    }
+
+    .risk-note {
+      margin-top: 11px;
+      color: #d8dddc;
+      font-size: 0.82rem;
+    }
+
     .stock-toolbar {
       display: flex;
       align-items: flex-start;
@@ -883,6 +998,7 @@
 
       .market-strip-inner,
       .stock-grid,
+      .risk-grid,
       .thesis-grid,
       .article-grid,
       .video-grid,
@@ -914,6 +1030,7 @@
 
       .market-strip-inner,
       .stock-grid,
+      .risk-grid,
       .thesis-grid,
       .article-grid,
       .video-grid,
@@ -939,6 +1056,15 @@
 
       .stock-toolbar {
         flex-direction: column;
+      }
+
+      .risk-radar-head {
+        flex-direction: column;
+      }
+
+      .risk-radar-status {
+        min-width: 0;
+        text-align: left;
       }
 
       .stock-status {
@@ -976,6 +1102,7 @@
       <nav class="nav-links" aria-label="主导航">
         <a href="#market">市场笔记</a>
         <a href="#stocks">美股数据</a>
+        <a href="#risk-radar">风险雷达</a>
         <a href="#articles">文章</a>
         <a href="#vlog">Vlog</a>
         <a href="#wechat-sync">公众号同步</a>
@@ -1020,6 +1147,38 @@
           <span>加币 / 人民币</span>
           <strong id="cad-cny-rate">加载中</strong>
           <em id="cny-cad-detail">1 CAD = ? CNY</em>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="risk-radar">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>风险雷达</h2>
+          <p>把 VIX、10年期美债、美元指数、油价和黄金放在同一屏，用来判断 AI 硬件和成长股的外部压力。</p>
+        </div>
+        <div class="risk-radar">
+          <div class="risk-radar-head">
+            <div>
+              <strong>宏观压力面板</strong>
+              <p>VIX 看波动，10Y 看估值压力，DXY 看美元流动性，WTI 和 Gold 看通胀与避险。</p>
+            </div>
+            <div class="risk-radar-status">
+              <div id="risk-updated">等待风险数据</div>
+              <div id="risk-source">Live quote endpoint</div>
+            </div>
+          </div>
+          <div class="risk-grid" id="risk-grid" aria-live="polite">
+            <article class="risk-card">
+              <div class="risk-card-top">
+                <strong>Loading</strong>
+                <span>Risk</span>
+              </div>
+              <p class="risk-name">正在加载风险雷达...</p>
+              <div class="risk-value">--</div>
+              <div class="risk-change flat">等待更新</div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -1271,7 +1430,16 @@
     const stockSymbols = fallbackStockData.symbols.map(function(item) {
       return item.symbol;
     });
+    const riskSymbols = ["VIX", "US10Y", "DXY", "WTI", "GOLD"];
+    const riskMeta = {
+      VIX: { label: "波动率", note: "越高代表市场越紧张" },
+      US10Y: { label: "利率", note: "升破关键位会压科技股估值" },
+      DXY: { label: "美元", note: "走强通常压制风险资产" },
+      WTI: { label: "油价", note: "上行会推高通胀预期" },
+      GOLD: { label: "避险", note: "强势代表避险或通胀交易升温" }
+    };
     let liveStockTimer = null;
+    let riskRadarTimer = null;
 
     function escapeHtml(value) {
       return String(value ?? "").replace(/[&<>"']/g, function(character) {
@@ -1319,6 +1487,45 @@
         closed: "收盘价"
       };
       return sessionLabels[item.session] || "价格";
+    }
+
+    function adjustedRiskNumber(item, value) {
+      const number = Number(value);
+      if (!Number.isFinite(number)) return null;
+      return item.symbol === "US10Y" ? number / 10 : number;
+    }
+
+    function formatRiskValue(item) {
+      const value = adjustedRiskNumber(item, item.close);
+      if (value === null) return "--";
+      if (item.symbol === "US10Y") return value.toFixed(2) + "%";
+      if (item.symbol === "WTI" || item.symbol === "GOLD") {
+        return "$" + formatNumber(value, {
+          minimumFractionDigits: value >= 1000 ? 0 : 2,
+          maximumFractionDigits: 2
+        });
+      }
+      return formatNumber(value, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+    }
+
+    function formatRiskChange(item) {
+      const change = adjustedRiskNumber(item, item.change);
+      const percent = Number(item.changePercent);
+      if (change === null || !Number.isFinite(percent)) return "等待更新";
+      const changePrefix = change > 0 ? "+" : "";
+      const percentPrefix = percent > 0 ? "+" : "";
+      const unit = item.symbol === "US10Y" ? "pt" : "";
+      return `${changePrefix}${change.toFixed(2)}${unit} (${percentPrefix}${percent.toFixed(2)}%)`;
+    }
+
+    function riskTone(item) {
+      const change = adjustedRiskNumber(item, item.change);
+      if (change === null || change === 0) return "flat";
+      if (item.symbol === "GOLD") return change > 0 ? "supportive" : "flat";
+      return change > 0 ? "warning" : "supportive";
     }
 
     function formatVolume(value) {
@@ -1391,6 +1598,40 @@
       }).join("");
     }
 
+    function renderRiskRadar(data) {
+      const grid = document.getElementById("risk-grid");
+      const updated = document.getElementById("risk-updated");
+      const source = document.getElementById("risk-source");
+      if (!grid) return;
+
+      const symbols = Array.isArray(data.symbols) ? data.symbols : [];
+      if (updated) updated.textContent = "更新时间 " + formatStockDate(data.updatedAt);
+      if (source) source.textContent = data.source || "Live quote endpoint";
+
+      grid.innerHTML = symbols.map(function(item) {
+        const meta = riskMeta[item.symbol] || { label: item.kind || "Risk", note: "宏观变量" };
+        const change = adjustedRiskNumber(item, item.change);
+        const direction = change === null ? "flat" : change > 0 ? "up" : change < 0 ? "down" : "flat";
+        const tone = item.error ? "error" : riskTone(item);
+        const quoteDate = item.quoteTime
+          ? `报价时间 ${formatStockDate(item.quoteTime)}`
+          : item.date ? `报价日 ${escapeHtml(item.date)}` : "报价日 --";
+
+        return `
+          <article class="risk-card ${escapeHtml(tone)}">
+            <div class="risk-card-top">
+              <strong>${escapeHtml(item.symbol)}</strong>
+              <span>${escapeHtml(meta.label)}</span>
+            </div>
+            <p class="risk-name">${escapeHtml(item.name || item.symbol)}</p>
+            <div class="risk-value">${escapeHtml(formatRiskValue(item))}</div>
+            <div class="risk-change ${direction}">${escapeHtml(formatRiskChange(item))}</div>
+            <div class="risk-note">${escapeHtml(item.error || meta.note)} · ${quoteDate}</div>
+          </article>
+        `;
+      }).join("");
+    }
+
     function fetchStockSnapshot() {
       return fetch("data/stocks.json", { cache: "no-store" })
         .then(function(response) {
@@ -1403,6 +1644,14 @@
       if (!LIVE_QUOTES_ENDPOINT) return null;
       const url = new URL(LIVE_QUOTES_ENDPOINT, window.location.href);
       url.searchParams.set("symbols", stockSymbols.join(","));
+      url.searchParams.set("_", Date.now().toString());
+      return url.toString();
+    }
+
+    function riskRadarUrl() {
+      if (!LIVE_QUOTES_ENDPOINT) return null;
+      const url = new URL(LIVE_QUOTES_ENDPOINT, window.location.href);
+      url.searchParams.set("symbols", riskSymbols.join(","));
       url.searchParams.set("_", Date.now().toString());
       return url.toString();
     }
@@ -1433,6 +1682,32 @@
         });
     }
 
+    function refreshRiskRadar() {
+      const url = riskRadarUrl();
+      if (!url) {
+        const source = document.getElementById("risk-source");
+        if (source) source.textContent = "实时接口未配置";
+        return;
+      }
+
+      fetch(url, { cache: "no-store" })
+        .then(function(response) {
+          if (!response.ok) throw new Error("Risk data unavailable");
+          return response.json();
+        })
+        .then(renderRiskRadar)
+        .catch(function() {
+          const source = document.getElementById("risk-source");
+          if (source) source.textContent = "风险雷达刷新失败";
+        });
+    }
+
+    function startRiskRadarRefresh() {
+      refreshRiskRadar();
+      if (riskRadarTimer) window.clearInterval(riskRadarTimer);
+      riskRadarTimer = window.setInterval(refreshRiskRadar, STOCK_REFRESH_INTERVAL_MS);
+    }
+
     function startLiveStockRefresh() {
       if (!LIVE_QUOTES_ENDPOINT) {
         setLiveStockStatus("实时接口未配置，当前显示每日快照");
@@ -1454,6 +1729,7 @@
         renderStocks(fallbackStockData, "本地数据未加载，等待自动任务生成");
         startLiveStockRefresh();
       });
+    startRiskRadarRefresh();
 
     const weatherDescriptions = {
       0: "晴朗",
