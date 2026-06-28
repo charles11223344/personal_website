@@ -50,6 +50,12 @@ function rounded(value) {
   return value === null ? null : Math.round(value * 100) / 100;
 }
 
+function usableClose(value, config) {
+  const close = asNumber(value);
+  if (close === null) return false;
+  return config.allowZeroClose ? close >= 0 : close > 0;
+}
+
 function tradingSessionFromTimestamp(meta, timestamp) {
   const periods = meta.currentTradingPeriod || {};
   const seconds = Math.floor(timestamp / 1000);
@@ -125,17 +131,27 @@ function quoteFromChart(symbol, config, chart, options = {}) {
   if (!timestamps.length || !quote) throw new Error("No quote rows");
 
   let latestIndex = -1;
+  let latestFiniteIndex = -1;
   for (let index = timestamps.length - 1; index >= 0; index -= 1) {
-    if (asNumber(quote.close && quote.close[index]) !== null) {
+    const close = asNumber(quote.close && quote.close[index]);
+    if (latestFiniteIndex === -1 && close !== null) latestFiniteIndex = index;
+    if (usableClose(close, config)) {
       latestIndex = index;
       break;
     }
   }
+  if (latestIndex === -1) latestIndex = latestFiniteIndex;
   if (latestIndex === -1) throw new Error("No latest close");
 
   const meta = chart.meta || {};
-  const close = asNumber(quote.close[latestIndex]);
-  const timestamp = timestamps[latestIndex] * 1000;
+  let close = asNumber(quote.close[latestIndex]);
+  let timestamp = timestamps[latestIndex] * 1000;
+  const regularMarketPrice = asNumber(meta.regularMarketPrice);
+  const regularMarketTime = asNumber(meta.regularMarketTime);
+  if (!usableClose(close, config) && regularMarketPrice !== null && regularMarketPrice > 0) {
+    close = regularMarketPrice;
+    if (regularMarketTime !== null) timestamp = regularMarketTime * 1000;
+  }
   const session = options.includePrePost ? tradingSessionFromTimestamp(meta, timestamp) : "regular";
   const previousClose = previousCloseForChange(meta, session);
   const change = previousClose ? close - previousClose : null;

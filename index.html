@@ -1492,7 +1492,7 @@
     function adjustedRiskNumber(item, value) {
       const number = Number(value);
       if (!Number.isFinite(number)) return null;
-      return item.symbol === "US10Y" ? number / 10 : number;
+      return item.symbol === "US10Y" && Math.abs(number) > 20 ? number / 10 : number;
     }
 
     function formatRiskValue(item) {
