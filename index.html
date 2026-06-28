@@ -337,6 +337,35 @@
       font-weight: 800;
     }
 
+    .risk-summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .risk-summary strong {
+      display: block;
+      font-size: 1.08rem;
+    }
+
+    .risk-summary span {
+      color: #c8d1cf;
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    .risk-summary .risk-badge {
+      border-radius: 999px;
+      padding: 7px 11px;
+      color: #111318;
+      background: #fff3a3;
+      white-space: nowrap;
+    }
+
     .risk-grid {
       display: grid;
       grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -352,6 +381,10 @@
 
     .risk-card.warning {
       background: #241b17;
+    }
+
+    .risk-card.danger {
+      background: #2b171b;
     }
 
     .risk-card.supportive {
@@ -418,6 +451,124 @@
       margin-top: 11px;
       color: #d8dddc;
       font-size: 0.82rem;
+    }
+
+    .risk-verdict {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 10px;
+      border-radius: 999px;
+      padding: 5px 9px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+
+    .calendar-board {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .calendar-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--line);
+      background: #fbfcfb;
+    }
+
+    .calendar-head p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .calendar-status {
+      min-width: 180px;
+      color: var(--muted);
+      text-align: right;
+      font-size: 0.86rem;
+      font-weight: 800;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+    }
+
+    .event-card {
+      min-height: 190px;
+      padding: 18px;
+      background: var(--surface);
+    }
+
+    .event-card.today {
+      background: #fffaf1;
+    }
+
+    .event-card.upcoming {
+      background: #f6faf8;
+    }
+
+    .event-card.past {
+      background: #fbfcfb;
+    }
+
+    .event-topline {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 900;
+    }
+
+    .event-date {
+      color: var(--ink);
+      font-size: 1.02rem;
+    }
+
+    .event-type {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 3px 8px;
+      background: #ffffff;
+    }
+
+    .event-card h3 {
+      margin: 15px 0 8px;
+      font-size: 1.2rem;
+      line-height: 1.28;
+    }
+
+    .event-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .event-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 14px;
+    }
+
+    .event-tags span {
+      border-radius: 999px;
+      padding: 4px 8px;
+      color: var(--green-dark);
+      background: #e7f3ee;
+      font-size: 0.78rem;
+      font-weight: 900;
     }
 
     .stock-toolbar {
@@ -999,6 +1150,7 @@
       .market-strip-inner,
       .stock-grid,
       .risk-grid,
+      .calendar-grid,
       .thesis-grid,
       .article-grid,
       .video-grid,
@@ -1031,6 +1183,7 @@
       .market-strip-inner,
       .stock-grid,
       .risk-grid,
+      .calendar-grid,
       .thesis-grid,
       .article-grid,
       .video-grid,
@@ -1063,6 +1216,16 @@
       }
 
       .risk-radar-status {
+        min-width: 0;
+        text-align: left;
+      }
+
+      .risk-summary,
+      .calendar-head {
+        flex-direction: column;
+      }
+
+      .calendar-status {
         min-width: 0;
         text-align: left;
       }
@@ -1103,6 +1266,7 @@
         <a href="#market">市场笔记</a>
         <a href="#stocks">美股数据</a>
         <a href="#risk-radar">风险雷达</a>
+        <a href="#event-calendar">事件日历</a>
         <a href="#articles">文章</a>
         <a href="#vlog">Vlog</a>
         <a href="#wechat-sync">公众号同步</a>
@@ -1168,6 +1332,13 @@
               <div id="risk-source">Live quote endpoint</div>
             </div>
           </div>
+          <div class="risk-summary" aria-live="polite">
+            <div>
+              <strong id="risk-summary-title">等待风险雷达判断</strong>
+              <span id="risk-summary-detail">VIX、10Y、DXY、WTI、GOLD 加载后自动生成。</span>
+            </div>
+            <span class="risk-badge" id="risk-summary-badge">Loading</span>
+          </div>
           <div class="risk-grid" id="risk-grid" aria-live="polite">
             <article class="risk-card">
               <div class="risk-card-top">
@@ -1177,6 +1348,34 @@
               <p class="risk-name">正在加载风险雷达...</p>
               <div class="risk-value">--</div>
               <div class="risk-change flat">等待更新</div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="event-calendar">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>财报与宏观日历</h2>
+          <p>把会影响美股定价的财报、通胀、就业和 Fed 事件放在同一张清单里，写文章前先看事件风险。</p>
+        </div>
+        <div class="calendar-board">
+          <div class="calendar-head">
+            <div>
+              <strong>本周与下阶段重点事件</strong>
+              <p>先用本地事件表维护；后续可以接财报 API 或宏观日历 API 自动更新。</p>
+            </div>
+            <div class="calendar-status" id="calendar-status">等待日历渲染</div>
+          </div>
+          <div class="calendar-grid" id="calendar-grid" aria-live="polite">
+            <article class="event-card">
+              <div class="event-topline">
+                <span class="event-date">Loading</span>
+                <span class="event-type">Calendar</span>
+              </div>
+              <h3>正在加载事件日历...</h3>
+              <p>宏观和财报事件会显示在这里。</p>
             </article>
           </div>
         </div>
@@ -1438,6 +1637,53 @@
       WTI: { label: "油价", note: "上行会推高通胀预期" },
       GOLD: { label: "避险", note: "强势代表避险或通胀交易升温" }
     };
+    const RISK_HISTORY_KEY = "lemon-risk-history-v1";
+    const marketCalendarEvents = [
+      {
+        date: "2026-06-26",
+        type: "宏观",
+        title: "PCE 通胀数据",
+        focus: "看核心 PCE、10Y 反应，以及科技股是否高开低走。",
+        tags: ["PCE", "US10Y", "QQQ", "SMH"]
+      },
+      {
+        date: "2026-07-02",
+        type: "宏观",
+        title: "非农就业报告",
+        focus: "就业、薪资和失业率会影响 Fed 降息预期。",
+        tags: ["NFP", "DXY", "US10Y"]
+      },
+      {
+        date: "2026-07-15",
+        type: "宏观",
+        title: "CPI 通胀数据",
+        focus: "重点看核心服务通胀和长端利率是否重新上冲。",
+        tags: ["CPI", "VIX", "QQQ"]
+      },
+      {
+        date: "2026-07-29",
+        type: "Fed",
+        title: "FOMC 利率决议",
+        focus: "看声明措辞、点阵图和鲍威尔记者会是否偏鹰。",
+        tags: ["Fed", "US10Y", "DXY"]
+      },
+      {
+        date: "TBD",
+        dateLabel: "7月财报季",
+        type: "财报",
+        title: "大型科技财报窗口",
+        focus: "看云资本开支、AI 订单、毛利率和现金流质量。",
+        tags: ["MSFT", "GOOGL", "AMZN", "META"]
+      },
+      {
+        date: "TBD",
+        dateLabel: "AI 硬件窗口",
+        type: "财报",
+        title: "AI Capex 与数据中心订单验证",
+        focus: "看 GPU、ASIC、网络芯片、存储和电力液冷需求是否继续扩散。",
+        tags: ["NVDA", "AVGO", "MRVL", "MU"]
+      }
+    ];
     let liveStockTimer = null;
     let riskRadarTimer = null;
 
@@ -1528,6 +1774,120 @@
       return change > 0 ? "warning" : "supportive";
     }
 
+    function readRiskHistory() {
+      try {
+        return JSON.parse(window.localStorage.getItem(RISK_HISTORY_KEY) || "{}");
+      } catch (error) {
+        return {};
+      }
+    }
+
+    function writeRiskHistory(history) {
+      try {
+        window.localStorage.setItem(RISK_HISTORY_KEY, JSON.stringify(history));
+      } catch (error) {
+        // Local storage can be unavailable in private browsing; the radar still works without it.
+      }
+    }
+
+    function rememberRiskHistory(symbols) {
+      const history = readRiskHistory();
+      symbols.forEach(function(item) {
+        const value = adjustedRiskNumber(item, item.close);
+        const date = item.date || (item.quoteTime ? item.quoteTime.slice(0, 10) : null);
+        if (!item.symbol || !date || value === null || value <= 0) return;
+        const rows = Array.isArray(history[item.symbol]) ? history[item.symbol] : [];
+        const nextRows = rows.filter(function(row) {
+          return row.date !== date;
+        });
+        nextRows.push({ date, close: value });
+        nextRows.sort(function(a, b) {
+          return a.date.localeCompare(b.date);
+        });
+        history[item.symbol] = nextRows.slice(-5);
+      });
+      writeRiskHistory(history);
+      return history;
+    }
+
+    function isConsecutiveHigher(history, symbol) {
+      const rows = Array.isArray(history[symbol]) ? history[symbol] : [];
+      if (rows.length < 3) return false;
+      const lastRows = rows.slice(-3);
+      return lastRows[0].close < lastRows[1].close && lastRows[1].close < lastRows[2].close;
+    }
+
+    function riskSignal(item, history) {
+      const value = adjustedRiskNumber(item, item.close);
+      const change = adjustedRiskNumber(item, item.change);
+      const percent = Number(item.changePercent);
+      if (item.error || value === null) {
+        return { level: "error", title: "数据异常", note: item.error || "等待下一次刷新" };
+      }
+
+      if (item.symbol === "VIX") {
+        if (value > 20) return { level: "danger", title: "风险升温", note: "VIX 高于 20，市场避险情绪抬头。" };
+        if (value > 16) return { level: "warning", title: "波动抬头", note: "VIX 不算失控，但波动已经需要纳入仓位判断。" };
+        return { level: "supportive", title: "波动可控", note: "VIX 低于 16，风险偏好暂时稳定。" };
+      }
+
+      if (item.symbol === "US10Y") {
+        if (value > 4.5) return { level: "danger", title: "科技股估值承压", note: "10Y 高于 4.5%，成长股估值压力明显。" };
+        if (value > 4.3) return { level: "warning", title: "利率偏紧", note: "10Y 位于偏高区域，AI 和高估值板块需要二次确认。" };
+        return { level: "supportive", title: "利率压力可控", note: "10Y 暂未突破关键压力位。" };
+      }
+
+      if (item.symbol === "DXY") {
+        if (isConsecutiveHigher(history, "DXY") || change > 0) {
+          return { level: "warning", title: "美元压力", note: "DXY 走强，风险资产和海外收入估值会受到压制。" };
+        }
+        return { level: "supportive", title: "美元压力缓和", note: "DXY 没有继续上冲，流动性压力暂时下降。" };
+      }
+
+      if (item.symbol === "WTI") {
+        if (Number.isFinite(percent) && percent >= 2) return { level: "warning", title: "通胀风险", note: "WTI 单日大涨，市场可能重新交易通胀压力。" };
+        if (value >= 85) return { level: "warning", title: "油价高位", note: "油价处在高位，通胀预期需要继续跟踪。" };
+        return { level: "supportive", title: "油价压力有限", note: "WTI 暂未给通胀预期造成明显压力。" };
+      }
+
+      if (item.symbol === "GOLD") {
+        if (Number.isFinite(percent) && percent >= 1) return { level: "warning", title: "避险升温", note: "黄金明显走强，避险或通胀交易升温。" };
+        if (Number.isFinite(percent) && percent <= -1) return { level: "supportive", title: "避险降温", note: "黄金走弱，短线避险需求下降。" };
+        return { level: "flat", title: "避险中性", note: "黄金变化不大，暂时不是主导变量。" };
+      }
+
+      return { level: riskTone(item), title: "观察中", note: "宏观变量等待更多确认。" };
+    }
+
+    function updateRiskSummary(symbols, history) {
+      const title = document.getElementById("risk-summary-title");
+      const detail = document.getElementById("risk-summary-detail");
+      const badge = document.getElementById("risk-summary-badge");
+      if (!title || !detail || !badge) return;
+
+      const signals = symbols.map(function(item) {
+        return riskSignal(item, history);
+      });
+      const alerts = signals.filter(function(signal) {
+        return signal.level === "danger" || signal.level === "warning";
+      });
+
+      if (alerts.length >= 3) {
+        title.textContent = "综合判断：风险偏高";
+        badge.textContent = alerts.length + " 个警报";
+      } else if (alerts.length > 0) {
+        title.textContent = "综合判断：局部压力升温";
+        badge.textContent = alerts.length + " 个警报";
+      } else {
+        title.textContent = "综合判断：风险环境可控";
+        badge.textContent = "压力有限";
+      }
+
+      detail.textContent = alerts.length
+        ? alerts.slice(0, 3).map(function(signal) { return signal.title; }).join(" / ")
+        : "VIX、10Y、DXY、WTI、GOLD 暂未同时触发压力条件。";
+    }
+
     function formatVolume(value) {
       const volume = Number(value);
       if (!Number.isFinite(volume) || volume <= 0) return "成交量 --";
@@ -1607,12 +1967,15 @@
       const symbols = Array.isArray(data.symbols) ? data.symbols : [];
       if (updated) updated.textContent = "更新时间 " + formatStockDate(data.updatedAt);
       if (source) source.textContent = data.source || "Live quote endpoint";
+      const riskHistory = rememberRiskHistory(symbols);
+      updateRiskSummary(symbols, riskHistory);
 
       grid.innerHTML = symbols.map(function(item) {
         const meta = riskMeta[item.symbol] || { label: item.kind || "Risk", note: "宏观变量" };
+        const signal = riskSignal(item, riskHistory);
         const change = adjustedRiskNumber(item, item.change);
         const direction = change === null ? "flat" : change > 0 ? "up" : change < 0 ? "down" : "flat";
-        const tone = item.error ? "error" : riskTone(item);
+        const tone = item.error ? "error" : signal.level;
         const quoteDate = item.quoteTime
           ? `报价时间 ${formatStockDate(item.quoteTime)}`
           : item.date ? `报价日 ${escapeHtml(item.date)}` : "报价日 --";
@@ -1626,10 +1989,76 @@
             <p class="risk-name">${escapeHtml(item.name || item.symbol)}</p>
             <div class="risk-value">${escapeHtml(formatRiskValue(item))}</div>
             <div class="risk-change ${direction}">${escapeHtml(formatRiskChange(item))}</div>
-            <div class="risk-note">${escapeHtml(item.error || meta.note)} · ${quoteDate}</div>
+            <div class="risk-verdict">${escapeHtml(signal.title)}</div>
+            <div class="risk-note">${escapeHtml(signal.note || meta.note)} · ${quoteDate}</div>
           </article>
         `;
       }).join("");
+    }
+
+    function eventDateValue(event) {
+      if (!event.date || event.date === "TBD") return null;
+      const date = new Date(event.date + "T00:00:00");
+      return Number.isNaN(date.getTime()) ? null : date;
+    }
+
+    function formatEventDate(event) {
+      if (event.dateLabel) return event.dateLabel;
+      const date = eventDateValue(event);
+      if (!date) return "待确认";
+      return date.toLocaleDateString("zh-CN", {
+        month: "2-digit",
+        day: "2-digit",
+        weekday: "short"
+      });
+    }
+
+    function eventState(event) {
+      const date = eventDateValue(event);
+      if (!date) return { className: "upcoming", label: "待确认" };
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const eventDay = new Date(date);
+      eventDay.setHours(0, 0, 0, 0);
+      const diffDays = Math.round((eventDay - today) / 86400000);
+      if (diffDays === 0) return { className: "today", label: "今天" };
+      if (diffDays > 0) return { className: "upcoming", label: diffDays + " 天后" };
+      return { className: "past", label: "已过" };
+    }
+
+    function renderMarketCalendar() {
+      const grid = document.getElementById("calendar-grid");
+      const status = document.getElementById("calendar-status");
+      if (!grid) return;
+
+      const events = marketCalendarEvents.slice().sort(function(a, b) {
+        const aDate = eventDateValue(a);
+        const bDate = eventDateValue(b);
+        if (!aDate && !bDate) return 0;
+        if (!aDate) return 1;
+        if (!bDate) return -1;
+        return aDate - bDate;
+      });
+
+      grid.innerHTML = events.map(function(event) {
+        const state = eventState(event);
+        const tags = Array.isArray(event.tags) ? event.tags : [];
+        return `
+          <article class="event-card ${escapeHtml(state.className)}">
+            <div class="event-topline">
+              <span class="event-date">${escapeHtml(formatEventDate(event))}</span>
+              <span class="event-type">${escapeHtml(event.type)} · ${escapeHtml(state.label)}</span>
+            </div>
+            <h3>${escapeHtml(event.title)}</h3>
+            <p>${escapeHtml(event.focus)}</p>
+            <div class="event-tags">
+              ${tags.map(function(tag) { return `<span>${escapeHtml(tag)}</span>`; }).join("")}
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      if (status) status.textContent = "已加载 " + events.length + " 个事件 · 手动维护";
     }
 
     function fetchStockSnapshot() {
@@ -1730,6 +2159,7 @@
         startLiveStockRefresh();
       });
     startRiskRadarRefresh();
+    renderMarketCalendar();
 
     const weatherDescriptions = {
       0: "晴朗",

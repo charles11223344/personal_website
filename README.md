@@ -11,7 +11,8 @@
 - 独立文章页：公众号文章放在 `articles/` 目录，首页文章卡片链接到对应页面。
 - Vlog 脚本：把长文观点转成适合视频号、YouTube 或短视频的脚本结构。
 - 天气模块：使用无密钥的 Open-Meteo 接口显示 Toronto 当前天气。
-- 风险雷达：通过行情 Worker 展示 VIX、10年期美债、美元指数、油价和黄金。
+- 风险雷达：通过行情 Worker 展示 VIX、10年期美债、美元指数、油价和黄金，并自动标记风险升温、美元压力、通胀风险等状态。
+- 财报与宏观日历：在首页展示 PCE、CPI、FOMC、非农和财报窗口，当前由 `index.html` 内的 `marketCalendarEvents` 手动维护。
 - 比特币数据：保留原页面的 CoinGecko 实时价格模块，显示 BTC 和 ETH 的 CAD 报价。
 - 订阅与合作：继续使用 Formspree 表单收集邮箱和留言。
 
