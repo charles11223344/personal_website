@@ -36,6 +36,7 @@ py scripts/update_stock_data.py
 
 当前已添加：
 
+- `articles/2026-06-28-ai-power-infrastructure.html`
 - `articles/2026-06-24-mu-pce-exam.html`
 - `articles/2026-06-23-midweek-mu-earnings.html`
 - `articles/2026-06-21-ai-hardware-week.html`

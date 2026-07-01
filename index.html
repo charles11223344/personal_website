@@ -1455,6 +1455,19 @@
         <div class="article-grid">
           <article class="article-card">
             <div class="article-topline">
+              <span>下周剧本</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-06-28-ai-power-infrastructure.html">AI不是结束，是开始看电拉</a></h3>
+            <p>AI主线从芯片扩散到电力、核电、数据中心和液冷，观察基础设施能否接棒。</p>
+            <div class="tag-row">
+              <span class="tag">AI电力</span>
+              <span class="tag">核电</span>
+              <span class="tag">数据中心</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
               <span>盘前剧本</span>
               <span>已同步</span>
             </div>
@@ -1530,17 +1543,17 @@
           </p>
           <div class="sync-highlight">
             <h3>最新同步</h3>
-            <p>2026-06-24：MU点燃AI硬件，但是PCE才是真正考官啊</p>
+            <p>2026-06-28：下周的剧本走向，AI不是结束，是开始看电拉</p>
             <div class="sync-actions">
-              <a class="button primary" href="articles/2026-06-24-mu-pce-exam.html">阅读网页版本</a>
-              <a class="button secondary" href="https://mp.weixin.qq.com/s/Zhlut_nrlLXRw17LovrGDA" target="_blank" rel="noopener">打开公众号原文</a>
+              <a class="button primary" href="articles/2026-06-28-ai-power-infrastructure.html">阅读网页版本</a>
+              <a class="button secondary" href="https://mp.weixin.qq.com/s/vi00JGqeG4JkdIXn1sy3dw" target="_blank" rel="noopener">打开公众号原文</a>
             </div>
           </div>
         </div>
         <aside class="newsletter" id="contact">
           <div class="wechat-qr-block">
             <strong>扫码关注公众号</strong>
-            <img src="qrcode.jpg" alt="柠檬公众号二维码" onerror="this.closest('.wechat-qr-block').classList.add('missing')" />
+            <img src="qrcode.jpg" alt="泞濛公众号二维码" onerror="this.closest('.wechat-qr-block').classList.add('missing')" />
             <span class="qr-fallback">请把二维码图片保存到项目根目录。</span>
           </div>
           <h3>订阅与留言</h3>
@@ -1583,7 +1596,7 @@
       </div>
       <div class="footer-links">
         <a href="https://github.com/charles11223344" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://linkedin.com/in/junhui-charles-chen-40b62ba9/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://discord.com/channels/@me" target="_blank" rel="noopener">Discord: lemon_cc_lol</a>
         <a href="mailto:charlesdataaws@gmail.com">Email</a>
       </div>
     </div>
@@ -1647,11 +1660,39 @@
         tags: ["PCE", "US10Y", "QQQ", "SMH"]
       },
       {
+        date: "2026-06-29",
+        type: "风险",
+        title: "中东局势与油价观察",
+        focus: "重点看霍尔木兹风险、WTI 和 10Y 是否一起上行，科技股可能受压。",
+        tags: ["WTI", "US10Y", "VIX"]
+      },
+      {
+        date: "2026-06-30",
+        type: "宏观",
+        title: "JOLTS、消费者信心、房价数据",
+        focus: "看美国经济和就业有没有降温。如果就业仍太热，市场会担心 Fed 继续鹰派。",
+        tags: ["JOLTS", "DXY", "US10Y"]
+      },
+      {
+        date: "2026-07-01",
+        type: "宏观",
+        title: "ADP 就业与 ISM 制造业",
+        focus: "非农前哨站。数据太强对科技股不友好；数据温和，AI 硬件才有修复空间。",
+        tags: ["ADP", "ISM", "SMH"]
+      },
+      {
         date: "2026-07-02",
         type: "宏观",
-        title: "非农就业报告",
-        focus: "就业、薪资和失业率会影响 Fed 降息预期。",
-        tags: ["NFP", "DXY", "US10Y"]
+        title: "非农就业、初请失业金、工厂订单",
+        focus: "全周最关键。周五美股休市，周四可能成为资金提前表态的一天。",
+        tags: ["NFP", "Jobless Claims", "DXY", "US10Y"]
+      },
+      {
+        date: "2026-07-03",
+        type: "休市",
+        title: "美股独立日观察假期休市",
+        focus: "假期前流动性下降，高 beta 股票可能提前降仓。",
+        tags: ["Holiday", "Liquidity", "High Beta"]
       },
       {
         date: "2026-07-15",
@@ -2026,18 +2067,30 @@
       return { className: "past", label: "已过" };
     }
 
+    function eventSortRank(event) {
+      const date = eventDateValue(event);
+      if (!date) return 1;
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const eventDay = new Date(date);
+      eventDay.setHours(0, 0, 0, 0);
+      return eventDay >= today ? 0 : 2;
+    }
+
     function renderMarketCalendar() {
       const grid = document.getElementById("calendar-grid");
       const status = document.getElementById("calendar-status");
       if (!grid) return;
 
       const events = marketCalendarEvents.slice().sort(function(a, b) {
+        const rankDiff = eventSortRank(a) - eventSortRank(b);
+        if (rankDiff !== 0) return rankDiff;
         const aDate = eventDateValue(a);
         const bDate = eventDateValue(b);
         if (!aDate && !bDate) return 0;
         if (!aDate) return 1;
         if (!bDate) return -1;
-        return aDate - bDate;
+        return eventSortRank(a) === 2 ? bDate - aDate : aDate - bDate;
       });
 
       grid.innerHTML = events.map(function(event) {
