@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="2026-07-05 7月6日—7月10日，美股下周剧本怎么走。Lemon 美股手记文章归档。" />
+  <title>7月6日—7月10日，美股下周剧本怎么走 | Lemon 美股手记</title>
+  <style>
+    :root {
+      --ink: #111318;
+      --muted: #59606b;
+      --paper: #f7f8f6;
+      --surface: #ffffff;
+      --line: #d9ded8;
+      --green: #0f8f63;
+      --gold: #c08a26;
+      --lemon-soft: #f3edcf;
+      --shadow: 0 18px 45px rgba(17, 19, 24, 0.09);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.78;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(217, 222, 216, 0.9);
+      background: rgba(247, 248, 246, 0.92);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-wrap,
+    .article-wrap,
+    .footer-inner {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav-wrap {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 900;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      object-position: center 22%;
+      border-radius: var(--radius);
+      border: 1px solid rgba(17, 19, 24, 0.18);
+      background: var(--lemon-soft);
+    }
+
+    .brand span {
+      display: grid;
+      line-height: 1.1;
+    }
+
+    .brand small {
+      color: var(--gold);
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 800;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 8px 12px;
+      background: #ffffff;
+    }
+
+    .article-hero {
+      padding: 72px 0 36px;
+      background:
+        linear-gradient(90deg, rgba(17, 19, 24, 0.92), rgba(17, 19, 24, 0.72)),
+        url("../market-vlog-hero.png");
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
+    }
+
+    .article-hero p {
+      margin: 0 0 14px;
+      color: #d7e7de;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(2.35rem, 6vw, 4.8rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      color: #eef3f0;
+      font-weight: 800;
+    }
+
+    .meta span,
+    .meta a {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 999px;
+      padding: 5px 10px;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    main {
+      padding: 42px 0 70px;
+    }
+
+    .content-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 250px;
+      gap: 32px;
+      align-items: start;
+    }
+
+    article {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      padding: clamp(24px, 4vw, 42px);
+    }
+
+    article p {
+      margin: 0 0 1.1em;
+      font-size: 1.05rem;
+    }
+
+    article h2 {
+      margin: 2em 0 0.75em;
+      font-size: 1.45rem;
+      line-height: 1.28;
+    }
+
+    .lead {
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .watch-list {
+      display: grid;
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .watch-row {
+      border-left: 4px solid var(--green);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      background: #f6faf8;
+      padding: 12px 14px;
+    }
+
+    .watch-row strong {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .disclaimer {
+      margin-top: 30px;
+      padding: 16px;
+      border-radius: var(--radius);
+      background: #fffaf1;
+      color: #7c6034;
+      font-size: 0.95rem;
+    }
+
+    .side-panel {
+      position: sticky;
+      top: 92px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .qr-card,
+    .toc-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+
+    .qr-card h2,
+    .toc-card h2 {
+      margin: 0 0 10px;
+      font-size: 1.08rem;
+    }
+
+    .qr-card img {
+      width: 100%;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .qr-card .qr-placeholder {
+      display: none;
+      border: 1px dashed var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      color: var(--muted);
+      background: #fbfcfb;
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    .qr-card.missing img {
+      display: none;
+    }
+
+    .qr-card.missing .qr-placeholder {
+      display: block;
+    }
+
+    .toc-card a {
+      display: block;
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 800;
+      padding: 6px 0;
+    }
+
+    .site-footer {
+      background: #111318;
+      color: #d8dddc;
+      padding: 30px 0;
+    }
+
+    .site-footer a {
+      color: #ffffff;
+      font-weight: 800;
+    }
+
+    @media (max-width: 820px) {
+      .content-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .side-panel {
+        position: static;
+      }
+
+      .qr-card img {
+        max-width: 240px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="../index.html" aria-label="Lemon 美股手记首页">
+        <img src="../lemon.png" alt="Lemon logo" />
+        <span>
+          <strong>Lemon 美股手记</strong>
+          <small>Market Vlog</small>
+        </span>
+      </a>
+      <a class="nav-link" href="../index.html#articles">返回文章归档</a>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-wrap">
+      <p>2026-07-05 · 下周剧本</p>
+      <h1>7月6日—7月10日，美股下周剧本怎么走</h1>
+      <div class="meta">
+        <span>作者：东左耳清濛</span>
+        <span>主题：AI修复 / 半导体 / 宏观</span>
+        <a href="https://mp.weixin.qq.com/s/udZFkm5XJfAfqQkpFIWOWQ" target="_blank" rel="noopener">微信公众号原文</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="article-wrap content-layout">
+      <article>
+        <p class="lead">长周末后，美股期货目前偏强，市场先做科技股修复：道指期货小涨约 0.1%–0.2%，标普 500 期货涨约 0.5%，纳指 100 期货涨约 1.5%。这说明周一开盘前，资金暂时不是继续砸 AI，而是在赌上周半导体杀跌后会有技术性反弹。</p>
+
+        <p>但我不会因为夜盘上涨就直接说风险解除。现在最重要的新消息有两条：</p>
+
+        <p>第一，SK 海力士准备启动约 280 亿美元美国 ADR 上市，这会让美股投资者多一个直接买 HBM 龙头的入口。对 AI 存储是利好关注度，但对 MU 来说，也会削弱它“美股唯一大型 AI 存储标的”的稀缺溢价。</p>
+
+        <p>第二，SPCX / SpaceX 周二纳入纳斯达克 100 仍是本周最大事件交易之一。被动买盘会有，但也容易出现提前抢跑、正式纳入后 sell the news。</p>
+
+        <p>我的判断很简单：AI 没结束，但无脑买硬件的阶段结束了。接下来市场不会再因为你名字里有 AI 就给估值，而是要看订单、现金流、毛利率和资本开支回报。</p>
+
+        <h2 id="mainlines">主线部分</h2>
+
+        <div class="watch-list">
+          <div class="watch-row">
+            <strong>第一条线，还是看 MU</strong>
+            <span>美光已经证明 AI 存储需求是真的，HBM、DRAM、NAND 都是核心瓶颈。但问题是股价已经涨太多，下周重点不是“MU好不好”，而是利好出来后还能不能继续被资金接住。如果 MU 止跌反包，存储链的 SNDK、WDC 才有继续修复空间；如果 MU 高开低走，就说明市场在做 sell the news。</span>
+          </div>
+          <div class="watch-row">
+            <strong>第二条线，看 NVDA</strong>
+            <span>英伟达仍然是 AI 主线压舱石，但它现在不是负责带头冲，而是负责别破位。如果 NVDA 稳住，资金才敢继续去买 AVGO、MRVL 这种 ASIC 和 AI 网络芯片。如果 NVDA 继续弱，整个 SMH 都会被压住。</span>
+          </div>
+          <div class="watch-row">
+            <strong>第三条线，重点看 MRVL</strong>
+            <span>它的逻辑很清楚：定制芯片、光互联、CPO、交换芯片，都是 AI 数据中心下一阶段的瓶颈。MRVL 不是便宜票，但它是下半年 AI 从 GPU 扩散到网络层的关键名字。</span>
+          </div>
+          <div class="watch-row">
+            <strong>第四条线，MSFT、META、GOOGL</strong>
+            <span>市场现在最怕的不是它们不投 AI，而是投太多之后回报不够。下周如果 FOMC 纪要偏鹰、利率上去，这些高 CapEx 巨头会继续被审计；但如果它们能稳住，说明市场并没有撤离 AI，只是在换仓。</span>
+          </div>
+          <div class="watch-row">
+            <strong>第五条线，PLTR 和 NBIS</strong>
+            <span>PLTR 是主权 AI 和政府 AI 的代表，NBIS 是 Neocloud 高 beta 代表。它们弹性很大，但也不是低风险资产。适合观察资金有没有从硬件转向“AI应用和算力服务”。</span>
+          </div>
+        </div>
+
+        <h2 id="macro">宏观提醒</h2>
+
+        <p>另外，本周宏观还要看 7月6日 ISM 服务业 PMI 和 7月8日 FOMC 会议纪要。市场现在最怕的不是经济差，而是服务业通胀太粘、Fed 纪要偏鹰，重新把美债收益率顶起来。</p>
+
+        <h2 id="summary">一句话总结</h2>
+
+        <p>下周我的剧本是：指数不一定崩，但内部会继续分化。拿核心，少追高，等市场告诉我们谁才是真正能兑现的 AI 公司。</p>
+
+        <div class="disclaimer">本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。</div>
+      </article>
+
+      <aside class="side-panel">
+        <section class="qr-card">
+          <h2>公众号二维码</h2>
+          <img src="../qrcode.jpg" alt="东左耳清濛公众号二维码" onerror="this.closest('.qr-card').classList.add('missing')" />
+          <div class="qr-placeholder">请把二维码图片保存到项目根目录，这里会自动显示。</div>
+        </section>
+
+        <section class="toc-card">
+          <h2>文章目录</h2>
+          <a href="#mainlines">主线部分</a>
+          <a href="#macro">宏观提醒</a>
+          <a href="#summary">一句话总结</a>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <strong>Lemon 美股手记</strong><br />
+      <span>原文同步自微信公众号。<a href="../index.html">返回首页</a></span>
+    </div>
+  </footer>
+</body>
+</html>
