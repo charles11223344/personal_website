@@ -1455,6 +1455,19 @@
         <div class="article-grid">
           <article class="article-card">
             <div class="article-topline">
+              <span>周中剧本</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-07-07-midweek-rotation.html">周中剧本，别灰心：美股没死，只是在换手</a></h3>
+            <p>AI 硬件集中去杠杆，但软件线开始承接，重点看 MSFT、PLTR、NOW、NVDA、MU 和 SMH 的关键区间。</p>
+            <div class="tag-row">
+              <span class="tag">AI换手</span>
+              <span class="tag">软件承接</span>
+              <span class="tag">SMH/MU</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
               <span>下周剧本</span>
               <span>已同步</span>
             </div>
@@ -1556,10 +1569,10 @@
           </p>
           <div class="sync-highlight">
             <h3>最新同步</h3>
-            <p>2026-07-05：7月6日—7月10日，美股下周剧本怎么走</p>
+            <p>2026-07-07：周中剧本，别灰心：美股没死，只是在换手</p>
             <div class="sync-actions">
-              <a class="button primary" href="articles/2026-07-05-weekly-script-ai-rotation.html">阅读网页版本</a>
-              <a class="button secondary" href="https://mp.weixin.qq.com/s/udZFkm5XJfAfqQkpFIWOWQ" target="_blank" rel="noopener">打开公众号原文</a>
+              <a class="button primary" href="articles/2026-07-07-midweek-rotation.html">阅读网页版本</a>
+              <a class="button secondary" href="https://mp.weixin.qq.com/s/zznjBnGY6fbrCnMe8nAlyA" target="_blank" rel="noopener">打开公众号原文</a>
             </div>
           </div>
         </div>
@@ -1588,7 +1601,7 @@
           <!-- <p>保留原页面的 CoinGecko 数据接口，继续显示 BTC 和 ETH 的 CAD 报价，作为跨资产风险偏好的参考。</p> -->
         </div>
         <div class="crypto-box">
-          <small>COINGECKO LIVE PRICE</small>
+          <small>CRYPTO LIVE PRICE</small>
           <div id="crypto-prices">正在加载加密货币价格...</div>
           <p class="disclaimer">内容仅用于学习和记录，不构成投资建议。</p>
         </div>
@@ -2356,28 +2369,81 @@
         if (cnyCadDetailEl) cnyCadDetailEl.textContent = "稍后再试";
       });
 
-    function displayCrypto(data) {
+    function asPositiveNumber(value) {
+      const number = Number(value);
+      return Number.isFinite(number) && number > 0 ? number : null;
+    }
+
+    function formatCadCryptoPrice(value) {
+      const number = asPositiveNumber(value);
+      return number === null
+        ? null
+        : number.toLocaleString("en-CA", { maximumFractionDigits: 2 });
+    }
+
+    function renderCryptoPrices(bitcoinCad, ethereumCad, sourceLabel) {
       const div = document.getElementById("crypto-prices");
       if (!div) return;
-      if (!data.bitcoin || !data.ethereum) {
+      const btcPrice = formatCadCryptoPrice(bitcoinCad);
+      const ethPrice = formatCadCryptoPrice(ethereumCad);
+      if (!btcPrice || !ethPrice) {
         div.textContent = "Crypto prices unavailable.";
         return;
       }
       div.innerHTML = `
         <img src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png" alt="BTC">
-        <b>BTC</b>: $${data.bitcoin.cad.toLocaleString()} CAD<br>
+        <b>BTC</b>: $${btcPrice} CAD<br>
         <img src="https://assets.coingecko.com/coins/images/279/large/ethereum.png" alt="ETH">
-        <b>ETH</b>: $${data.ethereum.cad.toLocaleString()} CAD
+        <b>ETH</b>: $${ethPrice} CAD<br>
+        <small>Source: ${escapeHtml(sourceLabel)}</small>
       `;
     }
 
-    fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=cad")
+    function displayCrypto(data) {
+      if (!data || !data.bitcoin || !data.ethereum) {
+        throw new Error("CoinGecko data unavailable");
+      }
+      renderCryptoPrices(data.bitcoin.cad, data.ethereum.cad, "CoinGecko");
+    }
+
+    function displayCryptoFromQuotes(data) {
+      const quotes = Array.isArray(data && data.symbols) ? data.symbols : [];
+      const btc = quotes.find(function(quote) {
+        return quote.symbol === "BTC-CAD" && !quote.error;
+      });
+      const eth = quotes.find(function(quote) {
+        return quote.symbol === "ETH-CAD" && !quote.error;
+      });
+      if (!btc || !eth) throw new Error("Crypto quote proxy data unavailable");
+      renderCryptoPrices(btc.close, eth.close, "Yahoo Finance via Worker");
+    }
+
+    function loadCoinGeckoCrypto() {
+      return fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=cad", { cache: "no-store" })
       .then(function(response) {
+        if (!response.ok) throw new Error("CoinGecko " + response.status);
         return response.json();
       })
       .then(function(data) {
         displayCrypto(data);
-      })
+      });
+    }
+
+    function loadQuoteProxyCrypto() {
+      const url = liveQuoteUrl(["BTC-CAD", "ETH-CAD"]);
+      if (!url) return Promise.reject(new Error("Crypto quote proxy unavailable"));
+      return fetch(url, { cache: "no-store" })
+        .then(function(response) {
+          if (!response.ok) throw new Error("Crypto quote proxy " + response.status);
+          return response.json();
+        })
+        .then(function(data) {
+          displayCryptoFromQuotes(data);
+        });
+    }
+
+    loadCoinGeckoCrypto()
+      .catch(loadQuoteProxyCrypto)
       .catch(function() {
         const div = document.getElementById("crypto-prices");
         if (div) div.textContent = "Crypto prices unavailable.";

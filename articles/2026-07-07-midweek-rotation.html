@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="2026-07-07 周中剧本，别灰心：美股没死，只是在换手。Lemon 美股手记文章归档。" />
+  <title>周中剧本，别灰心：美股没死，只是在换手 | Lemon 美股手记</title>
+  <style>
+    :root {
+      --ink: #111318;
+      --muted: #59606b;
+      --paper: #f7f8f6;
+      --surface: #ffffff;
+      --line: #d9ded8;
+      --green: #0f8f63;
+      --gold: #c08a26;
+      --lemon-soft: #f3edcf;
+      --shadow: 0 18px 45px rgba(17, 19, 24, 0.09);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.78;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(217, 222, 216, 0.9);
+      background: rgba(247, 248, 246, 0.92);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-wrap,
+    .article-wrap,
+    .footer-inner {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav-wrap {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 900;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      object-position: center 22%;
+      border-radius: var(--radius);
+      border: 1px solid rgba(17, 19, 24, 0.18);
+      background: var(--lemon-soft);
+    }
+
+    .brand span {
+      display: grid;
+      line-height: 1.1;
+    }
+
+    .brand small {
+      color: var(--gold);
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 800;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 8px 12px;
+      background: #ffffff;
+    }
+
+    .article-hero {
+      padding: 72px 0 36px;
+      background:
+        linear-gradient(90deg, rgba(17, 19, 24, 0.92), rgba(17, 19, 24, 0.7)),
+        url("../market-vlog-hero.png");
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
+    }
+
+    .article-hero p {
+      margin: 0 0 14px;
+      color: #d7e7de;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(2.25rem, 6vw, 4.7rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      color: #eef3f0;
+      font-weight: 800;
+    }
+
+    .meta span,
+    .meta a {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 999px;
+      padding: 5px 10px;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    main {
+      padding: 42px 0 70px;
+    }
+
+    .content-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 250px;
+      gap: 32px;
+      align-items: start;
+    }
+
+    article,
+    .side-panel section {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    article {
+      padding: clamp(24px, 4vw, 42px);
+    }
+
+    article p {
+      margin: 0 0 1.1em;
+      font-size: 1.05rem;
+    }
+
+    article h2 {
+      margin: 2em 0 0.75em;
+      font-size: 1.45rem;
+      line-height: 1.28;
+    }
+
+    .lead {
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .stock-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0 28px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fbfcfa;
+      font-size: 0.96rem;
+    }
+
+    .stock-table th,
+    .stock-table td {
+      border-bottom: 1px solid var(--line);
+      padding: 12px 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .stock-table th {
+      background: #eef3ee;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .stock-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .stock-table strong {
+      color: var(--green);
+      white-space: nowrap;
+    }
+
+    .quote-card {
+      margin: 28px 0;
+      border-left: 4px solid var(--green);
+      border-radius: var(--radius);
+      background: #eef7f1;
+      padding: 18px 20px;
+      font-weight: 900;
+      color: #133f2f;
+    }
+
+    .disclaimer {
+      margin-top: 28px;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .side-panel {
+      position: sticky;
+      top: 92px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .side-panel section {
+      padding: 18px;
+    }
+
+    .side-panel h2 {
+      margin: 0 0 12px;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    .qr-card img {
+      width: 100%;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .qr-placeholder {
+      display: none;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .qr-card.missing img {
+      display: none;
+    }
+
+    .qr-card.missing .qr-placeholder {
+      display: block;
+    }
+
+    .toc-card a {
+      display: block;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 800;
+      padding: 8px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: var(--muted);
+      background: #ffffff;
+    }
+
+    @media (max-width: 760px) {
+      .content-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .side-panel {
+        position: static;
+      }
+
+      .stock-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+
+      .qr-card img {
+        max-width: 240px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="../index.html" aria-label="Lemon 美股手记首页">
+        <img src="../lemon.png" alt="Lemon logo" />
+        <span>
+          <strong>Lemon 美股手记</strong>
+          <small>Market Vlog</small>
+        </span>
+      </a>
+      <a class="nav-link" href="../index.html#articles">返回文章归档</a>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-wrap">
+      <p>2026-07-07 · 周中剧本</p>
+      <h1>周中剧本，别灰心：美股没死，只是在换手</h1>
+      <div class="meta">
+        <span>作者：东左耳清濛</span>
+        <span>主题：AI换手 / 软件承接 / 高 beta 去杠杆</span>
+        <a href="https://mp.weixin.qq.com/s/zznjBnGY6fbrCnMe8nAlyA" target="_blank" rel="noopener">微信公众号原文</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="article-wrap content-layout">
+      <article>
+        <p class="lead">其实我知道这两天最难受的，肯定是拿 MU、SNDK、SMH、SOXL 的朋友。今天不是全面熊市，而是 AI 硬件被集中去杠杆。</p>
+
+        <p>标普只跌 0.4%，纳指跌 1.2%，但大多数标普成分股其实是涨的，真正流血的是芯片和 AI 高 beta。</p>
+
+        <p>为什么跌呢？一是三星利好兑现后，市场开始担心 AI 存储预期太满；二是油价和通胀预期又回来了，纽约联储 6 月一年期通胀预期升到 3.7%，这会压住科技股估值。还有就是美国和伊朗又不好了。</p>
+
+        <p>但我要说一句安慰大家的话：科技 AI 没结束，只是资金在换地方。</p>
+
+        <p>硬件跌的时候，软件线反而开始接。MSFT 收 388.84，PLTR 收 134.37，NOW 收 110.73，都没有跟着芯片一起崩。NVDA 也守住了 190 上方，收在 196.93，这说明 AI 核心还没坏。</p>
+
+        <h2 id="levels">压力点和观察区间</h2>
+
+        <table class="stock-table">
+          <thead>
+            <tr>
+              <th>股票</th>
+              <th>观察区间</th>
+              <th>我的态度</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>MSFT</strong></td>
+              <td>385–390 可看，375–380 更舒服，目标 400–410</td>
+              <td>核心推荐，AI 降本逻辑最好</td>
+            </tr>
+            <tr>
+              <td><strong>PLTR</strong></td>
+              <td>130–134 承接，站稳 138 看 148–152</td>
+              <td>可持有，但别追太猛</td>
+            </tr>
+            <tr>
+              <td><strong>NOW</strong></td>
+              <td>108–111 承接，突破看 117–120</td>
+              <td>软件防御线，适合低吸</td>
+            </tr>
+            <tr>
+              <td><strong>TSLA</strong></td>
+              <td>400 是关键，破了看 388–392，反弹看 420</td>
+              <td>有弹性，但波动大</td>
+            </tr>
+            <tr>
+              <td><strong>NVDA</strong></td>
+              <td>190–193 支撑，站回 200 看 208–215</td>
+              <td>AI 压舱石，不破 190 问题不大</td>
+            </tr>
+            <tr>
+              <td><strong>MU</strong></td>
+              <td>897–923 是生死承接区，站回 950–970 才算修复</td>
+              <td>有机会，但别满仓硬扛</td>
+            </tr>
+            <tr>
+              <td><strong>SMH</strong></td>
+              <td>565–570 支撑，站回 590–600 才好看</td>
+              <td>等确认，不急着冲</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="mu-sndk">MU 和 SNDK 的坏中带好</h2>
+
+        <p>MU 今天收 938.38，盘中低点 892.50，说明 897 附近被打穿过，但收盘又拉回 923 上方，这是坏中带好。</p>
+
+        <p>SNDK 跌得更猛，收 1617.70，盘中最低 1487.52，这种票弹性大，但绝对不能当核心仓重仓扛。</p>
+
+        <h2 id="summary">最后一句话</h2>
+
+        <div class="quote-card">擦干眼泪，别乱砍核心仓，也别无脑补高 beta。真正的新机会，往往就是在这种绝望里慢慢长出来的。</div>
+
+        <div class="disclaimer">本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。</div>
+      </article>
+
+      <aside class="side-panel">
+        <section class="qr-card">
+          <h2>公众号二维码</h2>
+          <img src="../qrcode.jpg" alt="东左耳清濛公众号二维码" onerror="this.closest('.qr-card').classList.add('missing')" />
+          <div class="qr-placeholder">请把二维码图片保存到项目根目录，这里会自动显示。</div>
+        </section>
+
+        <section class="toc-card">
+          <h2>文章目录</h2>
+          <a href="#levels">观察区间</a>
+          <a href="#mu-sndk">MU 和 SNDK</a>
+          <a href="#summary">最后一句话</a>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <strong>Lemon 美股手记</strong><br />
+      文章首发于微信公众号：东左耳清濛。网站用于归档、复盘和后续跟踪。
+    </div>
+  </footer>
+</body>
+</html>
