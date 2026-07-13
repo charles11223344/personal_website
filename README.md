@@ -36,6 +36,7 @@ py scripts/update_stock_data.py
 
 当前已添加：
 
+- `articles/2026-07-12-oil-inflation-ai-orders.html`
 - `articles/2026-07-07-midweek-rotation.html`
 - `articles/2026-07-05-weekly-script-ai-rotation.html`
 - `articles/2026-06-28-ai-power-infrastructure.html`

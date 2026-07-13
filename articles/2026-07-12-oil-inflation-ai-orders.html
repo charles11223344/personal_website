@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="2026-07-12 下周不是单纯赌财报，而是油价、通胀和AI订单一起验货。Lemon 美股手记文章归档。" />
+  <title>油价、通胀和AI订单一起验货 | Lemon 美股手记</title>
+  <style>
+    :root {
+      --ink: #111318;
+      --muted: #59606b;
+      --paper: #f7f8f6;
+      --surface: #ffffff;
+      --line: #d9ded8;
+      --green: #0f8f63;
+      --gold: #c08a26;
+      --lemon-soft: #f3edcf;
+      --shadow: 0 18px 45px rgba(17, 19, 24, 0.09);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.78;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(217, 222, 216, 0.9);
+      background: rgba(247, 248, 246, 0.92);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-wrap,
+    .article-wrap,
+    .footer-inner {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav-wrap {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 900;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      object-position: center 22%;
+      border-radius: var(--radius);
+      border: 1px solid rgba(17, 19, 24, 0.18);
+      background: var(--lemon-soft);
+    }
+
+    .brand span {
+      display: grid;
+      line-height: 1.1;
+    }
+
+    .brand small {
+      color: var(--gold);
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 800;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 8px 12px;
+      background: #ffffff;
+    }
+
+    .article-hero {
+      padding: 72px 0 36px;
+      background:
+        linear-gradient(90deg, rgba(17, 19, 24, 0.92), rgba(17, 19, 24, 0.72)),
+        url("../market-vlog-hero.png");
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
+    }
+
+    .article-hero p {
+      margin: 0 0 14px;
+      color: #d7e7de;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(2.25rem, 6vw, 4.7rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      color: #eef3f0;
+      font-weight: 800;
+    }
+
+    .meta span,
+    .meta a {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 999px;
+      padding: 5px 10px;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    main {
+      padding: 42px 0 70px;
+    }
+
+    .content-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 250px;
+      gap: 32px;
+      align-items: start;
+    }
+
+    article,
+    .side-panel section {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    article {
+      padding: clamp(24px, 4vw, 42px);
+    }
+
+    article p {
+      margin: 0 0 1.1em;
+      font-size: 1.05rem;
+    }
+
+    article h2 {
+      margin: 2em 0 0.75em;
+      font-size: 1.45rem;
+      line-height: 1.28;
+    }
+
+    .lead {
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0 28px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fbfcfa;
+      overflow: hidden;
+      font-size: 0.96rem;
+    }
+
+    .data-table th,
+    .data-table td {
+      border-bottom: 1px solid var(--line);
+      padding: 12px 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .data-table th {
+      background: #eef3ee;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .data-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .data-table strong {
+      color: var(--green);
+      white-space: nowrap;
+    }
+
+    .quote-card {
+      margin: 28px 0;
+      border-left: 4px solid var(--green);
+      border-radius: var(--radius);
+      background: #eef7f1;
+      padding: 18px 20px;
+      font-weight: 900;
+      color: #133f2f;
+    }
+
+    .disclaimer {
+      margin-top: 28px;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .side-panel {
+      position: sticky;
+      top: 92px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .side-panel section {
+      padding: 18px;
+    }
+
+    .side-panel h2 {
+      margin: 0 0 12px;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    .qr-card img {
+      width: 100%;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .qr-placeholder {
+      display: none;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .qr-card.missing img {
+      display: none;
+    }
+
+    .qr-card.missing .qr-placeholder {
+      display: block;
+    }
+
+    .toc-card a {
+      display: block;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 800;
+      padding: 8px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: var(--muted);
+      background: #ffffff;
+    }
+
+    @media (max-width: 760px) {
+      .content-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .side-panel {
+        position: static;
+      }
+
+      .data-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+
+      .qr-card img {
+        max-width: 240px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="../index.html" aria-label="Lemon 美股手记首页">
+        <img src="../lemon.png" alt="Lemon logo" />
+        <span>
+          <strong>Lemon 美股手记</strong>
+          <small>Market Vlog</small>
+        </span>
+      </a>
+      <a class="nav-link" href="../index.html#articles">返回文章归档</a>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-wrap">
+      <p>2026-07-12 · 下周剧本</p>
+      <h1>下周不是单纯赌财报，而是油价、通胀和AI订单一起验货</h1>
+      <div class="meta">
+        <span>作者：Lemon清濛</span>
+        <span>主题：油价 / CPI / AI订单 / 财报季</span>
+        <a href="https://mp.weixin.qq.com/s/iNjbJKuWHWC0Fh86Cu5Dww" target="_blank" rel="noopener">微信公众号原文</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="article-wrap content-layout">
+      <article>
+        <p class="lead">大家好呀，我是 Lemon清濛。我总是觉得写太长没有人看，所以我就尽量写短一点，把我想说的说出来就好了。</p>
+
+        <p><strong>先说结论：</strong>下周不是单纯赌财报，而是油价、通胀和 AI 订单一起验货。周末美伊围绕霍尔木兹海峡再度交火，周一亚洲时段布油升至约 78.5 美元、WTI 约 73.8 美元，美股期货跌 0.3%—0.5%。只要油价继续冲、10年期美债维持高位，科技股反弹空间就会被压住；若海峡通航未明显受阻，市场重心很快会回到盈利。</p>
+
+        <h2 id="hardware">AI硬件不是没需求，是财报前降杠杆</h2>
+
+        <p>MU、MRVL 和 SOXL 连续走弱，不代表 AI 需求突然消失，而是拥挤的半导体交易正在财报前降杠杆。</p>
+
+        <p>SK 海力士美国 ADR 首日大涨后，首尔股价一度跌 8.2%，市场借 HBM4 出货不及最乐观预期获利了结，情绪随即传导到 MU 和整条芯片链。SOXL 又是每日 3 倍杠杆 ETF，震荡下跌时会同时承受放大跌幅和波动损耗；MRVL 则因估值和 ASIC 订单预期较满，资金先卖高 Beta、保留 NVDA 和 TSM 等核心资产。</p>
+
+        <h2 id="calendar">下周大事记</h2>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>日期</th>
+              <th>事件</th>
+              <th>观察重点</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>7月13日</strong></td>
+              <td>台积电公布 6 月营收</td>
+              <td>看 AI 订单和先进制程需求是否继续强。</td>
+            </tr>
+            <tr>
+              <td><strong>7月14日</strong></td>
+              <td>美国 6 月 CPI；JPM、BAC、GS、WFC、C 同日发财报</td>
+              <td>通胀决定利率压力，银行验证消费者和信用质量。</td>
+            </tr>
+            <tr>
+              <td><strong>7月15日</strong></td>
+              <td>美国 PPI；ASML 财报</td>
+              <td>看通胀链条和半导体设备订单质量。</td>
+            </tr>
+            <tr>
+              <td><strong>7月16日</strong></td>
+              <td>北京时间 14:00，TSM 举行 Q2 法说会</td>
+              <td>重点看 CoWoS、毛利率和 CapEx 是否上修。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>银行要证明美国消费者和信用质量没坏；TSM 与 ASML 则要证明 AI 资本开支还在加速。市场已经知道业绩会好，现在只有上调指引、订单和资本开支，才能真正推动股价。</p>
+
+        <h2 id="watchlist">下周 5 只核心观察股</h2>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>股票</th>
+              <th>逻辑</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>TSM</strong></td>
+              <td>AI 底盘，重点看 CoWoS、毛利率和 CapEx。</td>
+            </tr>
+            <tr>
+              <td><strong>ASML</strong></td>
+              <td>只看新增订单，符合预期也可能跌。</td>
+            </tr>
+            <tr>
+              <td><strong>AMKR</strong></td>
+              <td>与 TSM 扩大美国先进封装合作，适合等回踩。</td>
+            </tr>
+            <tr>
+              <td><strong>C</strong></td>
+              <td>银行重估首选，盯 ROTCE 和回购。</td>
+            </tr>
+            <tr>
+              <td><strong>XOM</strong></td>
+              <td>地缘风险对冲，但油价冲高回落就别追。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="basecase">我的基准剧本</h2>
+
+        <div class="quote-card">低开震荡、能源偏强、科技分化。牛市没坏，但现在最贵的不是坏公司，而是“好消息已经写满”的公司。下周只买能上调未来的，不赌只会超过过去的。</div>
+
+        <div class="disclaimer">本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。</div>
+      </article>
+
+      <aside class="side-panel">
+        <section class="qr-card">
+          <h2>公众号二维码</h2>
+          <img src="../qrcode.jpg" alt="东左耳清濛公众号二维码" onerror="this.closest('.qr-card').classList.add('missing')" />
+          <div class="qr-placeholder">请把二维码图片保存到项目根目录，这里会自动显示。</div>
+        </section>
+
+        <section class="toc-card">
+          <h2>文章目录</h2>
+          <a href="#hardware">AI硬件</a>
+          <a href="#calendar">下周大事记</a>
+          <a href="#watchlist">5只观察股</a>
+          <a href="#basecase">基准剧本</a>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <strong>Lemon 美股手记</strong><br />
+      文章首发于微信公众号：东左耳清濛。网站用于归档、复盘和后续跟踪。
+    </div>
+  </footer>
+</body>
+</html>
