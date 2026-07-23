@@ -36,6 +36,7 @@ py scripts/update_stock_data.py
 
 当前已添加：
 
+- `articles/2026-07-22-google-cloud-cash-flow.html`
 - `articles/2026-07-19-oil-earnings-ai-stopfall.html`
 - `articles/2026-07-12-oil-inflation-ai-orders.html`
 - `articles/2026-07-07-midweek-rotation.html`
