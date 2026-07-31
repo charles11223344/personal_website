@@ -2420,6 +2420,17 @@
       renderCryptoPrices(btc.close, eth.close, "Yahoo Finance via Worker");
     }
 
+    function displayCryptoFromCoinbase(bitcoinData, ethereumData) {
+      const bitcoinCad = bitcoinData && bitcoinData.data && bitcoinData.data.rates
+        ? bitcoinData.data.rates.CAD
+        : null;
+      const ethereumCad = ethereumData && ethereumData.data && ethereumData.data.rates
+        ? ethereumData.data.rates.CAD
+        : null;
+      if (!bitcoinCad || !ethereumCad) throw new Error("Coinbase crypto data unavailable");
+      renderCryptoPrices(bitcoinCad, ethereumCad, "Coinbase");
+    }
+
     function loadCoinGeckoCrypto() {
       return fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=cad", { cache: "no-store" })
       .then(function(response) {
@@ -2444,7 +2455,23 @@
         });
     }
 
+    function loadCoinbaseCrypto() {
+      return Promise.all([
+        fetch("https://api.coinbase.com/v2/exchange-rates?currency=BTC", { cache: "no-store" }).then(function(response) {
+          if (!response.ok) throw new Error("Coinbase BTC " + response.status);
+          return response.json();
+        }),
+        fetch("https://api.coinbase.com/v2/exchange-rates?currency=ETH", { cache: "no-store" }).then(function(response) {
+          if (!response.ok) throw new Error("Coinbase ETH " + response.status);
+          return response.json();
+        })
+      ]).then(function(results) {
+        displayCryptoFromCoinbase(results[0], results[1]);
+      });
+    }
+
     loadCoinGeckoCrypto()
+      .catch(loadCoinbaseCrypto)
       .catch(loadQuoteProxyCrypto)
       .catch(function() {
         const div = document.getElementById("crypto-prices");
