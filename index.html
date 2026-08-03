@@ -1455,6 +1455,19 @@
         <div class="article-grid">
           <article class="article-card">
             <div class="article-topline">
+              <span>下周剧本</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-08-02-oil-cooling-jobs-rates-cashflow.html">油价降温可能只是止痛药</a></h3>
+            <p>油价回落只是喘息，8/3-8/7 进入就业、利率和企业现金流共同验货的一周，重点看 PLTR、AMD、SpaceX、SNDK、WDC、VST。</p>
+            <div class="tag-row">
+              <span class="tag">就业数据</span>
+              <span class="tag">AI现金流</span>
+              <span class="tag">PLTR/AMD</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
               <span>周中剧本</span>
               <span>已同步</span>
             </div>
@@ -1634,10 +1647,10 @@
           </p>
           <div class="sync-highlight">
             <h3>最新同步</h3>
-            <p>2026-07-29：美股周中剧本：血流成河</p>
+            <p>2026-08-02：下周剧本：油价降温可能只是止痛药</p>
             <div class="sync-actions">
-              <a class="button primary" href="articles/2026-07-29-midweek-bloodbath-model.html">阅读网页版本</a>
-              <a class="button secondary" href="https://mp.weixin.qq.com/s/otRaise16_NSD79B5FhFIg" target="_blank" rel="noopener">打开公众号原文</a>
+              <a class="button primary" href="articles/2026-08-02-oil-cooling-jobs-rates-cashflow.html">阅读网页版本</a>
+              <a class="button secondary" href="https://mp.weixin.qq.com/s/ps-sa3G3mO_WQQ-0L5AO3A" target="_blank" rel="noopener">打开公众号原文</a>
             </div>
           </div>
         </div>
@@ -1743,18 +1756,39 @@
     const RISK_HISTORY_KEY = "lemon-risk-history-v1";
     const marketCalendarEvents = [
       {
-        date: "2026-07-30",
+        date: "2026-08-03",
         type: "宏观",
-        title: "GDP/PCE 与 AAPL、AMZN 财报",
-        focus: "8:30 美东公布 GDP 和核心 PCE；盘后看 AAPL 中国收入/毛利率，以及 AMZN AWS 增速和 CapEx。",
-        tags: ["GDP", "PCE", "AAPL", "AMZN"]
+        title: "ISM制造业PMI与PLTR财报",
+        focus: "看制造业温度和就业分项；PLTR 盘后验证高估值能否靠增长指引消化。",
+        tags: ["ISM", "PLTR", "Rates"]
       },
       {
-        date: "2026-07-31",
+        date: "2026-08-04",
+        type: "财报",
+        title: "美国贸易数据、工厂订单与AMD/SpaceX财报",
+        focus: "AMD 盘后需要拿出 AI 加速卡订单和下半年数据中心指引；SpaceX 首份财报看 Starlink 增长、CapEx 和解禁压力。",
+        tags: ["AMD", "SPCX", "Factory Orders"]
+      },
+      {
+        date: "2026-08-05",
         type: "宏观",
-        title: "日本央行、中国 PMI 与能源财报",
-        focus: "看日本央行利率决议、中国官方制造业 PMI，以及 XOM、CVX、MRNA 财报对油价和能源股的反馈。",
-        tags: ["BOJ", "China PMI", "XOM", "CVX"]
+        title: "ISM服务业PMI、EIA库存与LLY/SNDK/WDC财报",
+        focus: "服务业 PMI 决定利率压力；SNDK 和 WDC 盘后验证存储高门槛能否继续兑现。",
+        tags: ["ISM Services", "EIA", "SNDK", "WDC"]
+      },
+      {
+        date: "2026-08-06",
+        type: "宏观",
+        title: "初请失业金与AAOI财报",
+        focus: "看就业降温是否延续，以及光通信高波动链条能否止跌。",
+        tags: ["Jobless Claims", "AAOI", "Optical"]
+      },
+      {
+        date: "2026-08-07",
+        type: "宏观",
+        title: "7月非农就业报告与VST/OKLO财报",
+        focus: "市场预期新增就业约 8.3 万人、失业率约 4.3%；VST/OKLO 验证电力和核电线现金流。",
+        tags: ["NFP", "VST", "OKLO", "US10Y"]
       },
       {
         date: "TBD",
@@ -1766,7 +1800,7 @@
       },
       {
         date: "TBD",
-        dateLabel: "7月财报季",
+        dateLabel: "8月财报季",
         type: "财报",
         title: "大型科技财报窗口",
         focus: "看云资本开支、AI 订单、毛利率和现金流质量。",
