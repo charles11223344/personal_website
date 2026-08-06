@@ -36,6 +36,7 @@ py scripts/update_stock_data.py
 
 当前已添加：
 
+- `articles/2026-08-05-midweek-dow-record-capex.html`
 - `articles/2026-08-02-oil-cooling-jobs-rates-cashflow.html`
 - `articles/2026-07-29-midweek-bloodbath-model.html`
 - `articles/2026-07-26-fomc-gdp-pce-ai-cashflow.html`

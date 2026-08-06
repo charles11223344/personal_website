@@ -1455,6 +1455,19 @@
         <div class="article-grid">
           <article class="article-card">
             <div class="article-topline">
+              <span>周中剧本</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-08-05-midweek-dow-record-capex.html">道指创新高，纳指却被资本开支拖住</a></h3>
+            <p>道指创新高但纳指承压，市场从“所有 AI 都买”切换到审计回报，重点看 NVDA、AMD、MU、SPCX 和 BWXT。</p>
+            <div class="tag-row">
+              <span class="tag">AI CapEx</span>
+              <span class="tag">NVDA/AMD</span>
+              <span class="tag">油价风险</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
               <span>下周剧本</span>
               <span>已同步</span>
             </div>
@@ -1647,10 +1660,10 @@
           </p>
           <div class="sync-highlight">
             <h3>最新同步</h3>
-            <p>2026-08-02：下周剧本：油价降温可能只是止痛药</p>
+            <p>2026-08-05：周中剧本：道指创新高，纳指却被资本开支拖住</p>
             <div class="sync-actions">
-              <a class="button primary" href="articles/2026-08-02-oil-cooling-jobs-rates-cashflow.html">阅读网页版本</a>
-              <a class="button secondary" href="https://mp.weixin.qq.com/s/ps-sa3G3mO_WQQ-0L5AO3A" target="_blank" rel="noopener">打开公众号原文</a>
+              <a class="button primary" href="articles/2026-08-05-midweek-dow-record-capex.html">阅读网页版本</a>
+              <a class="button secondary" href="https://mp.weixin.qq.com/s/G-oRc87gvc0JhAg23N2cSw" target="_blank" rel="noopener">打开公众号原文</a>
             </div>
           </div>
         </div>
@@ -1756,39 +1769,25 @@
     const RISK_HISTORY_KEY = "lemon-risk-history-v1";
     const marketCalendarEvents = [
       {
-        date: "2026-08-03",
-        type: "宏观",
-        title: "ISM制造业PMI与PLTR财报",
-        focus: "看制造业温度和就业分项；PLTR 盘后验证高估值能否靠增长指引消化。",
-        tags: ["ISM", "PLTR", "Rates"]
-      },
-      {
-        date: "2026-08-04",
-        type: "财报",
-        title: "美国贸易数据、工厂订单与AMD/SpaceX财报",
-        focus: "AMD 盘后需要拿出 AI 加速卡订单和下半年数据中心指引；SpaceX 首份财报看 Starlink 增长、CapEx 和解禁压力。",
-        tags: ["AMD", "SPCX", "Factory Orders"]
-      },
-      {
         date: "2026-08-05",
         type: "宏观",
-        title: "ISM服务业PMI、EIA库存与LLY/SNDK/WDC财报",
-        focus: "服务业 PMI 决定利率压力；SNDK 和 WDC 盘后验证存储高门槛能否继续兑现。",
-        tags: ["ISM Services", "EIA", "SNDK", "WDC"]
+        title: "ADP弱就业、EIA库存与SNDK/WDC财报",
+        focus: "ADP 私人就业仅增加 4.4 万人，收益率回落但加息争议仍在；盘后看 SNDK、WDC 验证存储高门槛能否继续兑现。",
+        tags: ["ADP", "EIA", "SNDK", "WDC"]
       },
       {
         date: "2026-08-06",
         type: "宏观",
         title: "初请失业金与AAOI财报",
-        focus: "看就业降温是否延续，以及光通信高波动链条能否止跌。",
-        tags: ["Jobless Claims", "AAOI", "Optical"]
+        focus: "看就业降温是否延续、10年期收益率是否继续回落，以及光通信高波动链条能否止跌。",
+        tags: ["Jobless Claims", "AAOI", "US10Y"]
       },
       {
         date: "2026-08-07",
         type: "宏观",
         title: "7月非农就业报告与VST/OKLO财报",
-        focus: "市场预期新增就业约 8.3 万人、失业率约 4.3%；VST/OKLO 验证电力和核电线现金流。",
-        tags: ["NFP", "VST", "OKLO", "US10Y"]
+        focus: "市场预期新增就业约 8.3 万人、失业率约 4.3%；同时看油价风险溢价和 VST/OKLO 的电力、核电线现金流。",
+        tags: ["NFP", "VST", "OKLO", "WTI"]
       },
       {
         date: "TBD",

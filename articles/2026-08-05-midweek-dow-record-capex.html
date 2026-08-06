@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="2026-08-05 周中美股剧本预测和总结：道指创新高，纳指却被资本开支拖住。Lemon 美股手记文章归档。" />
+  <title>道指创新高，纳指却被资本开支拖住 | Lemon 美股手记</title>
+  <style>
+    :root {
+      --ink: #111318;
+      --muted: #59606b;
+      --paper: #f7f8f6;
+      --surface: #ffffff;
+      --line: #d9ded8;
+      --green: #0f8f63;
+      --gold: #c08a26;
+      --lemon-soft: #f3edcf;
+      --radius: 8px;
+      --shadow: 0 18px 45px rgba(17, 19, 24, 0.09);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.78;
+    }
+    a { color: inherit; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(217, 222, 216, 0.9);
+      background: rgba(247, 248, 246, 0.92);
+      backdrop-filter: blur(14px);
+    }
+    .nav-wrap, .article-wrap, .footer-inner {
+      width: min(1060px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    .nav-wrap {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 900;
+    }
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      object-position: center 22%;
+      border-radius: var(--radius);
+      border: 1px solid rgba(17, 19, 24, 0.18);
+      background: var(--lemon-soft);
+    }
+    .brand span { display: grid; line-height: 1.1; }
+    .brand small {
+      color: var(--gold);
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .nav-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 800;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 8px 12px;
+      background: #ffffff;
+    }
+    .article-hero {
+      padding: 72px 0 36px;
+      background:
+        linear-gradient(90deg, rgba(17, 19, 24, 0.92), rgba(17, 19, 24, 0.72)),
+        url("../market-vlog-hero.png");
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
+    }
+    .article-hero p {
+      margin: 0 0 14px;
+      color: #d7e7de;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(2.25rem, 6vw, 4.7rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      color: #eef3f0;
+      font-weight: 800;
+    }
+    .meta span, .meta a {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 999px;
+      padding: 5px 10px;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.08);
+    }
+    main { padding: 42px 0 70px; }
+    .content-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 250px;
+      gap: 32px;
+      align-items: start;
+    }
+    article, .side-panel section {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    article { padding: clamp(24px, 4vw, 42px); }
+    article p { margin: 0 0 1.1em; font-size: 1.05rem; }
+    article h2 { margin: 2em 0 0.75em; font-size: 1.45rem; line-height: 1.28; }
+    .lead { font-size: 1.18rem; font-weight: 800; }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0 28px;
+      border: 1px solid var(--line);
+      background: #fbfcfa;
+      font-size: 0.92rem;
+    }
+    .data-table th, .data-table td {
+      border-bottom: 1px solid var(--line);
+      padding: 11px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .data-table th {
+      background: #eef3ee;
+      color: var(--muted);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .data-table tr:last-child td { border-bottom: 0; }
+    .data-table strong { color: var(--green); white-space: nowrap; }
+    .quote-card {
+      margin: 28px 0;
+      border-left: 4px solid var(--green);
+      border-radius: var(--radius);
+      background: #eef7f1;
+      padding: 18px 20px;
+      font-weight: 900;
+      color: #133f2f;
+    }
+    .disclaimer {
+      margin-top: 28px;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .side-panel { position: sticky; top: 92px; display: grid; gap: 18px; }
+    .side-panel section { padding: 18px; }
+    .side-panel h2 {
+      margin: 0 0 12px;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+    .qr-card img {
+      width: 100%;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+    .qr-placeholder { display: none; color: var(--muted); font-size: 0.92rem; }
+    .qr-card.missing img { display: none; }
+    .qr-card.missing .qr-placeholder { display: block; }
+    .toc-card a {
+      display: block;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 800;
+      padding: 8px 0;
+      border-top: 1px solid var(--line);
+    }
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: var(--muted);
+      background: #ffffff;
+    }
+    @media (max-width: 820px) {
+      .content-layout { grid-template-columns: 1fr; }
+      .side-panel { position: static; }
+      .data-table { display: block; overflow-x: auto; white-space: nowrap; }
+      .qr-card img { max-width: 240px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="../index.html" aria-label="Lemon 美股手记首页">
+        <img src="../lemon.png" alt="Lemon logo" />
+        <span>
+          <strong>Lemon 美股手记</strong>
+          <small>Market Vlog</small>
+        </span>
+      </a>
+      <a class="nav-link" href="../index.html#articles">返回文章归档</a>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-wrap">
+      <p>2026-08-05 · 周中剧本</p>
+      <h1>道指创新高，纳指却被资本开支拖住</h1>
+      <div class="meta">
+        <span>作者：Lemon清濛</span>
+        <span>主题：AI CapEx / 弱就业 / 油价风险 / 个股剧本</span>
+        <a href="https://mp.weixin.qq.com/s/G-oRc87gvc0JhAg23N2cSw" target="_blank" rel="noopener">微信公众号原文</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="article-wrap content-layout">
+      <article>
+        <p class="lead">周三美股最值得注意的，不是标普只跌 0.17%，而是道指上涨 0.49% 再创新高，纳指却下跌 0.83%。</p>
+
+        <p>这说明市场没有全面转空，而是在从“所有 AI 都买”切换到“只奖励能证明回报的公司”。7月 ADP 私人就业仅增加 4.4 万人，低于预期的 7 万人，美债收益率随之回落；但卡什卡利同时主张缓慢加息，科技股仍不能把弱就业简单理解成降息利好。</p>
+
+        <p>美伊谈判确有进展，特朗普称双方进行了“非常好的讨论”，但伊朗仍否认近期存在直接谈判，霍尔木兹协议也涉及港口封锁、航道控制和收费等分歧。油价风险溢价下降是真的，全面和解则远未确认。</p>
+
+        <h2 id="stocks">重点股票剧本</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>股票</th>
+              <th>收盘与状态</th>
+              <th>未来两日观察</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>NVDA</strong></td>
+              <td>上涨 3.47% 至 219.22 美元，既受 SpaceX 计划采用其硬件支持，也体现市场仍把它视为 AI 核心平台。</td>
+              <td>只要守住 215 美元，仍有机会测试 222 美元；跌破 214 美元则反弹转弱。</td>
+            </tr>
+            <tr>
+              <td><strong>AMD</strong></td>
+              <td>财报并不差，但股价下跌 7.16% 至 482.05 美元。</td>
+              <td>问题不是数据中心没增长，而是 158 倍左右静态 PE 要求更强的毛利率和客户份额证明。470 美元是短线防线，重新站上 500 美元才算真正修复。</td>
+            </tr>
+            <tr>
+              <td><strong>MU</strong></td>
+              <td>收于 893.19 美元，盘中在 867—929 美元之间剧烈波动。</td>
+              <td>881、858 美元支撑仍可参考；站稳 902 美元再看 929 美元，跌破 858 美元则说明存储筹码清理尚未结束。</td>
+            </tr>
+            <tr>
+              <td><strong>SPCX</strong></td>
+              <td>下跌 13.57% 至 108.27 美元。</td>
+              <td>市场并非否定 Starlink，而是在审计 AI、Starship 和债务支出能否被现金流覆盖。107 美元附近若失守，仍有二次探底风险；短线反弹先看 117 美元。</td>
+            </tr>
+            <tr>
+              <td><strong>BWXT</strong></td>
+              <td>下跌 2.4% 至 168.28 美元。</td>
+              <td>议员买入消息有披露基础，BWXT 也确实承接美国海军核动力项目，但社交媒体所说“三笔共 8 万美元”尚需以国会原始申报确认，不能直接当成内幕信号。168 美元若守住可观察，重新站上 174 美元才转强。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="options">期权大单怎么理解</h2>
+        <p>期权大单只能说明市场正在加强对冲，不能把单笔 Put 或 Call 直接解释成机构看空或看多，因为它可能属于价差、备兑或组合保护。</p>
+
+        <h2 id="scenarios">未来两日预测</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>情景</th>
+              <th>我的判断</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>基准剧本</strong></td>
+              <td>指数高位震荡，NVDA 相对强，AMD 与 SPCX 继续消化财报，MU 围绕 881—929 美元拉锯。</td>
+            </tr>
+            <tr>
+              <td><strong>偏多剧本</strong></td>
+              <td>如果霍尔木兹协议落地、10年期收益率继续回落，QQQ 有望反弹 1%—2%。</td>
+            </tr>
+            <tr>
+              <td><strong>偏空剧本</strong></td>
+              <td>如果油价反弹或加息预期升温，QQQ 可能回撤 1.5%—3%。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="summary">总结</h2>
+        <div class="quote-card">市场不是全面转空，而是在审计 AI 资本开支到底能不能换来现金流。下半周我会重点看 NVDA 能不能稳住、AMD/SPCX 能不能消化财报压力、MU 能不能守住存储线承接。</div>
+
+        <div class="disclaimer">本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。</div>
+      </article>
+
+      <aside class="side-panel">
+        <section class="qr-card">
+          <h2>公众号二维码</h2>
+          <img src="../qrcode.jpg" alt="东左耳清濛公众号二维码" onerror="this.closest('.qr-card').classList.add('missing')" />
+          <div class="qr-placeholder">请把二维码图片保存到项目根目录，这里会自动显示。</div>
+        </section>
+        <section class="toc-card">
+          <h2>文章目录</h2>
+          <a href="#stocks">重点股票剧本</a>
+          <a href="#options">期权大单</a>
+          <a href="#scenarios">未来两日预测</a>
+          <a href="#summary">总结</a>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <strong>Lemon 美股手记</strong><br />
+      文章首发于微信公众号：东左耳清濛。网站用于归档、复盘和后续跟踪。
+    </div>
+  </footer>
+</body>
+</html>
