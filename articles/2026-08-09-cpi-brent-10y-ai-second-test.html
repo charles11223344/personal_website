@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="2026-08-09 下周美股剧本预测：就业降温之后，真正的大考是 CPI。Lemon 美股手记文章归档。" />
+  <title>就业降温之后，真正的大考是 CPI | Lemon 美股手记</title>
+  <style>
+    :root {
+      --ink: #111318;
+      --muted: #59606b;
+      --paper: #f7f8f6;
+      --surface: #ffffff;
+      --line: #d9ded8;
+      --green: #0f8f63;
+      --gold: #c08a26;
+      --lemon-soft: #f3edcf;
+      --radius: 8px;
+      --shadow: 0 18px 45px rgba(17, 19, 24, 0.09);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.78;
+    }
+    a { color: inherit; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(217, 222, 216, 0.9);
+      background: rgba(247, 248, 246, 0.92);
+      backdrop-filter: blur(14px);
+    }
+    .nav-wrap, .article-wrap, .footer-inner {
+      width: min(1060px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    .nav-wrap {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 900;
+    }
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      object-position: center 22%;
+      border-radius: var(--radius);
+      border: 1px solid rgba(17, 19, 24, 0.18);
+      background: var(--lemon-soft);
+    }
+    .brand span { display: grid; line-height: 1.1; }
+    .brand small {
+      color: var(--gold);
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .nav-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 800;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 8px 12px;
+      background: #ffffff;
+    }
+    .article-hero {
+      padding: 72px 0 36px;
+      background:
+        linear-gradient(90deg, rgba(17, 19, 24, 0.92), rgba(17, 19, 24, 0.72)),
+        url("../market-vlog-hero.png");
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
+    }
+    .article-hero p {
+      margin: 0 0 14px;
+      color: #d7e7de;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(2.25rem, 6vw, 4.7rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      color: #eef3f0;
+      font-weight: 800;
+    }
+    .meta span, .meta a {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 999px;
+      padding: 5px 10px;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.08);
+    }
+    main { padding: 42px 0 70px; }
+    .content-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 250px;
+      gap: 32px;
+      align-items: start;
+    }
+    article, .side-panel section {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    article { padding: clamp(24px, 4vw, 42px); }
+    article p { margin: 0 0 1.1em; font-size: 1.05rem; }
+    article h2 { margin: 2em 0 0.75em; font-size: 1.45rem; line-height: 1.28; }
+    .lead { font-size: 1.18rem; font-weight: 800; }
+    .article-figure {
+      margin: 28px 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #10100d;
+      box-shadow: var(--shadow);
+    }
+    .article-figure img {
+      width: 100%;
+      display: block;
+    }
+    .article-figure figcaption {
+      padding: 10px 14px;
+      color: #e8ddae;
+      font-size: 0.9rem;
+      background: #111111;
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0 28px;
+      border: 1px solid var(--line);
+      background: #fbfcfa;
+      font-size: 0.92rem;
+    }
+    .data-table th, .data-table td {
+      border-bottom: 1px solid var(--line);
+      padding: 11px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .data-table th {
+      background: #eef3ee;
+      color: var(--muted);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .data-table tr:last-child td { border-bottom: 0; }
+    .data-table strong { color: var(--green); white-space: nowrap; }
+    .quote-card {
+      margin: 28px 0;
+      border-left: 4px solid var(--green);
+      border-radius: var(--radius);
+      background: #eef7f1;
+      padding: 18px 20px;
+      font-weight: 900;
+      color: #133f2f;
+    }
+    .disclaimer {
+      margin-top: 28px;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .side-panel { position: sticky; top: 92px; display: grid; gap: 18px; }
+    .side-panel section { padding: 18px; }
+    .side-panel h2 {
+      margin: 0 0 12px;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+    .qr-card img {
+      width: 100%;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+    .qr-placeholder { display: none; color: var(--muted); font-size: 0.92rem; }
+    .qr-card.missing img { display: none; }
+    .qr-card.missing .qr-placeholder { display: block; }
+    .toc-card a {
+      display: block;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 800;
+      padding: 8px 0;
+      border-top: 1px solid var(--line);
+    }
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: var(--muted);
+      background: #ffffff;
+    }
+    @media (max-width: 820px) {
+      .content-layout { grid-template-columns: 1fr; }
+      .side-panel { position: static; }
+      .data-table { display: block; overflow-x: auto; white-space: nowrap; }
+      .qr-card img { max-width: 240px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="../index.html" aria-label="Lemon 美股手记首页">
+        <img src="../lemon.png" alt="Lemon logo" />
+        <span>
+          <strong>Lemon 美股手记</strong>
+          <small>Market Vlog</small>
+        </span>
+      </a>
+      <a class="nav-link" href="../index.html#articles">返回文章归档</a>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-wrap">
+      <p>2026-08-09 · 下周剧本</p>
+      <h1>就业降温之后，真正的大考是 CPI</h1>
+      <div class="meta">
+        <span>作者：Lemon清濛</span>
+        <span>主题：CPI / Brent / 10Y / AI第二轮验货</span>
+        <a href="https://mp.weixin.qq.com/s/iEaFcJFMixLrSxNelZ_Trw" target="_blank" rel="noopener">微信公众号原文</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="article-wrap content-layout">
+      <article>
+        <p class="lead">大家好啊，又是我清濛出来骗神骗鬼了，哈哈，开始预测下周的行情了。</p>
+
+        <p>到今晚周日晚为止，美股期货基本平开：标普500期货约跌 0.1%、道指约跌 0.2%，纳指100接近平盘；但真正需要警惕的是油价，布伦特重新回到 84 美元上方。</p>
+
+        <p>上周7月非农意外减少 2.3 万人，把9月加息概率压到约 44%，10年期美债也回落至 4.64%。所以现在市场逻辑很简单：就业给了科技股喘息，但油价和通胀随时可能把估值顺风收回。</p>
+
+        <h2 id="scenarios">下周剧本</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>情景</th>
+              <th>概率</th>
+              <th>判断条件</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>基准情景</strong></td>
+              <td>50%</td>
+              <td>震荡偏强、明显分化。若周三 CPI 接近或低于预期，10Y 继续守住 4.7% 下方，QQQ 还有修复空间。</td>
+            </tr>
+            <tr>
+              <td><strong>偏多情景</strong></td>
+              <td>25%</td>
+              <td>CPI/PPI 温和、10Y 走稳，AI 主线继续修复。</td>
+            </tr>
+            <tr>
+              <td><strong>偏空情景</strong></td>
+              <td>25%</td>
+              <td>CPI、PPI 同时偏热，布油重新冲向 86—88 美元，高 Beta 科技最先吐回上周涨幅。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>根据我模型得到的数据，目前预期7月 CPI 同比约 3.4%、核心约 2.5%。的确很难捉摸，没有办法，warsh 不愿意给提示，我只能自己去猜、去分析。</p>
+
+        <h2 id="stocks">重点股票跟踪</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>股票</th>
+              <th>时间</th>
+              <th>我会看什么</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>RKLB</strong></td>
+              <td>8/10 盘后</td>
+              <td>最新 82.83 美元，8月6日刚公布 3.97 亿美元美国太空军合同，基本面有催化，但最怕财报后“利好兑现”。</td>
+            </tr>
+            <tr>
+              <td><strong>CRWV</strong></td>
+              <td>8/11 盘后</td>
+              <td>最新 90.67 美元，考题不是 AI 需求强不强，而是高速扩张能否覆盖资本开支、融资与利息成本。</td>
+            </tr>
+            <tr>
+              <td><strong>LITE</strong></td>
+              <td>8/11 财报</td>
+              <td>目前 890.17 美元，在高估值状态下必须继续证明光互联和 AI 数据中心需求没有降速。</td>
+            </tr>
+            <tr>
+              <td><strong>NBIS</strong></td>
+              <td>8/12 盘前</td>
+              <td>最新 187.97 美元，重点看 ARR、算力利用率、数据中心扩张和利润率，而不只是营收增长。</td>
+            </tr>
+            <tr>
+              <td><strong>CSCO</strong></td>
+              <td>8/12 盘后</td>
+              <td>AI 交换机和网络需求能否继续扩散的重要验证。</td>
+            </tr>
+            <tr>
+              <td><strong>AMAT</strong></td>
+              <td>8/13 盘后</td>
+              <td>最新 539.14 美元；如果 DRAM、HBM 和先进封装相关设备需求继续强，说明 AI 资本开支没有缩，而是在继续往设备链传导。</td>
+            </tr>
+            <tr>
+              <td><strong>MU</strong></td>
+              <td>持续观察</td>
+              <td>最新约 877.57 美元，依然是存储周期的情绪温度计；AMAT 指引以及中国存储供应竞争都会影响市场对 2027 年供需的判断。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="calendar">下周大事记</h2>
+        <figure class="article-figure">
+          <img src="2026-08-09-calendar.png" alt="2026年8月10日至8月14日下周大事记图" />
+          <figcaption>Lemon清濛下周核心日历：CPI、PPI、Brent、10Y 与 AI 硬件第二轮验货。</figcaption>
+        </figure>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>日期</th>
+              <th>事件</th>
+              <th>总闸门</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>8/10</strong></td>
+              <td>RKLB 盘后财报。</td>
+              <td>太空军合同之后，验证订单和收入兑现。</td>
+            </tr>
+            <tr>
+              <td><strong>8/11</strong></td>
+              <td>CRWV、LITE 财报。</td>
+              <td>看 AI 算力扩张成本和光互联需求是否继续强。</td>
+            </tr>
+            <tr>
+              <td><strong>8/12</strong></td>
+              <td>8:30 CPI；NBIS 盘前、CSCO 盘后。</td>
+              <td>CPI 决定科技估值能否继续扩张，NBIS 和 CSCO 验证 AI 网络与算力需求。</td>
+            </tr>
+            <tr>
+              <td><strong>8/13</strong></td>
+              <td>8:30 PPI；AMAT 盘后。</td>
+              <td>通胀二次确认，AMAT 验证 AI 设备链景气度。</td>
+            </tr>
+            <tr>
+              <td><strong>8/14</strong></td>
+              <td>8:30 美国零售销售。</td>
+              <td>看消费数据是否重新推高利率和通胀担忧。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="summary">一句话结论</h2>
+        <div class="quote-card">下周不要只问 AI 还能不能涨，要盯三个总闸门：CPI、Brent、10Y。只要通胀不反扑、10Y 不重新突破 4.7%，AI 主线仍有继续修复的条件；一旦出现“油价涨＋收益率涨”，先降高 Beta，比猜哪只股票最强更重要。</div>
+
+        <p>当然啊，我也会继续随时看着大盘和数据的走向，特别是下周 CPI、油价和这些财报。</p>
+
+        <p>P.S. 可能是我比较保守，喜欢得出数据后，然后分析再出结论。因为我不想太冒险和去赌任何东西。</p>
+
+        <div class="disclaimer">本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。</div>
+      </article>
+
+      <aside class="side-panel">
+        <section class="qr-card">
+          <h2>公众号二维码</h2>
+          <img src="../qrcode.jpg" alt="东左耳清濛公众号二维码" onerror="this.closest('.qr-card').classList.add('missing')" />
+          <div class="qr-placeholder">请把二维码图片保存到项目根目录，这里会自动显示。</div>
+        </section>
+        <section class="toc-card">
+          <h2>文章目录</h2>
+          <a href="#scenarios">下周剧本</a>
+          <a href="#stocks">重点股票跟踪</a>
+          <a href="#calendar">下周大事记</a>
+          <a href="#summary">一句话结论</a>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <strong>Lemon 美股手记</strong><br />
+      文章首发于微信公众号：东左耳清濛。网站用于归档、复盘和后续跟踪。
+    </div>
+  </footer>
+</body>
+</html>
