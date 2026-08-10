@@ -497,6 +497,42 @@
       font-weight: 800;
     }
 
+    .calendar-focus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .calendar-focus-card {
+      padding: 16px 18px;
+      background: #111318;
+      color: #ffffff;
+    }
+
+    .calendar-focus-card span {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--lemon);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .calendar-focus-card strong {
+      display: block;
+      font-size: 1.08rem;
+      line-height: 1.2;
+    }
+
+    .calendar-focus-card p {
+      margin: 5px 0 0;
+      color: #d8dddc;
+      font-size: 0.9rem;
+    }
+
     .calendar-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1363,10 +1399,27 @@
         <div class="calendar-board">
           <div class="calendar-head">
             <div>
-              <strong>本周与下阶段重点事件</strong>
-              <p>先用本地事件表维护；后续可以接财报 API 或宏观日历 API 自动更新。</p>
+              <strong>8/10 - 8/14 下周核心日历</strong>
+              <p>就业降温后，真正的大考是 CPI；AI 硬件进入第二轮验货。</p>
             </div>
             <div class="calendar-status" id="calendar-status">等待日历渲染</div>
+          </div>
+          <div class="calendar-focus-grid" aria-label="下周三大观察闸门">
+            <div class="calendar-focus-card">
+              <span>Macro Gate</span>
+              <strong>CPI / PPI</strong>
+              <p>决定科技估值能否继续扩张。</p>
+            </div>
+            <div class="calendar-focus-card">
+              <span>Inflation Gate</span>
+              <strong>Brent 原油</strong>
+              <p>油价若继续上冲，通胀压力回归。</p>
+            </div>
+            <div class="calendar-focus-card">
+              <span>Rates Gate</span>
+              <strong>10Y 美债</strong>
+              <p>守住 4.7% 下方，AI 修复更有利。</p>
+            </div>
           </div>
           <div class="calendar-grid" id="calendar-grid" aria-live="polite">
             <article class="event-card">
@@ -1815,30 +1868,6 @@
         title: "美国零售销售",
         focus: "8:30 美东公布零售销售，和 CPI/PPI 一起决定通胀、消费与长债收益率压力。",
         tags: ["Retail Sales", "Brent", "US10Y"]
-      },
-      {
-        date: "TBD",
-        dateLabel: "SK 海力士 ADR",
-        type: "事件",
-        title: "SK 海力士美国 ADR 上市观察",
-        focus: "如果推进，会增加美股 HBM 龙头入口，也可能削弱 MU 的稀缺溢价。",
-        tags: ["HBM", "MU", "Memory"]
-      },
-      {
-        date: "TBD",
-        dateLabel: "8月财报季",
-        type: "财报",
-        title: "大型科技财报窗口",
-        focus: "看云资本开支、AI 订单、毛利率和现金流质量。",
-        tags: ["MSFT", "GOOGL", "AMZN", "META"]
-      },
-      {
-        date: "TBD",
-        dateLabel: "AI 硬件窗口",
-        type: "财报",
-        title: "AI Capex 与数据中心订单验证",
-        focus: "看 GPU、ASIC、网络芯片、存储和电力液冷需求是否继续扩散。",
-        tags: ["NVDA", "AVGO", "MRVL", "MU"]
       }
     ];
     let liveStockTimer = null;
@@ -2227,7 +2256,7 @@
         `;
       }).join("");
 
-      if (status) status.textContent = "已加载 " + events.length + " 个事件 · 手动维护";
+      if (status) status.textContent = "已加载 " + events.length + " 个下周重点事件 · 手动维护";
     }
 
     function fetchStockSnapshot() {
