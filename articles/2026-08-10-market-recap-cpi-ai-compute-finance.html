@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="2026-08-10 美股总结和预测：油价回升、NVDA 算力资产化、CPI 与 AI 云厂财报进入关键 48 小时。Lemon 美股手记文章归档。" />
+  <title>20260810美股总结和预测 | Lemon 美股手记</title>
+  <style>
+    :root {
+      --ink: #111318;
+      --muted: #59606b;
+      --paper: #f7f8f6;
+      --surface: #ffffff;
+      --line: #d9ded8;
+      --green: #0f8f63;
+      --gold: #c08a26;
+      --lemon-soft: #f3edcf;
+      --radius: 8px;
+      --shadow: 0 18px 45px rgba(17, 19, 24, 0.09);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.78;
+    }
+    a { color: inherit; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(217, 222, 216, 0.9);
+      background: rgba(247, 248, 246, 0.92);
+      backdrop-filter: blur(14px);
+    }
+    .nav-wrap, .article-wrap, .footer-inner {
+      width: min(1060px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    .nav-wrap {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 900;
+    }
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      object-position: center 22%;
+      border-radius: var(--radius);
+      border: 1px solid rgba(17, 19, 24, 0.18);
+      background: var(--lemon-soft);
+    }
+    .brand span { display: grid; line-height: 1.1; }
+    .brand small {
+      color: var(--gold);
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .nav-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 800;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 8px 12px;
+      background: #ffffff;
+    }
+    .article-hero {
+      padding: 72px 0 36px;
+      background:
+        linear-gradient(90deg, rgba(17, 19, 24, 0.92), rgba(17, 19, 24, 0.72)),
+        url("../market-vlog-hero.png");
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
+    }
+    .article-hero p {
+      margin: 0 0 14px;
+      color: #d7e7de;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(2.25rem, 6vw, 4.7rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      color: #eef3f0;
+      font-weight: 800;
+    }
+    .meta span, .meta a {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 999px;
+      padding: 5px 10px;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.08);
+    }
+    main { padding: 42px 0 70px; }
+    .content-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 250px;
+      gap: 32px;
+      align-items: start;
+    }
+    article, .side-panel section {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    article { padding: clamp(24px, 4vw, 42px); }
+    article p { margin: 0 0 1.1em; font-size: 1.05rem; }
+    article h2 { margin: 2em 0 0.75em; font-size: 1.45rem; line-height: 1.28; }
+    .lead { font-size: 1.18rem; font-weight: 800; }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0 28px;
+      border: 1px solid var(--line);
+      background: #fbfcfa;
+      font-size: 0.92rem;
+    }
+    .data-table th, .data-table td {
+      border-bottom: 1px solid var(--line);
+      padding: 11px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .data-table th {
+      background: #eef3ee;
+      color: var(--muted);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .data-table tr:last-child td { border-bottom: 0; }
+    .data-table strong { color: var(--green); white-space: nowrap; }
+    .quote-card {
+      margin: 28px 0;
+      border-left: 4px solid var(--green);
+      border-radius: var(--radius);
+      background: #eef7f1;
+      padding: 18px 20px;
+      font-weight: 900;
+      color: #133f2f;
+    }
+    .disclaimer {
+      margin-top: 28px;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .side-panel { position: sticky; top: 92px; display: grid; gap: 18px; }
+    .side-panel section { padding: 18px; }
+    .side-panel h2 {
+      margin: 0 0 12px;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+    .qr-card img {
+      width: 100%;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+    .qr-placeholder { display: none; color: var(--muted); font-size: 0.92rem; }
+    .qr-card.missing img { display: none; }
+    .qr-card.missing .qr-placeholder { display: block; }
+    .toc-card a {
+      display: block;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 800;
+      padding: 8px 0;
+      border-top: 1px solid var(--line);
+    }
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: var(--muted);
+      background: #ffffff;
+    }
+    @media (max-width: 820px) {
+      .content-layout { grid-template-columns: 1fr; }
+      .side-panel { position: static; }
+      .data-table { display: block; overflow-x: auto; white-space: nowrap; }
+      .qr-card img { max-width: 240px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="../index.html" aria-label="Lemon 美股手记首页">
+        <img src="../lemon.png" alt="Lemon logo" />
+        <span>
+          <strong>Lemon 美股手记</strong>
+          <small>Market Vlog</small>
+        </span>
+      </a>
+      <a class="nav-link" href="../index.html#articles">返回文章归档</a>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-wrap">
+      <p>2026-08-10 · 美股总结和预测</p>
+      <h1>油价回升，CPI 与 AI 云厂财报进入关键 48 小时</h1>
+      <div class="meta">
+        <span>作者：Lemon清濛</span>
+        <span>主题：Brent / NVDA / CPI / CoreWeave / 支撑压力位</span>
+        <a href="https://mp.weixin.qq.com/s/EM90yLtis1E9UYD1D5vOmQ" target="_blank" rel="noopener">微信公众号原文</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="article-wrap content-layout">
+      <article>
+        <p class="lead">其实我觉得今天美股剧本挺有意思。两件事需要关注。</p>
+
+        <p>第一件事，油价又上来了。Brent 重新回到 87 美元附近，市场对霍尔木兹海峡谈判没那么乐观了。油价一涨，大家马上又开始担心通胀，美债收益率也跟着往上走。对高估值科技来说，这当然不舒服。</p>
+
+        <p>但第二件事更重要。英伟达真正的大新闻，不是股价跌了多少，而是它开始和 Apollo、BlackRock、Blackstone、Brookfield、Goldman、KKR 这些大资金一起，把“算力”包装成一种可以长期融资的资产。</p>
+
+        <h2 id="levels">支撑位和压力位</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>股票</th>
+              <th>支撑位</th>
+              <th>压力位</th>
+              <th>分析</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>NVDA</strong></td>
+              <td>216-217 / 210</td>
+              <td>224 / 236</td>
+              <td>作为 AI 绝对龙头，今天走势偏弱，跌 2.84%。216-217 区间是短线最重要的防守线，一旦有效跌破，下看 210 寻找支撑。向上必须重新站回 224，才能修复上周的突破趋势。</td>
+            </tr>
+            <tr>
+              <td><strong>MSFT</strong></td>
+              <td>499-502</td>
+              <td>514 / 520</td>
+              <td>大型科技股里的“定海神针”，凭借强劲现金流展现出防御性。只要短线守住 499-502 区间，形态依然偏强；若能突破 514，上行空间将打开至 520。</td>
+            </tr>
+            <tr>
+              <td><strong>MU</strong></td>
+              <td>854-858</td>
+              <td>895-905</td>
+              <td>内存板块近期受同业指引扰动，波动极大。858 附近是关键生命线，若 854 失守，下方需防范回踩 830-845 区域。向上必须站稳 905 才能确认多头筹码修复。</td>
+            </tr>
+            <tr>
+              <td><strong>INTC</strong></td>
+              <td>等待发行定价消化</td>
+              <td>等待市场重新定价</td>
+              <td>今天大跌 4.0%，直接受到 150 亿美元巨额发行的 SEC 文件催化。短期市场焦点不再是晶圆厂故事，而是重新计算稀释后的每股真实价值。实际发行定价消化前，不要把它当普通技术性回调去接飞刀。</td>
+            </tr>
+            <tr>
+              <td><strong>RKLB</strong></td>
+              <td>77.38</td>
+              <td>83.25</td>
+              <td>盘后财报显示收入增长强劲，但亏损超预期引发资金抢跑。明天核心看能否死守 77.38，若跌破可能回测 72-73 区间；只有重新站回 83.25 才算财报利空出尽。</td>
+            </tr>
+            <tr>
+              <td><strong>AMAT</strong></td>
+              <td>511-522</td>
+              <td>539-546</td>
+              <td>本周财报前走势非常犹豫，今日跌 3.16%。半导体设备股正面临“长期扩产利好”和“短期客户资本回报率担忧”的双重拉扯。短线看 511-522 区间承接力度，财报前不适合重仓赌单边方向。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="next">接下来 48 小时</h2>
+        <p>简单来说，接下来的 48 小时，市场将迎来 CPI 终极审判与 AI 云厂财报。如果 CPI 高于预期且油价居高不下，指数可能面临进一步回撤；如果通胀如期降温，资金有望迅速回补超跌的 AI 硬件与半导体设备股。</p>
+
+        <div class="quote-card">在宏观落地前，保持仓位弹性，盯紧核心支撑位，是现在我能提供给你们的最佳策略。</div>
+
+        <div class="disclaimer">本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。</div>
+      </article>
+
+      <aside class="side-panel">
+        <section class="qr-card">
+          <h2>公众号二维码</h2>
+          <img src="../qrcode.jpg" alt="东左耳清濛公众号二维码" onerror="this.closest('.qr-card').classList.add('missing')" />
+          <div class="qr-placeholder">请把二维码图片保存到项目根目录，这里会自动显示。</div>
+        </section>
+        <section class="toc-card">
+          <h2>文章目录</h2>
+          <a href="#levels">支撑位和压力位</a>
+          <a href="#next">接下来 48 小时</a>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <strong>Lemon 美股手记</strong><br />
+      文章首发于微信公众号：东左耳清濛。网站用于归档、复盘和后续跟踪。
+    </div>
+  </footer>
+</body>
+</html>
