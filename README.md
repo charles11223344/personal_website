@@ -36,6 +36,7 @@ py scripts/update_stock_data.py
 
 当前已添加：
 
+- `articles/2026-08-12-midweek-ai-bottleneck-burry.html`
 - `articles/2026-08-10-market-recap-cpi-ai-compute-finance.html`
 - `articles/2026-08-09-cpi-brent-10y-ai-second-test.html`
 - `articles/2026-08-05-midweek-dow-record-capex.html`

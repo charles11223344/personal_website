@@ -1399,26 +1399,26 @@
         <div class="calendar-board">
           <div class="calendar-head">
             <div>
-              <strong>8/10 - 8/14 下周核心日历</strong>
-              <p>就业降温后，真正的大考是 CPI；AI 硬件进入第二轮验货。</p>
+              <strong>8/12 - 8/14 剩余重点事件</strong>
+              <p>CPI 正常发挥后，资金回到 AI 瓶颈；接下来继续看 PPI、设备链和零售销售。</p>
             </div>
             <div class="calendar-status" id="calendar-status">等待日历渲染</div>
           </div>
           <div class="calendar-focus-grid" aria-label="下周三大观察闸门">
             <div class="calendar-focus-card">
               <span>Macro Gate</span>
-              <strong>CPI / PPI</strong>
-              <p>决定科技估值能否继续扩张。</p>
+              <strong>CPI 已落地 / PPI 接棒</strong>
+              <p>利率压力暂缓，但 PPI 还要确认。</p>
             </div>
             <div class="calendar-focus-card">
-              <span>Inflation Gate</span>
-              <strong>Brent 原油</strong>
-              <p>油价若继续上冲，通胀压力回归。</p>
+              <span>AI Bottleneck</span>
+              <strong>InP / CPO / HBM</strong>
+              <p>市场开始奖励真正的 AI 卡脖子环节。</p>
             </div>
             <div class="calendar-focus-card">
-              <span>Rates Gate</span>
-              <strong>10Y 美债</strong>
-              <p>守住 4.7% 下方，AI 修复更有利。</p>
+              <span>Positioning</span>
+              <strong>高Beta与防御仓</strong>
+              <p>AI 继续修复，但不能无脑追高。</p>
             </div>
           </div>
           <div class="calendar-grid" id="calendar-grid" aria-live="polite">
@@ -1506,6 +1506,19 @@
           <p>公众号里的长文会逐步迁移到这里，按主题重新整理摘要、图表和关键结论。</p>
         </div>
         <div class="article-grid">
+          <article class="article-card">
+            <div class="article-topline">
+              <span>周中总结</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-08-12-midweek-ai-bottleneck-burry.html">CPI 正常发挥后，市场开始往 AI 瓶颈靠拢</a></h3>
+            <p>COHR 财报把 InP、CPO 和 AI 光通信瓶颈推到台前，同时拆解 LITE、NVDA、MU、COHR、APLD、PLTR 和防御清单。</p>
+            <div class="tag-row">
+              <span class="tag">AI瓶颈</span>
+              <span class="tag">InP/CPO</span>
+              <span class="tag">Burry</span>
+            </div>
+          </article>
           <article class="article-card">
             <div class="article-topline">
               <span>美股总结</span>
@@ -1739,10 +1752,10 @@
           </p>
           <div class="sync-highlight">
             <h3>最新同步</h3>
-            <p>2026-08-10：美股总结和预测：CPI 与 AI 云厂财报进入关键 48 小时</p>
+            <p>2026-08-12：周中美股总结和预测剧本：AI 瓶颈开始被市场定价</p>
             <div class="sync-actions">
-              <a class="button primary" href="articles/2026-08-10-market-recap-cpi-ai-compute-finance.html">阅读网页版本</a>
-              <a class="button secondary" href="https://mp.weixin.qq.com/s/EM90yLtis1E9UYD1D5vOmQ" target="_blank" rel="noopener">打开公众号原文</a>
+              <a class="button primary" href="articles/2026-08-12-midweek-ai-bottleneck-burry.html">阅读网页版本</a>
+              <a class="button secondary" href="https://mp.weixin.qq.com/s/hQJAv35KU7N3cn_T5rApug" target="_blank" rel="noopener">打开公众号原文</a>
             </div>
           </div>
         </div>
@@ -1848,39 +1861,25 @@
     const RISK_HISTORY_KEY = "lemon-risk-history-v1";
     const marketCalendarEvents = [
       {
-        date: "2026-08-10",
-        type: "市场",
-        title: "Brent 回到87美元、NVDA算力融资叙事与RKLB盘后",
-        focus: "油价回升重新压制高估值科技；NVDA 与 Apollo、BlackRock、Blackstone、Brookfield、Goldman、KKR 等资金把算力包装成长期融资资产；RKLB 盘后看 77.38 能否守住。",
-        tags: ["Brent", "NVDA", "RKLB"]
-      },
-      {
-        date: "2026-08-11",
-        type: "财报",
-        title: "CRWV、LITE 与RKLB财报后承接",
-        focus: "CRWV 是 AI 云厂资本开支、融资和利息成本压力测试；LITE 验证光互联需求；RKLB 看 77.38/83.25 区间是否完成财报后重新定价。",
-        tags: ["CRWV", "LITE", "RKLB", "AI CapEx"]
-      },
-      {
         date: "2026-08-12",
-        type: "宏观",
-        title: "CPI终极审判、NBIS盘前与CSCO盘后",
-        focus: "如果 CPI 高于预期且油价居高不下，指数可能继续回撤；如果通胀降温，资金有望回补超跌 AI 硬件和半导体设备股。",
-        tags: ["CPI", "NBIS", "CSCO", "US10Y"]
+        type: "市场",
+        title: "CPI落地与AI瓶颈交易",
+        focus: "CPI 没有重新失控，利率压力暂缓；资金回到 AI 瓶颈线，重点看 COHR、LITE、InP、CPO、HBM 和 NBIS 的高波动定价。",
+        tags: ["CPI", "COHR", "InP", "NBIS"]
       },
       {
         date: "2026-08-13",
         type: "宏观",
         title: "PPI 与 AMAT 盘后财报",
-        focus: "8:30 美东公布 PPI；AMAT 验证 DRAM、HBM、先进封装设备需求是否继续传导。",
+        focus: "8:30 美东公布 PPI，确认通胀压力是否真的缓下来；AMAT 验证 DRAM、HBM、先进封装设备需求是否继续传导。",
         tags: ["PPI", "AMAT", "HBM", "Equipment"]
       },
       {
         date: "2026-08-14",
         type: "宏观",
-        title: "美国零售销售",
-        focus: "8:30 美东公布零售销售，和 CPI/PPI 一起决定通胀、消费与长债收益率压力。",
-        tags: ["Retail Sales", "Brent", "US10Y"]
+        title: "美国零售销售与高Beta仓位检查",
+        focus: "8:30 美东公布零售销售；如果消费和利率压力继续温和，AI 修复可以延续，但高 Beta 票要看支撑位，不适合无脑追。",
+        tags: ["Retail Sales", "LITE", "NVDA", "MU"]
       }
     ];
     let liveStockTimer = null;
