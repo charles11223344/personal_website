@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="2026-08-16 下周美股剧本：当 4.7% 美债撞上零售财报，观察油价、长债、FOMC 纪要和消费数据。" />
+  <title>当4.7%美债撞上零售财报 | Lemon 美股手记</title>
+  <style>
+    :root {
+      --ink: #111318;
+      --muted: #59606b;
+      --paper: #f7f8f6;
+      --surface: #ffffff;
+      --line: #d9ded8;
+      --green: #0f8f63;
+      --gold: #c08a26;
+      --lemon-soft: #f3edcf;
+      --radius: 8px;
+      --shadow: 0 18px 45px rgba(17, 19, 24, 0.09);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.78;
+    }
+    a { color: inherit; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(217, 222, 216, 0.9);
+      background: rgba(247, 248, 246, 0.92);
+      backdrop-filter: blur(14px);
+    }
+    .nav-wrap, .article-wrap, .footer-inner {
+      width: min(1060px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    .nav-wrap {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 900;
+    }
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      object-position: center 22%;
+      border-radius: var(--radius);
+      border: 1px solid rgba(17, 19, 24, 0.18);
+      background: var(--lemon-soft);
+    }
+    .brand span { display: grid; line-height: 1.1; }
+    .brand small {
+      color: var(--gold);
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .nav-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 800;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 8px 12px;
+      background: #ffffff;
+    }
+    .article-hero {
+      padding: 72px 0 36px;
+      background:
+        linear-gradient(90deg, rgba(17, 19, 24, 0.92), rgba(17, 19, 24, 0.72)),
+        url("../market-vlog-hero.png");
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
+    }
+    .article-hero p {
+      margin: 0 0 14px;
+      color: #d7e7de;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(2.25rem, 6vw, 4.7rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      color: #eef3f0;
+      font-weight: 800;
+    }
+    .meta span, .meta a {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 999px;
+      padding: 5px 10px;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.08);
+    }
+    main { padding: 42px 0 70px; }
+    .content-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 250px;
+      gap: 32px;
+      align-items: start;
+    }
+    article, .side-panel section {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    article { padding: clamp(24px, 4vw, 42px); }
+    article p { margin: 0 0 1.1em; font-size: 1.05rem; }
+    article h2 { margin: 2em 0 0.75em; font-size: 1.45rem; line-height: 1.28; }
+    .lead { font-size: 1.18rem; font-weight: 800; }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0 28px;
+      border: 1px solid var(--line);
+      background: #fbfcfa;
+      font-size: 0.92rem;
+    }
+    .data-table th, .data-table td {
+      border-bottom: 1px solid var(--line);
+      padding: 11px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .data-table th {
+      background: #eef3ee;
+      color: var(--muted);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .data-table tr:last-child td { border-bottom: 0; }
+    .data-table strong { color: var(--green); white-space: nowrap; }
+    .quote-card {
+      margin: 28px 0;
+      border-left: 4px solid var(--green);
+      border-radius: var(--radius);
+      background: #eef7f1;
+      padding: 18px 20px;
+      font-weight: 900;
+      color: #133f2f;
+    }
+    .warning-card {
+      margin: 28px 0;
+      border-left: 4px solid #c64a3d;
+      border-radius: var(--radius);
+      background: #fff2ef;
+      padding: 18px 20px;
+      color: #5a1d18;
+    }
+    .disclaimer {
+      margin-top: 28px;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .side-panel { position: sticky; top: 92px; display: grid; gap: 18px; }
+    .side-panel section { padding: 18px; }
+    .side-panel h2 {
+      margin: 0 0 12px;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+    .qr-card img {
+      width: 100%;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+    .qr-placeholder { display: none; color: var(--muted); font-size: 0.92rem; }
+    .qr-card.missing img { display: none; }
+    .qr-card.missing .qr-placeholder { display: block; }
+    .toc-card a {
+      display: block;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 800;
+      padding: 8px 0;
+      border-top: 1px solid var(--line);
+    }
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: var(--muted);
+      background: #ffffff;
+    }
+    @media (max-width: 820px) {
+      .content-layout { grid-template-columns: 1fr; }
+      .side-panel { position: static; }
+      .data-table { display: block; overflow-x: auto; white-space: nowrap; }
+      .qr-card img { max-width: 240px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="../index.html" aria-label="Lemon 美股手记首页">
+        <img src="../lemon.png" alt="Lemon logo" />
+        <span>
+          <strong>Lemon 美股手记</strong>
+          <small>Market Vlog</small>
+        </span>
+      </a>
+      <a class="nav-link" href="../index.html#articles">返回文章归档</a>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-wrap">
+      <p>2026-08-16 · 下周美股剧本</p>
+      <h1>当 4.7% 美债撞上零售财报：有什么火花呢？</h1>
+      <div class="meta">
+        <span>作者：Lemon清濛</span>
+        <span>主题：10Y / Brent / 零售财报 / FOMC纪要 / 熊市风险</span>
+        <a href="https://mp.weixin.qq.com/s/61_uKNcVRjfvHILp1QVNmA" target="_blank" rel="noopener">微信公众号原文</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="article-wrap content-layout">
+      <article>
+        <p class="lead">哈哈哈，又到周末，是我清濛出来妖言惑众了。</p>
+
+        <p>上周标普500再涨 0.4%、纳指涨 0.1%，但周五双双回落；10年期美债已经来到 4.695%，Brent 重新升至 88.5 美元附近。周日晚期货基本横盘，说明市场并没有因为降温的通胀数据重新进入全面 Risk-on。</p>
+
+        <p>更麻烦的是，霍尔木兹海峡周六仅 5 艘商品船通过、周日甚至为零，美伊谈判继续卡住。所以我对下周的剧本猜想是：多数为震荡波动偏多，但科技股上涨空间受油价和长债压制。</p>
+
+        <h2 id="scenario">下周基准剧本</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>情景</th>
+              <th>判断</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>基准</strong></td>
+              <td>SPY 约 -0.5% 至 +1%，QQQ 约 -1% 至 +1.2%。科技股不是不能涨，但空间被 4.7% 附近长债和接近 90 美元的 Brent 压着。</td>
+            </tr>
+            <tr>
+              <td><strong>偏多</strong></td>
+              <td>如果 10 年期重新跌破 4.60%、Brent 回到 85 美元以下，AI 有机会重新扩估值。</td>
+            </tr>
+            <tr>
+              <td><strong>偏空</strong></td>
+              <td>如果收益率突破 4.75%、Brent 站上 90 美元，优先防高估值科技去杠杆。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="watchlist">下周重点观察</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>股票</th>
+              <th>价格</th>
+              <th>压力</th>
+              <th>支撑</th>
+              <th>我的看法</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>NVDA</strong></td>
+              <td>225.16</td>
+              <td>227.5 / 236.5</td>
+              <td>224.5 / 216.2</td>
+              <td>站稳 227.5 才算重新加速。</td>
+            </tr>
+            <tr>
+              <td><strong>MU</strong></td>
+              <td>971.66</td>
+              <td>984</td>
+              <td>956 / 845</td>
+              <td>存储仍强，但追涨风险明显。</td>
+            </tr>
+            <tr>
+              <td><strong>MSFT</strong></td>
+              <td>495.40</td>
+              <td>500 / 513.7</td>
+              <td>494 / 491.5</td>
+              <td>500 是短线多空线。</td>
+            </tr>
+            <tr>
+              <td><strong>AMZN</strong></td>
+              <td>262.65</td>
+              <td>265.8 / 280</td>
+              <td>262.4</td>
+              <td>零售消费走弱会直接影响情绪。</td>
+            </tr>
+            <tr>
+              <td><strong>PLTR</strong></td>
+              <td>174.04</td>
+              <td>180.2</td>
+              <td>173.8 / 168.3</td>
+              <td>高估值，180 不过不追。</td>
+            </tr>
+            <tr>
+              <td><strong>MRVL</strong></td>
+              <td>222.02</td>
+              <td>223.5 / 231.4</td>
+              <td>217 / 208</td>
+              <td>AI 网络链能否扩散的重要风向标。</td>
+            </tr>
+            <tr>
+              <td><strong>RKLB</strong></td>
+              <td>80.25</td>
+              <td>82.5 / 86.8</td>
+              <td>78.5 / 75.5</td>
+              <td>高 Beta，只适合看突破确认。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="calendar">下周大事记</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>日期</th>
+              <th>事件</th>
+              <th>我会看什么</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>8/17 周一</strong></td>
+              <td>纽约联储制造业指数。</td>
+              <td>看制造业和区域经济是否继续降温。</td>
+            </tr>
+            <tr>
+              <td><strong>8/18 周二</strong></td>
+              <td>美国进口物价、房屋开工/营建许可、工业产出；HD、BIDU、IQ 财报。</td>
+              <td>进口通胀和地产链会影响利率，HD 先验证美国消费质量。</td>
+            </tr>
+            <tr>
+              <td><strong>8/19 周三</strong></td>
+              <td>最重要的 FOMC 会议纪要；LOW、TGT 财报。</td>
+              <td>看 Fed 对通胀和油价是否仍偏鹰，LOW/TGT 验证消费分层。</td>
+            </tr>
+            <tr>
+              <td><strong>8/20 周四</strong></td>
+              <td>WMT、BABA、NTES 同日交卷。</td>
+              <td>直接验证美国消费与中国互联网/AI 云需求。</td>
+            </tr>
+            <tr>
+              <td><strong>8/21 周五</strong></td>
+              <td>美国8月 PMI 初值、BEKE 财报。</td>
+              <td>看服务业和制造业是否重新推高利率预期。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="bear-risk">熊市风险补充</h2>
+        <p>现在 10 年期美债已经逼近 4.7%，但信用利差仍低、很多科技巨头也没有真正削减 AI 资本开支，所以我觉得系统性熊市的传导链还没有闭环。</p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>时间窗口</th>
+              <th>风险概率</th>
+              <th>判断</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>现在到9月底</strong></td>
+              <td>25%–35%</td>
+              <td>出现系统性熊市启动的概率不算低，但更可能还是高位震荡、AI 内部继续看估值。</td>
+            </tr>
+            <tr>
+              <td><strong>2026年10-12月</strong></td>
+              <td>35%–40%</td>
+              <td>第一个真正危险窗口，因为 Q3/Q4 财报会开始给出更明确的 2027 CapEx 和 AI ROI 信号。</td>
+            </tr>
+            <tr>
+              <td><strong>2027年Q1-Q2</strong></td>
+              <td>40%–45%</td>
+              <td>如果 CapEx 增速明显下降、企业融资成本继续升、AI 收入又不能追上折旧和利息，这是最值得防范的系统熊市窗口。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="warning-card">
+          <strong>真正的警报：</strong>10Y 持续 4.8%–5.0% 以上 + IG 信用利差从约 79bp 扩到 110–130bp 以上 + HY 利差突破 350–400bp + 两家以上 Hyperscaler 削减/延期 CapEx + 半导体盈利预期开始下修。
+        </div>
+
+        <h2 id="summary">总结</h2>
+        <div class="quote-card">下周我不会主要追 AI，而是看零售财报能不能证明消费还在增长，再看 4.7% 的美债和接近 90 美元的油价愿不愿意给科技股让路。</div>
+
+        <div class="disclaimer">本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。</div>
+      </article>
+
+      <aside class="side-panel">
+        <section class="qr-card">
+          <h2>公众号二维码</h2>
+          <img src="../qrcode.jpg" alt="东左耳清濛公众号二维码" onerror="this.closest('.qr-card').classList.add('missing')" />
+          <div class="qr-placeholder">请把二维码图片保存到项目根目录，这里会自动显示。</div>
+        </section>
+        <section class="toc-card">
+          <h2>文章目录</h2>
+          <a href="#scenario">下周基准剧本</a>
+          <a href="#watchlist">重点观察</a>
+          <a href="#calendar">下周大事记</a>
+          <a href="#bear-risk">熊市风险补充</a>
+          <a href="#summary">总结</a>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <strong>Lemon 美股手记</strong><br />
+      文章首发于微信公众号：东左耳清濛。网站用于归档、复盘和后续跟踪。
+    </div>
+  </footer>
+</body>
+</html>
