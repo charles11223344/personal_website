@@ -1399,26 +1399,26 @@
         <div class="calendar-board">
           <div class="calendar-head">
             <div>
-              <strong>8/19 - 8/21 剩余重点事件</strong>
-              <p>财政部提高长期美债回购规模后，继续看收益率、黄金、初请、费城联储和 PMI。</p>
+              <strong>8/24 - 8/28 下周核心日历</strong>
+              <p>PCE、GDP、NVDA 财报、Jackson Hole 和非农年度基准修订会一起决定 AI 修复质量。</p>
             </div>
             <div class="calendar-status" id="calendar-status">等待日历渲染</div>
           </div>
           <div class="calendar-focus-grid" aria-label="下周三大观察闸门">
             <div class="calendar-focus-card">
-              <span>Liquidity Gate</span>
-              <strong>财政部回购</strong>
-              <p>缓解流动性，不等于解决长期债务供给。</p>
+              <span>Macro Gate</span>
+              <strong>PCE + GDP</strong>
+              <p>周三盘前先看通胀和增长有没有同时给科技股让路。</p>
+            </div>
+            <div class="calendar-focus-card">
+              <span>AI Gate</span>
+              <strong>NVDA 财报</strong>
+              <p>收入数字重要，但更关键是指引、毛利率和 Rubin 进度。</p>
             </div>
             <div class="calendar-focus-card">
               <span>Rates Gate</span>
-              <strong>10Y 与 30Y 美债</strong>
-              <p>收益率回落能否延续，决定科技估值修复质量。</p>
-            </div>
-            <div class="calendar-focus-card">
-              <span>Hedge Gate</span>
-              <strong>黄金与美元</strong>
-              <p>美元走弱、财政压力仍在，GDX/AEM 不宜追热。</p>
+              <strong>30Y + Jackson Hole</strong>
+              <p>30 年期美债若重回 5.34% 上方，高估值 AI 会更难受。</p>
             </div>
           </div>
           <div class="calendar-grid" id="calendar-grid" aria-live="polite">
@@ -1506,6 +1506,19 @@
           <p>公众号里的长文会逐步迁移到这里，按主题重新整理摘要、图表和关键结论。</p>
         </div>
         <div class="article-grid">
+          <article class="article-card">
+            <div class="article-topline">
+              <span>下周剧本</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-08-23-pce-nvda-ai-capex.html">下周美股关关难过关关过</a></h3>
+            <p>PCE、GDP、NVDA 财报、Jackson Hole 和非农年度基准修订同周登场，真正要验证的是 AI 订单、资本回报率和长债压力。</p>
+            <div class="tag-row">
+              <span class="tag">PCE/GDP</span>
+              <span class="tag">NVDA财报</span>
+              <span class="tag">30Y美债</span>
+            </div>
+          </article>
           <article class="article-card">
             <div class="article-topline">
               <span>周中剧本</span>
@@ -1778,10 +1791,10 @@
           </p>
           <div class="sync-highlight">
             <h3>最新同步</h3>
-            <p>2026-08-19：美股周中剧本：财政部出手，但是治标不治本</p>
+            <p>2026-08-23：下周美股关关难过关关过</p>
             <div class="sync-actions">
-              <a class="button primary" href="articles/2026-08-19-treasury-buyback-yields-gold-ai.html">阅读网页版本</a>
-              <a class="button secondary" href="https://mp.weixin.qq.com/s/7M-01VNI2qx0hsDdvDKoOw" target="_blank" rel="noopener">打开公众号原文</a>
+              <a class="button primary" href="articles/2026-08-23-pce-nvda-ai-capex.html">阅读网页版本</a>
+              <a class="button secondary" href="https://mp.weixin.qq.com/s/WLW4VltB-LjPuUKiUIAEyw" target="_blank" rel="noopener">打开公众号原文</a>
             </div>
           </div>
         </div>
@@ -1887,25 +1900,39 @@
     const RISK_HISTORY_KEY = "lemon-risk-history-v1";
     const marketCalendarEvents = [
       {
-        date: "2026-08-19",
-        type: "市场",
-        title: "财政部提高长期美债回购规模",
-        focus: "10-30年期国债单次回购规模从20亿美元提高到至少40亿美元，收益率和美元回落，黄金、比特币反弹；但这更像流动性缓冲，不是债务和供给压力解除。",
-        tags: ["Treasury", "10Y", "Gold", "DXY"]
+        date: "2026-08-24",
+        type: "财报",
+        title: "PDD 财报",
+        focus: "周一先看 PDD，盘面大概率还是等消息；重点观察中概消费、平台增长和风险偏好有没有修复。",
+        tags: ["PDD", "China Tech", "Consumer"]
       },
       {
-        date: "2026-08-20",
+        date: "2026-08-25",
         type: "宏观",
-        title: "初请失业金、费城联储与零售/中概财报",
-        focus: "初请和费城联储会重新影响利率预期；同时继续看 WMT、BABA、NTES 对消费、中国互联网和 AI 云需求的反馈。",
-        tags: ["Jobless Claims", "Philly Fed", "WMT", "BABA"]
+        title: "消费者信心、新屋销售与 INTU/ZM 财报",
+        focus: "美国消费者信心和新屋销售会验证需求温度；盘后 INTU、ZM 观察软件股估值和企业支出。",
+        tags: ["Consumer Confidence", "New Home Sales", "INTU", "ZM"]
       },
       {
-        date: "2026-08-21",
+        date: "2026-08-26",
         type: "宏观",
-        title: "美国PMI初值与BEKE财报",
-        focus: "PMI 会重新定价增长和利率路径；如果数据偏强，收益率压力可能回来，若温和则大盘修复更容易延续。",
-        tags: ["PMI", "BEKE", "QQQ", "VFV"]
+        title: "PCE、GDP、耐用品订单 + NVDA/CRM/CRWD",
+        focus: "全周重头戏。盘前看通胀、增长和订单，盘后看 NVDA 指引、毛利率和 Rubin 进度，以及 CRM/CRWD 对软件需求的反馈。",
+        tags: ["PCE", "GDP", "NVDA", "CRM", "CRWD"]
+      },
+      {
+        date: "2026-08-27",
+        type: "宏观",
+        title: "初请失业金、MRVL/WDAY 财报与 Jackson Hole 开幕",
+        focus: "初请验证就业降温是否延续；MRVL 看 AI 网络链，WDAY 看软件支出，Jackson Hole 会重新影响利率叙事。",
+        tags: ["Jobless Claims", "MRVL", "WDAY", "Jackson Hole"]
+      },
+      {
+        date: "2026-08-28",
+        type: "宏观",
+        title: "Warsh 讲话与非农年度基准修订",
+        focus: "Warsh 讲话叠加 BLS 上午 10 点公布非农年度基准修订，可能重新影响就业、利率和 QQQ 风险偏好。",
+        tags: ["Warsh", "BLS", "Payroll Revision", "QQQ"]
       }
     ];
     let liveStockTimer = null;

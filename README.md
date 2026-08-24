@@ -36,6 +36,7 @@ py scripts/update_stock_data.py
 
 当前已添加：
 
+- `articles/2026-08-23-pce-nvda-ai-capex.html`
 - `articles/2026-08-19-treasury-buyback-yields-gold-ai.html`
 - `articles/2026-08-16-10y-retail-earnings-oil.html`
 - `articles/2026-08-12-midweek-ai-bottleneck-burry.html`

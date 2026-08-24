@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="2026-08-23 下周美股剧本：PCE、GDP、NVDA财报、Jackson Hole 和非农年度基准修订一起检验 AI 仓位与长债压力。" />
+  <title>下周美股关关难过关关过 | Lemon 美股手记</title>
+  <style>
+    :root {
+      --ink: #111318;
+      --muted: #59606b;
+      --paper: #f7f8f6;
+      --surface: #ffffff;
+      --line: #d9ded8;
+      --green: #0f8f63;
+      --gold: #c08a26;
+      --lemon-soft: #f3edcf;
+      --radius: 8px;
+      --shadow: 0 18px 45px rgba(17, 19, 24, 0.09);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.78;
+    }
+    a { color: inherit; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(217, 222, 216, 0.9);
+      background: rgba(247, 248, 246, 0.92);
+      backdrop-filter: blur(14px);
+    }
+    .nav-wrap, .article-wrap, .footer-inner {
+      width: min(1060px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    .nav-wrap {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 900;
+    }
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      object-position: center 22%;
+      border-radius: var(--radius);
+      border: 1px solid rgba(17, 19, 24, 0.18);
+      background: var(--lemon-soft);
+    }
+    .brand span { display: grid; line-height: 1.1; }
+    .brand small {
+      color: var(--gold);
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .nav-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 800;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 8px 12px;
+      background: #ffffff;
+    }
+    .article-hero {
+      padding: 72px 0 36px;
+      background:
+        linear-gradient(90deg, rgba(17, 19, 24, 0.92), rgba(17, 19, 24, 0.72)),
+        url("../market-vlog-hero.png");
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
+    }
+    .article-hero p {
+      margin: 0 0 14px;
+      color: #d7e7de;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(2.25rem, 6vw, 4.7rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      color: #eef3f0;
+      font-weight: 800;
+    }
+    .meta span, .meta a {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 999px;
+      padding: 5px 10px;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.08);
+    }
+    main { padding: 42px 0 70px; }
+    .content-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 250px;
+      gap: 32px;
+      align-items: start;
+    }
+    article, .side-panel section {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    article { padding: clamp(24px, 4vw, 42px); }
+    article p { margin: 0 0 1.1em; font-size: 1.05rem; }
+    article h2 { margin: 2em 0 0.75em; font-size: 1.45rem; line-height: 1.28; }
+    .lead { font-size: 1.18rem; font-weight: 800; }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0 28px;
+      border: 1px solid var(--line);
+      background: #fbfcfa;
+      font-size: 0.92rem;
+    }
+    .data-table th, .data-table td {
+      border-bottom: 1px solid var(--line);
+      padding: 11px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .data-table th {
+      background: #eef3ee;
+      color: var(--muted);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .data-table tr:last-child td { border-bottom: 0; }
+    .data-table strong { color: var(--green); white-space: nowrap; }
+    .quote-card {
+      margin: 28px 0;
+      border-left: 4px solid var(--green);
+      border-radius: var(--radius);
+      background: #eef7f1;
+      padding: 18px 20px;
+      font-weight: 900;
+      color: #133f2f;
+    }
+    .warning-card {
+      margin: 28px 0;
+      border-left: 4px solid #c64a3d;
+      border-radius: var(--radius);
+      background: #fff2ef;
+      padding: 18px 20px;
+      color: #5a1d18;
+    }
+    .disclaimer {
+      margin-top: 28px;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .side-panel { position: sticky; top: 92px; display: grid; gap: 18px; }
+    .side-panel section { padding: 18px; }
+    .side-panel h2 {
+      margin: 0 0 12px;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+    .qr-card img {
+      width: 100%;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+    .qr-placeholder { display: none; color: var(--muted); font-size: 0.92rem; }
+    .qr-card.missing img { display: none; }
+    .qr-card.missing .qr-placeholder { display: block; }
+    .toc-card a {
+      display: block;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 800;
+      padding: 8px 0;
+      border-top: 1px solid var(--line);
+    }
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: var(--muted);
+      background: #ffffff;
+    }
+    @media (max-width: 820px) {
+      .content-layout { grid-template-columns: 1fr; }
+      .side-panel { position: static; }
+      .data-table { display: block; overflow-x: auto; white-space: nowrap; }
+      .qr-card img { max-width: 240px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="../index.html" aria-label="Lemon 美股手记首页">
+        <img src="../lemon.png" alt="Lemon logo" />
+        <span>
+          <strong>Lemon 美股手记</strong>
+          <small>Market Vlog</small>
+        </span>
+      </a>
+      <a class="nav-link" href="../index.html#articles">返回文章归档</a>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-wrap">
+      <p>2026-08-23 · 下周美股剧本</p>
+      <h1>下周美股关关难过关关过</h1>
+      <div class="meta">
+        <span>作者：Lemon清濛</span>
+        <span>主题：PCE / GDP / NVDA财报 / Jackson Hole / AI资本回报率</span>
+        <a href="https://mp.weixin.qq.com/s/WLW4VltB-LjPuUKiUIAEyw" target="_blank" rel="noopener">微信公众号原文</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="article-wrap content-layout">
+      <article>
+        <p class="lead">又到清濛来预测下周走势啦。上周五美股虽然反弹，但我不会因为一根阳线就说调整结束了。</p>
+
+        <p>整周纳指还是跌了 2% 左右，费半更弱。现在压着科技股的东西其实很简单：长债太高，AI 仓位太挤，而市场开始认真问这些几千亿美元的数据中心最后谁来付钱。</p>
+
+        <p>所以我觉得下周真正有意思的地方，不是猜 NVDA 财报涨还是跌，而是有几件事情要一起看。</p>
+
+        <h2 id="calendar">下周大事记</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>日期</th>
+              <th>事件</th>
+              <th>观察重点</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>8/24 周一</strong></td>
+              <td>PDD 财报。</td>
+              <td>盘面大概率还是等消息，先看中概消费和平台情绪。</td>
+            </tr>
+            <tr>
+              <td><strong>8/25 周二</strong></td>
+              <td>美国消费者信心、新屋销售；盘后 INTU、ZM 财报。</td>
+              <td>验证消费者和地产需求，同时看软件股能不能稳住估值。</td>
+            </tr>
+            <tr>
+              <td><strong>8/26 周三</strong></td>
+              <td>盘前 PCE、GDP、耐用品订单；盘后 NVDA、CRM、CRWD 财报。</td>
+              <td>全周重头戏。NVDA 市场预期季度收入约 920 亿美元，但更重要的是下一季指引、毛利率和 Rubin 进度。</td>
+            </tr>
+            <tr>
+              <td><strong>8/27 周四</strong></td>
+              <td>初请失业金；盘后 MRVL、WDAY 财报；Jackson Hole 开幕。</td>
+              <td>看就业降温是否延续，以及 AI 网络链和软件需求是否继续被资金认可。</td>
+            </tr>
+            <tr>
+              <td><strong>8/28 周五</strong></td>
+              <td>Warsh 讲话；美国非农年度基准修订上午 10 点公布。</td>
+              <td>这一天可能比很多人想象得更重要，BLS 基准修订会重新影响就业叙事。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="base">我的基准剧本</h2>
+        <p>我的基准判断是：下周前半周还是震荡，真正方向周三以后才出来。</p>
+
+        <p>如果核心 PCE 只有 0.2% 左右、30 年期美债掉回 5.3% 下方，加上 NVDA 指引够强，我认为前面被杀得最狠的半导体会先反弹，QQQ 有机会修复 2%—4%。</p>
+
+        <div class="warning-card">反过来，如果 PCE 偏热、30Y 重新冲过 5.34%，然后 NVDA 又出现“财报很好但股票不涨”，我会非常小心。那说明市场担心的已经不是 AI 有没有订单，而是 AI 的资本回报率到底够不够。</div>
+
+        <p>所以我下周不会急着追。有钱可以保留一下。先让 PCE 和 NVDA 把牌翻出来，再决定这次是洗仓，还是下一段调整的开始。</p>
+
+        <h2 id="levels">下周重点股票技术位</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>股票</th>
+              <th>第一支撑</th>
+              <th>第二支撑</th>
+              <th>第一压力</th>
+              <th>强压力</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>NVDA</strong></td>
+              <td>210–215</td>
+              <td>204–205</td>
+              <td>219–223</td>
+              <td>225–228</td>
+            </tr>
+            <tr>
+              <td><strong>MU</strong></td>
+              <td>953</td>
+              <td>940–922</td>
+              <td>985</td>
+              <td>1003–1017</td>
+            </tr>
+            <tr>
+              <td><strong>MRVL</strong></td>
+              <td>229–234</td>
+              <td>221–222</td>
+              <td>249</td>
+              <td>260–268</td>
+            </tr>
+            <tr>
+              <td><strong>MSFT</strong></td>
+              <td>477–479</td>
+              <td>463–474</td>
+              <td>486–488</td>
+              <td>494</td>
+            </tr>
+            <tr>
+              <td><strong>GOOGL</strong></td>
+              <td>341</td>
+              <td>335–338</td>
+              <td>347–350</td>
+              <td>353</td>
+            </tr>
+            <tr>
+              <td><strong>PLTR</strong></td>
+              <td>174</td>
+              <td>164–168</td>
+              <td>184–188</td>
+              <td>194</td>
+            </tr>
+            <tr>
+              <td><strong>VST</strong></td>
+              <td>134–135</td>
+              <td>130–133</td>
+              <td>139–143</td>
+              <td>146</td>
+            </tr>
+            <tr>
+              <td><strong>CEG</strong></td>
+              <td>269–270</td>
+              <td>263–267</td>
+              <td>276–280</td>
+              <td>283</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>MU、MRVL、GOOGL、PLTR、VST 和 CEG 的区间均按 8 月 21 日最新日线重新核过；例如 MU 当前主要支撑在 953/940 附近、MRVL 在 229/222，VST 在 135 附近，而 CEG 短线真正需要突破的是 276—280。</p>
+
+        <p>NVDA 周五收在 214.72 美元，财报期权市场目前隐含大约 ±6% 的波动，所以 205 和 228 附近并不是随便画出来的数字，刚好也是财报后很容易触及的两侧区域。</p>
+
+        <h2 id="summary">最后总结</h2>
+        <div class="quote-card">这些支撑压力是拿来观察资金反应的，不是跌破一美元就马上砍仓的。短线交易可以按价格失效离场，长期投资还是要看原来的基本面假设有没有被推翻，不能把两套规则混在一起。</div>
+
+        <p>还有一句话，信不信由你，哈哈哈。</p>
+
+        <div class="disclaimer">本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。</div>
+      </article>
+
+      <aside class="side-panel">
+        <section class="qr-card">
+          <h2>公众号二维码</h2>
+          <img src="../qrcode.jpg" alt="东左耳清濛公众号二维码" onerror="this.closest('.qr-card').classList.add('missing')" />
+          <div class="qr-placeholder">请把二维码图片保存到项目根目录，这里会自动显示。</div>
+        </section>
+        <section class="toc-card">
+          <h2>文章目录</h2>
+          <a href="#calendar">下周大事记</a>
+          <a href="#base">我的基准剧本</a>
+          <a href="#levels">重点股票技术位</a>
+          <a href="#summary">最后总结</a>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <strong>Lemon 美股手记</strong><br />
+      文章首发于微信公众号：东左耳清濛。网站用于归档、复盘和后续跟踪。
+    </div>
+  </footer>
+</body>
+</html>
