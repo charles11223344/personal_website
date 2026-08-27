@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="2026-08-26 周中总结：NVDA 财报证明 AI 算力需求没坏，但市场下一步会追问谁来为长期算力合同、数据中心资本开支和融资成本买单。" />
+  <title>周中总结：谁能赚更多的钱呢？ | Lemon 美股手记</title>
+  <style>
+    :root {
+      --ink: #111318;
+      --muted: #59606b;
+      --paper: #f7f8f6;
+      --surface: #ffffff;
+      --line: #d9ded8;
+      --green: #0f8f63;
+      --gold: #c08a26;
+      --lemon-soft: #f3edcf;
+      --radius: 8px;
+      --shadow: 0 18px 45px rgba(17, 19, 24, 0.09);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.78;
+    }
+    a { color: inherit; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(217, 222, 216, 0.9);
+      background: rgba(247, 248, 246, 0.92);
+      backdrop-filter: blur(14px);
+    }
+    .nav-wrap, .article-wrap, .footer-inner {
+      width: min(1060px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    .nav-wrap {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 900;
+    }
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      object-position: center 22%;
+      border-radius: var(--radius);
+      border: 1px solid rgba(17, 19, 24, 0.18);
+      background: var(--lemon-soft);
+    }
+    .brand span { display: grid; line-height: 1.1; }
+    .brand small {
+      color: var(--gold);
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .nav-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 800;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 8px 12px;
+      background: #ffffff;
+    }
+    .article-hero {
+      padding: 72px 0 36px;
+      background:
+        linear-gradient(90deg, rgba(17, 19, 24, 0.92), rgba(17, 19, 24, 0.72)),
+        url("../market-vlog-hero.png");
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
+    }
+    .article-hero p {
+      margin: 0 0 14px;
+      color: #d7e7de;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(2.25rem, 6vw, 4.7rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      color: #eef3f0;
+      font-weight: 800;
+    }
+    .meta span, .meta a {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 999px;
+      padding: 5px 10px;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.08);
+    }
+    main { padding: 42px 0 70px; }
+    .content-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 250px;
+      gap: 32px;
+      align-items: start;
+    }
+    article, .side-panel section {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    article { padding: clamp(24px, 4vw, 42px); }
+    article p { margin: 0 0 1.1em; font-size: 1.05rem; }
+    article h2 { margin: 2em 0 0.75em; font-size: 1.45rem; line-height: 1.28; }
+    .lead { font-size: 1.18rem; font-weight: 800; }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0 28px;
+      border: 1px solid var(--line);
+      background: #fbfcfa;
+      font-size: 0.92rem;
+    }
+    .data-table th, .data-table td {
+      border-bottom: 1px solid var(--line);
+      padding: 11px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .data-table th {
+      background: #eef3ee;
+      color: var(--muted);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .data-table tr:last-child td { border-bottom: 0; }
+    .data-table strong { color: var(--green); white-space: nowrap; }
+    .quote-card {
+      margin: 28px 0;
+      border-left: 4px solid var(--green);
+      border-radius: var(--radius);
+      background: #eef7f1;
+      padding: 18px 20px;
+      font-weight: 900;
+      color: #133f2f;
+    }
+    .warning-card {
+      margin: 28px 0;
+      border-left: 4px solid #c64a3d;
+      border-radius: var(--radius);
+      background: #fff2ef;
+      padding: 18px 20px;
+      color: #5a1d18;
+    }
+    .disclaimer {
+      margin-top: 28px;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .side-panel { position: sticky; top: 92px; display: grid; gap: 18px; }
+    .side-panel section { padding: 18px; }
+    .side-panel h2 {
+      margin: 0 0 12px;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+    .qr-card img {
+      width: 100%;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+    .qr-placeholder { display: none; color: var(--muted); font-size: 0.92rem; }
+    .qr-card.missing img { display: none; }
+    .qr-card.missing .qr-placeholder { display: block; }
+    .toc-card a {
+      display: block;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 800;
+      padding: 8px 0;
+      border-top: 1px solid var(--line);
+    }
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: var(--muted);
+      background: #ffffff;
+    }
+    @media (max-width: 820px) {
+      .content-layout { grid-template-columns: 1fr; }
+      .side-panel { position: static; }
+      .data-table { display: block; overflow-x: auto; white-space: nowrap; }
+      .qr-card img { max-width: 240px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="../index.html" aria-label="Lemon 美股手记首页">
+        <img src="../lemon.png" alt="Lemon logo" />
+        <span>
+          <strong>Lemon 美股手记</strong>
+          <small>Market Vlog</small>
+        </span>
+      </a>
+      <a class="nav-link" href="../index.html#articles">返回文章归档</a>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-wrap">
+      <p>2026-08-26 · 周中总结</p>
+      <h1>谁能赚更多的钱呢？</h1>
+      <div class="meta">
+        <span>作者：Lemon清濛</span>
+        <span>主题：NVDA财报 / AI算力 / HBM / 光通信 / 融资链条</span>
+        <a href="https://mp.weixin.qq.com/s/fSQWlNP-4zwPIR3-v5XAeA" target="_blank" rel="noopener">微信公众号原文</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="article-wrap content-layout">
+      <article>
+        <p class="lead">今晚最大的事情还是英伟达的财报。Q2 营收 962 亿美元、同比增长 106%，Q3 指引约 1080 亿美元，都说明 AI 算力需求远没有见顶。</p>
+
+        <p>真正让市场重新兴奋的是管理层 CFO 给出的长期增长预期：FY2028 营收增速可能达到约 70%。但我觉得这里不能只看漂亮数字，因为 AI 投资已经越来越依赖融资、长期算力合同和数据中心资本。</p>
+
+        <div class="warning-card">AI 需求是真的，但金融杠杆也越来越重。接下来这个大环境会从“有没有订单”，慢慢转向“谁来给这些订单买单”。钱最重要，比很多东西都重要。</div>
+
+        <h2 id="watchlist">未来两天重点看的股票</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>股票</th>
+              <th>观察区间</th>
+              <th>清濛的看法</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>NVDA</strong></td>
+              <td>210 支撑，先看 215–220</td>
+              <td>还是 AI 老大。财报证明需求没坏，但毛利率和客户融资能力会成为下一阶段风险。</td>
+            </tr>
+            <tr>
+              <td><strong>MU</strong></td>
+              <td>946 突破后看 970–990</td>
+              <td>NVDA 面对的内存成本压力，恰恰意味着 HBM 和 DRAM 厂商定价权更强。</td>
+            </tr>
+            <tr>
+              <td><strong>MRVL</strong></td>
+              <td>243–245 压力明显</td>
+              <td>AI 网络和 ASIC 逻辑没问题，但财报前如果再冲，我反而倾向适当减仓，不追高。</td>
+            </tr>
+            <tr>
+              <td><strong>LITE</strong></td>
+              <td>840 支撑，900 附近压力</td>
+              <td>Rubin、CPO 继续强化光通信需求，基本面方向很好，但股价已经不便宜。</td>
+            </tr>
+            <tr>
+              <td><strong>COHR</strong></td>
+              <td>275–280 支撑区</td>
+              <td>同样受益光互联，但现在最重要的是利润率能不能跟上订单。</td>
+            </tr>
+            <tr>
+              <td><strong>NBIS</strong></td>
+              <td>高 Beta 仓位</td>
+              <td>弹性最大，风险也最大。NVDA 已经确认 Nebius 的 Rubin 机架在运行，但市场更担心 CapEx、债务和融资成本。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="scenarios">未来两个交易日剧本</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>概率</th>
+              <th>情景</th>
+              <th>市场含义</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>50%</strong></td>
+              <td>震荡偏强</td>
+              <td>NVDA 守住 210–215，资金向 MU、MRVL、光通信和电力链扩散。</td>
+            </tr>
+            <tr>
+              <td><strong>30%</strong></td>
+              <td>AI 硬件明显反弹</td>
+              <td>NVDA 站上 220，市场重新炒作 AI 资本开支和 Anthropic IPO，硬件链再涨一轮。</td>
+            </tr>
+            <tr>
+              <td><strong>20%</strong></td>
+              <td>高 Beta 回撤</td>
+              <td>如果长债收益率继续上冲，或者市场开始质疑 5000 亿美元融资链条，NBIS、LITE、COHR 会先被砸。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="summary">简单总结</h2>
+        <div class="quote-card">NVDA 救了市场情绪，但下一阶段市场不只会问 AI 需求强不强，而是会问谁能把订单变成利润，谁能承担融资成本，谁最后能赚到更多的钱。</div>
+
+        <p>先吹牛到这里啦。哈哈哈。</p>
+
+        <div class="disclaimer">本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。</div>
+      </article>
+
+      <aside class="side-panel">
+        <section class="qr-card">
+          <h2>公众号二维码</h2>
+          <img src="../qrcode.jpg" alt="东左耳清濛公众号二维码" onerror="this.closest('.qr-card').classList.add('missing')" />
+          <div class="qr-placeholder">请把二维码图片保存到项目根目录，这里会自动显示。</div>
+        </section>
+        <section class="toc-card">
+          <h2>文章目录</h2>
+          <a href="#watchlist">重点股票</a>
+          <a href="#scenarios">未来两日剧本</a>
+          <a href="#summary">简单总结</a>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <strong>Lemon 美股手记</strong><br />
+      文章首发于微信公众号：东左耳清濛。网站用于归档、复盘和后续跟踪。
+    </div>
+  </footer>
+</body>
+</html>

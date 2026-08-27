@@ -1399,26 +1399,26 @@
         <div class="calendar-board">
           <div class="calendar-head">
             <div>
-              <strong>8/24 - 8/28 下周核心日历</strong>
-              <p>PCE、GDP、NVDA 财报、Jackson Hole 和非农年度基准修订会一起决定 AI 修复质量。</p>
+              <strong>8/26 - 8/28 剩余重点事件</strong>
+              <p>NVDA 财报后，市场会继续审计 AI 订单、毛利率、融资链条、MRVL/WDAY 和 Jackson Hole。</p>
             </div>
             <div class="calendar-status" id="calendar-status">等待日历渲染</div>
           </div>
           <div class="calendar-focus-grid" aria-label="下周三大观察闸门">
             <div class="calendar-focus-card">
-              <span>Macro Gate</span>
-              <strong>PCE + GDP</strong>
-              <p>周三盘前先看通胀和增长有没有同时给科技股让路。</p>
-            </div>
-            <div class="calendar-focus-card">
               <span>AI Gate</span>
-              <strong>NVDA 财报</strong>
-              <p>收入数字重要，但更关键是指引、毛利率和 Rubin 进度。</p>
+              <strong>NVDA 财报后定价</strong>
+              <p>需求没坏，但市场会继续追问毛利率和客户融资能力。</p>
             </div>
             <div class="calendar-focus-card">
-              <span>Rates Gate</span>
-              <strong>30Y + Jackson Hole</strong>
-              <p>30 年期美债若重回 5.34% 上方，高估值 AI 会更难受。</p>
+              <span>Memory Gate</span>
+              <strong>MU / HBM</strong>
+              <p>NVDA 的内存成本压力，可能反向验证 HBM 与 DRAM 定价权。</p>
+            </div>
+            <div class="calendar-focus-card">
+              <span>Funding Gate</span>
+              <strong>长债与融资链</strong>
+              <p>AI 订单越来越依赖长期算力合同和数据中心资本。</p>
             </div>
           </div>
           <div class="calendar-grid" id="calendar-grid" aria-live="polite">
@@ -1506,6 +1506,19 @@
           <p>公众号里的长文会逐步迁移到这里，按主题重新整理摘要、图表和关键结论。</p>
         </div>
         <div class="article-grid">
+          <article class="article-card">
+            <div class="article-topline">
+              <span>周中总结</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-08-26-nvda-ai-demand-financing.html">谁能赚更多的钱呢？</a></h3>
+            <p>NVDA 财报证明 AI 算力需求没坏，但市场下一步会从有没有订单，转向谁来买单、谁能承担融资成本、谁能真正赚钱。</p>
+            <div class="tag-row">
+              <span class="tag">NVDA财报</span>
+              <span class="tag">HBM/DRAM</span>
+              <span class="tag">融资链条</span>
+            </div>
+          </article>
           <article class="article-card">
             <div class="article-topline">
               <span>下周剧本</span>
@@ -1791,10 +1804,10 @@
           </p>
           <div class="sync-highlight">
             <h3>最新同步</h3>
-            <p>2026-08-23：下周美股关关难过关关过</p>
+            <p>2026-08-26：周中总结：谁能赚更多的钱呢？</p>
             <div class="sync-actions">
-              <a class="button primary" href="articles/2026-08-23-pce-nvda-ai-capex.html">阅读网页版本</a>
-              <a class="button secondary" href="https://mp.weixin.qq.com/s/WLW4VltB-LjPuUKiUIAEyw" target="_blank" rel="noopener">打开公众号原文</a>
+              <a class="button primary" href="articles/2026-08-26-nvda-ai-demand-financing.html">阅读网页版本</a>
+              <a class="button secondary" href="https://mp.weixin.qq.com/s/fSQWlNP-4zwPIR3-v5XAeA" target="_blank" rel="noopener">打开公众号原文</a>
             </div>
           </div>
         </div>
@@ -1900,25 +1913,11 @@
     const RISK_HISTORY_KEY = "lemon-risk-history-v1";
     const marketCalendarEvents = [
       {
-        date: "2026-08-24",
-        type: "财报",
-        title: "PDD 财报",
-        focus: "周一先看 PDD，盘面大概率还是等消息；重点观察中概消费、平台增长和风险偏好有没有修复。",
-        tags: ["PDD", "China Tech", "Consumer"]
-      },
-      {
-        date: "2026-08-25",
-        type: "宏观",
-        title: "消费者信心、新屋销售与 INTU/ZM 财报",
-        focus: "美国消费者信心和新屋销售会验证需求温度；盘后 INTU、ZM 观察软件股估值和企业支出。",
-        tags: ["Consumer Confidence", "New Home Sales", "INTU", "ZM"]
-      },
-      {
         date: "2026-08-26",
-        type: "宏观",
-        title: "PCE、GDP、耐用品订单 + NVDA/CRM/CRWD",
-        focus: "全周重头戏。盘前看通胀、增长和订单，盘后看 NVDA 指引、毛利率和 Rubin 进度，以及 CRM/CRWD 对软件需求的反馈。",
-        tags: ["PCE", "GDP", "NVDA", "CRM", "CRWD"]
+        type: "财报",
+        title: "NVDA 财报后定价 + CRM/CRWD",
+        focus: "NVDA Q2 营收 962 亿美元、Q3 指引约 1080 亿美元，证明 AI 算力需求没坏；后续更要看毛利率、客户融资能力和软件股反馈。",
+        tags: ["NVDA", "CRM", "CRWD", "AI Demand"]
       },
       {
         date: "2026-08-27",
