@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="2026-08-30 下周美股预测：非农、利率、油价和 AVGO/DELL 财报一起决定 AI 反弹能否延续。" />
+  <title>非农和利率，谁更欺负人呢？ | Lemon 美股手记</title>
+  <style>
+    :root {
+      --ink: #111318;
+      --muted: #59606b;
+      --paper: #f7f8f6;
+      --surface: #ffffff;
+      --line: #d9ded8;
+      --green: #0f8f63;
+      --gold: #c08a26;
+      --lemon-soft: #f3edcf;
+      --radius: 8px;
+      --shadow: 0 18px 45px rgba(17, 19, 24, 0.09);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.78;
+    }
+    a { color: inherit; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(217, 222, 216, 0.9);
+      background: rgba(247, 248, 246, 0.92);
+      backdrop-filter: blur(14px);
+    }
+    .nav-wrap, .article-wrap, .footer-inner {
+      width: min(1060px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    .nav-wrap {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 900;
+    }
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      object-position: center 22%;
+      border-radius: var(--radius);
+      border: 1px solid rgba(17, 19, 24, 0.18);
+      background: var(--lemon-soft);
+    }
+    .brand span { display: grid; line-height: 1.1; }
+    .brand small {
+      color: var(--gold);
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .nav-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 800;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 8px 12px;
+      background: #ffffff;
+    }
+    .article-hero {
+      padding: 72px 0 36px;
+      background:
+        linear-gradient(90deg, rgba(17, 19, 24, 0.92), rgba(17, 19, 24, 0.72)),
+        url("../market-vlog-hero.png");
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
+    }
+    .article-hero p {
+      margin: 0 0 14px;
+      color: #d7e7de;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(2.25rem, 6vw, 4.7rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      color: #eef3f0;
+      font-weight: 800;
+    }
+    .meta span, .meta a {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 999px;
+      padding: 5px 10px;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.08);
+    }
+    main { padding: 42px 0 70px; }
+    .content-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 250px;
+      gap: 32px;
+      align-items: start;
+    }
+    article, .side-panel section {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    article { padding: clamp(24px, 4vw, 42px); }
+    article p { margin: 0 0 1.1em; font-size: 1.05rem; }
+    article h2 { margin: 2em 0 0.75em; font-size: 1.45rem; line-height: 1.28; }
+    .lead { font-size: 1.18rem; font-weight: 800; }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0 28px;
+      border: 1px solid var(--line);
+      background: #fbfcfa;
+      font-size: 0.92rem;
+    }
+    .data-table th, .data-table td {
+      border-bottom: 1px solid var(--line);
+      padding: 11px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .data-table th {
+      background: #eef3ee;
+      color: var(--muted);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .data-table tr:last-child td { border-bottom: 0; }
+    .data-table strong { color: var(--green); white-space: nowrap; }
+    .quote-card {
+      margin: 28px 0;
+      border-left: 4px solid var(--green);
+      border-radius: var(--radius);
+      background: #eef7f1;
+      padding: 18px 20px;
+      font-weight: 900;
+      color: #133f2f;
+    }
+    .warning-card {
+      margin: 28px 0;
+      border-left: 4px solid #c64a3d;
+      border-radius: var(--radius);
+      background: #fff2ef;
+      padding: 18px 20px;
+      color: #5a1d18;
+    }
+    .disclaimer {
+      margin-top: 28px;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .side-panel { position: sticky; top: 92px; display: grid; gap: 18px; }
+    .side-panel section { padding: 18px; }
+    .side-panel h2 {
+      margin: 0 0 12px;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+    .qr-card img {
+      width: 100%;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+    .qr-placeholder { display: none; color: var(--muted); font-size: 0.92rem; }
+    .qr-card.missing img { display: none; }
+    .qr-card.missing .qr-placeholder { display: block; }
+    .toc-card a {
+      display: block;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 800;
+      padding: 8px 0;
+      border-top: 1px solid var(--line);
+    }
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: var(--muted);
+      background: #ffffff;
+    }
+    @media (max-width: 820px) {
+      .content-layout { grid-template-columns: 1fr; }
+      .side-panel { position: static; }
+      .data-table { display: block; overflow-x: auto; white-space: nowrap; }
+      .qr-card img { max-width: 240px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="../index.html" aria-label="Lemon 美股手记首页">
+        <img src="../lemon.png" alt="Lemon logo" />
+        <span>
+          <strong>Lemon 美股手记</strong>
+          <small>Market Vlog</small>
+        </span>
+      </a>
+      <a class="nav-link" href="../index.html#articles">返回文章归档</a>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-wrap">
+      <p>2026-08-30 · 下周美股预测</p>
+      <h1>非农和利率，谁更欺负人呢？</h1>
+      <div class="meta">
+        <span>作者：Lemon清濛</span>
+        <span>主题：非农 / 利率 / 油价 / AI硬件 / AVGO与DELL财报</span>
+        <a href="https://mp.weixin.qq.com/s/JIL5xf6dOy7UV_6KXQowSA" target="_blank" rel="noopener">微信公众号原文</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="article-wrap content-layout">
+      <article>
+        <p class="lead">又是我清濛出来指手画脚啦。上周五 Warsh 在 Jackson Hole 重申 2% 通胀目标，9 月加息概率升至约 56%，10 年期美债收在 4.728%。</p>
+
+        <p>S&amp;P 500 跌 0.25%、纳指跌 0.52%。更麻烦的是，周日晚美军再袭伊朗拉腊克岛，Brent 重新逼近 89 美元，油价→通胀→利率这条链又回来了。对的，又打起来了。</p>
+
+        <h2 id="watchlist">清濛重点关注的个股</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>股票</th>
+              <th>关键位置</th>
+              <th>观察逻辑</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>NVDA</strong></td>
+              <td>217 附近短线防守</td>
+              <td>财报确认需求，Q2 营收 962 亿美元、下一财年增长指引约 70%，但周五仍跌 4.6%。</td>
+            </tr>
+            <tr>
+              <td><strong>MU</strong></td>
+              <td>909—946 区间</td>
+              <td>收 932.86，基本面强但预期很满，先看这个区间能不能稳住。</td>
+            </tr>
+            <tr>
+              <td><strong>AVGO</strong></td>
+              <td>周三盘后财报</td>
+              <td>这是 AI ASIC 与网络链的下一棒，市场会看订单、指引和 AI 网络需求扩散。</td>
+            </tr>
+            <tr>
+              <td><strong>DELL</strong></td>
+              <td>周二盘后财报</td>
+              <td>重点看 AI 服务器订单和毛利率，不能只看收入有没有增长。</td>
+            </tr>
+            <tr>
+              <td><strong>KLAC / MPWR / GEV</strong></td>
+              <td>周五均跌约 4%—4.5%</td>
+              <td>所谓 Early Add Zone 只能当左侧信号，不能当反转确认。</td>
+            </tr>
+            <tr>
+              <td><strong>TSLA</strong></td>
+              <td>339—363 震荡</td>
+              <td>收 348.75，短线还是区间内反复，不适合用单日涨跌下结论。</td>
+            </tr>
+            <tr>
+              <td><strong>SPCX</strong></td>
+              <td>收 141.50</td>
+              <td>近期结构相对稳定，但融资成本上升仍会压估值。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="warning-card">黄金也要看。上周五重挫至约 4455 美元，短线受强美元和利率压制，中线仍有财政与地缘对冲价值，不宜追涨杀跌。</div>
+
+        <h2 id="calendar">下周大事记</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>日期</th>
+              <th>事件</th>
+              <th>观察重点</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>9/1</strong></td>
+              <td>JOLTS、ISM 制造业、DELL 财报。</td>
+              <td>看就业缺口和制造业温度，同时验证 AI 服务器订单和毛利率。</td>
+            </tr>
+            <tr>
+              <td><strong>9/2</strong></td>
+              <td>ADP、Fed 褐皮书、AVGO 财报。</td>
+              <td>ADP 和褐皮书影响利率预期，AVGO 验证 AI ASIC 与网络链。</td>
+            </tr>
+            <tr>
+              <td><strong>9/3</strong></td>
+              <td>初请失业金、ISM 服务业。</td>
+              <td>服务业和就业如果偏热，10 年期美债可能继续压估值。</td>
+            </tr>
+            <tr>
+              <td><strong>9/4</strong></td>
+              <td>非农就业报告。</td>
+              <td>Reuters 调查预期新增约 5.8 万人、失业率 4.1%，这是全周最关键的利率定价窗口。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="script">下周剧本</h2>
+        <p>清濛觉得下周继续波动。总结一下就是：就业温和、10Y 回落，AI 反弹还能延续；若薪资偏热、10Y 站上 4.8% 并叠加油价再冲，半导体会再次成为第一批被杀估值的板块。</p>
+
+        <div class="quote-card">如果不会做波动，直接买大盘就好了。接下来真正欺负人的，不只是非农，也可能是利率和油价一起回来。</div>
+
+        <div class="disclaimer">本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。</div>
+      </article>
+
+      <aside class="side-panel">
+        <section class="qr-card">
+          <h2>公众号二维码</h2>
+          <img src="../qrcode.jpg" alt="东左耳清濛公众号二维码" onerror="this.closest('.qr-card').classList.add('missing')" />
+          <div class="qr-placeholder">请把二维码图片保存到项目根目录，这里会自动显示。</div>
+        </section>
+        <section class="toc-card">
+          <h2>文章目录</h2>
+          <a href="#watchlist">重点个股</a>
+          <a href="#calendar">下周大事记</a>
+          <a href="#script">下周剧本</a>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <strong>Lemon 美股手记</strong><br />
+      文章首发于微信公众号：东左耳清濛。网站用于归档、复盘和后续跟踪。
+    </div>
+  </footer>
+</body>
+</html>
