@@ -1403,26 +1403,26 @@
         <div class="calendar-board">
           <div class="calendar-head">
             <div>
-              <strong>9/1 - 9/4 下周核心日历</strong>
-              <p>非农、ADP、JOLTS、ISM、Fed 褐皮书和 AVGO/DELL 财报会一起检验 AI 反弹和利率压力。</p>
+              <strong>9/3 - 9/4 剩余重点事件</strong>
+              <p>初请、ISM 服务业和非农会继续决定 10Y、黄金、油价和 AI 硬件的修复质量。</p>
             </div>
             <div class="calendar-status" id="calendar-status">等待日历渲染</div>
           </div>
           <div class="calendar-focus-grid" aria-label="下周三大观察闸门">
             <div class="calendar-focus-card">
               <span>Jobs Gate</span>
-              <strong>非农 + ADP</strong>
+              <strong>初请 + 非农</strong>
               <p>就业温和才利于 10Y 回落，薪资偏热会继续压高估值科技。</p>
             </div>
             <div class="calendar-focus-card">
               <span>Rates Gate</span>
               <strong>10Y 4.8%</strong>
-              <p>若收益率站上 4.8%，半导体会再次成为第一批被杀估值的板块。</p>
+              <p>若收益率站上 4.8%，QQQ 和半导体会重新承压。</p>
             </div>
             <div class="calendar-focus-card">
-              <span>AI Chain Gate</span>
-              <strong>AVGO / DELL</strong>
-              <p>看 AI ASIC、网络链、服务器订单和毛利率能不能接住 NVDA 叙事。</p>
+              <span>Hedge Gate</span>
+              <strong>黄金 + 油价</strong>
+              <p>黄金看 4300—4600 支撑，油价继续影响通胀预期。</p>
             </div>
           </div>
           <div class="calendar-grid" id="calendar-grid" aria-live="polite">
@@ -1510,6 +1510,19 @@
           <p>公众号里的长文会逐步迁移到这里，按主题重新整理摘要、图表和关键结论。</p>
         </div>
         <div class="article-grid">
+          <article class="article-card">
+            <div class="article-topline">
+              <span>周中总结</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-09-02-midweek-jobs-gold-ai.html">美股周中总结和预测</a></h3>
+            <p>ADP 就业降温让市场小幅反弹，但 10Y、WTI、黄金和非农仍是未来两天最关键变量，同时更新 NVDA、MU、TSLA、SPCX、SOXL、DELL 支撑压力。</p>
+            <div class="tag-row">
+              <span class="tag">ADP/非农</span>
+              <span class="tag">黄金</span>
+              <span class="tag">支撑压力</span>
+            </div>
+          </article>
           <article class="article-card">
             <div class="article-topline">
               <span>下周预测</span>
@@ -1821,10 +1834,10 @@
           </p>
           <div class="sync-highlight">
             <h3>最新同步</h3>
-            <p>2026-08-30：下周美股预测：非农和利率，谁更欺负人呢？</p>
+            <p>2026-09-02：美股周中总结和预测</p>
             <div class="sync-actions">
-              <a class="button primary" href="articles/2026-08-30-jobs-rates-oil-ai.html">阅读网页版本</a>
-              <a class="button secondary" href="https://mp.weixin.qq.com/s/JIL5xf6dOy7UV_6KXQowSA" target="_blank" rel="noopener">打开公众号原文</a>
+              <a class="button primary" href="articles/2026-09-02-midweek-jobs-gold-ai.html">阅读网页版本</a>
+              <a class="button secondary" href="https://mp.weixin.qq.com/s/HTCwDmgft7IHItyP4m4zYw" target="_blank" rel="noopener">打开公众号原文</a>
             </div>
           </div>
         </div>
@@ -1930,32 +1943,18 @@
     const RISK_HISTORY_KEY = "lemon-risk-history-v1";
     const marketCalendarEvents = [
       {
-        date: "2026-09-01",
-        type: "宏观",
-        title: "JOLTS、ISM制造业与 DELL 财报",
-        focus: "JOLTS 和 ISM 制造业先验证就业缺口与制造业温度；DELL 盘后看 AI 服务器订单和毛利率。",
-        tags: ["JOLTS", "ISM", "DELL", "AI Server"]
-      },
-      {
-        date: "2026-09-02",
-        type: "宏观",
-        title: "ADP、Fed褐皮书与 AVGO 财报",
-        focus: "ADP 和 Fed 褐皮书会影响利率预期；AVGO 盘后验证 AI ASIC 与网络链能不能接住 NVDA 叙事。",
-        tags: ["ADP", "Beige Book", "AVGO", "ASIC"]
-      },
-      {
         date: "2026-09-03",
         type: "宏观",
         title: "初请失业金与 ISM 服务业",
-        focus: "服务业和就业如果偏热，10 年期美债可能继续压制高估值科技；如果温和，AI 反弹更容易延续。",
+        focus: "如果服务业价格项继续偏热，10Y 可能顶在 4.8% 附近，QQQ 和半导体会有压力；如果温和，AI 硬件修复更容易延续。",
         tags: ["Jobless Claims", "ISM Services", "10Y", "QQQ"]
       },
       {
         date: "2026-09-04",
         type: "宏观",
         title: "非农就业报告",
-        focus: "全周最关键的利率定价窗口。Reuters 调查预期新增约 5.8 万人、失业率 4.1%，重点看薪资和 10Y 是否冲上 4.8%。",
-        tags: ["NFP", "Wages", "10Y", "Rates"]
+        focus: "未来两天最关键的利率定价窗口。重点看新增就业、失业率和薪资，如果薪资偏热、10Y 冲上 4.8%，半导体会先被杀估值。",
+        tags: ["NFP", "Wages", "Semis", "Rates"]
       }
     ];
     let liveStockTimer = null;

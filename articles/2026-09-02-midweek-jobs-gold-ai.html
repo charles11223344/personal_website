@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="2026-09-02 美股周中总结：ADP就业降温带来反弹，但10年期美债、油价、黄金和非农仍是未来两天关键变量。" />
+  <title>美股周中总结和预测 | Lemon 美股手记</title>
+  <style>
+    :root {
+      --ink: #111318;
+      --muted: #59606b;
+      --paper: #f7f8f6;
+      --surface: #ffffff;
+      --line: #d9ded8;
+      --green: #0f8f63;
+      --gold: #c08a26;
+      --lemon-soft: #f3edcf;
+      --radius: 8px;
+      --shadow: 0 18px 45px rgba(17, 19, 24, 0.09);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.78;
+    }
+    a { color: inherit; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(217, 222, 216, 0.9);
+      background: rgba(247, 248, 246, 0.92);
+      backdrop-filter: blur(14px);
+    }
+    .nav-wrap, .article-wrap, .footer-inner {
+      width: min(1060px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    .nav-wrap {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 900;
+    }
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      object-position: center 22%;
+      border-radius: var(--radius);
+      border: 1px solid rgba(17, 19, 24, 0.18);
+      background: var(--lemon-soft);
+    }
+    .brand span { display: grid; line-height: 1.1; }
+    .brand small {
+      color: var(--gold);
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .nav-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 800;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 8px 12px;
+      background: #ffffff;
+    }
+    .article-hero {
+      padding: 72px 0 36px;
+      background:
+        linear-gradient(90deg, rgba(17, 19, 24, 0.92), rgba(17, 19, 24, 0.72)),
+        url("../market-vlog-hero.png");
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
+    }
+    .article-hero p {
+      margin: 0 0 14px;
+      color: #d7e7de;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(2.25rem, 6vw, 4.7rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      color: #eef3f0;
+      font-weight: 800;
+    }
+    .meta span, .meta a {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 999px;
+      padding: 5px 10px;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.08);
+    }
+    main { padding: 42px 0 70px; }
+    .content-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 250px;
+      gap: 32px;
+      align-items: start;
+    }
+    article, .side-panel section {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    article { padding: clamp(24px, 4vw, 42px); }
+    article p { margin: 0 0 1.1em; font-size: 1.05rem; }
+    article h2 { margin: 2em 0 0.75em; font-size: 1.45rem; line-height: 1.28; }
+    .lead { font-size: 1.18rem; font-weight: 800; }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0 28px;
+      border: 1px solid var(--line);
+      background: #fbfcfa;
+      font-size: 0.92rem;
+    }
+    .data-table th, .data-table td {
+      border-bottom: 1px solid var(--line);
+      padding: 11px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .data-table th {
+      background: #eef3ee;
+      color: var(--muted);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .data-table tr:last-child td { border-bottom: 0; }
+    .data-table strong { color: var(--green); white-space: nowrap; }
+    .quote-card {
+      margin: 28px 0;
+      border-left: 4px solid var(--green);
+      border-radius: var(--radius);
+      background: #eef7f1;
+      padding: 18px 20px;
+      font-weight: 900;
+      color: #133f2f;
+    }
+    .warning-card {
+      margin: 28px 0;
+      border-left: 4px solid #c64a3d;
+      border-radius: var(--radius);
+      background: #fff2ef;
+      padding: 18px 20px;
+      color: #5a1d18;
+    }
+    .disclaimer {
+      margin-top: 28px;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .side-panel { position: sticky; top: 92px; display: grid; gap: 18px; }
+    .side-panel section { padding: 18px; }
+    .side-panel h2 {
+      margin: 0 0 12px;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+    .qr-card img {
+      width: 100%;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+    .qr-placeholder { display: none; color: var(--muted); font-size: 0.92rem; }
+    .qr-card.missing img { display: none; }
+    .qr-card.missing .qr-placeholder { display: block; }
+    .toc-card a {
+      display: block;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 800;
+      padding: 8px 0;
+      border-top: 1px solid var(--line);
+    }
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: var(--muted);
+      background: #ffffff;
+    }
+    @media (max-width: 820px) {
+      .content-layout { grid-template-columns: 1fr; }
+      .side-panel { position: static; }
+      .data-table { display: block; overflow-x: auto; white-space: nowrap; }
+      .qr-card img { max-width: 240px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="../index.html" aria-label="Lemon 美股手记首页">
+        <img src="../lemon.png" alt="Lemon logo" />
+        <span>
+          <strong>Lemon 美股手记</strong>
+          <small>Market Vlog</small>
+        </span>
+      </a>
+      <a class="nav-link" href="../index.html#articles">返回文章归档</a>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-wrap">
+      <p>2026-09-02 · 美股周中总结和预测</p>
+      <h1>美股表面反弹，但风险还没有解除</h1>
+      <div class="meta">
+        <span>作者：Lemon清濛</span>
+        <span>主题：ADP就业 / 10Y美债 / 油价 / 黄金 / 非农 / AI硬件</span>
+        <a href="https://mp.weixin.qq.com/s/HTCwDmgft7IHItyP4m4zYw" target="_blank" rel="noopener">微信公众号原文</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="article-wrap content-layout">
+      <article>
+        <p class="lead">大家好呀，又是我清濛出来指手画脚了。今天美股表面反弹了一点，真的只有一点，明显我之前说的下跌风险还没有解除。</p>
+
+        <p>9月2日收盘，道指涨 0.56%，标普涨 0.46%，纳指涨 0.45%，罗素 2000 涨 1.13%。ADP 就业只增加 3.8 万人，从数据就能简单看出就业在降温，所以投资市场松了小小一口气；但 10 年期美债还在 4.78% 左右，WTI 也在 90 美元上方，油价、通胀、利率这些东西还在。</p>
+
+        <h2 id="gold">黄金：反弹可以看，暂时不要追</h2>
+        <p>最重要的是黄金今天反弹到约 4436 美元，短线是因为就业数据弱、利率被压住之后的修复。清濛还是劝大家暂时不要追，可以慢慢看看，静观其变。</p>
+
+        <div class="warning-card">黄金现在下方看 4300—4600 支撑区，上方看 4800—5000 压力区。只要油价和美国、伊朗的冲突风险还在，黄金的价值就还是会在；但利率太高时，黄金也会反复波动。</div>
+
+        <h2 id="levels">未来两天重点股票</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>股票</th>
+              <th>支撑</th>
+              <th>压力</th>
+              <th>清濛的观察</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>NVDA</strong></td>
+              <td>216.8 / 209</td>
+              <td>220.9 / 229—230</td>
+              <td>站不回 230，不算真正修复。</td>
+            </tr>
+            <tr>
+              <td><strong>MU</strong></td>
+              <td>924 / 906</td>
+              <td>946.8 / 968.7</td>
+              <td>突破 968 才更好看。</td>
+            </tr>
+            <tr>
+              <td><strong>TSLA</strong></td>
+              <td>342—345 / 339</td>
+              <td>358.8 / 363—366</td>
+              <td>没突破前还是箱体。</td>
+            </tr>
+            <tr>
+              <td><strong>SPCX</strong></td>
+              <td>138 / 135</td>
+              <td>143.3 / 150</td>
+              <td>它是短线结构最顺的。</td>
+            </tr>
+            <tr>
+              <td><strong>SOXL</strong></td>
+              <td>109 / 104</td>
+              <td>117.4 / 120—121</td>
+              <td>要看 NVDA 脸色。</td>
+            </tr>
+            <tr>
+              <td><strong>DELL</strong></td>
+              <td>462 / 432</td>
+              <td>498 / 506</td>
+              <td>收 492.20，财报很好，但涨太猛容易震。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="calendar">未来两天大事记</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>日期</th>
+              <th>事件</th>
+              <th>看什么</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>9/3 周四</strong></td>
+              <td>初请失业金、ISM 服务业。</td>
+              <td>如果服务业价格项还热，10Y 继续顶在 4.8% 附近，QQQ 和半导体会有压力。</td>
+            </tr>
+            <tr>
+              <td><strong>9/4 周五</strong></td>
+              <td>非农就业报告。</td>
+              <td>最重要的是新增就业、失业率和薪资。如果薪资偏热，科技股很容易高开低走。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="script">清濛的剧本</h2>
+        <p>我还是那句话，未来两天会继续波动，不要无脑追高。如果非农没有太多意外、10Y 国债回落，AI 硬件股还能慢慢修复；如果薪资偏热、10Y 冲 4.8% 以上，再加油价继续涨，半导体会首先被杀估值。</p>
+
+        <div class="quote-card">别急啊。现在不是看谁喊得最大声，而是看就业、利率和油价到底愿不愿意给 AI 让路。</div>
+
+        <div class="disclaimer">本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。</div>
+      </article>
+
+      <aside class="side-panel">
+        <section class="qr-card">
+          <h2>公众号二维码</h2>
+          <img src="../qrcode.jpg" alt="东左耳清濛公众号二维码" onerror="this.closest('.qr-card').classList.add('missing')" />
+          <div class="qr-placeholder">请把二维码图片保存到项目根目录，这里会自动显示。</div>
+        </section>
+        <section class="toc-card">
+          <h2>文章目录</h2>
+          <a href="#gold">黄金分析</a>
+          <a href="#levels">股票支撑压力</a>
+          <a href="#calendar">未来两天大事记</a>
+          <a href="#script">清濛的剧本</a>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <strong>Lemon 美股手记</strong><br />
+      文章首发于微信公众号：东左耳清濛。网站用于归档、复盘和后续跟踪。
+    </div>
+  </footer>
+</body>
+</html>

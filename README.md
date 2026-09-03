@@ -36,6 +36,7 @@ py scripts/update_stock_data.py
 
 当前已添加：
 
+- `articles/2026-09-02-midweek-jobs-gold-ai.html`
 - `articles/2026-08-30-jobs-rates-oil-ai.html`
 - `articles/2026-08-26-nvda-ai-demand-financing.html`
 - `articles/2026-08-23-pce-nvda-ai-capex.html`
