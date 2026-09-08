@@ -1403,26 +1403,26 @@
         <div class="calendar-board">
           <div class="calendar-head">
             <div>
-              <strong>9/3 - 9/4 剩余重点事件</strong>
-              <p>初请、ISM 服务业和非农会继续决定 10Y、黄金、油价和 AI 硬件的修复质量。</p>
+              <strong>9/8 - 9/11 下周核心日历</strong>
+              <p>CPI、PPI、Apple 发布会、ECB 决议和 ORCL/ADBE 财报会一起决定科技股方向。</p>
             </div>
             <div class="calendar-status" id="calendar-status">等待日历渲染</div>
           </div>
           <div class="calendar-focus-grid" aria-label="下周三大观察闸门">
             <div class="calendar-focus-card">
-              <span>Jobs Gate</span>
-              <strong>初请 + 非农</strong>
-              <p>就业温和才利于 10Y 回落，薪资偏热会继续压高估值科技。</p>
+              <span>CPI Gate</span>
+              <strong>9/11 CPI</strong>
+              <p>核心 CPI ≤ 0.2% 利于 AI 修复，≥ 0.3% 就要防科技回撤。</p>
             </div>
             <div class="calendar-focus-card">
-              <span>Rates Gate</span>
-              <strong>10Y 4.8%</strong>
-              <p>若收益率站上 4.8%，QQQ 和半导体会重新承压。</p>
+              <span>Oil Gate</span>
+              <strong>Brent 100</strong>
+              <p>油价若逼近 100，会把通胀和 10Y 重新顶起来。</p>
             </div>
             <div class="calendar-focus-card">
-              <span>Hedge Gate</span>
-              <strong>黄金 + 油价</strong>
-              <p>黄金看 4300—4600 支撑，油价继续影响通胀预期。</p>
+              <span>Profit Gate</span>
+              <strong>能赚钱的 AI 公司</strong>
+              <p>高利率下，资金更集中到能交利润和现金流的公司。</p>
             </div>
           </div>
           <div class="calendar-grid" id="calendar-grid" aria-live="polite">
@@ -1510,6 +1510,19 @@
           <p>公众号里的长文会逐步迁移到这里，按主题重新整理摘要、图表和关键结论。</p>
         </div>
         <div class="article-grid">
+          <article class="article-card">
+            <div class="article-topline">
+              <span>下周故事</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-09-07-cpi-oil-ai-rotation.html">下周的美股故事又是很精彩，大家盘一盘啊</a></h3>
+            <p>非农强于预期后，9月加息概率回升，Brent逼近97美元；下周重点看 Apple 发布会、PPI、CPI、ORCL/ADBE 和 AI 盈利能力。</p>
+            <div class="tag-row">
+              <span class="tag">CPI/PPI</span>
+              <span class="tag">Brent/10Y</span>
+              <span class="tag">AI盈利</span>
+            </div>
+          </article>
           <article class="article-card">
             <div class="article-topline">
               <span>周中总结</span>
@@ -1834,10 +1847,10 @@
           </p>
           <div class="sync-highlight">
             <h3>最新同步</h3>
-            <p>2026-09-02：美股周中总结和预测</p>
+            <p>2026-09-07：下周的美股故事又是很精彩，大家盘一盘啊</p>
             <div class="sync-actions">
-              <a class="button primary" href="articles/2026-09-02-midweek-jobs-gold-ai.html">阅读网页版本</a>
-              <a class="button secondary" href="https://mp.weixin.qq.com/s/HTCwDmgft7IHItyP4m4zYw" target="_blank" rel="noopener">打开公众号原文</a>
+              <a class="button primary" href="articles/2026-09-07-cpi-oil-ai-rotation.html">阅读网页版本</a>
+              <a class="button secondary" href="https://mp.weixin.qq.com/s/qlcOF0rDuB3gpMuz1_bMpA" target="_blank" rel="noopener">打开公众号原文</a>
             </div>
           </div>
         </div>
@@ -1943,18 +1956,32 @@
     const RISK_HISTORY_KEY = "lemon-risk-history-v1";
     const marketCalendarEvents = [
       {
-        date: "2026-09-03",
-        type: "宏观",
-        title: "初请失业金与 ISM 服务业",
-        focus: "如果服务业价格项继续偏热，10Y 可能顶在 4.8% 附近，QQQ 和半导体会有压力；如果温和，AI 硬件修复更容易延续。",
-        tags: ["Jobless Claims", "ISM Services", "10Y", "QQQ"]
+        date: "2026-09-08",
+        type: "市场",
+        title: "开盘观察：科技偏强与油价压力",
+        focus: "前半周先看纳指能不能继续强于大盘，同时盯 Brent 是否逼近 100 美元，油价会重新影响通胀和利率预期。",
+        tags: ["QQQ", "Brent", "10Y", "Semis"]
       },
       {
-        date: "2026-09-04",
+        date: "2026-09-09",
+        type: "事件",
+        title: "Apple 发布会",
+        focus: "看端侧 AI、硬件周期和 AAPL 能不能改善科技权重情绪；如果亮点不足，资金可能继续集中到半导体和 AI 基建。",
+        tags: ["AAPL", "AI Device", "Tech"]
+      },
+      {
+        date: "2026-09-10",
         type: "宏观",
-        title: "非农就业报告",
-        focus: "未来两天最关键的利率定价窗口。重点看新增就业、失业率和薪资，如果薪资偏热、10Y 冲上 4.8%，半导体会先被杀估值。",
-        tags: ["NFP", "Wages", "Semis", "Rates"]
+        title: "PPI、ECB 决议、ORCL 和 ADBE 财报",
+        focus: "生产端通胀和 ECB 会影响全球利率预期；ORCL、ADBE 财报验证 AI 软件和云需求能不能跟上估值。",
+        tags: ["PPI", "ECB", "ORCL", "ADBE"]
+      },
+      {
+        date: "2026-09-11",
+        type: "宏观",
+        title: "CPI：本周最重要事件",
+        focus: "核心 CPI ≤ 0.2%、Brent 不破 100，QQQ 和半导体仍有上行空间；若 CPI ≥ 0.3%、10Y 站稳 4.8%，科技股要防回撤。",
+        tags: ["CPI", "10Y", "QQQ", "Semis"]
       }
     ];
     let liveStockTimer = null;
