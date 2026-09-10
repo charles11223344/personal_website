@@ -1403,8 +1403,8 @@
         <div class="calendar-board">
           <div class="calendar-head">
             <div>
-              <strong>9/8 - 9/11 下周核心日历</strong>
-              <p>CPI、PPI、Apple 发布会、ECB 决议和 ORCL/ADBE 财报会一起决定科技股方向。</p>
+              <strong>9/10 - 9/11 剩余重点事件</strong>
+              <p>PPI、ECB、ORCL/ADBE 财报和 CPI 会决定 10Y、油价、黄金和 AI 硬件的下一步方向。</p>
             </div>
             <div class="calendar-status" id="calendar-status">等待日历渲染</div>
           </div>
@@ -1412,17 +1412,17 @@
             <div class="calendar-focus-card">
               <span>CPI Gate</span>
               <strong>9/11 CPI</strong>
-              <p>核心 CPI ≤ 0.2% 利于 AI 修复，≥ 0.3% 就要防科技回撤。</p>
+              <p>如果 CPI 偏热、10Y 冲 4.9%—5%，高估值科技会重新承压。</p>
             </div>
             <div class="calendar-focus-card">
-              <span>Oil Gate</span>
-              <strong>Brent 100</strong>
-              <p>油价若逼近 100，会把通胀和 10Y 重新顶起来。</p>
+              <span>PPI Gate</span>
+              <strong>9/10 PPI</strong>
+              <p>生产端通胀先给 CPI 预热，也会影响利率预期。</p>
             </div>
             <div class="calendar-focus-card">
-              <span>Profit Gate</span>
-              <strong>能赚钱的 AI 公司</strong>
-              <p>高利率下，资金更集中到能交利润和现金流的公司。</p>
+              <span>Gold Gate</span>
+              <strong>黄金 4500</strong>
+              <p>黄金要看能不能连续两天站稳 4500，站不稳不追。</p>
             </div>
           </div>
           <div class="calendar-grid" id="calendar-grid" aria-live="polite">
@@ -1510,6 +1510,19 @@
           <p>公众号里的长文会逐步迁移到这里，按主题重新整理摘要、图表和关键结论。</p>
         </div>
         <div class="article-grid">
+          <article class="article-card">
+            <div class="article-topline">
+              <span>周中总结</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-09-09-midweek-cpi-oil-rates.html">周中总结和未来两天预测</a></h3>
+            <p>Brent 站上 100 美元附近，10Y 摸到 4.84%-4.85%，清濛拆解 SOXL、NVDA、AVGO、TSM、VRT 和黄金的支撑压力。</p>
+            <div class="tag-row">
+              <span class="tag">PPI/CPI</span>
+              <span class="tag">Brent/10Y</span>
+              <span class="tag">黄金</span>
+            </div>
+          </article>
           <article class="article-card">
             <div class="article-topline">
               <span>下周故事</span>
@@ -1847,10 +1860,10 @@
           </p>
           <div class="sync-highlight">
             <h3>最新同步</h3>
-            <p>2026-09-07：下周的美股故事又是很精彩，大家盘一盘啊</p>
+            <p>2026-09-09：周中总结和未来两天预测</p>
             <div class="sync-actions">
-              <a class="button primary" href="articles/2026-09-07-cpi-oil-ai-rotation.html">阅读网页版本</a>
-              <a class="button secondary" href="https://mp.weixin.qq.com/s/qlcOF0rDuB3gpMuz1_bMpA" target="_blank" rel="noopener">打开公众号原文</a>
+              <a class="button primary" href="articles/2026-09-09-midweek-cpi-oil-rates.html">阅读网页版本</a>
+              <a class="button secondary" href="https://mp.weixin.qq.com/s/x-1GQZEgy10dzddBrmnxug" target="_blank" rel="noopener">打开公众号原文</a>
             </div>
           </div>
         </div>
@@ -1956,32 +1969,18 @@
     const RISK_HISTORY_KEY = "lemon-risk-history-v1";
     const marketCalendarEvents = [
       {
-        date: "2026-09-08",
-        type: "市场",
-        title: "开盘观察：科技偏强与油价压力",
-        focus: "前半周先看纳指能不能继续强于大盘，同时盯 Brent 是否逼近 100 美元，油价会重新影响通胀和利率预期。",
-        tags: ["QQQ", "Brent", "10Y", "Semis"]
-      },
-      {
-        date: "2026-09-09",
-        type: "事件",
-        title: "Apple 发布会",
-        focus: "看端侧 AI、硬件周期和 AAPL 能不能改善科技权重情绪；如果亮点不足，资金可能继续集中到半导体和 AI 基建。",
-        tags: ["AAPL", "AI Device", "Tech"]
-      },
-      {
         date: "2026-09-10",
         type: "宏观",
         title: "PPI、ECB 决议、ORCL 和 ADBE 财报",
-        focus: "生产端通胀和 ECB 会影响全球利率预期；ORCL、ADBE 财报验证 AI 软件和云需求能不能跟上估值。",
+        focus: "生产端通胀和 ECB 决议会影响利率预期；ORCL、ADBE 财报验证 AI 软件和云需求，高估值股能不能承接要看这里。",
         tags: ["PPI", "ECB", "ORCL", "ADBE"]
       },
       {
         date: "2026-09-11",
         type: "宏观",
-        title: "CPI：本周最重要事件",
-        focus: "核心 CPI ≤ 0.2%、Brent 不破 100，QQQ 和半导体仍有上行空间；若 CPI ≥ 0.3%、10Y 站稳 4.8%，科技股要防回撤。",
-        tags: ["CPI", "10Y", "QQQ", "Semis"]
+        title: "CPI：本周真正大考",
+        focus: "如果 CPI 温和、10Y 回落，AI硬件、CPO 和黄金都有修复机会；如果 CPI 偏热、10Y 冲 4.9%-5%，科技股要防回撤。",
+        tags: ["CPI", "10Y", "QQQ", "Gold"]
       }
     ];
     let liveStockTimer = null;
