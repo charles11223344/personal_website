@@ -1995,32 +1995,25 @@
     const RISK_HISTORY_KEY = "lemon-risk-history-v1";
     const marketCalendarEvents = [
       {
-        date: "2026-09-15",
-        type: "市场",
-        title: "油价、10Y 和科技股估值压力",
-        focus: "先看市场会不会继续压高估值；Brent 100 美元以上和 10Y 逼近 5% 都不是科技股喜欢的组合。",
-        tags: ["Brent", "10Y", "QQQ", "AI"]
+        date: "2026-09-16",
+        type: "宏观",
+        title: "FOMC 利率决议，2:00 PM",
+        focus: "看加息幅度，以及点阵图是否暗示 12 月继续加息。温和表述会给半导体修复空间，鹰派表述会继续压估值。",
+        tags: ["FOMC", "Fed", "10Y", "Semis"]
       },
       {
         date: "2026-09-16",
         type: "宏观",
-        title: "FOMC 利率决议",
-        focus: "本周最重要事件。如果只加 0.25%，并被解释成一次性保险式加息，科技股可能反弹；若继续偏鹰，AI 估值仍会承压。",
-        tags: ["FOMC", "Fed", "10Y", "NVDA"]
+        title: "Warsh 记者会，2:30 PM",
+        focus: "真正影响市场的是语气。强调数据依赖、暂不承诺继续加息是偏多；确认年底继续加息就是偏空。",
+        tags: ["Warsh", "Press", "QQQ", "NVDA"]
       },
       {
         date: "2026-09-17",
         type: "市场",
-        title: "FOMC 后市场定价",
-        focus: "看 10Y 是否站稳 5%，以及 AI 硬件、软件和电力链有没有资金回补。",
-        tags: ["10Y", "NVDA", "MU", "VST"]
-      },
-      {
-        date: "2026-09-18",
-        type: "市场",
-        title: "周线确认：油价与高 beta 承接",
-        focus: "如果油价还在 100 美元以上、10Y 继续强，周线收盘会决定下跌是不是扩散。",
-        tags: ["Brent", "NBIS", "MRVL", "GOOGL"]
+        title: "FOMC 后洗盘日",
+        focus: "看 10Y 是回落到 4.95% 下方，还是冲向 5.10%-5.20%。前者利好半导体，后者继续防守高 beta。",
+        tags: ["10Y", "NVDA", "MU", "GDX"]
       }
     ];
     let liveStockTimer = null;
