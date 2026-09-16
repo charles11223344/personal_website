@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="2026-09-15 美股未来48小时指南：FOMC决议、Warsh记者会、10年期美债5.04%、油价105美元，以及NVDA、AVGO、MU、MRVL、NBIS、GDX支撑压力。" />
+  <title>美股未来48小时的Fed大考与攻防大战指南 | Lemon 美股手记</title>
+  <style>
+    :root {
+      --ink: #111318;
+      --muted: #59606b;
+      --paper: #f7f8f6;
+      --surface: #ffffff;
+      --line: #d9ded8;
+      --green: #0f8f63;
+      --gold: #c08a26;
+      --red: #c64a3d;
+      --lemon-soft: #f3edcf;
+      --radius: 8px;
+      --shadow: 0 18px 45px rgba(17, 19, 24, 0.09);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.78;
+    }
+    a { color: inherit; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(217, 222, 216, 0.9);
+      background: rgba(247, 248, 246, 0.92);
+      backdrop-filter: blur(14px);
+    }
+    .nav-wrap, .article-wrap, .footer-inner {
+      width: min(1060px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    .nav-wrap {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 900;
+    }
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      object-position: center 22%;
+      border-radius: var(--radius);
+      border: 1px solid rgba(17, 19, 24, 0.18);
+      background: var(--lemon-soft);
+    }
+    .brand span { display: grid; line-height: 1.1; }
+    .brand small {
+      color: var(--gold);
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .nav-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 800;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 8px 12px;
+      background: #ffffff;
+    }
+    .article-hero {
+      padding: 72px 0 36px;
+      background:
+        linear-gradient(90deg, rgba(17, 19, 24, 0.94), rgba(17, 19, 24, 0.72)),
+        url("../market-vlog-hero.png");
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
+    }
+    .article-hero p {
+      margin: 0 0 14px;
+      color: #f1dfaa;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 940px;
+      margin: 0;
+      font-size: clamp(2.2rem, 5.6vw, 4.5rem);
+      line-height: 1.06;
+      letter-spacing: 0;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      color: #eef3f0;
+      font-weight: 800;
+    }
+    .meta span, .meta a {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 999px;
+      padding: 5px 10px;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.08);
+    }
+    main { padding: 42px 0 70px; }
+    .content-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 250px;
+      gap: 32px;
+      align-items: start;
+    }
+    article, .side-panel section {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    article { padding: clamp(24px, 4vw, 42px); }
+    article p { margin: 0 0 1.1em; font-size: 1.05rem; }
+    article h2 { margin: 2em 0 0.75em; font-size: 1.45rem; line-height: 1.28; }
+    .lead { font-size: 1.18rem; font-weight: 900; }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0 28px;
+      border: 1px solid var(--line);
+      background: #fbfcfa;
+      font-size: 0.92rem;
+    }
+    .data-table th, .data-table td {
+      border-bottom: 1px solid var(--line);
+      padding: 11px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .data-table th {
+      background: #eef3ee;
+      color: var(--muted);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .data-table tr:last-child td { border-bottom: 0; }
+    .data-table strong { color: var(--green); white-space: nowrap; }
+    .quote-card {
+      margin: 28px 0;
+      border-left: 4px solid var(--green);
+      border-radius: var(--radius);
+      background: #eef7f1;
+      padding: 18px 20px;
+      font-weight: 900;
+      color: #133f2f;
+    }
+    .warning-card {
+      margin: 28px 0;
+      border-left: 4px solid var(--red);
+      border-radius: var(--radius);
+      background: #fff2ef;
+      padding: 18px 20px;
+      color: #5a1d18;
+      font-weight: 800;
+    }
+    .disclaimer {
+      margin-top: 28px;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .side-panel { position: sticky; top: 92px; display: grid; gap: 18px; }
+    .side-panel section { padding: 18px; }
+    .side-panel h2 {
+      margin: 0 0 12px;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+    .qr-card img {
+      width: 100%;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+    .qr-placeholder { display: none; color: var(--muted); font-size: 0.92rem; }
+    .qr-card.missing img { display: none; }
+    .qr-card.missing .qr-placeholder { display: block; }
+    .toc-card a {
+      display: block;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 800;
+      padding: 8px 0;
+      border-top: 1px solid var(--line);
+    }
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: var(--muted);
+      background: #ffffff;
+    }
+    @media (max-width: 820px) {
+      .content-layout { grid-template-columns: 1fr; }
+      .side-panel { position: static; }
+      .data-table { display: block; overflow-x: auto; white-space: nowrap; }
+      .qr-card img { max-width: 240px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="../index.html">
+        <img src="../lemon-avatar.png" alt="Lemon 清濛头像" />
+        <span>Lemon 美股手记<small>Market Notes</small></span>
+      </a>
+      <a class="nav-link" href="../index.html#articles">返回文章归档</a>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-wrap">
+      <p>2026-09-15 · Fed 48小时攻防</p>
+      <h1>美股未来48小时的Fed大考与攻防大战指南</h1>
+      <div class="meta">
+        <span>FOMC</span>
+        <span>Warsh 记者会</span>
+        <span>10Y 5.04%</span>
+        <span>油价 105</span>
+        <a href="https://mp.weixin.qq.com/s/7y9GeefppVrXFlJ-qX7-Dg" target="_blank" rel="noopener">微信公众号原文</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="article-wrap content-layout">
+      <article>
+        <p class="lead">未来 48 小时是这周美股最重要的部分。加息不加息，真的会影响很多资产的定价。</p>
+
+        <p>我相信未来两个美股交易日只有一条主线：9 月 16 日 FOMC 决议日，加上 9 月 17 日市场消化后的洗盘日。油价已经到 105 美元左右，一直在推升能源通胀；10 年期美债触及 5.04%，市场会重新估科技股的价值。</p>
+
+        <p>周三下午 2:00 PM 的利率决议和 2:30 PM Warsh 记者会才是真正关键。加息本身市场已经有心理准备，真正要看的是 12 月是不是还会继续加息。</p>
+
+        <h2 id="fed-script">Fed 两种剧本</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>情景</th>
+              <th>市场反应</th>
+              <th>清濛判断</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>温和加息</strong></td>
+              <td>加息 0.25%，Warsh 表态温和，强调数据依赖，10Y 回落至 4.95% 下方。</td>
+              <td>周四半导体有机会涨回来，NVDA、MRVL、MU 这类 AI 硬件会先被资金观察。</td>
+            </tr>
+            <tr>
+              <td><strong>鹰派加息</strong></td>
+              <td>强调年底继续加息，10Y 直奔 5.10%—5.20%。</td>
+              <td>科技股继续被压估值，高融资需求和高 beta 会先承压。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="warning-card">决议公布前不要乱操作。宁愿慢一点，也不要激进。</div>
+
+        <h2 id="levels">重点股票支撑压力</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>股票</th>
+              <th>支撑位</th>
+              <th>压力位</th>
+              <th>想法</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>NVDA</strong></td>
+              <td>210–215 / 200</td>
+              <td>224–225 / 230</td>
+              <td>相对强度龙头。只要守住 210，就还有反弹空间。</td>
+            </tr>
+            <tr>
+              <td><strong>AVGO</strong></td>
+              <td>335 / 325</td>
+              <td>350 / 365</td>
+              <td>走势弱于 NVDA，回踩 335 值得关注，但不追高。</td>
+            </tr>
+            <tr>
+              <td><strong>MU</strong></td>
+              <td>906–924 / 887</td>
+              <td>946.8 / 968.7</td>
+              <td>长期可以持有；如果跌到 906，要继续看会不会回调到 887。</td>
+            </tr>
+            <tr>
+              <td><strong>MRVL</strong></td>
+              <td>217 / 208</td>
+              <td>223.5 / 231.4</td>
+              <td>主要看 NVDA。能站上 223.5，才算有买点试探的条件。</td>
+            </tr>
+            <tr>
+              <td><strong>NBIS</strong></td>
+              <td>256.9 / 247</td>
+              <td>278.7 / 300</td>
+              <td>开支与融资需求较高，守住 256.9 才能维持震荡结构。</td>
+            </tr>
+            <tr>
+              <td><strong>GDX</strong></td>
+              <td>89–90</td>
+              <td>92.7 / 102.4</td>
+              <td>黄金参考。对应现货黄金支撑 4280–4300，压力 4350 / 4400。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="calendar">未来48小时大事记</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>时间</th>
+              <th>事件</th>
+              <th>观察点</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>9/16 2:00 PM</strong></td>
+              <td>FOMC 利率决议</td>
+              <td>看加息幅度，以及点阵图是否暗示 12 月继续加息。</td>
+            </tr>
+            <tr>
+              <td><strong>9/16 2:30 PM</strong></td>
+              <td>Warsh 记者会</td>
+              <td>真正影响市场的是语气：温和就是修复，鹰派就是继续压估值。</td>
+            </tr>
+            <tr>
+              <td><strong>9/17</strong></td>
+              <td>FOMC 后洗盘日</td>
+              <td>看 10Y 是回落到 4.95% 下方，还是冲向 5.10%—5.20%。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="quote-card">清濛操作策略：决议公布前不要操作。稳妥策略是等到下周再进场。</div>
+
+        <p class="disclaimer">仅为个人研究和复盘，不构成投资建议。FOMC、利率、油价和盘后走势变化很快，交易前请自行核对最新数据。</p>
+      </article>
+
+      <aside class="side-panel">
+        <section class="toc-card">
+          <h2>目录</h2>
+          <a href="#fed-script">Fed 剧本</a>
+          <a href="#levels">支撑压力</a>
+          <a href="#calendar">未来48小时</a>
+        </section>
+        <section class="qr-card">
+          <h2>公众号</h2>
+          <img src="../qrcode.jpg" alt="东左耳清濛公众号二维码" onerror="this.closest('.qr-card').classList.add('missing')" />
+          <p class="qr-placeholder">二维码图片未找到，请确认 qrcode.jpg 已放在网站根目录。</p>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">© 2026 Lemon 清濛 · Market notes only.</div>
+  </footer>
+</body>
+</html>
