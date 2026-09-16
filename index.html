@@ -1403,26 +1403,26 @@
         <div class="calendar-board">
           <div class="calendar-head">
             <div>
-              <strong>9/10 - 9/11 剩余重点事件</strong>
-              <p>PPI、ECB、ORCL/ADBE 财报和 CPI 会决定 10Y、油价、黄金和 AI 硬件的下一步方向。</p>
+              <strong>9/15 - 9/18 FOMC 核心日历</strong>
+              <p>Brent 站上 100、10Y 逼近 5%，本周重点看 FOMC 能不能缓和科技股估值压力。</p>
             </div>
             <div class="calendar-status" id="calendar-status">等待日历渲染</div>
           </div>
           <div class="calendar-focus-grid" aria-label="下周三大观察闸门">
             <div class="calendar-focus-card">
-              <span>CPI Gate</span>
-              <strong>9/11 CPI</strong>
-              <p>如果 CPI 偏热、10Y 冲 4.9%—5%，高估值科技会重新承压。</p>
+              <span>Fed Gate</span>
+              <strong>9/16 FOMC</strong>
+              <p>如果只加 0.25% 且表述偏保险式，科技股有修复机会；继续偏鹰就要防 AI 估值下压。</p>
             </div>
             <div class="calendar-focus-card">
-              <span>PPI Gate</span>
-              <strong>9/10 PPI</strong>
-              <p>生产端通胀先给 CPI 预热，也会影响利率预期。</p>
+              <span>Oil Gate</span>
+              <strong>Brent 100+</strong>
+              <p>油价守在 100 美元上方，会继续推高通胀和长债压力。</p>
             </div>
             <div class="calendar-focus-card">
-              <span>Gold Gate</span>
-              <strong>黄金 4500</strong>
-              <p>黄金要看能不能连续两天站稳 4500，站不稳不追。</p>
+              <span>Rate Gate</span>
+              <strong>10Y 5%</strong>
+              <p>10Y 如果站稳 5%，高融资敏感的 AI 高 beta 会先被压估值。</p>
             </div>
           </div>
           <div class="calendar-grid" id="calendar-grid" aria-live="polite">
@@ -1510,6 +1510,19 @@
           <p>公众号里的长文会逐步迁移到这里，按主题重新整理摘要、图表和关键结论。</p>
         </div>
         <div class="article-grid">
+          <article class="article-card">
+            <div class="article-topline">
+              <span>下周剧本</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-09-13-fomc-oil-ai-valuation.html">下周可能会跌很多，你害怕吗？</a></h3>
+            <p>Brent 站上 106 美元、WTI 约 102 美元，10Y 摸到 4.97%；清濛提醒本周先防估值下压，再看 FOMC 能不能救场。</p>
+            <div class="tag-row">
+              <span class="tag">FOMC</span>
+              <span class="tag">Brent/10Y</span>
+              <span class="tag">AI估值</span>
+            </div>
+          </article>
           <article class="article-card">
             <div class="article-topline">
               <span>周中总结</span>
@@ -1860,10 +1873,10 @@
           </p>
           <div class="sync-highlight">
             <h3>最新同步</h3>
-            <p>2026-09-09：周中总结和未来两天预测</p>
+            <p>2026-09-13：下周可能会跌很多，你害怕吗？</p>
             <div class="sync-actions">
-              <a class="button primary" href="articles/2026-09-09-midweek-cpi-oil-rates.html">阅读网页版本</a>
-              <a class="button secondary" href="https://mp.weixin.qq.com/s/x-1GQZEgy10dzddBrmnxug" target="_blank" rel="noopener">打开公众号原文</a>
+              <a class="button primary" href="articles/2026-09-13-fomc-oil-ai-valuation.html">阅读网页版本</a>
+              <a class="button secondary" href="https://mp.weixin.qq.com/s/uqyMFLgGs_qzDWDdzhBgnQ" target="_blank" rel="noopener">打开公众号原文</a>
             </div>
           </div>
         </div>
@@ -1969,18 +1982,32 @@
     const RISK_HISTORY_KEY = "lemon-risk-history-v1";
     const marketCalendarEvents = [
       {
-        date: "2026-09-10",
-        type: "宏观",
-        title: "PPI、ECB 决议、ORCL 和 ADBE 财报",
-        focus: "生产端通胀和 ECB 决议会影响利率预期；ORCL、ADBE 财报验证 AI 软件和云需求，高估值股能不能承接要看这里。",
-        tags: ["PPI", "ECB", "ORCL", "ADBE"]
+        date: "2026-09-15",
+        type: "市场",
+        title: "油价、10Y 和科技股估值压力",
+        focus: "先看市场会不会继续压高估值；Brent 100 美元以上和 10Y 逼近 5% 都不是科技股喜欢的组合。",
+        tags: ["Brent", "10Y", "QQQ", "AI"]
       },
       {
-        date: "2026-09-11",
+        date: "2026-09-16",
         type: "宏观",
-        title: "CPI：本周真正大考",
-        focus: "如果 CPI 温和、10Y 回落，AI硬件、CPO 和黄金都有修复机会；如果 CPI 偏热、10Y 冲 4.9%-5%，科技股要防回撤。",
-        tags: ["CPI", "10Y", "QQQ", "Gold"]
+        title: "FOMC 利率决议",
+        focus: "本周最重要事件。如果只加 0.25%，并被解释成一次性保险式加息，科技股可能反弹；若继续偏鹰，AI 估值仍会承压。",
+        tags: ["FOMC", "Fed", "10Y", "NVDA"]
+      },
+      {
+        date: "2026-09-17",
+        type: "市场",
+        title: "FOMC 后市场定价",
+        focus: "看 10Y 是否站稳 5%，以及 AI 硬件、软件和电力链有没有资金回补。",
+        tags: ["10Y", "NVDA", "MU", "VST"]
+      },
+      {
+        date: "2026-09-18",
+        type: "市场",
+        title: "周线确认：油价与高 beta 承接",
+        focus: "如果油价还在 100 美元以上、10Y 继续强，周线收盘会决定下跌是不是扩散。",
+        tags: ["Brent", "NBIS", "MRVL", "GOOGL"]
       }
     ];
     let liveStockTimer = null;

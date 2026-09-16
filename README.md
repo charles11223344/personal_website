@@ -36,6 +36,7 @@ py scripts/update_stock_data.py
 
 当前已添加：
 
+- `articles/2026-09-13-fomc-oil-ai-valuation.html`
 - `articles/2026-09-09-midweek-cpi-oil-rates.html`
 - `articles/2026-09-07-cpi-oil-ai-rotation.html`
 - `articles/2026-09-02-midweek-jobs-gold-ai.html`

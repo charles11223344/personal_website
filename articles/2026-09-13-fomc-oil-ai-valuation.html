@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="2026-09-13 下周美股剧本：Brent站上106美元、10年期美债逼近5%，FOMC成为AI估值和科技股能否修复的关键。" />
+  <title>下周可能会跌很多，你害怕吗？ | Lemon 美股手记</title>
+  <style>
+    :root {
+      --ink: #111318;
+      --muted: #59606b;
+      --paper: #f7f8f6;
+      --surface: #ffffff;
+      --line: #d9ded8;
+      --green: #0f8f63;
+      --gold: #c08a26;
+      --red: #c64a3d;
+      --lemon-soft: #f3edcf;
+      --radius: 8px;
+      --shadow: 0 18px 45px rgba(17, 19, 24, 0.09);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.78;
+    }
+    a { color: inherit; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(217, 222, 216, 0.9);
+      background: rgba(247, 248, 246, 0.92);
+      backdrop-filter: blur(14px);
+    }
+    .nav-wrap, .article-wrap, .footer-inner {
+      width: min(1060px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    .nav-wrap {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 900;
+    }
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      object-position: center 22%;
+      border-radius: var(--radius);
+      border: 1px solid rgba(17, 19, 24, 0.18);
+      background: var(--lemon-soft);
+    }
+    .brand span { display: grid; line-height: 1.1; }
+    .brand small {
+      color: var(--gold);
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .nav-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 800;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 8px 12px;
+      background: #ffffff;
+    }
+    .article-hero {
+      padding: 72px 0 36px;
+      background:
+        linear-gradient(90deg, rgba(17, 19, 24, 0.94), rgba(17, 19, 24, 0.72)),
+        url("../market-vlog-hero.png");
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
+    }
+    .article-hero p {
+      margin: 0 0 14px;
+      color: #f1dfaa;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(2.25rem, 6vw, 4.7rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      color: #eef3f0;
+      font-weight: 800;
+    }
+    .meta span, .meta a {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 999px;
+      padding: 5px 10px;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.08);
+    }
+    main { padding: 42px 0 70px; }
+    .content-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 250px;
+      gap: 32px;
+      align-items: start;
+    }
+    article, .side-panel section {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    article { padding: clamp(24px, 4vw, 42px); }
+    article p { margin: 0 0 1.1em; font-size: 1.05rem; }
+    article h2 { margin: 2em 0 0.75em; font-size: 1.45rem; line-height: 1.28; }
+    .lead { font-size: 1.18rem; font-weight: 900; }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0 28px;
+      border: 1px solid var(--line);
+      background: #fbfcfa;
+      font-size: 0.92rem;
+    }
+    .data-table th, .data-table td {
+      border-bottom: 1px solid var(--line);
+      padding: 11px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .data-table th {
+      background: #eef3ee;
+      color: var(--muted);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .data-table tr:last-child td { border-bottom: 0; }
+    .data-table strong { color: var(--green); white-space: nowrap; }
+    .quote-card {
+      margin: 28px 0;
+      border-left: 4px solid var(--green);
+      border-radius: var(--radius);
+      background: #eef7f1;
+      padding: 18px 20px;
+      font-weight: 900;
+      color: #133f2f;
+    }
+    .warning-card {
+      margin: 28px 0;
+      border-left: 4px solid var(--red);
+      border-radius: var(--radius);
+      background: #fff2ef;
+      padding: 18px 20px;
+      color: #5a1d18;
+      font-weight: 800;
+    }
+    .disclaimer {
+      margin-top: 28px;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .side-panel { position: sticky; top: 92px; display: grid; gap: 18px; }
+    .side-panel section { padding: 18px; }
+    .side-panel h2 {
+      margin: 0 0 12px;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+    .qr-card img {
+      width: 100%;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+    .qr-placeholder { display: none; color: var(--muted); font-size: 0.92rem; }
+    .qr-card.missing img { display: none; }
+    .qr-card.missing .qr-placeholder { display: block; }
+    .toc-card a {
+      display: block;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 800;
+      padding: 8px 0;
+      border-top: 1px solid var(--line);
+    }
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: var(--muted);
+      background: #ffffff;
+    }
+    @media (max-width: 820px) {
+      .content-layout { grid-template-columns: 1fr; }
+      .side-panel { position: static; }
+      .data-table { display: block; overflow-x: auto; white-space: nowrap; }
+      .qr-card img { max-width: 240px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="../index.html">
+        <img src="../lemon-avatar.png" alt="Lemon 清濛头像" />
+        <span>Lemon 美股手记<small>Market Notes</small></span>
+      </a>
+      <a class="nav-link" href="../index.html#articles">返回文章归档</a>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-wrap">
+      <p>2026-09-13 · 下周剧本</p>
+      <h1>下周可能会跌很多，你害怕吗？</h1>
+      <div class="meta">
+        <span>FOMC</span>
+        <span>Brent 106</span>
+        <span>10Y 逼近 5%</span>
+        <span>AI 估值</span>
+        <a href="https://mp.weixin.qq.com/s/uqyMFLgGs_qzDWDdzhBgnQ" target="_blank" rel="noopener">微信公众号原文</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="article-wrap content-layout">
+      <article>
+        <p class="lead">必须警告一下：下周要谨慎、谨慎，再谨慎。大盘可能会先压估值，再看 FOMC 能不能救场。</p>
+
+        <p>今晚 Nasdaq-100 期货跌约 1.1%，标普跌 0.5%，道指跌 0.3%；Brent 站上 106 美元、WTI 约 102 美元，10 年期美债上周摸到 4.97%，9 月加息概率超过 86%。这些消息对科技股都非常不友好。</p>
+
+        <p>好消息是，Anthropic 过去 11 个月签下的潜在算力合同最高可达 5170 亿美元，需求仍然巨大。Dario Amodei 呼吁放慢前沿模型开发，短期内会压估值，但特朗普已经公开反对因为恐惧让美国 AI 减速。所以我更愿意把它理解成情绪买卖。信不信由你。</p>
+
+        <div class="warning-card">现在最核心的矛盾不是 AI 有没有需求，而是油价、长债和加息预期会不会先把高估值压下去。</div>
+
+        <h2 id="watchlist">下周重点关注</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>股票</th>
+              <th>清濛观察</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>NVDA</strong></td>
+              <td>10Y 逼近 5% 加上 AI 降速讨论，会压短线估值；但如果是长线持有，基本盘没有问题。</td>
+            </tr>
+            <tr>
+              <td><strong>MU</strong></td>
+              <td>需求依旧强，真正压力是高预期和未来扩产。跌下来可以考虑 30/30/30/10 分批，不追高。</td>
+            </tr>
+            <tr>
+              <td><strong>MRVL</strong></td>
+              <td>核心看 ASIC 和 AI 网络 CapEx，最怕订单预期被市场重新调整。</td>
+            </tr>
+            <tr>
+              <td><strong>NBIS</strong></td>
+              <td>高融资敏感，利率越高，估值压缩越狠，波动也会更凶。</td>
+            </tr>
+            <tr>
+              <td><strong>VST</strong></td>
+              <td>AI 电力逻辑会支撑股价，但长期利润和高估值也会被市场审计。</td>
+            </tr>
+            <tr>
+              <td><strong>GOOGL</strong></td>
+              <td>相对最稳，广告、搜索和 Cloud 现金流能够缓冲 AI 情绪波动。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="calendar">下周大事记</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>日期</th>
+              <th>重点</th>
+              <th>清濛看法</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>9/15 周二</strong></td>
+              <td>油价、10Y 和科技股估值压力</td>
+              <td>先看市场会不会继续压高估值，Brent 100 以上和 10Y 逼近 5% 都不是好组合。</td>
+            </tr>
+            <tr>
+              <td><strong>9/16 周三</strong></td>
+              <td>FOMC 利率决议</td>
+              <td>本周最重要。如果只加 0.25%，并被解释成一次性保险式加息，科技股可能反弹。</td>
+            </tr>
+            <tr>
+              <td><strong>9/17 周四</strong></td>
+              <td>FOMC 后市场定价</td>
+              <td>看 10Y 是否站稳 5%，以及 AI 硬件、软件和电力链有没有资金回补。</td>
+            </tr>
+            <tr>
+              <td><strong>9/18 周五</strong></td>
+              <td>周线确认</td>
+              <td>如果油价还在 100 美元以上、10Y 继续强，周线收盘会决定下跌是不是扩散。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="script">FOMC 剧本</h2>
+        <p>最重要的还是周三 FOMC。如果只加 0.25%，而且 Warsh 把它讲成一次性保险式加息，科技股很可能出现反弹；但如果他继续偏鹰，油价守在 100 美元以上、10Y 站稳 5%，那 AI 很可能继续跌。</p>
+
+        <p>所以这周我的想法很简单：不追高，不重仓。跌下来，只分批加那些有订单、有现金流、值得长持的股票。</p>
+
+        <div class="quote-card">市场越关注 FOMO，越要留现金。真正跌下来的时候，你才知道现金有多重要，也才知道需要补多久。</div>
+
+        <p class="disclaimer">仅为个人研究和复盘，不构成投资建议。市场价格、利率和油价变化很快，交易前请自行核对最新数据。</p>
+      </article>
+
+      <aside class="side-panel">
+        <section class="toc-card">
+          <h2>目录</h2>
+          <a href="#watchlist">重点关注</a>
+          <a href="#calendar">下周大事记</a>
+          <a href="#script">FOMC 剧本</a>
+        </section>
+        <section class="qr-card">
+          <h2>公众号</h2>
+          <img src="../qrcode.jpg" alt="东左耳清濛公众号二维码" onerror="this.closest('.qr-card').classList.add('missing')" />
+          <p class="qr-placeholder">二维码图片未找到，请确认 qrcode.jpg 已放在网站根目录。</p>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">© 2026 Lemon 清濛 · Market notes only.</div>
+  </footer>
+</body>
+</html>
