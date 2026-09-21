@@ -1403,26 +1403,26 @@
         <div class="calendar-board">
           <div class="calendar-head">
             <div>
-              <strong>9/16 - 9/17 Fed 48小时</strong>
-              <p>FOMC 决议、Warsh 记者会和会后洗盘，会决定 10Y、半导体和高 beta AI 的短线方向。</p>
+              <strong>9/21 - 9/25 下周大事记</strong>
+              <p>Fed 决议落地后，本周重点转向 10Y、油价、住房与耐用品数据，以及 Costco 对消费韧性的验证。</p>
             </div>
             <div class="calendar-status" id="calendar-status">等待日历渲染</div>
           </div>
           <div class="calendar-focus-grid" aria-label="下周三大观察闸门">
             <div class="calendar-focus-card">
-              <span>Fed Gate</span>
-              <strong>9/16 2:00 PM</strong>
-              <p>看加息幅度，以及点阵图是否暗示 12 月继续加息。</p>
-            </div>
-            <div class="calendar-focus-card">
-              <span>Press Gate</span>
-              <strong>9/16 2:30 PM</strong>
-              <p>Warsh 记者会语气更关键：温和利好修复，鹰派继续压估值。</p>
-            </div>
-            <div class="calendar-focus-card">
               <span>Rate Gate</span>
-              <strong>10Y 4.95 / 5.10</strong>
-              <p>跌回 4.95% 下方利好半导体；冲向 5.10%—5.20% 则继续防守。</p>
+              <strong>10Y 5%</strong>
+              <p>能否跌回 5% 下方，决定高估值科技股的修复空间。</p>
+            </div>
+            <div class="calendar-focus-card">
+              <span>Oil Gate</span>
+              <strong>油价回落</strong>
+              <p>油价继续降温有利科技修复；重新走高则会把通胀压力带回来。</p>
+            </div>
+            <div class="calendar-focus-card">
+              <span>Gold Gate</span>
+              <strong>$4,340 / $4,450</strong>
+              <p>守住支撑代表避险需求仍在；突破压力才有新一段上行空间。</p>
             </div>
           </div>
           <div class="calendar-grid" id="calendar-grid" aria-live="polite">
@@ -1510,6 +1510,19 @@
           <p>公众号里的长文会逐步迁移到这里，按主题重新整理摘要、图表和关键结论。</p>
         </div>
         <div class="article-grid">
+          <article class="article-card">
+            <div class="article-topline">
+              <span>下周剧本</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-09-20-tech-rebound-gold-defense.html">下周可能会涨啊，喜欢听到吗？</a></h3>
+            <p>10Y 站上 5% 后，清濛观察科技修复、油价回落与黄金防守结构，并拆解 MU、SNDK、SOXL 的关键支撑和压力。</p>
+            <div class="tag-row">
+              <span class="tag">10Y/油价</span>
+              <span class="tag">MU/SNDK/SOXL</span>
+              <span class="tag">黄金</span>
+            </div>
+          </article>
           <article class="article-card">
             <div class="article-topline">
               <span>Fed攻防</span>
@@ -1886,10 +1899,10 @@
           </p>
           <div class="sync-highlight">
             <h3>最新同步</h3>
-            <p>2026-09-15：美股未来48小时的Fed大考与攻防大战指南</p>
+            <p>2026-09-20：下周可能会涨啊，喜欢听到吗？</p>
             <div class="sync-actions">
-              <a class="button primary" href="articles/2026-09-15-fed-48h-defense-guide.html">阅读网页版本</a>
-              <a class="button secondary" href="https://mp.weixin.qq.com/s/7y9GeefppVrXFlJ-qX7-Dg" target="_blank" rel="noopener">打开公众号原文</a>
+              <a class="button primary" href="articles/2026-09-20-tech-rebound-gold-defense.html">阅读网页版本</a>
+              <a class="button secondary" href="https://mp.weixin.qq.com/s/O45dDUiS5IyHJ0-4ldmWWA" target="_blank" rel="noopener">打开公众号原文</a>
             </div>
           </div>
         </div>
@@ -1995,25 +2008,25 @@
     const RISK_HISTORY_KEY = "lemon-risk-history-v1";
     const marketCalendarEvents = [
       {
-        date: "2026-09-16",
+        date: "2026-09-24",
         type: "宏观",
-        title: "FOMC 利率决议，2:00 PM",
-        focus: "看加息幅度，以及点阵图是否暗示 12 月继续加息。温和表述会给半导体修复空间，鹰派表述会继续压估值。",
-        tags: ["FOMC", "Fed", "10Y", "Semis"]
+        title: "美国新屋销售，10:00 AM",
+        focus: "观察高利率对住房需求的压制，以及 10Y 维持在 5% 附近时地产链的承受力。",
+        tags: ["住房", "10Y", "消费", "宏观"]
       },
       {
-        date: "2026-09-16",
-        type: "宏观",
-        title: "Warsh 记者会，2:30 PM",
-        focus: "真正影响市场的是语气。强调数据依赖、暂不承诺继续加息是偏多；确认年底继续加息就是偏空。",
-        tags: ["Warsh", "Press", "QQQ", "NVDA"]
+        date: "2026-09-24",
+        type: "财报",
+        title: "Costco Q4 财报",
+        focus: "本周消费温度计，重点看同店销售、会员增长和利润率能否支撑高估值。",
+        tags: ["COST", "消费", "会员", "利润率"]
       },
       {
-        date: "2026-09-17",
-        type: "市场",
-        title: "FOMC 后洗盘日",
-        focus: "看 10Y 是回落到 4.95% 下方，还是冲向 5.10%-5.20%。前者利好半导体，后者继续防守高 beta。",
-        tags: ["10Y", "NVDA", "MU", "GDX"]
+        date: "2026-09-25",
+        type: "宏观",
+        title: "美国耐用品订单，8:30 AM",
+        focus: "观察制造业需求与企业资本开支；数据过热也可能重新推高长债收益率。",
+        tags: ["耐用品", "制造业", "CapEx", "10Y"]
       }
     ];
     let liveStockTimer = null;

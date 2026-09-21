@@ -36,6 +36,7 @@ py scripts/update_stock_data.py
 
 当前已添加：
 
+- `articles/2026-09-20-tech-rebound-gold-defense.html`
 - `articles/2026-09-15-fed-48h-defense-guide.html`
 - `articles/2026-09-13-fomc-oil-ai-valuation.html`
 - `articles/2026-09-09-midweek-cpi-oil-rates.html`
