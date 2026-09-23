@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-22T01:45:16+00:00",
+  "updatedAt": "2026-09-23T01:42:04+00:00",
   "source": "Yahoo Finance chart endpoint",
   "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart",
   "symbols": [
@@ -9,14 +9,14 @@
       "kind": "index",
       "sourceSymbol": "^GSPC",
       "currency": "USD",
-      "date": "2026-09-21",
-      "open": 7692.83,
-      "high": 7779.22,
-      "low": 7691.19,
-      "close": 7764.7,
-      "volume": 3278075000,
-      "change": 114.2,
-      "changePercent": 1.49
+      "date": "2026-09-22",
+      "open": 7770.81,
+      "high": 7782.19,
+      "low": 7756.26,
+      "close": 7764.64,
+      "volume": 3164537000,
+      "change": -0.06,
+      "changePercent": -0.0
     },
     {
       "symbol": "SPY",
@@ -29,7 +29,7 @@
       "high": 774.89,
       "low": 766.03,
       "close": 773.5,
-      "volume": 50097900,
+      "volume": 50484700,
       "change": 11.81,
       "changePercent": 1.55
     },
@@ -44,7 +44,7 @@
       "high": 743.22,
       "low": 727.81,
       "close": 741.47,
-      "volume": 46619300,
+      "volume": 46730600,
       "change": 20.02,
       "changePercent": 2.77
     },
@@ -59,7 +59,7 @@
       "high": 158.13,
       "low": 151.6,
       "close": 151.85,
-      "volume": 81899500,
+      "volume": 82283700,
       "change": -0.86,
       "changePercent": -0.56
     },
@@ -74,7 +74,7 @@
       "high": 1064.49,
       "low": 1030.68,
       "close": 1043.96,
-      "volume": 28060600,
+      "volume": 28174400,
       "change": 28.16,
       "changePercent": 2.77
     },
@@ -89,7 +89,7 @@
       "high": 228.5,
       "low": 221.56,
       "close": 227.38,
-      "volume": 109479900,
+      "volume": 109806100,
       "change": 5.11,
       "changePercent": 2.3
     },
@@ -104,7 +104,7 @@
       "high": 339.64,
       "low": 333.05,
       "close": 338.98,
-      "volume": 34955500,
+      "volume": 34999200,
       "change": 2.85,
       "changePercent": 0.85
     },
@@ -119,7 +119,7 @@
       "high": 501.87,
       "low": 491.33,
       "close": 501.61,
-      "volume": 27873100,
+      "volume": 27959900,
       "change": 7.83,
       "changePercent": 1.59
     },
@@ -134,7 +134,7 @@
       "high": 357.61,
       "low": 349.1,
       "close": 354.97,
-      "volume": 30395000,
+      "volume": 30455400,
       "change": 5.43,
       "changePercent": 1.55
     },
@@ -149,7 +149,7 @@
       "high": 259.49,
       "low": 253.6,
       "close": 258.45,
-      "volume": 42857800,
+      "volume": 42979400,
       "change": 4.74,
       "changePercent": 1.87
     },
@@ -164,7 +164,7 @@
       "high": 753.0,
       "low": 679.6,
       "close": 741.25,
-      "volume": 48572800,
+      "volume": 48720500,
       "change": 75.5,
       "changePercent": 11.34
     },
@@ -179,7 +179,7 @@
       "high": 378.36,
       "low": 371.07,
       "close": 375.3,
-      "volume": 36439300,
+      "volume": 36599600,
       "change": 11.03,
       "changePercent": 3.03
     },
@@ -194,7 +194,7 @@
       "high": 616.69,
       "low": 582.27,
       "close": 615.52,
-      "volume": 44270000,
+      "volume": 44494300,
       "change": 55.7,
       "changePercent": 9.95
     },
@@ -209,7 +209,7 @@
       "high": 363.97,
       "low": 353.5,
       "close": 362.66,
-      "volume": 26408400,
+      "volume": 26498600,
       "change": 5.05,
       "changePercent": 1.41
     },
@@ -224,7 +224,7 @@
       "high": 183.38,
       "low": 176.76,
       "close": 183.09,
-      "volume": 21947600,
+      "volume": 22006700,
       "change": 5.45,
       "changePercent": 3.07
     },
@@ -239,7 +239,7 @@
       "high": 445.72,
       "low": 437.06,
       "close": 445.14,
-      "volume": 9917100,
+      "volume": 9943100,
       "change": 10.47,
       "changePercent": 2.41
     }
