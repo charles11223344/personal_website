@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="2026-09-27下周美股预测：油价、10年期美债与黄金形成高通胀组合，重点关注JOLTS、PCE、MU财报、ISM制造业和非农。" />
+  <title>下周美股大盘总结和预测 | Lemon 美股手记</title>
+  <style>
+    :root { --ink:#111318; --muted:#59606b; --paper:#f7f8f6; --surface:#fff; --line:#d9ded8; --green:#0f8f63; --gold:#c08a26; --red:#c64a3d; --lemon:#f3edcf; --radius:8px; --shadow:0 18px 45px rgba(17,19,24,.09); }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif; line-height:1.78; }
+    a { color:inherit; }
+    .site-header { position:sticky; top:0; z-index:20; border-bottom:1px solid rgba(217,222,216,.9); background:rgba(247,248,246,.92); backdrop-filter:blur(14px); }
+    .nav-wrap,.article-wrap,.footer-inner { width:min(1060px,calc(100% - 32px)); margin:0 auto; }
+    .nav-wrap { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { display:inline-flex; align-items:center; gap:10px; text-decoration:none; font-weight:900; }
+    .brand img { width:48px; height:48px; object-fit:cover; object-position:center 22%; border-radius:var(--radius); border:1px solid rgba(17,19,24,.18); background:var(--lemon); }
+    .brand span { display:grid; line-height:1.1; } .brand small { color:var(--gold); font-size:.76rem; letter-spacing:.08em; text-transform:uppercase; }
+    .nav-link { color:var(--muted); text-decoration:none; font-weight:800; border:1px solid var(--line); border-radius:var(--radius); padding:8px 12px; background:#fff; }
+    .article-hero { padding:72px 0 36px; background:linear-gradient(90deg,rgba(17,19,24,.94),rgba(17,19,24,.72)),url("../market-vlog-hero.png"); background-size:cover; background-position:center; color:#fff; }
+    .article-hero p { margin:0 0 14px; color:#f1dfaa; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    h1 { max-width:940px; margin:0; font-size:clamp(2.2rem,5.6vw,4.5rem); line-height:1.06; letter-spacing:0; }
+    .meta { display:flex; flex-wrap:wrap; gap:10px; margin-top:24px; color:#eef3f0; font-weight:800; }
+    .meta span,.meta a { border:1px solid rgba(255,255,255,.3); border-radius:999px; padding:5px 10px; text-decoration:none; background:rgba(255,255,255,.08); }
+    main { padding:42px 0 70px; }
+    .content-layout { display:grid; grid-template-columns:minmax(0,1fr) 250px; gap:32px; align-items:start; }
+    article,.side-panel section { border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); box-shadow:var(--shadow); }
+    article { padding:clamp(24px,4vw,42px); } article p { margin:0 0 1.1em; font-size:1.05rem; } article h2 { margin:2em 0 .75em; font-size:1.45rem; line-height:1.28; }
+    .lead { font-size:1.18rem; font-weight:900; }
+    .data-table { width:100%; border-collapse:collapse; margin:18px 0 28px; border:1px solid var(--line); background:#fbfcfa; font-size:.94rem; }
+    .data-table th,.data-table td { border-bottom:1px solid var(--line); padding:11px 12px; text-align:left; vertical-align:top; }
+    .data-table th { background:#eef3ee; color:var(--muted); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+    .data-table tr:last-child td { border-bottom:0; } .data-table strong { color:var(--green); white-space:nowrap; }
+    .quote-card { margin:28px 0; border-left:4px solid var(--green); border-radius:var(--radius); background:#eef7f1; padding:18px 20px; font-weight:900; color:#133f2f; }
+    .warning-card { margin:28px 0; border-left:4px solid var(--red); border-radius:var(--radius); background:#fff2ef; padding:18px 20px; color:#5a1d18; font-weight:800; }
+    .disclaimer { margin-top:28px; border-top:1px solid var(--line); padding-top:18px; color:var(--muted); font-size:.92rem; }
+    .side-panel { position:sticky; top:92px; display:grid; gap:18px; } .side-panel section { padding:18px; }
+    .side-panel h2 { margin:0 0 12px; font-size:.95rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+    .toc-card a { display:block; text-decoration:none; font-weight:800; padding:8px 0; border-top:1px solid var(--line); }
+    .qr-card img { width:100%; border-radius:var(--radius); border:1px solid var(--line); background:#fff; }
+    .qr-placeholder { display:none; color:var(--muted); font-size:.92rem; } .qr-card.missing img { display:none; } .qr-card.missing .qr-placeholder { display:block; }
+    .site-footer { border-top:1px solid var(--line); padding:28px 0; color:var(--muted); background:#fff; }
+    @media (max-width:820px) { .content-layout{grid-template-columns:1fr}.side-panel{position:static}.data-table{display:block;overflow-x:auto;white-space:nowrap}.qr-card img{max-width:240px} }
+  </style>
+</head>
+<body>
+  <header class="site-header"><div class="nav-wrap"><a class="brand" href="../index.html"><img src="../lemon-avatar.png" alt="Lemon 清濛头像" /><span>Lemon 美股手记<small>Market Notes</small></span></a><a class="nav-link" href="../index.html#articles">返回文章归档</a></div></header>
+
+  <section class="article-hero"><div class="article-wrap">
+    <p>2026-09-27 · 下周剧本</p>
+    <h1>下周美股大盘总结和预测</h1>
+    <div class="meta"><span>PCE</span><span>MU 财报</span><span>非农</span><span>油价与黄金</span><a href="https://mp.weixin.qq.com/s/nVgeSdHu6HMGvZd-C7h7Bg" target="_blank" rel="noopener">微信公众号原文</a></div>
+  </div></section>
+
+  <main><div class="article-wrap content-layout">
+    <article>
+      <p class="lead">大家好啊。最近有人问我，现在 AI 这么发达，为什么还要写总结和预测文章？因为我觉得 AI 再厉害，都不是最后做决策的人。每个模型与未知变化之间的碰撞，才是股票最大的魅力啦。</p>
+
+      <p>本来以为这周可以轻松总结一下，结果看完 overnight 数据，我觉得又有很多东西需要消化。周日盘后原油已经悄悄涨到 93 美元以上，黄金反而下跌，这个组合很有意思：它可能在提醒市场准备面对更高的通胀和利率。</p>
+
+      <h2 id="macro">周日晚的宏观组合</h2>
+      <p>标普 500 期货约跌 0.26%，纳指 100 期货约跌 0.26%，道指期货约跌 0.4%；WTI 约 93.6 美元、涨 1.3%，10 年期美债又来到 5.20% 左右，黄金期货则回到 4,300 附近。</p>
+
+      <p>下周科技股可能一半涨、一半跌。老规矩，周一不要开盘马上买卖，可以先看看盘前数据。我的基准剧本仍是上下摇摆，但周中波动会明显放大：先往高处走、随后回落，一旦“小作文”出现，就可能引发明显下跌。</p>
+
+      <h2 id="gold">为什么单独看黄金</h2>
+      <p>黄金的涨跌背后代表不同的交易原则。如果黄金和油价一起上涨，市场可能在交易长期通胀；如果黄金跌、油价涨，则是表面经济强、但通胀也强的组合，对股市估值的影响完全不同。</p>
+      <table class="data-table"><thead><tr><th>标的</th><th>当前价</th><th>关键支撑</th><th>关键压力</th><th>清濛的观察</th></tr></thead><tbody>
+        <tr><td><strong>黄金期货 GC</strong></td><td>$4,215.60</td><td>$4,200 / $4,150</td><td>$4,310</td><td>守住 4,200 仍是区间波动；跌破后看 4,150 强支撑，重新站上 4,310 才恢复上行节奏。</td></tr>
+      </tbody></table>
+
+      <h2 id="calendar">下周大事记</h2>
+      <table class="data-table"><thead><tr><th>日期</th><th>事件</th><th>观察重点</th></tr></thead><tbody>
+        <tr><td><strong>9/28 周一</strong></td><td>油价与 Fed 官员讲话</td><td>油价上涨可能压制开盘；芯片相对强度仍在，关注政策措辞是否转鹰。</td></tr>
+        <tr><td><strong>9/29 周二</strong></td><td>JOLTS 职位空缺、消费者信心</td><td>职位数据偏强会强化“就业韧性 + 通胀黏性”，高估值科技最先承压。</td></tr>
+        <tr><td><strong>9/30 周三</strong></td><td>PCE，8:30 AM；MU 财报盘后</td><td>全周最关键的宏观与个股双重定价窗口，SOXL 与半导体可能剧烈波动。</td></tr>
+        <tr><td><strong>10/1 周四</strong></td><td>ISM 制造业 PMI，10:00 AM</td><td>观察制造业是否继续走强，以及数据会不会进一步推升利率。</td></tr>
+        <tr><td><strong>10/2 周五</strong></td><td>美国非农，8:30 AM</td><td>决定 11 月 FOMC 前的加息预期；最危险的组合是弱就业与高 PCE 同时出现。</td></tr>
+      </tbody></table>
+
+      <div class="quote-card">周三“PCE + MU 财报”是这周真正的总开关。核心 PCE 偏热会压估值；数据温和、MU 又上调指引，才可能触发半导体的空头回补。</div>
+
+      <h2 id="stocks">重点股票</h2>
+      <table class="data-table"><thead><tr><th>股票</th><th>现价</th><th>支撑</th><th>压力</th><th>清濛的观察</th></tr></thead><tbody>
+        <tr><td><strong>MU</strong></td><td>$1,082.28</td><td>$1,073 / $1,030</td><td>$1,109 / $1,255</td><td>下周最重要的个股事件，9 月 30 日盘后交卷。</td></tr>
+        <tr><td><strong>NVDA</strong></td><td>$225.07</td><td>$223 / $221 / $216</td><td>$227 / $230 / $235</td><td>短线会跟随 MU 财报和整个半导体风险偏好。</td></tr>
+        <tr><td><strong>SOXL</strong></td><td>$151.45</td><td>$147.40 / $129.60</td><td>$153.90</td><td>可能单日波动 5%-8%；147.40 是第一风险观察线。</td></tr>
+        <tr><td><strong>VRT</strong></td><td>$253.28</td><td>$248 / $239</td><td>$254.50 / $255.40</td><td>站稳 255.40 才能打开上行空间，目前处于突破边缘。</td></tr>
+      </tbody></table>
+
+      <h2 id="risk">仓位与风险</h2>
+      <p>MU 财报前后应主动降低仓位，SOXL 必须把 147.40 作为第一风险观察线。PCE 和非农任何一个超预期偏热，QQQ 与 SOXL 都可能快速回撤 3%-5%；黄金跌破 4,150，也会是宏观风险放大的早期信号。</p>
+
+      <p>上周三散户 ETF 卖出量创下纪录，SOXL 单周流出 12 亿美元，SOXX 零售卖出约 2.7 亿美元。这类撤退有时是极端情绪信号，而 SPY 仍接近历史高点，说明机构资金并没有全面离场。如果 MU 财报带来惊喜，很容易触发空头回补和散户追涨。买股票很多时候就是心理战，起码我一直这样认为。</p>
+
+      <div class="warning-card">高 PCE、强非农、油价上涨与 10Y 上冲若同时出现，高 beta 半导体会首先承压。关键事件前保留现金，比猜单边方向更重要。</div>
+      <p class="disclaimer">本文仅记录个人研究与市场观察，不构成投资建议。市场有风险，交易前请独立判断并控制仓位。</p>
+    </article>
+
+    <aside class="side-panel">
+      <section class="toc-card"><h2>本文导航</h2><a href="#macro">宏观组合</a><a href="#gold">黄金观察</a><a href="#calendar">下周日历</a><a href="#stocks">重点股票</a><a href="#risk">仓位风险</a></section>
+      <section class="qr-card"><h2>关注公众号</h2><img src="../qrcode.jpg" alt="东左耳清濛公众号二维码" onerror="this.closest('.qr-card').classList.add('missing')" /><p class="qr-placeholder">二维码图片暂未加载，请通过首页进入公众号。</p></section>
+    </aside>
+  </div></main>
+
+  <footer class="site-footer"><div class="footer-inner">© 2026 Lemon 美股手记 · 东左耳清濛</div></footer>
+</body>
+</html>
