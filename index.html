@@ -305,6 +305,99 @@
       overflow: hidden;
     }
 
+    .flow-board {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #0f141b;
+      color: #ffffff;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .flow-toolbar {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .flow-toolbar p,
+    .flow-status {
+      margin: 4px 0 0;
+      color: #aeb9c6;
+      font-size: 0.86rem;
+    }
+
+    .flow-status {
+      max-width: 360px;
+      text-align: right;
+      font-weight: 800;
+    }
+
+    .flow-kpis {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .flow-kpi {
+      min-height: 88px;
+      padding: 15px 18px;
+      background: #151c25;
+    }
+
+    .flow-kpi span {
+      display: block;
+      color: #8e9ba9;
+      font-size: 0.76rem;
+      font-weight: 800;
+    }
+
+    .flow-kpi strong {
+      display: block;
+      margin-top: 7px;
+      font-size: 1.28rem;
+    }
+
+    .flow-table-wrap { overflow-x: auto; }
+
+    .flow-table {
+      width: 100%;
+      min-width: 980px;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+    }
+
+    .flow-table th,
+    .flow-table td {
+      padding: 11px 13px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .flow-table th {
+      color: #8e9ba9;
+      background: #111820;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+    }
+
+    .flow-table td { color: #dce4ec; }
+    .flow-table strong { color: #ffffff; }
+    .flow-bullish { color: #70d6a6; font-weight: 900; }
+    .flow-bearish { color: #f08c91; font-weight: 900; }
+    .flow-warning { color: #f1c96a; font-weight: 900; }
+
+    .flow-empty {
+      padding: 28px 20px;
+      color: #aeb9c6;
+      text-align: center;
+    }
+
     .risk-radar {
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -1251,6 +1344,20 @@
         flex-direction: column;
       }
 
+      .flow-toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .flow-status {
+        min-width: 0;
+        text-align: left;
+      }
+
+      .flow-kpis {
+        grid-template-columns: 1fr 1fr;
+      }
+
       .risk-radar-head {
         flex-direction: column;
       }
@@ -1306,6 +1413,7 @@
         <a href="#market">市场笔记</a>
         <a href="#stocks">美股数据</a>
         <a href="#risk-radar">风险雷达</a>
+        <a href="#options-flow">期权流</a>
         <a href="#event-calendar">事件日历</a>
         <a href="#articles">文章</a>
         <a href="#vlog">Vlog</a>
@@ -1467,6 +1575,43 @@
               <div class="stock-price">--</div>
               <div class="stock-change flat">等待更新</div>
             </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="options-flow">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>关注股票期权流</h2>
+          <p>聚合观察列表的 Call/Put Flow、Volume/OI、异常成交金额、到期天数和风险评分。</p>
+        </div>
+        <div class="flow-board">
+          <div class="flow-toolbar">
+            <div>
+              <strong>Options Flow Prototype</strong>
+              <p>第三方模拟数据，仅用于研究界面与统计逻辑，不代表真实机构买卖方向。</p>
+            </div>
+            <div class="flow-status" id="flow-status">等待期权流接口</div>
+          </div>
+          <div class="flow-kpis" id="flow-kpis">
+            <div class="flow-kpi"><span>Call Flow</span><strong>--</strong></div>
+            <div class="flow-kpi"><span>Put Flow</span><strong>--</strong></div>
+            <div class="flow-kpi"><span>Call / Put</span><strong>--</strong></div>
+            <div class="flow-kpi"><span>异常信号</span><strong>--</strong></div>
+          </div>
+          <div class="flow-table-wrap">
+            <table class="flow-table">
+              <thead>
+                <tr>
+                  <th>时间</th><th>股票</th><th>方向</th><th>合约</th><th>异常金额</th>
+                  <th>Volume / OI</th><th>DTE</th><th>IV</th><th>风险评分</th>
+                </tr>
+              </thead>
+              <tbody id="flow-table-body">
+                <tr><td colspan="9"><div class="flow-empty">正在加载期权流...</div></td></tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -2020,6 +2165,9 @@
     const LIVE_QUOTES_ENDPOINT = "https://lemon-quota-proxy.charlesdataaws.workers.dev/";
     // Fill this with your deployed visitor counter Worker URL to show page views and visitors.
     const VISITOR_COUNTER_ENDPOINT = "https://lemon-visitor-counter.charlesdataaws.workers.dev/";
+    const OPTIONS_FLOW_ENDPOINT = LIVE_QUOTES_ENDPOINT
+      ? new URL("options-flow", LIVE_QUOTES_ENDPOINT).toString()
+      : "";
     const stockSymbols = fallbackStockData.symbols.map(function(item) {
       return item.symbol;
     });
@@ -2071,6 +2219,7 @@
     ];
     let liveStockTimer = null;
     let riskRadarTimer = null;
+    let optionsFlowTimer = null;
 
     function escapeHtml(value) {
       return String(value ?? "").replace(/[&<>"']/g, function(character) {
@@ -2544,6 +2693,99 @@
       liveStockTimer = window.setInterval(refreshLiveStocks, STOCK_REFRESH_INTERVAL_MS);
     }
 
+    function formatFlowMoney(value) {
+      const number = Number(value);
+      if (!Number.isFinite(number)) return "--";
+      if (number >= 1000000000) return "$" + (number / 1000000000).toFixed(2) + "B";
+      if (number >= 1000000) return "$" + (number / 1000000).toFixed(2) + "M";
+      if (number >= 1000) return "$" + (number / 1000).toFixed(0) + "K";
+      return "$" + number.toFixed(0);
+    }
+
+    function renderOptionsFlow(data) {
+      const status = document.getElementById("flow-status");
+      const kpis = document.getElementById("flow-kpis");
+      const body = document.getElementById("flow-table-body");
+      const signals = Array.isArray(data.signals) ? data.signals : [];
+      const summaries = Array.isArray(data.symbols) ? data.symbols : [];
+      const callFlow = summaries.reduce(function(total, item) { return total + Number(item.callFlow || 0); }, 0);
+      const putFlow = summaries.reduce(function(total, item) { return total + Number(item.putFlow || 0); }, 0);
+      const unusualCount = signals.filter(function(signal) { return signal.unusual; }).length;
+      const ratio = putFlow > 0 ? (callFlow / putFlow).toFixed(2) : callFlow > 0 ? "∞" : "--";
+
+      if (status) {
+        const latest = data.latestSignalAt ? formatDateTime(data.latestSignalAt) : "无数据";
+        status.textContent = (data.stale ? "数据已停止更新" : "模拟流更新中") + " · 最新 " + latest;
+      }
+
+      if (kpis) {
+        kpis.innerHTML = `
+          <div class="flow-kpi"><span>Call Flow</span><strong>${formatFlowMoney(callFlow)}</strong></div>
+          <div class="flow-kpi"><span>Put Flow</span><strong>${formatFlowMoney(putFlow)}</strong></div>
+          <div class="flow-kpi"><span>Call / Put</span><strong>${escapeHtml(ratio)}</strong></div>
+          <div class="flow-kpi"><span>异常信号</span><strong>${unusualCount}</strong></div>
+        `;
+      }
+
+      if (!body) return;
+      if (!signals.length) {
+        body.innerHTML = '<tr><td colspan="9"><div class="flow-empty">当前关注列表没有期权流信号。</div></td></tr>';
+        return;
+      }
+
+      body.innerHTML = signals.slice(0, 40).map(function(signal) {
+        const directionClass = signal.direction === "Bullish" ? "flow-bullish" : "flow-bearish";
+        const volumeOi = signal.volumeOi === null || signal.volumeOi === undefined ? "--" : Number(signal.volumeOi).toFixed(2);
+        const riskClass = Number(signal.riskScore) >= 75 ? "flow-bearish" : Number(signal.riskScore) >= 50 ? "flow-warning" : "flow-bullish";
+        return `
+          <tr>
+            <td>${escapeHtml(formatDateTime(signal.receivedAt))}</td>
+            <td><strong>${escapeHtml(signal.symbol)}</strong></td>
+            <td class="${directionClass}">${escapeHtml(signal.direction || "--")}</td>
+            <td>${escapeHtml(signal.side || "--")} $${escapeHtml(signal.strike ?? "--")} · ${escapeHtml(signal.expiry || "--")}</td>
+            <td class="${signal.unusual ? "flow-warning" : ""}">${formatFlowMoney(signal.totalSize)}</td>
+            <td>${escapeHtml(volumeOi)} (${escapeHtml(signal.volume ?? 0)} / ${escapeHtml(signal.openInterest ?? 0)})</td>
+            <td>${escapeHtml(signal.daysToExpiry ?? "--")}</td>
+            <td>${escapeHtml(signal.iv ?? "--")}%</td>
+            <td class="${riskClass}">${escapeHtml(signal.riskScore ?? "--")} / 100</td>
+          </tr>
+        `;
+      }).join("");
+    }
+
+    function refreshOptionsFlow() {
+      const status = document.getElementById("flow-status");
+      if (!OPTIONS_FLOW_ENDPOINT) {
+        if (status) status.textContent = "期权流接口未配置";
+        return;
+      }
+      const url = new URL(OPTIONS_FLOW_ENDPOINT, window.location.href);
+      url.searchParams.set("symbols", stockSymbols.join(","));
+      url.searchParams.set("limit", "120");
+      url.searchParams.set("_", Date.now().toString());
+      fetch(url.toString(), { cache: "no-store" })
+        .then(function(response) {
+          if (!response.ok) throw new Error("Options flow unavailable");
+          return response.json();
+        })
+        .then(function(data) {
+          if (!data || data.simulated !== true || !Array.isArray(data.signals)) {
+            throw new Error("Options flow Worker route is not deployed");
+          }
+          return data;
+        })
+        .then(renderOptionsFlow)
+        .catch(function() {
+          if (status) status.textContent = "期权流读取失败，请重新部署行情 Worker";
+        });
+    }
+
+    function startOptionsFlowRefresh() {
+      refreshOptionsFlow();
+      if (optionsFlowTimer) window.clearInterval(optionsFlowTimer);
+      optionsFlowTimer = window.setInterval(refreshOptionsFlow, 60000);
+    }
+
     fetchStockSnapshot()
       .then(function(response) {
         response.liveStatus = LIVE_QUOTES_ENDPOINT ? "准备实时刷新" : "实时接口未配置，当前显示每日快照";
@@ -2556,6 +2798,7 @@
         startLiveStockRefresh();
       });
     startRiskRadarRefresh();
+    startOptionsFlowRefresh();
     renderMarketCalendar();
 
     const weatherDescriptions = {

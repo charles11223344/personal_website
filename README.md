@@ -108,6 +108,28 @@ const VISITOR_COUNTER_ENDPOINT = "https://your-counter-worker.workers.dev/";
 
 这个计数器不会保存 IP。页面只会在浏览器本地生成一个匿名 visitor ID，用来粗略区分访客。Cloudflare KV 不是强一致计数器，高并发场景需要换 Durable Object 或 D1。
 
+## 关注股票期权流
+
+首页的“关注股票期权流”模块复用行情 Worker。更新并重新部署
+`workers/yahoo-quote-proxy.js` 后，页面会请求：
+
+```text
+https://your-quote-worker.workers.dev/options-flow?symbols=SPY,QQQ,MU,NVDA,...
+```
+
+返回内容包括：
+
+- Call Flow 与 Put Flow
+- Call/Put 比率
+- Volume/OI
+- 异常成交金额（金额至少 100 万美元或 Volume/OI 至少为 2）
+- 到期天数 DTE
+- IV、方向和合约信息
+- 由金额、Volume/OI、DTE 和 IV 合成的 0-100 风险评分
+
+当前来源是第三方 Supabase 的模拟期权流原型，并非交易所授权实时数据。页面会明确显示
+“第三方模拟数据”；如果最新记录超过 15 分钟，会显示数据已停止更新。生产用途应替换为有授权的期权数据供应商。
+
 ## 部署
 
 这个站点只有静态文件，可以直接通过 GitHub Pages 或任意静态托管服务部署。当前自定义域名配置保留在 `CNAME`。
