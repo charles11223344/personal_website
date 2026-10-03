@@ -1410,14 +1410,13 @@
         </span>
       </a>
       <nav class="nav-links" aria-label="主导航">
-        <a href="#market">市场笔记</a>
+        <a href="#options-flow">期权雷达</a>
         <a href="#stocks">美股数据</a>
         <a href="#risk-radar">风险雷达</a>
         <a href="#event-calendar">事件日历</a>
         <a href="#articles">文章</a>
         <a href="#vlog">Vlog</a>
         <a href="#wechat-sync">公众号同步</a>
-        <a href="#options-flow">期权雷达</a>
         <a href="#bitcoin">比特币数据</a>
         <a href="#contact">联系</a>
       </nav>
@@ -1434,7 +1433,7 @@
         <p class="eyebrow">US Equities · Earnings · Vlog Notes</p>
         <h1>把美股研究写成长期可追踪的手记。</h1>
         <p class="hero-copy">
-          从财报、估值、行业叙事到交易复盘，这里同步整理我在微信公众号里的美股文章，也会沉淀成更适合网页阅读的视频脚本和市场笔记。
+          从财报、估值、行业叙事到交易复盘，这里同步整理我在微信公众号里的美股文章，也会沉淀成更适合网页阅读的视频脚本和研究记录。
         </p>
         <div class="hero-actions">
           <a class="button primary" href="#articles">查看文章归档</a>
@@ -1580,33 +1579,39 @@
       </div>
     </section>
 
-    <section class="section" id="market">
+    <section class="section" id="options-flow">
       <div class="section-inner">
         <div class="section-head">
-          <h2>市场笔记</h2>
-          <p>把每天看到的噪音压缩成几个可复盘的问题：增长是不是真的，估值靠什么支撑，市场正在奖励什么，风险在哪里发生变化。</p>
+          <h2>关注股票期权活动雷达</h2>
+          <p>使用 OCC 官方日终成交量和未平仓量，计算 Call/Put、Volume/OI、名义金额、加权到期天数和清濛模型评分。</p>
         </div>
-        <div class="thesis-grid">
-          <article class="panel">
-            <span class="panel-number">01</span>
-            <h3>财报拆解</h3>
-            <p>关注收入结构、毛利率、经营杠杆、订单和管理层指引，不只看 EPS 是否 beat。</p>
-          </article>
-          <article class="panel">
-            <span class="panel-number">02</span>
-            <h3>行业叙事</h3>
-            <p>从 AI、云、半导体、软件和消费龙头里找长期变量，避免只追当天涨跌。</p>
-          </article>
-          <article class="panel">
-            <span class="panel-number">03</span>
-            <h3>估值坐标</h3>
-            <p>用增长、利润率、现金流和再投资空间校准估值，而不是孤立看 PE 高低。</p>
-          </article>
-          <article class="panel">
-            <span class="panel-number">04</span>
-            <h3>交易复盘</h3>
-            <p>记录买入逻辑、退出条件和仓位变化，把判断沉淀成下一次决策的材料。</p>
-          </article>
+        <div class="flow-board">
+          <div class="flow-toolbar">
+            <div>
+              <strong>OCC End-of-Day Options Activity</strong>
+              <p>公开日终统计，不识别机构身份；金额是标的名义本金估算，不是期权权利金。</p>
+            </div>
+            <div class="flow-status" id="flow-status">等待 OCC 日终数据</div>
+          </div>
+          <div class="flow-kpis" id="flow-kpis">
+            <div class="flow-kpi"><span>Call 名义金额</span><strong>--</strong></div>
+            <div class="flow-kpi"><span>Put 名义金额</span><strong>--</strong></div>
+            <div class="flow-kpi"><span>Call / Put</span><strong>--</strong></div>
+            <div class="flow-kpi"><span>异常信号</span><strong>--</strong></div>
+          </div>
+          <div class="flow-table-wrap">
+            <table class="flow-table">
+              <thead>
+                <tr>
+                  <th>数据日</th><th>股票</th><th>量能偏向</th><th>主要到期</th><th>估算名义金额</th>
+                  <th>Volume / OI</th><th>加权 DTE</th><th>Call / Put</th><th>风险评分</th>
+                </tr>
+              </thead>
+              <tbody id="flow-table-body">
+                <tr><td colspan="9"><div class="flow-empty">正在加载期权流...</div></td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>
@@ -2067,43 +2072,6 @@
             <button class="button primary" type="submit">发送</button>
           </form>
         </aside>
-      </div>
-    </section>
-
-    <section class="section" id="options-flow">
-      <div class="section-inner">
-        <div class="section-head">
-          <h2>关注股票期权活动雷达</h2>
-          <p>使用 OCC 官方日终成交量和未平仓量，计算 Call/Put、Volume/OI、名义金额、加权到期天数和清濛模型评分。</p>
-        </div>
-        <div class="flow-board">
-          <div class="flow-toolbar">
-            <div>
-              <strong>OCC End-of-Day Options Activity</strong>
-              <p>公开日终统计，不识别机构身份；金额是标的名义本金估算，不是期权权利金。</p>
-            </div>
-            <div class="flow-status" id="flow-status">等待 OCC 日终数据</div>
-          </div>
-          <div class="flow-kpis" id="flow-kpis">
-            <div class="flow-kpi"><span>Call 名义金额</span><strong>--</strong></div>
-            <div class="flow-kpi"><span>Put 名义金额</span><strong>--</strong></div>
-            <div class="flow-kpi"><span>Call / Put</span><strong>--</strong></div>
-            <div class="flow-kpi"><span>异常信号</span><strong>--</strong></div>
-          </div>
-          <div class="flow-table-wrap">
-            <table class="flow-table">
-              <thead>
-                <tr>
-                  <th>数据日</th><th>股票</th><th>量能偏向</th><th>主要到期</th><th>估算名义金额</th>
-                  <th>Volume / OI</th><th>加权 DTE</th><th>Call / Put</th><th>风险评分</th>
-                </tr>
-              </thead>
-              <tbody id="flow-table-body">
-                <tr><td colspan="9"><div class="flow-empty">正在加载期权流...</div></td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
       </div>
     </section>
 
