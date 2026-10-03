@@ -2773,16 +2773,72 @@
       return "$" + number.toFixed(0);
     }
 
+    function flowSignalDecision(signal) {
+      const direction = signal.direction || "相对均衡";
+      const unusual = Boolean(signal.unusual);
+
+      if (direction === "Call偏强" && unusual) {
+        return {
+          priority: 5,
+          label: "优先观察",
+          tone: "candidate",
+          note: "Call 成交占优且活跃度异常，加入候选；仍需等待股价趋势确认。"
+        };
+      }
+      if (direction === "Call偏强") {
+        return {
+          priority: 4,
+          label: "Call 活跃",
+          tone: "watch",
+          note: "Call 成交占优，但尚未达到异常水平，先观察价格是否同步转强。"
+        };
+      }
+      if (direction === "相对均衡" && unusual) {
+        return {
+          priority: 3,
+          label: "波动放大",
+          tone: "watch",
+          note: "成交活跃但方向不明确，适合等待突破，不适合仅凭期权数据追入。"
+        };
+      }
+      if (direction === "Put偏强") {
+        return {
+          priority: unusual ? 2 : 1,
+          label: unusual ? "风险升高" : "Put 活跃",
+          tone: "caution",
+          note: unusual
+            ? "Put 成交占优且活跃度异常，优先检查下行风险。"
+            : "Put 成交占优，暂不列为多头候选。"
+        };
+      }
+      return {
+        priority: 0,
+        label: "等待确认",
+        tone: "watch",
+        note: "方向和活跃度都不突出，暂时不提高观察优先级。"
+      };
+    }
+
+    function flowActivityLabel(signal) {
+      if (signal.unusual) return "异常";
+      const score = Number(signal.riskScore);
+      if (Number.isFinite(score) && score >= 50) return "较高";
+      return "普通";
+    }
+
     function renderOptionsFlow(data) {
       const status = document.getElementById("flow-status");
       const kpis = document.getElementById("flow-kpis");
-      const body = document.getElementById("flow-table-body");
+      const watchlist = document.getElementById("flow-watchlist");
       const signals = Array.isArray(data.signals) ? data.signals : [];
-      const summaries = Array.isArray(data.symbols) ? data.symbols : [];
-      const callFlow = summaries.reduce(function(total, item) { return total + Number(item.callFlow || 0); }, 0);
-      const putFlow = summaries.reduce(function(total, item) { return total + Number(item.putFlow || 0); }, 0);
-      const unusualCount = signals.filter(function(signal) { return signal.unusual; }).length;
-      const ratio = putFlow > 0 ? (callFlow / putFlow).toFixed(2) : callFlow > 0 ? "∞" : "--";
+      const callCount = signals.filter(function(signal) { return signal.direction === "Call偏强"; }).length;
+      const putCount = signals.filter(function(signal) { return signal.direction === "Put偏强"; }).length;
+      const candidateCount = signals.filter(function(signal) {
+        return signal.direction === "Call偏强" && signal.unusual;
+      }).length;
+      const callVolume = signals.reduce(function(total, signal) { return total + Number(signal.callVolume || 0); }, 0);
+      const putVolume = signals.reduce(function(total, signal) { return total + Number(signal.putVolume || 0); }, 0);
+      const ratio = putVolume > 0 ? (callVolume / putVolume).toFixed(2) : callVolume > 0 ? "∞" : "--";
 
       if (status) {
         status.textContent = "OCC 日终 · 数据日 " + (data.dataDate || "无数据");
@@ -2790,36 +2846,46 @@
 
       if (kpis) {
         kpis.innerHTML = `
-          <div class="flow-kpi"><span>Call 名义金额</span><strong>${formatFlowMoney(callFlow)}</strong></div>
-          <div class="flow-kpi"><span>Put 名义金额</span><strong>${formatFlowMoney(putFlow)}</strong></div>
-          <div class="flow-kpi"><span>Call / Put</span><strong>${escapeHtml(ratio)}</strong></div>
-          <div class="flow-kpi"><span>异常信号</span><strong>${unusualCount}</strong></div>
+          <div class="flow-kpi"><span>优先观察</span><strong>${candidateCount}</strong></div>
+          <div class="flow-kpi"><span>Call 偏强</span><strong>${callCount}</strong></div>
+          <div class="flow-kpi"><span>Put 偏强</span><strong>${putCount}</strong></div>
+          <div class="flow-kpi"><span>整体 Call / Put</span><strong>${escapeHtml(ratio)}</strong></div>
         `;
       }
 
-      if (!body) return;
+      if (!watchlist) return;
       if (!signals.length) {
-        body.innerHTML = '<tr><td colspan="9"><div class="flow-empty">当前关注列表没有期权流信号。</div></td></tr>';
+        watchlist.innerHTML = '<div class="flow-empty">当前关注列表没有期权活动信号。</div>';
         return;
       }
 
-      body.innerHTML = signals.slice(0, 40).map(function(signal) {
-        const directionClass = signal.direction === "Call偏强" ? "flow-bullish" : signal.direction === "Put偏强" ? "flow-bearish" : "";
+      const rankedSignals = signals.slice().sort(function(left, right) {
+        const priorityDifference = flowSignalDecision(right).priority - flowSignalDecision(left).priority;
+        if (priorityDifference !== 0) return priorityDifference;
+        return Number(right.riskScore || 0) - Number(left.riskScore || 0);
+      }).slice(0, 8);
+
+      watchlist.innerHTML = rankedSignals.map(function(signal, index) {
+        const decision = flowSignalDecision(signal);
         const volumeOi = signal.volumeOi === null || signal.volumeOi === undefined ? "--" : Number(signal.volumeOi).toFixed(2);
         const callPutRatio = signal.callPutRatio === null || signal.callPutRatio === undefined ? "--" : Number(signal.callPutRatio).toFixed(2);
-        const riskClass = Number(signal.riskScore) >= 75 ? "flow-bearish" : Number(signal.riskScore) >= 50 ? "flow-warning" : "flow-bullish";
         return `
-          <tr>
-            <td>${escapeHtml(signal.dataDate || data.dataDate || "--")}</td>
-            <td><strong>${escapeHtml(signal.symbol)}</strong></td>
-            <td class="${directionClass}">${escapeHtml(signal.direction || "--")}</td>
-            <td>${escapeHtml(signal.expiry || "--")}</td>
-            <td class="${signal.unusual ? "flow-warning" : ""}">${formatFlowMoney(signal.totalSize)}</td>
-            <td>${escapeHtml(volumeOi)} (${escapeHtml(signal.volume ?? 0)} / ${escapeHtml(signal.openInterest ?? 0)})</td>
-            <td>${escapeHtml(signal.daysToExpiry ?? "--")}</td>
-            <td>${escapeHtml(callPutRatio)}</td>
-            <td class="${riskClass}">${escapeHtml(signal.riskScore ?? "--")} / 100</td>
-          </tr>
+          <article class="flow-signal-card">
+            <div class="flow-signal-top">
+              <div class="flow-signal-title">
+                <span class="flow-rank">${index + 1}</span>
+                <strong class="flow-symbol">${escapeHtml(signal.symbol)}</strong>
+              </div>
+              <span class="flow-label ${decision.tone}">${escapeHtml(decision.label)}</span>
+            </div>
+            <p class="flow-signal-verdict">${escapeHtml(decision.note)}</p>
+            <div class="flow-signal-metrics">
+              <div class="flow-signal-metric"><span>Call / Put</span><strong>${escapeHtml(callPutRatio)}</strong></div>
+              <div class="flow-signal-metric"><span>成交 / 持仓</span><strong>${escapeHtml(volumeOi)}</strong></div>
+              <div class="flow-signal-metric"><span>加权期限</span><strong>${escapeHtml(signal.daysToExpiry ?? "--")} 天</strong></div>
+            </div>
+            <span class="flow-signal-score">${escapeHtml(signal.direction || "--")} · 活跃度 ${escapeHtml(flowActivityLabel(signal))} · 活跃分 ${escapeHtml(signal.riskScore ?? "--")}/100</span>
+          </article>
         `;
       }).join("");
     }
@@ -2842,9 +2908,9 @@
         .then(renderOptionsFlow)
         .catch(function() {
           if (status) status.textContent = "OCC 日终数据暂时不可用";
-          const body = document.getElementById("flow-table-body");
-          if (body) {
-            body.innerHTML = '<tr><td colspan="9"><div class="flow-empty">等待每日自动任务生成 data/options-flow.json。</div></td></tr>';
+          const watchlist = document.getElementById("flow-watchlist");
+          if (watchlist) {
+            watchlist.innerHTML = '<div class="flow-empty">等待每日自动任务生成 data/options-flow.json。</div>';
           }
         });
     }
