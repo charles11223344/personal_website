@@ -1412,6 +1412,7 @@
       <nav class="nav-links" aria-label="主导航">
         <a href="#market">市场笔记</a>
         <a href="#stocks">美股数据</a>
+        <a href="#options-flow">期权雷达</a>
         <a href="#risk-radar">风险雷达</a>
         <a href="#event-calendar">事件日历</a>
         <a href="#articles">文章</a>
@@ -1579,23 +1580,23 @@
       </div>
     </section>
 
-    <section class="section" id="options-flow" style="display: none;">
+    <section class="section" id="options-flow">
       <div class="section-inner">
         <div class="section-head">
-          <h2>关注股票期权流</h2>
-          <p>聚合观察列表的 Call/Put Flow、Volume/OI、异常成交金额、到期天数和风险评分。</p>
+          <h2>关注股票期权活动雷达</h2>
+          <p>使用 OCC 官方日终成交量和未平仓量，计算 Call/Put、Volume/OI、名义金额、加权到期天数和清濛模型评分。</p>
         </div>
         <div class="flow-board">
           <div class="flow-toolbar">
             <div>
-              <strong>Options Flow Prototype</strong>
-              <p>第三方模拟数据，仅用于研究界面与统计逻辑，不代表真实机构买卖方向。</p>
+              <strong>OCC End-of-Day Options Activity</strong>
+              <p>公开日终统计，不识别机构身份；金额是标的名义本金估算，不是期权权利金。</p>
             </div>
-            <div class="flow-status" id="flow-status">等待期权流接口</div>
+            <div class="flow-status" id="flow-status">等待 OCC 日终数据</div>
           </div>
           <div class="flow-kpis" id="flow-kpis">
-            <div class="flow-kpi"><span>Call Flow</span><strong>--</strong></div>
-            <div class="flow-kpi"><span>Put Flow</span><strong>--</strong></div>
+            <div class="flow-kpi"><span>Call 名义金额</span><strong>--</strong></div>
+            <div class="flow-kpi"><span>Put 名义金额</span><strong>--</strong></div>
             <div class="flow-kpi"><span>Call / Put</span><strong>--</strong></div>
             <div class="flow-kpi"><span>异常信号</span><strong>--</strong></div>
           </div>
@@ -1603,8 +1604,8 @@
             <table class="flow-table">
               <thead>
                 <tr>
-                  <th>时间</th><th>股票</th><th>方向</th><th>合约</th><th>异常金额</th>
-                  <th>Volume / OI</th><th>DTE</th><th>IV</th><th>风险评分</th>
+                  <th>数据日</th><th>股票</th><th>量能偏向</th><th>主要到期</th><th>估算名义金额</th>
+                  <th>Volume / OI</th><th>加权 DTE</th><th>Call / Put</th><th>风险评分</th>
                 </tr>
               </thead>
               <tbody id="flow-table-body">
@@ -2177,9 +2178,7 @@
     const LIVE_QUOTES_ENDPOINT = "https://lemon-quota-proxy.charlesdataaws.workers.dev/";
     // Fill this with your deployed visitor counter Worker URL to show page views and visitors.
     const VISITOR_COUNTER_ENDPOINT = "https://lemon-visitor-counter.charlesdataaws.workers.dev/";
-    const OPTIONS_FLOW_ENDPOINT = LIVE_QUOTES_ENDPOINT
-      ? new URL("options-flow", LIVE_QUOTES_ENDPOINT).toString()
-      : "";
+    const OPTIONS_FLOW_DATA_URL = "data/options-flow.json";
     const stockSymbols = fallbackStockData.symbols.map(function(item) {
       return item.symbol;
     });
@@ -2708,6 +2707,7 @@
     function formatFlowMoney(value) {
       const number = Number(value);
       if (!Number.isFinite(number)) return "--";
+      if (number >= 1000000000000) return "$" + (number / 1000000000000).toFixed(2) + "T";
       if (number >= 1000000000) return "$" + (number / 1000000000).toFixed(2) + "B";
       if (number >= 1000000) return "$" + (number / 1000000).toFixed(2) + "M";
       if (number >= 1000) return "$" + (number / 1000).toFixed(0) + "K";
@@ -2726,14 +2726,13 @@
       const ratio = putFlow > 0 ? (callFlow / putFlow).toFixed(2) : callFlow > 0 ? "∞" : "--";
 
       if (status) {
-        const latest = data.latestSignalAt ? formatDateTime(data.latestSignalAt) : "无数据";
-        status.textContent = (data.stale ? "数据已停止更新" : "模拟流更新中") + " · 最新 " + latest;
+        status.textContent = "OCC 日终 · 数据日 " + (data.dataDate || "无数据");
       }
 
       if (kpis) {
         kpis.innerHTML = `
-          <div class="flow-kpi"><span>Call Flow</span><strong>${formatFlowMoney(callFlow)}</strong></div>
-          <div class="flow-kpi"><span>Put Flow</span><strong>${formatFlowMoney(putFlow)}</strong></div>
+          <div class="flow-kpi"><span>Call 名义金额</span><strong>${formatFlowMoney(callFlow)}</strong></div>
+          <div class="flow-kpi"><span>Put 名义金额</span><strong>${formatFlowMoney(putFlow)}</strong></div>
           <div class="flow-kpi"><span>Call / Put</span><strong>${escapeHtml(ratio)}</strong></div>
           <div class="flow-kpi"><span>异常信号</span><strong>${unusualCount}</strong></div>
         `;
@@ -2746,19 +2745,20 @@
       }
 
       body.innerHTML = signals.slice(0, 40).map(function(signal) {
-        const directionClass = signal.direction === "Bullish" ? "flow-bullish" : "flow-bearish";
+        const directionClass = signal.direction === "Call偏强" ? "flow-bullish" : signal.direction === "Put偏强" ? "flow-bearish" : "";
         const volumeOi = signal.volumeOi === null || signal.volumeOi === undefined ? "--" : Number(signal.volumeOi).toFixed(2);
+        const callPutRatio = signal.callPutRatio === null || signal.callPutRatio === undefined ? "--" : Number(signal.callPutRatio).toFixed(2);
         const riskClass = Number(signal.riskScore) >= 75 ? "flow-bearish" : Number(signal.riskScore) >= 50 ? "flow-warning" : "flow-bullish";
         return `
           <tr>
-            <td>${escapeHtml(formatDateTime(signal.receivedAt))}</td>
+            <td>${escapeHtml(signal.dataDate || data.dataDate || "--")}</td>
             <td><strong>${escapeHtml(signal.symbol)}</strong></td>
             <td class="${directionClass}">${escapeHtml(signal.direction || "--")}</td>
-            <td>${escapeHtml(signal.side || "--")} $${escapeHtml(signal.strike ?? "--")} · ${escapeHtml(signal.expiry || "--")}</td>
+            <td>${escapeHtml(signal.expiry || "--")}</td>
             <td class="${signal.unusual ? "flow-warning" : ""}">${formatFlowMoney(signal.totalSize)}</td>
             <td>${escapeHtml(volumeOi)} (${escapeHtml(signal.volume ?? 0)} / ${escapeHtml(signal.openInterest ?? 0)})</td>
             <td>${escapeHtml(signal.daysToExpiry ?? "--")}</td>
-            <td>${escapeHtml(signal.iv ?? "--")}%</td>
+            <td>${escapeHtml(callPutRatio)}</td>
             <td class="${riskClass}">${escapeHtml(signal.riskScore ?? "--")} / 100</td>
           </tr>
         `;
@@ -2767,31 +2767,25 @@
 
     function refreshOptionsFlow() {
       const status = document.getElementById("flow-status");
-      if (!OPTIONS_FLOW_ENDPOINT) {
-        if (status) status.textContent = "期权流接口未配置";
-        return;
-      }
-      const url = new URL(OPTIONS_FLOW_ENDPOINT, window.location.href);
-      url.searchParams.set("symbols", stockSymbols.join(","));
-      url.searchParams.set("limit", "120");
+      const url = new URL(OPTIONS_FLOW_DATA_URL, window.location.href);
       url.searchParams.set("_", Date.now().toString());
       fetch(url.toString(), { cache: "no-store" })
         .then(function(response) {
-          if (!response.ok) throw new Error("Options flow unavailable");
+          if (!response.ok) throw new Error("Options activity unavailable");
           return response.json();
         })
         .then(function(data) {
-          if (!data || data.simulated !== true || !Array.isArray(data.signals)) {
-            throw new Error("Options flow Worker route is not deployed");
+          if (!data || data.sourceType !== "official-eod" || !Array.isArray(data.signals)) {
+            throw new Error("Invalid OCC options activity payload");
           }
           return data;
         })
         .then(renderOptionsFlow)
         .catch(function() {
-          if (status) status.textContent = "期权流读取失败，请重新部署行情 Worker";
+          if (status) status.textContent = "OCC 日终数据暂时不可用";
           const body = document.getElementById("flow-table-body");
           if (body) {
-            body.innerHTML = '<tr><td colspan="9"><div class="flow-empty">线上行情 Worker 尚未部署 /options-flow 路由。</div></td></tr>';
+            body.innerHTML = '<tr><td colspan="9"><div class="flow-empty">等待每日自动任务生成 data/options-flow.json。</div></td></tr>';
           }
         });
     }
@@ -2799,7 +2793,7 @@
     function startOptionsFlowRefresh() {
       refreshOptionsFlow();
       if (optionsFlowTimer) window.clearInterval(optionsFlowTimer);
-      optionsFlowTimer = window.setInterval(refreshOptionsFlow, 60000);
+      optionsFlowTimer = window.setInterval(refreshOptionsFlow, 900000);
     }
 
     fetchStockSnapshot()
@@ -2814,7 +2808,7 @@
         startLiveStockRefresh();
       });
     startRiskRadarRefresh();
-    // Options flow remains disabled until a reliable data source is available.
+    startOptionsFlowRefresh();
     renderMarketCalendar();
 
     const weatherDescriptions = {

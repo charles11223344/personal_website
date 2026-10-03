@@ -3,6 +3,7 @@ name: Update stock data
 on:
   schedule:
     - cron: "30 23 * * 1-5"
+    - cron: "0 13 * * 2-6"
   workflow_dispatch:
 
 permissions:
@@ -24,14 +25,17 @@ jobs:
       - name: Fetch latest stock data
         run: python scripts/update_stock_data.py
 
+      - name: Calculate OCC options activity
+        run: python scripts/update_options_flow.py
+
       - name: Commit data update
         run: |
-          if git diff --quiet -- data/stocks.json; then
+          if git diff --quiet -- data/stocks.json data/options-flow.json; then
             echo "No stock data changes to commit."
           else
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data/stocks.json
-            git commit -m "Update stock data"
+            git add data/stocks.json data/options-flow.json
+            git commit -m "Update market data"
             git push
           fi

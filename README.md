@@ -108,27 +108,22 @@ const VISITOR_COUNTER_ENDPOINT = "https://your-counter-worker.workers.dev/";
 
 这个计数器不会保存 IP。页面只会在浏览器本地生成一个匿名 visitor ID，用来粗略区分访客。Cloudflare KV 不是强一致计数器，高并发场景需要换 Durable Object 或 D1。
 
-## 关注股票期权流
+## OCC 日终期权活动雷达
 
-首页的“关注股票期权流”模块复用行情 Worker。更新并重新部署
-`workers/yahoo-quote-proxy.js` 后，页面会请求：
+`scripts/update_options_flow.py` 从 OCC 官方公开报告读取关注列表的 Call/Put 成交量与
+按合约未平仓量，生成 `data/options-flow.json`。GitHub Actions 会在更新每日股票数据后
+同时执行该脚本。
 
-```text
-https://your-quote-worker.workers.dev/options-flow?symbols=SPY,QQQ,MU,NVDA,...
-```
+页面展示：
 
-返回内容包括：
+- Call 与 Put 标的名义金额估算
+- Call/Put 成交量比率
+- 总成交量 / 前一结算日 OI
+- OI 加权 DTE 与主要到期日
+- 由 Volume/OI、相对成交量、相对名义金额、Call/Put 偏斜和 DTE 合成的清濛模型评分
 
-- Call Flow 与 Put Flow
-- Call/Put 比率
-- Volume/OI
-- 异常成交金额（金额至少 100 万美元或 Volume/OI 至少为 2）
-- 到期天数 DTE
-- IV、方向和合约信息
-- 由金额、Volume/OI、DTE 和 IV 合成的 0-100 风险评分
-
-当前来源是第三方 Supabase 的模拟期权流原型，并非交易所授权实时数据。页面会明确显示
-“第三方模拟数据”；如果最新记录超过 15 分钟，会显示数据已停止更新。生产用途应替换为有授权的期权数据供应商。
+这不是逐笔订单流，也不能识别机构身份。名义金额按 `合约量 × 标的收盘价 × 100`
+估算，不是期权权利金；Call/Put 偏向也不等于最终看涨或看跌方向。
 
 ## 部署
 

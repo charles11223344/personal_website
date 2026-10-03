@@ -1,6 +1,4 @@
 const YAHOO_CHART_URL = "https://query1.finance.yahoo.com/v8/finance/chart";
-const OPTIONS_FLOW_URL = "https://xscsywydsoaawgahwxwo.supabase.co/rest/v1/options_signals";
-const OPTIONS_FLOW_KEY = "sb_publishable_DGIJfma-y1wKCTtFzG2NWA_QtbbBotV";
 
 const WATCHLIST = {
   SPX: { yahoo: "^GSPC", name: "S&P 500 Index", kind: "index" },
@@ -32,11 +30,6 @@ const CORS_HEADERS = {
   "Access-Control-Allow-Headers": "Content-Type",
   "Cache-Control": "public, max-age=20"
 };
-
-const OPTIONS_FLOW_SYMBOLS = new Set([
-  "SPX", "SPY", "QQQ", "SPCX", "MU", "NVDA", "AAPL", "MSFT", "GOOGL",
-  "AMZN", "META", "TSLA", "AMD", "AVGO", "PLTR", "TSM"
-]);
 
 function jsonResponse(payload, status = 200) {
   return new Response(JSON.stringify(payload), {
@@ -110,115 +103,6 @@ function compactSymbols(value) {
     .filter(Boolean)
     .filter((symbol, index, array) => array.indexOf(symbol) === index)
     .slice(0, 30);
-}
-
-function compactFlowSymbols(value) {
-  return compactSymbols(value).filter((symbol) => OPTIONS_FLOW_SYMBOLS.has(symbol));
-}
-
-function flowRiskScore(signal) {
-  const amount = Math.max(0, asNumber(signal.total_size) || 0);
-  const volume = Math.max(0, asNumber(signal.volume) || 0);
-  const openInterest = Math.max(0, asNumber(signal.open_interest) || 0);
-  const iv = Math.max(0, asNumber(signal.iv) || 0);
-  const dte = Math.max(0, asNumber(signal.days_to_expiry) || 0);
-  const volumeOi = openInterest > 0 ? volume / openInterest : volume > 0 ? 5 : 0;
-  const amountPoints = Math.min(30, Math.log10(amount / 100000 + 1) * 20);
-  const volumeOiPoints = Math.min(30, volumeOi * 10);
-  const dtePoints = dte <= 7 ? 20 : dte <= 30 ? 15 : dte <= 90 ? 8 : 3;
-  const ivPoints = Math.min(20, iv / 5);
-  return Math.round(Math.min(100, amountPoints + volumeOiPoints + dtePoints + ivPoints));
-}
-
-function normalizeFlowSignal(signal) {
-  const volume = Math.max(0, asNumber(signal.volume) || 0);
-  const openInterest = Math.max(0, asNumber(signal.open_interest) || 0);
-  const totalSize = Math.max(0, asNumber(signal.total_size) || 0);
-  const volumeOi = openInterest > 0 ? volume / openInterest : null;
-  const riskScore = flowRiskScore(signal);
-  return {
-    id: signal.discord_message_id,
-    receivedAt: signal.received_at,
-    symbol: String(signal.ticker || "").toUpperCase(),
-    side: signal.side,
-    direction: signal.direction,
-    spotPrice: asNumber(signal.spot_price),
-    strike: asNumber(signal.strike),
-    expiry: signal.expiry,
-    daysToExpiry: asNumber(signal.days_to_expiry),
-    totalSize,
-    volume,
-    openInterest,
-    volumeOi: volumeOi === null ? null : rounded(volumeOi),
-    avgPrice: asNumber(signal.avg_price),
-    iv: asNumber(signal.iv),
-    delta: asNumber(signal.delta),
-    score: asNumber(signal.score),
-    starRating: asNumber(signal.star_rating),
-    riskScore,
-    riskLevel: riskScore >= 75 ? "high" : riskScore >= 50 ? "medium" : "low",
-    unusual: totalSize >= 1000000 || (volumeOi !== null && volumeOi >= 2)
-  };
-}
-
-function aggregateFlowSignals(signals, symbols) {
-  return symbols.map((symbol) => {
-    const rows = signals.filter((signal) => signal.symbol === symbol);
-    const callFlow = rows.filter((signal) => signal.side === "Call").reduce((total, signal) => total + signal.totalSize, 0);
-    const putFlow = rows.filter((signal) => signal.side === "Put").reduce((total, signal) => total + signal.totalSize, 0);
-    const bullishFlow = rows.filter((signal) => signal.direction === "Bullish").reduce((total, signal) => total + signal.totalSize, 0);
-    const bearishFlow = rows.filter((signal) => signal.direction === "Bearish").reduce((total, signal) => total + signal.totalSize, 0);
-    const averageRisk = rows.length
-      ? Math.round(rows.reduce((total, signal) => total + signal.riskScore, 0) / rows.length)
-      : null;
-    return {
-      symbol,
-      signalCount: rows.length,
-      callFlow,
-      putFlow,
-      callPutRatio: putFlow > 0 ? rounded(callFlow / putFlow) : callFlow > 0 ? null : 0,
-      bullishFlow,
-      bearishFlow,
-      unusualCount: rows.filter((signal) => signal.unusual).length,
-      averageRisk
-    };
-  });
-}
-
-async function buildOptionsFlowResponse(url) {
-  const requested = compactFlowSymbols(url.searchParams.get("symbols"));
-  const symbols = requested.length ? requested : Array.from(OPTIONS_FLOW_SYMBOLS);
-  const limit = Math.min(200, Math.max(10, Number(url.searchParams.get("limit")) || 100));
-  const sourceUrl = new URL(OPTIONS_FLOW_URL);
-  sourceUrl.searchParams.set(
-    "select",
-    "discord_message_id,received_at,ticker,side,direction,spot_price,strike,expiry,days_to_expiry,total_size,volume,open_interest,avg_price,iv,delta,score,star_rating"
-  );
-  sourceUrl.searchParams.set("ticker", `in.(${symbols.join(",")})`);
-  sourceUrl.searchParams.set("order", "received_at.desc");
-  sourceUrl.searchParams.set("limit", String(limit));
-
-  const response = await fetch(sourceUrl.toString(), {
-    headers: { apikey: OPTIONS_FLOW_KEY, Authorization: `Bearer ${OPTIONS_FLOW_KEY}` },
-    cf: { cacheTtl: 30, cacheEverything: true }
-  });
-  if (!response.ok) throw new Error(`Options flow source ${response.status}`);
-
-  const rows = await response.json();
-  const signals = (Array.isArray(rows) ? rows : [])
-    .map(normalizeFlowSignal)
-    .filter((signal) => symbols.includes(signal.symbol));
-  const latestAt = signals.length ? signals[0].receivedAt : null;
-  return {
-    updatedAt: new Date().toISOString(),
-    latestSignalAt: latestAt,
-    source: "Third-party Supabase options flow prototype",
-    sourcePage: "https://fenzheng.up.railway.app/radar",
-    simulated: true,
-    stale: latestAt ? Date.now() - Date.parse(latestAt) > 15 * 60 * 1000 : true,
-    symbols: aggregateFlowSignals(signals, symbols),
-    signals
-  };
 }
 
 async function fetchYahooChart(yahooSymbol, range = "1d", interval = "1m", options = {}) {
@@ -315,16 +199,6 @@ export default {
     }
 
     const url = new URL(request.url);
-    if (url.pathname === "/options-flow") {
-      try {
-        return jsonResponse(await buildOptionsFlowResponse(url));
-      } catch (error) {
-        return jsonResponse({
-          error: error && error.message ? error.message : "Options flow unavailable",
-          simulated: true
-        }, 502);
-      }
-    }
     const symbols = compactSymbols(url.searchParams.get("symbols")) || [];
     const requestedSymbols = symbols.length ? symbols : Object.keys(WATCHLIST);
 
