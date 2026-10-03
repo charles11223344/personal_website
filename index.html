@@ -362,35 +362,122 @@
       font-size: 1.28rem;
     }
 
-    .flow-table-wrap { overflow-x: auto; }
-
-    .flow-table {
-      width: 100%;
-      min-width: 980px;
-      border-collapse: collapse;
-      font-size: 0.86rem;
+    .flow-rule {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 13px 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: #c7d0da;
+      background: #101720;
+      font-size: 0.84rem;
     }
 
-    .flow-table th,
-    .flow-table td {
-      padding: 11px 13px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      text-align: left;
+    .flow-rule strong {
+      color: #ffffff;
       white-space: nowrap;
     }
 
-    .flow-table th {
-      color: #8e9ba9;
-      background: #111820;
-      font-size: 0.72rem;
-      text-transform: uppercase;
+    .flow-watchlist {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      background: rgba(255, 255, 255, 0.1);
     }
 
-    .flow-table td { color: #dce4ec; }
-    .flow-table strong { color: #ffffff; }
-    .flow-bullish { color: #70d6a6; font-weight: 900; }
-    .flow-bearish { color: #f08c91; font-weight: 900; }
-    .flow-warning { color: #f1c96a; font-weight: 900; }
+    .flow-signal-card {
+      min-width: 0;
+      padding: 18px 20px;
+      background: #151c25;
+    }
+
+    .flow-signal-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .flow-signal-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .flow-rank {
+      display: grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 50%;
+      color: #8e9ba9;
+      font-size: 0.76rem;
+      font-weight: 900;
+    }
+
+    .flow-symbol {
+      font-size: 1.2rem;
+      font-weight: 900;
+    }
+
+    .flow-label {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      color: #dce4ec;
+      background: rgba(255, 255, 255, 0.08);
+      font-size: 0.72rem;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .flow-label.candidate { color: #70d6a6; background: rgba(112, 214, 166, 0.12); }
+    .flow-label.caution { color: #f08c91; background: rgba(240, 140, 145, 0.12); }
+    .flow-label.watch { color: #f1c96a; background: rgba(241, 201, 106, 0.12); }
+
+    .flow-signal-verdict {
+      min-height: 42px;
+      margin: 13px 0 14px;
+      color: #dce4ec;
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    .flow-signal-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .flow-signal-metric {
+      min-width: 0;
+      padding: 9px 10px;
+      background: #101720;
+    }
+
+    .flow-signal-metric span,
+    .flow-signal-score {
+      display: block;
+      color: #8e9ba9;
+      font-size: 0.7rem;
+      font-weight: 800;
+    }
+
+    .flow-signal-metric strong {
+      display: block;
+      margin-top: 4px;
+      overflow: hidden;
+      color: #ffffff;
+      font-size: 0.9rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .flow-signal-score { margin-top: 11px; }
 
     .flow-empty {
       padding: 28px 20px;
@@ -1358,6 +1445,16 @@
         grid-template-columns: 1fr 1fr;
       }
 
+      .flow-rule {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .flow-watchlist {
+        grid-template-columns: 1fr;
+      }
+
       .risk-radar-head {
         flex-direction: column;
       }
@@ -1583,34 +1680,28 @@
       <div class="section-inner">
         <div class="section-head">
           <h2>关注股票期权活动雷达</h2>
-          <p>使用 OCC 官方日终成交量和未平仓量，计算 Call/Put、Volume/OI、名义金额、加权到期天数和清濛模型评分。</p>
+          <p>先找 Call 活跃且成交异常的候选，再结合股价趋势和基本面确认。雷达只决定观察顺序，不直接决定买入。</p>
         </div>
         <div class="flow-board">
           <div class="flow-toolbar">
             <div>
-              <strong>OCC End-of-Day Options Activity</strong>
-              <p>公开日终统计，不识别机构身份；金额是标的名义本金估算，不是期权权利金。</p>
+              <strong>今日优先观察榜</strong>
+              <p>OCC 公开日终统计不识别主动买卖，Call 成交多也可能来自卖出 Call。</p>
             </div>
             <div class="flow-status" id="flow-status">等待 OCC 日终数据</div>
           </div>
           <div class="flow-kpis" id="flow-kpis">
-            <div class="flow-kpi"><span>Call 名义金额</span><strong>--</strong></div>
-            <div class="flow-kpi"><span>Put 名义金额</span><strong>--</strong></div>
-            <div class="flow-kpi"><span>Call / Put</span><strong>--</strong></div>
-            <div class="flow-kpi"><span>异常信号</span><strong>--</strong></div>
+            <div class="flow-kpi"><span>优先观察</span><strong>--</strong></div>
+            <div class="flow-kpi"><span>Call 偏强</span><strong>--</strong></div>
+            <div class="flow-kpi"><span>Put 偏强</span><strong>--</strong></div>
+            <div class="flow-kpi"><span>整体 Call / Put</span><strong>--</strong></div>
           </div>
-          <div class="flow-table-wrap">
-            <table class="flow-table">
-              <thead>
-                <tr>
-                  <th>数据日</th><th>股票</th><th>量能偏向</th><th>主要到期</th><th>估算名义金额</th>
-                  <th>Volume / OI</th><th>加权 DTE</th><th>Call / Put</th><th>风险评分</th>
-                </tr>
-              </thead>
-              <tbody id="flow-table-body">
-                <tr><td colspan="9"><div class="flow-empty">正在加载期权流...</div></td></tr>
-              </tbody>
-            </table>
+          <div class="flow-rule">
+            <strong>判断顺序</strong>
+            <span>Call 偏强 + 异常活跃 = 优先观察；Put 偏强 = 风险提醒；方向均衡 = 等待确认。</span>
+          </div>
+          <div class="flow-watchlist" id="flow-watchlist" aria-live="polite">
+            <div class="flow-empty">正在加载期权活动...</div>
           </div>
         </div>
       </div>
