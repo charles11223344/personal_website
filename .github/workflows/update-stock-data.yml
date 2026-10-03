@@ -2,7 +2,7 @@ name: Update stock data
 
 on:
   schedule:
-    - cron: "30 23 * * 1-5"
+    - cron: "15 14-21 * * 1-5"
     - cron: "0 13 * * 2-6"
   workflow_dispatch:
 
@@ -25,8 +25,8 @@ jobs:
       - name: Fetch latest stock data
         run: python scripts/update_stock_data.py
 
-      - name: Calculate OCC options activity
-        run: python scripts/update_options_flow.py
+      - name: Calculate latest options activity
+        run: python scripts/update_options_flow_live.py || python scripts/update_options_flow.py
 
       - name: Commit data update
         run: |

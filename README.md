@@ -20,7 +20,7 @@
 
 `scripts/update_stock_data.py` 会从 Yahoo Finance chart endpoint 拉取最近 5 个交易日数据，计算最新收盘价、涨跌额、涨跌幅和成交量，然后写入 `data/stocks.json`。
 
-GitHub Actions 配置在 `.github/workflows/update-stock-data.yml`，默认工作日 23:30 UTC 自动运行一次，也可以在 GitHub Actions 页面手动触发。
+GitHub Actions 配置在 `.github/workflows/update-stock-data.yml`，美股交易时段约每小时运行一次，并在下一个工作日上午补抓日终数据；也可以在 GitHub Actions 页面手动触发。
 
 手动本地更新：
 
@@ -108,11 +108,12 @@ const VISITOR_COUNTER_ENDPOINT = "https://your-counter-worker.workers.dev/";
 
 这个计数器不会保存 IP。页面只会在浏览器本地生成一个匿名 visitor ID，用来粗略区分访客。Cloudflare KV 不是强一致计数器，高并发场景需要换 Durable Object 或 D1。
 
-## OCC 日终期权活动雷达
+## 延迟期权活动雷达
 
-`scripts/update_options_flow.py` 从 OCC 官方公开报告读取关注列表的 Call/Put 成交量与
-按合约未平仓量，生成 `data/options-flow.json`。GitHub Actions 会在更新每日股票数据后
-同时执行该脚本。
+`scripts/update_options_flow_live.py` 从 Cboe 延迟期权链读取核心关注股票的当日累计
+Call/Put 成交量与未平仓量，生成 `data/options-flow.json`。GitHub Actions 在美股交易时段
+约每小时更新一次。如果 Cboe 快照不可用，任务会自动运行 `scripts/update_options_flow.py`，
+回退到 OCC 官方日终报告。
 
 页面展示：
 
@@ -122,8 +123,9 @@ const VISITOR_COUNTER_ENDPOINT = "https://your-counter-worker.workers.dev/";
 - OI 加权 DTE 与主要到期日
 - 由 Volume/OI、相对成交量、相对名义金额、Call/Put 偏斜和 DTE 合成的清濛模型评分
 
-这不是逐笔订单流，也不能识别机构身份。名义金额按 `合约量 × 标的收盘价 × 100`
-估算，不是期权权利金；Call/Put 偏向也不等于最终看涨或看跌方向。
+这不是逐笔订单流，也不能识别机构身份。Cboe 页面数据按其标注属于延迟快照，网站会
+显示来源和截至时间。名义金额按 `合约量 × 延迟标的价格 × 100` 估算，不是期权权利金；
+Call/Put 偏向也不等于最终看涨或看跌方向。
 
 ## 部署
 

@@ -1686,9 +1686,9 @@
           <div class="flow-toolbar">
             <div>
               <strong>今日优先观察榜</strong>
-              <p>OCC 公开日终统计不识别主动买卖，Call 成交多也可能来自卖出 Call。</p>
+              <p id="flow-source-note">延迟期权统计不识别主动买卖，Call 成交多也可能来自卖出 Call。</p>
             </div>
-            <div class="flow-status" id="flow-status">等待 OCC 日终数据</div>
+            <div class="flow-status" id="flow-status">等待最新期权数据</div>
           </div>
           <div class="flow-kpis" id="flow-kpis">
             <div class="flow-kpi"><span>优先观察</span><strong>--</strong></div>
@@ -2828,6 +2828,7 @@
 
     function renderOptionsFlow(data) {
       const status = document.getElementById("flow-status");
+      const sourceNote = document.getElementById("flow-source-note");
       const kpis = document.getElementById("flow-kpis");
       const watchlist = document.getElementById("flow-watchlist");
       const signals = Array.isArray(data.signals) ? data.signals : [];
@@ -2839,9 +2840,17 @@
       const callVolume = signals.reduce(function(total, signal) { return total + Number(signal.callVolume || 0); }, 0);
       const putVolume = signals.reduce(function(total, signal) { return total + Number(signal.putVolume || 0); }, 0);
       const ratio = putVolume > 0 ? (callVolume / putVolume).toFixed(2) : callVolume > 0 ? "∞" : "--";
+      const isDelayedSnapshot = data.sourceType === "delayed-snapshot";
 
       if (status) {
-        status.textContent = "OCC 日终 · 数据日 " + (data.dataDate || "无数据");
+        status.textContent = isDelayedSnapshot
+          ? "Cboe 延迟约 " + (data.delayMinutes || 15) + " 分钟 · 截至 " + formatStockDate(data.dataAsOf || data.updatedAt)
+          : "OCC 最新可用日终 · 数据日 " + (data.dataDate || "无数据");
+      }
+      if (sourceNote) {
+        sourceNote.textContent = isDelayedSnapshot
+          ? "Cboe 当日累计成交量与持仓快照；不识别主动买卖，网站约每小时更新。"
+          : "OCC 官方日终统计；不识别主动买卖，当前作为延迟数据失败时的备用来源。";
       }
 
       if (kpis) {
@@ -2900,17 +2909,18 @@
           return response.json();
         })
         .then(function(data) {
-          if (!data || data.sourceType !== "official-eod" || !Array.isArray(data.signals)) {
-            throw new Error("Invalid OCC options activity payload");
+          const supportedSource = data && (data.sourceType === "official-eod" || data.sourceType === "delayed-snapshot");
+          if (!supportedSource || !Array.isArray(data.signals)) {
+            throw new Error("Invalid options activity payload");
           }
           return data;
         })
         .then(renderOptionsFlow)
         .catch(function() {
-          if (status) status.textContent = "OCC 日终数据暂时不可用";
+          if (status) status.textContent = "期权活动数据暂时不可用";
           const watchlist = document.getElementById("flow-watchlist");
           if (watchlist) {
-            watchlist.innerHTML = '<div class="flow-empty">等待每日自动任务生成 data/options-flow.json。</div>';
+            watchlist.innerHTML = '<div class="flow-empty">等待自动任务生成最新期权活动数据。</div>';
           }
         });
     }
