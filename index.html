@@ -1607,26 +1607,26 @@
         <div class="calendar-board">
           <div class="calendar-head">
             <div>
-              <strong>9/28 - 10/2 超级数据周</strong>
-              <p>JOLTS、PCE、MU 财报、ISM 制造业和非农连续登场，通胀与就业将共同重定价半导体和长债。</p>
+              <strong>10/5 - 10/9 利率与 AI 验证周</strong>
+              <p>ISM 服务业、FOMC 纪要、APLD 财报与台积电月度营收连续登场，利率和订单将共同验证 AI 抱团质量。</p>
             </div>
             <div class="calendar-status" id="calendar-status">等待日历渲染</div>
           </div>
           <div class="calendar-focus-grid" aria-label="下周三大观察闸门">
             <div class="calendar-focus-card">
-              <span>Inflation Gate</span>
-              <strong>9/30 PCE</strong>
-              <p>核心数据是否继续偏热，将决定 10Y 和高估值科技的压力。</p>
+              <span>Growth Gate</span>
+              <strong>10/5 ISM 服务业</strong>
+              <p>就业与价格分项决定弱就业之后，服务业通胀是否仍会推高长债。</p>
             </div>
             <div class="calendar-focus-card">
-              <span>Earnings Gate</span>
-              <strong>9/30 MU</strong>
-              <p>HBM、DRAM、毛利率与指引，将验证存储行情能否继续扩散。</p>
+              <span>Fed Gate</span>
+              <strong>10/7 FOMC 纪要</strong>
+              <p>市场将寻找后续加息路径，以及委员对就业降温和通胀风险的判断。</p>
             </div>
             <div class="calendar-focus-card">
-              <span>Jobs Gate</span>
-              <strong>10/2 非农</strong>
-              <p>就业与薪资决定下一次加息预期，弱就业叠加高 PCE 是最难交易的组合。</p>
+              <span>AI Demand Gate</span>
+              <strong>10/7-8 APLD / TSM</strong>
+              <p>数据中心财报与台积电月度营收，将验证 AI 订单、融资和硬件需求。</p>
             </div>
           </div>
           <div class="calendar-grid" id="calendar-grid" aria-live="polite">
@@ -1714,6 +1714,19 @@
           <p>公众号里的长文会逐步迁移到这里，按主题重新整理摘要、图表和关键结论。</p>
         </div>
         <div class="article-grid">
+          <article class="article-card">
+            <div class="article-topline">
+              <span>下周剧本</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-10-04-ai-concentration-week.html">20261004下周的疯狂时光美股预测和总结</a></h3>
+            <p>就业降温后资金继续向 AI 集中，清濛观察 NVDA、AMD、MU、SNDK、LITE、COHR、TSLA 与黄金的关键位置。</p>
+            <div class="tag-row">
+              <span class="tag">AI抱团</span>
+              <span class="tag">FOMC纪要</span>
+              <span class="tag">黄金</span>
+            </div>
+          </article>
           <article class="article-card">
             <div class="article-topline">
               <span>周中总结</span>
@@ -2142,10 +2155,10 @@
           </p>
           <div class="sync-highlight">
             <h3>最新同步</h3>
-            <p>2026-09-27：下周美股大盘总结和预测</p>
+            <p>2026-10-04：下周的疯狂时光美股预测和总结</p>
             <div class="sync-actions">
-              <a class="button primary" href="articles/2026-09-27-pce-mu-jobs-week.html">阅读网页版本</a>
-              <a class="button secondary" href="https://mp.weixin.qq.com/s/nVgeSdHu6HMGvZd-C7h7Bg" target="_blank" rel="noopener">打开公众号原文</a>
+              <a class="button primary" href="articles/2026-10-04-ai-concentration-week.html">阅读网页版本</a>
+              <a class="button secondary" href="https://mp.weixin.qq.com/s/QrQ_fA2XQB-yFFjEKNCZLw" target="_blank" rel="noopener">打开公众号原文</a>
             </div>
           </div>
         </div>
@@ -2252,39 +2265,53 @@
     const RISK_HISTORY_KEY = "lemon-risk-history-v1";
     const marketCalendarEvents = [
       {
-        date: "2026-09-29",
+        date: "2026-10-05",
         type: "宏观",
-        title: "JOLTS 职位空缺，10:00 AM",
-        focus: "就业需求若继续强，会强化通胀黏性与加息预期，高估值科技股可能率先承压。",
-        tags: ["JOLTS", "就业", "Fed", "10Y"]
+        title: "ISM 服务业 PMI，10:00 AM",
+        focus: "重点看就业与价格分项。数据过热会重新推高长债，温和扩张更有利于科技估值。",
+        tags: ["ISM", "服务业", "通胀", "10Y"]
       },
       {
-        date: "2026-09-30",
+        date: "2026-10-06",
         type: "宏观",
-        title: "PCE 物价指数，8:30 AM",
-        focus: "全周宏观总开关。核心通胀偏热会推高长债与加息预期，温和数据则利好科技修复。",
-        tags: ["PCE", "通胀", "10Y", "QQQ"]
+        title: "美国国际贸易，8:30 AM",
+        focus: "8 月进出口数据将反映内需、外需与贸易缺口变化，并影响对经济增长韧性的判断。",
+        tags: ["贸易", "进口", "出口", "美元"]
       },
       {
-        date: "2026-09-30",
+        date: "2026-10-07",
+        type: "Fed",
+        title: "FOMC 会议纪要，2:00 PM",
+        focus: "全周利率总开关。关注委员如何权衡就业降温、通胀和后续加息路径。",
+        tags: ["FOMC", "Fed", "10Y", "QQQ"]
+      },
+      {
+        date: "2026-10-07",
         type: "财报",
-        title: "Micron 财报，盘后",
-        focus: "重点看 HBM 与 DRAM 需求、毛利率和下一季指引，可能放大 MU、NVDA、SOXL 的波动。",
-        tags: ["MU", "HBM", "NVDA", "SOXL"]
+        title: "Applied Digital 财报，5:00 PM",
+        focus: "观察 AI 数据中心投产、长期租约、融资成本和现金流，判断高 CapEx 模式能否继续获得估值。",
+        tags: ["APLD", "AI数据中心", "CapEx", "现金流"]
       },
       {
-        date: "2026-10-01",
-        type: "宏观",
-        title: "ISM 制造业 PMI，10:00 AM",
-        focus: "观察制造业扩张强度；数据过热可能继续推高利率，温和扩张更有利风险资产。",
-        tags: ["ISM", "制造业", "PMI", "10Y"]
+        date: "2026-10-08",
+        type: "产业",
+        title: "台积电 9 月月度营收",
+        focus: "这是 AI 硬件需求的重要高频验证，重点观察先进制程和 AI 加速器需求是否继续扩散。",
+        tags: ["TSM", "AI芯片", "NVDA", "AMD"]
       },
       {
-        date: "2026-10-02",
+        date: "2026-10-08",
         type: "宏观",
-        title: "美国非农，8:30 AM",
-        focus: "就业与薪资将决定下一次加息预期。弱就业叠加高 PCE，会形成最难交易的滞胀组合。",
-        tags: ["非农", "失业率", "薪资", "Fed"]
+        title: "美国批发贸易，10:00 AM",
+        focus: "销售与库存关系将补充判断企业需求和库存周期，数据失衡可能影响增长预期。",
+        tags: ["批发库存", "销售", "经济周期"]
+      },
+      {
+        date: "2026-10-09",
+        type: "财报",
+        title: "Delta Air Lines 财报电话会，10:00 AM",
+        focus: "观察消费与商务旅行需求、票价和燃油成本，判断非科技板块的盈利质量。",
+        tags: ["DAL", "消费", "旅行", "油价"]
       }
     ];
     let liveStockTimer = null;
