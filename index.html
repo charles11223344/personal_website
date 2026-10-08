@@ -1607,26 +1607,26 @@
         <div class="calendar-board">
           <div class="calendar-head">
             <div>
-              <strong>10/5 - 10/9 利率与 AI 验证周</strong>
-              <p>ISM 服务业、FOMC 纪要、APLD 财报与台积电月度营收连续登场，利率和订单将共同验证 AI 抱团质量。</p>
+              <strong>10/8 - 10/9 长债与通胀预期考验</strong>
+              <p>初请失业金、30 年期美债拍卖与密歇根通胀预期接力，台积电营收和 DAL 财报补充验证企业需求。时间均为美东时间。</p>
             </div>
             <div class="calendar-status" id="calendar-status">等待日历渲染</div>
           </div>
-          <div class="calendar-focus-grid" aria-label="下周三大观察闸门">
+          <div class="calendar-focus-grid" aria-label="未来两天三大观察闸门">
             <div class="calendar-focus-card">
-              <span>Growth Gate</span>
-              <strong>10/5 ISM 服务业</strong>
-              <p>就业与价格分项决定弱就业之后，服务业通胀是否仍会推高长债。</p>
+              <span>Jobs Gate</span>
+              <strong>10/8 初请失业金</strong>
+              <p>8:30 AM，观察就业降温是否延续，以及利率预期如何调整。</p>
             </div>
             <div class="calendar-focus-card">
-              <span>Fed Gate</span>
-              <strong>10/7 FOMC 纪要</strong>
-              <p>市场将寻找后续加息路径，以及委员对就业降温和通胀风险的判断。</p>
+              <span>Bond Gate</span>
+              <strong>10/8 30 年期拍卖</strong>
+              <p>1:00 PM，220 亿美元长债续发行，需求强弱将直接影响长债与科技估值。</p>
             </div>
             <div class="calendar-focus-card">
-              <span>AI Demand Gate</span>
-              <strong>10/7-8 APLD / TSM</strong>
-              <p>数据中心财报与台积电月度营收，将验证 AI 订单、融资和硬件需求。</p>
+              <span>Inflation Gate</span>
+              <strong>10/9 密歇根初值</strong>
+              <p>10:00 AM，重点看一年期和长期通胀预期有没有再次抬头。</p>
             </div>
           </div>
           <div class="calendar-grid" id="calendar-grid" aria-live="polite">
@@ -1714,6 +1714,19 @@
           <p>公众号里的长文会逐步迁移到这里，按主题重新整理摘要、图表和关键结论。</p>
         </div>
         <div class="article-grid">
+          <article class="article-card">
+            <div class="article-topline">
+              <span>周中总结</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-10-07-midweek-bond-auction-ai.html">20261007周中总结和预测</a></h3>
+            <p>10Y 再上 5.3%，清濛关注长债拍卖和通胀预期，整理八只股票的支撑压力与黄金区间。</p>
+            <div class="tag-row">
+              <span class="tag">长债拍卖</span>
+              <span class="tag">通胀预期</span>
+              <span class="tag">股票技术位</span>
+            </div>
+          </article>
           <article class="article-card">
             <div class="article-topline">
               <span>下周剧本</span>
@@ -2155,10 +2168,10 @@
           </p>
           <div class="sync-highlight">
             <h3>最新同步</h3>
-            <p>2026-10-04：下周的疯狂时光美股预测和总结</p>
+            <p>2026-10-07：周中总结和预测</p>
             <div class="sync-actions">
-              <a class="button primary" href="articles/2026-10-04-ai-concentration-week.html">阅读网页版本</a>
-              <a class="button secondary" href="https://mp.weixin.qq.com/s/QrQ_fA2XQB-yFFjEKNCZLw" target="_blank" rel="noopener">打开公众号原文</a>
+              <a class="button primary" href="articles/2026-10-07-midweek-bond-auction-ai.html">阅读网页版本</a>
+              <a class="button secondary" href="https://mp.weixin.qq.com/s/wSYAl6Vi7Ofn_hKv-8jOHA" target="_blank" rel="noopener">打开公众号原文</a>
             </div>
           </div>
         </div>
@@ -2265,39 +2278,18 @@
     const RISK_HISTORY_KEY = "lemon-risk-history-v1";
     const marketCalendarEvents = [
       {
-        date: "2026-10-05",
-        type: "宏观",
-        title: "ISM 服务业 PMI，10:00 AM",
-        focus: "重点看就业与价格分项。数据过热会重新推高长债，温和扩张更有利于科技估值。",
-        tags: ["ISM", "服务业", "通胀", "10Y"]
-      },
-      {
-        date: "2026-10-06",
-        type: "宏观",
-        title: "美国国际贸易，8:30 AM",
-        focus: "8 月进出口数据将反映内需、外需与贸易缺口变化，并影响对经济增长韧性的判断。",
-        tags: ["贸易", "进口", "出口", "美元"]
-      },
-      {
-        date: "2026-10-07",
-        type: "Fed",
-        title: "FOMC 会议纪要，2:00 PM",
-        focus: "全周利率总开关。关注委员如何权衡就业降温、通胀和后续加息路径。",
-        tags: ["FOMC", "Fed", "10Y", "QQQ"]
-      },
-      {
-        date: "2026-10-07",
-        type: "财报",
-        title: "Applied Digital 财报，5:00 PM",
-        focus: "观察 AI 数据中心投产、长期租约、融资成本和现金流，判断高 CapEx 模式能否继续获得估值。",
-        tags: ["APLD", "AI数据中心", "CapEx", "现金流"]
+        date: "2026-10-08",
+        type: "产业",
+        title: "台积电 9 月月度营收，1:30 AM",
+        focus: "这是 AI 硬件需求的重要高频验证，重点观察先进制程和 AI 加速器需求是否继续扩散。",
+        tags: ["TSM", "AI芯片", "NVDA", "AMD"]
       },
       {
         date: "2026-10-08",
-        type: "产业",
-        title: "台积电 9 月月度营收",
-        focus: "这是 AI 硬件需求的重要高频验证，重点观察先进制程和 AI 加速器需求是否继续扩散。",
-        tags: ["TSM", "AI芯片", "NVDA", "AMD"]
+        type: "宏观",
+        title: "美国初请失业金，8:30 AM",
+        focus: "按周四常规发布时间跟踪就业变化。重点看初请与续请是否同时走高，以及长债如何反应。",
+        tags: ["初请", "就业", "10Y", "Fed"]
       },
       {
         date: "2026-10-08",
@@ -2305,6 +2297,20 @@
         title: "美国批发贸易，10:00 AM",
         focus: "销售与库存关系将补充判断企业需求和库存周期，数据失衡可能影响增长预期。",
         tags: ["批发库存", "销售", "经济周期"]
+      },
+      {
+        date: "2026-10-08",
+        type: "美债",
+        title: "220 亿美元 30 年期拍卖，1:00 PM",
+        focus: "财政部已公告长债续发行。观察投标倍数、中标收益率与间接投标人承接，判断科技股的利率压力能否缓和。",
+        tags: ["30Y", "长债需求", "10Y", "科技估值"]
+      },
+      {
+        date: "2026-10-09",
+        type: "宏观",
+        title: "密歇根消费者信心初值，10:00 AM",
+        focus: "官方确认 10 月初值在周五公布。重点看一年期与长期通胀预期，数据落地后再观察长债与科技股的反应。",
+        tags: ["消费者信心", "通胀预期", "10Y", "QQQ"]
       },
       {
         date: "2026-10-09",
@@ -2672,7 +2678,9 @@
       const status = document.getElementById("calendar-status");
       if (!grid) return;
 
-      const events = marketCalendarEvents.slice().sort(function(a, b) {
+      const events = marketCalendarEvents.filter(function(event) {
+        return eventSortRank(event) !== 2;
+      }).sort(function(a, b) {
         const rankDiff = eventSortRank(a) - eventSortRank(b);
         if (rankDiff !== 0) return rankDiff;
         const aDate = eventDateValue(a);
@@ -2699,9 +2707,9 @@
             </div>
           </article>
         `;
-      }).join("");
+      }).join("") || '<p class="event-card">近期事件已结束，等待下一次日历更新。</p>';
 
-      if (status) status.textContent = "已加载 " + events.length + " 个下周重点事件 · 手动维护";
+      if (status) status.textContent = "已加载 " + events.length + " 个近期重点事件 · 手动维护";
     }
 
     function fetchStockSnapshot() {
