@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-09T18:39:28+00:00",
+  "updatedAt": "2026-10-09T19:31:49+00:00",
   "source": "Yahoo Finance chart endpoint",
   "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart",
   "symbols": [
@@ -11,12 +11,12 @@
       "currency": "USD",
       "date": "2026-10-09",
       "open": 7786.36,
-      "high": 7814.33,
+      "high": 7820.57,
       "low": 7779.34,
-      "close": 7812.12,
-      "volume": 1593542000,
-      "change": 46.76,
-      "changePercent": 0.6
+      "close": 7816.13,
+      "volume": 1832726000,
+      "change": 50.77,
+      "changePercent": 0.65
     },
     {
       "symbol": "SPY",
@@ -26,12 +26,12 @@
       "currency": "USD",
       "date": "2026-10-09",
       "open": 776.24,
-      "high": 778.78,
+      "high": 779.42,
       "low": 775.14,
-      "close": 778.52,
-      "volume": 12820034,
-      "change": 4.59,
-      "changePercent": 0.59
+      "close": 778.93,
+      "volume": 15748124,
+      "change": 5.0,
+      "changePercent": 0.65
     },
     {
       "symbol": "QQQ",
@@ -43,10 +43,10 @@
       "open": 752.55,
       "high": 752.86,
       "low": 748.36,
-      "close": 751.06,
-      "volume": 13655729,
-      "change": 3.48,
-      "changePercent": 0.47
+      "close": 751.43,
+      "volume": 15958908,
+      "change": 3.85,
+      "changePercent": 0.51
     },
     {
       "symbol": "SPCX",
@@ -57,11 +57,11 @@
       "date": "2026-10-09",
       "open": 165.34,
       "high": 166.38,
-      "low": 160.77,
-      "close": 161.13,
-      "volume": 74750101,
-      "change": 0.56,
-      "changePercent": 0.35
+      "low": 160.61,
+      "close": 161.75,
+      "volume": 82116009,
+      "change": 1.18,
+      "changePercent": 0.73
     },
     {
       "symbol": "MU",
@@ -73,10 +73,10 @@
       "open": 1052.51,
       "high": 1053.58,
       "low": 1017.0,
-      "close": 1033.18,
-      "volume": 14589282,
-      "change": -2.66,
-      "changePercent": -0.26
+      "close": 1027.43,
+      "volume": 16300520,
+      "change": -8.41,
+      "changePercent": -0.81
     },
     {
       "symbol": "NVDA",
@@ -88,10 +88,10 @@
       "open": 233.88,
       "high": 233.89,
       "low": 229.11,
-      "close": 229.54,
-      "volume": 55645088,
-      "change": -0.94,
-      "changePercent": -0.41
+      "close": 229.79,
+      "volume": 64142347,
+      "change": -0.69,
+      "changePercent": -0.3
     },
     {
       "symbol": "AAPL",
@@ -101,12 +101,12 @@
       "currency": "USD",
       "date": "2026-10-09",
       "open": 331.79,
-      "high": 336.86,
+      "high": 338.61,
       "low": 330.7,
-      "close": 336.8,
-      "volume": 25247048,
-      "change": -3.62,
-      "changePercent": -1.06
+      "close": 337.18,
+      "volume": 29037372,
+      "change": -3.24,
+      "changePercent": -0.95
     },
     {
       "symbol": "MSFT",
@@ -116,12 +116,12 @@
       "currency": "USD",
       "date": "2026-10-09",
       "open": 528.23,
-      "high": 535.5,
+      "high": 537.2,
       "low": 526.24,
-      "close": 535.17,
-      "volume": 9935209,
-      "change": 12.57,
-      "changePercent": 2.4
+      "close": 535.34,
+      "volume": 12435959,
+      "change": 12.73,
+      "changePercent": 2.44
     },
     {
       "symbol": "GOOGL",
@@ -133,10 +133,10 @@
       "open": 351.45,
       "high": 354.7,
       "low": 350.31,
-      "close": 351.42,
-      "volume": 10822143,
-      "change": 3.13,
-      "changePercent": 0.9
+      "close": 351.28,
+      "volume": 11828892,
+      "change": 2.99,
+      "changePercent": 0.86
     },
     {
       "symbol": "AMZN",
@@ -146,12 +146,12 @@
       "currency": "USD",
       "date": "2026-10-09",
       "open": 256.3,
-      "high": 261.64,
+      "high": 261.98,
       "low": 256.0,
-      "close": 261.02,
-      "volume": 22057850,
-      "change": 6.96,
-      "changePercent": 2.74
+      "close": 261.77,
+      "volume": 24509649,
+      "change": 7.71,
+      "changePercent": 3.04
     },
     {
       "symbol": "META",
@@ -163,10 +163,10 @@
       "open": 726.42,
       "high": 728.07,
       "low": 716.21,
-      "close": 718.26,
-      "volume": 9033989,
-      "change": -2.63,
-      "changePercent": -0.36
+      "close": 719.23,
+      "volume": 9971696,
+      "change": -1.66,
+      "changePercent": -0.23
     },
     {
       "symbol": "TSLA",
@@ -178,10 +178,10 @@
       "open": 382.38,
       "high": 388.56,
       "low": 379.71,
-      "close": 384.41,
-      "volume": 31655739,
-      "change": 9.41,
-      "changePercent": 2.51
+      "close": 384.1,
+      "volume": 33749025,
+      "change": 9.1,
+      "changePercent": 2.43
     },
     {
       "symbol": "AMD",
@@ -193,10 +193,10 @@
       "open": 625.54,
       "high": 626.5,
       "low": 608.9,
-      "close": 611.64,
-      "volume": 9976033,
-      "change": -9.04,
-      "changePercent": -1.46
+      "close": 609.7,
+      "volume": 10925279,
+      "change": -10.98,
+      "changePercent": -1.77
     },
     {
       "symbol": "AVGO",
@@ -207,11 +207,11 @@
       "date": "2026-10-09",
       "open": 365.59,
       "high": 366.63,
-      "low": 361.62,
-      "close": 361.97,
-      "volume": 11476583,
-      "change": 1.83,
-      "changePercent": 0.51
+      "low": 361.46,
+      "close": 362.62,
+      "volume": 12438196,
+      "change": 2.48,
+      "changePercent": 0.69
     },
     {
       "symbol": "PLTR",
@@ -221,12 +221,12 @@
       "currency": "USD",
       "date": "2026-10-09",
       "open": 201.06,
-      "high": 206.5,
+      "high": 207.94,
       "low": 198.3,
-      "close": 206.31,
-      "volume": 23883291,
-      "change": 7.53,
-      "changePercent": 3.79
+      "close": 207.91,
+      "volume": 27618418,
+      "change": 9.13,
+      "changePercent": 4.6
     },
     {
       "symbol": "TSM",
@@ -238,10 +238,10 @@
       "open": 464.21,
       "high": 464.83,
       "low": 449.75,
-      "close": 451.5,
-      "volume": 6805807,
-      "change": -6.49,
-      "changePercent": -1.42
+      "close": 451.69,
+      "volume": 7398953,
+      "change": -6.3,
+      "changePercent": -1.38
     }
   ]
 }
