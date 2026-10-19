@@ -1607,26 +1607,26 @@
         <div class="calendar-board">
           <div class="calendar-head">
             <div>
-              <strong>10/12 - 10/16 CPI 与财报周</strong>
-              <p>OCP 大会、银行财报、CPI、PPI、零售销售与 ASML / TSMC 财报接力，周五观察进口出口物价和周线资金方向。时间均为美东时间。<a href="articles/2026-10-11-cpi-earnings-week.html#event-sources">查看日程来源</a></p>
+              <strong>10/19 - 10/23 科技财报与修复验证周</strong>
+              <p>Netflix、META、TSLA、LRCX 与 WDC 财报接力，周五关注 PMI 与密歇根消费信心终值。时间均为美东时间。<a href="articles/2026-10-18-earnings-rebound-outlook.html#event-sources">查看日程来源</a></p>
             </div>
             <div class="calendar-status" id="calendar-status">等待日历渲染</div>
           </div>
           <div class="calendar-focus-grid" aria-label="本周三大观察重点">
             <div class="calendar-focus-card">
-              <span>Inflation Gate</span>
-              <strong>10/14 CPI</strong>
-              <p>8:30 AM，重点看核心通胀与 10Y 反应；原文观察线为 5.18% 和 5.36%。</p>
+              <span>Market Gate</span>
+              <strong>10/19 反弹广度</strong>
+              <p>观察反弹是否从少数 AI 权重扩散到更多股票，并跟踪亚洲科技股与长债。</p>
             </div>
             <div class="calendar-focus-card">
               <span>Earnings Gate</span>
-              <strong>10/13 - 10/15 银行与半导体</strong>
-              <p>JPM、C、WFC、GS 开启银行财报周，随后看 ASML 和 TSMC 的订单、资本开支与指引。</p>
+              <strong>10/21 META / TSLA / LRCX</strong>
+              <p>三家公司盘后交卷，重点看利润率、资本开支、订单与财报后的资金承接。</p>
             </div>
             <div class="calendar-focus-card">
-              <span>Demand Gate</span>
-              <strong>10/15 PPI 与零售销售</strong>
-              <p>8:30 AM，生产端物价与消费需求同时发布，观察通胀压力和增长韧性。</p>
+              <span>Inflation Gate</span>
+              <strong>10/23 密大终值</strong>
+              <p>10:00 AM，消费者信心与通胀预期终值公布，观察对长债和黄金的影响。</p>
             </div>
           </div>
           <div class="calendar-grid" id="calendar-grid" aria-live="polite">
@@ -1714,6 +1714,18 @@
           <p>公众号里的长文会逐步迁移到这里，按主题重新整理摘要、图表和关键结论。</p>
         </div>
         <div class="article-grid">
+          <article class="article-card">
+            <div class="article-topline"><span>下周展望</span><span>已同步</span></div>
+            <h3><a href="articles/2026-10-18-earnings-rebound-outlook.html">20261018上周预警的大屠杀，这周美股能涨回来吗？</a></h3>
+            <p>急跌后是修复还是反转？清濛关注科技财报、反弹广度与长债，整理六只股票和黄金的支撑压力。</p>
+            <div class="tag-row"><span class="tag">科技财报</span><span class="tag">反弹广度</span><span class="tag">黄金</span></div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline"><span>周中总结</span><span>已同步</span></div>
+            <h3><a href="articles/2026-10-14-cpi-ai-financing-selloff.html">20261014这周是美股大屠杀吗？</a></h3>
+            <p>CPI 与 AI 融资压力下的回撤，保留七只股票的盘后参考价、黄金区间与当时的未来 48 小时观察。</p>
+            <div class="tag-row"><span class="tag">CPI</span><span class="tag">AI融资</span><span class="tag">盘后技术位</span></div>
+          </article>
           <article class="article-card">
             <div class="article-topline">
               <span>下周预测</span>
@@ -2181,10 +2193,10 @@
           </p>
           <div class="sync-highlight">
             <h3>最新同步</h3>
-            <p>2026-10-11：下周美股预测之CPI来了</p>
+            <p>2026-10-18：上周预警的大屠杀，这周美股能涨回来吗？</p>
             <div class="sync-actions">
-              <a class="button primary" href="articles/2026-10-11-cpi-earnings-week.html">阅读网页版本</a>
-              <a class="button secondary" href="https://mp.weixin.qq.com/s/3Wg6Zju3dfGtyhHf8QKqWg" target="_blank" rel="noopener">打开公众号原文</a>
+              <a class="button primary" href="articles/2026-10-18-earnings-rebound-outlook.html">阅读网页版本</a>
+              <a class="button secondary" href="https://mp.weixin.qq.com/s/uijO-GBu6car3J4JHxWs1g" target="_blank" rel="noopener">打开公众号原文</a>
             </div>
           </div>
         </div>
@@ -2291,74 +2303,60 @@
     const RISK_HISTORY_KEY = "lemon-risk-history-v1";
     const marketCalendarEvents = [
       {
-        date: "2026-10-12",
-        type: "交易安排",
-        title: "美股正常交易，美债休市",
-        focus: "哥伦布日美股正常开市；SIFMA 建议美国债券市场休市，观察假期流动性对盘面的影响。",
-        tags: ["Columbus Day", "美股开市", "美债休市"]
-      },
-      {
-        date: "2026-10-12",
-        type: "产业",
-        title: "OCP Global Summit 开幕",
-        focus: "大会持续至 10/15，关注 AI 数据中心、开放计算、网络与光互连基础设施的产业进展。",
-        tags: ["OCP", "NVDA", "MRVL", "LITE"]
-      },
-      {
-        date: "2026-10-13",
-        type: "财报",
-        title: "JPM、C、WFC、GS 银行财报",
-        focus: "JPM 与 WFC 约 7:00 AM 发布业绩，JPM 8:30 AM 电话会。关注净利息收入、信贷质量与资本市场业务表现。",
-        tags: ["JPM", "C", "WFC", "GS"]
-      },
-      {
-        date: "2026-10-14",
-        type: "财报",
-        title: "ASML 第三季度财报",
-        focus: "关注新增订单、先进制程设备需求与后续指引，结合当天 CPI 和长债走势观察半导体反应。",
-        tags: ["ASML", "半导体设备", "订单", "资本开支"]
-      },
-      {
-        date: "2026-10-14",
-        type: "宏观",
-        title: "美国 CPI 与核心 CPI，8:30 AM",
-        focus: "美国 9 月消费物价公布。原文以 10Y 跌破 5.18% 或升至 5.36% 作为半导体走势的观察条件，数据落地后看利率与股价反应。",
-        tags: ["CPI", "核心通胀", "10Y", "半导体"]
-      },
-      {
-        date: "2026-10-15",
-        type: "财报",
-        title: "TSMC 第三季度财报电话会，2:00 AM",
-        focus: "台湾时间 14:00 举行电话会。关注先进制程、AI 需求、毛利率与资本开支，并观察财报后是否出现高开低走。",
-        tags: ["TSM", "NVDA", "AMD", "AI芯片"]
-      },
-      {
-        date: "2026-10-15",
-        type: "宏观",
-        title: "美国 PPI，8:30 AM",
-        focus: "美国 9 月生产者物价公布，与 CPI 对照观察成本压力是否向消费端传导，以及长债收益率如何定价。",
-        tags: ["PPI", "生产成本", "通胀", "10Y"]
-      },
-      {
-        date: "2026-10-15",
-        type: "宏观",
-        title: "美国零售销售，8:30 AM",
-        focus: "美国 9 月零售销售公布。关注消费需求与核心销售表现，判断增长韧性和通胀压力是否同时存在。",
-        tags: ["零售销售", "消费", "经济增长"]
-      },
-      {
-        date: "2026-10-16",
-        type: "宏观",
-        title: "美国进口与出口物价，8:30 AM",
-        focus: "美国 9 月进口与出口物价指数公布，补充观察外部价格压力与通胀趋势。",
-        tags: ["进口物价", "出口物价", "通胀", "美元"]
-      },
-      {
-        date: "2026-10-16",
+        date: "2026-10-19",
         type: "盘面观察",
-        title: "周线资金方向与财报后走势",
-        focus: "这是原文的盘面观察项目。周五收盘后结合指数、半导体和黄金的周线表现，复盘资金方向与财报兑现情况。",
-        tags: ["周线", "资金方向", "半导体", "黄金"]
+        title: "反弹广度与亚洲科技股",
+        focus: "原文盘面观察：看反弹能否从 AI 权重扩散，结合亚洲科技股、油价和长债判断修复质量。",
+        tags: ["反弹广度", "AI", "亚洲科技", "10Y"]
+      },
+      {
+        date: "2026-10-20",
+        type: "财报",
+        title: "Netflix 财报，盘后",
+        focus: "公司约 4:01 PM 发布业绩，4:45 PM 举行业绩访谈。观察增长、利润率与业绩落地后的资金反应。",
+        tags: ["NFLX", "财报", "利润率", "消费"]
+      },
+      {
+        date: "2026-10-21",
+        type: "财报",
+        title: "Meta 财报，盘后",
+        focus: "公司 4:30 PM 电话会，重点看广告增长、AI 投入、资本开支和自由现金流。",
+        tags: ["META", "AI", "CapEx", "现金流"]
+      },
+      {
+        date: "2026-10-21",
+        type: "财报",
+        title: "Lam Research 财报电话会，5:00 PM",
+        focus: "设备链重要验证，观察订单、存储相关投入与后续指引，以及对 MU 和半导体板块的映射。",
+        tags: ["LRCX", "半导体设备", "MU", "订单"]
+      },
+      {
+        date: "2026-10-21",
+        type: "财报",
+        title: "Tesla 财报，盘后",
+        focus: "公司 5:30 PM 举行业绩问答，关注汽车利润率、储能、AI 投入及现金流。",
+        tags: ["TSLA", "储能", "AI", "利润率"]
+      },
+      {
+        date: "2026-10-22",
+        type: "财报",
+        title: "Western Digital 财报，盘后",
+        focus: "公司 4:30 PM 电话会。观察数据中心存储需求、毛利率与指引，判断存储链能否承接反弹。",
+        tags: ["WDC", "存储", "数据中心", "MU"]
+      },
+      {
+        date: "2026-10-23",
+        type: "宏观",
+        title: "美国 PMI 初值（原文日程）",
+        focus: "原文列为周五重点，具体发布安排以 S&P Global 日历为准。观察增长与价格分项对利率预期的影响。",
+        tags: ["PMI", "经济增长", "价格", "10Y"]
+      },
+      {
+        date: "2026-10-23",
+        type: "宏观",
+        title: "密歇根消费信心终值，10:00 AM",
+        focus: "官方日程已确认。关注一年期与长期通胀预期，并结合 10Y、美元和黄金判断市场定价。",
+        tags: ["消费者信心", "通胀预期", "10Y", "黄金"]
       }
     ];
     let liveStockTimer = null;
