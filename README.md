@@ -36,6 +36,7 @@ py scripts/update_stock_data.py
 
 当前已添加：
 
+- `articles/2026-10-21-midweek-tech-earnings-volatility.html`
 - `articles/2026-10-18-earnings-rebound-outlook.html`
 - `articles/2026-10-14-cpi-ai-financing-selloff.html`
 - `articles/2026-10-11-cpi-earnings-week.html`
