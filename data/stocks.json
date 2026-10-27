@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-27T18:33:51+00:00",
+  "updatedAt": "2026-10-27T19:25:45+00:00",
   "source": "Yahoo Finance chart endpoint",
   "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart",
   "symbols": [
@@ -13,10 +13,10 @@
       "open": 7699.47,
       "high": 7736.06,
       "low": 7677.16,
-      "close": 7716.86,
-      "volume": 1513763000,
-      "change": 40.09,
-      "changePercent": 0.52
+      "close": 7728.34,
+      "volume": 1746023000,
+      "change": 51.57,
+      "changePercent": 0.67
     },
     {
       "symbol": "SPY",
@@ -28,10 +28,10 @@
       "open": 767.34,
       "high": 771.07,
       "low": 765.21,
-      "close": 769.15,
-      "volume": 15380342,
-      "change": 3.78,
-      "changePercent": 0.49
+      "close": 770.27,
+      "volume": 17645765,
+      "change": 4.9,
+      "changePercent": 0.64
     },
     {
       "symbol": "QQQ",
@@ -43,10 +43,10 @@
       "open": 715.1,
       "high": 722.72,
       "low": 713.59,
-      "close": 720.48,
-      "volume": 20967278,
-      "change": 8.28,
-      "changePercent": 1.16
+      "close": 721.66,
+      "volume": 23550861,
+      "change": 9.46,
+      "changePercent": 1.33
     },
     {
       "symbol": "SPCX",
@@ -58,10 +58,10 @@
       "open": 147.49,
       "high": 151.35,
       "low": 146.63,
-      "close": 149.74,
-      "volume": 71233974,
-      "change": 2.84,
-      "changePercent": 1.93
+      "close": 149.56,
+      "volume": 76682629,
+      "change": 2.66,
+      "changePercent": 1.81
     },
     {
       "symbol": "MU",
@@ -71,12 +71,12 @@
       "currency": "USD",
       "date": "2026-10-27",
       "open": 921.31,
-      "high": 933.74,
+      "high": 934.28,
       "low": 910.67,
-      "close": 931.51,
-      "volume": 13124688,
-      "change": 27.81,
-      "changePercent": 3.08
+      "close": 932.05,
+      "volume": 14276855,
+      "change": 28.35,
+      "changePercent": 3.14
     },
     {
       "symbol": "NVDA",
@@ -88,10 +88,10 @@
       "open": 218.3,
       "high": 219.19,
       "low": 215.53,
-      "close": 217.54,
-      "volume": 53202903,
-      "change": 1.54,
-      "changePercent": 0.71
+      "close": 217.55,
+      "volume": 58509620,
+      "change": 1.55,
+      "changePercent": 0.72
     },
     {
       "symbol": "AAPL",
@@ -103,10 +103,10 @@
       "open": 343.17,
       "high": 347.78,
       "low": 342.39,
-      "close": 345.53,
-      "volume": 17533644,
-      "change": 1.62,
-      "changePercent": 0.47
+      "close": 346.93,
+      "volume": 21226200,
+      "change": 3.02,
+      "changePercent": 0.88
     },
     {
       "symbol": "MSFT",
@@ -118,10 +118,10 @@
       "open": 532.35,
       "high": 534.7,
       "low": 528.33,
-      "close": 530.59,
-      "volume": 9661399,
-      "change": -2.01,
-      "changePercent": -0.38
+      "close": 532.44,
+      "volume": 10878751,
+      "change": -0.16,
+      "changePercent": -0.03
     },
     {
       "symbol": "GOOGL",
@@ -131,12 +131,12 @@
       "currency": "USD",
       "date": "2026-10-27",
       "open": 316.98,
-      "high": 323.2,
+      "high": 323.75,
       "low": 316.9,
-      "close": 321.65,
-      "volume": 16884301,
-      "change": 4.85,
-      "changePercent": 1.53
+      "close": 323.5,
+      "volume": 19444347,
+      "change": 6.7,
+      "changePercent": 2.11
     },
     {
       "symbol": "AMZN",
@@ -146,12 +146,12 @@
       "currency": "USD",
       "date": "2026-10-27",
       "open": 250.35,
-      "high": 254.23,
+      "high": 254.67,
       "low": 248.71,
-      "close": 254.01,
-      "volume": 19504976,
-      "change": 4.92,
-      "changePercent": 1.98
+      "close": 254.49,
+      "volume": 22651369,
+      "change": 5.4,
+      "changePercent": 2.17
     },
     {
       "symbol": "META",
@@ -163,10 +163,10 @@
       "open": 627.03,
       "high": 628.46,
       "low": 621.36,
-      "close": 622.72,
-      "volume": 31810230,
-      "change": -7.84,
-      "changePercent": -1.24
+      "close": 622.88,
+      "volume": 35232417,
+      "change": -7.68,
+      "changePercent": -1.22
     },
     {
       "symbol": "TSLA",
@@ -176,12 +176,12 @@
       "currency": "USD",
       "date": "2026-10-27",
       "open": 397.8,
-      "high": 407.5,
+      "high": 408.43,
       "low": 395.25,
-      "close": 405.84,
-      "volume": 32879523,
-      "change": 14.22,
-      "changePercent": 3.63
+      "close": 408.06,
+      "volume": 36439089,
+      "change": 16.44,
+      "changePercent": 4.2
     },
     {
       "symbol": "AMD",
@@ -193,10 +193,10 @@
       "open": 539.49,
       "high": 561.31,
       "low": 538.5,
-      "close": 560.02,
-      "volume": 13453002,
-      "change": 28.74,
-      "changePercent": 5.41
+      "close": 559.4,
+      "volume": 14537881,
+      "change": 28.12,
+      "changePercent": 5.29
     },
     {
       "symbol": "AVGO",
@@ -209,7 +209,7 @@
       "high": 345.67,
       "low": 336.87,
       "close": 342.36,
-      "volume": 14948507,
+      "volume": 16298898,
       "change": 13.18,
       "changePercent": 4.01
     },
@@ -223,10 +223,10 @@
       "open": 198.02,
       "high": 201.83,
       "low": 196.79,
-      "close": 199.57,
-      "volume": 10260034,
-      "change": 0.73,
-      "changePercent": 0.36
+      "close": 200.62,
+      "volume": 11392368,
+      "change": 1.78,
+      "changePercent": 0.9
     },
     {
       "symbol": "TSM",
@@ -238,10 +238,10 @@
       "open": 427.16,
       "high": 438.49,
       "low": 426.0,
-      "close": 437.25,
-      "volume": 5968990,
-      "change": 12.88,
-      "changePercent": 3.04
+      "close": 437.45,
+      "volume": 6514968,
+      "change": 13.08,
+      "changePercent": 3.08
     }
   ]
 }
