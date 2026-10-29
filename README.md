@@ -36,6 +36,7 @@ py scripts/update_stock_data.py
 
 当前已添加：
 
+- `articles/2026-10-28-midweek-rates-ai-earnings.html`
 - `articles/2026-10-25-fomc-earnings-gap-up-fade.html`
 - `articles/2026-10-21-midweek-tech-earnings-volatility.html`
 - `articles/2026-10-18-earnings-rebound-outlook.html`

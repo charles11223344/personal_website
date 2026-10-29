@@ -1607,26 +1607,26 @@
         <div class="calendar-board">
           <div class="calendar-head">
             <div>
-              <strong>10/26 - 10/30 央行决议与科技财报周</strong>
-              <p>加拿大央行、FOMC、欧洲央行决议接力，叠加 GDP/PCE、就业成本与科技、存储财报。时间均为美东时间。<a href="articles/2026-10-25-fomc-earnings-gap-up-fade.html#event-sources">查看日程来源</a></p>
+              <strong>10/29 - 10/30 增长、通胀与财报接力</strong>
+              <p>GDP/PCE、欧洲与日本央行、科技和能源财报接力，周五再看就业成本与芝加哥 PMI。时间为美东时间，日本央行另注日本日期。<a href="articles/2026-10-28-midweek-rates-ai-earnings.html#event-sources">查看日程来源</a></p>
             </div>
             <div class="calendar-status" id="calendar-status">等待日历渲染</div>
           </div>
-          <div class="calendar-focus-grid" aria-label="下周三大观察重点">
+          <div class="calendar-focus-grid" aria-label="未来两天三大观察重点">
             <div class="calendar-focus-card">
-              <span>Rates Gate</span>
-              <strong>10/28 加拿大央行 / Fed</strong>
-              <p>9:45 AM 加拿大央行，2:00 PM FOMC 决议，2:30 PM 美联储记者会。</p>
+              <span>Macro Gate</span>
+              <strong>10/29 GDP / PCE / ECB</strong>
+              <p>8:30 AM 美国数据，9:15 AM 欧洲央行决议，关注通胀与长债反应。</p>
             </div>
             <div class="calendar-focus-card">
               <span>Earnings Gate</span>
-              <strong>10/28-29 科技财报</strong>
-              <p>微软、谷歌先交卷，亚马逊、闪迪、英特尔接棒；观察利好后是否高开低走。</p>
+              <strong>10/29 财报密集日</strong>
+              <p>盘前 PWR、LLY，盘后 AMZN、INTC、SNDK、COIN，观察盈利与现金流。</p>
             </div>
             <div class="calendar-focus-card">
               <span>Inflation Gate</span>
-              <strong>10/29 GDP / PCE</strong>
-              <p>8:30 AM 增长与通胀数据同场公布，周五再看就业成本指数和长债。</p>
+              <strong>10/30 ECI / 芝加哥 PMI</strong>
+              <p>8:30 AM 就业成本、9:45 AM 芝加哥 PMI，同时跟踪日本央行和能源财报。</p>
             </div>
           </div>
           <div class="calendar-grid" id="calendar-grid" aria-live="polite">
@@ -1714,6 +1714,12 @@
           <p>公众号里的长文会逐步迁移到这里，按主题重新整理摘要、图表和关键结论。</p>
         </div>
         <div class="article-grid">
+          <article class="article-card">
+            <div class="article-topline"><span>周中总结</span><span>已同步</span></div>
+            <h3><a href="articles/2026-10-28-midweek-rates-ai-earnings.html">20261028周中总结和预测</a></h3>
+            <p>利率与 AI 财报带来分化，清濛观察微软、谷歌和 VRT，整理七只股票的技术位、黄金区间与未来两天大事记。</p>
+            <div class="tag-row"><span class="tag">AI财报</span><span class="tag">利率与融资</span><span class="tag">黄金</span></div>
+          </article>
           <article class="article-card">
             <div class="article-topline"><span>下周展望</span><span>已同步</span></div>
             <h3><a href="articles/2026-10-25-fomc-earnings-gap-up-fade.html">20261025美股下周走势之高开低走</a></h3>
@@ -2205,10 +2211,10 @@
           </p>
           <div class="sync-highlight">
             <h3>最新同步</h3>
-            <p>2026-10-25：美股下周走势之高开低走</p>
+            <p>2026-10-28：周中总结和预测</p>
             <div class="sync-actions">
-              <a class="button primary" href="articles/2026-10-25-fomc-earnings-gap-up-fade.html">阅读网页版本</a>
-              <a class="button secondary" href="https://mp.weixin.qq.com/s/mW6yYEu_wrH83Y81iPpp7A" target="_blank" rel="noopener">打开公众号原文</a>
+              <a class="button primary" href="articles/2026-10-28-midweek-rates-ai-earnings.html">阅读网页版本</a>
+              <a class="button secondary" href="https://mp.weixin.qq.com/s/zPvFMMYud9IYhhXGwHqQQw" target="_blank" rel="noopener">打开公众号原文</a>
             </div>
           </div>
         </div>
@@ -2315,53 +2321,18 @@
     const RISK_HISTORY_KEY = "lemon-risk-history-v1";
     const marketCalendarEvents = [
       {
-        date: "2026-10-26",
-        type: "盘面观察",
-        title: "QQQ 开盘与反弹承接",
-        focus: "原文盘面观察：关注夜盘反弹后能否守住涨幅，以及中东局势、油价和长债对科技股的影响。",
-        tags: ["QQQ", "反弹承接", "油价", "10Y"]
-      },
-      {
-        date: "2026-10-27",
+        date: "2026-10-29",
         type: "宏观",
-        title: "耐用品订单与消费者信心",
-        focus: "耐用品订单 8:30 AM、消费者信心 10:00 AM。观察企业投入、消费预期及增长与利率的定价。",
-        tags: ["耐用品", "消费者信心", "需求", "10Y"]
-      },
-      {
-        date: "2026-10-27",
-        type: "财报",
-        title: "Seagate 财报，盘后",
-        focus: "公司 5:00 PM 电话会。重点看数据中心存储需求、毛利率、订单与后续指引。",
-        tags: ["STX", "存储", "数据中心", "指引"]
-      },
-      {
-        date: "2026-10-28",
-        type: "央行",
-        title: "加拿大央行决议，9:45 AM",
-        focus: "同时发布货币政策报告，10:30 AM 记者会。关注利率路径、通胀判断与加元反应。",
-        tags: ["BoC", "利率", "加元", "通胀"]
-      },
-      {
-        date: "2026-10-28",
-        type: "Fed",
-        title: "FOMC 决议，2:00 PM",
-        focus: "2:30 PM 举行记者会。观察政策措辞与后续利率路径，结合长债、美元和科技股反应判断风险偏好。",
-        tags: ["FOMC", "Fed", "10Y", "QQQ"]
-      },
-      {
-        date: "2026-10-28",
-        type: "财报",
-        title: "微软与 Alphabet 财报，盘后",
-        focus: "Alphabet 4:30 PM 电话会。重点看 Azure、Google Cloud、AI 资本开支与现金流，并观察利好后的股价承接。",
-        tags: ["MSFT", "GOOGL", "CapEx", "现金流"]
+        title: "GDP 初值、PCE 与初请，8:30 AM",
+        focus: "第三季度 GDP 初值与 9 月 PCE 同场发布，并按常规时间跟踪初请失业金。观察增长、核心通胀及长债反应。",
+        tags: ["GDP", "PCE", "初请", "10Y"]
       },
       {
         date: "2026-10-29",
-        type: "宏观",
-        title: "GDP 初值与 PCE，8:30 AM",
-        focus: "第三季度 GDP 初值、9 月个人收入与支出（含 PCE）同场发布，关注增长韧性、核心通胀与长债反应。",
-        tags: ["GDP", "PCE", "核心通胀", "10Y"]
+        type: "财报",
+        title: "PWR、LLY 财报，盘前",
+        focus: "PWR 9:00 AM、LLY 10:00 AM 电话会，分别观察电力设备需求与医药盈利、后续指引。",
+        tags: ["PWR", "LLY", "电力设备", "盈利"]
       },
       {
         date: "2026-10-29",
@@ -2373,16 +2344,17 @@
       {
         date: "2026-10-29",
         type: "财报",
-        title: "亚马逊、闪迪、英特尔财报，盘后",
-        focus: "闪迪 4:30 PM、亚马逊和英特尔 5:00 PM 电话会。关注 AWS、存储定价、毛利率与资本开支。",
-        tags: ["AMZN", "SNDK", "INTC", "AI"]
+        title: "AMZN、INTC、SNDK、COIN 财报，盘后",
+        focus: "SNDK 4:30 PM，AMZN、INTC、COIN 5:00 PM 电话会或问答。关注 AWS、存储定价、利润率与交易业务。",
+        tags: ["AMZN", "INTC", "SNDK", "COIN"]
       },
       {
         date: "2026-10-30",
-        type: "财报",
-        title: "埃克森美孚财报，6:30 AM",
-        focus: "9:30 AM 财报电话会。观察油气价格、现金流和资本分配，结合地缘风险判断能源股走势。",
-        tags: ["XOM", "能源", "油价", "现金流"]
+        dateLabel: "10/30（日本日期）",
+        type: "央行",
+        title: "日本央行决议，发布时间待定",
+        focus: "会议在日本时间 10/29-30 举行。日本比美东快 13 小时，留意美东周四夜间至周五的公告及日元、全球利率反应。",
+        tags: ["BoJ", "日元", "利率", "日本日期"]
       },
       {
         date: "2026-10-30",
@@ -2390,6 +2362,20 @@
         title: "就业成本指数，8:30 AM",
         focus: "第三季度工资与福利成本数据公布，关注薪资通胀黏性及对后续加息预期的影响。",
         tags: ["ECI", "工资", "通胀", "Fed"]
+      },
+      {
+        date: "2026-10-30",
+        type: "宏观",
+        title: "芝加哥 PMI，9:45 AM",
+        focus: "按经济发布日历跟踪商业活动与价格压力，结合就业成本指数观察长债和风险资产反应。",
+        tags: ["芝加哥PMI", "商业活动", "价格", "10Y"]
+      },
+      {
+        date: "2026-10-30",
+        type: "财报",
+        title: "XOM、CVX、CCJ 财报",
+        focus: "XOM 6:30 AM 发布业绩、9:30 AM 电话会，CCJ 8:00 AM 电话会。观察能源价格、核电需求与现金流。",
+        tags: ["XOM", "CVX", "CCJ", "能源"]
       }
     ];
     let liveStockTimer = null;
