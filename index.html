@@ -1607,26 +1607,26 @@
         <div class="calendar-board">
           <div class="calendar-head">
             <div>
-              <strong>10/29 - 10/30 增长、通胀与财报接力</strong>
-              <p>GDP/PCE、欧洲与日本央行、科技和能源财报接力，周五再看就业成本与芝加哥 PMI。时间为美东时间，日本央行另注日本日期。<a href="articles/2026-10-28-midweek-rates-ai-earnings.html#event-sources">查看日程来源</a></p>
+              <strong>11/2 - 11/6 中期选举、AMD 与非农周</strong>
+              <p>中期选举、财政部融资安排与 AI 财报接力，周五非农检验就业和利率预期。时间均为美东时间（ET）。<a href="articles/2026-11-01-election-amd-jobs-week.html#event-sources">查看日程来源</a></p>
             </div>
             <div class="calendar-status" id="calendar-status">等待日历渲染</div>
           </div>
-          <div class="calendar-focus-grid" aria-label="未来两天三大观察重点">
+          <div class="calendar-focus-grid" aria-label="本周三大观察重点">
             <div class="calendar-focus-card">
-              <span>Macro Gate</span>
-              <strong>10/29 GDP / PCE / ECB</strong>
-              <p>8:30 AM 美国数据，9:15 AM 欧洲央行决议，关注通胀与长债反应。</p>
+              <span>Policy Gate</span>
+              <strong>11/3 选举 / 11/4 再融资</strong>
+              <p>中期选举与财政部季度再融资安排，观察政策预期、长债和美元反应。</p>
             </div>
             <div class="calendar-focus-card">
               <span>Earnings Gate</span>
-              <strong>10/29 财报密集日</strong>
-              <p>盘前 PWR、LLY，盘后 AMZN、INTC、SNDK、COIN，观察盈利与现金流。</p>
+              <strong>AMD / ARM / COHR / LITE</strong>
+              <p>周二至周四盘后交卷，验证 AI 芯片、授权和光通信需求及后续指引。</p>
             </div>
             <div class="calendar-focus-card">
-              <span>Inflation Gate</span>
-              <strong>10/30 ECI / 芝加哥 PMI</strong>
-              <p>8:30 AM 就业成本、9:45 AM 芝加哥 PMI，同时跟踪日本央行和能源财报。</p>
+              <span>Jobs Gate</span>
+              <strong>11/6 非农，8:30 AM</strong>
+              <p>结合周二 JOLTS、周三 ADP，观察新增就业、失业率和薪资对利率的影响。</p>
             </div>
           </div>
           <div class="calendar-grid" id="calendar-grid" aria-live="polite">
@@ -1714,6 +1714,12 @@
           <p>公众号里的长文会逐步迁移到这里，按主题重新整理摘要、图表和关键结论。</p>
         </div>
         <div class="article-grid">
+          <article class="article-card">
+            <div class="article-topline"><span>下周展望</span><span>已同步</span></div>
+            <h3><a href="articles/2026-11-01-election-amd-jobs-week.html">20261101美股的科技暴跌后的选举，AMD与非农的故事</a></h3>
+            <p>科技暴跌后观察反弹承接，中期选举、AMD 与非农接力；清濛整理七只股票技术位、黄金区间和本周大事记。</p>
+            <div class="tag-row"><span class="tag">中期选举</span><span class="tag">AI财报</span><span class="tag">非农</span></div>
+          </article>
           <article class="article-card">
             <div class="article-topline"><span>周中总结</span><span>已同步</span></div>
             <h3><a href="articles/2026-10-28-midweek-rates-ai-earnings.html">20261028周中总结和预测</a></h3>
@@ -2211,10 +2217,10 @@
           </p>
           <div class="sync-highlight">
             <h3>最新同步</h3>
-            <p>2026-10-28：周中总结和预测</p>
+            <p>2026-11-01：美股的科技暴跌后的选举，AMD与非农的故事</p>
             <div class="sync-actions">
-              <a class="button primary" href="articles/2026-10-28-midweek-rates-ai-earnings.html">阅读网页版本</a>
-              <a class="button secondary" href="https://mp.weixin.qq.com/s/zPvFMMYud9IYhhXGwHqQQw" target="_blank" rel="noopener">打开公众号原文</a>
+              <a class="button primary" href="articles/2026-11-01-election-amd-jobs-week.html">阅读网页版本</a>
+              <a class="button secondary" href="https://mp.weixin.qq.com/s/vl4YONYRu3ZKwYMiLpyDFQ" target="_blank" rel="noopener">打开公众号原文</a>
             </div>
           </div>
         </div>
@@ -2321,61 +2327,74 @@
     const RISK_HISTORY_KEY = "lemon-risk-history-v1";
     const marketCalendarEvents = [
       {
-        date: "2026-10-29",
+        date: "2026-11-02",
         type: "宏观",
-        title: "GDP 初值、PCE 与初请，8:30 AM",
-        focus: "第三季度 GDP 初值与 9 月 PCE 同场发布，并按常规时间跟踪初请失业金。观察增长、核心通胀及长债反应。",
-        tags: ["GDP", "PCE", "初请", "10Y"]
+        title: "ISM 制造业与财政部融资估计",
+        focus: "10:00 AM ISM 制造业 PMI，3:00 PM 财政部融资估计。观察经济活动、价格分项及国债供给预期。",
+        tags: ["ISM", "财政部", "融资", "10Y"]
       },
       {
-        date: "2026-10-29",
+        date: "2026-11-02",
         type: "财报",
-        title: "PWR、LLY 财报，盘前",
-        focus: "PWR 9:00 AM、LLY 10:00 AM 电话会，分别观察电力设备需求与医药盈利、后续指引。",
-        tags: ["PWR", "LLY", "电力设备", "盈利"]
+        title: "AAPL、PLTR 财报，盘后",
+        focus: "苹果观察内存成本、需求与指引；Palantir 5:00 PM 电话会，重点看增长能否兑现高估值。",
+        tags: ["AAPL", "PLTR", "需求", "指引"]
       },
       {
-        date: "2026-10-29",
-        type: "央行",
-        title: "欧洲央行决议，9:15 AM",
-        focus: "9:45 AM 记者会，对应 14:15 / 14:45 CET。欧洲与北美本周夏令时不同步，关注欧元及全球利率影响。",
-        tags: ["ECB", "欧元", "利率", "记者会"]
+        date: "2026-11-03",
+        type: "政策 / 就业",
+        title: "美国中期选举与 JOLTS",
+        focus: "联邦大选日，投票与计票进度依各州安排；10:00 AM 发布 9 月 JOLTS。观察政策预期与劳动力需求。",
+        tags: ["中期选举", "JOLTS", "政策", "就业"]
       },
       {
-        date: "2026-10-29",
+        date: "2026-11-03",
         type: "财报",
-        title: "AMZN、INTC、SNDK、COIN 财报，盘后",
-        focus: "SNDK 4:30 PM，AMZN、INTC、COIN 5:00 PM 电话会或问答。关注 AWS、存储定价、利润率与交易业务。",
-        tags: ["AMZN", "INTC", "SNDK", "COIN"]
+        title: "AMD 财报，盘后",
+        focus: "5:00 PM 电话会。关注数据中心、AI 加速卡、利润率和后续指引，以及芯片板块的财报后承接。",
+        tags: ["AMD", "AI芯片", "数据中心", "指引"]
       },
       {
-        date: "2026-10-30",
-        dateLabel: "10/30（日本日期）",
-        type: "央行",
-        title: "日本央行决议，发布时间待定",
-        focus: "会议在日本时间 10/29-30 举行。日本比美东快 13 小时，留意美东周四夜间至周五的公告及日元、全球利率反应。",
-        tags: ["BoJ", "日元", "利率", "日本日期"]
+        date: "2026-11-04",
+        type: "宏观 / 融资",
+        title: "ADP、季度再融资与 ISM 服务业",
+        focus: "8:15 AM ADP，8:30 AM 财政部季度再融资方案，10:00 AM ISM 服务业 PMI。关注就业、国债供给和利率反应。",
+        tags: ["ADP", "季度再融资", "ISM服务业", "10Y"]
       },
       {
-        date: "2026-10-30",
+        date: "2026-11-04",
+        type: "财报",
+        title: "ARM、COHR 财报，盘后",
+        focus: "COHR 4:30 PM、ARM 5:00 PM 电话会。分别验证光通信需求、AI 授权与盈利指引。",
+        tags: ["ARM", "COHR", "光通信", "AI授权"]
+      },
+      {
+        date: "2026-11-05",
         type: "宏观",
-        title: "就业成本指数，8:30 AM",
-        focus: "第三季度工资与福利成本数据公布，关注薪资通胀黏性及对后续加息预期的影响。",
-        tags: ["ECI", "工资", "通胀", "Fed"]
+        title: "生产率、单位劳动力成本与初请，8:30 AM",
+        focus: "第三季度生产率与成本初值，叠加周四常规初请失业金。观察企业成本压力与非农前的就业信号。",
+        tags: ["生产率", "劳动力成本", "初请", "就业"]
       },
       {
-        date: "2026-10-30",
-        type: "宏观",
-        title: "芝加哥 PMI，9:45 AM",
-        focus: "按经济发布日历跟踪商业活动与价格压力，结合就业成本指数观察长债和风险资产反应。",
-        tags: ["芝加哥PMI", "商业活动", "价格", "10Y"]
-      },
-      {
-        date: "2026-10-30",
+        date: "2026-11-05",
         type: "财报",
-        title: "XOM、CVX、CCJ 财报",
-        focus: "XOM 6:30 AM 发布业绩、9:30 AM 电话会，CCJ 8:00 AM 电话会。观察能源价格、核电需求与现金流。",
-        tags: ["XOM", "CVX", "CCJ", "能源"]
+        title: "LITE、NET、IREN 财报，盘后",
+        focus: "三家公司均安排 5:00 PM 电话会。关注光互联、云业务增长，以及 AI 算力的资本开支与融资成本。",
+        tags: ["LITE", "NET", "IREN", "现金流"]
+      },
+      {
+        date: "2026-11-06",
+        type: "宏观",
+        title: "10 月非农就业报告，8:30 AM",
+        focus: "同时观察新增就业、失业率、平均时薪与前值修订。结合油价和长债判断科技股反弹的承接力度。",
+        tags: ["非农", "失业率", "薪资", "10Y"]
+      },
+      {
+        date: "2026-11-06",
+        type: "财报",
+        title: "VST 财报与业绩电话会",
+        focus: "10:00 AM ET 电话会，对应 9:00 AM CST。关注电力需求、对冲安排、自由现金流与后续指引。",
+        tags: ["VST", "AI电力", "现金流", "指引"]
       }
     ];
     let liveStockTimer = null;
