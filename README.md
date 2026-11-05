@@ -36,6 +36,7 @@ py scripts/update_stock_data.py
 
 当前已添加：
 
+- `articles/2026-11-04-midweek-ai-regulation-cashflow.html`
 - `articles/2026-11-01-election-amd-jobs-week.html`
 - `articles/2026-10-28-midweek-rates-ai-earnings.html`
 - `articles/2026-10-25-fomc-earnings-gap-up-fade.html`
