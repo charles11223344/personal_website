@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-05T21:28:11+00:00",
+  "updatedAt": "2026-11-06T02:23:36+00:00",
   "source": "Yahoo Finance chart endpoint",
   "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart",
   "symbols": [
@@ -14,7 +14,7 @@
       "high": 7681.29,
       "low": 7350.35,
       "close": 7353.73,
-      "volume": 5031588000,
+      "volume": 5039705000,
       "change": -334.89,
       "changePercent": -4.36
     },
@@ -29,7 +29,7 @@
       "high": 765.97,
       "low": 732.71,
       "close": 733.0,
-      "volume": 112996436,
+      "volume": 125340600,
       "change": -33.81,
       "changePercent": -4.41
     },
@@ -41,10 +41,10 @@
       "currency": "USD",
       "date": "2026-11-05",
       "open": 683.12,
-      "high": 683.64,
+      "high": 683.65,
       "low": 647.05,
       "close": 647.05,
-      "volume": 122708351,
+      "volume": 128835900,
       "change": -44.9,
       "changePercent": -6.49
     },
@@ -57,9 +57,9 @@
       "date": "2026-11-05",
       "open": 131.34,
       "high": 131.87,
-      "low": 120.42,
+      "low": 120.39,
       "close": 123.62,
-      "volume": 167863022,
+      "volume": 169197900,
       "change": -12.3,
       "changePercent": -9.05
     },
@@ -74,7 +74,7 @@
       "high": 761.81,
       "low": 650.0,
       "close": 656.39,
-      "volume": 75370973,
+      "volume": 76740500,
       "change": -138.84,
       "changePercent": -17.46
     },
@@ -89,7 +89,7 @@
       "high": 196.25,
       "low": 181.46,
       "close": 181.6,
-      "volume": 300372366,
+      "volume": 303158900,
       "change": -18.53,
       "changePercent": -9.26
     },
@@ -104,7 +104,7 @@
       "high": 355.38,
       "low": 342.06,
       "close": 344.17,
-      "volume": 73084718,
+      "volume": 75457100,
       "change": -5.34,
       "changePercent": -1.53
     },
@@ -115,11 +115,11 @@
       "sourceSymbol": "MSFT",
       "currency": "USD",
       "date": "2026-11-05",
-      "open": 554.93,
+      "open": 554.94,
       "high": 557.62,
-      "low": 532.67,
+      "low": 532.68,
       "close": 535.93,
-      "volume": 41482673,
+      "volume": 42355300,
       "change": -19.87,
       "changePercent": -3.58
     },
@@ -134,7 +134,7 @@
       "high": 295.6,
       "low": 277.07,
       "close": 282.57,
-      "volume": 52385733,
+      "volume": 53043900,
       "change": -6.36,
       "changePercent": -2.2
     },
@@ -147,9 +147,9 @@
       "date": "2026-11-05",
       "open": 271.43,
       "high": 273.23,
-      "low": 252.32,
+      "low": 252.27,
       "close": 260.21,
-      "volume": 83519376,
+      "volume": 85365600,
       "change": -5.82,
       "changePercent": -2.19
     },
@@ -164,7 +164,7 @@
       "high": 634.99,
       "low": 583.8,
       "close": 605.08,
-      "volume": 27920576,
+      "volume": 28514900,
       "change": -24.92,
       "changePercent": -3.96
     },
@@ -176,10 +176,10 @@
       "currency": "USD",
       "date": "2026-11-05",
       "open": 374.12,
-      "high": 374.23,
+      "high": 374.3,
       "low": 338.15,
       "close": 343.69,
-      "volume": 78104867,
+      "volume": 79133000,
       "change": -41.5,
       "changePercent": -10.77
     },
@@ -194,7 +194,7 @@
       "high": 456.2,
       "low": 402.1,
       "close": 404.4,
-      "volume": 69693186,
+      "volume": 70453900,
       "change": -84.38,
       "changePercent": -17.26
     },
@@ -207,9 +207,9 @@
       "date": "2026-11-05",
       "open": 311.89,
       "high": 314.0,
-      "low": 290.13,
+      "low": 290.12,
       "close": 291.53,
-      "volume": 52780744,
+      "volume": 53594200,
       "change": -33.95,
       "changePercent": -10.43
     },
@@ -224,7 +224,7 @@
       "high": 167.25,
       "low": 152.6,
       "close": 154.99,
-      "volume": 48824873,
+      "volume": 49779900,
       "change": -16.71,
       "changePercent": -9.73
     },
@@ -239,7 +239,7 @@
       "high": 380.78,
       "low": 351.19,
       "close": 353.1,
-      "volume": 41738855,
+      "volume": 42742100,
       "change": -42.65,
       "changePercent": -10.78
     }
