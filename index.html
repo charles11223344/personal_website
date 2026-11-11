@@ -817,13 +817,266 @@
           font-size: 11px;
         }
 
-        .radar-legend-value.vix { color: var(--neon-red); }
-        .radar-legend-value.us10y { color: var(--neon-amber); }
-        .radar-legend-value.dxy { color: var(--neon-cyan); }
-        .radar-legend-value.wti { color: var(--neon-violet); }
-        .radar-legend-value.gold { color: var(--gold); }
+        .radarinator-legend-value.vix { color: var(--neon-red); }
+                .radar-legend-value.us10y { color: var(--neon-amber); }
+                .radar-legend-value.dxy { color: var(--neon-cyan); }
+                .radar-legend-value.wti { color: var(--neon-violet); }
+                .radar-legend-value.gold { color: var(--gold); }
 
-        /* Risk cards detail toggle */
+                /* ===== Flow Radar Visualization ===== */
+                .flow-radar-wrapper {
+                  position: relative;
+                  width: 100%;
+                  max-width: 400px;
+                  margin: 20px auto 0;
+                  aspect-ratio: 1;
+                }
+
+                #flow-radar-svg {
+                  width: 100%;
+                  height: 100%;
+                  display: block;
+                }
+
+                .flow-grid-circle {
+                  fill: none;
+                  stroke: var(--neon-cyan);
+                  stroke-width: 1;
+                  stroke-opacity: 0.15;
+                }
+
+                .flow-radar-axes line {
+                  stroke: var(--neon-cyan);
+                  stroke-width: 1;
+                  stroke-opacity: 0.2;
+                  stroke-dasharray: 4 4;
+                }
+
+                .flow-radar-labels text {
+                  font-family: var(--font-mono);
+                  font-size: 10px;
+                  fill: var(--neon-cyan);
+                  text-anchor: middle;
+                  dominant-baseline: middle;
+                  font-weight: 600;
+                }
+
+                .flow-radar-trail polygon {
+                  fill: var(--neon-cyan);
+                  fill-opacity: 0.06;
+                  stroke: var(--neon-cyan);
+                  stroke-width: 0.5;
+                  stroke-opacity: 0.15;
+                  filter: url(#glow);
+                }
+
+                .flow-radar-polygon {
+                  fill: url(#flow-data-gradient);
+                  stroke: var(--neon-green);
+                  stroke-width: 1.5;
+                  stroke-opacity: 0.8;
+                  filter: url(#glow);
+                  transition: all 0.5s ease-out;
+                }
+
+                .flow-radar-points circle {
+                  fill: var(--neon-green);
+                  stroke: var(--paper);
+                  stroke-width: 2;
+                  r: 5;
+                  filter: url(#pulse);
+                  transition: r 0.3s ease, fill 0.3s ease;
+                }
+
+                .flow-radar-points circle:hover {
+                  r: 8;
+                  fill: var(--neon-amber);
+                }
+
+                .flow-radar-points text {
+                  font-family: var(--font-mono);
+                  font-size: 9px;
+                  fill: var(--ink);
+                  text-anchor: middle;
+                  dominant-baseline: middle;
+                  pointer-events: none;
+                }
+
+                .flow-radar-sweep path {
+                  fill: url(#flow-sweep-gradient);
+                  opacity: 0;
+                  transform-origin: 200px 200px;
+                  animation: radar-sweep 4s linear infinite;
+                }
+
+                .flow-radar-center {
+                  fill: var(--neon-cyan);
+                  filter: url(#pulse);
+                  animation: radar-pulse 2s ease-in-out infinite;
+                }
+
+                .flow-radar-legend {
+                  position: absolute;
+                  bottom: -60px;
+                  left: 0;
+                  right: 0;
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+                  gap: 8px;
+                  font-family: var(--font-mono);
+                  font-size: 10px;
+                  color: var(--muted);
+                }
+
+                .flow-radar-legend-item {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  gap: 2px;
+                  padding: 4px 2px;
+                  background: var(--surface);
+                  border: 1px solid var(--line);
+                  border-radius: 4px;
+                }
+
+                .flow-radar-legend-label {
+                  font-weight: 700;
+                  text-transform: uppercase;
+                  letter-spacing: 0.05em;
+                }
+
+                .flow-radar-legend-value {
+                  font-weight: 900;
+                  font-size: 11px;
+                }
+
+                .flow-radar-legend-value.call { color: var(--neon-green); }
+                                .flow-radar-legend-value.put { color: var(--neon-red); }
+                                .flow-radar-legend-value.neutral { color: var(--neon-cyan); }
+                                .flow-radar-legend-value.unusual { color: var(--neon-amber); }
+                                .flow-radar-legend-value.score { color: var(--neon-violet); }
+
+                                /* ===== Calendar Radar Visualization ===== */
+                                .calendar-radar-wrapper {
+                                  position: relative;
+                                  width: 100%;
+                                  max-width: 800px;
+                                  margin: 20px auto 0;
+                                }
+
+                                #calendar-radar-svg {
+                                  width: 100%;
+                                  height: 100%;
+                                  display: block;
+                                }
+
+                                .calendar-radar-grid line {
+                                  stroke: var(--neon-cyan);
+                                  stroke-width: 1;
+                                  stroke-opacity: 0.1;
+                                }
+
+                                .calendar-radar-axis line {
+                                  stroke: var(--neon-cyan);
+                                  stroke-width: 1;
+                                  stroke-opacity: 0.15;
+                                  stroke-dasharray: 4 4;
+                                }
+
+                                .calendar-radar-axis text {
+                                  font-family: var(--font-mono);
+                                  font-size: 10px;
+                                  fill: var(--neon-cyan);
+                                  font-weight: 600;
+                                }
+
+                                .calendar-radar-event {
+                                  transition: all 0.3s ease;
+                                }
+
+                                .calendar-radar-event:hover {
+                                  filter: url(#glow);
+                                  transform: scale(1.2);
+                                }
+
+                                .calendar-radar-event circle {
+                                  filter: url(#pulse);
+                                }
+
+                                .calendar-radar-event text {
+                                  font-family: var(--font-mono);
+                                  font-size: 9px;
+                                  fill: var(--ink);
+                                  pointer-events: none;
+                                }
+
+                                .calendar-radar-today-line {
+                                  stroke: var(--neon-green);
+                                  stroke-width: 2;
+                                  stroke-dasharray: 6 4;
+                                  opacity: 0.8;
+                                }
+
+                                .calendar-radar-legend {
+                                  display: grid;
+                                  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                                  gap: 8px;
+                                  margin-top: 16px;
+                                  padding: 12px;
+                                  background: var(--surface);
+                                  border: 1px solid var(--line);
+                                  border-radius: var(--radius);
+                                  font-family: var(--font-mono);
+                                  font-size: 11px;
+                                }
+
+                                .calendar-radar-legend-item {
+                                  display: flex;
+                                  align-items: center;
+                                  gap: 8px;
+                                  padding: 4px 8px;
+                                  border-radius: 4px;
+                                  transition: background 0.2s ease;
+                                }
+
+                                .calendar-radar-legend-item:hover {
+                                  background: var(--paper);
+                                }
+
+                                .calendar-radar-legend-dot {
+                                  width: 10px;
+                                  height: 10px;
+                                  border-radius: 50%;
+                                  flex-shrink: 0;
+                                }
+
+                                .calendar-radar-legend-label {
+                                  color: var(--muted);
+                                  font-weight: 600;
+                                  font-size: 10px;
+                                }
+
+                                .calendar-radar-legend-value {
+                                  color: var(--ink);
+                                  font-weight: 900;
+                                  flex: 1;
+                                  text-align: right;
+                                }
+
+                                .calendar-radar-legend-item.macro .calendar-radar-legend-dot { background: var(--neon-red); }
+                                                                .calendar-radar-legend-item.earnings .calendar-radar-legend-dot { background: var(--neon-cyan); }
+                                                                .calendar-radar-legend-item.liquidity .calendar-radar-legend-dot { background: var(--neon-amber); }
+                                                                .calendar-radar-legend-item.observation .calendar-radar-legend-dot { background: var(--neon-violet); }
+                                                                .calendar-radar-legend-item.revenue .calendar-radar-legend-dot { background: var(--neon-green); }
+                                                                .calendar-radar-legend-item.holiday .calendar-radar-legend-dot { background: var(--neon-violet); }
+
+                                                                .calendar-radar-legend-item.宏观 .calendar-radar-legend-dot { background: var(--neon-red); }
+                                                                .calendar-radar-legend-item.财报 .calendar-radar-legend-dot { background: var(--neon-cyan); }
+                                                                .calendar-radar-legend-item.营收 .calendar-radar-legend-dot { background: var(--neon-green); }
+                                                                .calendar-radar-legend-item.观察 .calendar-radar-legend-dot { background: var(--neon-violet); }
+                                                                .calendar-radar-legend-item.休市安排 .calendar-radar-legend-dot { background: var(--neon-violet); }
+
+                                /* Risk cards detail toggle */
         .risk-cards-detail {
           margin-top: 16px;
           border: 1px solid var(--line);
@@ -1981,23 +2234,68 @@
             <div class="calendar-status" id="calendar-status">等待日历渲染</div>
           </div>
           <div class="calendar-focus-grid" aria-label="下周三大观察重点">
-            <div class="calendar-focus-card">
-              <span>Macro Gate</span>
-              <strong>11/10 CPI · 11/13 PPI</strong>
-              <p>原文均安排 8:30 AM，发布日时待 BLS 复核；观察通胀与 10Y 对成长股估值的影响。</p>
-            </div>
-            <div class="calendar-focus-card">
-              <span>Earnings Gate</span>
-              <strong>CRWV / NBIS / AMAT</strong>
-              <p>周二至周四跟踪算力与设备业绩，关注 GPU 交付、收入、融资需求与资本开支。</p>
-            </div>
-            <div class="calendar-focus-card">
-              <span>Liquidity Gate</span>
-              <strong>11/11 退伍军人节</strong>
-              <p>NYSE 常规交易，SIFMA 建议债市休市；留意假期流动性变化可能放大波动。</p>
-            </div>
-          </div>
-          <div class="calendar-grid" id="calendar-grid" aria-live="polite">
+                      <div class="calendar-focus-card">
+                        <span>Macro Gate</span>
+                        <strong>11/10 CPI · 11/13 PPI</strong>
+                        <p>原文均安排 8:30 AM，发布日时待 BLS 复核；观察通胀与 10Y 对成长股估值的影响。</p>
+                      </div>
+                      <div class="calendar-focus-card">
+                        <span>Earnings Gate</span>
+                        <strong>CRWV / NBIS / AMAT</strong>
+                        <p>周二至周四跟踪算力与设备业绩，关注 GPU 交付、收入、融资需求与资本开支。</p>
+                      </div>
+                      <div class="calendar-focus-card">
+                        <span>Liquidity Gate</span>
+                        <strong>11/11 退伍军人节</strong>
+                        <p>NYSE 常规交易，SIFMA 建议债市休市；留意假期流动性变化可能放大波动。</p>
+                      </div>
+                    </div>
+                    <div class="calendar-radar-wrapper">
+                                          <svg id="calendar-radar-svg" viewBox="0 0 800 320" aria-hidden="true">
+                                            <defs>
+                                              <linearGradient id="cal-gradient-macro" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                <stop offset="0%" stop-color="var(--neon-red)" stop-opacity="0.2" />
+                                                <stop offset="100%" stop-color="var(--neon-red)" stop-opacity="0.05" />
+                                              </linearGradient>
+                                              <linearGradient id="cal-gradient-earnings" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                <stop offset="0%" stop-color="var(--neon-cyan)" stop-opacity="0.2" />
+                                                <stop offset="100%" stop-color="var(--neon-cyan)" stop-opacity="0.05" />
+                                              </linearGradient>
+                                              <linearGradient id="cal-gradient-liquidity" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                <stop offset="0%" stop-color="var(--neon-amber)" stop-opacity="0.2" />
+                                                <stop offset="100%" stop-color="var(--neon-amber)" stop-opacity="0.05" />
+                                              </linearGradient>
+                                              <filter id="glow">
+                                                <feGaussianBlur stdDeviation="2" result="blur" />
+                                                <feMerge>
+                                                  <feMergeNode in="blur" />
+                                                  <feMergeNode in="SourceGraphic" />
+                                                </feMerge>
+                                              </filter>
+                                              <filter id="pulse">
+                                                <feGaussianBlur stdDeviation="3" result="blur" />
+                                                <feMerge>
+                                                  <feMergeNode in="blur" />
+                                                  <feMergeNode in="SourceGraphic" />
+                                                </feMerge>
+                                              </filter>
+                                            </defs>
+
+                                            <!-- Grid lines (vertical = days, horizontal = type rows) -->
+                                            <g id="calendar-radar-grid" class="calendar-radar-grid"></g>
+
+                                            <!-- Axis (date labels at top) -->
+                                            <g id="calendar-radar-axis" class="calendar-radar-axis"></g>
+
+                                            <!-- Today vertical line -->
+                                            <line id="calendar-radar-today" class="calendar-radar-today-line" x1="0" y1="0" x2="0" y2="320" />
+
+                                            <!-- Event markers -->
+                                            <g id="calendar-radar-events" class="calendar-radar-events"></g>
+                                          </svg>
+                                        </div>
+                                        <div id="calendar-radar-legend" class="calendar-radar-legend"></div>
+                    <div class="calendar-grid" id="calendar-grid" aria-live="polite">
             <article class="event-card">
               <div class="event-topline">
                 <span class="event-date">Loading</span>
@@ -2059,12 +2357,74 @@
             <div class="flow-status" id="flow-status">等待最新期权数据</div>
           </div>
           <div class="flow-kpis" id="flow-kpis">
-            <div class="flow-kpi"><span>优先观察</span><strong>--</strong></div>
-            <div class="flow-kpi"><span>Call 偏强</span><strong>--</strong></div>
-            <div class="flow-kpi"><span>Put 偏强</span><strong>--</strong></div>
-            <div class="flow-kpi"><span>整体 Call / Put</span><strong>--</strong></div>
-          </div>
-          <div class="flow-rule">
+                      <div class="flow-kpi"><span>优先观察</span><strong>--</strong></div>
+                      <div class="flow-kpi"><span>Call 偏强</span><strong>--</strong></div>
+                      <div class="flow-kpi"><span>Put 偏强</span><strong>--</strong></div>
+                      <div class="flow-kpi"><span>整体 Call / Put</span><strong>--</strong></div>
+                    </div>
+                    <div class="flow-radar-wrapper">
+                                          <svg id="flow-radar-svg" viewBox="0 0 400 400" aria-hidden="true">
+                                            <!-- Gradient for data polygon -->
+                                            <defs>
+                                              <linearGradient id="flow-data-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" stop-color="var(--neon-green)" stop-opacity="0.2" />
+                                                <stop offset="100%" stop-color="var(--neon-cyan)" stop-opacity="0.1" />
+                                              </linearGradient>
+                                              <linearGradient id="flow-sweep-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                <stop offset="0%" stop-color="var(--neon-cyan)" stop-opacity="0" />
+                                                <stop offset="50%" stop-color="var(--neon-cyan)" stop-opacity="0.6" />
+                                                <stop offset="100%" stop-color="var(--neon-cyan)" stop-opacity="0" />
+                                              </linearGradient>
+                                              <filter id="glow">
+                                                <feGaussianBlur stdDeviation="2" result="blur" />
+                                                <feMerge>
+                                                  <feMergeNode in="blur" />
+                                                  <feMergeNode in="SourceGraphic" />
+                                                </feMerge>
+                                              </filter>
+                                              <filter id="pulse">
+                                                <feGaussianBlur stdDeviation="3" result="blur" />
+                                                <feMerge>
+                                                  <feMergeNode in="blur" />
+                                                  <feMergeNode in="SourceGraphic" />
+                                                </feMerge>
+                                              </filter>
+                                            </defs>
+
+                                            <!-- Grid circles (concentric rings) -->
+                                            <g id="flow-radar-grid" class="flow-radar-grid">
+                                              <circle cx="200" cy="200" r="40" class="flow-grid-circle" />
+                                              <circle cx="200" cy="200" r="80" class="flow-grid-circle" />
+                                              <circle cx="200" cy="200" r="120" class="flow-grid-circle" />
+                                              <circle cx="200" cy="200" r="160" class="flow-grid-circle" />
+                                            </g>
+
+                                            <!-- Axis lines -->
+                                            <g id="flow-radar-axes" class="flow-radar-axes"></g>
+
+                                            <!-- Axis labels -->
+                                            <g id="flow-radar-labels" class="flow-radar-labels"></g>
+
+                                            <!-- Historical trail (previous readings) -->
+                                            <g id="flow-radar-trail" class="flow-radar-trail"></g>
+
+                                            <!-- Current data polygon -->
+                                            <polygon id="flow-radar-polygon" class="flow-radar-polygon" points="" />
+
+                                            <!-- Current data points -->
+                                            <g id="flow-radar-points" class="flow-radar-points"></g>
+
+                                            <!-- Sweep line -->
+                                            <g id="flow-radar-sweep" class="flow-radar-sweep">
+                                              <path id="flow-sweep-path" d="" />
+                                            </g>
+
+                                            <!-- Center marker -->
+                                            <circle id="flow-radar-center" cx="200" cy="200" r="6" class="flow-radar-center" />
+                                          </svg>
+                                        </div>
+                                        <div id="flow-radar-legend" class="flow-radar-legend"></div>
+                    <div class="flow-rule">
             <strong>判断顺序</strong>
             <span>Call 偏强 + 异常活跃 = 优先观察；Put 偏强 = 风险提醒；方向均衡 = 等待确认。</span>
           </div>
@@ -3315,7 +3675,305 @@
                                     }).join('');
                                   }
 
-                function eventDateValue(event) {
+                                  // ===== Flow Radar SVG Visualization =====
+                                                  const FLOW_RADAR_CONFIG = {
+                                                    axes: [
+                                                      { key: 'call', label: 'Call Vol', max: 4000000, color: 'var(--neon-green)', unit: '' },
+                                                      { key: 'put', label: 'Put Vol', max: 3500000, color: 'var(--neon-red)', unit: '' },
+                                                      { key: 'notional', label: 'Notional', max: 150000000000, color: 'var(--neon-cyan)', unit: '' },
+                                                      { key: 'callPutRatio', label: 'C/P Ratio', max: 3, color: 'var(--neon-violet)', unit: '' },
+                                                      { key: 'volumeOi', label: 'Vol/OI', max: 0.5, color: 'var(--neon-amber)', unit: '' },
+                                                      { key: 'riskScore', label: 'Risk Score', max: 100, color: 'var(--gold)', unit: '' }
+                                                    ],
+                                                    center: { x: 200, y: 200 },
+                                                    maxRadius: 160
+                                                  };
+
+                                                  // Store trail history for flow radar
+                                                  let flowRadarTrailHistory = [];
+
+                                                  function updateFlowRadarVisualization(signals) {
+                                                    const svg = document.getElementById('flow-radar-svg');
+                                                    const legend = document.getElementById('flow-radar-legend');
+                                                    if (!svg || !legend) return;
+
+                                                    // Aggregate across all signals for the radar
+                                                    const totalCallVol = signals.reduce((sum, s) => sum + Number(s.callVolume || 0), 0);
+                                                    const totalPutVol = signals.reduce((sum, s) => sum + Number(s.putVolume || 0), 0);
+                                                    const totalNotional = signals.reduce((sum, s) => sum + Number(s.totalSize || 0), 0);
+                                                    const avgCallPutRatio = signals.length > 0 
+                                                      ? signals.reduce((sum, s) => sum + Number(s.callPutRatio || 0), 0) / signals.length 
+                                                      : 0;
+                                                    const avgVolumeOi = signals.length > 0
+                                                      ? signals.reduce((sum, s) => sum + Number(s.volumeOi || 0), 0) / signals.length
+                                                      : 0;
+                                                    const maxRiskScore = signals.length > 0
+                                                      ? Math.max(...signals.map(s => Number(s.riskScore || 0)))
+                                                      : 0;
+                                                    const hasUnusual = signals.some(s => s.unusual);
+
+                                                    const values = FLOW_RADAR_CONFIG.axes.map(axis => {
+                                                      let rawValue;
+                                                      switch(axis.key) {
+                                                        case 'call': rawValue = totalCallVol; break;
+                                                        case 'put': rawValue = totalPutVol; break;
+                                                        case 'notional': rawValue = totalNotional; break;
+                                                        case 'callPutRatio': rawValue = avgCallPutRatio; break;
+                                                        case 'volumeOi': rawValue = avgVolumeOi; break;
+                                                        case 'riskScore': rawValue = maxRiskScore; break;
+                                                        default: rawValue = 0;
+                                                      }
+
+                                                      const normalized = Math.min(1, Math.max(0, rawValue / axis.max));
+                                                      return { ...axis, value: normalized, rawValue };
+                                                    });
+
+                                                    // Build polygon points
+                                                    const points = values.map((axis, i) => {
+                                                      if (axis.value === null || axis.value === 0) return null;
+                                                      const angle = (i / values.length) * Math.PI * 2 - Math.PI / 2;
+                                                      const radius = axis.value * FLOW_RADAR_CONFIG.maxRadius;
+                                                      return {
+                                                        x: FLOW_RADAR_CONFIG.center.x + radius * Math.cos(angle),
+                                                        y: FLOW_RADAR_CONFIG.center.y + radius * Math.sin(angle),
+                                                        axis
+                                                      };
+                                                    }).filter(Boolean);
+
+                                                    // Update axes lines
+                                                    const axesGroup = document.getElementById('flow-radar-axes');
+                                                    if (axesGroup) {
+                                                      axesGroup.innerHTML = values.map((axis, i) => {
+                                                        const angle = (i / values.length) * Math.PI * 2 - Math.PI / 2;
+                                                        const x = FLOW_RADAR_CONFIG.center.x + FLOW_RADAR_CONFIG.maxRadius * Math.cos(angle);
+                                                        const y = FLOW_RADAR_CONFIG.center.y + FLOW_RADAR_CONFIG.maxRadius * Math.sin(angle);
+                                                        return `<line x1="${FLOW_RADAR_CONFIG.center.x}" y1="${FLOW_RADAR_CONFIG.center.y}" x2="${x}" y2="${y}" />`;
+                                                      }).join('');
+                                                    }
+
+                                                    // Update axis labels
+                                                    const labelsGroup = document.getElementById('flow-radar-labels');
+                                                    if (labelsGroup) {
+                                                      labelsGroup.innerHTML = values.map((axis, i) => {
+                                                        const angle = (i / values.length) * Math.PI * 2 - Math.PI / 2;
+                                                        const labelRadius = FLOW_RADAR_CONFIG.maxRadius + 24;
+                                                        const x = FLOW_RADAR_CONFIG.center.x + labelRadius * Math.cos(angle);
+                                                        const y = FLOW_RADAR_CONFIG.center.y + labelRadius * Math.sin(angle);
+                                                        return `<text x="${x}" y="${y}">${axis.label}</text>`;
+                                                      }).join('');
+                                                    }
+
+                                                    // Update data polygon
+                                                    const polygon = document.getElementById('flow-radar-polygon');
+                                                    if (polygon && points.length >= 3) {
+                                                      const pointsStr = points.map(p => `${p.x},${p.y}`).join(' ');
+                                                      polygon.setAttribute('points', pointsStr);
+                                                      polygon.style.opacity = '1';
+                                                    } else if (polygon) {
+                                                      polygon.setAttribute('points', '');
+                                                      polygon.style.opacity = '0';
+                                                    }
+
+                                                    // Update data points
+                                                    const pointsGroup = document.getElementById('flow-radar-points');
+                                                    if (pointsGroup) {
+                                                      pointsGroup.innerHTML = points.map(p => `
+                                                        <circle cx="${p.x}" cy="${p.y}" r="5" data-axis="${p.axis.key}" data-value="${p.axis.rawValue}" />
+                                                        <text x="${p.x}" y="${p.y - 12}">${p.axis.rawValue !== null && Number.isFinite(p.axis.rawValue) 
+                                                          ? (p.axis.key === 'notional' ? '$' + (p.axis.rawValue/1e9).toFixed(1) + 'B' 
+                                                            : p.axis.key === 'callPutRatio' ? p.axis.rawValue.toFixed(2)
+                                                            : p.axis.key === 'volumeOi' ? p.axis.rawValue.toFixed(2)
+                                                            : p.axis.rawValue.toFixed(0)) 
+                                                          : '—'}</text>
+                                                      `).join('');
+                                                    }
+
+                                                    // Update trail (store last 3 readings)
+                                                    if (points.length >= 3) {
+                                                      const trailPoints = points.map(p => `${p.x},${p.y}`).join(' ');
+                                                      flowRadarTrailHistory.unshift(trailPoints);
+                                                      flowRadarTrailHistory = flowRadarTrailHistory.slice(0, 3);
+
+                                                      const trailGroup = document.getElementById('flow-radar-trail');
+                                                      if (trailGroup) {
+                                                        trailGroup.innerHTML = flowRadarTrailHistory.map((trail, i) =>
+                                                          `<polygon points="${trail}" style="opacity: ${0.06 * (i + 1)};" />`
+                                                        ).join('');
+                                                      }
+                                                    }
+
+                                                    // Update legend
+                                                                      legend.innerHTML = values.map(axis => {
+                                                                        const val = axis.rawValue;
+                                                                        let className = axis.key;
+                                                                        let displayVal;
+                                                                        if (val !== null && Number.isFinite(val)) {
+                                                                          if (axis.key === 'notional') {
+                                                                            displayVal = '$' + (val/1e9).toFixed(1) + 'B';
+                                                                          } else if (axis.key === 'callPutRatio' || axis.key === 'volumeOi') {
+                                                                            displayVal = val.toFixed(2);
+                                                                          } else if (axis.key === 'riskScore') {
+                                                                            displayVal = val.toFixed(0);
+                                                                          } else {
+                                                                            displayVal = val.toFixed(0);
+                                                                          }
+                                                                        } else {
+                                                                          displayVal = '—';
+                                                                        }
+                                                                        // Special classes for color coding
+                                                                        if (axis.key === 'call') className = 'call';
+                                                                        else if (axis.key === 'put') className = 'put';
+                                                                        else if (axis.key === 'riskScore') className = 'score';
+                                                                        else if (axis.key === 'volumeOi') className = 'unusual';
+                                                                        else className = 'neutral';
+                    
+                                                                        return `
+                                                                          <div class="flow-radar-legend-item">
+                                                                            <span class="flow-radar-legend-label">${axis.label}</span>
+                                                                            <span class="flow-radar-legend-value ${className}">${displayVal}${axis.key === 'riskScore' ? '' : axis.unit}</span>
+                                                                          </div>
+                                                                        `;
+                                                                      }).join('');
+                                                  }
+
+                                                  // ===== Calendar Radar SVG Visualization =====
+                                                                  function updateCalendarRadarVisualization(events) {
+                                                                    const svg = document.getElementById('calendar-radar-svg');
+                                                                    const legend = document.getElementById('calendar-radar-legend');
+                                                                    if (!svg || !legend) return;
+
+                                                                    const today = new Date();
+                                                                    today.setHours(0, 0, 0, 0);
+
+                                                                    // Get date range
+                                                                    const eventDates = events.map(e => eventDateValue(e)).filter(Boolean);
+                                                                    if (!eventDates.length) return;
+
+                                                                    const minDate = new Date(Math.min(...eventDates.map(d => d.getTime())));
+                                                                    const maxDate = new Date(Math.max(...eventDates.map(d => d.getTime())));
+                  
+                                                                    // Add padding (2 days before/after)
+                                                                    minDate.setDate(minDate.getDate() - 2);
+                                                                    maxDate.setDate(maxDate.getDate() + 2);
+
+                                                                    const totalDays = Math.max(1, Math.ceil((maxDate - minDate) / 86400000));
+                                                                    const svgWidth = 800;
+                                                                    const svgHeight = 320;
+                                                                    const padding = { left: 80, right: 40, top: 50, bottom: 40 };
+                                                                    const plotWidth = svgWidth - padding.left - padding.right;
+                                                                    const plotHeight = svgHeight - padding.top - padding.bottom;
+
+                                                                    // Type rows configuration
+                                                                                                                                        const typeRows = [
+                                                                                                                                          { key: '宏观', label: 'Macro', color: 'var(--neon-red)', y: padding.top + plotHeight * 0.15, gradient: 'cal-gradient-macro' },
+                                                                                                                                          { key: '财报', label: 'Earnings', color: 'var(--neon-cyan)', y: padding.top + plotHeight * 0.35, gradient: 'cal-gradient-earnings' },
+                                                                                                                                          { key: '营收', label: 'Revenue', color: 'var(--neon-green)', y: padding.top + plotHeight * 0.55, gradient: 'cal-gradient-earnings' },
+                                                                                                                                          { key: '观察', label: 'Observation', color: 'var(--neon-violet)', y: padding.top + plotHeight * 0.75, gradient: 'cal-gradient-liquidity' },
+                                                                                                                                          { key: '休市安排', label: 'Holiday', color: 'var(--neon-violet)', y: padding.top + plotHeight * 0.95, gradient: 'cal-gradient-liquidity' }
+                                                                                                                                        ];
+
+                                                                    // Build grid
+                                                                    const gridGroup = document.getElementById('calendar-radar-grid');
+                                                                    if (gridGroup) {
+                                                                      let gridHtml = '';
+                                                                      // Vertical lines (days)
+                                                                      for (let i = 0; i <= totalDays; i++) {
+                                                                        const x = padding.left + (i / totalDays) * plotWidth;
+                                                                        gridHtml += `<line x1="${x}" y1="${padding.top}" x2="${x}" y2="${padding.top + plotHeight}" />`;
+                                                                      }
+                                                                      // Horizontal lines (type rows)
+                                                                      typeRows.forEach(row => {
+                                                                        gridHtml += `<line x1="${padding.left}" y1="${row.y}" x2="${padding.left + plotWidth}" y2="${row.y}" />`;
+                                                                      });
+                                                                      gridGroup.innerHTML = gridHtml;
+                                                                    }
+
+                                                                    // Build axis (date labels)
+                                                                    const axisGroup = document.getElementById('calendar-radar-axis');
+                                                                    if (axisGroup) {
+                                                                      let axisHtml = '';
+                                                                      // Show date labels every 2 days or at least at start/end
+                                                                      const step = Math.max(1, Math.ceil(totalDays / 10));
+                                                                      for (let i = 0; i <= totalDays; i += step) {
+                                                                        const date = new Date(minDate);
+                                                                        date.setDate(minDate.getDate() + i);
+                                                                        const x = padding.left + (i / totalDays) * plotWidth;
+                                                                        const label = date.toLocaleDateString('zh-CN', { month: '2-digit', day: '2-digit' });
+                                                                        axisHtml += `<text x="${x}" y="${padding.top - 8}" text-anchor="middle">${label}</text>`;
+                                                                      }
+                                                                      // Today marker on axis
+                                                                      const todayIdx = Math.round((today - minDate) / 86400000);
+                                                                      if (todayIdx >= 0 && todayIdx <= totalDays) {
+                                                                        const x = padding.left + (todayIdx / totalDays) * plotWidth;
+                                                                        axisHtml += `<text x="${x}" y="${padding.top - 22}" text-anchor="middle" fill="var(--neon-green)" font-weight="900">今天</text>`;
+                                                                      }
+                                                                      axisGroup.innerHTML = axisHtml;
+                                                                    }
+
+                                                                    // Update today line position
+                                                                    const todayLine = document.getElementById('calendar-radar-today');
+                                                                    if (todayLine) {
+                                                                      const todayIdx = Math.max(0, Math.min(totalDays, Math.round((today - minDate) / 86400000)));
+                                                                      const x = padding.left + (todayIdx / totalDays) * plotWidth;
+                                                                      todayLine.setAttribute('x1', x);
+                                                                      todayLine.setAttribute('x2', x);
+                                                                    }
+
+                                                                    // Build events
+                                                                    const eventsGroup = document.getElementById('calendar-radar-events');
+                                                                    if (eventsGroup) {
+                                                                      let eventsHtml = '';
+                                                                      events.forEach((event, idx) => {
+                                                                        const date = eventDateValue(event);
+                                                                        if (!date) return;
+                      
+                                                                        const dayIdx = Math.max(0, Math.min(totalDays, Math.round((date - minDate) / 86400000)));
+                                                                        const x = padding.left + (dayIdx / totalDays) * plotWidth;
+                      
+                                                                        // Determine type row
+                                                                        const type = event.type || 'observation';
+                                                                        let row = typeRows.find(r => r.key === type);
+                                                                        if (!row) row = typeRows.find(r => r.key === 'observation');
+                      
+                                                                        const y = row.y;
+                                                                        const radius = 8;
+                      
+                                                                        // Format date for display
+                                                                        const dateStr = date.toLocaleDateString('zh-CN', { month: '2-digit', day: '2-digit' });
+                      
+                                                                        eventsHtml += `
+                                                                          <g class="calendar-radar-event" data-type="${type}" data-title="${escapeHtml(event.title)}" data-date="${dateStr}" data-focus="${escapeHtml(event.focus)}" transform="translate(${x}, ${y})">
+                                                                            <circle r="${radius}" fill="${row.color}" fill-opacity="0.3" stroke="${row.color}" stroke-width="2" />
+                                                                            <circle r="4" fill="${row.color}" />
+                                                                            <text x="0" y="${-radius - 6}" text-anchor="middle" font-size="8px">${escapeHtml(event.symbol || event.title.split(' ')[0])}</text>
+                                                                          </g>
+                                                                        `;
+                                                                      });
+                                                                      eventsGroup.innerHTML = eventsHtml;
+                                                                    }
+
+                                                                    // Update legend
+                                                                    const typeCounts = {};
+                                                                    events.forEach(e => {
+                                                                      const type = e.type || 'observation';
+                                                                      typeCounts[type] = (typeCounts[type] || 0) + 1;
+                                                                    });
+
+                                                                    const legendItems = typeRows.filter(r => typeCounts[r.key] > 0).map(row => {
+                                                                      const count = typeCounts[row.key] || 0;
+                                                                      return `
+                                                                        <div class="calendar-radar-legend-item ${row.key}">
+                                                                          <span class="calendar-radar-legend-dot"></span>
+                                                                          <span class="calendar-radar-legend-label">${row.label}</span>
+                                                                          <span class="calendar-radar-legend-value">${count} 项</span>
+                                                                        </div>
+                                                                      `;
+                                                                    }).join('');
+
+                                                                    legend.innerHTML = legendItems;
+                                                                  }
+
+                                                                  function eventDateValue(event) {
       if (!event.date || event.date === "TBD") return null;
       const date = new Date(event.date + "T00:00:00");
       return Number.isNaN(date.getTime()) ? null : date;
@@ -3356,43 +4014,48 @@
     }
 
     function renderMarketCalendar() {
-      const grid = document.getElementById("calendar-grid");
-      const status = document.getElementById("calendar-status");
-      if (!grid) return;
+          const grid = document.getElementById("calendar-grid");
+          const status = document.getElementById("calendar-status");
+          if (!grid) return;
 
-      const events = marketCalendarEvents.filter(function(event) {
-        return eventSortRank(event) !== 2;
-      }).sort(function(a, b) {
-        const rankDiff = eventSortRank(a) - eventSortRank(b);
-        if (rankDiff !== 0) return rankDiff;
-        const aDate = eventDateValue(a);
-        const bDate = eventDateValue(b);
-        if (!aDate && !bDate) return 0;
-        if (!aDate) return 1;
-        if (!bDate) return -1;
-        return eventSortRank(a) === 2 ? bDate - aDate : aDate - bDate;
-      });
+          const events = marketCalendarEvents.filter(function(event) {
+            return eventSortRank(event) !== 2;
+          }).sort(function(a, b) {
+            const rankDiff = eventSortRank(a) - eventSortRank(b);
+            if (rankDiff !== 0) return rankDiff;
+            const aDate = eventDateValue(a);
+            const bDate = eventDateValue(b);
+            if (!aDate && !bDate) return 0;
+            if (!aDate) return 1;
+            if (!bDate) return -1;
+            return eventSortRank(a) === 2 ? bDate - aDate : aDate - bDate;
+          });
 
-      grid.innerHTML = events.map(function(event) {
-        const state = eventState(event);
-        const tags = Array.isArray(event.tags) ? event.tags : [];
-        return `
-          <article class="event-card ${escapeHtml(state.className)}">
-            <div class="event-topline">
-              <span class="event-date">${escapeHtml(formatEventDate(event))}</span>
-              <span class="event-type">${escapeHtml(event.type)} · ${escapeHtml(state.label)}</span>
-            </div>
-            <h3>${escapeHtml(event.title)}</h3>
-            <p>${escapeHtml(event.focus)}</p>
-            <div class="event-tags">
-              ${tags.map(function(tag) { return `<span>${escapeHtml(tag)}</span>`; }).join("")}
-            </div>
-          </article>
-        `;
-      }).join("") || '<p class="event-card">近期事件已结束，等待下一次日历更新。</p>';
+          grid.innerHTML = events.map(function(event) {
+            const state = eventState(event);
+            const tags = Array.isArray(event.tags) ? event.tags : [];
+            return `
+              <article class="event-card ${escapeHtml(state.className)}">
+                <div class="event-topline">
+                  <span class="event-date">${escapeHtml(formatEventDate(event))}</span>
+                  <span class="event-type">${escapeHtml(event.type)} · ${escapeHtml(state.label)}</span>
+                </div>
+                <h3>${escapeHtml(event.title)}</h3>
+                <p>${escapeHtml(event.focus)}</p>
+                <div class="event-tags">
+                  ${tags.map(function(tag) { return `<span>${escapeHtml(tag)}</span>`; }).join("")}
+                </div>
+              </article>
+            `;
+          }).join("") || '<p class="event-card">近期事件已结束，等待下一次日历更新。</p>';
 
-      if (status) status.textContent = "已加载 " + events.length + " 个近期重点事件 · 手动维护";
-    }
+          if (status) status.textContent = "已加载 " + events.length + " 个近期重点事件 · 手动维护";
+
+          // Update calendar radar visualization
+          if (typeof updateCalendarRadarVisualization === 'function') {
+            updateCalendarRadarVisualization(events);
+          }
+        }
 
     function fetchStockSnapshot() {
       return fetch("data/stocks.json", { cache: "no-store" })
@@ -3571,15 +4234,20 @@
       }
 
       if (kpis) {
-        kpis.innerHTML = `
-          <div class="flow-kpi"><span>优先观察</span><strong>${candidateCount}</strong></div>
-          <div class="flow-kpi"><span>Call 偏强</span><strong>${callCount}</strong></div>
-          <div class="flow-kpi"><span>Put 偏强</span><strong>${putCount}</strong></div>
-          <div class="flow-kpi"><span>整体 Call / Put</span><strong>${escapeHtml(ratio)}</strong></div>
-        `;
-      }
+              kpis.innerHTML = `
+                <div class="flow-kpi"><span>优先观察</span><strong>${candidateCount}</strong></div>
+                <div class="flow-kpi"><span>Call 偏强</span><strong>${callCount}</strong></div>
+                <div class="flow-kpi"><span>Put 偏强</span><strong>${putCount}</strong></div>
+                <div class="flow-kpi"><span>整体 Call / Put</span><strong>${escapeHtml(ratio)}</strong></div>
+              `;
+            }
 
-      if (!watchlist) return;
+            // Update flow radar visualization
+            if (typeof updateFlowRadarVisualization === 'function') {
+              updateFlowRadarVisualization(signals);
+            }
+
+            if (!watchlist) return;
       if (!signals.length) {
         watchlist.innerHTML = '<div class="flow-empty">当前关注列表没有期权活动信号。</div>';
         return;
