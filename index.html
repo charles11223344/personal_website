@@ -5,40 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Lemon 美股手记，记录美股市场观察、财报拆解、投资复盘和视频笔记。" />
   <title>Lemon 美股手记 | 美股 Vlog 与投资笔记</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --ink: #111318;
-      --muted: #59606b;
-      --paper: #f7f8f6;
-      --surface: #ffffff;
-      --line: #d9ded8;
-      --green: #0f8f63;
-      --green-dark: #076346;
-      --red: #c64a3d;
-      --gold: #c08a26;
-      --blue: #315e8c;
-      --btc: #f7931a;
-      --lemon: #f4d33f;
-      --lemon-soft: #f3edcf;
-      --shadow: 0 18px 45px rgba(17, 19, 24, 0.09);
-      --radius: 8px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+      :root {
+        --ink: #e8f4fd;
+        --muted: #6b8aa3;
+        --paper: #04080f;
+        --surface: #0a121c;
+        --line: #1a2a3e;
+        --green: #39ff14;
+        --green-dark: #00cc44;
+        --red: #ff3366;
+        --gold: #ffb000;
+        --blue: #00f3ff;
+        --btc: #f7931a;
+        --lemon: #ffb000;
+        --lemon-soft: #1a2a3e;
+        --neon-cyan: #00f3ff;
+        --neon-green: #39ff14;
+        --neon-red: #ff3366;
+        --neon-amber: #ffb000;
+        --neon-violet: #bc9cff;
+        --glow-cyan: 0 0 12px #00f3ff, 0 0 24px rgba(0,243,255,0.4);
+        --glow-green: 0 0 12px #39ff14;
+        --glow-red: 0 0 12px #ff3366;
+        --shadow: 0 18px 45px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0,243,255,0.08);
+        --radius: 6px;
+        --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+        --font-display: 'Space Grotesk', 'Orbitron', sans-serif;
+      }
 
     body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
-      line-height: 1.6;
-    }
+          margin: 0;
+          background: var(--paper);
+          color: var(--ink);
+          font-family: var(--font-mono);
+          line-height: 1.6;
+        }
+
+        h1, h2, h3, .hero h1, .section-head h2, .sync-copy h2, .crypto-copy h2 {
+          font-family: var(--font-display);
+        }
+
+        .brand-text strong, .hero-brand span, .panel-number, .stock-symbol strong, .risk-card-top strong, .flow-symbol, .flow-rank, .calendar-focus-card strong {
+          font-family: var(--font-display);
+        }
+
+        .stock-price, .risk-value, .flow-kpi strong, .flow-signal-metric strong, .stock-change, .risk-change, .crypto-box #crypto-prices {
+          font-family: var(--font-mono);
+          font-variant-numeric: tabular-nums;
+        }
+
+        * {
+          box-sizing: border-box;
+        }
 
     a {
       color: inherit;
@@ -50,13 +72,13 @@
     }
 
     .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      border-bottom: 1px solid rgba(217, 222, 216, 0.9);
-      background: rgba(247, 248, 246, 0.92);
-      backdrop-filter: blur(14px);
-    }
+          position: sticky;
+          top: 0;
+          z-index: 20;
+          border-bottom: 1px solid var(--line);
+          background: rgba(4, 8, 15, 0.92);
+          backdrop-filter: blur(14px);
+        }
 
     .nav-wrap {
       width: min(1180px, calc(100% - 32px));
@@ -79,14 +101,14 @@
     }
 
     .brand-logo {
-      width: 52px;
-      height: 52px;
-      object-fit: cover;
-      object-position: center 22%;
-      border-radius: var(--radius);
-      border: 1px solid rgba(17, 19, 24, 0.18);
-      background: var(--lemon-soft);
-    }
+          width: 52px;
+          height: 52px;
+          object-fit: cover;
+          object-position: center 22%;
+          border-radius: var(--radius);
+          border: 1px solid var(--line);
+          background: var(--lemon-soft);
+        }
 
     .brand-text {
       display: grid;
@@ -120,23 +142,23 @@
     }
 
     .nav-links a:hover,
-    .nav-links a:focus-visible {
-      color: var(--ink);
-      background: #e9eee9;
-      outline: none;
-    }
+        .nav-links a:focus-visible {
+          color: var(--ink);
+          background: var(--line);
+          outline: none;
+        }
 
     .hero {
-      min-height: min(760px, calc(100svh - 108px));
-      display: grid;
-      align-items: end;
-      background-image:
-        linear-gradient(90deg, rgba(8, 12, 18, 0.9) 0%, rgba(8, 12, 18, 0.74) 38%, rgba(8, 12, 18, 0.18) 78%),
-        url("market-vlog-hero.png");
-      background-size: cover;
-      background-position: center;
-      color: #ffffff;
-    }
+          min-height: min(760px, calc(100svh - 108px));
+          display: grid;
+          align-items: end;
+          background-image:
+            linear-gradient(90deg, rgba(8, 12, 18, 0.9) 0%, rgba(8, 12, 18, 0.74) 38%, rgba(8, 12, 18, 0.18) 78%),
+            url("market-vlog-hero.png");
+          background-size: cover;
+          background-position: center;
+          color: var(--ink);
+        }
 
     .hero-inner {
       width: min(1180px, calc(100% - 32px));
@@ -145,34 +167,34 @@
     }
 
     .eyebrow {
-      margin: 0 0 16px;
-      color: #d7e7de;
-      font-size: 0.92rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
+          margin: 0 0 16px;
+          color: var(--muted);
+          font-size: 0.92rem;
+          font-weight: 800;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+        }
 
-    .hero-brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 20px;
-      color: #fff8d7;
-      font-weight: 900;
-      letter-spacing: 0.02em;
-    }
+        .hero-brand {
+          display: inline-flex;
+          align-items: center;
+          gap: 14px;
+          margin-bottom: 20px;
+          color: var(--neon-amber);
+          font-weight: 900;
+          letter-spacing: 0.02em;
+        }
 
     .hero-brand img {
-      width: 108px;
-      height: 86px;
-      object-fit: cover;
-      object-position: center 18%;
-      border-radius: var(--radius);
-      border: 1px solid rgba(255, 255, 255, 0.36);
-      background: var(--lemon-soft);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-    }
+          width: 108px;
+          height: 86px;
+          object-fit: cover;
+          object-position: center 18%;
+          border-radius: var(--radius);
+          border: 1px solid var(--neon-cyan);
+          background: var(--lemon-soft);
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 243, 255, 0.3);
+        }
 
     .hero-brand span {
       padding-bottom: 2px;
@@ -188,11 +210,11 @@
     }
 
     .hero-copy {
-      max-width: 650px;
-      margin: 22px 0 0;
-      color: #eef3f0;
-      font-size: clamp(1rem, 2vw, 1.24rem);
-    }
+          max-width: 650px;
+          margin: 22px 0 0;
+          color: var(--ink);
+          font-size: clamp(1rem, 2vw, 1.24rem);
+        }
 
     .hero-actions {
       margin-top: 30px;
@@ -222,20 +244,21 @@
     }
 
     .button.primary {
-      background: var(--green);
-      color: #ffffff;
-    }
+          background: var(--neon-green);
+          color: var(--paper);
+        }
 
-    .button.primary:hover,
-    .button.primary:focus-visible {
-      background: var(--green-dark);
-    }
+        .button.primary:hover,
+        .button.primary:focus-visible {
+          background: var(--neon-green);
+          filter: brightness(1.2);
+        }
 
-    .button.secondary {
-      color: #ffffff;
-      border-color: rgba(255, 255, 255, 0.55);
-      background: rgba(255, 255, 255, 0.08);
-    }
+        .button.secondary {
+          color: var(--ink);
+          border-color: var(--line);
+          background: var(--surface);
+        }
 
     .market-strip {
       border-block: 1px solid var(--line);
@@ -306,29 +329,29 @@
     }
 
     .flow-board {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: #0f141b;
-      color: #ffffff;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
+          border: 1px solid var(--line);
+          border-radius: var(--radius);
+          background: var(--surface);
+          color: var(--ink);
+          box-shadow: var(--shadow);
+          overflow: hidden;
+        }
 
-    .flow-toolbar {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 18px 20px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-    }
+        .flow-toolbar {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          gap: 18px;
+          padding: 18px 20px;
+          border-bottom: 1px solid var(--line);
+        }
 
-    .flow-toolbar p,
-    .flow-status {
-      margin: 4px 0 0;
-      color: #aeb9c6;
-      font-size: 0.86rem;
-    }
+        .flow-toolbar p,
+        .flow-status {
+          margin: 4px 0 0;
+          color: var(--muted);
+          font-size: 0.86rem;
+        }
 
     .flow-status {
       max-width: 360px;
@@ -337,24 +360,24 @@
     }
 
     .flow-kpis {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1px;
-      background: rgba(255, 255, 255, 0.1);
-    }
+          display: grid;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 1px;
+          background: var(--line);
+        }
 
-    .flow-kpi {
-      min-height: 88px;
-      padding: 15px 18px;
-      background: #151c25;
-    }
+        .flow-kpi {
+          min-height: 88px;
+          padding: 15px 18px;
+          background: var(--surface);
+        }
 
-    .flow-kpi span {
-      display: block;
-      color: #8e9ba9;
-      font-size: 0.76rem;
-      font-weight: 800;
-    }
+        .flow-kpi span {
+          display: block;
+          color: var(--muted);
+          font-size: 0.76rem;
+          font-weight: 800;
+        }
 
     .flow-kpi strong {
       display: block;
@@ -363,34 +386,34 @@
     }
 
     .flow-rule {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 13px 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      color: #c7d0da;
-      background: #101720;
-      font-size: 0.84rem;
-    }
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 18px;
+          padding: 13px 20px;
+          border-top: 1px solid var(--line);
+          color: var(--muted);
+          background: var(--surface);
+          font-size: 0.84rem;
+        }
 
-    .flow-rule strong {
-      color: #ffffff;
-      white-space: nowrap;
-    }
+        .flow-rule strong {
+          color: var(--ink);
+          white-space: nowrap;
+        }
 
-    .flow-watchlist {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1px;
-      background: rgba(255, 255, 255, 0.1);
-    }
+        .flow-watchlist {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 1px;
+          background: var(--line);
+        }
 
-    .flow-signal-card {
-      min-width: 0;
-      padding: 18px 20px;
-      background: #151c25;
-    }
+        .flow-signal-card {
+          min-width: 0;
+          padding: 18px 20px;
+          background: var(--surface);
+        }
 
     .flow-signal-top {
       display: flex;
@@ -406,152 +429,152 @@
     }
 
     .flow-rank {
-      display: grid;
-      place-items: center;
-      width: 28px;
-      height: 28px;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 50%;
-      color: #8e9ba9;
-      font-size: 0.76rem;
-      font-weight: 900;
-    }
+          display: grid;
+          place-items: center;
+          width: 28px;
+          height: 28px;
+          border: 1px solid var(--line);
+          border-radius: 50%;
+          color: var(--muted);
+          font-size: 0.76rem;
+          font-weight: 900;
+        }
 
-    .flow-symbol {
-      font-size: 1.2rem;
-      font-weight: 900;
-    }
+        .flow-symbol {
+          font-size: 1.2rem;
+          font-weight: 900;
+        }
 
-    .flow-label {
-      display: inline-flex;
-      align-items: center;
-      min-height: 26px;
-      padding: 4px 9px;
-      border-radius: 999px;
-      color: #dce4ec;
-      background: rgba(255, 255, 255, 0.08);
-      font-size: 0.72rem;
-      font-weight: 900;
-      white-space: nowrap;
-    }
+        .flow-label {
+          display: inline-flex;
+          align-items: center;
+          min-height: 26px;
+          padding: 4px 9px;
+          border-radius: 999px;
+          color: var(--ink);
+          background: var(--surface);
+          font-size: 0.72rem;
+          font-weight: 900;
+          white-space: nowrap;
+        }
 
     .flow-label.candidate { color: #70d6a6; background: rgba(112, 214, 166, 0.12); }
     .flow-label.caution { color: #f08c91; background: rgba(240, 140, 145, 0.12); }
     .flow-label.watch { color: #f1c96a; background: rgba(241, 201, 106, 0.12); }
 
     .flow-signal-verdict {
-      min-height: 42px;
-      margin: 13px 0 14px;
-      color: #dce4ec;
-      font-size: 0.88rem;
-      line-height: 1.55;
-    }
+          min-height: 42px;
+          margin: 13px 0 14px;
+          color: var(--ink);
+          font-size: 0.88rem;
+          line-height: 1.55;
+        }
 
-    .flow-signal-metrics {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 8px;
-    }
+        .flow-signal-metrics {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 8px;
+        }
 
-    .flow-signal-metric {
-      min-width: 0;
-      padding: 9px 10px;
-      background: #101720;
-    }
+        .flow-signal-metric {
+          min-width: 0;
+          padding: 9px 10px;
+          background: var(--surface);
+        }
 
-    .flow-signal-metric span,
-    .flow-signal-score {
-      display: block;
-      color: #8e9ba9;
-      font-size: 0.7rem;
-      font-weight: 800;
-    }
+        .flow-signal-metric span,
+        .flow-signal-score {
+          display: block;
+          color: var(--muted);
+          font-size: 0.7rem;
+          font-weight: 800;
+        }
 
     .flow-signal-metric strong {
-      display: block;
-      margin-top: 4px;
-      overflow: hidden;
-      color: #ffffff;
-      font-size: 0.9rem;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
+          display: block;
+          margin-top: 4px;
+          overflow: hidden;
+          color: var(--ink);
+          font-size: 0.9rem;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
 
-    .flow-signal-score { margin-top: 11px; }
+        .flow-signal-score { margin-top: 11px; }
 
-    .flow-empty {
-      padding: 28px 20px;
-      color: #aeb9c6;
-      text-align: center;
-    }
+        .flow-empty {
+          padding: 28px 20px;
+          color: var(--muted);
+          text-align: center;
+        }
 
-    .risk-radar {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: #111318;
-      color: #ffffff;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
+        .risk-radar {
+          border: 1px solid var(--line);
+          border-radius: var(--radius);
+          background: var(--surface);
+          color: var(--ink);
+          box-shadow: var(--shadow);
+          overflow: hidden;
+        }
 
     .risk-radar-head {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 18px 20px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-    }
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          gap: 18px;
+          padding: 18px 20px;
+          border-bottom: 1px solid var(--line);
+        }
 
-    .risk-radar-head p {
-      margin: 4px 0 0;
-      color: #c8d1cf;
-      font-size: 0.93rem;
-    }
+        .risk-radar-head p {
+          margin: 4px 0 0;
+          color: var(--muted);
+          font-size: 0.93rem;
+        }
 
-    .risk-radar-status {
-      min-width: 190px;
-      color: #d8dddc;
-      text-align: right;
-      font-size: 0.86rem;
-      font-weight: 800;
-    }
+        .risk-radar-status {
+          min-width: 190px;
+          color: var(--muted);
+          text-align: right;
+          font-size: 0.86rem;
+          font-weight: 800;
+        }
 
-    .risk-summary {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 14px 20px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-      background: rgba(255, 255, 255, 0.05);
-    }
+        .risk-summary {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              gap: 16px;
+              padding: 14px 20px;
+              border-bottom: 1px solid var(--line);
+              background: var(--paper);
+            }
 
-    .risk-summary strong {
-      display: block;
-      font-size: 1.08rem;
-    }
+            .risk-summary strong {
+              display: block;
+              font-size: 1.08rem;
+            }
 
-    .risk-summary span {
-      color: #c8d1cf;
-      font-size: 0.9rem;
-      font-weight: 800;
-    }
+            .risk-summary span {
+              color: var(--muted);
+              font-size: 0.9rem;
+              font-weight: 800;
+            }
 
-    .risk-summary .risk-badge {
-      border-radius: 999px;
-      padding: 7px 11px;
-      color: #111318;
-      background: #fff3a3;
-      white-space: nowrap;
-    }
+            .risk-summary .risk-badge {
+              border-radius: 999px;
+              padding: 7px 11px;
+              color: var(--paper);
+              background: var(--neon-amber);
+              white-space: nowrap;
+            }
 
-    .risk-grid {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 1px;
-      background: rgba(255, 255, 255, 0.12);
-    }
+            .risk-grid {
+              display: grid;
+              grid-template-columns: repeat(5, minmax(0, 1fr));
+              gap: 1px;
+              background: var(--line);
+            }
 
     .risk-card {
       min-height: 164px;
@@ -589,63 +612,296 @@
     }
 
     .risk-card-top span {
-      color: #c8d1cf;
-      font-size: 0.8rem;
-      font-weight: 800;
-      text-align: right;
-    }
+          color: var(--muted);
+          font-size: 0.8rem;
+          font-weight: 800;
+          text-align: right;
+        }
 
-    .risk-name {
-      min-height: 40px;
-      margin: 8px 0 0;
-      color: #c8d1cf;
-      font-size: 0.9rem;
-    }
+        .risk-name {
+          min-height: 40px;
+          margin: 8px 0 0;
+          color: var(--muted);
+          font-size: 0.9rem;
+        }
 
-    .risk-value {
-      margin-top: 12px;
-      font-size: 1.45rem;
-      font-weight: 900;
-      line-height: 1.1;
-    }
+        .risk-value {
+          margin-top: 12px;
+          font-size: 1.45rem;
+          font-weight: 900;
+          line-height: 1.1;
+        }
 
-    .risk-change {
-      margin-top: 6px;
-      font-size: 0.93rem;
-      font-weight: 900;
-    }
+        .risk-change {
+          margin-top: 6px;
+          font-size: 0.93rem;
+          font-weight: 900;
+        }
 
     .risk-change.up {
-      color: #f1a77d;
-    }
+          color: var(--neon-red);
+        }
 
-    .risk-change.down {
-      color: #86d9b3;
-    }
+        .risk-change.down {
+          color: var(--neon-green);
+        }
 
-    .risk-change.flat {
-      color: #c8d1cf;
-    }
+        .risk-change.flat {
+          color: var(--muted);
+        }
 
-    .risk-note {
-      margin-top: 11px;
-      color: #d8dddc;
-      font-size: 0.82rem;
-    }
+        .risk-note {
+          margin-top: 11px;
+          color: var(--muted);
+          font-size: 0.82rem;
+        }
 
     .risk-verdict {
-      display: inline-flex;
-      align-items: center;
-      margin-top: 10px;
-      border-radius: 999px;
-      padding: 5px 9px;
-      background: rgba(255, 255, 255, 0.1);
-      color: #ffffff;
-      font-size: 0.78rem;
-      font-weight: 900;
-    }
+          display: inline-flex;
+          align-items: center;
+          margin-top: 10px;
+          border-radius: 999px;
+          padding: 5px 9px;
+          background: var(--line);
+          color: var(--ink);
+          font-size: 0.78rem;
+          font-weight: 900;
+        }
 
-    .calendar-board {
+        /* ===== Radar Visualization ===== */
+        .radar-wrapper {
+          position: relative;
+          width: 100%;
+          max-width: 400px;
+          margin: 20px auto 0;
+          aspect-ratio: 1;
+        }
+
+        #radar-svg {
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+
+        .grid-circle {
+          fill: none;
+          stroke: var(--neon-cyan);
+          stroke-width: 1;
+          stroke-opacity: 0.15;
+        }
+
+        .radar-axes line {
+          stroke: var(--neon-cyan);
+          stroke-width: 1;
+          stroke-opacity: 0.2;
+          stroke-dasharray: 4 4;
+        }
+
+        .radar-labels text {
+          font-family: var(--font-mono);
+          font-size: 10px;
+          fill: var(--neon-cyan);
+          text-anchor: middle;
+          dominant-baseline: middle;
+          font-weight: 600;
+        }
+
+        .radar-trail polygon {
+          fill: var(--neon-cyan);
+          fill-opacity: 0.06;
+          stroke: var(--neon-cyan);
+          stroke-width: 0.5;
+          stroke-opacity: 0.15;
+          filter: url(#glow);
+        }
+
+        .radar-polygon {
+          fill: url(#data-gradient);
+          stroke: var(--neon-green);
+          stroke-width: 1.5;
+          stroke-opacity: 0.8;
+          filter: url(#glow);
+          transition: all 0.5s ease-out;
+        }
+
+        .radar-points circle {
+          fill: var(--neon-green);
+          stroke: var(--paper);
+          stroke-width: 2;
+          r: 5;
+          filter: url(#pulse);
+          transition: r 0.3s ease, fill 0.3s ease;
+        }
+
+        .radar-points circle:hover {
+          r: 8;
+          fill: var(--neon-amber);
+        }
+
+        .radar-points text {
+          font-family: var(--font-mono);
+          font-size: 9px;
+          fill: var(--ink);
+          text-anchor: middle;
+          dominant-baseline: middle;
+          pointer-events: none;
+        }
+
+        .radar-sweep path {
+          fill: url(#sweep-gradient);
+          opacity: 0;
+          transform-origin: 200px 200px;
+          animation: radar-sweep 4s linear infinite;
+        }
+
+        @keyframes radar-sweep {
+          0% {
+            transform: rotate(-90deg);
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          90% {
+            opacity: 1;
+          }
+          100% {
+            transform: rotate(270deg);
+            opacity: 0;
+          }
+        }
+
+        .radar-center {
+          fill: var(--neon-cyan);
+          filter: url(#pulse);
+          animation: radar-pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes radar-pulse {
+          0%, 100% { r: 6; opacity: 1; }
+          50% { r: 10; opacity: 0.5; }
+        }
+
+        .radar-legend {
+          position: absolute;
+          bottom: -60px;
+          left: 0;
+          right: 0;
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          gap: 8px;
+          font-family: var(--font-mono);
+          font-size: 10px;
+          color: var(--muted);
+        }
+
+        .radar-legend-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 2px;
+          padding: 4px 2px;
+          background: var(--surface);
+          border: 1px solid var(--line);
+          border-radius: 4px;
+        }
+
+        .radar-legend-label {
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+        }
+
+        .radar-legend-value {
+          font-weight: 900;
+          font-size: 11px;
+        }
+
+        .radar-legend-value.vix { color: var(--neon-red); }
+        .radar-legend-value.us10y { color: var(--neon-amber); }
+        .radar-legend-value.dxy { color: var(--neon-cyan); }
+        .radar-legend-value.wti { color: var(--neon-violet); }
+        .radar-legend-value.gold { color: var(--gold); }
+
+        /* Risk cards detail toggle */
+        .risk-cards-detail {
+          margin-top: 16px;
+          border: 1px solid var(--line);
+          border-radius: var(--radius);
+          background: var(--surface);
+          overflow: hidden;
+        }
+
+        .risk-cards-toggle {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          padding: 12px 16px;
+          background: var(--paper);
+          border: none;
+          color: var(--ink);
+          font-family: var(--font-mono);
+          font-size: 0.85rem;
+          font-weight: 700;
+          cursor: pointer;
+          text-align: left;
+        }
+
+        .risk-cards-toggle:hover {
+          background: var(--line);
+        }
+
+        .risk-cards-toggle svg {
+          transition: transform 0.2s ease;
+          color: var(--neon-cyan);
+        }
+
+        .risk-cards-detail[open] .risk-cards-toggle svg {
+          transform: rotate(180deg);
+        }
+
+        .risk-cards-detail[open] .risk-grid {
+          animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+          from { opacity: 0; transform: translateY(-10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .radar-sweep path,
+          .radar-center {
+            animation: none;
+          }
+          .radar-sweep path {
+            opacity: 0.3;
+          }
+          .radar-polygon {
+            transition: none;
+          }
+          .risk-cards-detail[open] .risk-grid {
+            animation: none;
+          }
+        }
+
+        @media (max-width: 680px) {
+          .radar-wrapper {
+            max-width: 100%;
+          }
+          .radar-legend {
+            position: static;
+            margin-top: 12px;
+            grid-template-columns: repeat(5, 1fr);
+            font-size: 9px;
+          }
+          .radar-labels text {
+            font-size: 8px;
+          }
+        }
+
+        .calendar-board {
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: var(--surface);
@@ -654,14 +910,14 @@
     }
 
     .calendar-head {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 18px 20px;
-      border-bottom: 1px solid var(--line);
-      background: #fbfcfb;
-    }
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          gap: 18px;
+          padding: 18px 20px;
+          border-bottom: 1px solid var(--line);
+          background: var(--paper);
+        }
 
     .calendar-head p {
       margin: 4px 0 0;
@@ -686,31 +942,31 @@
     }
 
     .calendar-focus-card {
-      padding: 16px 18px;
-      background: #111318;
-      color: #ffffff;
-    }
+          padding: 16px 18px;
+          background: var(--surface);
+          color: var(--ink);
+        }
 
-    .calendar-focus-card span {
-      display: block;
-      margin-bottom: 5px;
-      color: var(--lemon);
-      font-size: 0.78rem;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
+        .calendar-focus-card span {
+          display: block;
+          margin-bottom: 5px;
+          color: var(--neon-amber);
+          font-size: 0.78rem;
+          font-weight: 900;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+        }
 
-    .calendar-focus-card strong {
-      display: block;
-      font-size: 1.08rem;
-      line-height: 1.2;
-    }
+        .calendar-focus-card strong {
+          display: block;
+          font-size: 1.08rem;
+          line-height: 1.2;
+        }
 
-    .calendar-focus-card p {
-      margin: 5px 0 0;
-      color: #d8dddc;
-      font-size: 0.9rem;
+        .calendar-focus-card p {
+          margin: 5px 0 0;
+          color: var(--muted);
+          font-size: 0.9rem;
     }
 
     .calendar-grid {
@@ -731,12 +987,16 @@
     }
 
     .event-card.upcoming {
-      background: #f6faf8;
-    }
+          background: var(--paper);
+        }
 
-    .event-card.past {
-      background: #fbfcfb;
-    }
+        .event-card.today {
+          background: var(--surface);
+        }
+
+        .event-card.past {
+          background: var(--paper);
+        }
 
     .event-topline {
       display: flex;
@@ -754,11 +1014,11 @@
     }
 
     .event-type {
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 3px 8px;
-      background: #ffffff;
-    }
+          border: 1px solid var(--line);
+          border-radius: 999px;
+          padding: 3px 8px;
+          background: var(--surface);
+        }
 
     .event-card h3 {
       margin: 15px 0 8px;
@@ -788,14 +1048,14 @@
     }
 
     .stock-toolbar {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 18px 20px;
-      border-bottom: 1px solid var(--line);
-      background: #fbfcfb;
-    }
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          gap: 18px;
+          padding: 18px 20px;
+          border-bottom: 1px solid var(--line);
+          background: var(--paper);
+        }
 
     .stock-toolbar p {
       margin: 4px 0 0;
@@ -812,9 +1072,9 @@
     }
 
     .stock-live-status {
-      margin-top: 4px;
-      color: var(--green-dark);
-    }
+          margin-top: 4px;
+          color: var(--neon-green);
+        }
 
     .stock-grid {
       display: grid;
@@ -830,8 +1090,9 @@
     }
 
     .stock-card.error {
-      background: #fff8f6;
-    }
+          background: var(--surface);
+          border: 1px solid var(--neon-red);
+        }
 
     .stock-symbol {
       display: flex;
@@ -874,16 +1135,16 @@
     }
 
     .stock-change.up {
-      color: var(--green);
-    }
+          color: var(--neon-green);
+        }
 
-    .stock-change.down {
-      color: var(--red);
-    }
+        .stock-change.down {
+          color: var(--neon-red);
+        }
 
-    .stock-change.flat {
-      color: var(--muted);
-    }
+        .stock-change.flat {
+          color: var(--muted);
+        }
 
     .stock-meta {
       margin-top: 11px;
@@ -902,8 +1163,8 @@
     }
 
     .section.alt {
-      background: #ffffff;
-    }
+          background: var(--paper);
+        }
 
     .section-inner {
       width: min(1180px, calc(100% - 32px));
@@ -1039,35 +1300,34 @@
     }
 
     .tag {
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 4px 9px;
-      color: var(--muted);
-      font-size: 0.82rem;
-      font-weight: 800;
-      background: #fbfcfb;
-    }
+          border: 1px solid var(--line);
+          border-radius: 999px;
+          padding: 4px 9px;
+          color: var(--muted);
+          font-size: 0.82rem;
+          font-weight: 800;
+          background: var(--paper);
+        }
 
-    .video-art {
-      min-height: 186px;
-      display: grid;
-      place-items: center;
-      background:
-        linear-gradient(135deg, rgba(15, 143, 99, 0.88), rgba(49, 94, 140, 0.82)),
-        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.16) 0 1px, transparent 1px 46px);
-      color: #ffffff;
-    }
+        .video-art {
+                  min-height: 186px;
+                  display: grid;
+                  place-items: center;
+                  background:
+                    linear-gradient(135deg, rgba(0, 243, 255, 0.88), rgba(188, 156, 255, 0.82)),
+                    repeating-linear-gradient(90deg, var(--neon-cyan) 0 1px, transparent 1px 46px);
+                }
 
     .play-icon {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      border: 2px solid rgba(255, 255, 255, 0.86);
-      display: grid;
-      place-items: center;
-      font-size: 1.7rem;
-      background: rgba(0, 0, 0, 0.18);
-    }
+          width: 70px;
+          height: 70px;
+          border-radius: 50%;
+          border: 2px solid var(--neon-cyan);
+          display: grid;
+          place-items: center;
+          font-size: 1.7rem;
+          background: var(--surface);
+        }
 
     .video-card h3,
     .video-card p {
@@ -1108,31 +1368,31 @@
     }
 
     .sync-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      border-left: 4px solid var(--green);
-      background: #ffffff;
-      padding: 13px 15px;
-      border-radius: 0 var(--radius) var(--radius) 0;
-    }
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          border-left: 4px solid var(--neon-green);
+          background: var(--surface);
+          padding: 13px 15px;
+          border-radius: 0 var(--radius) var(--radius) 0;
+        }
 
-    .sync-item strong {
-      min-width: 84px;
-    }
+        .sync-item strong {
+          min-width: 84px;
+        }
 
-    .sync-item span {
-      color: var(--muted);
-    }
+        .sync-item span {
+          color: var(--muted);
+        }
 
-    .sync-highlight {
-      margin-top: 24px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: #ffffff;
-      box-shadow: var(--shadow);
-      padding: 18px;
-    }
+        .sync-highlight {
+          margin-top: 24px;
+          border: 1px solid var(--line);
+          border-radius: var(--radius);
+          background: var(--surface);
+          box-shadow: var(--shadow);
+          padding: 18px;
+        }
 
     .sync-highlight h3 {
       margin: 0 0 8px;
@@ -1150,55 +1410,55 @@
     }
 
     .sync-actions .button.secondary {
-      color: var(--ink);
-      border-color: var(--line);
-      background: #ffffff;
-    }
+          color: var(--ink);
+          border-color: var(--line);
+          background: var(--surface);
+        }
 
     .sync-actions .button.secondary:hover,
-    .sync-actions .button.secondary:focus-visible {
-      background: #eef3f0;
-    }
+        .sync-actions .button.secondary:focus-visible {
+          background: var(--line);
+        }
 
-    .newsletter {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--ink);
-      color: #ffffff;
-      padding: 24px;
-      box-shadow: var(--shadow);
-    }
+        .newsletter {
+          border: 1px solid var(--line);
+          border-radius: var(--radius);
+          background: var(--paper);
+          color: var(--ink);
+          padding: 24px;
+          box-shadow: var(--shadow);
+        }
 
-    .newsletter h3 {
-      margin: 0 0 8px;
-      font-size: 1.4rem;
-    }
+        .newsletter h3 {
+          margin: 0 0 8px;
+          font-size: 1.4rem;
+        }
 
-    .newsletter p {
-      margin: 0 0 18px;
-      color: #d8dddc;
-    }
+        .newsletter p {
+          margin: 0 0 18px;
+          color: var(--muted);
+        }
 
     .wechat-qr-block {
-      margin-bottom: 20px;
-      border-radius: var(--radius);
-      background: #ffffff;
-      color: var(--ink);
-      padding: 14px;
-    }
+          margin-bottom: 20px;
+          border-radius: var(--radius);
+          background: var(--surface);
+          color: var(--ink);
+          padding: 14px;
+        }
 
-    .wechat-qr-block strong {
-      display: block;
-      margin-bottom: 10px;
-      font-size: 0.98rem;
-    }
+        .wechat-qr-block strong {
+          display: block;
+          margin-bottom: 10px;
+          font-size: 0.98rem;
+        }
 
-    .wechat-qr-block img {
-      width: min(180px, 100%);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: #ffffff;
-    }
+        .wechat-qr-block img {
+          width: min(180px, 100%);
+          border: 1px solid var(--line);
+          border-radius: var(--radius);
+          background: var(--surface);
+        }
 
     .wechat-qr-block .qr-fallback {
       display: none;
@@ -1220,20 +1480,20 @@
     }
 
     .newsletter input,
-    .newsletter textarea {
-      width: 100%;
-      border: 1px solid rgba(255, 255, 255, 0.24);
-      border-radius: var(--radius);
-      padding: 12px 13px;
-      background: rgba(255, 255, 255, 0.08);
-      color: #ffffff;
-      font: inherit;
-    }
+        .newsletter textarea {
+          width: 100%;
+          border: 1px solid var(--line);
+          border-radius: var(--radius);
+          padding: 12px 13px;
+          background: var(--surface);
+          color: var(--ink);
+          font: inherit;
+        }
 
-    .newsletter input::placeholder,
-    .newsletter textarea::placeholder {
-      color: #bfc7c5;
-    }
+        .newsletter input::placeholder,
+        .newsletter textarea::placeholder {
+          color: var(--muted);
+        }
 
     .newsletter textarea {
       min-height: 110px;
@@ -1301,10 +1561,10 @@
     }
 
     .site-footer {
-      background: #111318;
-      color: #d8dddc;
-      padding: 34px 0;
-    }
+          background: var(--paper);
+          color: var(--ink);
+          padding: 34px 0;
+        }
 
     .footer-inner {
       width: min(1180px, calc(100% - 32px));
@@ -1323,37 +1583,37 @@
     }
 
     .footer-links a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 800;
-    }
+          color: var(--ink);
+          text-decoration: none;
+          font-weight: 800;
+        }
 
-    .footer-links a:hover,
-    .footer-links a:focus-visible {
-      color: #a8dbc9;
-      outline: none;
-    }
+        .footer-links a:hover,
+        .footer-links a:focus-visible {
+          color: var(--neon-green);
+          outline: none;
+        }
 
-    .visitor-counter {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      color: #ffffff;
-      font-size: 0.92rem;
-      font-weight: 800;
-    }
+        .visitor-counter {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          color: var(--ink);
+          font-size: 0.92rem;
+          font-weight: 800;
+        }
 
-    .visitor-counter span {
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.06);
+        .visitor-counter span {
+          border: 1px solid var(--line);
+          border-radius: var(--radius);
+          background: var(--surface);
       padding: 7px 10px;
     }
 
     .visitor-counter strong {
-      color: #fff3a3;
-      margin-left: 4px;
-    }
+          color: var(--neon-amber);
+          margin-left: 4px;
+        }
 
     @media (max-width: 960px) {
       .nav-wrap {
@@ -1481,22 +1741,46 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
+          html {
+            scroll-behavior: auto;
+          }
 
-      .button {
-        transition: none;
-      }
+          .button {
+            transition: none;
+          }
 
-      .button:hover,
-      .button:focus-visible {
-        transform: none;
-      }
-    }
-  </style>
+          .button:hover,
+          .button:focus-visible {
+            transform: none;
+          }
+        }
+
+        /* ===== Background FX Canvas ===== */
+        #bg-fx {
+          position: fixed;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+          pointer-events: none;
+          opacity: 0.6;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          #bg-fx {
+            display: none;
+          }
+        }
+
+        @media (max-width: 768px) {
+          #bg-fx {
+            opacity: 0.35;
+          }
+        }
+      </style>
 </head>
 <body>
+  <canvas id="bg-fx" aria-hidden="true"></canvas>
   <header class="site-header">
     <div class="nav-wrap">
       <a class="brand" href="#home" aria-label="Lemon 美股手记首页">
@@ -1566,35 +1850,119 @@
           <p>把 VIX、10年期美债、美元指数、油价和黄金放在同一屏，用来判断 AI 硬件和成长股的外部压力。</p>
         </div>
         <div class="risk-radar">
-          <div class="risk-radar-head">
-            <div>
-              <strong>宏观压力面板</strong>
-              <p>VIX 看波动，10Y 看估值压力，DXY 看美元流动性，WTI 和 Gold 看通胀与避险。</p>
-            </div>
-            <div class="risk-radar-status">
-              <div id="risk-updated">等待风险数据</div>
-              <div id="risk-source">Live quote endpoint</div>
-            </div>
-          </div>
-          <div class="risk-summary" aria-live="polite">
-            <div>
-              <strong id="risk-summary-title">等待风险雷达判断</strong>
-              <span id="risk-summary-detail">VIX、10Y、DXY、WTI、GOLD 加载后自动生成。</span>
-            </div>
-            <span class="risk-badge" id="risk-summary-badge">Loading</span>
-          </div>
-          <div class="risk-grid" id="risk-grid" aria-live="polite">
-            <article class="risk-card">
-              <div class="risk-card-top">
-                <strong>Loading</strong>
-                <span>Risk</span>
-              </div>
-              <p class="risk-name">正在加载风险雷达...</p>
-              <div class="risk-value">--</div>
-              <div class="risk-change flat">等待更新</div>
-            </article>
-          </div>
-        </div>
+                  <div class="risk-radar-head">
+                    <div>
+                      <strong>宏观压力面板</strong>
+                      <p>VIX 看波动，10Y 看估值压力，DXY 看美元流动性，WTI 和 Gold 看通胀与避险。</p>
+                    </div>
+                    <div class="risk-radar-status">
+                      <div id="risk-updated">等待风险数据</div>
+                      <div id="risk-source">Live quote endpoint</div>
+                    </div>
+                  </div>
+                  <div class="risk-summary" aria-live="polite">
+                    <div>
+                      <strong id="risk-summary-title">等待风险雷达判断</strong>
+                      <span id="risk-summary-detail">VIX、10Y、DXY、WTI、GOLD 加载后自动生成。</span>
+                    </div>
+                    <span class="risk-badge" id="risk-summary-badge">Loading</span>
+                  </div>
+          
+                  <!-- SVG Radar Visualization -->
+                  <div class="radar-wrapper" id="radar-wrapper" role="img" aria-label="宏观风险雷达扫描图">
+                    <svg id="radar-svg" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
+                      <defs>
+                        <!-- Radar sweep gradient -->
+                        <linearGradient id="sweep-gradient" x1="0" y1="0" x2="1" y2="0">
+                          <stop offset="0%" stop-color="var(--neon-cyan)" stop-opacity="0"/>
+                          <stop offset="50%" stop-color="var(--neon-cyan)" stop-opacity="0.6"/>
+                          <stop offset="100%" stop-color="var(--neon-cyan)" stop-opacity="0"/>
+                        </linearGradient>
+                        <!-- Grid circles gradient -->
+                        <radialGradient id="grid-gradient" cx="50%" cy="50%" r="50%">
+                          <stop offset="0%" stop-color="var(--neon-cyan)" stop-opacity="0.08"/>
+                          <stop offset="100%" stop-color="var(--neon-cyan)" stop-opacity="0"/>
+                        </radialGradient>
+                        <!-- Data polygon gradient -->
+                        <radialGradient id="data-gradient" cx="50%" cy="50%" r="50%">
+                          <stop offset="0%" stop-color="var(--neon-green)" stop-opacity="0.25"/>
+                          <stop offset="100%" stop-color="var(--neon-cyan)" stop-opacity="0.05"/>
+                        </radialGradient>
+                        <!-- Glow filter -->
+                        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                          <feGaussianBlur stdDeviation="2" result="blur"/>
+                          <feMerge>
+                            <feMergeNode in="blur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                          </feMerge>
+                        </filter>
+                        <!-- Pulse filter for current values -->
+                        <filter id="pulse" x="-50%" y="-50%" width="200%" height="200%">
+                          <feGaussianBlur stdDeviation="4" result="blur"/>
+                          <feMerge>
+                            <feMergeNode in="blur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                          </feMerge>
+                        </filter>
+                      </defs>
+              
+                      <!-- Background grid circles -->
+                      <g id="radar-grid" class="radar-grid">
+                        <circle class="grid-circle" cx="200" cy="200" r="160" />
+                        <circle class="grid-circle" cx="200" cy="200" r="120" />
+                        <circle class="grid-circle" cx="200" cy="200" r="80" />
+                        <circle class="grid-circle" cx="200" cy="200" r="40" />
+                      </g>
+              
+                      <!-- Axis lines -->
+                      <g id="radar-axes" class="radar-axes"></g>
+              
+                      <!-- Axis labels -->
+                      <g id="radar-labels" class="radar-labels"></g>
+              
+                      <!-- Historical trail (previous readings) -->
+                      <g id="radar-trail" class="radar-trail"></g>
+              
+                      <!-- Current data polygon -->
+                      <polygon id="radar-polygon" class="radar-polygon" points="" />
+              
+                      <!-- Current data points -->
+                      <g id="radar-points" class="radar-points"></g>
+              
+                      <!-- Sweep line -->
+                      <g id="radar-sweep" class="radar-sweep">
+                        <path id="sweep-path" d="" />
+                      </g>
+              
+                      <!-- Center marker -->
+                      <circle id="radar-center" cx="200" cy="200" r="6" class="radar-center" />
+                    </svg>
+            
+                    <!-- Legend / Value readout -->
+                    <div id="radar-legend" class="radar-legend" aria-live="polite"></div>
+                  </div>
+          
+                  <!-- Keep cards as detailed view (collapsible) -->
+                  <details class="risk-cards-detail" id="risk-cards-detail">
+                    <summary class="risk-cards-toggle">
+                      <span>展开详细数值卡片</span>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
+                    </summary>
+                    <div class="risk-grid" id="risk-grid" aria-live="polite">
+                      <article class="risk-card">
+                        <div class="risk-card-top">
+                          <strong>Loading</strong>
+                          <span>Risk</span>
+                        </div>
+                        <p class="risk-name">正在加载风险雷达...</p>
+                        <div class="risk-value">--</div>
+                        <div class="risk-change flat">等待更新</div>
+                      </article>
+                    </div>
+                  </details>
+                </div>
       </div>
     </section>
 
@@ -2630,92 +2998,324 @@
     }
 
     function renderStocks(data, note) {
-      const grid = document.getElementById("stock-grid");
-      const updated = document.getElementById("stocks-updated");
-      const source = document.getElementById("stocks-source");
-      const liveStatus = document.getElementById("stocks-live-status");
-      if (!grid) return;
+          const grid = document.getElementById("stock-grid");
+          const updated = document.getElementById("stocks-updated");
+          const source = document.getElementById("stocks-source");
+          const liveStatus = document.getElementById("stocks-live-status");
+          if (!grid) return;
 
-      const symbols = Array.isArray(data.symbols) ? data.symbols : [];
-      if (updated) updated.textContent = "更新时间 " + formatStockDate(data.updatedAt);
-      if (source) source.textContent = note || data.source || "data/stocks.json";
-      if (liveStatus && data.liveStatus) liveStatus.textContent = data.liveStatus;
+          const symbols = Array.isArray(data.symbols) ? data.symbols : [];
+          if (updated) updated.textContent = "更新时间 " + formatStockDate(data.updatedAt);
+          if (source) source.textContent = note || data.source || "data/stocks.json";
+          if (liveStatus && data.liveStatus) liveStatus.textContent = data.liveStatus;
 
-      grid.innerHTML = symbols.map(function(item) {
-        const change = Number(item.change);
-        const percent = Number(item.changePercent);
-        const hasChange = Number.isFinite(change) && Number.isFinite(percent);
-        const direction = hasChange ? (change > 0 ? "up" : change < 0 ? "down" : "flat") : "flat";
-        const changePrefix = hasChange && change > 0 ? "+" : "";
-        const percentPrefix = hasChange && percent > 0 ? "+" : "";
-        const changeText = hasChange
-          ? `${changePrefix}${change.toFixed(2)} (${percentPrefix}${percent.toFixed(2)}%)`
-          : "等待更新";
-        const quoteDate = item.quoteTime
-          ? `报价时间 ${formatStockDate(item.quoteTime)}`
-          : item.date ? `报价日 ${escapeHtml(item.date)}` : "报价日 --";
-        const session = formatQuoteSession(item);
-        const priceLabel = formatPriceLabel(item);
-        const errorClass = item.error ? " error" : "";
+          // Cache previous values for animation
+          const prevValues = new Map();
+          grid.querySelectorAll('.stock-card').forEach(card => {
+            const symbol = card.querySelector('.stock-symbol strong')?.textContent;
+            const priceEl = card.querySelector('.stock-price');
+            const changeEl = card.querySelector('.stock-change');
+            if (symbol && priceEl) {
+              const priceText = priceEl.textContent.replace(/[$,]/g, '');
+              const price = parseFloat(priceText);
+              if (Number.isFinite(price)) prevValues.set(symbol + '-price', price);
+            }
+            if (symbol && changeEl) {
+              const changeMatch = changeEl.textContent.match(/([+-]?\d+\.?\d*)/);
+              if (changeMatch) prevValues.set(symbol + '-change', parseFloat(changeMatch[1]));
+            }
+          });
 
-        return `
-          <article class="stock-card${errorClass}">
-            <div class="stock-symbol">
-              <strong>${escapeHtml(item.symbol)}</strong>
-              <span>${escapeHtml(session)}</span>
-            </div>
-            <p class="stock-name">${escapeHtml(item.name || item.symbol)}</p>
-            <div class="stock-price">${escapeHtml(priceLabel)} ${formatPrice(item)}</div>
-            <div class="stock-change ${direction}">${escapeHtml(changeText)}</div>
-            <div class="stock-meta">
-              <span>${quoteDate}</span>
-              <span>${escapeHtml(formatVolume(item.volume))}</span>
-              ${item.error ? `<span>${escapeHtml(item.error)}</span>` : ""}
-            </div>
-          </article>
-        `;
-      }).join("");
-    }
+          grid.innerHTML = symbols.map(function(item) {
+            const change = Number(item.change);
+            const percent = Number(item.changePercent);
+            const hasChange = Number.isFinite(change) && Number.isFinite(percent);
+            const direction = hasChange ? (change > 0 ? "up" : change < 0 ? "down" : "flat") : "flat";
+            const changePrefix = hasChange && change > 0 ? "+" : "";
+            const percentPrefix = hasChange && percent > 0 ? "+" : "";
+            const changeText = hasChange
+              ? `${changePrefix}${change.toFixed(2)} (${percentPrefix}${percent.toFixed(2)}%)`
+              : "等待更新";
+            const quoteDate = item.quoteTime
+              ? `报价时间 ${formatStockDate(item.quoteTime)}`
+              : item.date ? `报价日 ${escapeHtml(item.date)}` : "报价日 --";
+            const session = formatQuoteSession(item);
+            const priceLabel = formatPriceLabel(item);
+            const errorClass = item.error ? " error" : "";
+
+            const priceValue = Number(item.close);
+            const priceStr = formatPrice(item);
+
+            return `
+              <article class="stock-card${errorClass}" data-symbol="${escapeHtml(item.symbol)}">
+                <div class="stock-symbol">
+                  <strong>${escapeHtml(item.symbol)}</strong>
+                  <span>${escapeHtml(session)}</span>
+                </div>
+                <p class="stock-name">${escapeHtml(item.name || item.symbol)}</p>
+                <div class="stock-price" data-value="${Number.isFinite(priceValue) ? priceValue : ''}">${escapeHtml(priceLabel)} ${priceStr}</div>
+                <div class="stock-change ${direction}" data-value="${Number.isFinite(change) ? change : ''}">${escapeHtml(changeText)}</div>
+                <div class="stock-meta">
+                  <span>${quoteDate}</span>
+                  <span>${escapeHtml(formatVolume(item.volume))}</span>
+                  ${item.error ? `<span>${escapeHtml(item.error)}</span>` : ""}
+                </div>
+              </article>
+            `;
+          }).join("");
+
+          // Animate value changes
+          if (typeof animateValue === 'function') {
+            grid.querySelectorAll('.stock-card').forEach(card => {
+              const symbol = card.dataset.symbol;
+              const priceEl = card.querySelector('.stock-price');
+              const changeEl = card.querySelector('.stock-change');
+              const newPrice = parseFloat(priceEl?.dataset.value);
+              const newChange = parseFloat(changeEl?.dataset.value);
+
+              if (priceEl && Number.isFinite(newPrice)) {
+                const prevPrice = prevValues.get(symbol + '-price');
+                if (Number.isFinite(prevPrice) && prevPrice !== newPrice) {
+                  const isIndex = priceEl.textContent.includes('SPX') || priceEl.textContent.includes('^GSPC');
+                  const formatter = v => (isIndex ? v.toFixed(2) : '$' + v.toFixed(2));
+                  animateValue(priceEl, prevPrice, newPrice, 500, formatter);
+                }
+              }
+              if (changeEl && Number.isFinite(newChange)) {
+                const prevChange = prevValues.get(symbol + '-change');
+                if (Number.isFinite(prevChange) && prevChange !== newChange) {
+                  const direction = newChange > 0 ? 'up' : newChange < 0 ? 'down' : 'flat';
+                  changeEl.className = `stock-change ${direction}`;
+                  const formatter = v => (v > 0 ? '+' : '') + v.toFixed(2);
+                  animateValue(changeEl, prevChange, newChange, 500, formatter);
+                }
+              }
+            });
+          }
+        }
 
     function renderRiskRadar(data) {
-      const grid = document.getElementById("risk-grid");
-      const updated = document.getElementById("risk-updated");
-      const source = document.getElementById("risk-source");
-      if (!grid) return;
+          const grid = document.getElementById("risk-grid");
+          const updated = document.getElementById("risk-updated");
+          const source = document.getElementById("risk-source");
+          if (!grid) return;
 
-      const symbols = Array.isArray(data.symbols) ? data.symbols : [];
-      if (updated) updated.textContent = "更新时间 " + formatStockDate(data.updatedAt);
-      if (source) source.textContent = data.source || "Live quote endpoint";
-      const riskHistory = rememberRiskHistory(symbols);
-      updateRiskSummary(symbols, riskHistory);
+          const symbols = Array.isArray(data.symbols) ? data.symbols : [];
+          if (updated) updated.textContent = "更新时间 " + formatStockDate(data.updatedAt);
+          if (source) source.textContent = data.source || "Live quote endpoint";
+          const riskHistory = rememberRiskHistory(symbols);
+          updateRiskSummary(symbols, riskHistory);
 
-      grid.innerHTML = symbols.map(function(item) {
-        const meta = riskMeta[item.symbol] || { label: item.kind || "Risk", note: "宏观变量" };
-        const signal = riskSignal(item, riskHistory);
-        const change = adjustedRiskNumber(item, item.change);
-        const direction = change === null ? "flat" : change > 0 ? "up" : change < 0 ? "down" : "flat";
-        const tone = item.error ? "error" : signal.level;
-        const quoteDate = item.quoteTime
-          ? `报价时间 ${formatStockDate(item.quoteTime)}`
-          : item.date ? `报价日 ${escapeHtml(item.date)}` : "报价日 --";
+          // Cache previous values for animation
+          const prevValues = new Map();
+          grid.querySelectorAll('.risk-card').forEach(card => {
+            const symbol = card.querySelector('.risk-card-top strong')?.textContent;
+            const valueEl = card.querySelector('.risk-value');
+            const changeEl = card.querySelector('.risk-change');
+            if (symbol && valueEl) {
+              const valueText = valueEl.textContent.replace(/[$,%]/g, '');
+              const value = parseFloat(valueText);
+              if (Number.isFinite(value)) prevValues.set(symbol + '-value', value);
+            }
+            if (symbol && changeEl) {
+              const changeMatch = changeEl.textContent.match(/([+-]?\d+\.?\d*)/);
+              if (changeMatch) prevValues.set(symbol + '-change', parseFloat(changeMatch[1]));
+            }
+          });
 
-        return `
-          <article class="risk-card ${escapeHtml(tone)}">
-            <div class="risk-card-top">
-              <strong>${escapeHtml(item.symbol)}</strong>
-              <span>${escapeHtml(meta.label)}</span>
-            </div>
-            <p class="risk-name">${escapeHtml(item.name || item.symbol)}</p>
-            <div class="risk-value">${escapeHtml(formatRiskValue(item))}</div>
-            <div class="risk-change ${direction}">${escapeHtml(formatRiskChange(item))}</div>
-            <div class="risk-verdict">${escapeHtml(signal.title)}</div>
-            <div class="risk-note">${escapeHtml(signal.note || meta.note)} · ${quoteDate}</div>
-          </article>
-        `;
-      }).join("");
-    }
+          grid.innerHTML = symbols.map(function(item) {
+            const meta = riskMeta[item.symbol] || { label: item.kind || "Risk", note: "宏观变量" };
+            const signal = riskSignal(item, riskHistory);
+            const change = adjustedRiskNumber(item, item.change);
+            const direction = change === null ? "flat" : change > 0 ? "up" : change < 0 ? "down" : "flat";
+            const tone = item.error ? "error" : signal.level;
+            const quoteDate = item.quoteTime
+              ? `报价时间 ${formatStockDate(item.quoteTime)}`
+              : item.date ? `报价日 ${escapeHtml(item.date)}` : "报价日 --";
 
-    function eventDateValue(event) {
+            const valueNum = adjustedRiskNumber(item, item.close);
+            const valueStr = formatRiskValue(item);
+            const changeStr = formatRiskChange(item);
+
+            return `
+              <article class="risk-card ${escapeHtml(tone)}" data-symbol="${escapeHtml(item.symbol)}">
+                <div class="risk-card-top">
+                  <strong>${escapeHtml(item.symbol)}</strong>
+                  <span>${escapeHtml(meta.label)}</span>
+                </div>
+                <p class="risk-name">${escapeHtml(item.name || item.symbol)}</p>
+                <div class="risk-value" data-value="${Number.isFinite(valueNum) ? valueNum : ''}">${escapeHtml(valueStr)}</div>
+                <div class="risk-change ${direction}" data-value="${Number.isFinite(change) ? change : ''}">${escapeHtml(changeStr)}</div>
+                <div class="risk-verdict">${escapeHtml(signal.title)}</div>
+                <div class="risk-note">${escapeHtml(signal.note || meta.note)} · ${quoteDate}</div>
+              </article>
+            `;
+          }).join("");
+
+          // Animate value changes
+          if (typeof animateValue === 'function') {
+            grid.querySelectorAll('.risk-card').forEach(card => {
+              const symbol = card.dataset.symbol;
+              const valueEl = card.querySelector('.risk-value');
+              const changeEl = card.querySelector('.risk-change');
+              const newValue = parseFloat(valueEl?.dataset.value);
+              const newChange = parseFloat(changeEl?.dataset.value);
+
+              if (valueEl && Number.isFinite(newValue)) {
+                const prevValue = prevValues.get(symbol + '-value');
+                if (Number.isFinite(prevValue) && prevValue !== newValue) {
+                  const isPercent = item.symbol === 'US10Y';
+                  const isPrice = item.symbol === 'WTI' || item.symbol === 'GOLD';
+                  const formatter = v => isPercent ? v.toFixed(2) + '%' : isPrice ? '$' + v.toFixed(2) : v.toFixed(2);
+                  animateValue(valueEl, prevValue, newValue, 500, formatter);
+                }
+              }
+              if (changeEl && Number.isFinite(newChange)) {
+                const prevChange = prevValues.get(symbol + '-change');
+                if (Number.isFinite(prevChange) && prevChange !== newChange) {
+                  const direction = newChange > 0 ? 'up' : newChange < 0 ? 'down' : 'flat';
+                  changeEl.className = `risk-change ${direction}`;
+                  const isPercent = item.symbol === 'US10Y';
+                  const unit = isPercent ? 'pt' : '';
+                  const formatter = v => (v > 0 ? '+' : '') + v.toFixed(2) + unit;
+                  animateValue(changeEl, prevChange, newChange, 500, formatter);
+                }
+              }
+            });
+                                  }
+
+                                  // Update radar SVG visualization
+                                  if (typeof updateRadarVisualization === 'function') {
+                                    updateRadarVisualization(symbols);
+                                  }
+                                }
+
+                // ===== Radar SVG Visualization =====
+                const RADAR_CONFIG = {
+                  axes: [
+                    { key: 'VIX', label: 'VIX', max: 40, color: 'var(--neon-red)', unit: '' },
+                    { key: 'US10Y', label: '10Y', max: 5.5, color: 'var(--neon-amber)', unit: '%' },
+                    { key: 'DXY', label: 'DXY', max: 115, color: 'var(--neon-cyan)', unit: '' },
+                    { key: 'WTI', label: 'WTI', max: 120, color: 'var(--neon-violet)', unit: '$' },
+                    { key: 'GOLD', label: 'GOLD', max: 2500, color: 'var(--gold)', unit: '$' }
+                  ],
+                  center: { x: 200, y: 200 },
+                  maxRadius: 160
+                };
+
+                // Store trail history for radar
+                let radarTrailHistory = [];
+
+                function updateRadarVisualization(symbols) {
+                  const svg = document.getElementById('radar-svg');
+                  const legend = document.getElementById('radar-legend');
+                  if (!svg || !legend) return;
+
+                  const axes = RADAR_CONFIG.axes;
+                  const center = RADAR_CONFIG.center;
+                  const maxRadius = RADAR_CONFIG.maxRadius;
+
+                  // Calculate normalized values (0-1) for each axis
+                  const values = axes.map(axis => {
+                    const item = symbols.find(s => s.symbol === axis.key);
+                    if (!item) return { ...axis, value: null, normalized: 0, rawValue: null };
+        
+                    const rawValue = adjustedRiskNumber(item, item.close);
+                    if (rawValue === null || !Number.isFinite(rawValue)) {
+                      return { ...axis, value: null, normalized: 0, rawValue: null };
+                    }
+        
+                    // Normalize to 0-1 (with some padding)
+                    const normalized = Math.min(1, Math.max(0, rawValue / axis.max));
+                    return { ...axis, value: normalized, rawValue };
+                  });
+
+                  // Build polygon points
+                  const points = values.map((axis, i) => {
+                    if (axis.value === null || axis.value === 0) return null;
+                    const angle = (i / axes.length) * Math.PI * 2 - Math.PI / 2;
+                    const radius = axis.value * maxRadius;
+                    return {
+                      x: center.x + radius * Math.cos(angle),
+                      y: center.y + radius * Math.sin(angle),
+                      axis
+                    };
+                  }).filter(Boolean);
+
+                  // Update axes lines
+                  const axesGroup = document.getElementById('radar-axes');
+                  if (axesGroup) {
+                    axesGroup.innerHTML = axes.map((axis, i) => {
+                      const angle = (i / axes.length) * Math.PI * 2 - Math.PI / 2;
+                      const x = center.x + maxRadius * Math.cos(angle);
+                      const y = center.y + maxRadius * Math.sin(angle);
+                      return `<line x1="${center.x}" y1="${center.y}" x2="${x}" y2="${y}" />`;
+                    }).join('');
+                  }
+
+                  // Update axis labels
+                  const labelsGroup = document.getElementById('radar-labels');
+                  if (labelsGroup) {
+                    labelsGroup.innerHTML = axes.map((axis, i) => {
+                      const angle = (i / axes.length) * Math.PI * 2 - Math.PI / 2;
+                      const labelRadius = maxRadius + 24;
+                      const x = center.x + labelRadius * Math.cos(angle);
+                      const y = center.y + labelRadius * Math.sin(angle);
+                      return `<text x="${x}" y="${y}">${axis.label}</text>`;
+                    }).join('');
+                  }
+
+                  // Update data polygon
+                  const polygon = document.getElementById('radar-polygon');
+                  if (polygon && points.length >= 3) {
+                    const pointsStr = points.map(p => `${p.x},${p.y}`).join(' ');
+                    polygon.setAttribute('points', pointsStr);
+                    polygon.style.opacity = '1';
+                  } else if (polygon) {
+                    polygon.setAttribute('points', '');
+                    polygon.style.opacity = '0';
+                  }
+
+                  // Update data points
+                  const pointsGroup = document.getElementById('radar-points');
+                  if (pointsGroup) {
+                    pointsGroup.innerHTML = points.map(p => `
+                      <circle cx="${p.x}" cy="${p.y}" r="5" data-axis="${p.axis.key}" data-value="${p.axis.rawValue}" />
+                      <text x="${p.x}" y="${p.y - 12}">${p.axis.rawValue !== null ? p.axis.rawValue.toFixed(p.axis.key === 'US10Y' ? 2 : 0) : '—'}</text>
+                    `).join('');
+                  }
+
+                  // Update trail (store last 3 readings)
+                  if (points.length >= 3) {
+                    const trailPoints = points.map(p => `${p.x},${p.y}`).join(' ');
+                    radarTrailHistory.unshift(trailPoints);
+                    radarTrailHistory = radarTrailHistory.slice(0, 3);
+        
+                    const trailGroup = document.getElementById('radar-trail');
+                    if (trailGroup) {
+                      trailGroup.innerHTML = radarTrailHistory.map((trail, i) => 
+                        `<polygon points="${trail}" style="opacity: ${0.06 * (i + 1)};" />`
+                      ).join('');
+                    }
+                  }
+
+                  // Update legend
+                                    legend.innerHTML = values.map(axis => {
+                                      const val = axis.rawValue;
+                                      const className = axis.key.toLowerCase();
+                                      const displayVal = val !== null && Number.isFinite(val) 
+                                        ? (axis.key === 'US10Y' ? val.toFixed(2) : axis.key === 'WTI' || axis.key === 'GOLD' ? '$' + val.toFixed(0) : val.toFixed(axis.key === 'VIX' ? 1 : 0))
+                                        : '—';
+                                      return `
+                                        <div class="radar-legend-item">
+                                          <span class="radar-legend-label">${axis.label}</span>
+                                          <span class="radar-legend-value ${className}">${displayVal}${axis.unit}</span>
+                                        </div>
+                                      `;
+                                    }).join('');
+                                  }
+
+                function eventDateValue(event) {
       if (!event.date || event.date === "TBD") return null;
       const date = new Date(event.date + "T00:00:00");
       return Number.isNaN(date.getTime()) ? null : date;
@@ -3331,6 +3931,185 @@
     }
 
     recordVisit();
-  </script>
+
+        // ===== Background FX: Particle Field =====
+        (function initBgFx() {
+          const canvas = document.getElementById('bg-fx');
+          if (!canvas) return;
+          const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          if (prefersReduced) return;
+
+          const ctx = canvas.getContext('2d');
+          let w = 0, h = 0, particles = [], animationId = null;
+
+          const PARTICLE_COUNT = Math.min(120, Math.floor((window.innerWidth * window.innerHeight) / 15000));
+          const NEON_COLORS = ['#00f3ff', '#39ff14', '#ffb000', '#bc9cff'];
+          const CONNECT_DIST = 140;
+
+          function resize() {
+            w = canvas.width = window.innerWidth;
+            h = canvas.height = window.innerHeight;
+          }
+
+          function createParticle() {
+            return {
+              x: Math.random() * w,
+              y: Math.random() * h,
+              vx: (Math.random() - 0.5) * 0.4,
+              vy: (Math.random() - 0.5) * 0.4,
+              r: Math.random() * 1.5 + 0.5,
+              color: NEON_COLORS[Math.floor(Math.random() * NEON_COLORS.length)],
+              alpha: Math.random() * 0.5 + 0.2
+            };
+          }
+
+          function initParticles() {
+            particles = [];
+            for (let i = 0; i < PARTICLE_COUNT; i++) particles.push(createParticle());
+          }
+
+          function draw() {
+            ctx.clearRect(0, 0, w, h);
+
+            // Draw connections
+            for (let i = 0; i < particles.length; i++) {
+              const p1 = particles[i];
+              for (let j = i + 1; j < particles.length; j++) {
+                const p2 = particles[j];
+                const dx = p1.x - p2.x, dy = p1.y - p2.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < CONNECT_DIST) {
+                  const opacity = (1 - dist / CONNECT_DIST) * 0.15;
+                  ctx.beginPath();
+                  ctx.moveTo(p1.x, p1.y);
+                  ctx.lineTo(p2.x, p2.y);
+                  ctx.strokeStyle = `rgba(0,243,255,${opacity})`;
+                  ctx.lineWidth = 0.5;
+                  ctx.stroke();
+                }
+              }
+            }
+
+            // Draw particles
+            for (const p of particles) {
+              ctx.beginPath();
+              ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+              ctx.fillStyle = hexToRgba(p.color, p.alpha);
+              ctx.fill();
+
+              // Glow
+              ctx.shadowColor = p.color;
+              ctx.shadowBlur = 8;
+              ctx.fill();
+              ctx.shadowBlur = 0;
+            }
+          }
+
+          function update() {
+            for (const p of particles) {
+              p.x += p.vx;
+              p.y += p.vy;
+
+              if (p.x < -10) p.x = w + 10;
+              if (p.x > w + 10) p.x = -10;
+              if (p.y < -10) p.y = h + 10;
+              if (p.y > h + 10) p.y = -10;
+            }
+          }
+
+          function hexToRgba(hex, alpha) {
+            const r = parseInt(hex.slice(1, 3), 16);
+            const g = parseInt(hex.slice(3, 5), 16);
+            const b = parseInt(hex.slice(5, 7), 16);
+            return `rgba(${r},${g},${b},${alpha})`;
+          }
+
+          function loop() {
+            update();
+            draw();
+            animationId = requestAnimationFrame(loop);
+          }
+
+          function start() {
+            resize();
+            initParticles();
+            loop();
+          }
+
+          function stop() {
+            if (animationId) cancelAnimationFrame(animationId);
+          }
+
+          window.addEventListener('resize', () => {
+            resize();
+            initParticles();
+          });
+
+          // Start when visible
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => entry.isIntersecting ? start() : stop());
+          }, { rootMargin: '100px' });
+          observer.observe(canvas);
+
+          // Cleanup on page hide
+          document.addEventListener('visibilitychange', () => {
+            document.hidden ? stop() : start();
+          });
+        })();
+
+        // ===== Animation Utilities =====
+        function animateValue(el, from, to, duration = 600, formatter = v => v) {
+          if (!el || !Number.isFinite(from) || !Number.isFinite(to)) return;
+          const start = performance.now();
+          function tick(now) {
+            const progress = Math.min(1, (now - start) / duration);
+            const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+            const current = from + (to - from) * eased;
+            el.textContent = formatter(current);
+            if (progress < 1) requestAnimationFrame(tick);
+            else el.textContent = formatter(to);
+          }
+          requestAnimationFrame(tick);
+        }
+
+        function addHoverGlow(selector, glowVar = '--glow-cyan') {
+          document.querySelectorAll(selector).forEach(el => {
+            el.addEventListener('mouseenter', () => el.style.boxShadow = `var(${glowVar}), var(--shadow)`);
+            el.addEventListener('mouseleave', () => el.style.boxShadow = 'var(--shadow)');
+          });
+        }
+
+        // Staggered entrance for sections
+        (function initStaggerEntrance() {
+          const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          if (prefersReduced) return;
+
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const cards = entry.target.querySelectorAll('.stock-card, .risk-card, .flow-signal-card, .article-card, .video-card, .panel, .event-card, .calendar-focus-card, .flow-kpi');
+                cards.forEach((card, i) => {
+                  card.style.opacity = '0';
+                  card.style.transform = 'translateY(16px)';
+                  card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                  setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                  }, i * 60);
+                });
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.1 });
+
+          document.querySelectorAll('.section, #risk-radar, #options-flow, #stocks, #articles, #vlog, #wechat-sync, #bitcoin').forEach(sec => observer.observe(sec));
+        })();
+
+        // Apply hover glow to interactive panels
+        addHoverGlow('.stock-card, .risk-card, .flow-signal-card, .panel, .article-card, .video-card, .event-card, .calendar-focus-card');
+        addHoverGlow('.button.primary', '--glow-green');
+        addHoverGlow('.button.secondary', '--glow-cyan');
+
+      </script>
 </body>
 </html>
