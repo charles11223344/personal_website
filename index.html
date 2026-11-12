@@ -1884,6 +1884,7 @@
       .stock-grid,
       .risk-grid,
       .calendar-grid,
+      .calendar-focus-grid,
       .thesis-grid,
       .article-grid,
       .video-grid,
@@ -1917,6 +1918,7 @@
       .stock-grid,
       .risk-grid,
       .calendar-grid,
+      .calendar-focus-grid,
       .thesis-grid,
       .article-grid,
       .video-grid,
@@ -2229,7 +2231,7 @@
           <div class="calendar-head">
             <div>
               <strong>11/9 - 11/13 通胀、AI 财报与假期波动</strong>
-              <p>周一跟踪 CEG / NVDA，随后关注 CPI、算力与设备财报、PPI；周三美股开市、债市建议休市。时间均为美东时间（ET），待确认或待复核项目已标注。<a href="articles/2026-11-08-cpi-ai-earnings-volatility.html#event-sources">查看日程来源</a></p>
+              <p>周一跟踪 CEG / NVDA，随后关注 CPI、算力与设备财报、PPI；周三美股开市、债市建议休市。时间均为美东时间（ET）。<a href="articles/2026-11-08-cpi-ai-earnings-volatility.html#event-sources">查看日程来源</a></p>
             </div>
             <div class="calendar-status" id="calendar-status">等待日历渲染</div>
           </div>
@@ -2237,7 +2239,7 @@
                       <div class="calendar-focus-card">
                         <span>Macro Gate</span>
                         <strong>11/10 CPI · 11/13 PPI</strong>
-                        <p>原文均安排 8:30 AM，发布日时待 BLS 复核；观察通胀与 10Y 对成长股估值的影响。</p>
+                        <p>两项数据均在 08:30 ET 发布，观察通胀与 10Y 对成长股估值的影响。</p>
                       </div>
                       <div class="calendar-focus-card">
                         <span>Earnings Gate</span>
@@ -2265,20 +2267,6 @@
                                                 <stop offset="0%" stop-color="var(--neon-amber)" stop-opacity="0.2" />
                                                 <stop offset="100%" stop-color="var(--neon-amber)" stop-opacity="0.05" />
                                               </linearGradient>
-                                              <filter id="glow">
-                                                <feGaussianBlur stdDeviation="2" result="blur" />
-                                                <feMerge>
-                                                  <feMergeNode in="blur" />
-                                                  <feMergeNode in="SourceGraphic" />
-                                                </feMerge>
-                                              </filter>
-                                              <filter id="pulse">
-                                                <feGaussianBlur stdDeviation="3" result="blur" />
-                                                <feMerge>
-                                                  <feMergeNode in="blur" />
-                                                  <feMergeNode in="SourceGraphic" />
-                                                </feMerge>
-                                              </filter>
                                             </defs>
 
                                             <!-- Grid lines (vertical = days, horizontal = type rows) -->
@@ -2375,20 +2363,6 @@
                                                 <stop offset="50%" stop-color="var(--neon-cyan)" stop-opacity="0.6" />
                                                 <stop offset="100%" stop-color="var(--neon-cyan)" stop-opacity="0" />
                                               </linearGradient>
-                                              <filter id="glow">
-                                                <feGaussianBlur stdDeviation="2" result="blur" />
-                                                <feMerge>
-                                                  <feMergeNode in="blur" />
-                                                  <feMergeNode in="SourceGraphic" />
-                                                </feMerge>
-                                              </filter>
-                                              <filter id="pulse">
-                                                <feGaussianBlur stdDeviation="3" result="blur" />
-                                                <feMerge>
-                                                  <feMergeNode in="blur" />
-                                                  <feMergeNode in="SourceGraphic" />
-                                                </feMerge>
-                                              </filter>
                                             </defs>
 
                                             <!-- Grid circles (concentric rings) -->
@@ -3068,66 +3042,83 @@
     const marketCalendarEvents = [
       {
         date: "2026-11-09",
+        type: "财报",
+        symbol: "CEG",
+        title: "CEG 盘前财报，09:00 ET 电话会",
+        focus: "关注核电与数据中心长期合同、电力需求与自由现金流，检验 AI 电力需求能否转化为业绩。",
+        tags: ["CEG", "AI电力", "长期合同", "现金流"]
+      },
+      {
+        date: "2026-11-09",
         type: "观察",
-        title: "CEG 财报（待确认）与 NVDA 消息观察",
-        focus: "CEG 盘前财报为原文安排，日期与时段仍待公司确认，关注电力需求与现金流；NVDA 仅跟踪官方调查进展，不预设调查结论。",
-        tags: ["CEG", "NVDA", "待确认", "AI电力"]
+        symbol: "NVDA",
+        title: "NVDA 董事会独立调查进展",
+        focus: "董事会已启动独立调查，目前没有结论。关注是否出现新事实，以及对 NVDA 与 AI 芯片板块情绪的影响。",
+        tags: ["NVDA", "独立调查", "AI芯片", "情绪"]
       },
       {
         date: "2026-11-09",
         type: "财报",
-        title: "RKLB、ASTS 季度更新，5:00 PM 电话会",
-        focus: "RKLB 盘后发布财报；两家公司均安排 5:00 PM 电话会。ASTS 未单独明确财报发布时点，勿将电话会时间当成发布时间。",
+        symbol: "RKLB",
+        title: "RKLB、ASTS 盘后业绩，17:00 ET 电话会",
+        focus: "两家太空概念股盘后更新业绩与业务进展，均在 17:00 ET 举行电话会，关注订单、发射与现金消耗。",
         tags: ["RKLB", "ASTS", "电话会", "业绩指引"]
       },
       {
         date: "2026-11-10",
         type: "宏观",
-        title: "10 月 CPI，8:30 AM（待复核）",
-        focus: "按原文暂列 11/10 8:30 AM，发布日时待 BLS 最新日程复核；观察整体与核心通胀对利率预期和成长股估值的影响。",
-        tags: ["CPI", "通胀", "10Y", "日程待复核"]
+        symbol: "CPI",
+        title: "美国 10 月 CPI，08:30 ET",
+        focus: "观察整体与核心通胀对利率预期和成长股估值的影响，是本周最大的宏观关口。",
+        tags: ["CPI", "通胀", "10Y", "利率"]
       },
       {
         date: "2026-11-10",
         type: "营收",
-        title: "TSM 公布 10 月营收，00:30 ET",
-        focus: "官方财务日历列为台北时间 13:30，对应美东同日 00:30。关注 AI 需求与半导体营收动能；这是月度营收报告，而非季度财报。",
+        symbol: "TSM",
+        title: "TSM 公布 10 月营收",
+        focus: "台北时间 13:30（美东 00:30）发布月度营收，关注 AI 需求与半导体营收动能。",
         tags: ["TSM", "月度营收", "半导体", "AI需求"]
       },
       {
         date: "2026-11-10",
         type: "财报",
-        title: "CRWV 季度业绩，5:00 PM 电话会",
-        focus: "盘后财报为原文安排，具体财报发布时间仍待确认；电话会为 5:00 PM，重点看 AI 融资链、资本开支、融资成本与现金流。",
+        symbol: "CRWV",
+        title: "CRWV 盘后财报，17:00 ET 电话会",
+        focus: "本周 AI 融资链最重要的财报之一，重点看资本开支、融资成本与现金流。",
         tags: ["CRWV", "AI融资", "资本开支", "现金流"]
       },
       {
         date: "2026-11-11",
         type: "休市安排",
-        title: "退伍军人节：美股开市、债市建议休市",
-        focus: "NYSE 按常规交易时段开市；SIFMA 建议美元计价固定收益市场全天休市，并非所有债券交易强制停止。留意假期流动性变化可能放大波动。",
-        tags: ["Veterans Day", "美股开市", "债市假期", "流动性"]
+        symbol: "假期",
+        title: "退伍军人节：美股开市，债市建议休市",
+        focus: "NYSE 正常交易；SIFMA 建议美元债市全天休市。低流动性容易放大股市波动。",
+        tags: ["退伍军人节", "美股开市", "债市休市", "流动性"]
       },
       {
         date: "2026-11-12",
         type: "财报",
-        title: "NBIS 财报，盘前；8:00 AM 电话会",
-        focus: "关注 GPU 交付量、收入兑现与融资需求，检验 AI 算力能否止跌。财报发布的具体分钟以公司公告为准。",
+        symbol: "NBIS",
+        title: "NBIS 盘前财报，08:00 ET 电话会",
+        focus: "重点看 GPU 交付量、收入兑现与融资需求，检验 AI 算力能否止跌。",
         tags: ["NBIS", "GPU交付", "收入", "融资需求"]
       },
       {
         date: "2026-11-12",
         type: "财报",
-        title: "AMAT 季度业绩，4:30 PM 电话会",
-        focus: "盘后发布为原文安排，具体财报发布时间仍待确认；关注半导体设备、存储资本开支与后续指引。",
+        symbol: "AMAT",
+        title: "AMAT 盘后财报，16:30 ET 电话会",
+        focus: "验证半导体设备与存储资本开支是否继续增加，并关注后续业绩指引。",
         tags: ["AMAT", "设备", "存储", "资本开支"]
       },
       {
         date: "2026-11-13",
         type: "宏观",
-        title: "10 月 PPI，8:30 AM（待复核）",
-        focus: "按原文暂列 11/13 8:30 AM，发布日时待 BLS 最新日程复核；结合 CPI 与 10Y 是否重新升至 4.90%–5.00% 观察利率和成长股压力。",
-        tags: ["PPI", "CPI", "10Y", "日程待复核"]
+        symbol: "PPI",
+        title: "美国 10 月 PPI，08:30 ET",
+        focus: "结合 CPI 与 10Y 是否重新升至 4.90%–5.00%，观察利率对成长股的压制。",
+        tags: ["PPI", "CPI", "10Y", "利率"]
       }
     ];
     let liveStockTimer = null;
@@ -3557,7 +3548,7 @@
                     { key: 'US10Y', label: '10Y', max: 5.5, color: 'var(--neon-amber)', unit: '%' },
                     { key: 'DXY', label: 'DXY', max: 115, color: 'var(--neon-cyan)', unit: '' },
                     { key: 'WTI', label: 'WTI', max: 120, color: 'var(--neon-violet)', unit: '$' },
-                    { key: 'GOLD', label: 'GOLD', max: 2500, color: 'var(--gold)', unit: '$' }
+                    { key: 'GOLD', label: 'GOLD', max: 5000, color: 'var(--gold)', unit: '$' }
                   ],
                   center: { x: 200, y: 200 },
                   maxRadius: 160
@@ -3669,7 +3660,7 @@
                                       return `
                                         <div class="radar-legend-item">
                                           <span class="radar-legend-label">${axis.label}</span>
-                                          <span class="radar-legend-value ${className}">${displayVal}${axis.unit}</span>
+                                          <span class="radar-legend-value ${className}">${displayVal}${axis.key === 'WTI' || axis.key === 'GOLD' ? '' : axis.unit}</span>
                                         </div>
                                       `;
                                     }).join('');
@@ -3678,9 +3669,9 @@
                                   // ===== Flow Radar SVG Visualization =====
                                                   const FLOW_RADAR_CONFIG = {
                                                     axes: [
-                                                      { key: 'call', label: 'Call Vol', max: 4000000, color: 'var(--neon-green)', unit: '' },
-                                                      { key: 'put', label: 'Put Vol', max: 3500000, color: 'var(--neon-red)', unit: '' },
-                                                      { key: 'notional', label: 'Notional', max: 150000000000, color: 'var(--neon-cyan)', unit: '' },
+                                                      { key: 'call', label: 'Call Vol', max: 12000000, color: 'var(--neon-green)', unit: '' },
+                                                      { key: 'put', label: 'Put Vol', max: 8000000, color: 'var(--neon-red)', unit: '' },
+                                                      { key: 'notional', label: 'Notional', max: 800000000000, color: 'var(--neon-cyan)', unit: '' },
                                                       { key: 'callPutRatio', label: 'C/P Ratio', max: 3, color: 'var(--neon-violet)', unit: '' },
                                                       { key: 'volumeOi', label: 'Vol/OI', max: 0.5, color: 'var(--neon-amber)', unit: '' },
                                                       { key: 'riskScore', label: 'Risk Score', max: 100, color: 'var(--gold)', unit: '' }
@@ -3783,6 +3774,7 @@
                                                           ? (p.axis.key === 'notional' ? '$' + (p.axis.rawValue/1e9).toFixed(1) + 'B' 
                                                             : p.axis.key === 'callPutRatio' ? p.axis.rawValue.toFixed(2)
                                                             : p.axis.key === 'volumeOi' ? p.axis.rawValue.toFixed(2)
+                                                            : (p.axis.key === 'call' || p.axis.key === 'put') ? (p.axis.rawValue/1e6).toFixed(2) + 'M'
                                                             : p.axis.rawValue.toFixed(0)) 
                                                           : '—'}</text>
                                                       `).join('');
@@ -3812,8 +3804,8 @@
                                                                             displayVal = '$' + (val/1e9).toFixed(1) + 'B';
                                                                           } else if (axis.key === 'callPutRatio' || axis.key === 'volumeOi') {
                                                                             displayVal = val.toFixed(2);
-                                                                          } else if (axis.key === 'riskScore') {
-                                                                            displayVal = val.toFixed(0);
+                                                                          } else if (axis.key === 'call' || axis.key === 'put') {
+                                                                            displayVal = (val/1e6).toFixed(2) + 'M';
                                                                           } else {
                                                                             displayVal = val.toFixed(0);
                                                                           }
@@ -3905,7 +3897,7 @@
                                                                       const todayIdx = Math.round((today - minDate) / 86400000);
                                                                       if (todayIdx >= 0 && todayIdx <= totalDays) {
                                                                         const x = padding.left + (todayIdx / totalDays) * plotWidth;
-                                                                        axisHtml += `<text x="${x}" y="${padding.top - 22}" text-anchor="middle" fill="var(--neon-green)" font-weight="900">今天</text>`;
+                                                                        axisHtml += `<text x="${x}" y="${padding.top - 28}" text-anchor="middle" fill="var(--neon-green)" font-weight="900">今天</text>`;
                                                                       }
                                                                       axisGroup.innerHTML = axisHtml;
                                                                     }
@@ -3923,12 +3915,23 @@
                                                                     const eventsGroup = document.getElementById('calendar-radar-events');
                                                                     if (eventsGroup) {
                                                                       let eventsHtml = '';
+                                                                      const slotCounts = {};
+                                                                      const slotTotals = {};
+                                                                      events.forEach(event => {
+                                                                        const slotKey = event.date + '|' + (event.type || '');
+                                                                        slotTotals[slotKey] = (slotTotals[slotKey] || 0) + 1;
+                                                                      });
                                                                       events.forEach((event, idx) => {
                                                                         const date = eventDateValue(event);
                                                                         if (!date) return;
                       
                                                                         const dayIdx = Math.max(0, Math.min(totalDays, Math.round((date - minDate) / 86400000)));
-                                                                        const x = padding.left + (dayIdx / totalDays) * plotWidth;
+                                                                        const slotKey = event.date + '|' + (event.type || '');
+                                                                        const slotIdx = slotCounts[slotKey] || 0;
+                                                                        slotCounts[slotKey] = slotIdx + 1;
+                                                                        // Spread same-day, same-type markers horizontally so labels do not overlap
+                                                                        const spread = (slotIdx - (slotTotals[slotKey] - 1) / 2) * 34;
+                                                                        const x = padding.left + (dayIdx / totalDays) * plotWidth + spread;
                       
                                                                         // Determine type row
                                                                         const type = event.type || 'observation';
