@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lemon 美股手记，记录美股市场观察、财报拆解、投资复盘和视频笔记。" />
+  <title>Lemon 美股手记 | 美股 Vlog 与投资笔记</title>
+  <link rel="stylesheet" href="assets/fonts/fonts.css" />
+  <link rel="preload" href="assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="style.css" />
+<style>.site-header,header,footer,.hero,.market-strip,main > section:not(#bitcoin){display:none !important}</style></head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <span class="orb orb-cyan"></span>
+    <span class="orb orb-violet"></span>
+    <span class="orb orb-amber"></span>
+  </div>
+  <canvas id="bg-fx" aria-hidden="true"></canvas>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="#home" aria-label="Lemon 美股手记首页">
+        <img class="brand-logo" src="lemon.png" alt="Lemon logo" />
+        <span class="brand-text">
+          <strong>Lemon 美股手记</strong>
+          <small>Market Vlog</small>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="主导航">
+        <a href="#options-flow">期权雷达</a>
+        <a href="#stocks">美股数据</a>
+        <a href="#risk-radar">风险雷达</a>
+        <a href="#event-calendar">事件日历</a>
+        <a href="#articles">文章</a>
+        <a href="#vlog">Vlog</a>
+        <a href="#wechat-sync">公众号同步</a>
+        <a href="#bitcoin">比特币数据</a>
+        <a href="#contact">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-scan" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="hero-brand" aria-label="Lemon 品牌">
+          <img src="lemon.png" alt="Lemon logo" />
+          <span>Lemon Market Notes</span>
+        </div>
+        <p class="eyebrow" aria-label="US Equities · Earnings · Vlog Notes">
+          <span id="typed-eyebrow" aria-hidden="true">US Equities · Earnings · Vlog Notes</span><span class="caret" aria-hidden="true"></span>
+        </p>
+        <h1><span class="h1-line">把美股研究写成</span><span class="h1-line">长期可追踪的手记。</span></h1>
+        <p class="hero-copy">
+          从财报、估值、行业叙事到交易复盘，这里同步整理我在微信公众号里的美股文章，也会沉淀成更适合网页阅读的视频脚本和研究记录。
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#articles">查看文章归档</a>
+          <a class="button secondary" href="#wechat-sync">同步公众号内容</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="market-strip" aria-label="天气和汇率">
+      <div class="market-strip-inner">
+        <div class="market-chip weather-chip" aria-live="polite">
+          <span>Toronto 天气</span>
+          <strong id="weather-current">加载中</strong>
+          <em id="weather-detail">Open-Meteo</em>
+        </div>
+        <div class="market-chip fx-chip" aria-live="polite">
+          <span>美元兑加币</span>
+          <strong id="usd-cad-rate">加载中</strong>
+          <em id="usd-cad-detail">1 USD = ? CAD</em>
+        </div>
+        <div class="market-chip fx-chip" aria-live="polite">
+          <span>加币 / 人民币</span>
+          <strong id="cad-cny-rate">加载中</strong>
+          <em id="cny-cad-detail">1 CAD = ? CNY</em>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="risk-radar">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>风险雷达</h2>
+          <p>把 VIX、10年期美债、美元指数、油价和黄金放在同一屏，用来判断 AI 硬件和成长股的外部压力。</p>
+        </div>
+        <div class="risk-radar">
+                  <div class="risk-radar-head">
+                    <div>
+                      <strong>宏观压力面板</strong>
+                      <p>VIX 看波动，10Y 看估值压力，DXY 看美元流动性，WTI 和 Gold 看通胀与避险。</p>
+                    </div>
+                    <div class="risk-radar-status">
+                      <div id="risk-updated">等待风险数据</div>
+                      <div id="risk-source">Live quote endpoint</div>
+                    </div>
+                  </div>
+                  <div class="risk-summary" aria-live="polite">
+                    <div>
+                      <strong id="risk-summary-title">等待风险雷达判断</strong>
+                      <span id="risk-summary-detail">VIX、10Y、DXY、WTI、GOLD 加载后自动生成。</span>
+                    </div>
+                    <span class="risk-badge" id="risk-summary-badge">Loading</span>
+                  </div>
+          
+                  <!-- SVG Radar Visualization -->
+                  <div class="radar-wrapper" id="radar-wrapper" role="img" aria-label="宏观风险雷达扫描图">
+                    <svg id="radar-svg" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
+                      <defs>
+                        <!-- Radar sweep gradient -->
+                        <linearGradient id="sweep-gradient" x1="0" y1="0" x2="1" y2="0">
+                          <stop offset="0%" stop-color="var(--neon-cyan)" stop-opacity="0"/>
+                          <stop offset="50%" stop-color="var(--neon-cyan)" stop-opacity="0.6"/>
+                          <stop offset="100%" stop-color="var(--neon-cyan)" stop-opacity="0"/>
+                        </linearGradient>
+                        <!-- Grid circles gradient -->
+                        <radialGradient id="grid-gradient" cx="50%" cy="50%" r="50%">
+                          <stop offset="0%" stop-color="var(--neon-cyan)" stop-opacity="0.08"/>
+                          <stop offset="100%" stop-color="var(--neon-cyan)" stop-opacity="0"/>
+                        </radialGradient>
+                        <!-- Data polygon gradient -->
+                        <radialGradient id="data-gradient" cx="50%" cy="50%" r="50%">
+                          <stop offset="0%" stop-color="var(--neon-green)" stop-opacity="0.25"/>
+                          <stop offset="100%" stop-color="var(--neon-cyan)" stop-opacity="0.05"/>
+                        </radialGradient>
+                        <!-- Glow filter -->
+                        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                          <feGaussianBlur stdDeviation="2" result="blur"/>
+                          <feMerge>
+                            <feMergeNode in="blur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                          </feMerge>
+                        </filter>
+                        <!-- Pulse filter for current values -->
+                        <filter id="pulse" x="-50%" y="-50%" width="200%" height="200%">
+                          <feGaussianBlur stdDeviation="4" result="blur"/>
+                          <feMerge>
+                            <feMergeNode in="blur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                          </feMerge>
+                        </filter>
+                      </defs>
+              
+                      <!-- Background grid circles -->
+                      <g id="radar-grid" class="radar-grid">
+                        <circle class="grid-circle" cx="200" cy="200" r="160" />
+                        <circle class="grid-circle" cx="200" cy="200" r="120" />
+                        <circle class="grid-circle" cx="200" cy="200" r="80" />
+                        <circle class="grid-circle" cx="200" cy="200" r="40" />
+                      </g>
+              
+                      <!-- Axis lines -->
+                      <g id="radar-axes" class="radar-axes"></g>
+              
+                      <!-- Axis labels -->
+                      <g id="radar-labels" class="radar-labels"></g>
+              
+                      <!-- Historical trail (previous readings) -->
+                      <g id="radar-trail" class="radar-trail"></g>
+              
+                      <!-- Current data polygon -->
+                      <polygon id="radar-polygon" class="radar-polygon" points="" />
+              
+                      <!-- Current data points -->
+                      <g id="radar-points" class="radar-points"></g>
+              
+                      <!-- Sweep line -->
+                      <g id="radar-sweep" class="radar-sweep">
+                        <path id="sweep-path" d="" />
+                      </g>
+              
+                      <!-- Center marker -->
+                      <circle id="radar-center" cx="200" cy="200" r="6" class="radar-center" />
+                    </svg>
+            
+                    <!-- Legend / Value readout -->
+                    <div id="radar-legend" class="radar-legend" aria-live="polite"></div>
+                  </div>
+          
+                  <!-- Keep cards as detailed view (collapsible) -->
+                  <details class="risk-cards-detail" id="risk-cards-detail">
+                    <summary class="risk-cards-toggle">
+                      <span>展开详细数值卡片</span>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
+                    </summary>
+                    <div class="risk-grid" id="risk-grid" aria-live="polite">
+                      <article class="risk-card">
+                        <div class="risk-card-top">
+                          <strong>Loading</strong>
+                          <span>Risk</span>
+                        </div>
+                        <p class="risk-name">正在加载风险雷达...</p>
+                        <div class="risk-value">--</div>
+                        <div class="risk-change flat">等待更新</div>
+                      </article>
+                    </div>
+                  </details>
+                </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="event-calendar">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>财报与宏观日历</h2>
+          <p>把会影响美股定价的财报、通胀、就业和 Fed 事件放在同一张清单里，写文章前先看事件风险。</p>
+        </div>
+        <div class="calendar-board">
+          <div class="calendar-head">
+            <div>
+              <strong>11/9 - 11/13 通胀、AI 财报与假期波动</strong>
+              <p>周一跟踪 CEG / NVDA，随后关注 CPI、算力与设备财报、PPI；周三美股开市、债市建议休市。时间均为美东时间（ET）。<a href="articles/2026-11-08-cpi-ai-earnings-volatility.html#event-sources">查看日程来源</a></p>
+            </div>
+            <div class="calendar-status" id="calendar-status">等待日历渲染</div>
+          </div>
+          <div class="calendar-focus-grid" aria-label="下周三大观察重点">
+                      <div class="calendar-focus-card">
+                        <span>Macro Gate</span>
+                        <strong>11/10 CPI · 11/13 PPI</strong>
+                        <p>两项数据均在 08:30 ET 发布，观察通胀与 10Y 对成长股估值的影响。</p>
+                      </div>
+                      <div class="calendar-focus-card">
+                        <span>Earnings Gate</span>
+                        <strong>CRWV / NBIS / AMAT</strong>
+                        <p>周二至周四跟踪算力与设备业绩，关注 GPU 交付、收入、融资需求与资本开支。</p>
+                      </div>
+                      <div class="calendar-focus-card">
+                        <span>Liquidity Gate</span>
+                        <strong>11/11 退伍军人节</strong>
+                        <p>NYSE 常规交易，SIFMA 建议债市休市；留意假期流动性变化可能放大波动。</p>
+                      </div>
+                    </div>
+                    <div class="calendar-radar-wrapper">
+                                          <svg id="calendar-radar-svg" viewBox="0 0 800 320" aria-hidden="true">
+                                            <defs>
+                                              <linearGradient id="cal-gradient-macro" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                <stop offset="0%" stop-color="var(--neon-red)" stop-opacity="0.2" />
+                                                <stop offset="100%" stop-color="var(--neon-red)" stop-opacity="0.05" />
+                                              </linearGradient>
+                                              <linearGradient id="cal-gradient-earnings" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                <stop offset="0%" stop-color="var(--neon-cyan)" stop-opacity="0.2" />
+                                                <stop offset="100%" stop-color="var(--neon-cyan)" stop-opacity="0.05" />
+                                              </linearGradient>
+                                              <linearGradient id="cal-gradient-liquidity" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                <stop offset="0%" stop-color="var(--neon-amber)" stop-opacity="0.2" />
+                                                <stop offset="100%" stop-color="var(--neon-amber)" stop-opacity="0.05" />
+                                              </linearGradient>
+                                            </defs>
+
+                                            <!-- Grid lines (vertical = days, horizontal = type rows) -->
+                                            <g id="calendar-radar-grid" class="calendar-radar-grid"></g>
+
+                                            <!-- Axis (date labels at top) -->
+                                            <g id="calendar-radar-axis" class="calendar-radar-axis"></g>
+
+                                            <!-- Today vertical line -->
+                                            <line id="calendar-radar-today" class="calendar-radar-today-line" x1="0" y1="0" x2="0" y2="320" />
+
+                                            <!-- Event markers -->
+                                            <g id="calendar-radar-events" class="calendar-radar-events"></g>
+                                          </svg>
+                                        </div>
+                                        <div id="calendar-radar-legend" class="calendar-radar-legend"></div>
+                    <div class="calendar-grid" id="calendar-grid" aria-live="polite">
+            <article class="event-card">
+              <div class="event-topline">
+                <span class="event-date">Loading</span>
+                <span class="event-type">Calendar</span>
+              </div>
+              <h3>正在加载事件日历...</h3>
+              <p>宏观和财报事件会显示在这里。</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="stocks">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>每日美股数据</h2>
+          <p>每天美股收盘后自动更新一组常看的指数、ETF 和主流个股，方便写文章和做视频复盘时快速引用。</p>
+        </div>
+        <div class="stock-board">
+          <div class="stock-toolbar">
+            <div>
+              <strong>观察列表</strong>
+              <p>默认覆盖 SPX、SPY、QQQ、SPCX、MU、NVDA、AAPL、MSFT、GOOGL、AMZN、META、TSLA、AMD、AVGO、PLTR、TSM。</p>
+            </div>
+            <div class="stock-status">
+              <div id="stocks-updated">等待数据更新</div>
+              <div id="stocks-source">data/stocks.json</div>
+              <div id="stocks-live-status" class="stock-live-status">实时刷新待配置</div>
+            </div>
+          </div>
+          <div class="stock-grid" id="stock-grid" aria-live="polite">
+            <article class="stock-card">
+              <div class="stock-symbol">
+                <strong>Loading</strong>
+                <span>Daily</span>
+              </div>
+              <p class="stock-name">正在加载美股数据...</p>
+              <div class="stock-price">--</div>
+              <div class="stock-change flat">等待更新</div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="options-flow">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>关注股票期权活动雷达</h2>
+          <p>先找 Call 活跃且成交异常的候选，再结合股价趋势和基本面确认。雷达只决定观察顺序，不直接决定买入。</p>
+        </div>
+        <div class="flow-board">
+          <div class="flow-toolbar">
+            <div>
+              <strong>今日优先观察榜</strong>
+              <p id="flow-source-note">延迟期权统计不识别主动买卖，Call 成交多也可能来自卖出 Call。</p>
+            </div>
+            <div class="flow-status" id="flow-status">等待最新期权数据</div>
+          </div>
+          <div class="flow-kpis" id="flow-kpis">
+                      <div class="flow-kpi"><span>优先观察</span><strong>--</strong></div>
+                      <div class="flow-kpi"><span>Call 偏强</span><strong>--</strong></div>
+                      <div class="flow-kpi"><span>Put 偏强</span><strong>--</strong></div>
+                      <div class="flow-kpi"><span>整体 Call / Put</span><strong>--</strong></div>
+                    </div>
+                    <div class="flow-radar-wrapper">
+                                          <svg id="flow-radar-svg" viewBox="0 0 400 400" aria-hidden="true">
+                                            <!-- Gradient for data polygon -->
+                                            <defs>
+                                              <linearGradient id="flow-data-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" stop-color="var(--neon-green)" stop-opacity="0.2" />
+                                                <stop offset="100%" stop-color="var(--neon-cyan)" stop-opacity="0.1" />
+                                              </linearGradient>
+                                              <linearGradient id="flow-sweep-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                <stop offset="0%" stop-color="var(--neon-cyan)" stop-opacity="0" />
+                                                <stop offset="50%" stop-color="var(--neon-cyan)" stop-opacity="0.6" />
+                                                <stop offset="100%" stop-color="var(--neon-cyan)" stop-opacity="0" />
+                                              </linearGradient>
+                                            </defs>
+
+                                            <!-- Grid circles (concentric rings) -->
+                                            <g id="flow-radar-grid" class="flow-radar-grid">
+                                              <circle cx="200" cy="200" r="40" class="flow-grid-circle" />
+                                              <circle cx="200" cy="200" r="80" class="flow-grid-circle" />
+                                              <circle cx="200" cy="200" r="120" class="flow-grid-circle" />
+                                              <circle cx="200" cy="200" r="160" class="flow-grid-circle" />
+                                            </g>
+
+                                            <!-- Axis lines -->
+                                            <g id="flow-radar-axes" class="flow-radar-axes"></g>
+
+                                            <!-- Axis labels -->
+                                            <g id="flow-radar-labels" class="flow-radar-labels"></g>
+
+                                            <!-- Historical trail (previous readings) -->
+                                            <g id="flow-radar-trail" class="flow-radar-trail"></g>
+
+                                            <!-- Current data polygon -->
+                                            <polygon id="flow-radar-polygon" class="flow-radar-polygon" points="" />
+
+                                            <!-- Current data points -->
+                                            <g id="flow-radar-points" class="flow-radar-points"></g>
+
+                                            <!-- Sweep line -->
+                                            <g id="flow-radar-sweep" class="flow-radar-sweep">
+                                              <path id="flow-sweep-path" d="" />
+                                            </g>
+
+                                            <!-- Center marker -->
+                                            <circle id="flow-radar-center" cx="200" cy="200" r="6" class="flow-radar-center" />
+                                          </svg>
+                                        </div>
+                                        <div id="flow-radar-legend" class="flow-radar-legend"></div>
+                    <div class="flow-rule">
+            <strong>判断顺序</strong>
+            <span>Call 偏强 + 异常活跃 = 优先观察；Put 偏强 = 风险提醒；方向均衡 = 等待确认。</span>
+          </div>
+          <div class="flow-watchlist" id="flow-watchlist" aria-live="polite">
+            <div class="flow-empty">正在加载期权活动...</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="articles">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>文章归档</h2>
+          <p>公众号里的长文会逐步迁移到这里，按主题重新整理摘要、图表和关键结论。</p>
+        </div>
+        <div class="article-grid">
+          <article class="article-card">
+            <div class="article-topline"><span>下周展望</span><span>已同步</span></div>
+            <h3><a href="articles/2026-11-08-cpi-ai-earnings-volatility.html">20261108下周美股预测</a></h3>
+            <p>急跌后反弹仍需警惕高波动，清濛观察 CPI/PPI、AI 财报与长债，整理七只股票和黄金技术位及 11 月 9—13 日大事记。</p>
+            <div class="tag-row"><span class="tag">CPI/PPI</span><span class="tag">AI财报</span><span class="tag">波动与利率</span></div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline"><span>周中总结</span><span>已同步</span></div>
+            <h3><a href="articles/2026-11-04-midweek-ai-regulation-cashflow.html">20261104周中总结和预测</a></h3>
+            <p>选举后科技股分化，清濛观察 AI 监管、光通信和算力现金流，整理七只股票技术位、黄金区间与未来两天大事记。</p>
+            <div class="tag-row"><span class="tag">AI监管</span><span class="tag">现金流</span><span class="tag">非农</span></div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline"><span>下周展望</span><span>已同步</span></div>
+            <h3><a href="articles/2026-11-01-election-amd-jobs-week.html">20261101美股的科技暴跌后的选举，AMD与非农的故事</a></h3>
+            <p>科技暴跌后观察反弹承接，中期选举、AMD 与非农接力；清濛整理七只股票技术位、黄金区间和本周大事记。</p>
+            <div class="tag-row"><span class="tag">中期选举</span><span class="tag">AI财报</span><span class="tag">非农</span></div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline"><span>周中总结</span><span>已同步</span></div>
+            <h3><a href="articles/2026-10-28-midweek-rates-ai-earnings.html">20261028周中总结和预测</a></h3>
+            <p>利率与 AI 财报带来分化，清濛观察微软、谷歌和 VRT，整理七只股票的技术位、黄金区间与未来两天大事记。</p>
+            <div class="tag-row"><span class="tag">AI财报</span><span class="tag">利率与融资</span><span class="tag">黄金</span></div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline"><span>下周展望</span><span>已同步</span></div>
+            <h3><a href="articles/2026-10-25-fomc-earnings-gap-up-fade.html">20261025美股下周走势之高开低走</a></h3>
+            <p>央行决议、GDP/PCE 与科技财报密集登场，清濛记录高开低走的判断、七只股票观察价位与黄金区间。</p>
+            <div class="tag-row"><span class="tag">FOMC</span><span class="tag">科技财报</span><span class="tag">黄金</span></div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline"><span>周中总结</span><span>已同步</span></div>
+            <h3><a href="articles/2026-10-21-midweek-tech-earnings-volatility.html">20261021周中美股总结之文字越短波动越大</a></h3>
+            <p>科技财报后的波动如何看？清濛记录 META、TSLA、IBM 财报观察，整理七只股票技术位、QQQ 关键线与黄金区间。</p>
+            <div class="tag-row"><span class="tag">科技财报</span><span class="tag">QQQ</span><span class="tag">黄金</span></div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline"><span>下周展望</span><span>已同步</span></div>
+            <h3><a href="articles/2026-10-18-earnings-rebound-outlook.html">20261018上周预警的大屠杀，这周美股能涨回来吗？</a></h3>
+            <p>急跌后是修复还是反转？清濛关注科技财报、反弹广度与长债，整理六只股票和黄金的支撑压力。</p>
+            <div class="tag-row"><span class="tag">科技财报</span><span class="tag">反弹广度</span><span class="tag">黄金</span></div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline"><span>周中总结</span><span>已同步</span></div>
+            <h3><a href="articles/2026-10-14-cpi-ai-financing-selloff.html">20261014这周是美股大屠杀吗？</a></h3>
+            <p>CPI 与 AI 融资压力下的回撤，保留七只股票的盘后参考价、黄金区间与当时的未来 48 小时观察。</p>
+            <div class="tag-row"><span class="tag">CPI</span><span class="tag">AI融资</span><span class="tag">盘后技术位</span></div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>下周预测</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-10-11-cpi-earnings-week.html">20261011下周美股预测之CPI来了</a></h3>
+            <p>CPI 与银行、ASML、TSMC 财报接力，清濛关注 10Y 的 5.18% / 5.36% 观察线，整理七只股票和黄金的支撑压力。</p>
+            <div class="tag-row">
+              <span class="tag">CPI/10Y</span>
+              <span class="tag">半导体财报</span>
+              <span class="tag">黄金</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>周中总结</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-10-07-midweek-bond-auction-ai.html">20261007周中总结和预测</a></h3>
+            <p>10Y 再上 5.3%，清濛关注长债拍卖和通胀预期，整理八只股票的支撑压力与黄金区间。</p>
+            <div class="tag-row">
+              <span class="tag">长债拍卖</span>
+              <span class="tag">通胀预期</span>
+              <span class="tag">股票技术位</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>下周剧本</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-10-04-ai-concentration-week.html">20261004下周的疯狂时光美股预测和总结</a></h3>
+            <p>就业降温后资金继续向 AI 集中，清濛观察 NVDA、AMD、MU、SNDK、LITE、COHR、TSLA 与黄金的关键位置。</p>
+            <div class="tag-row">
+              <span class="tag">AI抱团</span>
+              <span class="tag">FOMC纪要</span>
+              <span class="tag">黄金</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>周中总结</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-09-30-midweek-pce-mu-gold.html">20260930周中总结和预测</a></h3>
+            <p>PCE 与 MU 财报落地后，10Y 仍冲到约 5.30%；清濛观察 MU、NVDA、AMD、AVGO、HPE、CCJ 和黄金的关键位置。</p>
+            <div class="tag-row">
+              <span class="tag">PCE/10Y</span>
+              <span class="tag">MU财报</span>
+              <span class="tag">黄金</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>下周剧本</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-09-27-pce-mu-jobs-week.html">20260927下周美股大盘总结和预测</a></h3>
+            <p>油价、10Y 与黄金形成高通胀组合，清濛重点拆解 JOLTS、PCE、MU 财报、ISM 和非农的超级数据周。</p>
+            <div class="tag-row">
+              <span class="tag">PCE/非农</span>
+              <span class="tag">MU/SOXL</span>
+              <span class="tag">油价/黄金</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>周中总结</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-09-23-midweek-yields-ai-levels.html">20260923周中总结和预测</a></h3>
+            <p>10Y 升至 5.11%、PMI 超预期后，清濛拆解 NVDA、AMD、MU、AVGO、META、MSFT 和 PLTR 的关键支撑与压力。</p>
+            <div class="tag-row">
+              <span class="tag">10Y/PMI</span>
+              <span class="tag">AI 科技股</span>
+              <span class="tag">未来两天</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>下周剧本</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-09-20-tech-rebound-gold-defense.html">下周可能会涨啊，喜欢听到吗？</a></h3>
+            <p>10Y 站上 5% 后，清濛观察科技修复、油价回落与黄金防守结构，并拆解 MU、SNDK、SOXL 的关键支撑和压力。</p>
+            <div class="tag-row">
+              <span class="tag">10Y/油价</span>
+              <span class="tag">MU/SNDK/SOXL</span>
+              <span class="tag">黄金</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>Fed攻防</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-09-15-fed-48h-defense-guide.html">美股未来48小时的Fed大考与攻防大战指南</a></h3>
+            <p>油价约 105 美元、10Y 触及 5.04%，清濛拆解 FOMC 决议、Warsh 记者会，以及 NVDA、AVGO、MU、MRVL、NBIS、GDX 的支撑压力。</p>
+            <div class="tag-row">
+              <span class="tag">FOMC</span>
+              <span class="tag">10Y/油价</span>
+              <span class="tag">支撑压力</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>下周剧本</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-09-13-fomc-oil-ai-valuation.html">下周可能会跌很多，你害怕吗？</a></h3>
+            <p>Brent 站上 106 美元、WTI 约 102 美元，10Y 摸到 4.97%；清濛提醒本周先防估值下压，再看 FOMC 能不能救场。</p>
+            <div class="tag-row">
+              <span class="tag">FOMC</span>
+              <span class="tag">Brent/10Y</span>
+              <span class="tag">AI估值</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>周中总结</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-09-09-midweek-cpi-oil-rates.html">周中总结和未来两天预测</a></h3>
+            <p>Brent 站上 100 美元附近，10Y 摸到 4.84%-4.85%，清濛拆解 SOXL、NVDA、AVGO、TSM、VRT 和黄金的支撑压力。</p>
+            <div class="tag-row">
+              <span class="tag">PPI/CPI</span>
+              <span class="tag">Brent/10Y</span>
+              <span class="tag">黄金</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>下周故事</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-09-07-cpi-oil-ai-rotation.html">下周的美股故事又是很精彩，大家盘一盘啊</a></h3>
+            <p>非农强于预期后，9月加息概率回升，Brent逼近97美元；下周重点看 Apple 发布会、PPI、CPI、ORCL/ADBE 和 AI 盈利能力。</p>
+            <div class="tag-row">
+              <span class="tag">CPI/PPI</span>
+              <span class="tag">Brent/10Y</span>
+              <span class="tag">AI盈利</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>周中总结</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-09-02-midweek-jobs-gold-ai.html">美股周中总结和预测</a></h3>
+            <p>ADP 就业降温让市场小幅反弹，但 10Y、WTI、黄金和非农仍是未来两天最关键变量，同时更新 NVDA、MU、TSLA、SPCX、SOXL、DELL 支撑压力。</p>
+            <div class="tag-row">
+              <span class="tag">ADP/非农</span>
+              <span class="tag">黄金</span>
+              <span class="tag">支撑压力</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>下周预测</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-08-30-jobs-rates-oil-ai.html">非农和利率，谁更欺负人呢？</a></h3>
+            <p>Warsh 重申 2% 通胀目标，油价重新逼近 89 美元，下周重点看非农、10Y、AVGO/DELL 财报和半导体估值压力。</p>
+            <div class="tag-row">
+              <span class="tag">非农/ADP</span>
+              <span class="tag">10Y利率</span>
+              <span class="tag">AVGO/DELL</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>周中总结</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-08-26-nvda-ai-demand-financing.html">谁能赚更多的钱呢？</a></h3>
+            <p>NVDA 财报证明 AI 算力需求没坏，但市场下一步会从有没有订单，转向谁来买单、谁能承担融资成本、谁能真正赚钱。</p>
+            <div class="tag-row">
+              <span class="tag">NVDA财报</span>
+              <span class="tag">HBM/DRAM</span>
+              <span class="tag">融资链条</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>下周剧本</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-08-23-pce-nvda-ai-capex.html">下周美股关关难过关关过</a></h3>
+            <p>PCE、GDP、NVDA 财报、Jackson Hole 和非农年度基准修订同周登场，真正要验证的是 AI 订单、资本回报率和长债压力。</p>
+            <div class="tag-row">
+              <span class="tag">PCE/GDP</span>
+              <span class="tag">NVDA财报</span>
+              <span class="tag">30Y美债</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>周中剧本</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-08-19-treasury-buyback-yields-gold-ai.html">财政部出手，但是总觉得治标不治本</a></h3>
+            <p>财政部提高长期美债回购规模，收益率和美元回落，黄金、比特币反弹，但债务供给和 AI 估值压力没有真正消失。</p>
+            <div class="tag-row">
+              <span class="tag">美债回购</span>
+              <span class="tag">黄金反弹</span>
+              <span class="tag">AI估值</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>下周剧本</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-08-16-10y-retail-earnings-oil.html">当4.7%美债撞上零售财报：有什么火花呢？</a></h3>
+            <p>下周重点不只是 AI，而是看 4.7% 美债、接近 90 美元油价和 HD/LOW/TGT/WMT 零售财报能不能给科技股让路。</p>
+            <div class="tag-row">
+              <span class="tag">10Y/Brent</span>
+              <span class="tag">零售财报</span>
+              <span class="tag">FOMC纪要</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>周中总结</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-08-12-midweek-ai-bottleneck-burry.html">CPI 正常发挥后，市场开始往 AI 瓶颈靠拢</a></h3>
+            <p>COHR 财报把 InP、CPO 和 AI 光通信瓶颈推到台前，同时拆解 LITE、NVDA、MU、COHR、APLD、PLTR 和防御清单。</p>
+            <div class="tag-row">
+              <span class="tag">AI瓶颈</span>
+              <span class="tag">InP/CPO</span>
+              <span class="tag">Burry</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>美股总结</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-08-10-market-recap-cpi-ai-compute-finance.html">油价回升，CPI 与 AI 云厂财报进入关键 48 小时</a></h3>
+            <p>Brent 回到 87 美元附近，NVDA 算力融资叙事升温，接下来重点看 CPI、CRWV、RKLB 和半导体设备链支撑位。</p>
+            <div class="tag-row">
+              <span class="tag">CPI审判</span>
+              <span class="tag">NVDA算力</span>
+              <span class="tag">支撑压力</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>下周剧本</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-08-09-cpi-brent-10y-ai-second-test.html">就业降温之后，真正的大考是 CPI</a></h3>
+            <p>就业给科技股喘息，但 CPI、Brent 和 10Y 才是下周总闸门，重点看 RKLB、CRWV、LITE、NBIS、CSCO、AMAT 和 MU。</p>
+            <div class="tag-row">
+              <span class="tag">CPI/PPI</span>
+              <span class="tag">Brent/10Y</span>
+              <span class="tag">AI验货</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>周中剧本</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-08-05-midweek-dow-record-capex.html">道指创新高，纳指却被资本开支拖住</a></h3>
+            <p>道指创新高但纳指承压，市场从“所有 AI 都买”切换到审计回报，重点看 NVDA、AMD、MU、SPCX 和 BWXT。</p>
+            <div class="tag-row">
+              <span class="tag">AI CapEx</span>
+              <span class="tag">NVDA/AMD</span>
+              <span class="tag">油价风险</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>下周剧本</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-08-02-oil-cooling-jobs-rates-cashflow.html">油价降温可能只是止痛药</a></h3>
+            <p>油价回落只是喘息，8/3-8/7 进入就业、利率和企业现金流共同验货的一周，重点看 PLTR、AMD、SpaceX、SNDK、WDC、VST。</p>
+            <div class="tag-row">
+              <span class="tag">就业数据</span>
+              <span class="tag">AI现金流</span>
+              <span class="tag">PLTR/AMD</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>周中剧本</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-07-29-midweek-bloodbath-model.html">美股周中剧本：血流成河</a></h3>
+            <p>FOMC、油价和美债一起压盘，清濛小模型拆解 GDP/PCE、AAPL、AMZN、MSFT、META、MU 的两日剧本。</p>
+            <div class="tag-row">
+              <span class="tag">FOMC</span>
+              <span class="tag">GDP/PCE</span>
+              <span class="tag">小模型</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>下周剧本</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-07-26-fomc-gdp-pce-ai-cashflow.html">油价退烧，FOMC登场</a></h3>
+            <p>7月27日至31日进入利率、油价和 AI 资本开支三重审计，重点看 MSFT、META、AAPL、AMZN、NVDA、MU。</p>
+            <div class="tag-row">
+              <span class="tag">FOMC</span>
+              <span class="tag">GDP/PCE</span>
+              <span class="tag">AI现金流</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>周中剧本</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-07-22-google-cloud-cash-flow.html">谷歌云爆发，现金流却转负</a></h3>
+            <p>GOOGL 和 TSLA 盘后下跌，市场开始审计 AI CapEx、利润率和自由现金流，而不是只奖励财报超预期。</p>
+            <div class="tag-row">
+              <span class="tag">GOOGL</span>
+              <span class="tag">TSLA</span>
+              <span class="tag">现金流</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>下周剧本</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-07-19-oil-earnings-ai-stopfall.html">油价破90，财报周决定AI能否止跌</a></h3>
+            <p>AI 硬件仍像去杠杆，不是全面熊市；下周由油价、美债、GOOGL、TSLA、AMD 和 TXN 决定能否止跌分化。</p>
+            <div class="tag-row">
+              <span class="tag">油价破90</span>
+              <span class="tag">财报周</span>
+              <span class="tag">AI止跌</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>下周剧本</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-07-12-oil-inflation-ai-orders.html">油价、通胀和AI订单一起验货</a></h3>
+            <p>下周不是单纯赌财报，而是油价、通胀、银行财报、TSM 和 ASML 一起验证市场质量。</p>
+            <div class="tag-row">
+              <span class="tag">CPI/PPI</span>
+              <span class="tag">TSM/ASML</span>
+              <span class="tag">油价风险</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>周中剧本</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-07-07-midweek-rotation.html">周中剧本，别灰心：美股没死，只是在换手</a></h3>
+            <p>AI 硬件集中去杠杆，但软件线开始承接，重点看 MSFT、PLTR、NOW、NVDA、MU 和 SMH 的关键区间。</p>
+            <div class="tag-row">
+              <span class="tag">AI换手</span>
+              <span class="tag">软件承接</span>
+              <span class="tag">SMH/MU</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>下周剧本</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-07-05-weekly-script-ai-rotation.html">7月6日—7月10日，美股下周剧本怎么走</a></h3>
+            <p>长周末后资金先做科技修复，但 AI 主线进入订单、现金流、毛利率和 CapEx 回报的验证阶段。</p>
+            <div class="tag-row">
+              <span class="tag">AI修复</span>
+              <span class="tag">MU/NVDA</span>
+              <span class="tag">FOMC</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>下周剧本</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-06-28-ai-power-infrastructure.html">AI不是结束，是开始看电拉</a></h3>
+            <p>AI主线从芯片扩散到电力、核电、数据中心和液冷，观察基础设施能否接棒。</p>
+            <div class="tag-row">
+              <span class="tag">AI电力</span>
+              <span class="tag">核电</span>
+              <span class="tag">数据中心</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>盘前剧本</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-06-24-mu-pce-exam.html">MU点燃AI硬件，但是PCE才是真正考官啊</a></h3>
+            <p>MU 财报点燃 AI 硬件修复，但行情质量还要看 PCE、10年期美债和 SMH 的二次确认。</p>
+            <div class="tag-row">
+              <span class="tag">MU</span>
+              <span class="tag">AI硬件</span>
+              <span class="tag">PCE</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>周中总结</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-06-23-midweek-mu-earnings.html">美光财报前，我们先别急着否定自己</a></h3>
+            <p>复盘 AI 硬件线集体回撤，拆解 MU 财报前的预期、杠杆清理和仓位分类。</p>
+            <div class="tag-row">
+              <span class="tag">MU</span>
+              <span class="tag">AI硬件</span>
+              <span class="tag">复盘</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div class="article-topline">
+              <span>周度剧本</span>
+              <span>已同步</span>
+            </div>
+            <h3><a href="articles/2026-06-21-ai-hardware-week.html">下周美股市场的剧本：AI硬件进入验货周</a></h3>
+            <p>围绕 MU 财报、QCOM 投资者日和 PCE 通胀数据，拆解 AI 硬件扩散是否进入验货阶段。</p>
+            <div class="tag-row">
+              <span class="tag">AI</span>
+              <span class="tag">MU</span>
+              <span class="tag">股票池</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="section" id="vlog">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>Vlog 脚本</h2>
+          <p>视频内容会围绕一个清晰问题展开：一家公司、一份财报、一个行业变量，或者一次完整交易复盘。</p>
+        </div>
+        <div class="video-grid">
+          <article class="video-card">
+            <div class="video-art" aria-hidden="true">
+              <span class="play-icon">▶</span>
+            </div>
+            <h3>盘后 10 分钟：把一份财报拆成三句话</h3>
+            <p>适合视频号和 YouTube Shorts 的短脚本格式，先讲结论，再讲证据。</p>
+          </article>
+          <article class="video-card">
+            <div class="video-art" aria-hidden="true">
+              <span class="play-icon">▶</span>
+            </div>
+            <h3>周末复盘：本周市场到底在交易什么</h3>
+            <p>按指数、行业、个股和宏观变量复盘，留下下一周的观察清单。</p>
+          </article>
+        </div>
+      </div>
+    </section> -->
+
+    <section class="section alt" id="wechat-sync">
+      <div class="section-inner sync-layout">
+        <div class="sync-copy">
+          <h2>微信公众号同步</h2>
+          <p>
+            公众号“东左耳清濛”是首发渠道，网站用来做长期归档和复盘。我会把重点文章整理成网页版本，保留原文链接，并补上更清晰的标签、股票池和后续追踪入口。
+          </p>
+          <div class="sync-highlight">
+            <h3>最新同步</h3>
+            <p>2026-11-08：下周美股预测</p>
+            <div class="sync-actions">
+              <a class="button primary" href="articles/2026-11-08-cpi-ai-earnings-volatility.html">阅读网页版本</a>
+              <a class="button secondary" href="https://mp.weixin.qq.com/s/BOq-_yY23DQ9wIV5KcCypQ" target="_blank" rel="noopener">打开公众号原文</a>
+            </div>
+          </div>
+        </div>
+        <aside class="newsletter" id="contact">
+          <div class="wechat-qr-block">
+            <strong>扫码关注公众号：东左耳清濛</strong>
+            <img src="qrcode.jpg" alt="东左耳清濛公众号二维码" onerror="this.closest('.wechat-qr-block').classList.add('missing')" />
+            <span class="qr-fallback">请把二维码图片保存到项目根目录。</span>
+          </div>
+          <h3>订阅与留言</h3>
+          <p>想看某家公司、财报或行业线，可以直接留言。我会优先整理成文章或复盘。</p>
+          <form action="https://formspree.io/f/xwpbgzna" method="POST">
+            <input type="email" name="email" placeholder="你的邮箱" aria-label="你的邮箱" required />
+            <textarea name="message" placeholder="想看什么主题，例如 NVDA 财报、软件股估值、周末复盘" aria-label="留言" required></textarea>
+            <button class="button primary" type="submit">发送</button>
+          </form>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="bitcoin">
+      <div class="section-inner crypto-wrap">
+        <div class="crypto-copy">
+          <p class="eyebrow" style="color: var(--gold);">Crypto Data</p>
+          <h2>比特币数据</h2>
+          <!-- <p>保留原页面的 CoinGecko 数据接口，继续显示 BTC 和 ETH 的 CAD 报价，作为跨资产风险偏好的参考。</p> -->
+        </div>
+        <div class="crypto-box">
+          <small>CRYPTO LIVE PRICE</small>
+          <div id="crypto-prices">正在加载加密货币价格...</div>
+          <p class="disclaimer">内容仅用于学习和记录，不构成投资建议。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>Lemon 美股手记</strong><br />
+        <span>美股研究、视频脚本、公众号文章同步。Charles 出品。</span>
+      </div>
+      <div class="visitor-counter" aria-live="polite">
+        <span>访问量 <strong id="page-view-count">--</strong></span>
+        <span>访客 <strong id="visitor-count">--</strong></span>
+        <span id="visitor-counter-status">统计待配置</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://discord.com/channels/@me" target="_blank" rel="noopener">Discord: lemon_cc_lol</a>
+        <a href="mailto:charlesdataaws@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

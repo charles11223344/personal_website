@@ -13,6 +13,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_PATH = ROOT / "data" / "stocks.json"
 YAHOO_CHART_URL = "https://query1.finance.yahoo.com/v8/finance/chart"
+HISTORY_POINTS = 20  # recent daily closes kept for the homepage sparklines
 
 WATCHLIST = [
     {"symbol": "SPX", "yahoo": "^GSPC", "name": "S&P 500 Index", "kind": "index"},
@@ -69,7 +70,7 @@ def rounded(value: float | None, digits: int = 2) -> float | None:
 
 def fetch_chart(yahoo_symbol: str) -> dict:
     encoded_symbol = urllib.parse.quote(yahoo_symbol, safe="")
-    query = urllib.parse.urlencode({"range": "5d", "interval": "1d"})
+    query = urllib.parse.urlencode({"range": "1mo", "interval": "1d"})
     request = urllib.request.Request(
         f"{YAHOO_CHART_URL}/{encoded_symbol}?{query}",
         headers={"User-Agent": "Mozilla/5.0 stock-data-updater"},
@@ -142,6 +143,7 @@ def build_quote(item: dict) -> dict:
         "volume": latest["volume"],
         "change": rounded(change),
         "changePercent": rounded(change_percent),
+        "history": [rounded(row["close"]) for row in rows[-HISTORY_POINTS:]],
     }
 
 
