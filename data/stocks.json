@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-14T02:24:02+00:00",
+  "updatedAt": "2026-11-14T18:56:50+00:00",
   "source": "Yahoo Finance chart endpoint",
   "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart",
   "symbols": [
@@ -14,7 +14,7 @@
       "high": 7621.78,
       "low": 7499.4,
       "close": 7561.67,
-      "volume": 2727332000,
+      "volume": 4372990000,
       "change": -30.73,
       "changePercent": -0.4,
       "history": [
@@ -120,16 +120,15 @@
       "kind": "stock",
       "sourceSymbol": "SPCX",
       "currency": "USD",
-      "date": "2026-11-12",
-      "open": 137.85,
-      "high": 147.6,
-      "low": 137.75,
-      "close": 139.94,
-      "volume": 95961800,
-      "change": 0.19,
-      "changePercent": 0.14,
+      "date": "2026-11-13",
+      "open": 140.17,
+      "high": 142.24,
+      "low": 136.64,
+      "close": 139.11,
+      "volume": 77314900,
+      "change": -0.83,
+      "changePercent": -0.59,
       "history": [
-        146.03,
         147.96,
         147.79,
         159.31,
@@ -148,7 +147,8 @@
         142.07,
         143.09,
         139.75,
-        139.94
+        139.94,
+        139.11
       ]
     },
     {
@@ -379,16 +379,15 @@
       "kind": "stock",
       "sourceSymbol": "META",
       "currency": "USD",
-      "date": "2026-11-12",
-      "open": 625.35,
-      "high": 630.32,
-      "low": 618.92,
-      "close": 623.61,
-      "volume": 10341800,
-      "change": -5.16,
-      "changePercent": -0.82,
+      "date": "2026-11-13",
+      "open": 627.21,
+      "high": 643.91,
+      "low": 624.79,
+      "close": 641.69,
+      "volume": 15127500,
+      "change": 18.08,
+      "changePercent": 2.9,
       "history": [
-        709.33,
         705.44,
         694.25,
         697.52,
@@ -407,7 +406,8 @@
         641.37,
         641.39,
         628.77,
-        623.61
+        623.61,
+        641.69
       ]
     },
     {
@@ -527,16 +527,15 @@
       "kind": "stock",
       "sourceSymbol": "PLTR",
       "currency": "USD",
-      "date": "2026-11-12",
-      "open": 170.2,
-      "high": 173.05,
-      "low": 168.25,
-      "close": 171.58,
-      "volume": 12458600,
-      "change": -0.82,
-      "changePercent": -0.48,
+      "date": "2026-11-13",
+      "open": 171.74,
+      "high": 172.28,
+      "low": 164.75,
+      "close": 167.99,
+      "volume": 15169600,
+      "change": -3.59,
+      "changePercent": -2.09,
       "history": [
-        186.03,
         194.15,
         192.6,
         201.72,
@@ -555,7 +554,8 @@
         169.2,
         168.82,
         172.4,
-        171.58
+        171.58,
+        167.99
       ]
     },
     {
