@@ -1541,7 +1541,7 @@ main {
 }
 
 /* The homepage archive shows the latest 9 articles only. */
-#articles .article-card:nth-child(n + 10) {
+#articles .article-card:nth-child(n + 11) {
   display: none;
 }
 
