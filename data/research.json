@@ -1,0 +1,2860 @@
+{
+  "schemaVersion": 1,
+  "articleCount": 43,
+  "latestArticleDate": "2026-11-16",
+  "topics": [
+    {
+      "id": "ai",
+      "label": "AI 与半导体"
+    },
+    {
+      "id": "macro",
+      "label": "宏观与利率"
+    },
+    {
+      "id": "earnings",
+      "label": "财报观察"
+    },
+    {
+      "id": "cashflow",
+      "label": "融资与现金流"
+    },
+    {
+      "id": "energy",
+      "label": "黄金与能源"
+    },
+    {
+      "id": "review",
+      "label": "交易与复盘"
+    },
+    {
+      "id": "policy",
+      "label": "政策与选举"
+    }
+  ],
+  "featuredSymbols": [
+    "NVDA",
+    "MU",
+    "AMD",
+    "AVGO",
+    "MRVL",
+    "COHR",
+    "NBIS",
+    "SOXL"
+  ],
+  "symbols": [
+    {
+      "symbol": "NVDA",
+      "name": "NVIDIA",
+      "articleCount": 40,
+      "aliases": [
+        "英伟达",
+        "英偉達"
+      ],
+      "kind": "stock"
+    },
+    {
+      "symbol": "MU",
+      "name": "Micron Technology",
+      "articleCount": 39,
+      "aliases": [
+        "美光",
+        "Micron"
+      ],
+      "kind": "stock"
+    },
+    {
+      "symbol": "AMD",
+      "name": "Advanced Micro Devices",
+      "articleCount": 15,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "AVGO",
+      "name": "Broadcom",
+      "articleCount": 14,
+      "aliases": [
+        "博通"
+      ],
+      "kind": "stock"
+    },
+    {
+      "symbol": "MRVL",
+      "name": "Marvell",
+      "articleCount": 17,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "COHR",
+      "name": "Coherent",
+      "articleCount": 10,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "LITE",
+      "name": "Lumentum",
+      "articleCount": 13,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "NBIS",
+      "name": "Nebius",
+      "articleCount": 11,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "SOXL",
+      "name": "Direxion Daily Semiconductor Bull 3X ETF",
+      "articleCount": 12,
+      "aliases": [],
+      "kind": "etf"
+    },
+    {
+      "symbol": "AAPL",
+      "name": "Apple",
+      "articleCount": 6,
+      "aliases": [
+        "苹果",
+        "蘋果"
+      ],
+      "kind": "stock"
+    },
+    {
+      "symbol": "MSFT",
+      "name": "Microsoft",
+      "articleCount": 13,
+      "aliases": [
+        "微软",
+        "微軟"
+      ],
+      "kind": "stock"
+    },
+    {
+      "symbol": "GOOGL",
+      "name": "Alphabet",
+      "articleCount": 8,
+      "aliases": [
+        "谷歌"
+      ],
+      "kind": "stock"
+    },
+    {
+      "symbol": "AMZN",
+      "name": "Amazon",
+      "articleCount": 7,
+      "aliases": [
+        "亚马逊",
+        "亞馬遜"
+      ],
+      "kind": "stock"
+    },
+    {
+      "symbol": "META",
+      "name": "Meta Platforms",
+      "articleCount": 6,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "TSLA",
+      "name": "Tesla",
+      "articleCount": 8,
+      "aliases": [
+        "特斯拉"
+      ],
+      "kind": "stock"
+    },
+    {
+      "symbol": "PLTR",
+      "name": "Palantir",
+      "articleCount": 10,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "TSM",
+      "name": "Taiwan Semiconductor",
+      "articleCount": 7,
+      "aliases": [
+        "台积电",
+        "台積電"
+      ],
+      "kind": "stock"
+    },
+    {
+      "symbol": "SPX",
+      "name": "S&P 500 Index",
+      "articleCount": 0,
+      "aliases": [],
+      "kind": "index"
+    },
+    {
+      "symbol": "SPY",
+      "name": "SPDR S&P 500 ETF",
+      "articleCount": 4,
+      "aliases": [],
+      "kind": "etf"
+    },
+    {
+      "symbol": "QQQ",
+      "name": "Invesco QQQ ETF",
+      "articleCount": 24,
+      "aliases": [],
+      "kind": "etf"
+    },
+    {
+      "symbol": "SPCX",
+      "name": "SPCX",
+      "articleCount": 4,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "SMH",
+      "name": "VanEck Semiconductor ETF",
+      "articleCount": 10,
+      "aliases": [],
+      "kind": "etf"
+    },
+    {
+      "symbol": "SOXX",
+      "name": "iShares Semiconductor ETF",
+      "articleCount": 3,
+      "aliases": [],
+      "kind": "etf"
+    },
+    {
+      "symbol": "SNDK",
+      "name": "Sandisk",
+      "articleCount": 8,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "WDC",
+      "name": "Western Digital",
+      "articleCount": 6,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "STX",
+      "name": "Seagate",
+      "articleCount": 2,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "AMAT",
+      "name": "Applied Materials",
+      "articleCount": 6,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "LRCX",
+      "name": "Lam Research",
+      "articleCount": 5,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "KLAC",
+      "name": "KLA",
+      "articleCount": 4,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "ASML",
+      "name": "ASML",
+      "articleCount": 5,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "QCOM",
+      "name": "Qualcomm",
+      "articleCount": 4,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "VRT",
+      "name": "Vertiv",
+      "articleCount": 8,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "ETN",
+      "name": "Eaton",
+      "articleCount": 3,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "GEV",
+      "name": "GE Vernova",
+      "articleCount": 4,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "CEG",
+      "name": "Constellation Energy",
+      "articleCount": 4,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "VST",
+      "name": "Vistra",
+      "articleCount": 6,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "OKLO",
+      "name": "Oklo",
+      "articleCount": 3,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "GLW",
+      "name": "Corning",
+      "articleCount": 2,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "APH",
+      "name": "Amphenol",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "TEL",
+      "name": "TE Connectivity",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "CRDO",
+      "name": "Credo",
+      "articleCount": 2,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "ALAB",
+      "name": "Astera Labs",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "CRWV",
+      "name": "CoreWeave",
+      "articleCount": 5,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "IREN",
+      "name": "IREN",
+      "articleCount": 2,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "HUT",
+      "name": "Hut 8",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "RKLB",
+      "name": "Rocket Lab",
+      "articleCount": 4,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "ASTS",
+      "name": "AST SpaceMobile",
+      "articleCount": 2,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "BWXT",
+      "name": "BWX Technologies",
+      "articleCount": 2,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "CCJ",
+      "name": "Cameco",
+      "articleCount": 3,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "SMR",
+      "name": "NuScale Power",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "NNE",
+      "name": "NANO Nuclear Energy",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "INTC",
+      "name": "Intel",
+      "articleCount": 3,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "ARM",
+      "name": "Arm",
+      "articleCount": 2,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "CSCO",
+      "name": "Cisco",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "NOW",
+      "name": "ServiceNow",
+      "articleCount": 2,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "NET",
+      "name": "Cloudflare",
+      "articleCount": 3,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "PANW",
+      "name": "Palo Alto Networks",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "CRM",
+      "name": "Salesforce",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "CRWD",
+      "name": "CrowdStrike",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "ORCL",
+      "name": "Oracle",
+      "articleCount": 4,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "IBM",
+      "name": "IBM",
+      "articleCount": 3,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "TXN",
+      "name": "Texas Instruments",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "MPWR",
+      "name": "Monolithic Power Systems",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "HPE",
+      "name": "Hewlett Packard Enterprise",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "DELL",
+      "name": "Dell Technologies",
+      "articleCount": 2,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "SHOP",
+      "name": "Shopify",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "APLD",
+      "name": "Applied Digital",
+      "articleCount": 3,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "XOM",
+      "name": "Exxon Mobil",
+      "articleCount": 5,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "CVX",
+      "name": "Chevron",
+      "articleCount": 4,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "SLB",
+      "name": "SLB",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "XLE",
+      "name": "Energy Select Sector SPDR ETF",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "etf"
+    },
+    {
+      "symbol": "GDX",
+      "name": "VanEck Gold Miners ETF",
+      "articleCount": 4,
+      "aliases": [],
+      "kind": "etf"
+    },
+    {
+      "symbol": "GLD",
+      "name": "SPDR Gold Shares",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "etf"
+    },
+    {
+      "symbol": "AEM",
+      "name": "Agnico Eagle Mines",
+      "articleCount": 2,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "SU",
+      "name": "Suncor Energy",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "ENB",
+      "name": "Enbridge",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "WMT",
+      "name": "Walmart",
+      "articleCount": 2,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "C",
+      "name": "Citigroup",
+      "articleCount": 2,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "JPM",
+      "name": "JPMorgan Chase",
+      "articleCount": 2,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "BAC",
+      "name": "Bank of America",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "GS",
+      "name": "Goldman Sachs",
+      "articleCount": 2,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "WFC",
+      "name": "Wells Fargo",
+      "articleCount": 2,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "IWM",
+      "name": "iShares Russell 2000 ETF",
+      "articleCount": 2,
+      "aliases": [],
+      "kind": "etf"
+    },
+    {
+      "symbol": "RSP",
+      "name": "Invesco S&P 500 Equal Weight ETF",
+      "articleCount": 2,
+      "aliases": [],
+      "kind": "etf"
+    },
+    {
+      "symbol": "NXPI",
+      "name": "NXP Semiconductors",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "ADI",
+      "name": "Analog Devices",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "MCHP",
+      "name": "Microchip Technology",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "AMKR",
+      "name": "Amkor Technology",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "NOK",
+      "name": "Nokia",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "AAOI",
+      "name": "Applied Optoelectronics",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "WDAY",
+      "name": "Workday",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "INTU",
+      "name": "Intuit",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "ZM",
+      "name": "Zoom",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "LLY",
+      "name": "Eli Lilly",
+      "articleCount": 2,
+      "aliases": [],
+      "kind": "stock"
+    }
+  ],
+  "articles": [
+    {
+      "url": "articles/2026-11-16-nvda-fed-ipo-week.html",
+      "date": "2026-11-16",
+      "title": "20261116下周美股预测--会先跌后涨吗？",
+      "description": "清濛的2026年11月16日美股周前展望：利率与AI融资链、NVDA财报、Fed纪要和Anthropic预计挂牌，七只股票及黄金支撑压力，附11月16日至20日大事记。",
+      "tags": [
+        "NVDA 财报",
+        "Fed 纪要",
+        "IPO 与流动性"
+      ],
+      "topics": [
+        "macro",
+        "cashflow",
+        "earnings"
+      ],
+      "symbols": [
+        "AMD",
+        "AVGO",
+        "COHR",
+        "MU",
+        "NBIS",
+        "NVDA",
+        "PANW",
+        "SOXL",
+        "WMT"
+      ],
+      "readingMinutes": 4,
+      "searchText": "文章按作者提供的 2026-11-16 标题归档。以下行情、技术位与预测按公众号原文保留，未作独立验证，不代表实时行情或确定结果；文末发布日程截至 2026-11-15 核对，预计安排仍可能调整。 大家好啊，可能我先会说说你已经知道的东西，首先是上周标普涨了 2.51%，然后纳指涨了 2.27%，可惜的是上周五科技股又跌了不少。 利率又抬头，价格进入调整期 然后今晚 10 年期美债率悄悄涨到了大概 5.15%，NVDA 的不好的新闻，上周已经跌了不少了。废话不说了，就是市场的价格又到调整期到了。 然后周日晚的期货市场很多股票 call 开盘小小涨了一点，随后涨幅收窄，当然啦，这个是一个信号。 然后就是 CNN 恐惧贪婪指数 39、VIX 约 19.30，情绪较前周缓和，毕竟之前 VIX 到了 25。然后市场的流动性资金大概在 5.847 万亿美元左右，当然这么多资金在市场，但是不代表所有科技股都会上涨。有一部分可能会到 Anthropic 上面。因为要 IPO 啊，肯定要钱。 更关注科技股的融资链 而我更关注科技股里面的融资链。举一个例子，例如 COHR 订单增长亮眼，但是自由现金流仍承压，所以股票会跌一跌。又例如 NBIS 需求强劲，但是要面临扩建资金与交付考验。所以它的股票会回调会跌。 下周要注意的重点事件 11/16 周一： 纽约制造业数据，看看利率和半导体能不能涨起来。 11/17 周二： 零售销售、工业生产及 NVDA 盘后财报。NVDA 必须要看它家的后期运作，没有了黄教主，日子不是这么好过的。 11/18 周三： 14:00 美东 Fed 纪要、PANW 盘后财报。我可以提前告诉你，应该是鹰派的思想倾向啦。 11/19 周四： WMT 盘前财报、初请失业金，Anthropic 预计挂牌，看看有多少资金流入了。 11/20 周五： 月度期权到期、密歇根消费者信心终值，这天会高开低走。 七只股票与黄金技术位 以下价位按原文记录，单位为美元；支撑与压力用于观察，不是确定的成交或反转信号。 股票 / 标的 支撑 压力 NVDA 158.4 / 150.5 165.9 / 167.1 MU 750 / 745 765 / 796 AMD 495 / 468 515 / 519 AVGO 338 / 335 345 / 355 COHR 210 / 208 218 / 224 NBIS 109 / 93 119 / 124 SOXL 52.4 / 47.4 57.5 / 59.3 黄金 3857 / 3784 3904 / 3927 清濛的基准判断 我觉得下周是跌一点为主题，但是会有一两天涨。 最后一句话：Anthropic 的 IPO 可以参加，可能不要上头了。散户是不够机构玩的。 11 月 16—20 日发布日程与来源 以下为网页补充日程，时间均为美东时间（ET）。区分财报发布、电话会和预计事件，不把作者的涨跌判断当作已知结果。 11/16 周一，08:30： 纽约州制造业指数，时间对照经济发布日历。 Scotiabank 经济日历 11/17 周二，08:30 / 09:15： 美国 10 月零售销售、工业生产与产能利用率。 Census 零售日程 · Fed 工业生产日程 11/17 周二，盘后： NVDA 预计约 16:20 发布 FY2027 Q3 业绩，17:00 电话会。 NVIDIA 公告 11/18 周三，14:00： 公布 10 月 27—28 日 FOMC 会议纪要，不是新的利率决议。 Fed 11 月日程 11/18 周三，盘后： PANW FY2027 Q1 财报，16:30 电话会。 PANW 公告 11/19 周四，盘前： WMT 07:00 发布业绩、08:00 电话会，对应 06:00 / 07:00 CST。 Walmart 公告 11/19 周四，08:30： 按每周常规时间跟踪初请与续请失业金。 DOL 初请周报 11/19 周四，预计： Anthropic 公司 IPO 页面预计 11/18 定价、11/19 开始交易，仍取决于监管许可和最终发行安排，并非已完成挂牌。 Anthropic IPO 时间表 11/20 周五： 月度股票、ETF 及指数期权到期；部分 AM 结算指数合约最后交易日在 11/19，须按具体产品规则判断。 Cboe 到期日历 11/20 周五，10:00： 密歇根消费者信心 11 月终值，时间对照经济发布日历，关注通胀预期修订。 Scotiabank 经济日历 回看 11 月 11 日：真正的风险是八卦新闻 本文仅记录个人研究与市场观察，不构成投资建议。市场有风险，IPO、杠杆 ETF 与个股财报前后可能大幅波动，请独立判断并控制仓位。",
+      "levels": [
+        {
+          "symbol": "NVDA",
+          "support": "158.4 / 150.5",
+          "resistance": "165.9 / 167.1"
+        },
+        {
+          "symbol": "MU",
+          "support": "750 / 745",
+          "resistance": "765 / 796"
+        },
+        {
+          "symbol": "AMD",
+          "support": "495 / 468",
+          "resistance": "515 / 519"
+        },
+        {
+          "symbol": "AVGO",
+          "support": "338 / 335",
+          "resistance": "345 / 355"
+        },
+        {
+          "symbol": "COHR",
+          "support": "210 / 208",
+          "resistance": "218 / 224"
+        },
+        {
+          "symbol": "NBIS",
+          "support": "109 / 93",
+          "resistance": "119 / 124"
+        },
+        {
+          "symbol": "SOXL",
+          "support": "52.4 / 47.4",
+          "resistance": "57.5 / 59.3"
+        }
+      ]
+    },
+    {
+      "url": "articles/2026-11-11-midweek-gossip-risk.html",
+      "date": "2026-11-11",
+      "title": "20261111周中总结：真正的风险是八卦新闻",
+      "description": "清濛的2026年11月11日美股周中总结：标普纳指大涨但夜盘回落，黄仁勋婚外情传闻引发NVDA不确定性，Anthropic供应商认购260亿，七只重点股支撑压力与黄金区间，11月12-17日大事记。",
+      "tags": [
+        "NVDA 八卦冲击",
+        "Anthropic IPO 概念",
+        "七只股票技术位"
+      ],
+      "topics": [
+        "review",
+        "cashflow",
+        "macro"
+      ],
+      "symbols": [
+        "AMD",
+        "AVGO",
+        "COHR",
+        "CRWV",
+        "LITE",
+        "MRVL",
+        "MU",
+        "NBIS",
+        "NVDA",
+        "QQQ",
+        "SMH"
+      ],
+      "readingMinutes": 3,
+      "searchText": "以下正文、行情、技术位与预测按 2026-11-11 公众号原文整理存档，不代表实时行情或确定结果；行情与模型正确率未作独立验证。消息补充和发布日程另作标注，未确认的安排请以官方最新公告为准。 大家好啊，我是清濛。今天真的是好日子，也是令人担忧的一天。 白天欢呼，夜盘泼冷水 今天白盘真的是好日子，标普涨 1.31%、纳指涨 1.60%，CRWV 大涨 24.7%、NBIS 也涨 15.4%。大家都在欢呼雀跃，但是最不幸的是夜盘：NVDA 从 173.73 美元跌到约 162.3，SMH 跌 1.94%，纳指期货跌 0.62%。 这轮反弹的质量，一夜之间就被打回原形了。 黄教主的八卦新闻：不确定性才是真正的伤害 黄教主的真的一刻都停不下来。《华尔街日报》报道，他被指涉及婚外情，包括与英伟达一名高管的关系，董事会可能讨论撤换 CEO。但目前这是报道与指控，绝不是已经罢免或认定违法。 我更担心的是管理层动荡会影响整个公司的运行。CUDA、NVLink 生态不会因为花边新闻一夜消失，真正的伤害是所有东西的不确定性——NVDA 新 CEO 的不确定，未来路的不确定。所以股票必须要跌了。 消息补充： 目前董事会尚未正式宣布任何人事变动决定，上述内容均为媒体报道与指控阶段，请以 NVIDIA 官方声明为准。 Anthropic S-1/A 披露：七家供应商拟认购 260 亿美元 另一个大新闻是 Anthropic 在 11 月 10 日 SEC S-1/A 披露，七家供应商拟于 IPO 后认购合计 260 亿美元股份，其中 Google、NVDA 各 100 亿美元。钱暂时未按这个方案投资。 例如 MRVL 换股收购 LITE，也让光通信既有增长机会，又会带来估值风险。还有，AVGO 用所谓 2028 年盈利计算只有十倍 PE，画大饼谁不会啊。我相信大家不会一直中计。 未来两天必须要看的七只股票 以下价位按原文整理，单位为美元，格式为 支撑 / 压力。 股票 支撑 压力 NVDA 156.2 / 164.3 — AMD 550.4 / 575.1 — AVGO 345.6 / 356.9 — MU 761.8 / 827.6 — COHR 227.8 / 245.7 — LITE 622 / 678.7 — CRWV 56.1 / 62.0 — 原文未单独列出压力位，重点标注了支撑区间，建议结合盘中价格动态跟踪。 黄金：没什么机会涨起来 黄金夜盘约 3981；支撑 3973 / 3879，压力 4005 / 4035。我觉得黄金还是没有什么机会涨起来。 别追高，别拿杠杆赌消息。 未来两天的大事记 11/12 周四： 初请失业金、债市重开；防止 NVDA 拖累全部科技股。如果 QQQ 能在 681、SMH 能稳住 496，还有机会继续涨。 11/13 周五： PPI；如果 PPI 温和、美债收益率回落，那么就要小心了。 11/17 周一： 关注 NVDA 财报。 11 月 12—17 日关键日程与来源 以下为网页补充日程，时间均为美东时间（ET）。财报发布与电话会不是同一时间，具体安排以发布机构或公司最新公告为准。 11/12 周四，初请失业金： 08:30 ET 发布，观察劳动力市场边际变化对利率预期的影响。 DOL 数据发布 11/12 周四，债市重开： 退伍军人节后债市恢复正常交易，留意 10Y 收益率走势对成长股估值的压制。 SIFMA 交易日历 11/13 周五，08:30 ET，PPI： 美国 10 月生产者价格指数，结合前一日 CPI 与 10Y 收益率观察利率与成长股压力。 BLS 11 月日历 11/17 周一，NVDA 财报： 盘后发布 FY2027 Q3 业绩，重点看数据中心收入、Blackwell 进度、毛利率指引与现金流。 NVIDIA 投资者关系 回看 11 月 8 日：下周美股预测 本文仅记录个人研究与市场观察，不构成投资建议。市场有风险，交易前请独立判断并控制仓位。",
+      "levels": [
+        {
+          "symbol": "NVDA",
+          "support": "156.2 / 164.3",
+          "resistance": null
+        },
+        {
+          "symbol": "AMD",
+          "support": "550.4 / 575.1",
+          "resistance": null
+        },
+        {
+          "symbol": "AVGO",
+          "support": "345.6 / 356.9",
+          "resistance": null
+        },
+        {
+          "symbol": "MU",
+          "support": "761.8 / 827.6",
+          "resistance": null
+        },
+        {
+          "symbol": "COHR",
+          "support": "227.8 / 245.7",
+          "resistance": null
+        },
+        {
+          "symbol": "LITE",
+          "support": "622 / 678.7",
+          "resistance": null
+        },
+        {
+          "symbol": "CRWV",
+          "support": "56.1 / 62.0",
+          "resistance": null
+        }
+      ]
+    },
+    {
+      "url": "articles/2026-11-08-cpi-ai-earnings-volatility.html",
+      "date": "2026-11-08",
+      "title": "20261108下周美股预测",
+      "description": "清濛的2026年11月8日美股下周预测：急跌后的反弹、VIX与长债风险，CPI/PPI及AI财报观察，七只股票与黄金的支撑压力，以及11月9日至13日大事记。",
+      "tags": [
+        "CPI / PPI",
+        "AI 财报",
+        "波动与利率"
+      ],
+      "topics": [
+        "macro",
+        "earnings",
+        "ai"
+      ],
+      "symbols": [
+        "AMAT",
+        "AMD",
+        "ASTS",
+        "CEG",
+        "CRWV",
+        "MU",
+        "NBIS",
+        "NVDA",
+        "PLTR",
+        "QQQ",
+        "RKLB",
+        "SMH",
+        "SOXL",
+        "TSM"
+      ],
+      "readingMinutes": 5,
+      "searchText": "以下正文、行情、技术位与预测按 2026-11-08 公众号原文整理存档，不代表实时行情或确定结果；行情与模型正确率未作独立验证。消息补充和发布日程另作标注，未确认的安排请以官方最新公告为准。 大家好啊，我是清濛。又是小弟我出来妖言惑众了。 急跌之后，反弹也不能放松警惕 首先先小小总结一下，上周的标普一整周就跌了 2.7%，然后纳指跌 3.4%，SOXL 重挫约 13%，但是到了周五芯片股出现了一些反弹。 周日晚标普约涨了 +0.5%、然后纳指涨了约 +0.6%，大家最想看到的黄金，终于终于升升了上来了，到了 4138 美元，10 年期美国国债利率大概在 4.86% 左右啊。 所以我预计周一会有很多股票涨回来一点点，只是一点点啊，不要开心放松警惕了，大家会问为什么啊？因为 VIX 的数值还在啊，仍然在 25 上啊，我是从来不会把夜盘的数据当作真实数据。 NVDA：消息冲击与调查进展 我觉得自己这个股票分析，都变成了八卦新闻了，这期的当红炸子鸡就是黄仁勋事件。黄仁勋已公开承认婚姻不忠，NVIDIA 董事会也正式启动独立调查，重点的是他有没有为外国提供情报，虽然董事会说啊，目前没有理由认为国家安全或英伟达机密已受损（就是护城河还在？抱怀疑态度啊）。 消息补充（11/8）： CNBC 披露的员工邮件 载有黄仁勋的道歉。 NVIDIA 董事会官方声明 确认启动独立调查，调查表述是其是否成为外国情报活动的目标，不等于认定其主动提供情报或已经泄密；董事会同时表示目前没有理由认为国家安全或 NVIDIA 机密已受损。 下周的关口：通胀、财报与长债 未来几天的着重点，肯定是周一看 CEG 与 NVDA，看看黄教主对股票的影响，周二 CPI 是一道很大很大的坎啊，能不能过就看数据了。周三退伍军人节债市休市。波动可能之后会被放大。 周四 NBIS、AMAT 财报决定 AI 能不能止跌，虽然我已经预测了会跌了。当然我的模型正确率只有 66.5% 左右。周五 PPI 会决定利率是不是会压制成长股。 要看看 QQQ 会不会涨回 664.5、SMH 能不能硬气涨到 476.3，才有机会。 七只重点观察股 还需要说说我着重看的股票的支撑点和压力点啊。以下价位按原文整理，单位为美元。 股票 支撑 压力 NVDA 181.6 / 173 194.9 / 200 MU 676 / 650 724.8 / 761.8 AMD 433 / 404 459.8 / 466 AMAT 329 / 317 349 / 352 CRWV 43.1 / 40.6 47.7 / 48 PLTR 157 / 153 164 / 167 CEG 244 / 239 253 / 257 黄金：仍要留意 4081 黄金支撑 4116 / 4081，压力 4143 / 4225，其实我不看好黄金，所以要注意会跌到 4081。 原文下周大事记 以下为原文的下周安排，具体时间与来源见文末的发布日程。 11/9 周一： CEG 盘前；RKLB、ASTS 盘后。NVDA 调查有没有出现新事实。RKLB 与 ASTS 均在 17:00 ET 举行电话会。 11/10 周二： 美国 10 月 CPI，08:30 ET；TSM 公布 10 月营收；CRWV 盘后，这是本周 AI 融资链最重要的财报之一。 11/11 周三： Veterans Day，美股开市、债市休市，这样很容易出现低流动性放大波动。 11/12 周四： NBIS 盘前、AMAT 盘后。Nebius 重点看 GPU 交付的量、很看收入和融资需求的，AMAT 会直接验证半导体设备或者存储的用钱程度是不是继续增加。 11/13 周五： 美国 10 月 PPI，08:30 ET。 如果 CPI 与 PPI 连续偏高，而且同时 10Y 重新涨到 4.90%–5.00%，我会觉得这周涨的机会很大很大。 11 月 9—13 日发布日程与来源 以下为网页补充日程，时间均为美东时间（ET）。财报发布与电话会不是同一时间，具体安排以发布机构或公司最新公告为准。 11/9 周一，CEG 盘前： 09:00 ET 电话会。另关注 NVDA 官方调查进展与市场反应，不预设调查结论。 CEG IR 日程 · NVIDIA 官方声明 11/9 盘后，RKLB / ASTS： RKLB 盘后发布财报，17:00 ET 举行电话会；ASTS 举行业务与财务更新电话会，同为 17:00 ET。 RKLB 日程 · ASTS 公司发布稿 11/10 周二，08:30 ET，CPI： 美国 10 月消费者价格指数，观察整体与核心通胀对利率预期和成长股估值的影响。 BLS 11 月日历 11/10，TSM 10 月营收： 官方日历列为台北时间 13:30，对应同日 00:30 ET；这是月度营收报告，不是季度财报电话会。 TSMC 财务日历 11/10，CRWV 盘后： 17:00 ET 电话会，重点看 AI 融资链、资本开支、融资成本与现金流。 CRWV 公告 11/11 周三，Veterans Day： NYSE 按常规交易时段开市；SIFMA 建议美元计价固定收益市场全天休市，并非所有债券交易强制停止。留意假期流动性变化可能放大波动。 NYSE 交易日历 · SIFMA 休市建议 11/12 周四，NBIS 盘前： 08:00 ET 电话会，重点看 GPU 交付量、收入兑现与融资需求。 NBIS 公告 11/12，AMAT 盘后： 公布 FY2026 第四季度及全年业绩，16:30 ET 电话会。关注设备、存储资本开支与后续指引。 AMAT 公告 11/13 周五，08:30 ET，PPI： 美国 10 月生产者价格指数，结合 CPI 与 10Y 是否重新升至 4.90%–5.00% 观察利率和成长股压力。 BLS 11 月日历 回看 11 月 4 日：周中总结和预测 本文仅记录个人研究与市场观察，不构成投资建议。市场有风险，交易前请独立判断并控制仓位。",
+      "levels": [
+        {
+          "symbol": "NVDA",
+          "support": "181.6 / 173",
+          "resistance": "194.9 / 200"
+        },
+        {
+          "symbol": "MU",
+          "support": "676 / 650",
+          "resistance": "724.8 / 761.8"
+        },
+        {
+          "symbol": "AMD",
+          "support": "433 / 404",
+          "resistance": "459.8 / 466"
+        },
+        {
+          "symbol": "AMAT",
+          "support": "329 / 317",
+          "resistance": "349 / 352"
+        },
+        {
+          "symbol": "CRWV",
+          "support": "43.1 / 40.6",
+          "resistance": "47.7 / 48"
+        },
+        {
+          "symbol": "PLTR",
+          "support": "157 / 153",
+          "resistance": "164 / 167"
+        },
+        {
+          "symbol": "CEG",
+          "support": "244 / 239",
+          "resistance": "253 / 257"
+        }
+      ]
+    },
+    {
+      "url": "articles/2026-11-04-midweek-ai-regulation-cashflow.html",
+      "date": "2026-11-04",
+      "title": "20261104周中总结和预测",
+      "description": "清濛的2026年11月4日美股周中总结：选举后的AI监管与现金流观察、七只股票支撑压力、黄金区间及11月5日至6日大事记。",
+      "tags": [
+        "AI 监管",
+        "现金流",
+        "非农"
+      ],
+      "topics": [
+        "ai",
+        "policy",
+        "macro"
+      ],
+      "symbols": [
+        "AMD",
+        "AMZN",
+        "COHR",
+        "HUT",
+        "IREN",
+        "LITE",
+        "MRVL",
+        "MSFT",
+        "MU",
+        "NET",
+        "NVDA",
+        "SOXL",
+        "VST"
+      ],
+      "readingMinutes": 3,
+      "searchText": "以下正文、行情、消息与判断按 2026-11-04 公众号原文存档，未逐项核验，不代表实时行情或确定结果；政策与交易消息请以官方公告为准。文末另附未来两天的发布日程与来源。 又是我清濛出来妖言惑众了。不用我说，大家都知道民主党拿下了两院。 选举之后，科技股继续分化 很多人说，美利坚民主党不搞 AI 了，是不是可以去买大 A 了。我告诉你，根据历史记录，民主党上台还是会涨的，微软、亚马逊大涨，半导体继续跌跌跌，其实有很多因素。 投资者担忧数据中心监管收紧，前期 AI 的发展导致存储涨得太猛，很多仓位开始去杠杆，SOXL 就是很多人在买。所以，机构继续赚钱，散户继续亏钱。还是那句话，很早很早就说了，如果不知道怎么投资，去买大盘股就好了。基本每周说一次。 最重要的信息，是你要明白监管担忧和加强不等于 AI 就死了。例如，德州已经立法不要继续发展数据中心了。 长期合同，不等于眼前现金 有几个股票必须说一说。COHR 季度营收 23.7 亿美元，同比增长 50%，调整后 EPS 2.09，光的需求依然强劲到爆炸。 HUT 却不同：营收同比下降约 15%，虽然拥有约 266 亿美元长期 AI 租赁合同，但账面利润受到比特币重估收益影响。你问我能不能涨回来，肯定可以啊。毕竟它还是未来。 所以有长期合同也换不了现金，账面有很多利润也不等于是真金白银的钱。然后 MRVL 与 LITE 的 1150 亿美元全股票并购，导致他们都大跌了一跌。什么时候会修复，还需要一点时间。 七只重点观察股 以下支撑、压力与观察均按原文整理，价格单位为美元。 股票 支撑 压力 清濛的观察 NVDA 192.8 200.9 要看有没有收复 200。 MU 782 853 HBM 再强，也需要看其他存储股。 AMD 476.5 497.4 财报强，但是资金不够强。 COHR 187.2 207.5 好财报能不能带来大反弹。 HUT 48.9 57 跌得这么厉害，它还有机会。 IREN 21.05 22.22 周四财报看看它的印钞能力啦。 VST 117.3 128.1 周五业绩看看大家对电有多少需求啦。 黄金：修复仍需要时间 到了必须要看的黄金，现在大概约 4060 美元。支撑 4000 / 3970，压力 4080 / 4100。美元走弱肯定黄金就涨，但是修复还是需要时间啦。 未来两天大事记 大事记必须要记下啦，11 月 5 日美国生产率数据、IREN 及 NET 财报，11 月 6 日非农与 VST 财报。 劝大家一下，不要再去玩杠杆。千万不要觉得害怕错过上涨行情，因此冲动追高买入。 11 月 5—6 日发布日程 以下为网页补充日程，时间均为美东时间（ET）。财报公布与电话会不是同一时间，具体安排以发布机构或公司最新公告为准。 11/5 周四，8:30 AM： 第三季度生产率与单位劳动力成本初值；同一时间跟踪每周初请失业金。 BLS 日程 · 劳工部初请周报 11/5 盘后： IREN、NET 财报，均安排 5:00 PM 电话会；同时保留本周 LITE 财报观察，电话会亦为 5:00 PM。 IREN 公告 · NET 公告 · LITE 公告 11/6 周五，8:30 AM： 10 月非农就业报告，关注新增就业、失业率、平均时薪及前值修订。 BLS 日程 11/6： VST 财报与业绩电话会；电话会为 10:00 AM ET，对应 9:00 AM CST。 VST 日程 回看 11 月 1 日：美股的科技暴跌后的选举，AMD与非农的故事 本文仅记录个人研究与市场观察，不构成投资建议。市场有风险，交易前请独立判断并控制仓位。",
+      "levels": [
+        {
+          "symbol": "NVDA",
+          "support": "192.8",
+          "resistance": "200.9"
+        },
+        {
+          "symbol": "MU",
+          "support": "782",
+          "resistance": "853"
+        },
+        {
+          "symbol": "AMD",
+          "support": "476.5",
+          "resistance": "497.4"
+        },
+        {
+          "symbol": "COHR",
+          "support": "187.2",
+          "resistance": "207.5"
+        },
+        {
+          "symbol": "HUT",
+          "support": "48.9",
+          "resistance": "57"
+        },
+        {
+          "symbol": "IREN",
+          "support": "21.05",
+          "resistance": "22.22"
+        },
+        {
+          "symbol": "VST",
+          "support": "117.3",
+          "resistance": "128.1"
+        }
+      ]
+    },
+    {
+      "url": "articles/2026-11-01-election-amd-jobs-week.html",
+      "date": "2026-11-01",
+      "title": "20261101美股的科技暴跌后的选举，AMD与非农的故事",
+      "description": "清濛的2026年11月1日美股展望：科技暴跌后的中期选举、AMD财报与非农，七只股票支撑压力、黄金区间及11月2日至6日大事记。",
+      "tags": [
+        "中期选举",
+        "AI 财报",
+        "非农与利率"
+      ],
+      "topics": [
+        "macro",
+        "ai",
+        "earnings"
+      ],
+      "symbols": [
+        "AAPL",
+        "AMD",
+        "ARM",
+        "COHR",
+        "IREN",
+        "LITE",
+        "NET",
+        "NVDA",
+        "PLTR",
+        "QQQ",
+        "SMH",
+        "VST"
+      ],
+      "readingMinutes": 4,
+      "searchText": "以下行情、技术位与预测按 2026-11-01 原文保留，不代表实时行情或确定结果；文末另附 11 月 2 日整理的发布日程与来源。 大家好，又是下周预测来了。看看这次我能猜对多少。其实很多人觉得准确率能达到 60%-70% 以上，已经可以赚个小钱了。这就是写这个文章的目的了。至于剩下的，只能靠自己的感觉去决定了。 科技暴跌后，是不是熊市？ 其实可以很负责告诉你，上周五真的不是真的熊市，而是两个公司引起的连锁反应，你可以看作这个是蝴蝶效应（但是这两个都是大公司啊，算是大蝴蝶了）。Nasdaq 跌 2.86%，SOX 暴跌 7.2%，但 Russell 2000 全周仍涨约 1.3%，机构的资金明显从科技转向能源和消费有关的股票，例如超市的股票，还有 KO（可口可乐等等等）。 而今天周日晚纳指约涨 0.6%、oil 回落至 111 美元附近，这个就说明周一很有可能会涨啊，但是我很怀疑有点高开低。 未来五天的剧本 先看看下周数据的预测，周一会反弹一下，周二肯定是选举导致震荡，周三重新可以看看是跌还是涨的信号，周四财报会告诉你今天涨不涨，而周五非农决定会看看涨还是跌，这个信号真的很重要。 原文大事记 而大事记也是一个信号，首先周一有 ISM 制造业 + AAPL、PLTR 盘后财报啊，然后周二美国中期选举，还有 AMD 盘后财报，我想 Intel 和 Amazon 的故事已经让大家草木皆惊了。 周三 ADP、ISM 服务业、财政部季度再融资的消息，还有 ARM、COHR 盘后的信息，这个也会带着大盘走。周四 LITE、NET、IREN 盘后财报，看看你怕不怕。周五是最重要的非农，还有 VST 财报。 再再再，FEC 确认 11 月 3 日为美国联邦大选日，BLS 确认 JOLTS 在 11/3、非农在 11/6。财政部则将在 11/2 公布融资估计消息，小心了，而 11/4 公布季度再融资方案，也是大影响股票之一。 黄金：先看 3924 其实最近我不是很看好黄金，最近黄金约 3908 美元：支撑 3900 / 3879，压力 3924 / 4002。要到 3924 才算能继续涨，若重新跌到 3879，短期内一定会跌跌跌。 七只重点观察股 以下支撑、压力与观察均按原文整理，价格单位为美元。 股票 支撑 压力 清濛的观察 NVDA 200.9 / 189.8 209.5 / 212.1 守住 200 才有修复。 AMD 492 / 440 520 / 529 周二财报是芯片链核心。 AAPL 342 / 333 347 / 349 关注内存成本与指引。 PLTR 181 / 165 187 / 190 高估值最怕增长不够快。 ARM 199 211 / 213 周三财报看 AI 授权需求。 LITE 820 / 805 869 / 888 周四验证光通信。 VST 136 / 133 140 / 142 周五验证 AI 电力需求。 反弹与第二波杀估值的分界 QQQ 守 683、SMH 守 530，科技有机会完成超跌反弹；若 AMD、ARM、LITE 指引同时不差，AI 硬件会先修复。 反之，如果油价重新冲高、10Y 站回 5% 以上，同时 QQQ 跌破 683、SMH 跌破 512，第二波杀估值就没有结束。 11 月 2—6 日发布日程 以下为网页补充日程，时间均为美东时间（ET）。财报公布与电话会不是同一时间，具体安排以发布机构或公司最新公告为准。 11/2 周一： 10:00 AM ISM 制造业 PMI；3:00 PM 财政部融资估计。 ISM 预告 · 财政部日程 11/2 盘后： AAPL、PLTR 财报。苹果日程参考其 IR 及相关报道；Palantir 电话会 5:00 PM。 Apple IR · 苹果日程报道 · PLTR 公告 11/3 周二： 美国中期选举，投票时间由各州安排；10:00 AM 发布 9 月 JOLTS。 FEC 选举日期 · BLS 日程 11/3 盘后： AMD 财报，5:00 PM 电话会。 AMD 公告 11/4 周三： 8:15 AM ADP；8:30 AM 财政部季度再融资方案；10:00 AM ISM 服务业 PMI。 ADP 发布预告 · 财政部日程 · ISM 服务业预告 11/4 盘后： COHR、ARM 财报，电话会分别为 4:30 PM、5:00 PM。 COHR 公告 · ARM 日程 11/5 周四，8:30 AM： 第三季度生产率与单位劳动力成本初值，同时按周四常规时间跟踪初请失业金。 BLS 日程 · 初请周报 11/5 盘后： LITE、NET、IREN 财报，三家公司均安排 5:00 PM 电话会。 LITE 公告 · NET 公告 · IREN 公告 11/6 周五，8:30 AM： 10 月非农就业报告，含失业率及薪资数据。 BLS 日程 11/6： VST 财报与业绩电话会；电话会为 10:00 AM ET，对应 9:00 AM CST。 VST 日程 回看 10 月 28 日：周中总结和预测 本文仅记录个人研究与市场观察，不构成投资建议。市场有风险，交易前请独立判断并控制仓位。",
+      "levels": [
+        {
+          "symbol": "NVDA",
+          "support": "200.9 / 189.8",
+          "resistance": "209.5 / 212.1"
+        },
+        {
+          "symbol": "AMD",
+          "support": "492 / 440",
+          "resistance": "520 / 529"
+        },
+        {
+          "symbol": "AAPL",
+          "support": "342 / 333",
+          "resistance": "347 / 349"
+        },
+        {
+          "symbol": "PLTR",
+          "support": "181 / 165",
+          "resistance": "187 / 190"
+        },
+        {
+          "symbol": "ARM",
+          "support": "199",
+          "resistance": "211 / 213"
+        },
+        {
+          "symbol": "LITE",
+          "support": "820 / 805",
+          "resistance": "869 / 888"
+        },
+        {
+          "symbol": "VST",
+          "support": "136 / 133",
+          "resistance": "140 / 142"
+        }
+      ]
+    },
+    {
+      "url": "articles/2026-10-28-midweek-rates-ai-earnings.html",
+      "date": "2026-10-28",
+      "title": "20261028周中总结和预测",
+      "description": "清濛的2026年10月28日美股周中总结：利率与AI财报、微软和谷歌的现金流观察、七只股票支撑压力、黄金与10月29日至30日大事记。",
+      "tags": [
+        "利率与融资",
+        "AI 财报",
+        "黄金"
+      ],
+      "topics": [
+        "macro",
+        "earnings",
+        "cashflow"
+      ],
+      "symbols": [
+        "AMZN",
+        "CCJ",
+        "CVX",
+        "GOOGL",
+        "INTC",
+        "LITE",
+        "LLY",
+        "MRVL",
+        "MSFT",
+        "MU",
+        "NBIS",
+        "NOW",
+        "NVDA",
+        "QQQ",
+        "SMH",
+        "SNDK",
+        "SOXX",
+        "VRT",
+        "XOM"
+      ],
+      "readingMinutes": 4,
+      "searchText": "以下行情、技术位与观点按 2026-10-28 原文保留；文末另附未来两天的发布日程。 有人私信问我，为什么你周日的总结没有告诉我们会涨这么多？而黄金还是半死不活？但是我已经告诉你有波动，高开低走，基本上每天都是这样一下。我知道的，美股是变化太大了。我觉得如果我有什么想法，可能还是发一个短短的新闻提醒一下大家好了。 今天的行情：利率与融资 好了说说今天的行情，SOXX 涨约 1.75%，但是盘后 QQQ 跌约 0.81%、SMH 跌约 1.35%。美联储 10 比 2 的投票维持 3.75%-4.00% 利率啊，加拿大央行反而加息至 2.50%，10 年美债在 5.05% 附近。WTI 原油结算 102.78 美元。现在整个市场都担心的是高利率下怎么能赚更多的钱，找更多有闲钱的投资者（Meta 就是一个例子，融资了 950 亿）。 影响股票的几个消息 然后就是说说现在市场上最影响股票的几个消息：VRT 营收增长 61%，而且大量的数据表明他家的订单会翻倍啊，所以涨到了 16.48%。 而微软 Azure 增长 48%，盘后涨涨涨，好像喝了半罐红牛，熟知 MSFT 的人都知道，他家的股票很少一时间涨这么多。 而谷歌的云端收入虽增长 103%，但是资本开支约 514 亿美元、自由现金流负约 91 亿美元，股价盘后一定会跌很多了，同时拖累了 NOW，一起大跌。还有就是 MRVL 想收购 LITE，这个成功的几率不是很高。但是 MRVL 没有这么多钱啊。它的股票会跌一跌。 还有两天，仍有大事情 10/29 周四： 08:30 美国 GDP 初值、9 月 PCE 及初请失业金；欧洲央行议息。PWR、LLY 盘前财报，而 AMZN、INTC、SNDK、COIN 盘后财报。我推测是涨的机会比较多，但是我是从来都不建议大家追高。 10/30 周五： 日本央行决议。08:30 就业成本指数、09:45 芝加哥 PMI。XOM、CVX、CCJ 的财报。今天也会告诉你，股票是不是又是高开低走的一天。 黄金观察 至于黄金，最近真的没有什么作为，4051.60 美元，夜盘大概 4052；支撑 4050 / 3989，压力 4079 / 4097。失守 4000 警惕进一步下跌；突破 4097 才提高反弹判断。 未来两天观察的股票 以下支撑与压力均按原文记录，单位为美元。 股票 支撑 压力 NVDA 213.85 217.75 MU 955.55 979.71 MSFT 534.57 551.15 GOOGL 287.33 316.60 VRT 228.82 245.31 LITE 943.23 1072.10 NBIS 168.92 182.74 如果有人想追，就优先观察 MSFT、MU、VRT。虽然 LITE 受并购传闻，我真的不建议现在大家追高啊！ GOOGL 如果是 285-287 左右，我是建议可以试试买。还有 Nebius，我建议是可以在 164-169 之间入一点。 10 月 29、30 日发布日程 以下为网页补充日程。除日本央行单独注明日本日期外，时间均为美东时间（ET）。 10/29，8:30 AM： 美国第三季度 GDP 初值、9 月个人收入与支出（含 PCE），同时按周四常规时间跟踪初请失业金。 BEA 日程 · 劳工部周报 10/29，盘前： PWR、LLY 财报；PWR 9:00 AM 电话会，LLY 10:00 AM 电话会。 PWR 日程 · LLY 公告 10/29，9:15 AM / 9:45 AM： 欧洲央行决议与记者会，对应 14:15 / 14:45 CET。 欧洲央行日程 10/29，盘后： AMZN、INTC、SNDK、COIN 财报。SNDK 4:30 PM 电话会，AMZN、INTC 与 COIN 5:00 PM 电话会或问答。 AMZN 日程 · INTC 公告 · SNDK 公告 · COIN 公告 10/30（日本日期）： 日本央行会议于 10/29-30 举行，决议具体发布时间待定。日本比美东快 13 小时，关注美东周四夜间至周五的公告。 日本央行日程 10/30，8:30 AM： 美国第三季度就业成本指数。 BLS 发布日程 10/30，9:45 AM： 芝加哥 PMI；时间对照经济发布日历。 Scotiabank 经济日历 10/30： XOM、CVX、CCJ 财报；XOM 6:30 AM 发布业绩、9:30 AM 电话会，CCJ 8:00 AM 电话会。 XOM 公告 · CVX 日程 · CCJ 日程 回看 10 月 25 日：美股下周走势之高开低走 本文仅记录个人研究与市场观察，不构成投资建议。市场有风险，交易前请独立判断并控制仓位。",
+      "levels": [
+        {
+          "symbol": "NVDA",
+          "support": "213.85",
+          "resistance": "217.75"
+        },
+        {
+          "symbol": "MU",
+          "support": "955.55",
+          "resistance": "979.71"
+        },
+        {
+          "symbol": "MSFT",
+          "support": "534.57",
+          "resistance": "551.15"
+        },
+        {
+          "symbol": "GOOGL",
+          "support": "287.33",
+          "resistance": "316.60"
+        },
+        {
+          "symbol": "VRT",
+          "support": "228.82",
+          "resistance": "245.31"
+        },
+        {
+          "symbol": "LITE",
+          "support": "943.23",
+          "resistance": "1072.10"
+        },
+        {
+          "symbol": "NBIS",
+          "support": "168.92",
+          "resistance": "182.74"
+        }
+      ]
+    },
+    {
+      "url": "articles/2026-10-25-fomc-earnings-gap-up-fade.html",
+      "date": "2026-10-25",
+      "title": "20261025美股下周走势之高开低走",
+      "description": "清濛的2026年10月25日下周展望：高开低走的原文判断、FOMC与科技财报、加拿大和欧洲央行决议，以及七只股票和黄金的观察价位。",
+      "tags": [
+        "FOMC",
+        "科技财报",
+        "黄金"
+      ],
+      "topics": [
+        "macro",
+        "energy",
+        "earnings"
+      ],
+      "symbols": [
+        "AMZN",
+        "CRDO",
+        "GOOGL",
+        "MSFT",
+        "MU",
+        "NVDA",
+        "QQQ",
+        "VRT"
+      ],
+      "readingMinutes": 3,
+      "searchText": "以下行情、观察价位和预测按 2026-10-25 原文保留；文末另附发布日程与来源。 大家好，我又出来妖言惑众，首先说说，下周肯定是先涨后跌啊，universal whale 里面的期权数据告诉了我，下周又是引大家去买买买。但是我还是觉得大家不能被机构骗了，还是这句话。千万千万不要追高。 夜盘反弹，我不完全相信 很多人看见周五标普跌了一点点到了 0.52%、然后纳指也是跌了一点点到了 0.21%。然后刚刚的周日夜盘看见的是涨了一点 0.4%、纳指期货也是涨了一点 0.6%，你会不会觉得会涨回来呢？我是不完全相信的。 但是我们要牢牢记着，中东市场是下周的大变数之一。第二个变数就是马斯克说 SpaceX 完成 400 亿美元 GPU 融资，你猜猜会怎么样？有人问，为什么 Anthropic 的 IPO 不是变数？我可以肯定告诉你，还有下周呢。 下周的大事记 好了，下周的大事记，看看会影响多少： 周一： 没有什么大事情，但是就看看 QQQ 怎么走了，反正我是觉得股市高开低走。 周二： 耐用品订单、消费者信心与希捷财报，肯定是波浪型态出现，我们想都不用想。 周三： 今天好好玩，09:45 加拿大央行会公布加息还是不加息（我觉得加）、然后 14:00 美联储决议、14:30 记者会。再有就是微软和谷歌盘后财报，财报后通常会涨一点点，所有股票，然后就开始跌了。老套路了。 周四： 好了，今天就更好玩了，08:30 GDP 初值、PCE。然后就到欧洲央行决议。还有亚马逊、闪迪、英特尔盘后财报。我觉得今天涨的机会还是不少的。 周五： 就业成本指数、埃克森美孚财报，其实我觉得今天可能会很决定未来下周的走向。 黄金观察 我总是喜欢研究一下黄金，现在它的价格是 3995 美元，支撑点 3975 / 3950，压力点 4005 / 4025。美债一直持续高点，肯定推不动金价啦。 下周会重点看的股票 以下保留原文的两组观察价位，单位为美元。 股票 观察位一 观察位二 NVDA 210 214 MU 858 892 MSFT 515 526 GOOGL 315 325 AMZN 246 251 VRT 187 197 CRDO 143 156 多说一句，CRDO 两天的时间，跌成狗，千万不要以为自己抄底了。 我真的劝大家千万不要买 option 下周。加油。 10 月 26—30 日发布日程 以下为网页补充的日程核对，时间均为美东时间（ET）。周一 QQQ 走势属于原文盘面观察。 10/27，8:30 AM / 10:00 AM： 美国耐用品订单、消费者信心。 Census 日历 · 发布机构日程 10/27，盘后： Seagate 发布财报，5:00 PM 电话会。 公司公告 10/28，9:45 AM： 加拿大央行利率决议与货币政策报告；10:30 AM 记者会。 加拿大央行公告 10/28，2:00 PM / 2:30 PM： FOMC 决议与记者会。 美联储日历 10/28，盘后： 微软与 Alphabet 财报，Alphabet 电话会 4:30 PM。 微软投资者关系 · Alphabet 公司公告转载 10/29，8:30 AM： 美国第三季度 GDP 初值、9 月个人收入与支出（含 PCE）。 BEA 日程 10/29，9:15 AM / 9:45 AM： 欧洲央行决议与记者会，对应 14:15 / 14:45 CET。 欧洲央行日程 10/29，盘后： 亚马逊、闪迪、英特尔财报；闪迪 4:30 PM 电话会，亚马逊和英特尔 5:00 PM 电话会。 亚马逊日程 · 闪迪公告 · 英特尔公告 10/30，6:30 AM / 9:30 AM： 埃克森美孚发布财报及电话会。 公司公告 10/30，8:30 AM： 美国第三季度就业成本指数。 BLS 日历 回看 10 月 21 日：周中美股总结之文字越短波动越大 本文仅记录个人研究与市场观察，不构成投资建议。市场有风险，交易前请独立判断并控制仓位。",
+      "levels": []
+    },
+    {
+      "url": "articles/2026-10-21-midweek-tech-earnings-volatility.html",
+      "date": "2026-10-21",
+      "title": "20261021周中美股总结之文字越短波动越大",
+      "description": "清濛的2026年10月21日美股周中总结：META、TSLA与IBM财报观察，QQQ关键位置、七只股票技术位、黄金及未来两天大事记。",
+      "tags": [
+        "科技财报",
+        "QQQ 关键位",
+        "黄金"
+      ],
+      "topics": [
+        "earnings",
+        "energy",
+        "review"
+      ],
+      "symbols": [
+        "CEG",
+        "CRWV",
+        "IBM",
+        "META",
+        "MU",
+        "NET",
+        "NVDA",
+        "QQQ",
+        "TSLA",
+        "WDC"
+      ],
+      "readingMinutes": 3,
+      "searchText": "以下行情、技术位与观点按 2026-10-21 原文保留；文末另附未来两天发布日程。 大家好，这几天，你们也知道波动有多大，高开低走，再然后再高走低开，这个波浪实在太好看，但是对于我这种保守派，我只会看看整体指数。 先看整体市场 首先总结一下大市场是怎么样的：标普 +0.58%、纳指 +1.05%，QQQ 收 725.20，然后盘后 720.64。我其实觉得会涨回来一点，如果有人定投大盘就要看看了。 META、TSLA 与 IBM 财报观察 今天最大的新闻就是 META 营收 646 亿美元、同比 +26%，全年花钱指引 1350 亿-1450 亿美元，然后它的季度自由现金流 -21.2 亿美元；EPS（可以理解为赚钱指数）为 3.83 美元。所以我是不太看好 META 的，我个人不是很建议大家去买。除非你是短线。 然后财报告诉大家，TSLA 每股收益是 0.48 美元，不算多，肯定是机构超预期，虽然净利润下滑、可能会继续跌，暂时可以看看再入手，毕竟可能会和 SpaceX 合并呢。然后再有的是 IBM 这个老品牌，营收 171 亿美元、调整每股收益 2.95 美元，还不错。 接下来的大事记 特朗普要求大型数据中心自备电力、回馈社区，执行规则待定；利好电力设备，却可能抬高算力商成本。TSLA 与 SpaceX 成立委员会研究合并，尚未签约。11 月 3 日中期选举令电价、能源及科技监管政策更不确定，不押注结果。网安股涨多，BUG、CIBR、IGV 回踩再看。 接下来两天观察的股票 以下两组价格按原文整理为支撑与压力，单位为美元。 股票 支撑 压力 META 688 732 TSLA 372 389 NVDA 218 226 MU 889 929 CEG 264 275 NET 299 315 CRWV 59 65 优先 NVDA、META、MU、CEG；NET 等跌下来再买啊，TSLA 就必须看看 volume 再买，起码我不建议现在买，CRWV 就一定不能买，信不信由你。 重点中的重点：未来两日怎么看 在 22 号这一天，如果 QQQ 守住 717 这个数字，一定会突破 728。如果 META 22 号早上继续涨，科技股也会跟着反弹；如果慢慢跌下来，你就知道了，科技股大盘可能要跌。这是一个信号站！！ 如果它跌破 710，很大机会 10Y 美国国债率会重新回到 5.21% 以上。23 号必须要留意 PMI 及存储有关的股的财报。 清濛的观察线：QQQ 717 / 728，跌破 710 后再看长债；META 财报后的方向，是科技股能否反弹的重要信号。 黄金：等利率给方向 到了说黄金，这几天黄金一直漂浮不断啊，不涨太多也不跌太多。现在黄金大概报价 4138 美元左右，支撑 4091 / 4050，压力 4164 / 4182 / 4220。要是十年利率跌下来才有机会涨。 10 月 22、23 日发布日程 以下日程为网页补充，时间均为美东时间（ET）；政策和合并议题按原文持续跟踪，落地时间仍待正式公告。 10/22，盘中观察： 跟踪 META、TSLA 财报后的成交量和 QQQ 717、710、728 的价格反应。这是原文的盘面观察项目。 10/22，盘后： Western Digital 发布财报，4:30 PM 电话会，观察存储需求、毛利率和指引。 WDC 公司公告 10/23，9:45 AM： 美国制造业、服务业及综合 PMI 初值，观察价格与增长分项。 S&P Global 发布日历 10/23，10:00 AM： 密歇根消费者信心终值及通胀预期，观察对长债、美元和黄金的影响。 密歇根大学日程 回看 10 月 18 日：这周美股能涨回来吗？ 本文仅记录个人研究与市场观察，不构成投资建议。市场有风险，交易前请独立判断并控制仓位。",
+      "levels": [
+        {
+          "symbol": "META",
+          "support": "688",
+          "resistance": "732"
+        },
+        {
+          "symbol": "TSLA",
+          "support": "372",
+          "resistance": "389"
+        },
+        {
+          "symbol": "NVDA",
+          "support": "218",
+          "resistance": "226"
+        },
+        {
+          "symbol": "MU",
+          "support": "889",
+          "resistance": "929"
+        },
+        {
+          "symbol": "CEG",
+          "support": "264",
+          "resistance": "275"
+        },
+        {
+          "symbol": "NET",
+          "support": "299",
+          "resistance": "315"
+        },
+        {
+          "symbol": "CRWV",
+          "support": "59",
+          "resistance": "65"
+        }
+      ]
+    },
+    {
+      "url": "articles/2026-10-18-earnings-rebound-outlook.html",
+      "date": "2026-10-18",
+      "title": "20261018上周预警的大屠杀，这周美股能涨回来吗？",
+      "description": "清濛的2026年10月18日下周展望：急跌后的科技修复、Netflix、Meta、Tesla、LRCX与WDC财报、六只股票技术位及黄金观察。",
+      "tags": [
+        "修复与反转",
+        "科技财报周",
+        "黄金"
+      ],
+      "topics": [
+        "energy",
+        "earnings",
+        "review"
+      ],
+      "symbols": [
+        "AAPL",
+        "LRCX",
+        "META",
+        "MU",
+        "NVDA",
+        "TSLA",
+        "WDC"
+      ],
+      "readingMinutes": 3,
+      "searchText": "以下行情、技术位与预测均为 2026-10-18 原文记录。 大家好啊，还记得我上周说的大屠杀吗？那下周怎么样呢？我可以很肯定和大家说，下周我不会因为周五大跌就直接说下周一定跌的概率为主，当然也不会因为 universal whale 上面的期权量都是买 call（有涨的趋向）就叫大家买买买。 更像修复，而不是趋势反转 最新 overnight 数据里面，标普期货约 +0.5%、纳指 +0.8%，虽然啊，10 年期美债降到 5.06% 左右，黄金约 4181 美元。但是你们要明白，油价和长债暂时松一口气，但是亚洲盘科技仍然很弱，有点像修复，而不是趋势反转。（因为现在很多股票都和韩国、日本、台湾市场有关，所以必须要关注亚洲盘。） 大事记和未来五天 又来到大事记和未来五天：周一看反弹广度；周二看 Netflix 财报；周三最关键啦，Meta、Tesla、LRCX 同时出财报，直接检验资本怎么走；周四看 WDC 财报；周五看美国 PMI 与密大消费信心终值。 日期 重点观察 10/19 周一 反弹广度，观察上涨是否扩散 10/20 周二 Netflix 财报 10/21 周三 Meta、Tesla、LRCX 财报 10/22 周四 WDC 财报 10/23 周五 美国 PMI、密歇根消费信心终值 我可以和你说是先反弹，再下落，然后再涨一点。 黄金观察 在我经常关注的黄金方面，期金 4190 附近，支撑 4095、3955；压力 4208，突破后看 4370，再上 4414。10 年国债如果继续下跌，黄金更容易涨起来啊，如果国债涨到 5.13% 以上，金价会继续涨起来。 下周股票优先关注 股票 支撑 压力 NVDA 213.3 219.5 / 223.1 MU 875 / 858 907.5 / 937.5 META 702.7 / 679.6 738.5 / 743.6 TSLA 349.3 / 345.9 359.5 / 370.6 WDC 331.8 / 325 348.4 / 359.7 AAPL 340.5 / 337.4 347.8 / 350.5 总结我自己之前的一句话，买买买的策略是分批 30/30/30/10，我比较保守，不追高，财报利好出来，才慢慢开始买，因为我知道还能涨一点，虽然涨完后还会跌。 大事记日程来源 以下补充公司与密歇根大学的官方日程，时间均为美东时间（ET）。周一反弹广度属于原文的盘面观察；PMI 日期按原文列出，具体发布安排见官方日历。 10/20： Netflix 约 4:01 PM 发布业绩，4:45 PM 举行业绩访谈。 公司公告 10/21： Meta 盘后发布财报，4:30 PM 电话会。 公司公告 10/21： LRCX 5:00 PM 财报电话会。 公司公告 10/21： Tesla 盘后发布财报，5:30 PM 业绩问答。 公司公告 10/22： WDC 盘后发布财报，4:30 PM 电话会。 公司公告 10/23： 美国 PMI 初值，具体时间见 S&P Global 日程 ；密歇根消费信心终值与通胀预期 10:00 AM 公布。 密歇根大学日程 回看 10 月 14 日：这周是美股大屠杀吗？ 本文仅记录个人研究与市场观察，不构成投资建议。市场有风险，交易前请独立判断并控制仓位。",
+      "levels": [
+        {
+          "symbol": "NVDA",
+          "support": "213.3",
+          "resistance": "219.5 / 223.1"
+        },
+        {
+          "symbol": "MU",
+          "support": "875 / 858",
+          "resistance": "907.5 / 937.5"
+        },
+        {
+          "symbol": "META",
+          "support": "702.7 / 679.6",
+          "resistance": "738.5 / 743.6"
+        },
+        {
+          "symbol": "TSLA",
+          "support": "349.3 / 345.9",
+          "resistance": "359.5 / 370.6"
+        },
+        {
+          "symbol": "WDC",
+          "support": "331.8 / 325",
+          "resistance": "348.4 / 359.7"
+        },
+        {
+          "symbol": "AAPL",
+          "support": "340.5 / 337.4",
+          "resistance": "347.8 / 350.5"
+        }
+      ]
+    },
+    {
+      "url": "articles/2026-10-14-cpi-ai-financing-selloff.html",
+      "date": "2026-10-14",
+      "title": "20261014这周是美股大屠杀吗？",
+      "description": "清濛的2026年10月14日周中总结：CPI与AI融资压力、七只股票的盘后参考价和支撑压力，以及黄金与未来48小时事件记录。",
+      "tags": [
+        "CPI",
+        "AI 融资压力",
+        "未来 48 小时"
+      ],
+      "topics": [
+        "review",
+        "macro",
+        "ai"
+      ],
+      "symbols": [
+        "AMZN",
+        "APLD",
+        "ASML",
+        "CRWV",
+        "LITE",
+        "MU",
+        "NBIS",
+        "NVDA",
+        "ORCL",
+        "PLTR",
+        "QQQ",
+        "SMH",
+        "SOXL",
+        "TSM"
+      ],
+      "readingMinutes": 2,
+      "searchText": "本文为 2026-10-14 原文归档，行情、技术位及事件时间按当时文章保留。 大家好，有人问我，你周日不是很乐观说大幅下跌基本上不多，而且你还是会说涨为主吗？为什么这周行情走下来是这样惨痛？但是，不能不说 CPI 引爆了 AI 融资危机，美股暴跌后，未来 48 小时怎么走？ CPI 与 AI 融资压力 大家都知道 10 月 14 日，标普跌 1.11%、纳指跌 1.88%，而 9 月 CPI 同比上涨 3.7%。SOXL 一天就可以跌 13.35%，盘后 QQQ 约 722.75、SMH 约 557.26、SOXL 约 105.77，然后我看了看 universal whale 有大量看跌期权啊。所以散户斗不过机构啊。 而且最重要的是 CRWV 暴跌约 15%，一些债券市场收益率逼近 15%。AI 市场是好，但是但是也不一定涨。例如 ASML 第三季度营收 117 亿欧元、毛利率 57.5%，正好证明我周日说的：成绩再好，股价不一定涨很多。 首先这次和四月还有七月回调不同，现在很多公司手里有长期合约合同，不怕跌，因为他们有合约保证金，虽然不多，有 15%，但是也够支撑了。再就是 CRWV、ORCL、NBIS 跌得比大盘更凶，说明机构在研究要不要算力啦。 黄金压力与支撑 支撑： 4050 / 4000 / 3955 美元 压力： 4100-4120 / 4170-4180 / 4200-4250 美元 4100 已经由支撑转为反弹压力。只有等到美元和实际利率跌下来，黄金才会升上来了。 未来股票必须观望 股票 盘后参考价 支撑 压力 NVDA 218.54 217.56 / 216.20 219.64 / 223.21 TSM 425.76 422.46 428.09 / 434.31 MU 891.16 887.60 / 854.40 913.56 / 949.42 LITE 879.57 867.10 893.88 / 931.07 APLD 19.95 19.70 20.01 / 21.78 PLTR 197.68 196.78 / 195.65 199.74 / 210.06 AMZN 251.04 250.01 / 244.73 253.23 / 257.88 原文未来两天大事记 美东时间，以下为 10 月 14 日文章中的事件记录。 日期 关键事件 10/15 凌晨 2:00 台积电 Q3 法说会 10/15 上午 8:30 PPI、零售、初请失业金 10/15 晚 11:30 美联储主席 Warsh 讲话 10/16 上午 进口物价、工业生产 10/16 全天 月度期权到期，留意波动 很多时候熊市判断不能只看一两天暴跌。只要有一半的公司都可以不够钱了，画不了大饼，才真的是熊来了！ 继续阅读：10 月 18 日下周美股能涨回来吗？ 本文仅记录个人研究与市场观察，不构成投资建议。市场有风险，交易前请独立判断并控制仓位。",
+      "levels": [
+        {
+          "symbol": "NVDA",
+          "support": "217.56 / 216.20",
+          "resistance": "219.64 / 223.21"
+        },
+        {
+          "symbol": "TSM",
+          "support": "422.46",
+          "resistance": "428.09 / 434.31"
+        },
+        {
+          "symbol": "MU",
+          "support": "887.60 / 854.40",
+          "resistance": "913.56 / 949.42"
+        },
+        {
+          "symbol": "LITE",
+          "support": "867.10",
+          "resistance": "893.88 / 931.07"
+        },
+        {
+          "symbol": "APLD",
+          "support": "19.70",
+          "resistance": "20.01 / 21.78"
+        },
+        {
+          "symbol": "PLTR",
+          "support": "196.78 / 195.65",
+          "resistance": "199.74 / 210.06"
+        },
+        {
+          "symbol": "AMZN",
+          "support": "250.01 / 244.73",
+          "resistance": "253.23 / 257.88"
+        }
+      ]
+    },
+    {
+      "url": "articles/2026-10-11-cpi-earnings-week.html",
+      "date": "2026-10-11",
+      "title": "20261011下周美股预测之CPI来了",
+      "description": "清濛的2026年10月11日下周美股预测：CPI、5.18%与5.36%美债利率观察线、银行和半导体财报，以及七只股票和黄金的支撑压力。",
+      "tags": [
+        "CPI",
+        "银行与半导体财报",
+        "黄金"
+      ],
+      "topics": [
+        "macro",
+        "earnings",
+        "ai"
+      ],
+      "symbols": [
+        "AMD",
+        "ASML",
+        "C",
+        "GS",
+        "JPM",
+        "LITE",
+        "MRVL",
+        "MU",
+        "NVDA",
+        "TSM",
+        "WFC"
+      ],
+      "readingMinutes": 3,
+      "searchText": "大家好呀，又是我清濛周末出来，说下周的走向了。 下周展望：CPI 与美债利率 其实下周没有什么好说的，因为我之前说过了，中期选举前都可以买买买，可以做短线，如果不会买的人，可以一直买大盘股，大盘指数等等等，亏不了。而细分之下呢，下周美股大概率继续涨啊，我是从来不建议大家😩期货的，但是如果你真的买了，下周买call吧。 根据现在最新数据，美股期货温和上涨。标普期货上涨约0.2%，纳指期货上涨约0.5%，很明显这是财报前的想继续突破，想继续涨，但是我不是很建议追高。如果已经是历史高点的股票，你可以看看其他股票。这是最大的劝告。我觉得如果下周核心CPI数据一般、然后10年国债率跌破5.18%，半导体一定会涨的，想都不用想，如果10年国债涨到了5.36%，即使下周很多科技公司的财报好看，也必跌。 黄金观察 最近我很喜欢看黄金，因为可以看看观察要不要入了，隔夜现货金约4206美元，支撑点在4156、4090–4100美元，而压力点在4234、4259美元，突破后看4315美元。我就怕它跌回4000 下周很多事情会发生啊： 日期 重点事件 10/12 周一 OCP大会开幕；美股交易、美债休市 10/13 周二 JPM、C、WFC、GS银行财报 10/14 周三 CPI（8:30 ET）、ASML财报 10/15 周四 PPI、零售销售、TSMC财报 10/16 周五 进口出口物价、周线资金方向 下周必须看的股票： 以下参考价、支撑与压力均按 2026-10-11 原文保留，单位为美元。 股票 参考价 支撑点 第一阶段 / 第二阶段 压力点 第一阶段 / 第二阶段 NVDA 230.18 226.73 / 222.08 233.92 / 243.37 AMD 612.51 606 / 598.07 627.37 / 658.52 TSM 455.86 450.54 / 432.50 464.83 / 487.47 ASML 1,795.51 1,778 / 1,744.47 1,825.57 / 1,873.50 MU 1,029.00 1,017 / 1,000 1,054.17 / 1,088.50 MRVL 277.36 267.70 / 258.50 283.78 / 301.27 LITE 1,103.36 1,077.38 / 1,027 1,143 / 1,200 我可以大胆说：财报后高开低走，千万暂时要看看再买。 大事记日程来源 以下为网页归档补充的日程核对，时间均为美东时间（ET）。周线资金方向属于原文的盘面观察项目。 10/12： OCP Global Summit 开幕，大会持续至 10/15。 大会日程 10/12： 美股正常交易；SIFMA 建议美国债券市场休市。 NYSE 交易日历 · SIFMA 假期安排 10/13： JPM、C、WFC、GS 银行财报。JPM 约 7:00 AM 发布业绩，8:30 AM 电话会；WFC 约 7:00 AM 发布业绩。 JPM 公告 · C 日历 · WFC 公告 · GS 日历 10/14，8:30 AM： 美国 9 月 CPI 与核心 CPI。 BLS 发布日历 10/14： ASML 第三季度财报。 公司财报页面 10/15，2:00 AM： 台积电第三季度财报电话会，对应台湾时间 14:00。 公司日历 10/15，8:30 AM： 美国 9 月 PPI 与零售销售。 BLS 发布日历 · Census 发布日历 10/16，8:30 AM： 美国 9 月进口与出口物价指数。 BLS 发布日历 本文仅记录个人研究与市场观察，不构成投资建议。市场有风险，交易前请独立判断并控制仓位。",
+      "levels": [
+        {
+          "symbol": "NVDA",
+          "support": "226.73 / 222.08",
+          "resistance": "233.92 / 243.37"
+        },
+        {
+          "symbol": "AMD",
+          "support": "606 / 598.07",
+          "resistance": "627.37 / 658.52"
+        },
+        {
+          "symbol": "TSM",
+          "support": "450.54 / 432.50",
+          "resistance": "464.83 / 487.47"
+        },
+        {
+          "symbol": "ASML",
+          "support": "1,778 / 1,744.47",
+          "resistance": "1,825.57 / 1,873.50"
+        },
+        {
+          "symbol": "MU",
+          "support": "1,017 / 1,000",
+          "resistance": "1,054.17 / 1,088.50"
+        },
+        {
+          "symbol": "MRVL",
+          "support": "267.70 / 258.50",
+          "resistance": "283.78 / 301.27"
+        },
+        {
+          "symbol": "LITE",
+          "support": "1,077.38 / 1,027",
+          "resistance": "1,143 / 1,200"
+        }
+      ]
+    },
+    {
+      "url": "articles/2026-10-07-midweek-bond-auction-ai.html",
+      "date": "2026-10-07",
+      "title": "20261007周中总结和预测",
+      "description": "清濛的2026年10月7日美股周中总结：5.3%长债、FOMC纪要、30年期美债拍卖与消费者通胀预期，以及八只股票和黄金的支撑压力。",
+      "tags": [
+        "10Y 5.3%",
+        "长债拍卖",
+        "通胀预期"
+      ],
+      "topics": [
+        "macro",
+        "review",
+        "earnings"
+      ],
+      "symbols": [
+        "AMD",
+        "ASTS",
+        "LITE",
+        "MRVL",
+        "MU",
+        "NVDA",
+        "SHOP",
+        "TSM",
+        "VST"
+      ],
+      "readingMinutes": 3,
+      "searchText": "其实周日清濛已经和大家说了会波动，会涨，然后就是跌一点，但是不多啊。为什么这样？因为 5.3% 美债利率压住 AI 发展啊，之后的两天不是看美联储怎么说，而是看大家给不给科技股面子。 纪要偏鹰，真正的压力仍在长债 今天标普、纳指均跌 0.22%，罗素 2000 指数跌 1.3%。最根本的问题不是 FOMC 纪要有没有影响大盘本身，而是 10 年期美债盘中再次涨到 5.3% 以上。 这次纪要确实偏鹰派，9 月加息是全票通过，而且多数委员认为年底前可能还需要一次加息。但是最重要的一点是，这些成员对为什么加息明显存在分歧。现在市场对 10 月再加息的概率只有 18%-19%，真正的大戏应该要到 12 月啦。 所以我不同意“12 比 0 这种投票，就等于美股马上原地爆炸”的说法。 大家都在抢钱 SpaceX 准备融资约 400 亿美元购买 AI 芯片，Broadcom 也在寻求巨额融资，Oracle 同样在抢资金。这么多人需要钱，但是谁借钱给这些科技公司呢？企业债、美国国债、欧洲主权债同时抢钱。 很多人问钱从哪里来，我来告诉你，只能是股市来，无论是什么市场。所以不会爆炸，毕竟钱暂时都在股票里面。这是清濛目前对资金流向的判断。 未来两天，先看拍卖，再看通胀预期 10 月 8 日周四，8:30 AM 有初请失业金，1:00 PM 还有 220 亿美元的 30 年期美债拍卖。这场拍卖，我认为比美联储官员讲话更重要。周三 10 年期拍卖其实很强，390 亿美元以 5.30% 成交、投标倍数 2.77 倍；如果 30 年期继续有人接手，10Y 有机会往 5.20%-5.25% 回落，科技股就能喘气。 10 月 9 日周五，重点转到密歇根消费者信心和通胀预期。10 月初值在周五 10:00 AM 公布。首先我们要明白，如果通胀预期不再抬头，我觉得周五会涨很多，有机会盘前低开、盘中高走，但是仍要看看有什么消息啦。 未来两天，长债拍卖有没有人接、通胀预期会不会继续抬头，是清濛最关注的两个问题。 清濛关注的八只股票 我会看着这几个股票，买不买你随意。 股票 支撑 压力 我的判断 NVDA 236.39 / 228.16 239.08 / 243.37 236 守住仍偏强 AMD 633.16 / 628 648.48 / 658.52 650 附近先看兑现 MU 1074 / 1045 1108 / 1255 基本面最强，别追压力位 MRVL 276.5 / 267.3 301.3 / 329.9 AI 网络高弹性 LITE 1082.6 / 960 1119 / 1137 前期涨太快，突破才追 ASTS 60 / 58.9 / 55.4 61.6 / 62.8 / 64.75 55 确实是强支撑区，但 57.5 并不是无风险买点 SHOP 163.1 / 161.4 166.96 / 170 附近 165-170 本来就是兑现区 VST 162.7 / 154.5 168.1 / 171.35 今天强势，但已经靠近压力 黄金：我暂时不追 最重要一点，划重点了！黄金我暂时不追。支撑看 4,100、4,050、4,000；压力先看 4,150-4,180，再看 4,200。 我的判断还是：不会熊市，因为还没有到中期选举啊。 10 月 8、9 日大事记 以下时间均为美东时间，日程按 10 月 7 日可获取的公告整理。 10/8，1:30 AM： 台积电 9 月月度营收，台湾时间 13:30。观察 AI 芯片需求。 公司日历 10/8，8:30 AM： 美国初请失业金，按周四常规发布时间跟踪就业变化。 劳工部周报 10/8，10:00 AM： 美国批发贸易数据，观察销售与库存关系。 10/8，1:00 PM： 220 亿美元 30 年期美债续发行拍卖，重点看投标倍数和中标收益率。 财政部公告数据 10/9，10:00 AM： 密歇根消费者信心初值与通胀预期。 官方发布日程 10/9，10:00 AM： Delta Air Lines 财报电话会，观察旅行需求与燃油成本。 公司公告 本文仅记录个人研究与市场观察，不构成投资建议。市场有风险，交易前请独立判断并控制仓位。",
+      "levels": [
+        {
+          "symbol": "NVDA",
+          "support": "236.39 / 228.16",
+          "resistance": "239.08 / 243.37"
+        },
+        {
+          "symbol": "AMD",
+          "support": "633.16 / 628",
+          "resistance": "648.48 / 658.52"
+        },
+        {
+          "symbol": "MU",
+          "support": "1074 / 1045",
+          "resistance": "1108 / 1255"
+        },
+        {
+          "symbol": "MRVL",
+          "support": "276.5 / 267.3",
+          "resistance": "301.3 / 329.9"
+        },
+        {
+          "symbol": "LITE",
+          "support": "1082.6 / 960",
+          "resistance": "1119 / 1137"
+        },
+        {
+          "symbol": "ASTS",
+          "support": "60 / 58.9 / 55.4",
+          "resistance": "61.6 / 62.8 / 64.75"
+        },
+        {
+          "symbol": "SHOP",
+          "support": "163.1 / 161.4",
+          "resistance": "166.96 / 170 附近"
+        },
+        {
+          "symbol": "VST",
+          "support": "162.7 / 154.5",
+          "resistance": "168.1 / 171.35"
+        }
+      ]
+    },
+    {
+      "url": "articles/2026-10-04-ai-concentration-week.html",
+      "date": "2026-10-04",
+      "title": "20261004下周的疯狂时光美股预测和总结",
+      "description": "2026-10-04下周美股预测：就业降温后资金继续向AI集中，清濛观察NVDA、AMD、MU、SNDK、LITE、COHR、TSLA与黄金的关键位置。",
+      "tags": [
+        "AI 抱团",
+        "就业降温",
+        "黄金区间",
+        "关键技术位"
+      ],
+      "topics": [
+        "review",
+        "ai",
+        "macro"
+      ],
+      "symbols": [
+        "AMD",
+        "APLD",
+        "COHR",
+        "LITE",
+        "MU",
+        "NVDA",
+        "SNDK",
+        "TSLA",
+        "TSM"
+      ],
+      "readingMinutes": 3,
+      "searchText": "上周指数涨了不少，更重要的是资金越来越集中到同一个关键词：AI。很久以前，只要公司说未来要做和 AI 有关的东西，股价就可能大涨；现在市场又出现了类似的抱团结构。 就业降温，资金继续抱团 AI 上周五非农只有 2.9 万人，远低于很多人的预期，失业率升至 4.2%，投资者把 10 月加息概率压到约 22%。市场很快交易“不加息”预期，标普上涨 0.73%，纳指上涨 1.19%，NVDA、AMD 等 AI 股票继续走强。 但盘面内部并不均衡，另一段交易中标普下跌 0.27%、道指下跌 1.26%，只有纳指还能上涨 0.45%。这更明显地说明，资金并不是全面回到所有股票，而是继续集中到 AI 相关公司。 经济数据越弱，市场越相信美联储不会加息；传统行业越弱，资金越容易跑去 AI。AI 推动指数，指数走强又让资金更难离开 AI，这就是最近的循环。 为什么抱团还可能继续 中期选举前，我仍然认为可以做短线波段，但不能把指数上涨理解成所有股票都安全。泡沫后期经常出现抱团，因为高利率环境下，基金更愿意集中到少数还能让市场相信未来增长、同时又不能长期跑输指数的公司。 现在这组名字越来越清楚：NVDA、AMD、MU、SNDK、LITE、COHR，以及仍需要验证核心价值是否真正来自 AI 的 TSLA。 所以我不会提前做空，起码这周不会。我很喜欢一句话：看对泡沫，却做空得太早。Burry 大哥就是一个很好的例子。 Anthropic 未来如果推进 IPO，也会成为我非常重要的观察对象。巨型 AI 公司很可能获得市场激进定价，所以即使有泡沫，仍然可能继续膨胀。但操作上必须分批，不追高、不加杠杆，我仍然采用 30% / 30% / 30% / 10% 的节奏。 黄金仍是重要温度计 黄金目前大约 4,154 美元。短线第一支撑看 4,125-4,100；如果跌破，再看 4,075-4,050，最后是 4,000 附近。上方第一压力在 4,175-4,200，突破 4,225 后结构才会更加稳定。 AI 和黄金现在分别代表增长抱团与防守需求。两者能够同时偏强，也提醒我们市场并没有真正放弃宏观风险，只是风险资金更集中。 下周重点股票 股票 最新价 第一支撑 第二支撑 强支撑 第一压力 第二压力 NVDA $233.95 $232 $228 $223-$221 $235 $240-$245 AMD $633.91 $615 $600-$596 $550 $639 $650 附近 MU $1,074.89 $1,050 $1,032 $1,012-$1,000 $1,084 $1,109 SNDK $1,719.99 $1,693 $1,659 $1,600 附近 $1,721 $1,756 / $1,815 LITE $1,085.42 $1,027 $1,009 $940 $1,100 $1,150 附近 COHR $337.04 $303-$300 $282 $276 $340 $350 附近 TSLA $370.59 $355 $347-$346 $330 附近 $387 $400 附近 10 月 5 日至 9 日大事记 10 月 5 日 美国 ISM 服务业 PMI，10:00 AM。观察就业和价格分项会不会重新推高长债。 10 月 6 日 美国 8 月国际贸易数据，8:30 AM。关注进口、出口与经济需求强度。 10 月 7 日 FOMC 会议纪要，2:00 PM；Applied Digital（APLD）5:00 PM 举行财报电话会，检验 AI 数据中心订单、融资与现金流。 10 月 8 日 台积电公布 9 月月度营收；美国 8 月批发贸易数据 10:00 AM。TSM 数据将验证 AI 硬件需求是否继续扩散。 10 月 9 日 Delta Air Lines（DAL）第三季度财报电话会，10:00 AM。观察消费、商务旅行与燃油成本。 下周判断 目前的核心不是简单猜指数涨跌，而是观察 AI 抱团能不能继续扩散。ISM 服务业和 FOMC 纪要决定利率环境，APLD 和台积电的数据决定 AI 订单是否还能支撑高估值。 我不会提前做空，也不会因为指数强就追高。继续保留现金、分批投资、不加杠杆，等关键位置和事件落地后再加仓。 本文仅记录个人研究与市场观察，不构成投资建议。市场有风险，交易前请独立判断并控制仓位。",
+      "levels": [
+        {
+          "symbol": "NVDA",
+          "support": "$232 · $228 · $223-$221",
+          "resistance": "$235 · $240-$245"
+        },
+        {
+          "symbol": "AMD",
+          "support": "$615 · $600-$596 · $550",
+          "resistance": "$639 · $650 附近"
+        },
+        {
+          "symbol": "MU",
+          "support": "$1,050 · $1,032 · $1,012-$1,000",
+          "resistance": "$1,084 · $1,109"
+        },
+        {
+          "symbol": "SNDK",
+          "support": "$1,693 · $1,659 · $1,600 附近",
+          "resistance": "$1,721 · $1,756 / $1,815"
+        },
+        {
+          "symbol": "LITE",
+          "support": "$1,027 · $1,009 · $940",
+          "resistance": "$1,100 · $1,150 附近"
+        },
+        {
+          "symbol": "COHR",
+          "support": "$303-$300 · $282 · $276",
+          "resistance": "$340 · $350 附近"
+        },
+        {
+          "symbol": "TSLA",
+          "support": "$355 · $347-$346 · $330 附近",
+          "resistance": "$387 · $400 附近"
+        }
+      ]
+    },
+    {
+      "url": "articles/2026-09-30-midweek-pce-mu-gold.html",
+      "date": "2026-09-30",
+      "title": "20260930周中总结和预测",
+      "description": "2026-09-30美股周中总结：PCE、10年期美债与MU财报落地后，清濛观察MU、NVDA、AMD、AVGO、HPE、CCJ和黄金的关键位置。",
+      "tags": [
+        "PCE 3.4%",
+        "10Y 5.30%",
+        "MU 财报",
+        "黄金区间"
+      ],
+      "topics": [
+        "earnings",
+        "macro",
+        "energy"
+      ],
+      "symbols": [
+        "AMD",
+        "AVGO",
+        "CCJ",
+        "HPE",
+        "MU",
+        "NVDA"
+      ],
+      "readingMinutes": 3,
+      "searchText": "未来两天，我仍然觉得纳指和标普会有较多上下浮动。好消息是波动还没有太夸张，风险虽然在，但市场仍然有机会。 今天的市场结构 9 月 30 日，S&P 500 下跌 0.25%，Nasdaq 上涨 0.24%；PCE 同比为 3.4%，10 月加息概率降到约 37%。可是，10 年期美债收益率反而冲到约 5.30%。大家都知道加息风险正在下降，但其他风险仍然存在。 如果明天不知道怎么看大盘，可以先从今天的涨跌结构分析。这个结构并不算特别健康：科技板块虽然领涨，但主要依靠部分股票抱团，指数上涨并不代表所有公司都在同步走强。 加息概率下降，不等于估值压力自动消失。10Y 仍在上冲时，高估值科技股的上涨空间会继续受到约束。 MU 财报给了什么答案 今晚 MU 的财报给了市场继续观察 AI 存储需求的证据：季度营收 542.3 亿美元、调整后 EPS 33.42 美元，下一季营收指引为 615 亿美元；客户长期承诺从 220 亿美元升到 320 亿美元，大部分 2027 年 HBM 产量已经签约。 但截至美东时间晚上 8 点，MU 盘后只有约 0.64% 的涨幅。基本面很强，但股价反应并没有特别兴奋，这说明市场已经提前计入了不少乐观预期。未来两天要看好消息出来后，资金是否愿意继续承接。 未来几天重点观察 股票 关键位置 清濛的观察 MU $1,050 财报证明需求仍强，先观察 1,050 能否守住，以及利好落地后的资金承接。 NVDA $232 关注能否有效突破；突破失败时，仍要防范高利率环境下的估值压力。 AMD 支撑 $600 压力 $615-$639 守住 600 再看上方突破，不能只因为 AI 板块走强就盲目追价。 AVGO $350 附近 重点观察承接力度，判断 ASIC 和 AI 网络链能否继续扩散。 HPE 订单兑现 看 AI 服务器和基础设施订单能否继续转化为收入与利润。 CCJ 核电映射 观察美韩最高 1,200 亿美元、八座核反应堆框架带来的核电产业链催化。 黄金继续看区间 黄金目前约 4,155 美元。4,100-4,120 是第一支撑，跌破后看 4,050，再看 4,000；上方 4,170-4,180 是第一压力，重新站上 4,200 才算阶段性转强，之后再看 4,250 和 4,300。 在 10Y 高位运行的环境里，黄金仍会受到实际利率压制；但财政、通胀和地缘风险又提供了防守需求，所以更适合按区间观察，而不是看到上涨就追。 未来两天的判断 我的基准判断仍然是指数震荡、科技内部继续分化。MU 财报证明 AI 存储基本盘没有坏，但盘后反应提醒我们：市场已经不只看业绩是否优秀，还会看估值里提前写入了多少增长。 很多股票的基本盘很强大，但不是什么价格都值得买。未来两天先看关键位置和资金反应，再决定要不要参与。 本文仅记录个人研究与市场观察，不构成投资建议。市场有风险，交易前请独立判断并控制仓位。",
+      "levels": []
+    },
+    {
+      "url": "articles/2026-09-27-pce-mu-jobs-week.html",
+      "date": "2026-09-27",
+      "title": "下周美股大盘总结和预测",
+      "description": "2026-09-27下周美股预测：油价、10年期美债与黄金形成高通胀组合，重点关注JOLTS、PCE、MU财报、ISM制造业和非农。",
+      "tags": [
+        "PCE",
+        "MU 财报",
+        "非农",
+        "油价与黄金"
+      ],
+      "topics": [
+        "macro",
+        "energy",
+        "earnings"
+      ],
+      "symbols": [
+        "MU",
+        "NVDA",
+        "QQQ",
+        "SOXL",
+        "SOXX",
+        "SPY",
+        "VRT"
+      ],
+      "readingMinutes": 3,
+      "searchText": "大家好啊。最近有人问我，现在 AI 这么发达，为什么还要写总结和预测文章？因为我觉得 AI 再厉害，都不是最后做决策的人。每个模型与未知变化之间的碰撞，才是股票最大的魅力啦。 本来以为这周可以轻松总结一下，结果看完 overnight 数据，我觉得又有很多东西需要消化。周日盘后原油已经悄悄涨到 93 美元以上，黄金反而下跌，这个组合很有意思：它可能在提醒市场准备面对更高的通胀和利率。 周日晚的宏观组合 标普 500 期货约跌 0.26%，纳指 100 期货约跌 0.26%，道指期货约跌 0.4%；WTI 约 93.6 美元、涨 1.3%，10 年期美债又来到 5.20% 左右，黄金期货则回到 4,300 附近。 下周科技股可能一半涨、一半跌。老规矩，周一不要开盘马上买卖，可以先看看盘前数据。我的基准剧本仍是上下摇摆，但周中波动会明显放大：先往高处走、随后回落，一旦“小作文”出现，就可能引发明显下跌。 为什么单独看黄金 黄金的涨跌背后代表不同的交易原则。如果黄金和油价一起上涨，市场可能在交易长期通胀；如果黄金跌、油价涨，则是表面经济强、但通胀也强的组合，对股市估值的影响完全不同。 标的 当前价 关键支撑 关键压力 清濛的观察 黄金期货 GC $4,215.60 $4,200 / $4,150 $4,310 守住 4,200 仍是区间波动；跌破后看 4,150 强支撑，重新站上 4,310 才恢复上行节奏。 下周大事记 日期 事件 观察重点 9/28 周一 油价与 Fed 官员讲话 油价上涨可能压制开盘；芯片相对强度仍在，关注政策措辞是否转鹰。 9/29 周二 JOLTS 职位空缺、消费者信心 职位数据偏强会强化“就业韧性 + 通胀黏性”，高估值科技最先承压。 9/30 周三 PCE，8:30 AM；MU 财报盘后 全周最关键的宏观与个股双重定价窗口，SOXL 与半导体可能剧烈波动。 10/1 周四 ISM 制造业 PMI，10:00 AM 观察制造业是否继续走强，以及数据会不会进一步推升利率。 10/2 周五 美国非农，8:30 AM 决定 11 月 FOMC 前的加息预期；最危险的组合是弱就业与高 PCE 同时出现。 周三“PCE + MU 财报”是这周真正的总开关。核心 PCE 偏热会压估值；数据温和、MU 又上调指引，才可能触发半导体的空头回补。 重点股票 股票 现价 支撑 压力 清濛的观察 MU $1,082.28 $1,073 / $1,030 $1,109 / $1,255 下周最重要的个股事件，9 月 30 日盘后交卷。 NVDA $225.07 $223 / $221 / $216 $227 / $230 / $235 短线会跟随 MU 财报和整个半导体风险偏好。 SOXL $151.45 $147.40 / $129.60 $153.90 可能单日波动 5%-8%；147.40 是第一风险观察线。 VRT $253.28 $248 / $239 $254.50 / $255.40 站稳 255.40 才能打开上行空间，目前处于突破边缘。 仓位与风险 MU 财报前后应主动降低仓位，SOXL 必须把 147.40 作为第一风险观察线。PCE 和非农任何一个超预期偏热，QQQ 与 SOXL 都可能快速回撤 3%-5%；黄金跌破 4,150，也会是宏观风险放大的早期信号。 上周三散户 ETF 卖出量创下纪录，SOXL 单周流出 12 亿美元，SOXX 零售卖出约 2.7 亿美元。这类撤退有时是极端情绪信号，而 SPY 仍接近历史高点，说明机构资金并没有全面离场。如果 MU 财报带来惊喜，很容易触发空头回补和散户追涨。买股票很多时候就是心理战，起码我一直这样认为。 高 PCE、强非农、油价上涨与 10Y 上冲若同时出现，高 beta 半导体会首先承压。关键事件前保留现金，比猜单边方向更重要。 本文仅记录个人研究与市场观察，不构成投资建议。市场有风险，交易前请独立判断并控制仓位。",
+      "levels": [
+        {
+          "symbol": "MU",
+          "support": "$1,073 / $1,030",
+          "resistance": "$1,109 / $1,255"
+        },
+        {
+          "symbol": "NVDA",
+          "support": "$223 / $221 / $216",
+          "resistance": "$227 / $230 / $235"
+        },
+        {
+          "symbol": "SOXL",
+          "support": "$147.40 / $129.60",
+          "resistance": "$153.90"
+        },
+        {
+          "symbol": "VRT",
+          "support": "$248 / $239",
+          "resistance": "$254.50 / $255.40"
+        }
+      ]
+    },
+    {
+      "url": "articles/2026-09-23-midweek-yields-ai-levels.html",
+      "date": "2026-09-23",
+      "title": "20260923周中总结和预测",
+      "description": "2026-09-23美股周中总结：10年期美债升至5.11%，PMI超预期，清濛观察NVDA、AMD、MU、AVGO、META、MSFT与PLTR的关键支撑和压力。",
+      "tags": [
+        "10Y 5.11%",
+        "PMI",
+        "AI 科技股",
+        "关键价位"
+      ],
+      "topics": [
+        "ai",
+        "review",
+        "macro"
+      ],
+      "symbols": [
+        "AMD",
+        "AVGO",
+        "META",
+        "MSFT",
+        "MU",
+        "NVDA",
+        "PLTR"
+      ],
+      "readingMinutes": 3,
+      "searchText": "大家好啊。这几天最火热的应该是 Muse，Meta 推出的这个新 AI 模型可能帮大家节省了不少时间。不过我深入研究了一下，它和很多 AI 模型仍有差距，最大的好处可能就是免费吧。 根据我上次写的东西，市场基本还是按照之前的剧本走。我还是比较相信自己的模型，毕竟是自己喂养、自己调教的，哈哈哈哈。 今天的市场发生了什么 今天市场跌了一点，但不算多。前面已经涨了这么多，突然回落一点也很正常，不然怎么做波段呢？标普 500 收在 7,706.03，跌 0.75%；纳指跌 1.13%，道指跌 0.68%，Russell 2000 跌 1.77%。 更关键的是，10 年期美债收益率升至 5.11%，重回 2007 年以来高位。美国 9 月 Flash PMI 也明显超预期：制造业 57.0、服务业 58.7、综合 PMI 58.4。经济越强，市场就越担心通胀，以及下一次加息。 这周仍然可能是老套路：涨一涨、跌一跌。指数的小幅回撤并不可怕，真正需要盯住的是 10Y 能否继续上冲。 未来两天重点股票 股票 现价 支撑 压力 清濛的观察 NVDA $225.51 $224-$225 $221.50 $218-$220 $229-$230 第一防守在 224-225；重新站回 229-230，才算恢复强势。 AMD $614.61 $600 $624-$625 Muse 强化 Agentic AI 带动 CPU 需求的逻辑，但 600 美元附近已经透支不少未来增长。 MU $1,071.88 $1,064-$1,070 $1,030-$1,045 $1,096-$1,105 守住第一支撑仍属强势，重新突破压力区才有机会打开上行空间。 AVGO $354.99 $350 观察修复 今天跌 2.62%，明显弱于 NVDA；350 是短线最后的重要界限。 META $744.10 $730-$740 $760 逆势上涨 1.02%。Muse 带来新闻热度，支撑区守住仍属强势。 MSFT $500.59 $496-$500 $509-$514 逆势上涨 0.52%，体现现金流大型科技的防御属性；突破压力区才有更多空间。 PLTR $191.79 $183-$185 $193.80 原来的 180 压力已经突破并转为支撑区，但它对美国国债收益率非常敏感。 未来两天怎么观察 我不会因为一天的小跌就否定科技股趋势，但 10Y 已经来到 5.11%，高估值股票的容错空间会越来越小。未来两天先看 NVDA 能否守住 224-225、MU 能否守住 1,064-1,070，再看 META、MSFT 这类现金流更强的大型科技能否继续表现出相对强度。 最后还要记得关注美中会晤的结果。它不仅会影响大盘风险偏好，也可能改变半导体、AI 供应链和大型科技股的短线方向。 PMI 强、10Y 上行时，不要把所有回调都理解成买点。支撑位是观察资金反应的位置，不是保证股价一定反弹的承诺。 本文仅记录个人研究与市场观察，不构成投资建议。市场有风险，交易前请独立判断并控制仓位。",
+      "levels": [
+        {
+          "symbol": "NVDA",
+          "support": "$224-$225 $221.50 $218-$220",
+          "resistance": "$229-$230"
+        },
+        {
+          "symbol": "AMD",
+          "support": "$600",
+          "resistance": "$624-$625"
+        },
+        {
+          "symbol": "MU",
+          "support": "$1,064-$1,070 $1,030-$1,045",
+          "resistance": "$1,096-$1,105"
+        },
+        {
+          "symbol": "AVGO",
+          "support": "$350",
+          "resistance": null
+        },
+        {
+          "symbol": "META",
+          "support": "$730-$740",
+          "resistance": "$760"
+        },
+        {
+          "symbol": "MSFT",
+          "support": "$496-$500",
+          "resistance": "$509-$514"
+        },
+        {
+          "symbol": "PLTR",
+          "support": "$183-$185",
+          "resistance": "$193.80"
+        }
+      ]
+    },
+    {
+      "url": "articles/2026-09-20-tech-rebound-gold-defense.html",
+      "date": "2026-09-20",
+      "title": "下周可能会涨啊，喜欢听到吗？",
+      "description": "2026-09-20下周美股预测：10年期美债站上5%后，观察科技股修复、油价回落与黄金防守价值，并跟踪MU、SNDK和SOXL关键价位。",
+      "tags": [
+        "科技修复",
+        "10Y 5%",
+        "黄金防守",
+        "MU / SNDK / SOXL"
+      ],
+      "topics": [
+        "energy",
+        "review",
+        "macro"
+      ],
+      "symbols": [
+        "MU",
+        "NVDA",
+        "SNDK",
+        "SOXL"
+      ],
+      "readingMinutes": 2,
+      "searchText": "Hello 啊，又是我清濛来说说下周大盘预测了。 下周肯定不是全面牛市，但我会觉得科技股相对强一些。老规矩，市场可能继续一天涨、一天跌，而黄金仍会保持防守价值。上周 10 年期美债已经突破 5%，美联储刚加息 0.25%，周五 10Y 仍接近 5%，这已经是不能忽视的估值压力。 我很少直接说熊市预警，但现在确实要做好防御心理准备，10Y 国债利率已经亮红灯。如果想做波段，我会观察 9 月 28 日左右是否出现更好的分批位置，并在中期选举前控制节奏。这个思路是快进快出，不是把短线交易变成长线信仰。 下周重点观察 标的 关键支撑 关键压力 清濛的观察 MU $990-$1,000 $1,042 此前到过 $1,015.80，周末 overnight 约 $1,025。连续上涨后已进入突破区，先看回踩能否守住。 SNDK $1,720-$1,740 $1,614-$1,625 $1,797-$1,810 $1,900 周五从 $1,616 拉到 $1,797，收 $1,791.82，单日涨 10.99%。突破失败时要防获利回吐。 SOXL $117-$119 $124.50 $127.50-$130 连续两天大涨后已来到前高附近。站不上 $124.50 容易回踩，突破更高区间才算确认半导体反弹。 黄金要单独看 现货黄金升至约 $4,380，美国黄金期货结算约 $4,425，周日亚洲时段约回到 $4,370。我把 $4,340-$4,350 看作第一支撑，$4,280-$4,300 是更关键防线；上方先看 $4,425-$4,450，突破后才有机会挑战更高区间。 黄金最大的矛盾是：5% 美债压估值，但战争、财政信用和政策不确定性又提供避险需求。因此更可能是高位震荡，而不是直接趋势反转。 下周大事记 日期 事件 观察重点 9/24 周四 美国新屋销售，10:00 AM 观察高利率对住房需求的压制。 9/24 周四 Costco Q4 财报 消费韧性、会员增长与利润率，是本周最重要的公司财报之一。 9/25 周五 美国耐用品订单，8:30 AM 观察制造业需求与企业资本开支。 全周 10Y、油价、黄金 重点看油价回落能否带动科技修复，以及 10Y 能否跌回 5% 下方。 清濛的下周剧本 我预计下周仍会大起大落，但如果油价继续回落，科技股有机会突破。重点不是只猜指数涨跌，而是像新手一样把几个总闸门看清楚：先看 10Y 国债、油价和黄金，再看 NVDA、MU 等科技股能不能守住自己的支撑位。 科技相对强，不等于全面牛市。10Y 仍在 5% 附近时，追高高 beta 标的需要保留仓位弹性。 本文仅记录个人研究与市场观察，不构成投资建议。市场有风险，交易前请独立判断并控制仓位。",
+      "levels": [
+        {
+          "symbol": "MU",
+          "support": "$990-$1,000",
+          "resistance": "$1,042"
+        },
+        {
+          "symbol": "SNDK",
+          "support": "$1,720-$1,740 $1,614-$1,625",
+          "resistance": "$1,797-$1,810 $1,900"
+        },
+        {
+          "symbol": "SOXL",
+          "support": "$117-$119",
+          "resistance": "$124.50 $127.50-$130"
+        }
+      ]
+    },
+    {
+      "url": "articles/2026-09-15-fed-48h-defense-guide.html",
+      "date": "2026-09-15",
+      "title": "美股未来48小时的Fed大考与攻防大战指南",
+      "description": "2026-09-15 美股未来48小时指南：FOMC决议、Warsh记者会、10年期美债5.04%、油价105美元，以及NVDA、AVGO、MU、MRVL、NBIS、GDX支撑压力。",
+      "tags": [
+        "FOMC",
+        "Warsh 记者会",
+        "10Y 5.04%",
+        "油价 105"
+      ],
+      "topics": [
+        "macro",
+        "energy",
+        "ai"
+      ],
+      "symbols": [
+        "AVGO",
+        "GDX",
+        "MRVL",
+        "MU",
+        "NBIS",
+        "NVDA"
+      ],
+      "readingMinutes": 2,
+      "searchText": "未来 48 小时是这周美股最重要的部分。加息不加息，真的会影响很多资产的定价。 我相信未来两个美股交易日只有一条主线：9 月 16 日 FOMC 决议日，加上 9 月 17 日市场消化后的洗盘日。油价已经到 105 美元左右，一直在推升能源通胀；10 年期美债触及 5.04%，市场会重新估科技股的价值。 周三下午 2:00 PM 的利率决议和 2:30 PM Warsh 记者会才是真正关键。加息本身市场已经有心理准备，真正要看的是 12 月是不是还会继续加息。 Fed 两种剧本 情景 市场反应 清濛判断 温和加息 加息 0.25%，Warsh 表态温和，强调数据依赖，10Y 回落至 4.95% 下方。 周四半导体有机会涨回来，NVDA、MRVL、MU 这类 AI 硬件会先被资金观察。 鹰派加息 强调年底继续加息，10Y 直奔 5.10%—5.20%。 科技股继续被压估值，高融资需求和高 beta 会先承压。 决议公布前不要乱操作。宁愿慢一点，也不要激进。 重点股票支撑压力 股票 支撑位 压力位 想法 NVDA 210–215 / 200 224–225 / 230 相对强度龙头。只要守住 210，就还有反弹空间。 AVGO 335 / 325 350 / 365 走势弱于 NVDA，回踩 335 值得关注，但不追高。 MU 906–924 / 887 946.8 / 968.7 长期可以持有；如果跌到 906，要继续看会不会回调到 887。 MRVL 217 / 208 223.5 / 231.4 主要看 NVDA。能站上 223.5，才算有买点试探的条件。 NBIS 256.9 / 247 278.7 / 300 开支与融资需求较高，守住 256.9 才能维持震荡结构。 GDX 89–90 92.7 / 102.4 黄金参考。对应现货黄金支撑 4280–4300，压力 4350 / 4400。 未来48小时大事记 时间 事件 观察点 9/16 2:00 PM FOMC 利率决议 看加息幅度，以及点阵图是否暗示 12 月继续加息。 9/16 2:30 PM Warsh 记者会 真正影响市场的是语气：温和就是修复，鹰派就是继续压估值。 9/17 FOMC 后洗盘日 看 10Y 是回落到 4.95% 下方，还是冲向 5.10%—5.20%。 清濛操作策略：决议公布前不要操作。稳妥策略是等到下周再进场。 仅为个人研究和复盘，不构成投资建议。FOMC、利率、油价和盘后走势变化很快，交易前请自行核对最新数据。",
+      "levels": [
+        {
+          "symbol": "NVDA",
+          "support": "210–215 / 200",
+          "resistance": "224–225 / 230"
+        },
+        {
+          "symbol": "AVGO",
+          "support": "335 / 325",
+          "resistance": "350 / 365"
+        },
+        {
+          "symbol": "MU",
+          "support": "906–924 / 887",
+          "resistance": "946.8 / 968.7"
+        },
+        {
+          "symbol": "MRVL",
+          "support": "217 / 208",
+          "resistance": "223.5 / 231.4"
+        },
+        {
+          "symbol": "NBIS",
+          "support": "256.9 / 247",
+          "resistance": "278.7 / 300"
+        },
+        {
+          "symbol": "GDX",
+          "support": "89–90",
+          "resistance": "92.7 / 102.4"
+        }
+      ]
+    },
+    {
+      "url": "articles/2026-09-13-fomc-oil-ai-valuation.html",
+      "date": "2026-09-13",
+      "title": "下周可能会跌很多，你害怕吗？",
+      "description": "2026-09-13 下周美股剧本：Brent站上106美元、10年期美债逼近5%，FOMC成为AI估值和科技股能否修复的关键。",
+      "tags": [
+        "FOMC",
+        "Brent 106",
+        "10Y 逼近 5%",
+        "AI 估值"
+      ],
+      "topics": [
+        "macro",
+        "ai",
+        "cashflow"
+      ],
+      "symbols": [
+        "GOOGL",
+        "MRVL",
+        "MU",
+        "NBIS",
+        "NVDA",
+        "VST"
+      ],
+      "readingMinutes": 2,
+      "searchText": "必须警告一下：下周要谨慎、谨慎，再谨慎。大盘可能会先压估值，再看 FOMC 能不能救场。 今晚 Nasdaq-100 期货跌约 1.1%，标普跌 0.5%，道指跌 0.3%；Brent 站上 106 美元、WTI 约 102 美元，10 年期美债上周摸到 4.97%，9 月加息概率超过 86%。这些消息对科技股都非常不友好。 好消息是，Anthropic 过去 11 个月签下的潜在算力合同最高可达 5170 亿美元，需求仍然巨大。Dario Amodei 呼吁放慢前沿模型开发，短期内会压估值，但特朗普已经公开反对因为恐惧让美国 AI 减速。所以我更愿意把它理解成情绪买卖。信不信由你。 现在最核心的矛盾不是 AI 有没有需求，而是油价、长债和加息预期会不会先把高估值压下去。 下周重点关注 股票 清濛观察 NVDA 10Y 逼近 5% 加上 AI 降速讨论，会压短线估值；但如果是长线持有，基本盘没有问题。 MU 需求依旧强，真正压力是高预期和未来扩产。跌下来可以考虑 30/30/30/10 分批，不追高。 MRVL 核心看 ASIC 和 AI 网络 CapEx，最怕订单预期被市场重新调整。 NBIS 高融资敏感，利率越高，估值压缩越狠，波动也会更凶。 VST AI 电力逻辑会支撑股价，但长期利润和高估值也会被市场审计。 GOOGL 相对最稳，广告、搜索和 Cloud 现金流能够缓冲 AI 情绪波动。 下周大事记 日期 重点 清濛看法 9/15 周二 油价、10Y 和科技股估值压力 先看市场会不会继续压高估值，Brent 100 以上和 10Y 逼近 5% 都不是好组合。 9/16 周三 FOMC 利率决议 本周最重要。如果只加 0.25%，并被解释成一次性保险式加息，科技股可能反弹。 9/17 周四 FOMC 后市场定价 看 10Y 是否站稳 5%，以及 AI 硬件、软件和电力链有没有资金回补。 9/18 周五 周线确认 如果油价还在 100 美元以上、10Y 继续强，周线收盘会决定下跌是不是扩散。 FOMC 剧本 最重要的还是周三 FOMC。如果只加 0.25%，而且 Warsh 把它讲成一次性保险式加息，科技股很可能出现反弹；但如果他继续偏鹰，油价守在 100 美元以上、10Y 站稳 5%，那 AI 很可能继续跌。 所以这周我的想法很简单：不追高，不重仓。跌下来，只分批加那些有订单、有现金流、值得长持的股票。 市场越关注 FOMO，越要留现金。真正跌下来的时候，你才知道现金有多重要，也才知道需要补多久。 仅为个人研究和复盘，不构成投资建议。市场价格、利率和油价变化很快，交易前请自行核对最新数据。",
+      "levels": []
+    },
+    {
+      "url": "articles/2026-09-09-midweek-cpi-oil-rates.html",
+      "date": "2026-09-09",
+      "title": "周中总结和未来两天预测",
+      "description": "2026-09-09 周中总结：油价站上100美元、10年期美债摸到4.84%-4.85%，未来两天重点看 PPI、CPI、黄金和 AI 硬件支撑压力。",
+      "tags": [
+        "主题：PPI / CPI / Brent 100 / 10Y美债 / AI硬件 / 黄金"
+      ],
+      "topics": [
+        "ai",
+        "macro",
+        "energy"
+      ],
+      "symbols": [
+        "AVGO",
+        "NVDA",
+        "ORCL",
+        "QQQ",
+        "SOXL",
+        "TSM",
+        "VRT"
+      ],
+      "readingMinutes": 3,
+      "searchText": "有时候很疑惑，明明很多很好的数据，也是正确的分析，但是很多人只想知道今天要买什么股票，能不能跟，什么时候买，什么时候卖。 其实每次都说了什么值得留意、什么值得去买一点，好像大家还是不满足，希望赚大钱。可惜我是保守型的人啊。 今天大盘不是简单跌一点、涨一点的问题。现在是钱越来越不值钱，同时油也越来越贵了，试问啊，谁能受得了？ 今天收盘，标普跌 0.48%，纳指跌 0.64%，道指跌 0.77%。Brent 油价站上 100 美元附近，10 年期美债收益率摸到 4.84%—4.85%。就算有财政部 60 亿的回购也没有用，而且对很多高估值科技股会有杀错风险。所以现在不是进攻的时候，我真的尽力提醒了。 支撑压力 我们来看看几个值得看的股票，什么时候应该买，什么时候应该不追。 标的 支撑 压力 清濛观察 SOXL 121.24 128.48 从 121 附近拉起来，说明机构资金还在，但杠杆 ETF 不适合追太急。 NVDA 220.49 / 215.10 233.71 / 236.54 收在 223.67。只要 220 附近不有效跌破，暂时还不能直接说 AI 核心坏了。 AVGO 362.74 / 342.33 372.70 AI ASIC 和网络链继续看，但 372.70 过不去就别急着追。 TSM 433.72 444.29 TSM 还是 AI 底盘之一，关键是能不能站稳 433 上方再去挑战 444。 VRT 先看 295—300 能否站回 重新站回 300 才算修复 今天结构明显弱，别急着追，300 之前先当反弹看。 黄金 4380 / 4350 / 4300 4450 / 4500 10Y 这么高，黄金还能在 4400 附近撑住，说明机构确实有避险和通胀对冲需求。 黄金这条线 重头戏黄金也很有意思。按理说 10 年期收益率这么高，黄金应该被压。但现货金还在 4400 附近撑住，说明市场不是完全相信风险已经解除。 黄金如果想买，还是要看有没有连续两天站稳 4500。站不稳就不要乱追，因为利率一旦继续上冲，黄金短线也会反复。 未来两天大事记 日期 事件 观察重点 9/10 周四 PPI、ECB 决议、ORCL 和 ADBE 财报。 生产端通胀和软件财报会影响利率与 AI 软件估值，重点看高估值股能不能承接。 9/11 周五 CPI。 本周真正大考。CPI 会决定 10Y、QQQ、半导体和黄金下一步方向。 未来两天预测 接下来关键就是 PPI 和 CPI。如果通胀没有爆，AI 硬件、CPO、黄金都有修复机会，股票也有机会重新反弹；如果 CPI 偏热、10 年期冲 4.9%—5%，那么一半以上的股票都会跌。 短线还是防守波动，上上下下的状况会出现。大家现在千万不是乱买股票的时候。 本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。",
+      "levels": [
+        {
+          "symbol": "SOXL",
+          "support": "121.24",
+          "resistance": "128.48"
+        },
+        {
+          "symbol": "NVDA",
+          "support": "220.49 / 215.10",
+          "resistance": "233.71 / 236.54"
+        },
+        {
+          "symbol": "AVGO",
+          "support": "362.74 / 342.33",
+          "resistance": "372.70"
+        },
+        {
+          "symbol": "TSM",
+          "support": "433.72",
+          "resistance": "444.29"
+        },
+        {
+          "symbol": "VRT",
+          "support": "先看 295—300 能否站回",
+          "resistance": "重新站回 300 才算修复"
+        }
+      ]
+    },
+    {
+      "url": "articles/2026-09-07-cpi-oil-ai-rotation.html",
+      "date": "2026-09-07",
+      "title": "下周的美股故事又是很精彩，大家盘一盘啊",
+      "description": "2026-09-07 下周美股故事：非农强于预期后，市场继续看 CPI、PPI、油价、10Y 美债和 AI 龙头的承接。",
+      "tags": [
+        "主题：CPI / PPI / Brent / 10Y / AI盈利能力 / 黄金"
+      ],
+      "topics": [
+        "ai",
+        "macro",
+        "energy"
+      ],
+      "symbols": [
+        "AAPL",
+        "AVGO",
+        "COHR",
+        "MU",
+        "NVDA",
+        "ORCL",
+        "QQQ",
+        "VRT"
+      ],
+      "readingMinutes": 2,
+      "searchText": "先说一句，有人问我为什么不带大家买。明明已经有模型，我觉得其实与其给你鱼，还不如教你打鱼。如果有疑问，我是会马上回答的。 上周美股表面平静，其实很多热门主线股票已经换了。周五 8 月非农新增 16.2 万人，远高于预期，9 月加息概率重新升到约六成，10 年期美债摸到 4.78%。标普跌 0.38%、纳指跌 0.29%，但半导体逆势走强，说明机构在高利率下继续集中到能赚钱的公司。 我未来预测就是 9 月 8—11 这几天，前半周科技偏强，后半周通胀会告诉你未来方向。隔夜市场纳指在 29639 附近、大盘约 7712，纳指强于大盘；但 Brent 已逼近 97 美元，真正风险是油价把 CPI 和国债利率重新顶起来。 下周剧本 这周大概率还是 50% 忽上忽下。如果核心 CPI ≤ 0.2%、Brent 不破 100，QQQ 和半导体继续往上跑；如果 CPI ≥ 0.3%、Brent 到了 100，而且 10Y 站稳 4.8%，科技股一定会跌。 大事记 日期 事件 观察重点 9/9 Apple 发布会。 看端侧 AI、硬件周期和 AAPL 能不能改善科技权重情绪。 9/10 PPI、ECB 决议、ORCL 和 ADBE 财报。 生产端通胀和软件财报会一起影响利率与 AI 软件估值。 9/11 CPI。 本周最重要事件，想都不用想。CPI 决定 10Y、QQQ 和半导体能不能继续修复。 黄金和支撑压力 黄金还是要看一下：现货黄金 4421.96，压力 4430.33，支撑 4406.3。黄金短线不宜盲追，但如果油价和地缘风险继续压着通胀预期，它依然是重要的风险对冲。 股票 压力点 支撑点 清濛观察 NVDA 229.63 220.08 财报确认需求，但高利率下市场只奖励能持续赚钱的公司。 MU 1255 1036.13 基本面很强，但预期也很满，不宜盲追。 AVGO 372.75 353.70 AI ASIC 与网络链的关键确认位。 COHR 383.85 316.50 光通信逻辑还在，但波动会很大。 VRT 327.20 300.30 AI 电力链继续看，但涨多以后更要看承接。 总结一句：前半周可以看科技偏强，但后半周 CPI 才是真正考官。油价不破 100、10Y 不站稳 4.8%，AI 还能跑；反过来就别硬冲。 本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。",
+      "levels": [
+        {
+          "symbol": "NVDA",
+          "support": "220.08",
+          "resistance": "229.63"
+        },
+        {
+          "symbol": "MU",
+          "support": "1036.13",
+          "resistance": "1255"
+        },
+        {
+          "symbol": "AVGO",
+          "support": "353.70",
+          "resistance": "372.75"
+        },
+        {
+          "symbol": "COHR",
+          "support": "316.50",
+          "resistance": "383.85"
+        },
+        {
+          "symbol": "VRT",
+          "support": "300.30",
+          "resistance": "327.20"
+        }
+      ]
+    },
+    {
+      "url": "articles/2026-09-02-midweek-jobs-gold-ai.html",
+      "date": "2026-09-02",
+      "title": "美股周中总结和预测",
+      "description": "2026-09-02 美股周中总结：ADP就业降温带来反弹，但10年期美债、油价、黄金和非农仍是未来两天关键变量。",
+      "tags": [
+        "主题：ADP就业 / 10Y美债 / 油价 / 黄金 / 非农 / AI硬件"
+      ],
+      "topics": [
+        "ai",
+        "macro",
+        "energy"
+      ],
+      "symbols": [
+        "DELL",
+        "MU",
+        "NVDA",
+        "QQQ",
+        "SOXL",
+        "SPCX",
+        "TSLA"
+      ],
+      "readingMinutes": 2,
+      "searchText": "大家好呀，又是我清濛出来指手画脚了。今天美股表面反弹了一点，真的只有一点，明显我之前说的下跌风险还没有解除。 9月2日收盘，道指涨 0.56%，标普涨 0.46%，纳指涨 0.45%，罗素 2000 涨 1.13%。ADP 就业只增加 3.8 万人，从数据就能简单看出就业在降温，所以投资市场松了小小一口气；但 10 年期美债还在 4.78% 左右，WTI 也在 90 美元上方，油价、通胀、利率这些东西还在。 黄金：反弹可以看，暂时不要追 最重要的是黄金今天反弹到约 4436 美元，短线是因为就业数据弱、利率被压住之后的修复。清濛还是劝大家暂时不要追，可以慢慢看看，静观其变。 黄金现在下方看 4300—4600 支撑区，上方看 4800—5000 压力区。只要油价和美国、伊朗的冲突风险还在，黄金的价值就还是会在；但利率太高时，黄金也会反复波动。 未来两天重点股票 股票 支撑 压力 清濛的观察 NVDA 216.8 / 209 220.9 / 229—230 站不回 230，不算真正修复。 MU 924 / 906 946.8 / 968.7 突破 968 才更好看。 TSLA 342—345 / 339 358.8 / 363—366 没突破前还是箱体。 SPCX 138 / 135 143.3 / 150 它是短线结构最顺的。 SOXL 109 / 104 117.4 / 120—121 要看 NVDA 脸色。 DELL 462 / 432 498 / 506 收 492.20，财报很好，但涨太猛容易震。 未来两天大事记 日期 事件 看什么 9/3 周四 初请失业金、ISM 服务业。 如果服务业价格项还热，10Y 继续顶在 4.8% 附近，QQQ 和半导体会有压力。 9/4 周五 非农就业报告。 最重要的是新增就业、失业率和薪资。如果薪资偏热，科技股很容易高开低走。 清濛的剧本 我还是那句话，未来两天会继续波动，不要无脑追高。如果非农没有太多意外、10Y 国债回落，AI 硬件股还能慢慢修复；如果薪资偏热、10Y 冲 4.8% 以上，再加油价继续涨，半导体会首先被杀估值。 别急啊。现在不是看谁喊得最大声，而是看就业、利率和油价到底愿不愿意给 AI 让路。 本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。",
+      "levels": [
+        {
+          "symbol": "NVDA",
+          "support": "216.8 / 209",
+          "resistance": "220.9 / 229—230"
+        },
+        {
+          "symbol": "MU",
+          "support": "924 / 906",
+          "resistance": "946.8 / 968.7"
+        },
+        {
+          "symbol": "TSLA",
+          "support": "342—345 / 339",
+          "resistance": "358.8 / 363—366"
+        },
+        {
+          "symbol": "SPCX",
+          "support": "138 / 135",
+          "resistance": "143.3 / 150"
+        },
+        {
+          "symbol": "SOXL",
+          "support": "109 / 104",
+          "resistance": "117.4 / 120—121"
+        },
+        {
+          "symbol": "DELL",
+          "support": "462 / 432",
+          "resistance": "498 / 506"
+        }
+      ]
+    },
+    {
+      "url": "articles/2026-08-30-jobs-rates-oil-ai.html",
+      "date": "2026-08-30",
+      "title": "非农和利率，谁更欺负人呢？",
+      "description": "2026-08-30 下周美股预测：非农、利率、油价和 AVGO/DELL 财报一起决定 AI 反弹能否延续。",
+      "tags": [
+        "主题：非农 / 利率 / 油价 / AI硬件 / AVGO与DELL财报"
+      ],
+      "topics": [
+        "macro",
+        "ai",
+        "earnings"
+      ],
+      "symbols": [
+        "AVGO",
+        "DELL",
+        "GEV",
+        "KLAC",
+        "MPWR",
+        "MU",
+        "NVDA",
+        "SPCX",
+        "TSLA"
+      ],
+      "readingMinutes": 2,
+      "searchText": "又是我清濛出来指手画脚啦。上周五 Warsh 在 Jackson Hole 重申 2% 通胀目标，9 月加息概率升至约 56%，10 年期美债收在 4.728%。 S&P 500 跌 0.25%、纳指跌 0.52%。更麻烦的是，周日晚美军再袭伊朗拉腊克岛，Brent 重新逼近 89 美元，油价→通胀→利率这条链又回来了。对的，又打起来了。 清濛重点关注的个股 股票 关键位置 观察逻辑 NVDA 217 附近短线防守 财报确认需求，Q2 营收 962 亿美元、下一财年增长指引约 70%，但周五仍跌 4.6%。 MU 909—946 区间 收 932.86，基本面强但预期很满，先看这个区间能不能稳住。 AVGO 周三盘后财报 这是 AI ASIC 与网络链的下一棒，市场会看订单、指引和 AI 网络需求扩散。 DELL 周二盘后财报 重点看 AI 服务器订单和毛利率，不能只看收入有没有增长。 KLAC / MPWR / GEV 周五均跌约 4%—4.5% 所谓 Early Add Zone 只能当左侧信号，不能当反转确认。 TSLA 339—363 震荡 收 348.75，短线还是区间内反复，不适合用单日涨跌下结论。 SPCX 收 141.50 近期结构相对稳定，但融资成本上升仍会压估值。 黄金也要看。上周五重挫至约 4455 美元，短线受强美元和利率压制，中线仍有财政与地缘对冲价值，不宜追涨杀跌。 下周大事记 日期 事件 观察重点 9/1 JOLTS、ISM 制造业、DELL 财报。 看就业缺口和制造业温度，同时验证 AI 服务器订单和毛利率。 9/2 ADP、Fed 褐皮书、AVGO 财报。 ADP 和褐皮书影响利率预期，AVGO 验证 AI ASIC 与网络链。 9/3 初请失业金、ISM 服务业。 服务业和就业如果偏热，10 年期美债可能继续压估值。 9/4 非农就业报告。 Reuters 调查预期新增约 5.8 万人、失业率 4.1%，这是全周最关键的利率定价窗口。 下周剧本 清濛觉得下周继续波动。总结一下就是：就业温和、10Y 回落，AI 反弹还能延续；若薪资偏热、10Y 站上 4.8% 并叠加油价再冲，半导体会再次成为第一批被杀估值的板块。 如果不会做波动，直接买大盘就好了。接下来真正欺负人的，不只是非农，也可能是利率和油价一起回来。 本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。",
+      "levels": []
+    },
+    {
+      "url": "articles/2026-08-26-nvda-ai-demand-financing.html",
+      "date": "2026-08-26",
+      "title": "周中总结：谁能赚更多的钱呢？",
+      "description": "2026-08-26 周中总结：NVDA 财报证明 AI 算力需求没坏，但市场下一步会追问谁来为长期算力合同、数据中心资本开支和融资成本买单。",
+      "tags": [
+        "主题：NVDA财报 / AI算力 / HBM / 光通信 / 融资链条"
+      ],
+      "topics": [
+        "ai",
+        "cashflow",
+        "earnings"
+      ],
+      "symbols": [
+        "COHR",
+        "LITE",
+        "MRVL",
+        "MU",
+        "NBIS",
+        "NVDA"
+      ],
+      "readingMinutes": 2,
+      "searchText": "今晚最大的事情还是英伟达的财报。Q2 营收 962 亿美元、同比增长 106%，Q3 指引约 1080 亿美元，都说明 AI 算力需求远没有见顶。 真正让市场重新兴奋的是管理层 CFO 给出的长期增长预期：FY2028 营收增速可能达到约 70%。但我觉得这里不能只看漂亮数字，因为 AI 投资已经越来越依赖融资、长期算力合同和数据中心资本。 AI 需求是真的，但金融杠杆也越来越重。接下来这个大环境会从“有没有订单”，慢慢转向“谁来给这些订单买单”。钱最重要，比很多东西都重要。 未来两天重点看的股票 股票 观察区间 清濛的看法 NVDA 210 支撑，先看 215–220 还是 AI 老大。财报证明需求没坏，但毛利率和客户融资能力会成为下一阶段风险。 MU 946 突破后看 970–990 NVDA 面对的内存成本压力，恰恰意味着 HBM 和 DRAM 厂商定价权更强。 MRVL 243–245 压力明显 AI 网络和 ASIC 逻辑没问题，但财报前如果再冲，我反而倾向适当减仓，不追高。 LITE 840 支撑，900 附近压力 Rubin、CPO 继续强化光通信需求，基本面方向很好，但股价已经不便宜。 COHR 275–280 支撑区 同样受益光互联，但现在最重要的是利润率能不能跟上订单。 NBIS 高 Beta 仓位 弹性最大，风险也最大。NVDA 已经确认 Nebius 的 Rubin 机架在运行，但市场更担心 CapEx、债务和融资成本。 未来两个交易日剧本 概率 情景 市场含义 50% 震荡偏强 NVDA 守住 210–215，资金向 MU、MRVL、光通信和电力链扩散。 30% AI 硬件明显反弹 NVDA 站上 220，市场重新炒作 AI 资本开支和 Anthropic IPO，硬件链再涨一轮。 20% 高 Beta 回撤 如果长债收益率继续上冲，或者市场开始质疑 5000 亿美元融资链条，NBIS、LITE、COHR 会先被砸。 简单总结 NVDA 救了市场情绪，但下一阶段市场不只会问 AI 需求强不强，而是会问谁能把订单变成利润，谁能承担融资成本，谁最后能赚到更多的钱。 先吹牛到这里啦。哈哈哈。 本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。",
+      "levels": []
+    },
+    {
+      "url": "articles/2026-08-23-pce-nvda-ai-capex.html",
+      "date": "2026-08-23",
+      "title": "下周美股关关难过关关过",
+      "description": "2026-08-23 下周美股剧本：PCE、GDP、NVDA财报、Jackson Hole 和非农年度基准修订一起检验 AI 仓位与长债压力。",
+      "tags": [
+        "主题：PCE / GDP / NVDA财报 / Jackson Hole / AI资本回报率"
+      ],
+      "topics": [
+        "macro",
+        "ai",
+        "earnings"
+      ],
+      "symbols": [
+        "CEG",
+        "CRM",
+        "CRWD",
+        "GOOGL",
+        "INTU",
+        "MRVL",
+        "MSFT",
+        "MU",
+        "NVDA",
+        "PLTR",
+        "QQQ",
+        "VST",
+        "WDAY",
+        "ZM"
+      ],
+      "readingMinutes": 3,
+      "searchText": "又到清濛来预测下周走势啦。上周五美股虽然反弹，但我不会因为一根阳线就说调整结束了。 整周纳指还是跌了 2% 左右，费半更弱。现在压着科技股的东西其实很简单：长债太高，AI 仓位太挤，而市场开始认真问这些几千亿美元的数据中心最后谁来付钱。 所以我觉得下周真正有意思的地方，不是猜 NVDA 财报涨还是跌，而是有几件事情要一起看。 下周大事记 日期 事件 观察重点 8/24 周一 PDD 财报。 盘面大概率还是等消息，先看中概消费和平台情绪。 8/25 周二 美国消费者信心、新屋销售；盘后 INTU、ZM 财报。 验证消费者和地产需求，同时看软件股能不能稳住估值。 8/26 周三 盘前 PCE、GDP、耐用品订单；盘后 NVDA、CRM、CRWD 财报。 全周重头戏。NVDA 市场预期季度收入约 920 亿美元，但更重要的是下一季指引、毛利率和 Rubin 进度。 8/27 周四 初请失业金；盘后 MRVL、WDAY 财报；Jackson Hole 开幕。 看就业降温是否延续，以及 AI 网络链和软件需求是否继续被资金认可。 8/28 周五 Warsh 讲话；美国非农年度基准修订上午 10 点公布。 这一天可能比很多人想象得更重要，BLS 基准修订会重新影响就业叙事。 我的基准剧本 我的基准判断是：下周前半周还是震荡，真正方向周三以后才出来。 如果核心 PCE 只有 0.2% 左右、30 年期美债掉回 5.3% 下方，加上 NVDA 指引够强，我认为前面被杀得最狠的半导体会先反弹，QQQ 有机会修复 2%—4%。 反过来，如果 PCE 偏热、30Y 重新冲过 5.34%，然后 NVDA 又出现“财报很好但股票不涨”，我会非常小心。那说明市场担心的已经不是 AI 有没有订单，而是 AI 的资本回报率到底够不够。 所以我下周不会急着追。有钱可以保留一下。先让 PCE 和 NVDA 把牌翻出来，再决定这次是洗仓，还是下一段调整的开始。 下周重点股票技术位 股票 第一支撑 第二支撑 第一压力 强压力 NVDA 210–215 204–205 219–223 225–228 MU 953 940–922 985 1003–1017 MRVL 229–234 221–222 249 260–268 MSFT 477–479 463–474 486–488 494 GOOGL 341 335–338 347–350 353 PLTR 174 164–168 184–188 194 VST 134–135 130–133 139–143 146 CEG 269–270 263–267 276–280 283 MU、MRVL、GOOGL、PLTR、VST 和 CEG 的区间均按 8 月 21 日最新日线重新核过；例如 MU 当前主要支撑在 953/940 附近、MRVL 在 229/222，VST 在 135 附近，而 CEG 短线真正需要突破的是 276—280。 NVDA 周五收在 214.72 美元，财报期权市场目前隐含大约 ±6% 的波动，所以 205 和 228 附近并不是随便画出来的数字，刚好也是财报后很容易触及的两侧区域。 最后总结 这些支撑压力是拿来观察资金反应的，不是跌破一美元就马上砍仓的。短线交易可以按价格失效离场，长期投资还是要看原来的基本面假设有没有被推翻，不能把两套规则混在一起。 还有一句话，信不信由你，哈哈哈。 本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。",
+      "levels": [
+        {
+          "symbol": "NVDA",
+          "support": "210–215 · 204–205",
+          "resistance": "219–223 · 225–228"
+        },
+        {
+          "symbol": "MU",
+          "support": "953 · 940–922",
+          "resistance": "985 · 1003–1017"
+        },
+        {
+          "symbol": "MRVL",
+          "support": "229–234 · 221–222",
+          "resistance": "249 · 260–268"
+        },
+        {
+          "symbol": "MSFT",
+          "support": "477–479 · 463–474",
+          "resistance": "486–488 · 494"
+        },
+        {
+          "symbol": "GOOGL",
+          "support": "341 · 335–338",
+          "resistance": "347–350 · 353"
+        },
+        {
+          "symbol": "PLTR",
+          "support": "174 · 164–168",
+          "resistance": "184–188 · 194"
+        },
+        {
+          "symbol": "VST",
+          "support": "134–135 · 130–133",
+          "resistance": "139–143 · 146"
+        },
+        {
+          "symbol": "CEG",
+          "support": "269–270 · 263–267",
+          "resistance": "276–280 · 283"
+        }
+      ]
+    },
+    {
+      "url": "articles/2026-08-19-treasury-buyback-yields-gold-ai.html",
+      "date": "2026-08-19",
+      "title": "财政部出手，但是总觉得治标不治本",
+      "description": "2026-08-19 美股周中剧本：财政部提高长期美债回购规模，收益率回落、黄金和比特币反弹，但 AI 估值压力仍在。",
+      "tags": [
+        "主题：美债回购 / 收益率 / 黄金 / AI估值 / 初请与PMI"
+      ],
+      "topics": [
+        "ai",
+        "macro",
+        "energy"
+      ],
+      "symbols": [
+        "AEM",
+        "GDX",
+        "LRCX",
+        "MSFT",
+        "MU",
+        "NVDA",
+        "QQQ"
+      ],
+      "readingMinutes": 3,
+      "searchText": "哈哈哈，今天是七夕，大家七夕快乐啊。清濛继续在家看模型，写总结。 周三终于有点好消息。美国财政部宣布把 10—30 年期国债单次回购规模从 20 亿美元提高到至少 40 亿美元，10 年期收益率随即回落，美元指数跌约 0.8%，黄金、比特币一起反弹，三大指数也结束三连跌，标普收涨 0.2%。 老规矩，清濛不会把这理解成熊的危机解除。30 年期收益率前一天刚摸到 5.34%，这是 2007 年以来高位。财政部这次更像是在给债市提供流动性，不是把 40 万亿美元债务、财政赤字和长期供给压力凭空变没，而且这次回购相对于整个美债市场规模仍然很小。 所以今天黄金特别强：GDX 涨 9.4% 到 97.33，AEM 涨 11.2% 到 207.72。这不是普通避险，更像市场认为收益率暂时被压住、美元走弱，但财政问题还在。 AI 和半导体：基本面好，不等于无限加估值 AI 股方面，NVDA 收 217.56，MU 937.11，LRCX 甚至跌 6.3% 到 307.17。Lam 财报本身其实非常漂亮：NAND、DRAM、先进封装、CSBG 一起增长，利润率也创多年高位；问题还是价格。基本面很好，不代表市场愿意继续无限加倍数。 重点观察股票 股票 价格 支撑 压力 我的看法 NVDA 217.56 216 / 210 / 200 223 / 228 / 236.5 重新站回 228 之前，我只把它当修复，不当新主升。 MU 937.11 915 / 900 / 845 960 / 984 / 1036 960 收不回来，短线还是弱。MU 必须涨到 984 以上才有希望。 LRCX 307.17 305 / 290 320 / 328 / 335 财报很好却跌 6%，说明筹码和估值压力比基本面更重要。 MSFT 484.31 477 / 465 489 / 500 / 514 AI 巨头里相对稳的一只，但 500 站不回去还谈不上转强。 GDX 97.33 94 / 91 100 / 102.4 短线已经很热，突破 100 以后才看 102—105。 AEM 207.72 196 / 188 210 / 224 趋势强，但一天涨 11% 以后我不会追。 接下来两个交易日 清濛的基准剧本是 55% 继续震荡。周四初请失业金和费城联储、周五美国 PMI 都会重新影响利率预期。如果你不是很能抓住这个波动，我还是劝大家买大盘，QQQ 或者 VFV 等等。 日期 事件 影响 8/20 周四 初请失业金、费城联储制造业指数。 重新定价就业和制造业温度，直接影响美债收益率。 8/21 周五 美国 PMI。 如果服务业或制造业偏强，利率压力可能重新回来；如果温和，科技修复更容易延续。 一句话总结 财政部回购可以缓解债市流动性，但不能直接解决财政赤字、债务供给和长期利率压力。现在更像治标，不是治本。 本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。",
+      "levels": [
+        {
+          "symbol": "NVDA",
+          "support": "216 / 210 / 200",
+          "resistance": "223 / 228 / 236.5"
+        },
+        {
+          "symbol": "MU",
+          "support": "915 / 900 / 845",
+          "resistance": "960 / 984 / 1036"
+        },
+        {
+          "symbol": "LRCX",
+          "support": "305 / 290",
+          "resistance": "320 / 328 / 335"
+        },
+        {
+          "symbol": "MSFT",
+          "support": "477 / 465",
+          "resistance": "489 / 500 / 514"
+        },
+        {
+          "symbol": "GDX",
+          "support": "94 / 91",
+          "resistance": "100 / 102.4"
+        },
+        {
+          "symbol": "AEM",
+          "support": "196 / 188",
+          "resistance": "210 / 224"
+        }
+      ]
+    },
+    {
+      "url": "articles/2026-08-16-10y-retail-earnings-oil.html",
+      "date": "2026-08-16",
+      "title": "当4.7%美债撞上零售财报",
+      "description": "2026-08-16 下周美股剧本：当 4.7% 美债撞上零售财报，观察油价、长债、FOMC 纪要和消费数据。",
+      "tags": [
+        "主题：10Y / Brent / 零售财报 / FOMC纪要 / 熊市风险"
+      ],
+      "topics": [
+        "macro",
+        "earnings",
+        "ai"
+      ],
+      "symbols": [
+        "AMZN",
+        "MRVL",
+        "MSFT",
+        "MU",
+        "NVDA",
+        "PLTR",
+        "QQQ",
+        "RKLB",
+        "SPY",
+        "WMT"
+      ],
+      "readingMinutes": 3,
+      "searchText": "哈哈哈，又到周末，是我清濛出来妖言惑众了。 上周标普500再涨 0.4%、纳指涨 0.1%，但周五双双回落；10年期美债已经来到 4.695%，Brent 重新升至 88.5 美元附近。周日晚期货基本横盘，说明市场并没有因为降温的通胀数据重新进入全面 Risk-on。 更麻烦的是，霍尔木兹海峡周六仅 5 艘商品船通过、周日甚至为零，美伊谈判继续卡住。所以我对下周的剧本猜想是：多数为震荡波动偏多，但科技股上涨空间受油价和长债压制。 下周基准剧本 情景 判断 基准 SPY 约 -0.5% 至 +1%，QQQ 约 -1% 至 +1.2%。科技股不是不能涨，但空间被 4.7% 附近长债和接近 90 美元的 Brent 压着。 偏多 如果 10 年期重新跌破 4.60%、Brent 回到 85 美元以下，AI 有机会重新扩估值。 偏空 如果收益率突破 4.75%、Brent 站上 90 美元，优先防高估值科技去杠杆。 下周重点观察 股票 价格 压力 支撑 我的看法 NVDA 225.16 227.5 / 236.5 224.5 / 216.2 站稳 227.5 才算重新加速。 MU 971.66 984 956 / 845 存储仍强，但追涨风险明显。 MSFT 495.40 500 / 513.7 494 / 491.5 500 是短线多空线。 AMZN 262.65 265.8 / 280 262.4 零售消费走弱会直接影响情绪。 PLTR 174.04 180.2 173.8 / 168.3 高估值，180 不过不追。 MRVL 222.02 223.5 / 231.4 217 / 208 AI 网络链能否扩散的重要风向标。 RKLB 80.25 82.5 / 86.8 78.5 / 75.5 高 Beta，只适合看突破确认。 下周大事记 日期 事件 我会看什么 8/17 周一 纽约联储制造业指数。 看制造业和区域经济是否继续降温。 8/18 周二 美国进口物价、房屋开工/营建许可、工业产出；HD、BIDU、IQ 财报。 进口通胀和地产链会影响利率，HD 先验证美国消费质量。 8/19 周三 最重要的 FOMC 会议纪要；LOW、TGT 财报。 看 Fed 对通胀和油价是否仍偏鹰，LOW/TGT 验证消费分层。 8/20 周四 WMT、BABA、NTES 同日交卷。 直接验证美国消费与中国互联网/AI 云需求。 8/21 周五 美国8月 PMI 初值、BEKE 财报。 看服务业和制造业是否重新推高利率预期。 熊市风险补充 现在 10 年期美债已经逼近 4.7%，但信用利差仍低、很多科技巨头也没有真正削减 AI 资本开支，所以我觉得系统性熊市的传导链还没有闭环。 时间窗口 风险概率 判断 现在到9月底 25%–35% 出现系统性熊市启动的概率不算低，但更可能还是高位震荡、AI 内部继续看估值。 2026年10-12月 35%–40% 第一个真正危险窗口，因为 Q3/Q4 财报会开始给出更明确的 2027 CapEx 和 AI ROI 信号。 2027年Q1-Q2 40%–45% 如果 CapEx 增速明显下降、企业融资成本继续升、AI 收入又不能追上折旧和利息，这是最值得防范的系统熊市窗口。 真正的警报： 10Y 持续 4.8%–5.0% 以上 + IG 信用利差从约 79bp 扩到 110–130bp 以上 + HY 利差突破 350–400bp + 两家以上 Hyperscaler 削减/延期 CapEx + 半导体盈利预期开始下修。 总结 下周我不会主要追 AI，而是看零售财报能不能证明消费还在增长，再看 4.7% 的美债和接近 90 美元的油价愿不愿意给科技股让路。 本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。",
+      "levels": [
+        {
+          "symbol": "NVDA",
+          "support": "224.5 / 216.2",
+          "resistance": "227.5 / 236.5"
+        },
+        {
+          "symbol": "MU",
+          "support": "956 / 845",
+          "resistance": "984"
+        },
+        {
+          "symbol": "MSFT",
+          "support": "494 / 491.5",
+          "resistance": "500 / 513.7"
+        },
+        {
+          "symbol": "AMZN",
+          "support": "262.4",
+          "resistance": "265.8 / 280"
+        },
+        {
+          "symbol": "PLTR",
+          "support": "173.8 / 168.3",
+          "resistance": "180.2"
+        },
+        {
+          "symbol": "MRVL",
+          "support": "217 / 208",
+          "resistance": "223.5 / 231.4"
+        },
+        {
+          "symbol": "RKLB",
+          "support": "78.5 / 75.5",
+          "resistance": "82.5 / 86.8"
+        }
+      ]
+    },
+    {
+      "url": "articles/2026-08-12-midweek-ai-bottleneck-burry.html",
+      "date": "2026-08-12",
+      "title": "周中美股总结和预测剧本",
+      "description": "2026-08-12 周中美股总结和预测剧本：CPI 正常发挥后，市场重新靠向 AI 瓶颈、InP、CPO、HBM 和防御资产。",
+      "tags": [
+        "主题：AI瓶颈 / InP / CPO / Burry / 防御资产"
+      ],
+      "topics": [
+        "ai",
+        "energy",
+        "review"
+      ],
+      "symbols": [
+        "AEM",
+        "APLD",
+        "COHR",
+        "ENB",
+        "GDX",
+        "IBM",
+        "LITE",
+        "MU",
+        "NBIS",
+        "NOK",
+        "NVDA",
+        "ORCL",
+        "PLTR",
+        "SU"
+      ],
+      "readingMinutes": 3,
+      "searchText": "这几天大盘都很有意思，重点不是纳指涨了多少，而是市场开始明显往“AI 瓶颈”上靠拢。 为什么会这样？很简单的逻辑：CPI 没有重新失控，利率上的压力暂时缓下来，钱马上又回到 AI 上面。 COHR 这份财报我觉得很关键。公司 Q4 收入做到约 20.5 亿美元，同比增长 34%。管理层真正传递的信号是：现在限制增长的不是封装测试，而是磷化铟 InP 产能。更夸张的是，部分数据中心订单已经排到 2027 年底，CPO 需求也没有被推迟。InP 现在已经不是小材料，而是 AI 光通信真正的卡脖子环节。 最近大家很迷恋 Michael Burry。最新报道确认他继续加空 NBIS、MU、ORCL 和半导体 ETF，同时加仓 MELI、ZTS。比如 NBIS 加空价格约 247 美元、MU 约 924 美元、ORCL 约 152 美元。所以这代表的是 Burry 个人实时观点，不等于 Scion 最新 SEC 仓位。 问题来了：Burry 刚加空 NBIS，NBIS 今天反而暴涨 34% 到 259.20 美元。这正好说明现在 AI 行情最危险也最刺激的地方：基本面增长是真的，泡沫风险也是真的，两件事可以同时成立。 版本一：继续赌博版 股票 支撑 压力 剧本 LITE 932.47 862 / 836 966 / 1000 今天涨太快，966 如果冲不过，很容易先消化筹码；真正站稳 966，再看 1000。 NVDA 224.09 220 / 216 225 / 236.5 今天已经重新摸到 225 附近，站稳才算重新打开趋势；跌破 220 先看震荡。 MU 911.29 899 / 854 936 / 1000 重新站回 900 是好事，但 Burry 也在继续加空，936 是我认为最重要的右侧确认位。 COHR 355.64 345 / 328 379 / 400 基本面很强，但今天已经涨 8%，而且 InP 瓶颈既是定价权，也是供应风险。 APLD 31.15 30.35 / 29.1 33 / 36.5 高弹性数据中心票，33 过不去仍然只是震荡，跌破 29 就明显转弱。 PLTR 171.04 168 / 160 175 / 180 趋势还没有坏，但 146 倍左右 PE 摆在那里，180 突破前我不会追。 版本二：防御版本 股票/ETF 类型 当前思路 支撑 压力 GDX 黄金矿业 ETF 防守 + 黄金趋势，没 AI 那么挤。 89-90 92.7 / 102 AEM 黄金矿业龙头 比 GDX 更集中，适合看黄金继续强。 180-184 188 / 200 / 224 SU 加拿大能源 油气股，涨幅相对温和。 87.4-88 89.3 / 96.5 ENB 管道/分红 稳定型，不是爆发票。 71.5 72.4 / 75 / 80.6 IBM 大型科技但没那么热 回调后的 AI / 企业软件逻辑。 234-236 237.5 / 250 NOK 通信设备 慢票，不适合急涨预期。 10.2 10.5 / 11.5 简单总结 AI 现在还是很有机会，GPU、HBM、InP 激光器、CPO、电力都在抢定价权。但涨到某种位置以后，我们不能把供不应求自动翻译成股价永远涨。 本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。",
+      "levels": [
+        {
+          "symbol": "LITE",
+          "support": "862 / 836",
+          "resistance": "966 / 1000"
+        },
+        {
+          "symbol": "NVDA",
+          "support": "220 / 216",
+          "resistance": "225 / 236.5"
+        },
+        {
+          "symbol": "MU",
+          "support": "899 / 854",
+          "resistance": "936 / 1000"
+        },
+        {
+          "symbol": "COHR",
+          "support": "345 / 328",
+          "resistance": "379 / 400"
+        },
+        {
+          "symbol": "APLD",
+          "support": "30.35 / 29.1",
+          "resistance": "33 / 36.5"
+        },
+        {
+          "symbol": "PLTR",
+          "support": "168 / 160",
+          "resistance": "175 / 180"
+        },
+        {
+          "symbol": "GDX",
+          "support": "89-90",
+          "resistance": "92.7 / 102"
+        },
+        {
+          "symbol": "AEM",
+          "support": "180-184",
+          "resistance": "188 / 200 / 224"
+        },
+        {
+          "symbol": "SU",
+          "support": "87.4-88",
+          "resistance": "89.3 / 96.5"
+        },
+        {
+          "symbol": "ENB",
+          "support": "71.5",
+          "resistance": "72.4 / 75 / 80.6"
+        },
+        {
+          "symbol": "IBM",
+          "support": "234-236",
+          "resistance": "237.5 / 250"
+        },
+        {
+          "symbol": "NOK",
+          "support": "10.2",
+          "resistance": "10.5 / 11.5"
+        }
+      ]
+    },
+    {
+      "url": "articles/2026-08-10-market-recap-cpi-ai-compute-finance.html",
+      "date": "2026-08-10",
+      "title": "20260810美股总结和预测",
+      "description": "2026-08-10 美股总结和预测：油价回升、NVDA 算力资产化、CPI 与 AI 云厂财报进入关键 48 小时。Lemon 美股手记文章归档。",
+      "tags": [
+        "主题：Brent / NVDA / CPI / CoreWeave / 支撑压力位"
+      ],
+      "topics": [
+        "review",
+        "macro",
+        "ai"
+      ],
+      "symbols": [
+        "AMAT",
+        "INTC",
+        "MSFT",
+        "MU",
+        "NVDA",
+        "RKLB"
+      ],
+      "readingMinutes": 2,
+      "searchText": "其实我觉得今天美股剧本挺有意思。两件事需要关注。 第一件事，油价又上来了。Brent 重新回到 87 美元附近，市场对霍尔木兹海峡谈判没那么乐观了。油价一涨，大家马上又开始担心通胀，美债收益率也跟着往上走。对高估值科技来说，这当然不舒服。 但第二件事更重要。英伟达真正的大新闻，不是股价跌了多少，而是它开始和 Apollo、BlackRock、Blackstone、Brookfield、Goldman、KKR 这些大资金一起，把“算力”包装成一种可以长期融资的资产。 支撑位和压力位 股票 支撑位 压力位 分析 NVDA 216-217 / 210 224 / 236 作为 AI 绝对龙头，今天走势偏弱，跌 2.84%。216-217 区间是短线最重要的防守线，一旦有效跌破，下看 210 寻找支撑。向上必须重新站回 224，才能修复上周的突破趋势。 MSFT 499-502 514 / 520 大型科技股里的“定海神针”，凭借强劲现金流展现出防御性。只要短线守住 499-502 区间，形态依然偏强；若能突破 514，上行空间将打开至 520。 MU 854-858 895-905 内存板块近期受同业指引扰动，波动极大。858 附近是关键生命线，若 854 失守，下方需防范回踩 830-845 区域。向上必须站稳 905 才能确认多头筹码修复。 INTC 等待发行定价消化 等待市场重新定价 今天大跌 4.0%，直接受到 150 亿美元巨额发行的 SEC 文件催化。短期市场焦点不再是晶圆厂故事，而是重新计算稀释后的每股真实价值。实际发行定价消化前，不要把它当普通技术性回调去接飞刀。 RKLB 77.38 83.25 盘后财报显示收入增长强劲，但亏损超预期引发资金抢跑。明天核心看能否死守 77.38，若跌破可能回测 72-73 区间；只有重新站回 83.25 才算财报利空出尽。 AMAT 511-522 539-546 本周财报前走势非常犹豫，今日跌 3.16%。半导体设备股正面临“长期扩产利好”和“短期客户资本回报率担忧”的双重拉扯。短线看 511-522 区间承接力度，财报前不适合重仓赌单边方向。 接下来 48 小时 简单来说，接下来的 48 小时，市场将迎来 CPI 终极审判与 AI 云厂财报。如果 CPI 高于预期且油价居高不下，指数可能面临进一步回撤；如果通胀如期降温，资金有望迅速回补超跌的 AI 硬件与半导体设备股。 在宏观落地前，保持仓位弹性，盯紧核心支撑位，是现在我能提供给你们的最佳策略。 本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。",
+      "levels": [
+        {
+          "symbol": "NVDA",
+          "support": "216-217 / 210",
+          "resistance": "224 / 236"
+        },
+        {
+          "symbol": "MSFT",
+          "support": "499-502",
+          "resistance": "514 / 520"
+        },
+        {
+          "symbol": "MU",
+          "support": "854-858",
+          "resistance": "895-905"
+        },
+        {
+          "symbol": "RKLB",
+          "support": "77.38",
+          "resistance": "83.25"
+        },
+        {
+          "symbol": "AMAT",
+          "support": "511-522",
+          "resistance": "539-546"
+        }
+      ]
+    },
+    {
+      "url": "articles/2026-08-09-cpi-brent-10y-ai-second-test.html",
+      "date": "2026-08-09",
+      "title": "就业降温之后，真正的大考是 CPI",
+      "description": "2026-08-09 下周美股剧本预测：就业降温之后，真正的大考是 CPI。Lemon 美股手记文章归档。",
+      "tags": [
+        "主题：CPI / Brent / 10Y / AI第二轮验货"
+      ],
+      "topics": [
+        "ai",
+        "macro",
+        "earnings"
+      ],
+      "symbols": [
+        "AMAT",
+        "CRWV",
+        "CSCO",
+        "LITE",
+        "MU",
+        "NBIS",
+        "QQQ",
+        "RKLB"
+      ],
+      "readingMinutes": 3,
+      "searchText": "大家好啊，又是我清濛出来骗神骗鬼了，哈哈，开始预测下周的行情了。 到今晚周日晚为止，美股期货基本平开：标普500期货约跌 0.1%、道指约跌 0.2%，纳指100接近平盘；但真正需要警惕的是油价，布伦特重新回到 84 美元上方。 上周7月非农意外减少 2.3 万人，把9月加息概率压到约 44%，10年期美债也回落至 4.64%。所以现在市场逻辑很简单：就业给了科技股喘息，但油价和通胀随时可能把估值顺风收回。 下周剧本 情景 概率 判断条件 基准情景 50% 震荡偏强、明显分化。若周三 CPI 接近或低于预期，10Y 继续守住 4.7% 下方，QQQ 还有修复空间。 偏多情景 25% CPI/PPI 温和、10Y 走稳，AI 主线继续修复。 偏空情景 25% CPI、PPI 同时偏热，布油重新冲向 86—88 美元，高 Beta 科技最先吐回上周涨幅。 根据我模型得到的数据，目前预期7月 CPI 同比约 3.4%、核心约 2.5%。的确很难捉摸，没有办法，warsh 不愿意给提示，我只能自己去猜、去分析。 重点股票跟踪 股票 时间 我会看什么 RKLB 8/10 盘后 最新 82.83 美元，8月6日刚公布 3.97 亿美元美国太空军合同，基本面有催化，但最怕财报后“利好兑现”。 CRWV 8/11 盘后 最新 90.67 美元，考题不是 AI 需求强不强，而是高速扩张能否覆盖资本开支、融资与利息成本。 LITE 8/11 财报 目前 890.17 美元，在高估值状态下必须继续证明光互联和 AI 数据中心需求没有降速。 NBIS 8/12 盘前 最新 187.97 美元，重点看 ARR、算力利用率、数据中心扩张和利润率，而不只是营收增长。 CSCO 8/12 盘后 AI 交换机和网络需求能否继续扩散的重要验证。 AMAT 8/13 盘后 最新 539.14 美元；如果 DRAM、HBM 和先进封装相关设备需求继续强，说明 AI 资本开支没有缩，而是在继续往设备链传导。 MU 持续观察 最新约 877.57 美元，依然是存储周期的情绪温度计；AMAT 指引以及中国存储供应竞争都会影响市场对 2027 年供需的判断。 下周大事记 Lemon清濛下周核心日历：CPI、PPI、Brent、10Y 与 AI 硬件第二轮验货。 日期 事件 总闸门 8/10 RKLB 盘后财报。 太空军合同之后，验证订单和收入兑现。 8/11 CRWV、LITE 财报。 看 AI 算力扩张成本和光互联需求是否继续强。 8/12 8:30 CPI；NBIS 盘前、CSCO 盘后。 CPI 决定科技估值能否继续扩张，NBIS 和 CSCO 验证 AI 网络与算力需求。 8/13 8:30 PPI；AMAT 盘后。 通胀二次确认，AMAT 验证 AI 设备链景气度。 8/14 8:30 美国零售销售。 看消费数据是否重新推高利率和通胀担忧。 一句话结论 下周不要只问 AI 还能不能涨，要盯三个总闸门：CPI、Brent、10Y。只要通胀不反扑、10Y 不重新突破 4.7%，AI 主线仍有继续修复的条件；一旦出现“油价涨＋收益率涨”，先降高 Beta，比猜哪只股票最强更重要。 当然啊，我也会继续随时看着大盘和数据的走向，特别是下周 CPI、油价和这些财报。 P.S. 可能是我比较保守，喜欢得出数据后，然后分析再出结论。因为我不想太冒险和去赌任何东西。 本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。",
+      "levels": []
+    },
+    {
+      "url": "articles/2026-08-05-midweek-dow-record-capex.html",
+      "date": "2026-08-05",
+      "title": "道指创新高，纳指却被资本开支拖住",
+      "description": "2026-08-05 周中美股剧本预测和总结：道指创新高，纳指却被资本开支拖住。Lemon 美股手记文章归档。",
+      "tags": [
+        "主题：AI CapEx / 弱就业 / 油价风险 / 个股剧本"
+      ],
+      "topics": [
+        "cashflow",
+        "ai",
+        "energy"
+      ],
+      "symbols": [
+        "AMD",
+        "BWXT",
+        "MU",
+        "NVDA",
+        "QQQ",
+        "SPCX"
+      ],
+      "readingMinutes": 3,
+      "searchText": "周三美股最值得注意的，不是标普只跌 0.17%，而是道指上涨 0.49% 再创新高，纳指却下跌 0.83%。 这说明市场没有全面转空，而是在从“所有 AI 都买”切换到“只奖励能证明回报的公司”。7月 ADP 私人就业仅增加 4.4 万人，低于预期的 7 万人，美债收益率随之回落；但卡什卡利同时主张缓慢加息，科技股仍不能把弱就业简单理解成降息利好。 美伊谈判确有进展，特朗普称双方进行了“非常好的讨论”，但伊朗仍否认近期存在直接谈判，霍尔木兹协议也涉及港口封锁、航道控制和收费等分歧。油价风险溢价下降是真的，全面和解则远未确认。 重点股票剧本 股票 收盘与状态 未来两日观察 NVDA 上涨 3.47% 至 219.22 美元，既受 SpaceX 计划采用其硬件支持，也体现市场仍把它视为 AI 核心平台。 只要守住 215 美元，仍有机会测试 222 美元；跌破 214 美元则反弹转弱。 AMD 财报并不差，但股价下跌 7.16% 至 482.05 美元。 问题不是数据中心没增长，而是 158 倍左右静态 PE 要求更强的毛利率和客户份额证明。470 美元是短线防线，重新站上 500 美元才算真正修复。 MU 收于 893.19 美元，盘中在 867—929 美元之间剧烈波动。 881、858 美元支撑仍可参考；站稳 902 美元再看 929 美元，跌破 858 美元则说明存储筹码清理尚未结束。 SPCX 下跌 13.57% 至 108.27 美元。 市场并非否定 Starlink，而是在审计 AI、Starship 和债务支出能否被现金流覆盖。107 美元附近若失守，仍有二次探底风险；短线反弹先看 117 美元。 BWXT 下跌 2.4% 至 168.28 美元。 议员买入消息有披露基础，BWXT 也确实承接美国海军核动力项目，但社交媒体所说“三笔共 8 万美元”尚需以国会原始申报确认，不能直接当成内幕信号。168 美元若守住可观察，重新站上 174 美元才转强。 期权大单怎么理解 期权大单只能说明市场正在加强对冲，不能把单笔 Put 或 Call 直接解释成机构看空或看多，因为它可能属于价差、备兑或组合保护。 未来两日预测 情景 我的判断 基准剧本 指数高位震荡，NVDA 相对强，AMD 与 SPCX 继续消化财报，MU 围绕 881—929 美元拉锯。 偏多剧本 如果霍尔木兹协议落地、10年期收益率继续回落，QQQ 有望反弹 1%—2%。 偏空剧本 如果油价反弹或加息预期升温，QQQ 可能回撤 1.5%—3%。 总结 市场不是全面转空，而是在审计 AI 资本开支到底能不能换来现金流。下半周我会重点看 NVDA 能不能稳住、AMD/SPCX 能不能消化财报压力、MU 能不能守住存储线承接。 本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。",
+      "levels": []
+    },
+    {
+      "url": "articles/2026-08-02-oil-cooling-jobs-rates-cashflow.html",
+      "date": "2026-08-02",
+      "title": "油价降温可能只是止痛药",
+      "description": "2026-08-02 下周美股剧本：油价降温可能只是止痛药。Lemon 美股手记文章归档。",
+      "tags": [
+        "主题：就业 / 利率 / AI现金流 / 油价"
+      ],
+      "topics": [
+        "ai",
+        "macro",
+        "cashflow"
+      ],
+      "symbols": [
+        "AAOI",
+        "AMD",
+        "LLY",
+        "OKLO",
+        "PLTR",
+        "QQQ",
+        "SNDK",
+        "SPY",
+        "VST",
+        "WDC"
+      ],
+      "readingMinutes": 3,
+      "searchText": "大家好，又是我清濛出来妖言惑众了。 上周五美股暂时稳住，标普500上涨 0.7%，纳指上涨 1%，SPY 和 QQQ 分别收在 747.03 美元、687.99 美元。但真正的压力并没有消失：美国10年期国债收益率一度升至 4.747%，市场对9月加息的定价接近七成。 周日晚间，美伊谈判预期令 WTI 回落至约 80.8 美元、布油降至约 83.9 美元，但谈判尚未变成正式协议。所以，下周不是简单的“AI反弹周”，而是就业、利率与企业现金流共同验货的一周。 下周剧本概率 概率 情景 观察重点 50% 高波动横盘，SPY 周线约 -1% 至 +1.5%，QQQ 约 -2% 至 +2%。 油价回落但长债收益率仍在高位，市场更可能在财报和就业数据之间反复定价。 30% 若非农低于 10 万人、油价继续回落，科技股有机会反弹。 看 AI 核心股能否从“利率压制”切回“订单和现金流验证”。 20% 若就业过热、10年期美债突破 4.8%，或美伊谈判破裂，QQQ 可能再跌 3% 至 5%。 长债收益率和油价重新上行，会继续压制高估值成长股。 市场目前预计7月新增就业约 8.3 万人，失业率约 4.3%。这组数据会决定市场到底是交易“经济降温带来估值修复”，还是继续交易“通胀和利率压力”。 重点观察股 股票 概率 我的观察 PLTR 55% 上季收入同比增长 85%，但当前市盈率约 138 倍，必须继续上调增长指引才能消化估值。 AMD 48% 上季营收 103 亿美元、同比增长 38%，但当前市盈率超过 150 倍；市场要看的不是普通 beat，而是 AI 加速卡订单和下半年数据中心指引。 SpaceX 45% 8月4日将公布上市后首份财报。Starlink 增长可能提供支撑，但高资本开支和后续解禁压力令风险收益并不占优。 SNDK 46% 上季收入环比增长 97%、毛利率达到 78.4%，成绩极强，也意味着本季门槛极高，最容易出现“业绩好但股价跌”。 WDC 58% 上季收入同比增长 45%，非 GAAP 毛利率 50.5%，当前预期压力低于 SNDK，财报后的赔率相对更好。 VST 60% 相比高估值芯片股，电力需求和自由现金流更容易获得资金认可，但油气价格与套期保值结果仍会制造波动。 下周大事记 日期 事件 我会看什么 8月3日 ISM 制造业 PMI；PLTR 盘后财报。 制造业和就业分项会影响利率预期；PLTR 要验证高估值能否靠增长指引消化。 8月4日 美国贸易数据、工厂订单；AMD、SpaceX 盘后财报。 AMD 需要拿出 AI 加速卡订单和下半年数据中心指引；SpaceX 看 Starlink、CapEx 和解禁压力。 8月5日 ISM 服务业 PMI、EIA 原油库存；LLY 盘前，SNDK、WDC 盘后财报。 服务业 PMI 决定利率压力；SNDK 和 WDC 验证存储高门槛能否继续兑现。 8月6日 初请失业金；AAOI 盘后财报。 看就业降温是否延续，以及光通信高波动链条能否止跌。 8月7日 7月非农就业报告；VST、OKLO 财报。 市场预期新增就业约 8.3 万人、失业率约 4.3%；VST 和 OKLO 验证电力与核电线现金流。 小小结论 油价下跌给科技股喘息，但 4.7% 以上的长债收益率决定了市场不会重新回到 AI 高收入时代。下周真正获胜的，不是故事最响的公司，而是能把增长变成利润和现金流的公司。 本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。",
+      "levels": []
+    },
+    {
+      "url": "articles/2026-07-29-midweek-bloodbath-model.html",
+      "date": "2026-07-29",
+      "title": "美股周中剧本：血流成河",
+      "description": "2026-07-29 美股周中剧本：血流成河。Lemon 美股手记文章归档。",
+      "tags": [
+        "主题：FOMC / GDP-PCE / AAPL-AMZN / 小模型"
+      ],
+      "topics": [
+        "macro",
+        "earnings",
+        "cashflow"
+      ],
+      "symbols": [
+        "AAPL",
+        "AMAT",
+        "AMZN",
+        "KLAC",
+        "LRCX",
+        "META",
+        "MSFT",
+        "MU",
+        "QQQ"
+      ],
+      "readingMinutes": 3,
+      "searchText": "一句话总结今天的剧本行情：标普跌 1.5%、道指跌 2.2%、纳指跌 1.7%。 美联储维持利率在 3.50%—3.75%，却有三名委员主张加息；布油暴涨 7.3% 至 88.09 美元，10 年期美债升至约 4.62%。这么多不利好的消息，市场能好吗？ 其实有人问，为什么不推荐大家买什么股票，放出压力点，大家可以跟着买。或许清濛比较保守，不喜欢喊票。同时清濛是一个相信数据的人。 清濛的小模型分析 事件 偏多情景 中性情景 偏空情景 GDP＋核心PCE 45%：GDP约1.5%–2.2%，核心PCE≤0.2% 30%：数据接近预期、市场反复 25%：增长弱而核心PCE≥0.3% 油价＋10年期美债 30%：布油跌回88美元下方、10Y跌破4.60% 50%：布油88–95、10Y在4.60%–4.70% 20%：布油破95、10Y破4.70% QQQ未来两日 40%：反弹1%–3% 35%：在-1%至+1%震荡 25%：再跌2%–4% AAPL财报 40%：业绩过关，股价涨超3% 35%：涨跌不超过3% 25%：中国、毛利率或指引失望，跌超3% AMZN财报 40%：AWS增速约33%以上且CapEx不上调 35%：收入好但资本开支引发争议 25%：AWS或利润率明显不及预期 MSFT次日表现 25%：收涨超过3% 50%：在±3%内震荡 25%：电话会后跌超3% META次日表现 25%：超跌反弹超过3% 40%：围绕财报价震荡 35%：现金流担忧令其再跌超3% MU未来两日 30%：去杠杆缓和，反弹超过5% 45%：在±5%内筑底 25%：再跌超过5% LRCX财报映射 55%：守住过半财报涨幅，带动AMAT/KLAC 45%：高开低走，利好被减仓利用 — 芯片最猛烈抛售结束 55%：瀑布式卖压减弱 25%：继续剧烈震荡 20%：保证金卖盘再扩散 GDP、PCE 将于 7月30日 8:30 美东时间发布；苹果确认在当天下午召开财报电话会。苹果期权市场隐含波动约 3.5%–4.3%，亚马逊市场预期营收约 1967 亿美元、AWS 增速约 33%。 明天重点股票 股票 置信度与剧本 MSFT 70% 核心配置。Azure 增长 43%、商业 RPO 达 6780 亿美元，AI 变现速度目前优于其他巨头；但盘后涨幅回吐，说明不能追最初跳空。 LRCX 65% 设备链首选，分批。基本面和指引较强，关键是次日能否带动 AMAT、KLAC，而不是自己孤立上涨。 AAPL 60% 防御型观察。轻资本、高现金流是优势，但约 41 倍静态 PE 并不便宜，财报必须同时守住中国收入和毛利率。 MU 60% 中期、45% 短线见底。财报与 HBM 逻辑没有被推翻，但筹码、杠杆和扩产预期决定短线仍可能反复。MU 不适合一次买满，更适合三笔建仓。 AMZN 55% 等待财报确认。AWS 若超过约 33% 增长、利润率稳定且不再上调 CapEx，置信度可升至 70%；反之降至 40%。 最后总结 未来两天最可能的不是直接 V 形反转。你们要小心了。 本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。",
+      "levels": []
+    },
+    {
+      "url": "articles/2026-07-26-fomc-gdp-pce-ai-cashflow.html",
+      "date": "2026-07-26",
+      "title": "油价退烧，FOMC登场",
+      "description": "2026-07-26 下周剧本走向：油价退烧，FOMC登场。Lemon 美股手记文章归档。",
+      "tags": [
+        "主题：FOMC / GDP-PCE / 科技巨头财报 / AI现金流"
+      ],
+      "topics": [
+        "macro",
+        "ai",
+        "earnings"
+      ],
+      "symbols": [
+        "AAPL",
+        "AMD",
+        "AMZN",
+        "ARM",
+        "AVGO",
+        "CVX",
+        "META",
+        "MSFT",
+        "MU",
+        "NVDA",
+        "QCOM",
+        "QQQ",
+        "XOM"
+      ],
+      "readingMinutes": 2,
+      "searchText": "下周 7月27日至31日不是普通财报周，而是利率、油价与 AI 资本开支的三重审计。 上周五，QQQ 下跌 1.1%，美光 MU 重挫 6.9%，苹果 AAPL 却上涨 3.57%；纳指全周下跌约 2.1%。周日晚间，随着美伊谈判预期重新升温，原油下跌近 5%，美股期货反弹。盘面已经说明，市场不是全面看空 AI，而是在从“谁最稀缺”切换到“谁能真正兑现现金流”。 下周大事记 日期 事件 观察重点 7月27日 周一 美国 6 月耐用品订单；AZN、NUE、CDNS 财报 继续观察油价、美债收益率和风险偏好能否延续修复。 7月28日 周二 FOMC 会议首日；BA、PYPL、KO、V 财报 市场开始交易利率决议预期，Visa 盘后财报也要看消费质量。 7月29日 周三 美联储利率决议；MSFT、META、ARM、QCOM、SOFI 财报 本周第一主战场，看 AI 资本开支、云业务增速和自由现金流。 7月30日 周四 美国二季度 GDP 初值、6 月 PCE、初请失业金；AAPL、AMZN、MA 财报 本周最关键的宏观和财报共振日。 7月31日 周五 日本央行利率决议、中国官方制造业 PMI；XOM、CVX、MRNA 财报 看原油、日元和能源股走势。 我的概率剧本 概率 剧本 55% 美联储暂不行动，油价没有重新冲高，10 年期美债守在 4.75% 以下，QQQ 周线大约运行在 -1% 至 +2%，但个股分化会非常明显。 30% 如果美联储措辞偏鹰、PCE 高于预期，或者油价重新逼近 100 美元，收益率再创新高，QQQ 可能回撤 3% 至 5%，MU、AMD 和高估值光通信股继续承压。 15% 美伊谈判继续降温，科技巨头同时证明 AI 收入增长快于资本开支，资金可能重新回补 NVDA、AMD、AVGO 等硬件核心。 个股方面 股票 审计重点 MSFT 看 Azure 增长能否覆盖资本开支。 META 看广告与 AI 推荐收入能否支撑数据中心投入。 AMZN 重点是 AWS 增速和自由现金流。 AAPL 看毛利率与端侧 AI 进展。 NVDA 虽然不发财报，却会被四大客户的资本开支指引重新定价。 MU 观察暴跌后是否出现机构承接。若好消息出来仍然下跌，就说明存储利润率已被市场视为不可永久维持。 最后判断 AI 剧本没有结束，但入场券已经从“讲故事”变成现金流。下周多看机构怎么走，看看买空率，也看看资金到底流向哪里。少追即时利润率，我们要看永久化。 本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。",
+      "levels": []
+    },
+    {
+      "url": "articles/2026-07-22-google-cloud-cash-flow.html",
+      "date": "2026-07-22",
+      "title": "谷歌云爆发，现金流却转负",
+      "description": "2026-07-22 周中剧本：谷歌云爆发，现金流却转负。Lemon 美股手记文章归档。",
+      "tags": [
+        "主题：GOOGL / TSLA / 自由现金流 / AI CapEx"
+      ],
+      "topics": [
+        "cashflow",
+        "ai",
+        "earnings"
+      ],
+      "symbols": [
+        "GOOGL",
+        "INTC",
+        "MU",
+        "NVDA",
+        "QQQ",
+        "TSLA"
+      ],
+      "readingMinutes": 2,
+      "searchText": "周三盘后，美股没有奖励“财报超预期”这种结果，反而开始审计这些公司到底烧了多少钱。 最新盘后数据显示，GOOGL 跌约 3.3%，TSLA 跌约 4.1%。这次主线很清楚：市场现在关心的不是 AI 有没有需求，而是投入多久才能变成自由现金流。 GOOGL：基本面强，现金流报警 Alphabet 营收 1198 亿美元，Google Cloud 收入同比增长 82% 至 247.7 亿美元，云业务营业利润升至 88.1 亿美元。 项目 数据 我怎么看 Google Cloud 收入同比增长 82%，营业利润升至 88.1 亿美元 云业务很强，说明 AI 基础设施需求没有熄火。 资本开支 单季资本开支 449 亿美元 市场开始审计 AI 投入强度，烧钱速度变成估值压力。 自由现金流 转为负 58.6 亿美元 这是盘后承压的核心，增长不能只看收入。 融资 股权融资 496 亿美元、发债 203 亿美元 市场会问：AI 投入到底多久能回到现金流。 EPS 质量 EPS 9.11 美元中约 6.26 美元来自投资公允价值收益 不能简单当成搜索和云业务利润。 TSLA：销量回来了，利润没有回来 TSLA 营收 282.4 亿美元，但非 GAAP EPS 只有 0.33 美元；营业利润率降至 1.4%，资本开支同比增加 142% 至 57.9 亿美元，自由现金流为负 10.9 亿美元。 Robotaxi、Cybercab 和 Optimus 仍是远期故事，短线市场会先交易利润率。 接下来的剧本 标的 剧本 GOOGL 周四先承压。若跌幅扩大至 5% 左右，云业务可能吸引资金回补。 TSLA 仍有二次下探风险，市场短线会优先看利润率和现金流。 NVDA 受益于谷歌继续扩张 AI 基础设施，预计相对抗跌。 MU 需求逻辑未坏，但更容易受到油价和美债收益率冲击。 INTC 周四盘后财报是下一场考试。Q2 指引为营收 138 亿至 148 亿美元、非 GAAP EPS 0.20 美元；只有毛利率守住 39% 左右并控制代工现金消耗，股价才能继续重估。 未来两天的灵感 周四基准情景是 QQQ 低开约 0.8% 至 1.5%，随后进入“谷歌、特斯拉弱，芯片相对抗跌”的分化。 周五关注美国 PMI 和新屋销售。若油价回落、服务业 PMI 不超 52，科技股可能反弹 0.5% 至 1.5%；若制造业数据偏强、布油继续站在 95 美元附近，NVDA、MU 等高估值硬件股仍可能再回撤 2% 至 4%。 简单结论 AI 没有熄火，但市场已经不再为“烧钱增长”鼓掌。接下来真正值钱的，不只是订单，而是订单能不能变成现金。 本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。",
+      "levels": []
+    },
+    {
+      "url": "articles/2026-07-19-oil-earnings-ai-stopfall.html",
+      "date": "2026-07-19",
+      "title": "油价破90，财报周决定AI能否止跌",
+      "description": "2026-07-19 下周美股剧本：油价破90，财报周决定AI能否止跌。Lemon 美股手记文章归档。",
+      "tags": [
+        "主题：油价 / 财报周 / AI止跌 / 半导体"
+      ],
+      "topics": [
+        "ai",
+        "earnings",
+        "energy"
+      ],
+      "symbols": [
+        "AMD",
+        "GOOGL",
+        "IBM",
+        "IWM",
+        "MRVL",
+        "NVDA",
+        "QQQ",
+        "RSP",
+        "SOXL",
+        "SPY",
+        "TSLA",
+        "TXN"
+      ],
+      "readingMinutes": 2,
+      "searchText": "大家好呀，又是我 Lemon清濛出来妖言惑众了，哈哈哈。 费城半导体指数 SOXL 已从高点回撤逾 20%，但 RSP、IWM 相对抗跌，信用市场也未明显恶化，当前更像 AI 硬件去杠杆，而非全面熊市。布伦特原油升破 90 美元，周初科技股仍有下压风险。 对于下周我的基准预测是：下周先弱后分化，SPY 周线约 -1% 至 +0.5%，QQQ 约 -2% 至 +1%。若油价回落、GOOGL 财报过关，芯片股有望超跌反弹；若布油冲向 95 美元、10 年期美债突破 4.60%，QQQ 可能再跌 3% 至 5%。 下周大事记 日期 事件 观察重点 7月20日 中国 LPR；观察油价与美债 周初先看油价冲击和 10Y 是否继续压制科技股。 7月21日 美国 ADP 周度就业数据；3M、通用汽车、Halliburton 财报 看就业温度、工业和能源链的财报反馈。 7月22日 EIA 原油库存；GE Vernova 盘前，GOOGL、TSLA、IBM、TXN 盘后财报 油价和财报周进入主战场，重点看 GOOGL 和 TSLA。 7月23日 美国初请失业金；AMD Advancing AI 主题演讲；Intel 盘后财报 看 AI 新订单线索，以及半导体是否从去杠杆转向修复。 7月24日 美国 PMI、新屋销售；Verizon、NextEra、American Express 财报 看经济韧性、利率敏感板块和消费信用质量。 我会重点关注的 6 个剧本 股票 剧本 GOOGL 全市场总开关，看 Cloud、CapEx 与自由现金流能否匹配。 TSLA 看汽车毛利率、储能及 Robotaxi 投入，防范利好兑现。 AMD 大会必须拿出客户、订单和交付，不只是性能参数。 NVDA 仍是 AI 信用锚，反弹取决于巨头 CapEx 与利率。 MRVL ASIC、SerDes 逻辑未坏，但需等待订单兑现和板块止跌。 TXN 工业与汽车芯片温度计，指引改善才代表行情真正扩散。 最重要的总结 下周不是继续听 AI 故事拉，而是正式验收现金流。周初防油价冲击，周三以后由财报决定反弹，还是第二轮下杀。 本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。",
+      "levels": []
+    },
+    {
+      "url": "articles/2026-07-12-oil-inflation-ai-orders.html",
+      "date": "2026-07-12",
+      "title": "油价、通胀和AI订单一起验货",
+      "description": "2026-07-12 下周不是单纯赌财报，而是油价、通胀和AI订单一起验货。Lemon 美股手记文章归档。",
+      "tags": [
+        "主题：油价 / CPI / AI订单 / 财报季"
+      ],
+      "topics": [
+        "ai",
+        "earnings",
+        "macro"
+      ],
+      "symbols": [
+        "AMKR",
+        "ASML",
+        "BAC",
+        "C",
+        "GS",
+        "JPM",
+        "MRVL",
+        "MU",
+        "NVDA",
+        "SOXL",
+        "TSM",
+        "WFC",
+        "XOM"
+      ],
+      "readingMinutes": 2,
+      "searchText": "大家好呀，我是 Lemon清濛。我总是觉得写太长没有人看，所以我就尽量写短一点，把我想说的说出来就好了。 先说结论： 下周不是单纯赌财报，而是油价、通胀和 AI 订单一起验货。周末美伊围绕霍尔木兹海峡再度交火，周一亚洲时段布油升至约 78.5 美元、WTI 约 73.8 美元，美股期货跌 0.3%—0.5%。只要油价继续冲、10年期美债维持高位，科技股反弹空间就会被压住；若海峡通航未明显受阻，市场重心很快会回到盈利。 AI硬件不是没需求，是财报前降杠杆 MU、MRVL 和 SOXL 连续走弱，不代表 AI 需求突然消失，而是拥挤的半导体交易正在财报前降杠杆。 SK 海力士美国 ADR 首日大涨后，首尔股价一度跌 8.2%，市场借 HBM4 出货不及最乐观预期获利了结，情绪随即传导到 MU 和整条芯片链。SOXL 又是每日 3 倍杠杆 ETF，震荡下跌时会同时承受放大跌幅和波动损耗；MRVL 则因估值和 ASIC 订单预期较满，资金先卖高 Beta、保留 NVDA 和 TSM 等核心资产。 下周大事记 日期 事件 观察重点 7月13日 台积电公布 6 月营收 看 AI 订单和先进制程需求是否继续强。 7月14日 美国 6 月 CPI；JPM、BAC、GS、WFC、C 同日发财报 通胀决定利率压力，银行验证消费者和信用质量。 7月15日 美国 PPI；ASML 财报 看通胀链条和半导体设备订单质量。 7月16日 北京时间 14:00，TSM 举行 Q2 法说会 重点看 CoWoS、毛利率和 CapEx 是否上修。 银行要证明美国消费者和信用质量没坏；TSM 与 ASML 则要证明 AI 资本开支还在加速。市场已经知道业绩会好，现在只有上调指引、订单和资本开支，才能真正推动股价。 下周 5 只核心观察股 股票 逻辑 TSM AI 底盘，重点看 CoWoS、毛利率和 CapEx。 ASML 只看新增订单，符合预期也可能跌。 AMKR 与 TSM 扩大美国先进封装合作，适合等回踩。 C 银行重估首选，盯 ROTCE 和回购。 XOM 地缘风险对冲，但油价冲高回落就别追。 我的基准剧本 低开震荡、能源偏强、科技分化。牛市没坏，但现在最贵的不是坏公司，而是“好消息已经写满”的公司。下周只买能上调未来的，不赌只会超过过去的。 本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。",
+      "levels": []
+    },
+    {
+      "url": "articles/2026-07-07-midweek-rotation.html",
+      "date": "2026-07-07",
+      "title": "周中剧本，别灰心：美股没死，只是在换手",
+      "description": "2026-07-07 周中剧本，别灰心：美股没死，只是在换手。Lemon 美股手记文章归档。",
+      "tags": [
+        "主题：AI换手 / 软件承接 / 高 beta 去杠杆"
+      ],
+      "topics": [
+        "ai",
+        "review",
+        "energy"
+      ],
+      "symbols": [
+        "MSFT",
+        "MU",
+        "NOW",
+        "NVDA",
+        "PLTR",
+        "SMH",
+        "SNDK",
+        "SOXL",
+        "TSLA"
+      ],
+      "readingMinutes": 2,
+      "searchText": "其实我知道这两天最难受的，肯定是拿 MU、SNDK、SMH、SOXL 的朋友。今天不是全面熊市，而是 AI 硬件被集中去杠杆。 标普只跌 0.4%，纳指跌 1.2%，但大多数标普成分股其实是涨的，真正流血的是芯片和 AI 高 beta。 为什么跌呢？一是三星利好兑现后，市场开始担心 AI 存储预期太满；二是油价和通胀预期又回来了，纽约联储 6 月一年期通胀预期升到 3.7%，这会压住科技股估值。还有就是美国和伊朗又不好了。 但我要说一句安慰大家的话：科技 AI 没结束，只是资金在换地方。 硬件跌的时候，软件线反而开始接。MSFT 收 388.84，PLTR 收 134.37，NOW 收 110.73，都没有跟着芯片一起崩。NVDA 也守住了 190 上方，收在 196.93，这说明 AI 核心还没坏。 压力点和观察区间 股票 观察区间 我的态度 MSFT 385–390 可看，375–380 更舒服，目标 400–410 核心推荐，AI 降本逻辑最好 PLTR 130–134 承接，站稳 138 看 148–152 可持有，但别追太猛 NOW 108–111 承接，突破看 117–120 软件防御线，适合低吸 TSLA 400 是关键，破了看 388–392，反弹看 420 有弹性，但波动大 NVDA 190–193 支撑，站回 200 看 208–215 AI 压舱石，不破 190 问题不大 MU 897–923 是生死承接区，站回 950–970 才算修复 有机会，但别满仓硬扛 SMH 565–570 支撑，站回 590–600 才好看 等确认，不急着冲 MU 和 SNDK 的坏中带好 MU 今天收 938.38，盘中低点 892.50，说明 897 附近被打穿过，但收盘又拉回 923 上方，这是坏中带好。 SNDK 跌得更猛，收 1617.70，盘中最低 1487.52，这种票弹性大，但绝对不能当核心仓重仓扛。 最后一句话 擦干眼泪，别乱砍核心仓，也别无脑补高 beta。真正的新机会，往往就是在这种绝望里慢慢长出来的。 本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。",
+      "levels": []
+    },
+    {
+      "url": "articles/2026-07-05-weekly-script-ai-rotation.html",
+      "date": "2026-07-05",
+      "title": "7月6日—7月10日，美股下周剧本怎么走",
+      "description": "2026-07-05 7月6日—7月10日，美股下周剧本怎么走。Lemon 美股手记文章归档。",
+      "tags": [
+        "主题：AI修复 / 半导体 / 宏观"
+      ],
+      "topics": [
+        "ai",
+        "macro",
+        "cashflow"
+      ],
+      "symbols": [
+        "AVGO",
+        "GOOGL",
+        "META",
+        "MRVL",
+        "MSFT",
+        "MU",
+        "NBIS",
+        "NVDA",
+        "PLTR",
+        "SMH",
+        "SNDK",
+        "SPCX",
+        "WDC"
+      ],
+      "readingMinutes": 3,
+      "searchText": "长周末后，美股期货目前偏强，市场先做科技股修复：道指期货小涨约 0.1%–0.2%，标普 500 期货涨约 0.5%，纳指 100 期货涨约 1.5%。这说明周一开盘前，资金暂时不是继续砸 AI，而是在赌上周半导体杀跌后会有技术性反弹。 但我不会因为夜盘上涨就直接说风险解除。现在最重要的新消息有两条： 第一，SK 海力士准备启动约 280 亿美元美国 ADR 上市，这会让美股投资者多一个直接买 HBM 龙头的入口。对 AI 存储是利好关注度，但对 MU 来说，也会削弱它“美股唯一大型 AI 存储标的”的稀缺溢价。 第二，SPCX / SpaceX 周二纳入纳斯达克 100 仍是本周最大事件交易之一。被动买盘会有，但也容易出现提前抢跑、正式纳入后 sell the news。 我的判断很简单：AI 没结束，但无脑买硬件的阶段结束了。接下来市场不会再因为你名字里有 AI 就给估值，而是要看订单、现金流、毛利率和资本开支回报。 主线部分 第一条线，还是看 MU 美光已经证明 AI 存储需求是真的，HBM、DRAM、NAND 都是核心瓶颈。但问题是股价已经涨太多，下周重点不是“MU好不好”，而是利好出来后还能不能继续被资金接住。如果 MU 止跌反包，存储链的 SNDK、WDC 才有继续修复空间；如果 MU 高开低走，就说明市场在做 sell the news。 第二条线，看 NVDA 英伟达仍然是 AI 主线压舱石，但它现在不是负责带头冲，而是负责别破位。如果 NVDA 稳住，资金才敢继续去买 AVGO、MRVL 这种 ASIC 和 AI 网络芯片。如果 NVDA 继续弱，整个 SMH 都会被压住。 第三条线，重点看 MRVL 它的逻辑很清楚：定制芯片、光互联、CPO、交换芯片，都是 AI 数据中心下一阶段的瓶颈。MRVL 不是便宜票，但它是下半年 AI 从 GPU 扩散到网络层的关键名字。 第四条线，MSFT、META、GOOGL 市场现在最怕的不是它们不投 AI，而是投太多之后回报不够。下周如果 FOMC 纪要偏鹰、利率上去，这些高 CapEx 巨头会继续被审计；但如果它们能稳住，说明市场并没有撤离 AI，只是在换仓。 第五条线，PLTR 和 NBIS PLTR 是主权 AI 和政府 AI 的代表，NBIS 是 Neocloud 高 beta 代表。它们弹性很大，但也不是低风险资产。适合观察资金有没有从硬件转向“AI应用和算力服务”。 宏观提醒 另外，本周宏观还要看 7月6日 ISM 服务业 PMI 和 7月8日 FOMC 会议纪要。市场现在最怕的不是经济差，而是服务业通胀太粘、Fed 纪要偏鹰，重新把美债收益率顶起来。 一句话总结 下周我的剧本是：指数不一定崩，但内部会继续分化。拿核心，少追高，等市场告诉我们谁才是真正能兑现的 AI 公司。 本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。",
+      "levels": []
+    },
+    {
+      "url": "articles/2026-06-28-ai-power-infrastructure.html",
+      "date": "2026-06-28",
+      "title": "下周的剧本走向：AI不是结束，是开始看电拉",
+      "description": "2026-06-28 下周的剧本走向：AI不是结束，是开始看电拉。Lemon 美股手记文章归档。",
+      "tags": [
+        "主题：AI基础设施 / 核电 / 电力"
+      ],
+      "topics": [
+        "energy",
+        "ai",
+        "macro"
+      ],
+      "symbols": [
+        "AAPL",
+        "AVGO",
+        "BWXT",
+        "CCJ",
+        "ETN",
+        "GEV",
+        "GOOGL",
+        "MRVL",
+        "MSFT",
+        "MU",
+        "NNE",
+        "NVDA",
+        "OKLO",
+        "QCOM",
+        "SMR",
+        "VRT"
+      ],
+      "readingMinutes": 3,
+      "searchText": "下周会迎来七月第一周，我觉得美股最重要的不是一句“科技股反弹”或者“AI要崩了”，而是市场终于开始问一个更现实更重要的问题：AI数据中心到底靠什么跑起来？ 以前大家只看NVDA、MU、MRVL、AVGO，觉得AI就是芯片、HBM、光模块。但现在核电、电网、天然气、液冷也被推到台前。美国能源部计划提供最高175亿美元贷款，推进10座大型核反应堆建设，这不是普通能源新闻，而是AI缺电时代的信号。 我的判断很简单：AI主线没死，但已经从“买芯片”进入“买基础设施”。虽然我觉得我现在这个研究方向有点像白毛、serenity，但是我又不太像，因为TA研究太细化。我不太同意，可能我比较保守投资方式。 下周重要日期 6月29日，周一 重点看中东局势和油价。如果霍尔木兹风险重新升温，油价上去，美债收益率也可能上去，科技股会受压。 6月30日，周二 美国JOLTS职位空缺、消费者信心、房价数据出来。这里主要看美国经济有没有降温。如果就业还是太热，市场会担心美联储继续鹰派。 7月1日，周三 ADP就业、ISM制造业公布。这个是非农前哨站。数据太强，对科技股不友好；数据温和，AI硬件才有修复空间。 7月2日，周四 全周最关键：非农就业、失业率、初请失业金、工厂订单。周五美股休市，所以周四会变成资金提前表态的一天，波动可能很大。 7月3日，周五 美股因独立日观察假期休市。不要低估假期前的流动性问题，很多高beta股票会被提前降仓。 我个人的必要股票关注 NVDA：震荡偏弱 190美元附近很关键。守住，AI情绪还能修；跌破，市场会继续杀估值。 MU：基本面强，短线震荡 财报很强，但市场已经提前交易太多。它现在不是不能涨，而是要先消化获利盘。 MRVL、AVGO：短线偏弱，止跌后再看反弹 AI网络逻辑没坏，但半导体链现在在去杠杆，不能硬说会涨。 QCOM：中线观察，短线等企稳 数据中心AI故事有预期差，但市场现在不愿意给新故事立刻买单。 CCJ、BWXT：核电线偏强 核电重新被政策推上桌，对铀矿和核设备是利好，但不能追高，要看回踩。 GEV、VRT、ETN：AI电力线偏强观察 AI缺电不是一天行情，只要数据中心继续扩张，电力设备、并网、冷却都会有人买。 SMR、OKLO、NNE：高波动，不追 核电概念弹性很大，但很多还没稳定盈利，适合观察，不适合重仓信仰。 AAPL：偏弱 存储涨价压毛利，AI叙事又不够强，短线缺少催化。 MSFT、GOOGL：震荡修复 它们不是没价值，而是AI资本开支太重。下周要看利率脸色。 一句话 下周不是随便买AI方面的股票，而是看AI股能不能止跌；不是只看芯片，而是看电力、核电、数据中心这些基础设施能不能接棒。能不能是下一个风口？ 本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。",
+      "levels": []
+    },
+    {
+      "url": "articles/2026-06-24-mu-pce-exam.html",
+      "date": "2026-06-24",
+      "title": "MU点燃AI硬件，但是PCE才是真正考官啊",
+      "description": "2026-06-24 MU点燃AI硬件，但是PCE才是真正考官啊。Lemon 美股手记文章归档。",
+      "tags": [
+        "主题：MU / PCE / AI硬件"
+      ],
+      "topics": [
+        "ai",
+        "macro",
+        "cashflow"
+      ],
+      "symbols": [
+        "ALAB",
+        "AMAT",
+        "ASML",
+        "AVGO",
+        "COHR",
+        "CRDO",
+        "CVX",
+        "ETN",
+        "GDX",
+        "GEV",
+        "GLD",
+        "GLW",
+        "KLAC",
+        "LITE",
+        "LRCX",
+        "MRVL",
+        "MU",
+        "NVDA",
+        "QQQ",
+        "SMH",
+        "SNDK",
+        "SOXX",
+        "STX",
+        "VRT",
+        "WDC",
+        "XOM"
+      ],
+      "readingMinutes": 2,
+      "searchText": "明后两天美股不是简单看涨跌，而是一次非常典型的“AI基本面利好”硬刚“鹰派美联储”的行情。 MU 点燃 AI 硬件 今晚最大的主角肯定是美光 MU。财报不是普通好，而是直接证明 AI 存储需求真的硬：HBM、DRAM、NAND 都在涨价，客户也愿意签长期协议。这说明 AI 资本开支已经不只是利好 NVDA，而是开始外溢到存储、设备、光互联、电力这些更宽的链条。 所以明天开盘，半导体和 AI 硬件大概率会先被资金点火，MU、NVDA、AVGO、MRVL、AMAT、LRCX、KLAC 这些名字都会被重点盯上。 不想大家太上头。 PCE 才是真正考官 因为真正决定明天行情质量的，不是 MU 涨多少，而是 PCE 数据出来以后，10年期美债收益率怎么走。如果 PCE 温和，收益率不冲 4.5%，那 AI 硬件这波修复可以继续扩散；如果 PCE 偏热，收益率重新往上顶，那科技股很容易出现高开低走，甚至早盘越兴奋，午后越危险。 周五我更看重二次确认。半年末、季末调仓叠加周末地缘风险，机构很可能会边拉边换仓。所以不要只看一天涨幅，要看 MU 高开后能不能守住，SMH 能不能强过 QQQ，NVDA、AVGO、MRVL 有没有一起跟。 我的判断很简单：现在市场不再奖励只会讲故事的公司，而是只奖励真正有订单、有涨价权、有毛利率、有现金流的公司。 明后两天关键词就一个：别追高。 重点关注股票走向 AI核心 / 半导体主线 MU、NVDA、AVGO、MRVL、SMH、SOXX 存储链 SNDK、WDC、STX 半导体设备 AMAT、LRCX、KLAC、ASML 光互联 / 高速连接 COHR、LITE、CRDO、ALAB、GLW AI电力 / 数据中心基础设施 VRT、ETN、GEV 宏观对冲观察 GLD、GDX、XOM、CVX、LMT 我看哪五个确认方向 我会重点看 MU、SMH、NVDA、AVGO、MRVL 这五个确认市场方向：如果它们一起强，AI修复是真的；如果只有 MU 自己冲，其他不跟，就要小心利好兑现。 本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。",
+      "levels": []
+    },
+    {
+      "url": "articles/2026-06-23-midweek-mu-earnings.html",
+      "date": "2026-06-23",
+      "title": "周中总结：美光财报前，我们先别急着否定自己",
+      "description": "2026-06-23 周中总结：美光财报前，我们先别急着否定自己。Lemon 美股手记文章归档。",
+      "tags": [
+        "主题：MU / AI硬件 / 风险控制"
+      ],
+      "topics": [
+        "ai",
+        "earnings",
+        "review"
+      ],
+      "symbols": [
+        "AVGO",
+        "MRVL",
+        "MU",
+        "NVDA",
+        "QCOM",
+        "QQQ",
+        "SMH",
+        "SNDK",
+        "SOXL"
+      ],
+      "readingMinutes": 4,
+      "searchText": "今天我其实不想一上来就装得很冷静。因为我知道，很多人今天账户很难看。 不是亏一点点，是那种打开账户，心里咯噔一下，然后整个人都不想说话的那种难看。 MU、MRVL、QCOM、NVDA、SNDK、SOXL，前面涨得最猛的AI硬件线，今天被一起按下来。纳指跌，费半更惨，韩国那边SK海力士、三星也出事，卖压一路从亚洲滚到美股。 今天这场跌，先别急着骂自己 如果你今天亏钱了，先别急着骂自己。更不要因为一天两天的大跌，就觉得自己不适合投资。 市场最残酷的地方就在这里：它从来不会提前跟你打招呼。前一天大家还在讨论AI硬件扩散、MU财报、HBM涨价，第二天它就直接给你一根大阴线。你觉得自己被针对了，其实不是。市场谁都不认识，它只是把最拥挤的地方先砸一遍。 今天这场跌，不是因为AI突然没需求了，也不是因为所有公司一夜之间变垃圾了。真正的问题是：前面涨太快，仓位太挤，杠杆太多，预期太满。 韩国那边就是一个活生生的例子。很多散户用杠杆产品追SK海力士和三星，一旦下跌触发强平，不是想不想卖的问题，是系统逼你卖。然后这种抛压传到美股，MU、SNDK、MRVL、NVDA这些同板块的票自然跟着挨刀。 所以你看，今天不是单纯基本面崩了。今天更像是市场在清理杠杆，顺便把那些只靠情绪撑起来的仓位全部拉出来拷问一遍。 不能用便宜的安慰骗自己 但我们也不能骗自己说“没事，跌了就一定会涨回来”。这句话太便宜，也太不负责。 现在的美股，已经不是去年那种闭眼买AI就能赚钱的环境了。10年期美债还在4.5%附近，美元很强，资金成本很高。高利率时代，市场不会一直免费给你做梦。 以前买AI，大家只问一句：有没有故事？现在市场问的是：有没有订单？有没有毛利率？有没有现金流？有没有能力把AI资本开支变成真正的利润？ 这就是为什么美光财报这么重要。MU不是普通财报，它现在是整个AI存储链的考试。 MU 财报是 AI 存储链的考试 如果MU财报强，指引更强，管理层继续说HBM供不应求，DRAM和NAND价格还能撑住，那今天这波跌，很可能就是一次很痛的洗杠杆。 但如果MU财报只是“还可以”，或者管理层开始讲供给改善、扩产节奏、价格压力，那市场就会马上怀疑：是不是AI存储最肥的一段已经提前炒完了？ 所以我现在不会叫大家闭眼抄底。也不会叫大家恐慌割肉。我更想说的是：今天亏钱的人，先停下来，把账户重新分一遍。 把账户重新分三类 第一类：真正理解的核心仓 比如NVDA、AVGO、MU这种你知道它赚什么钱、风险在哪里的公司。 第二类：因为FOMO追进去的情绪仓 比如看到别人赚钱、群里一直喊、自己怕踏空才买的票。 第三类：期权、杠杆ETF、SOXL这类高波动仓位 这类仓位最重要的是先活下来，不要让一次波动把你打到无法翻身。 这三类不能混在一起看。核心仓跌了，要看逻辑有没有变。情绪仓跌了，要承认自己当时可能是上头了。杠杆仓跌了，最重要的是先活下来，不要让一次波动把你打到无法翻身。 我知道这话不好听，但比安慰你“都会涨回来”更有用。市场里亏钱不可怕，真正可怕的是亏了以后乱动。 今天大跌，明天追空；明天反弹，又追高；来回几次，本来只是回撤，最后变成真正的伤口。 接下来我看什么 我的节奏很简单：先看MU财报。再看NVDA能不能稳住。再看MRVL、AVGO、QCOM有没有资金回流。最后看SMH能不能重新跑赢QQQ。 如果MU财报后好消息出来还能涨，说明资金愿意回来接AI硬件。如果好消息出来反而高开低走，那就说明预期太满，后面还要震。如果指引里出现供给松动或者价格压力，那就别硬扛，市场会继续重新定价。 最后 最后，我想认真说一句。如果你今天亏了很多钱，不要因为这一天否定自己！ 投资这条路，没人是靠一次判断赢到最后的。真正能留下来的人，不是从不亏钱的人，而是亏钱之后还能冷静复盘、不乱加杠杆、不用情绪做决定的人。 AI主线没有死。告诉自己，闭眼赚钱的阶段结束了。后面市场只奖励能交作业的公司，也只奖励能控制仓位的人。 今天难受就难受，没关系的。我们不要灰心，更不要报复性交易。账户可以回撤，心态不能爆仓啊。 明天我们继续看MU怎么交卷。 本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。",
+      "levels": []
+    },
+    {
+      "url": "articles/2026-06-21-ai-hardware-week.html",
+      "date": "2026-06-21",
+      "title": "下周美股市场的剧本：AI硬件进入验货周",
+      "description": "2026-06-21 下周美股市场的剧本：AI硬件进入验货周。Lemon 美股手记文章归档。",
+      "tags": [
+        "主题：AI硬件 / 宏观 / 股票池"
+      ],
+      "topics": [
+        "ai",
+        "macro",
+        "energy"
+      ],
+      "symbols": [
+        "ADI",
+        "AMAT",
+        "AMD",
+        "APH",
+        "ASML",
+        "AVGO",
+        "CEG",
+        "COHR",
+        "CVX",
+        "ETN",
+        "GEV",
+        "GLW",
+        "IWM",
+        "KLAC",
+        "LITE",
+        "LRCX",
+        "MCHP",
+        "MRVL",
+        "MU",
+        "NVDA",
+        "NXPI",
+        "OKLO",
+        "QCOM",
+        "QQQ",
+        "RSP",
+        "SLB",
+        "SMH",
+        "STX",
+        "TEL",
+        "VRT",
+        "WDC",
+        "XLE",
+        "XOM"
+      ],
+      "readingMinutes": 3,
+      "searchText": "大家好，我是东左耳清濛，老规矩，如果你不想看分析，可以拉到最下面看股票池。 我先说我的看法：下周美股还能看多，但不能无脑追高。现在市场不是不相信AI，而是开始问一个更现实的问题：AI订单到底能不能变成收入、利润和现金流？ 这周最重要的不是指数涨不涨，而是三条线：MU财报、QCOM投资者日、PCE通胀数据。这三个东西会决定AI硬件是继续扩散，还是高位兑现。 宏观：油价、通胀和利率链条 先说宏观。周末美伊谈判和霍尔木兹海峡又有反复，油价重新被推起来。这个事情不要当普通新闻看。真正的链条是：霍尔木兹风险 → 油价上涨 → 通胀预期上升 → 美债收益率上升 → 科技股估值承压。如果布油继续站上82美元，10年期美债收益率冲4.5%，那AI硬件再强，也会被利率压一下。 所以我下周第一眼不是看NVDA，而是看油价和10年美债。只要这两个不失控，AI主线就还有机会。 公司事件：MU 和 QCOM 公司事件里，最关键的是MU。Micron不是普通存储股，它是AI行情的验货员。NVDA已经证明GPU需求是真的，但MU要证明的是：AI服务器有没有真的把HBM、DRAM、NAND带进涨价周期。 如果MU财报强、指引强，那资金可能继续扩散到WDC、STX、AMAT、LRCX、KLAC、ASML。但如果财报前涨太多，财报后好消息兑现，也别觉得奇怪。 第二个重点是QCOM。这只票我觉得有预期差。市场以前把它当手机芯片股，所以估值一直不高。但这次Investor Day如果能讲清楚数据中心AI、边缘AI、工业AI、汽车AI，甚至给出客户和收入目标，那QCOM就有机会从“手机周期股”切到“低估值AI硬件股”。这条线我会顺着看AVGO、MRVL、AMD、NXPI、ADI、MCHP。 NVDA当然还是核心，但现在没必要天天重复吹。真正健康的行情，不是NVDA一个人涨，而是AI硬件继续扩散。我要看的是：NVDA稳住，MU确认存储涨价，MRVL/AVGO确认ASIC和网络芯片强，GLW/COHR/LITE确认光互联继续走，VRT/ETN确认电力液冷被机构承接。 下周最关注的三条 AI 扩散线 第一，AI存储和设备：MU、WDC、STX、AMAT、LRCX、KLAC、ASML。逻辑是HBM和DRAM涨价，如果MU确认供需紧张，这条链会继续被资金挖。 第二，AI光互联：GLW、COHR、LITE、APH、TEL、MRVL。AI数据中心不是只有GPU，数据传输同样是瓶颈。800G、1.6T、CPO、硅光、InP这些方向，短线可能还会反复炒。 第三，AI电力和液冷：VRT、ETN、GEV、CEG、OKLO。这条线没有MU那么刺激，但更像机构会持续配置的方向。AI数据中心最后都要买电、买冷却、买配电、买变压器。 至于SpaceX，我会看，但不会上头。它现在不是估值交易，是情绪和流动性交易。涨的时候能带动FOMO，跌的时候也可能拖累高beta科技股。所以它更像市场温度计，不是普通股票。 我的下周股票池 激进核心 MU、QCOM、MRVL、GLW、COHR、VRT。 稳健AI基础设施 NVDA、AVGO、AMAT、LRCX、ETN、APH、TEL。 能源对冲 XOM、CVX、SLB、XLE。 指数确认 SMH、QQQ、IWM、RSP。 敲黑板！！交易上我不会追最热的尖顶。最好的节奏是：油价不失控、10年美债稳住、SMH继续强于QQQ，AI硬件回踩不破再看机会。 如果MU财报后sell the news，或者10年美债破4.5%，或者VIX冲上20，那就别硬扛，该锁利就锁利。 一句话总结： AI行情没结束，但下周开始验货。能交出订单、利润和指引的继续涨；只会讲故事、短线涨太多的，小心被兑现。 本文仅用于个人市场观察与学习记录，不构成任何投资建议。市场有风险，交易需独立判断。",
+      "levels": []
+    }
+  ]
+}

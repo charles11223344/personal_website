@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="清濛的美股文章归档：财报、宏观、AI 与投资复盘。" />
+  <title>文章归档 | Lemon 美股手记</title>
+  <link rel="icon" href="lemon.png" />
+  <link rel="stylesheet" href="assets/fonts/fonts.css" />
+  <link rel="stylesheet" href="research.css" />
+  <script src="site-config.js" defer></script>
+  <script src="market-calendar.js" defer></script>
+  <script src="research.js" defer></script>
+</head>
+<body data-page="archive">
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="research-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html"><img src="lemon.png" alt="" width="38" height="38" /><span>Lemon <strong>美股手记</strong></span></a>
+      <nav aria-label="主导航"><a href="index.html">市场看板</a><a href="archive.html" aria-current="page">文章归档</a><a href="stock.html?symbol=NVDA">股票专题</a></nav>
+    </div>
+  </header>
+  <main id="main" class="research-main">
+    <div class="page-heading"><div><p class="eyebrow">LEMON / RESEARCH</p><h1>文章归档</h1><p class="muted">清濛的市场观察与投资复盘</p></div><p class="index-meta" id="index-meta"></p></div>
+    <div id="page-status" class="page-status" role="status">正在整理文章...</div>
+    <div id="archive-content" hidden>
+      <form class="filters" id="archive-filters" role="search" aria-label="筛选文章">
+        <label class="search-field">搜索文章<input id="query" name="q" type="search" placeholder="标题、股票、正文关键词" autocomplete="off" /></label>
+        <label>股票<select id="symbol-filter" name="symbol"><option value="">全部股票</option></select></label>
+        <label>主题<select id="topic-filter" name="topic"><option value="">全部主题</option></select></label>
+        <label>月份<select id="month-filter" name="month"><option value="">全部月份</option></select></label>
+        <label>排序<select id="sort-filter" name="sort"><option value="newest">最新优先</option><option value="oldest">最早优先</option></select></label>
+        <button class="clear-button" type="reset">清除筛选</button>
+      </form>
+      <div class="result-toolbar"><p id="result-count" role="status" aria-live="polite"></p><a id="stock-shortcut" hidden>查看股票专题</a></div>
+      <div id="article-results"></div>
+    </div>
+    <noscript><p>请启用 JavaScript 查看完整归档，或返回<a href="index.html#articles">首页文章列表</a>。</p></noscript>
+  </main>
+  <footer class="research-footer"><span>Lemon 清濛</span><span>仅供信息参考，不构成投资建议。</span><a href="index.html#wechat-sync">东左耳清濛 · 公众号</a></footer>
+</body>
+</html>

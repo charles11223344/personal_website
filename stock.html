@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lemon 股票研究专题：历史文章、原文技术位与事件日历。" />
+  <title>股票专题 | Lemon 美股手记</title>
+  <link rel="icon" href="lemon.png" />
+  <link rel="stylesheet" href="assets/fonts/fonts.css" />
+  <link rel="stylesheet" href="research.css" />
+  <script src="site-config.js" defer></script>
+  <script src="market-calendar.js" defer></script>
+  <script src="research.js" defer></script>
+</head>
+<body data-page="stock">
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="research-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html"><img src="lemon.png" alt="" width="38" height="38" /><span>Lemon <strong>美股手记</strong></span></a>
+      <nav aria-label="主导航"><a href="index.html">市场看板</a><a href="archive.html">文章归档</a><a href="stock.html?symbol=NVDA" aria-current="page">股票专题</a></nav>
+    </div>
+  </header>
+  <main id="main" class="research-main">
+    <div class="page-heading"><div><p class="eyebrow">LEMON / STOCK RESEARCH</p><h1>股票专题</h1></div><label class="stock-picker" for="stock-picker">研究标的<select id="stock-picker" disabled><option>正在加载...</option></select></label></div>
+    <div id="page-status" class="page-status" role="status">正在整理研究记录...</div>
+    <div id="stock-content" hidden>
+      <div class="featured-symbols" id="featured-symbols" aria-label="常看标的"></div>
+      <section class="stock-overview" aria-labelledby="stock-title">
+        <div><p id="stock-kind" class="eyebrow"></p><h2 id="stock-title"></h2><p id="stock-name" class="muted"></p><a id="all-articles-link">相关完整归档</a></div>
+        <div class="quote-block"><div class="quote-heading"><span id="quote-session">行情</span><button id="refresh-quote" class="icon-button" type="button" aria-label="刷新报价" title="刷新报价"><img src="assets/refresh-cw.svg" alt="" width="19" height="19" /></button></div><p id="quote-price" class="quote-price">--</p><p id="quote-change">--</p><p id="quote-time" class="small muted">报价时间 --</p><p id="quote-status" class="small muted" role="status"></p></div>
+      </section>
+      <div class="research-columns">
+        <section class="research-section" aria-labelledby="levels-title"><div class="section-title"><h2 id="levels-title">最近记录的技术位</h2><span class="small muted">历史原文</span></div><div id="stock-levels"></div><p class="caution small">原文观点有时效性，不是当前报价或自动买卖信号。</p></section>
+        <section class="research-section" aria-labelledby="events-title"><div class="section-title"><h2 id="events-title">事件日历</h2><a class="small" href="index.html#event-calendar">全部事件</a></div><div id="stock-events"></div><p class="small muted">美东日期与时间；沿用首页维护的日历，以最终公告为准。</p></section>
+      </div>
+      <section class="research-section" aria-labelledby="timeline-title"><div class="section-title"><h2 id="timeline-title">研究时间线</h2><span id="timeline-count" class="small muted"></span></div><div id="stock-timeline"></div></section>
+    </div>
+    <noscript><p>请启用 JavaScript，或返回<a href="index.html#articles">首页文章列表</a>。</p></noscript>
+  </main>
+  <footer class="research-footer"><span>Lemon 清濛</span><span>仅供信息参考，不构成投资建议。</span><a href="index.html#wechat-sync">东左耳清濛 · 公众号</a></footer>
+</body>
+</html>
