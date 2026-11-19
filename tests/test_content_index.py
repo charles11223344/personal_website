@@ -64,6 +64,16 @@ class ContentIndexTests(unittest.TestCase):
             self.assertGreaterEqual(article["readingMinutes"], 1)
         self.assertTrue(any(item["symbol"] == "SPX" for item in index["symbols"]))
 
+    def test_ant_scenarios_are_not_historical_levels(self):
+        article = parse_article(ROOT / "articles" / "2026-11-18-midweek-nvda-ant-ipo.html")
+        self.assertIn("ANT", article["symbols"])
+        self.assertEqual(len(article["levels"]), 6)
+        self.assertFalse(any(level["symbol"] == "ANT" for level in article["levels"]))
+        nvda = next(level for level in article["levels"] if level["symbol"] == "NVDA")
+        self.assertEqual(nvda["support"], "148.8")
+        self.assertEqual(nvda["resistance"], "155.5—160")
+        self.assertEqual(article["date"], "2026-11-18")
+
 
 if __name__ == "__main__":
     unittest.main()

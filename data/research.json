@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "articleCount": 43,
-  "latestArticleDate": "2026-11-16",
+  "articleCount": 44,
+  "latestArticleDate": "2026-11-18",
   "topics": [
     {
       "id": "ai",
@@ -46,7 +46,7 @@
     {
       "symbol": "NVDA",
       "name": "NVIDIA",
-      "articleCount": 40,
+      "articleCount": 41,
       "aliases": [
         "英伟达",
         "英偉達"
@@ -56,7 +56,7 @@
     {
       "symbol": "MU",
       "name": "Micron Technology",
-      "articleCount": 39,
+      "articleCount": 40,
       "aliases": [
         "美光",
         "Micron"
@@ -66,14 +66,23 @@
     {
       "symbol": "AMD",
       "name": "Advanced Micro Devices",
-      "articleCount": 15,
+      "articleCount": 16,
       "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "ANT",
+      "name": "Anthropic",
+      "articleCount": 7,
+      "aliases": [
+        "Anthropic"
+      ],
       "kind": "stock"
     },
     {
       "symbol": "AVGO",
       "name": "Broadcom",
-      "articleCount": 14,
+      "articleCount": 15,
       "aliases": [
         "博通"
       ],
@@ -89,7 +98,7 @@
     {
       "symbol": "COHR",
       "name": "Coherent",
-      "articleCount": 10,
+      "articleCount": 11,
       "aliases": [],
       "kind": "stock"
     },
@@ -364,7 +373,7 @@
     {
       "symbol": "CRWV",
       "name": "CoreWeave",
-      "articleCount": 5,
+      "articleCount": 6,
       "aliases": [],
       "kind": "stock"
     },
@@ -728,6 +737,65 @@
   ],
   "articles": [
     {
+      "url": "articles/2026-11-18-midweek-nvda-ant-ipo.html",
+      "date": "2026-11-18",
+      "title": "20261118美股周中财报很好，大市没有涨，ANT上市会救场吗？",
+      "description": "清濛的2026年11月18日美股周中总结：NVDA财报与毛利率、ANT首日交易情景、六只股票支撑压力及黄金区间，附11月19日至20日重点事件。",
+      "tags": [
+        "NVDA 财报",
+        "ANT 首日交易",
+        "融资与现金流"
+      ],
+      "topics": [
+        "cashflow",
+        "earnings",
+        "review"
+      ],
+      "symbols": [
+        "AMD",
+        "ANT",
+        "AVGO",
+        "COHR",
+        "CRWV",
+        "MU",
+        "NVDA"
+      ],
+      "readingMinutes": 3,
+      "searchText": "本文按 2026-11-18 公众号原文归档。行情、技术位和涨跌情景保留作者当时观点，不代表实时数据或确定结果；文末日程另附来源，截至 2026-11-18 核对。ANT 发行价与首日预测区间不等于历史技术位。 大家好，又到了吹牛时间。周三标普跌 0.23%，五连跌；纳指反涨 0.42%。NVDA 营收 1158 亿美元、同比翻倍，下一季指引 1300 亿，结果股价跌 2.89%。你说是不是很离谱？ 财报很好，大市为什么没涨？ 其实不矛盾：订单证明需求，股价交易的是未来利润、利率和治理风险。更扎心的是，下季毛利率指引降至 71%—72%，卖得更多，不保证每一美元收入都同样赚钱。 周三晚纳指期货约涨 1%，但亚洲芯片股偏弱。我怀疑周四有机会高开，却不排除高开低走。 新主角：Anthropic / ANT 最重要的新主角是 Anthropic！ANT 已定价 83 美元，周四首次交易，募资约 813 亿美元。 我的预测： 基准： 83—100 美元，相对发行价涨 0%—20%。 强势： 100—115 美元，涨 20%—39%。 弱势： 破发后观察 78 / 70 美元。 注意！没有历史 K 线，83 是发行价，100 和 115 只是预测压力，不是真实技术位。 ANT 也不是免费午餐。公开发行 9.8 亿股，承销商另有超额配售权；此前申报还披露供应商拟认购 260 亿美元股份。 供应商入股、AI 公司再采购算力，这套循环可能加快扩张，却不能当成已经赚到的利润。 近 1.5 万亿美元的估值，需要未来营收增长、推理成本下降与现金流持续兑现才能支撑。若首日直接拉升三成，我不会因为 FOMO 去追；跌破发行价，也不等于自动变便宜。 六只股票：支撑与压力 以下按原文左右两侧价位整理，单位为美元，属于作者当时的观察，不是自动买卖信号。 股票 支撑 压力 清濛的观察 NVDA 148.8 155.5—160 守不住容易再探底。 AMD 520 540 相对强，别追跳空。 AVGO 340 360 ASIC 逻辑看盈利兑现。 MU 687—690 720—750 HBM 强，股价不一定强。 COHR 208 223—234 订单要看现金流。 CRWV 40.6—47 50—55 融资成本仍是雷。 黄金：先看利率，再谈反转 黄金现货约 3730 美元，支撑 3700 / 3650，压力 3780 / 3800。利率不回落，不急着喊反转。 未来两天大事记与判断 大事记：周四初请失业金、费城联储、Walmart 财报、ANT 首日；周五消费者信心终值、月度期权到期。 周四先看 ANT 能否守 83、NVDA 能否收复 155；周五看资金是否愿意继续买半导体。两日都不确认，就把反弹当减压机会。 11 月 19—20 日发布日程与来源 以下为网页补充日程，时间均为美东时间（ET）。预计交易日与实际首笔成交时间分开看，价格情景仍属于作者预测。 11/19 周四，07:00 / 08:00： Walmart 发布 FY2027 Q3 财报，随后召开电话会；对应公司公告中的 06:00 / 07:00 CST。 Walmart 公告 11/19 周四，08:30： 初请与续请失业金，按劳工部每周四常规日程跟踪。 DOL 发布安排 11/19 周四，08:30： 费城联储 11 月制造业调查，观察新订单、就业和价格分项。 费城联储日历 11/19 周四，预计开始交易： Anthropic 已按每股 83 美元定价，预计以 ANT 代码在纳斯达克开始交易；首笔成交时间以交易所安排为准，不把定价当作已完成挂牌。 Anthropic 定价公告 11/20 周五，10:00： 密歇根消费者信心 11 月终值及通胀预期。 密歇根大学发布日程 · 2026 年发布日历 11/20 周五： 标准股票、ETF 与指数期权月度到期；部分 AM 结算指数合约最后交易日在 11/19，须按具体产品规则判断。 Cboe 到期日历 回看 11 月 16 日：下周美股预测，会先跌后涨吗？ 本文仅记录个人研究与市场观察，不构成投资建议。IPO、个股财报与期权到期前后可能大幅波动；预测情景、支撑和压力均不保证发生，请独立判断并控制仓位。",
+      "levels": [
+        {
+          "symbol": "NVDA",
+          "support": "148.8",
+          "resistance": "155.5—160"
+        },
+        {
+          "symbol": "AMD",
+          "support": "520",
+          "resistance": "540"
+        },
+        {
+          "symbol": "AVGO",
+          "support": "340",
+          "resistance": "360"
+        },
+        {
+          "symbol": "MU",
+          "support": "687—690",
+          "resistance": "720—750"
+        },
+        {
+          "symbol": "COHR",
+          "support": "208",
+          "resistance": "223—234"
+        },
+        {
+          "symbol": "CRWV",
+          "support": "40.6—47",
+          "resistance": "50—55"
+        }
+      ]
+    },
+    {
       "url": "articles/2026-11-16-nvda-fed-ipo-week.html",
       "date": "2026-11-16",
       "title": "20261116下周美股预测--会先跌后涨吗？",
@@ -744,6 +812,7 @@
       ],
       "symbols": [
         "AMD",
+        "ANT",
         "AVGO",
         "COHR",
         "MU",
@@ -810,6 +879,7 @@
       ],
       "symbols": [
         "AMD",
+        "ANT",
         "AVGO",
         "COHR",
         "CRWV",
@@ -1164,6 +1234,7 @@
       ],
       "symbols": [
         "AMZN",
+        "ANT",
         "CRDO",
         "GOOGL",
         "MSFT",
@@ -1530,6 +1601,7 @@
       ],
       "symbols": [
         "AMD",
+        "ANT",
         "APLD",
         "COHR",
         "LITE",
@@ -1840,6 +1912,7 @@
         "cashflow"
       ],
       "symbols": [
+        "ANT",
         "GOOGL",
         "MRVL",
         "MU",
@@ -2055,6 +2128,7 @@
         "earnings"
       ],
       "symbols": [
+        "ANT",
         "COHR",
         "LITE",
         "MRVL",

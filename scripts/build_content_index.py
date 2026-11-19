@@ -12,7 +12,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SYMBOL_NAMES = {
-    "NVDA": "NVIDIA", "MU": "Micron Technology", "AMD": "Advanced Micro Devices",
+    "NVDA": "NVIDIA", "MU": "Micron Technology", "AMD": "Advanced Micro Devices", "ANT": "Anthropic",
     "AVGO": "Broadcom", "MRVL": "Marvell", "COHR": "Coherent", "LITE": "Lumentum",
     "NBIS": "Nebius", "SOXL": "Direxion Daily Semiconductor Bull 3X ETF",
     "AAPL": "Apple", "MSFT": "Microsoft", "GOOGL": "Alphabet", "AMZN": "Amazon",
@@ -40,6 +40,7 @@ SYMBOL_NAMES = {
     "NFLX": "Netflix", "WDAY": "Workday", "INTU": "Intuit", "ZM": "Zoom", "LLY": "Eli Lilly",
 }
 ALIASES = {
+    "ANT": ["Anthropic"],
     "NVDA": ["英伟达", "英偉達"], "MU": ["美光", "Micron"], "AVGO": ["博通"],
     "MSFT": ["微软", "微軟"], "GOOGL": ["谷歌"], "AMZN": ["亚马逊", "亞馬遜"],
     "AAPL": ["苹果", "蘋果"], "TSLA": ["特斯拉"], "TSM": ["台积电", "台積電"],
