@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T21:40:56+00:00",
+  "updatedAt": "2026-11-20T22:14:34+00:00",
   "source": "Yahoo Finance chart endpoint",
   "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart",
   "symbols": [
@@ -51,7 +51,7 @@
       "high": 718.29,
       "low": 686.75,
       "close": 689.81,
-      "volume": 135619662,
+      "volume": 148551665,
       "change": -26.06,
       "changePercent": -3.64,
       "history": [
@@ -88,7 +88,7 @@
       "high": 643.28,
       "low": 606.23,
       "close": 608.45,
-      "volume": 126743086,
+      "volume": 133143309,
       "change": -36.59,
       "changePercent": -5.67,
       "history": [
@@ -125,7 +125,7 @@
       "high": 133.84,
       "low": 127.25,
       "close": 127.79,
-      "volume": 121527689,
+      "volume": 123627229,
       "change": -10.64,
       "changePercent": -7.69,
       "history": [
@@ -162,7 +162,7 @@
       "high": 668.99,
       "low": 585.25,
       "close": 594.51,
-      "volume": 58269791,
+      "volume": 58756900,
       "change": -95.93,
       "changePercent": -13.89,
       "history": [
@@ -199,7 +199,7 @@
       "high": 143.73,
       "low": 124.51,
       "close": 125.53,
-      "volume": 609517245,
+      "volume": 620250840,
       "change": -20.45,
       "changePercent": -14.01,
       "history": [
@@ -232,11 +232,11 @@
       "sourceSymbol": "AAPL",
       "currency": "USD",
       "date": "2026-11-20",
-      "open": 352.86,
+      "open": 352.63,
       "high": 354.3,
       "low": 340.56,
       "close": 342.56,
-      "volume": 79470713,
+      "volume": 79821157,
       "change": -6.65,
       "changePercent": -1.9,
       "history": [
@@ -273,7 +273,7 @@
       "high": 503.8,
       "low": 481.03,
       "close": 484.52,
-      "volume": 43381955,
+      "volume": 46432782,
       "change": -13.78,
       "changePercent": -2.77,
       "history": [
@@ -310,7 +310,7 @@
       "high": 283.14,
       "low": 264.22,
       "close": 265.29,
-      "volume": 56799463,
+      "volume": 57134050,
       "change": -7.37,
       "changePercent": -2.7,
       "history": [
@@ -343,11 +343,11 @@
       "sourceSymbol": "AMZN",
       "currency": "USD",
       "date": "2026-11-20",
-      "open": 253.48,
+      "open": 253.41,
       "high": 259.97,
       "low": 245.31,
       "close": 246.82,
-      "volume": 72149866,
+      "volume": 72745203,
       "change": -10.55,
       "changePercent": -4.1,
       "history": [
@@ -384,7 +384,7 @@
       "high": 588.69,
       "low": 558.68,
       "close": 560.84,
-      "volume": 25288756,
+      "volume": 25529385,
       "change": -35.38,
       "changePercent": -5.93,
       "history": [
@@ -421,7 +421,7 @@
       "high": 373.88,
       "low": 344.33,
       "close": 345.82,
-      "volume": 44515609,
+      "volume": 45001860,
       "change": -28.59,
       "changePercent": -7.64,
       "history": [
@@ -454,11 +454,11 @@
       "sourceSymbol": "AMD",
       "currency": "USD",
       "date": "2026-11-20",
-      "open": 471.73,
+      "open": 471.94,
       "high": 474.79,
       "low": 418.76,
       "close": 424.39,
-      "volume": 69315197,
+      "volume": 69698339,
       "change": -64.8,
       "changePercent": -13.25,
       "history": [
@@ -495,7 +495,7 @@
       "high": 342.9,
       "low": 301.02,
       "close": 304.41,
-      "volume": 58471887,
+      "volume": 59372606,
       "change": -42.24,
       "changePercent": -12.19,
       "history": [
@@ -532,7 +532,7 @@
       "high": 152.51,
       "low": 142.28,
       "close": 143.49,
-      "volume": 35937637,
+      "volume": 36497128,
       "change": -10.19,
       "changePercent": -6.63,
       "history": [
@@ -569,7 +569,7 @@
       "high": 343.75,
       "low": 318.48,
       "close": 318.71,
-      "volume": 36397412,
+      "volume": 37072771,
       "change": -33.38,
       "changePercent": -9.48,
       "history": [
