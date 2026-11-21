@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T03:13:55+00:00",
+  "updatedAt": "2026-11-21T20:22:21+00:00",
   "source": "Yahoo Finance chart endpoint",
   "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart",
   "symbols": [
@@ -14,7 +14,7 @@
       "high": 7198.67,
       "low": 6882.66,
       "close": 6910.39,
-      "volume": 4727416000,
+      "volume": 6679680000,
       "change": -265.44,
       "changePercent": -3.7,
       "history": [
