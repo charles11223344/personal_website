@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "articleCount": 44,
-  "latestArticleDate": "2026-11-18",
+  "articleCount": 45,
+  "latestArticleDate": "2026-11-22",
   "topics": [
     {
       "id": "ai",
@@ -46,7 +46,7 @@
     {
       "symbol": "NVDA",
       "name": "NVIDIA",
-      "articleCount": 41,
+      "articleCount": 42,
       "aliases": [
         "英伟达",
         "英偉達"
@@ -56,7 +56,7 @@
     {
       "symbol": "MU",
       "name": "Micron Technology",
-      "articleCount": 40,
+      "articleCount": 41,
       "aliases": [
         "美光",
         "Micron"
@@ -126,7 +126,7 @@
     {
       "symbol": "AAPL",
       "name": "Apple",
-      "articleCount": 6,
+      "articleCount": 7,
       "aliases": [
         "苹果",
         "蘋果"
@@ -136,7 +136,7 @@
     {
       "symbol": "MSFT",
       "name": "Microsoft",
-      "articleCount": 13,
+      "articleCount": 14,
       "aliases": [
         "微软",
         "微軟"
@@ -155,7 +155,7 @@
     {
       "symbol": "AMZN",
       "name": "Amazon",
-      "articleCount": 7,
+      "articleCount": 8,
       "aliases": [
         "亚马逊",
         "亞馬遜"
@@ -188,7 +188,7 @@
     {
       "symbol": "TSM",
       "name": "Taiwan Semiconductor",
-      "articleCount": 7,
+      "articleCount": 8,
       "aliases": [
         "台积电",
         "台積電"
@@ -254,7 +254,7 @@
     {
       "symbol": "STX",
       "name": "Seagate",
-      "articleCount": 2,
+      "articleCount": 3,
       "aliases": [],
       "kind": "stock"
     },
@@ -345,14 +345,14 @@
     {
       "symbol": "APH",
       "name": "Amphenol",
-      "articleCount": 1,
+      "articleCount": 2,
       "aliases": [],
       "kind": "stock"
     },
     {
       "symbol": "TEL",
       "name": "TE Connectivity",
-      "articleCount": 1,
+      "articleCount": 2,
       "aliases": [],
       "kind": "stock"
     },
@@ -520,14 +520,14 @@
     {
       "symbol": "HPE",
       "name": "Hewlett Packard Enterprise",
-      "articleCount": 1,
+      "articleCount": 2,
       "aliases": [],
       "kind": "stock"
     },
     {
       "symbol": "DELL",
       "name": "Dell Technologies",
-      "articleCount": 2,
+      "articleCount": 3,
       "aliases": [],
       "kind": "stock"
     },
@@ -709,7 +709,7 @@
     {
       "symbol": "WDAY",
       "name": "Workday",
-      "articleCount": 1,
+      "articleCount": 2,
       "aliases": [],
       "kind": "stock"
     },
@@ -736,6 +736,73 @@
     }
   ],
   "articles": [
+    {
+      "url": "articles/2026-11-22-thanksgiving-week-pce-gold.html",
+      "date": "2026-11-22",
+      "title": "20261122感恩节前，会继续慢慢见底，还是一直涨回来一半以上呢？",
+      "description": "清濛的2026年11月22日感恩节前美股展望：夜盘反弹是否可信、PCE与长债压力、AI服务器财报，以及NVDA、MSFT、AAPL、DELL、MU、TSM、AMZN和黄金的支撑压力。",
+      "tags": [
+        "PCE 与通胀",
+        "AI 服务器财报",
+        "感恩节流动性"
+      ],
+      "topics": [
+        "macro",
+        "earnings",
+        "cashflow",
+        "review"
+      ],
+      "symbols": [
+        "AAPL",
+        "AMZN",
+        "DELL",
+        "HPE",
+        "MSFT",
+        "MU",
+        "NVDA",
+        "TSM",
+        "WDAY"
+      ],
+      "readingMinutes": 4,
+      "searchText": "夜盘大涨不代表开盘承接。11月23日PMI初值，盘后HPE财报。11月24日ADP周度就业、消费者信心和Richmond Fed制造业指数，盘后DELL、HP、Workday财报。11月25日PCE、核心PCE、个人收入支出、Q3 GDP修正值、耐用品订单、初请失业金和美联储褐皮书。11月26日感恩节休市。11月27日Black Friday交易至13点。NVDA支撑124—125和120，压力135和146。MSFT支撑475—480，压力500和510。AAPL支撑338—340，压力355和361。DELL支撑278和260，压力300和330。MU支撑585和550，压力690和750。TSM支撑300，压力335和352。AMZN支撑240—245，压力260和270。黄金支撑3500—3515和3450，压力3600—3625和3685。",
+      "levels": [
+        {
+          "symbol": "NVDA",
+          "support": "124—125 / 120",
+          "resistance": "135 / 146"
+        },
+        {
+          "symbol": "MSFT",
+          "support": "475—480",
+          "resistance": "500 / 510"
+        },
+        {
+          "symbol": "AAPL",
+          "support": "338—340",
+          "resistance": "355 / 361"
+        },
+        {
+          "symbol": "DELL",
+          "support": "278 / 260",
+          "resistance": "300 / 330"
+        },
+        {
+          "symbol": "MU",
+          "support": "585 / 550",
+          "resistance": "690 / 750"
+        },
+        {
+          "symbol": "TSM",
+          "support": "300",
+          "resistance": "335 / 352"
+        },
+        {
+          "symbol": "AMZN",
+          "support": "240—245",
+          "resistance": "260 / 270"
+        }
+      ]
+    },
     {
       "url": "articles/2026-11-18-midweek-nvda-ant-ipo.html",
       "date": "2026-11-18",
