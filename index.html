@@ -46,7 +46,7 @@
   <link rel="preload" href="assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="modern.css" />
+  <link rel="stylesheet" href="modern.css?v=20261124b" />
 </head>
 <body>
   <div class="ambient" aria-hidden="true">
@@ -150,7 +150,7 @@
           <div>
             <span class="kicker">Latest Notes</span>
             <h2>最新文章</h2>
-            <p>最近十篇市场观察，按发布时间排列。</p>
+            <p>最近七篇市场观察，按发布时间排列，更多内容见文章归档。</p>
           </div>
           <form class="article-search" action="archive.html" method="get" role="search">
             <label class="sr-only" for="home-search">搜索文章或股票代码</label>
@@ -661,6 +661,9 @@
             </div>
           </article>
         </div>
+        <div class="articles-more">
+          <a class="button secondary" href="archive.html">查看全部文章归档 &rarr;</a>
+        </div>
       </div>
     </section>
 
@@ -690,7 +693,6 @@
           <div class="wechat-qr-block">
             <strong>扫码关注公众号：东左耳清濛</strong>
             <img src="qrcode.jpg" alt="东左耳清濛公众号二维码" onerror="this.closest('.wechat-qr-block').classList.add('missing')" />
-            <span class="qr-fallback">请把二维码图片保存到项目根目录。</span>
           </div>
           <h3>订阅与留言</h3>
           <p>想看某家公司、财报或行业线，可以直接留言。我会优先整理成文章或复盘。</p>
