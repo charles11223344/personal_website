@@ -584,6 +584,17 @@ body {
   gap: 16px;
 }
 
+/* Homepage shows the featured card plus 6 (two full rows); the full list lives on archive.html. */
+#articles .article-grid > .article-card:nth-child(n + 8) {
+  display: none;
+}
+
+.articles-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
+
 .article-card {
   position: relative;
   display: flex;
