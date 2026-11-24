@@ -143,6 +143,11 @@ def table_levels(article: Node) -> list[dict]:
     return levels
 
 
+def clean_title(title: str) -> str:
+    """Drop the yyyymmdd prefix copied from WeChat titles; the date is shown separately."""
+    return re.sub(r"^\d{8}\s*", "", title).replace("--", "：").strip()
+
+
 def parse_article(path: Path) -> dict:
     parser = DocumentParser()
     parser.feed(path.read_text(encoding="utf-8"))
@@ -151,8 +156,13 @@ def parse_article(path: Path) -> dict:
     if article is None:
         raise ValueError(f"Missing article element: {path.name}")
     title_node = next((node for node in nodes if node.tag == "title"), None)
-    title = title_node.text().rsplit(" | ", 1)[0] if title_node else path.stem
+    title = clean_title(title_node.text().rsplit(" | ", 1)[0] if title_node else path.stem)
     article_date = date.fromisoformat(path.name[:10]).isoformat()
+    raw_html = path.read_text(encoding="utf-8")
+    category_match = re.search(r"\d{4}-\d{2}-\d{2} · ([^<]+)<", raw_html)
+    category = compact(category_match.group(1)) if category_match else ""
+    weekday = date.fromisoformat(article_date).weekday()
+    kind = "周中总结" if "周中" in category or (not category and 1 <= weekday <= 3) or "48小时" in category else "周度剧本"
     description = next((node.attrs.get("content", "") for node in nodes
                         if node.tag == "meta" and node.attrs.get("name") == "description"), "")
     meta = next((node for node in nodes if node.has_class("meta")), Node("div"))
@@ -170,6 +180,7 @@ def parse_article(path: Path) -> dict:
     word_count = len(re.findall(r"[A-Za-z0-9]+", text))
     return {
         "url": "articles/" + path.name, "date": article_date, "title": title,
+        "category": category, "kind": kind,
         "description": compact(description) or text[:140], "tags": tags,
         "topics": topic_ids, "symbols": find_symbols(text + " " + headline),
         "readingMinutes": max(1, math.ceil(chinese_count / 450 + word_count / 220)),

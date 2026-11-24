@@ -73,10 +73,6 @@
       if (!article || card.querySelector(".article-meta")) return;
       const meta = document.createElement("div");
       meta.className = "article-meta";
-      const date = document.createElement("time");
-      date.dateTime = article.date;
-      date.textContent = article.date;
-      meta.append(date);
       if (article.readingMinutes) {
         const minutes = document.createElement("span");
         minutes.textContent = "约 " + article.readingMinutes + " 分钟";
