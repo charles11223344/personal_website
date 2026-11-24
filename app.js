@@ -1569,53 +1569,158 @@ function displayWeather(data) {
   detailEl.textContent = `湿度 ${humidity}% · 风速 ${wind} km/h`;
 }
 
-fetch(
-  "https://api.open-meteo.com/v1/forecast?latitude=43.6532&longitude=-79.3832&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&timezone=America%2FToronto",
-)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    displayWeather(data);
+function fetchJsonWithTimeout(url, timeoutMs) {
+  const controller = typeof AbortController === "function" ? new AbortController() : null;
+  const timer = setTimeout(function () {
+    if (controller) controller.abort();
+  }, timeoutMs || 6000);
+  return fetch(url, controller ? { signal: controller.signal } : undefined)
+    .then(function (response) {
+      if (!response.ok) throw new Error("Request failed: " + response.status);
+      return response.json();
+    })
+    .finally(function () {
+      clearTimeout(timer);
+    });
+}
+
+function tryInOrder(loaders) {
+  return loaders.reduce(function (chain, loader) {
+    return chain.catch(loader);
+  }, Promise.reject(new Error("start")));
+}
+
+const WEATHER_CACHE_KEY = "lemon-weather-cache";
+const FX_CACHE_KEY = "lemon-fx-cache";
+
+function readWidgetCache(key) {
+  try {
+    return JSON.parse(localStorage.getItem(key) || "null");
+  } catch (error) {
+    return null;
+  }
+}
+
+function writeWidgetCache(key, value) {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch (error) {}
+}
+
+function renderWeather(weather, isCached) {
+  const currentEl = document.getElementById("weather-current");
+  const detailEl = document.getElementById("weather-detail");
+  if (!currentEl || !detailEl) return;
+  currentEl.textContent = `${weather.temp}°C · ${weather.desc}`;
+  detailEl.textContent = `湿度 ${weather.humidity}% · 风速 ${weather.wind} km/h${isCached ? " · 缓存" : ""}`;
+}
+
+function loadWeatherFromOpenMeteo() {
+  return fetchJsonWithTimeout(
+    "https://api.open-meteo.com/v1/forecast?latitude=43.6532&longitude=-79.3832&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&timezone=America%2FToronto",
+  ).then(function (data) {
+    const current = data && data.current;
+    if (!current) throw new Error("Open-Meteo data unavailable");
+    return {
+      temp: Math.round(current.temperature_2m),
+      desc: weatherDescriptions[current.weather_code] || "天气更新",
+      humidity: Math.round(current.relative_humidity_2m),
+      wind: Math.round(current.wind_speed_10m),
+    };
+  });
+}
+
+function loadWeatherFromWttr() {
+  return fetchJsonWithTimeout("https://wttr.in/Toronto?format=j1&lang=zh").then(function (data) {
+    const current = data && data.current_condition && data.current_condition[0];
+    if (!current) throw new Error("wttr.in data unavailable");
+    const desc =
+      (current.lang_zh && current.lang_zh[0] && current.lang_zh[0].value) ||
+      (current.weatherDesc && current.weatherDesc[0] && current.weatherDesc[0].value) ||
+      "天气更新";
+    return {
+      temp: Math.round(Number(current.temp_C)),
+      desc: desc.trim(),
+      humidity: Math.round(Number(current.humidity)),
+      wind: Math.round(Number(current.windspeedKmph)),
+    };
+  });
+}
+
+const cachedWeather = readWidgetCache(WEATHER_CACHE_KEY);
+if (cachedWeather) renderWeather(cachedWeather, true);
+
+tryInOrder([loadWeatherFromOpenMeteo, loadWeatherFromWttr])
+  .then(function (weather) {
+    renderWeather(weather, false);
+    writeWidgetCache(WEATHER_CACHE_KEY, weather);
   })
   .catch(function () {
+    if (cachedWeather) return;
     const currentEl = document.getElementById("weather-current");
     const detailEl = document.getElementById("weather-detail");
     if (currentEl) currentEl.textContent = "天气不可用";
     if (detailEl) detailEl.textContent = "稍后再试";
   });
 
-function displayExchangeRates(data) {
+function renderExchangeRates(fx, isCached) {
   const usdCadEl = document.getElementById("usd-cad-rate");
   const usdCadDetailEl = document.getElementById("usd-cad-detail");
   const cadCnyEl = document.getElementById("cad-cny-rate");
   const cnyCadDetailEl = document.getElementById("cny-cad-detail");
-  const rates = data && data.rates;
-  if (!rates || !rates.CAD || !rates.CNY) throw new Error("Exchange rates unavailable");
+  const cadCny = fx.usdCny / fx.usdCad;
+  const cnyCad = fx.usdCad / fx.usdCny;
 
-  const usdCad = Number(rates.CAD);
-  const usdCny = Number(rates.CNY);
-  const cadCny = usdCny / usdCad;
-  const cnyCad = usdCad / usdCny;
-  const updated = data.time_last_update_utc
-    ? new Date(data.time_last_update_utc).toLocaleDateString("zh-CN", { month: "2-digit", day: "2-digit" })
-    : "实时汇率";
-
-  if (usdCadEl) usdCadEl.textContent = `1 USD = ${usdCad.toFixed(4)} CAD`;
-  if (usdCadDetailEl) usdCadDetailEl.textContent = `更新 ${updated}`;
+  if (usdCadEl) usdCadEl.textContent = `1 USD = ${fx.usdCad.toFixed(4)} CAD`;
+  if (usdCadDetailEl) usdCadDetailEl.textContent = `更新 ${fx.updated}${isCached ? " · 缓存" : ""}`;
   if (cadCnyEl) cadCnyEl.textContent = `1 CAD = ${cadCny.toFixed(4)} CNY`;
   if (cnyCadDetailEl) cnyCadDetailEl.textContent = `1 CNY = ${cnyCad.toFixed(4)} CAD`;
 }
 
-fetch("https://open.er-api.com/v6/latest/USD")
-  .then(function (response) {
-    if (!response.ok) throw new Error("Exchange rate request failed");
-    return response.json();
-  })
-  .then(function (data) {
-    displayExchangeRates(data);
+function formatFxDate(value) {
+  const date = value ? new Date(value) : null;
+  return date && !Number.isNaN(date.getTime())
+    ? date.toLocaleDateString("zh-CN", { month: "2-digit", day: "2-digit" })
+    : "实时汇率";
+}
+
+function toFxRates(usdCad, usdCny, updated) {
+  const cad = Number(usdCad);
+  const cny = Number(usdCny);
+  if (!(cad > 0) || !(cny > 0)) throw new Error("Exchange rates unavailable");
+  return { usdCad: cad, usdCny: cny, updated: formatFxDate(updated) };
+}
+
+function loadFxFromErApi() {
+  return fetchJsonWithTimeout("https://open.er-api.com/v6/latest/USD").then(function (data) {
+    const rates = data && data.rates;
+    return toFxRates(rates && rates.CAD, rates && rates.CNY, data && data.time_last_update_utc);
+  });
+}
+
+function loadFxFromCurrencyApi(url) {
+  return function () {
+    return fetchJsonWithTimeout(url).then(function (data) {
+      const usd = data && data.usd;
+      return toFxRates(usd && usd.cad, usd && usd.cny, data && data.date);
+    });
+  };
+}
+
+const cachedFx = readWidgetCache(FX_CACHE_KEY);
+if (cachedFx) renderExchangeRates(cachedFx, true);
+
+tryInOrder([
+  loadFxFromErApi,
+  loadFxFromCurrencyApi("https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.min.json"),
+  loadFxFromCurrencyApi("https://latest.currency-api.pages.dev/v1/currencies/usd.min.json"),
+])
+  .then(function (fx) {
+    renderExchangeRates(fx, false);
+    writeWidgetCache(FX_CACHE_KEY, fx);
   })
   .catch(function () {
+    if (cachedFx) return;
     const usdCadEl = document.getElementById("usd-cad-rate");
     const usdCadDetailEl = document.getElementById("usd-cad-detail");
     const cadCnyEl = document.getElementById("cad-cny-rate");

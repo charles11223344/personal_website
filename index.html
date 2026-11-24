@@ -3,12 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Lemon 美股手记，记录美股市场观察、财报拆解、投资复盘和视频笔记。" />
-  <title>Lemon 美股手记 | 美股 Vlog 与投资笔记</title>
+  <meta name="description" content="Lemon 美股手记：每周两更的美股预测与周中复盘，覆盖 NVDA、MU、AMD 等 AI 科技股支撑压力位、财报与宏观日历、风险雷达和期权活动。公众号「东左耳清濛」网页归档。" />
+  <meta name="keywords" content="美股,美股预测,美股复盘,NVDA,AI股票,支撑压力,财报日历,期权,东左耳清濛,Lemon美股手记" />
+  <meta name="author" content="Charles · 东左耳清濛" />
+  <meta name="theme-color" content="#070b12" />
+  <meta name="color-scheme" content="dark" />
+  <title>Lemon 美股手记 | 每周美股预测、AI 科技股复盘与数据看板</title>
+  <link rel="canonical" href="https://ccccccharles.dpdns.org/" />
+  <link rel="icon" type="image/png" href="lemon.png" />
+  <link rel="apple-touch-icon" href="lemon.png" />
+  <link rel="alternate" type="application/rss+xml" title="Lemon 美股手记 RSS" href="https://ccccccharles.dpdns.org/feed.xml" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lemon 美股手记" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:url" content="https://ccccccharles.dpdns.org/" />
+  <meta property="og:title" content="Lemon 美股手记 | 每周美股预测与 AI 科技股复盘" />
+  <meta property="og:description" content="每周两更：下周美股展望 + 周中总结，附关键股票支撑压力位、财报与宏观日历、风险雷达。" />
+  <meta property="og:image" content="https://ccccccharles.dpdns.org/market-vlog-hero.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lemon 美股手记 | 每周美股预测与 AI 科技股复盘" />
+  <meta name="twitter:description" content="每周两更：下周美股展望 + 周中总结，附关键股票支撑压力位、财报与宏观日历、风险雷达。" />
+  <meta name="twitter:image" content="https://ccccccharles.dpdns.org/market-vlog-hero.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Lemon 美股手记",
+    "alternateName": "东左耳清濛",
+    "url": "https://ccccccharles.dpdns.org/",
+    "inLanguage": "zh-CN",
+    "description": "每周美股预测、AI 科技股复盘、支撑压力位与市场数据看板。",
+    "author": { "@type": "Person", "name": "Charles", "email": "mailto:charlesdataaws@gmail.com" },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://ccccccharles.dpdns.org/archive.html?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <link rel="alternate" type="application/rss+xml" title="Lemon 美股手记 RSS" href="feed.xml" />
   <link rel="stylesheet" href="assets/fonts/fonts.css" />
   <link rel="preload" href="assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="modern.css" />
 </head>
 <body>
   <div class="ambient" aria-hidden="true">
@@ -27,15 +65,12 @@
         </span>
       </a>
       <nav class="nav-links" aria-label="主导航">
-        <a href="#options-flow">期权雷达</a>
-        <a href="#stocks">美股数据</a>
-        <a href="#risk-radar">风险雷达</a>
-        <a href="#event-calendar">事件日历</a>
+        <a href="#articles">最新文章</a>
         <a href="archive.html">文章归档</a>
-        <a href="#vlog">Vlog</a>
-        <a href="#wechat-sync">公众号同步</a>
-        <a href="#bitcoin">比特币数据</a>
-        <a href="#contact">联系</a>
+        <a href="stock.html?symbol=NVDA">股票专题</a>
+        <a href="#dashboard">数据看板</a>
+        <a href="#event-calendar">事件日历</a>
+        <a class="nav-cta" href="#wechat-sync">关注公众号</a>
       </nav>
     </div>
   </header>
@@ -43,23 +78,49 @@
   <main>
     <section class="hero" id="home">
       <div class="hero-bg" aria-hidden="true"></div>
-      <div class="hero-scan" aria-hidden="true"></div>
-      <div class="hero-inner">
-        <div class="hero-brand" aria-label="Lemon 品牌">
-          <img src="lemon.png" alt="Lemon logo" />
-          <span>Lemon Market Notes</span>
+      <div class="hero-inner hero-grid">
+        <div class="hero-main">
+          <a class="hero-pill" href="#articles">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            <span id="hero-pill-text">每周两更 · 下周展望 + 周中总结</span>
+          </a>
+          <p class="eyebrow" aria-label="US Equities · Earnings · Vlog Notes">
+            <span id="typed-eyebrow" aria-hidden="true">US Equities · Earnings · Vlog Notes</span><span class="caret" aria-hidden="true"></span>
+          </p>
+          <h1><span class="h1-line">看懂下周美股，</span><span class="h1-line">从<em>一张清单</em>开始。</span></h1>
+          <p class="hero-copy">
+            每周两篇：周末写下周剧本，周中做复盘。把 NVDA、MU、AMD 等 AI 科技股的支撑压力位、财报与宏观事件、风险信号整理在同一个地方，免费阅读。
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" id="hero-latest-link" href="articles/2026-11-16-nvda-fed-ipo-week.html">阅读最新一期</a>
+            <a class="button secondary" href="#wechat-sync">关注公众号</a>
+            <button class="button ghost" type="button" id="share-site" data-share-title="Lemon 美股手记 | 每周美股预测与 AI 科技股复盘">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+              <span>分享给朋友</span>
+            </button>
+          </div>
+          <dl class="hero-stats">
+            <div><dt>已发布文章</dt><dd><span id="stat-articles">43</span><small>篇</small></dd></div>
+            <div><dt>追踪股票</dt><dd><span id="stat-symbols">16</span><small>只</small></dd></div>
+            <div><dt>更新频率</dt><dd>2<small>次 / 周</small></dd></div>
+          </dl>
         </div>
-        <p class="eyebrow" aria-label="US Equities · Earnings · Vlog Notes">
-          <span id="typed-eyebrow" aria-hidden="true">US Equities · Earnings · Vlog Notes</span><span class="caret" aria-hidden="true"></span>
-        </p>
-        <h1><span class="h1-line">把美股研究写成</span><span class="h1-line">长期可追踪的手记。</span></h1>
-        <p class="hero-copy">
-          从财报、估值、行业叙事到交易复盘，这里同步整理我在微信公众号里的美股文章，也会沉淀成更适合网页阅读的视频脚本和研究记录。
-        </p>
-        <div class="hero-actions">
-          <a class="button primary" href="archive.html">查看文章归档</a>
-          <a class="button secondary" href="#wechat-sync">同步公众号内容</a>
-        </div>
+
+        <aside class="hero-feature" aria-labelledby="hero-feature-title">
+          <div class="hero-feature-top">
+            <span class="kicker">最新一期</span>
+            <time id="hero-feature-date" datetime="2026-11-16">2026-11-16</time>
+          </div>
+          <h2 id="hero-feature-title"><a id="hero-feature-link" href="articles/2026-11-16-nvda-fed-ipo-week.html">下周美股预测：会先跌后涨吗？</a></h2>
+          <p id="hero-feature-desc">利率回升下观察科技股融资链，整理七只股票与黄金技术位，聚焦 NVDA 财报、Fed 纪要及 Anthropic 预计挂牌。</p>
+          <ul class="hero-feature-levels" id="hero-feature-levels" aria-label="本期关键技术位">
+            <li><strong>NVDA</strong><span>支撑 158.4 / 150.5</span><span>压力 165.9 / 167.1</span></li>
+          </ul>
+          <div class="hero-feature-foot">
+            <span id="hero-feature-meta">约 4 分钟阅读</span>
+            <a href="archive.html">全部文章 &rarr;</a>
+          </div>
+        </aside>
       </div>
     </section>
 
@@ -83,322 +144,19 @@
       </div>
     </section>
 
-    <section class="section" id="risk-radar">
-      <div class="section-inner">
-        <div class="section-head">
-          <h2>风险雷达</h2>
-          <p>把 VIX、10年期美债、美元指数、油价和黄金放在同一屏，用来判断 AI 硬件和成长股的外部压力。</p>
-        </div>
-        <div class="risk-radar">
-                  <div class="risk-radar-head">
-                    <div>
-                      <strong>宏观压力面板</strong>
-                      <p>VIX 看波动，10Y 看估值压力，DXY 看美元流动性，WTI 和 Gold 看通胀与避险。</p>
-                    </div>
-                    <div class="risk-radar-status">
-                      <div id="risk-updated">等待风险数据</div>
-                      <div id="risk-source">Live quote endpoint</div>
-                    </div>
-                  </div>
-                  <div class="risk-summary" aria-live="polite">
-                    <div>
-                      <strong id="risk-summary-title">等待风险雷达判断</strong>
-                      <span id="risk-summary-detail">VIX、10Y、DXY、WTI、GOLD 加载后自动生成。</span>
-                    </div>
-                    <span class="risk-badge" id="risk-summary-badge">Loading</span>
-                  </div>
-          
-                  <!-- SVG Radar Visualization -->
-                  <div class="radar-wrapper" id="radar-wrapper" role="img" aria-label="宏观风险雷达扫描图">
-                    <svg id="radar-svg" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
-                      <defs>
-                        <!-- Radar sweep gradient -->
-                        <linearGradient id="sweep-gradient" x1="0" y1="0" x2="1" y2="0">
-                          <stop offset="0%" stop-color="var(--neon-cyan)" stop-opacity="0"/>
-                          <stop offset="50%" stop-color="var(--neon-cyan)" stop-opacity="0.6"/>
-                          <stop offset="100%" stop-color="var(--neon-cyan)" stop-opacity="0"/>
-                        </linearGradient>
-                        <!-- Grid circles gradient -->
-                        <radialGradient id="grid-gradient" cx="50%" cy="50%" r="50%">
-                          <stop offset="0%" stop-color="var(--neon-cyan)" stop-opacity="0.08"/>
-                          <stop offset="100%" stop-color="var(--neon-cyan)" stop-opacity="0"/>
-                        </radialGradient>
-                        <!-- Data polygon gradient -->
-                        <radialGradient id="data-gradient" cx="50%" cy="50%" r="50%">
-                          <stop offset="0%" stop-color="var(--neon-green)" stop-opacity="0.25"/>
-                          <stop offset="100%" stop-color="var(--neon-cyan)" stop-opacity="0.05"/>
-                        </radialGradient>
-                        <!-- Glow filter -->
-                        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                          <feGaussianBlur stdDeviation="2" result="blur"/>
-                          <feMerge>
-                            <feMergeNode in="blur"/>
-                            <feMergeNode in="SourceGraphic"/>
-                          </feMerge>
-                        </filter>
-                        <!-- Pulse filter for current values -->
-                        <filter id="pulse" x="-50%" y="-50%" width="200%" height="200%">
-                          <feGaussianBlur stdDeviation="4" result="blur"/>
-                          <feMerge>
-                            <feMergeNode in="blur"/>
-                            <feMergeNode in="SourceGraphic"/>
-                          </feMerge>
-                        </filter>
-                      </defs>
-              
-                      <!-- Background grid circles -->
-                      <g id="radar-grid" class="radar-grid">
-                        <circle class="grid-circle" cx="200" cy="200" r="160" />
-                        <circle class="grid-circle" cx="200" cy="200" r="120" />
-                        <circle class="grid-circle" cx="200" cy="200" r="80" />
-                        <circle class="grid-circle" cx="200" cy="200" r="40" />
-                      </g>
-              
-                      <!-- Axis lines -->
-                      <g id="radar-axes" class="radar-axes"></g>
-              
-                      <!-- Axis labels -->
-                      <g id="radar-labels" class="radar-labels"></g>
-              
-                      <!-- Historical trail (previous readings) -->
-                      <g id="radar-trail" class="radar-trail"></g>
-              
-                      <!-- Current data polygon -->
-                      <polygon id="radar-polygon" class="radar-polygon" points="" />
-              
-                      <!-- Current data points -->
-                      <g id="radar-points" class="radar-points"></g>
-              
-                      <!-- Sweep line -->
-                      <g id="radar-sweep" class="radar-sweep">
-                        <path id="sweep-path" d="" />
-                      </g>
-              
-                      <!-- Center marker -->
-                      <circle id="radar-center" cx="200" cy="200" r="6" class="radar-center" />
-                    </svg>
-            
-                    <!-- Legend / Value readout -->
-                    <div id="radar-legend" class="radar-legend" aria-live="polite"></div>
-                  </div>
-          
-                  <!-- Keep cards as detailed view (collapsible) -->
-                  <details class="risk-cards-detail" id="risk-cards-detail">
-                    <summary class="risk-cards-toggle">
-                      <span>展开详细数值卡片</span>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                      </svg>
-                    </summary>
-                    <div class="risk-grid" id="risk-grid" aria-live="polite">
-                      <article class="risk-card">
-                        <div class="risk-card-top">
-                          <strong>Loading</strong>
-                          <span>Risk</span>
-                        </div>
-                        <p class="risk-name">正在加载风险雷达...</p>
-                        <div class="risk-value">--</div>
-                        <div class="risk-change flat">等待更新</div>
-                      </article>
-                    </div>
-                  </details>
-                </div>
-      </div>
-    </section>
-
-    <section class="section alt" id="event-calendar">
-      <div class="section-inner">
-        <div class="section-head">
-          <h2>财报与宏观日历</h2>
-          <p>把会影响美股定价的财报、通胀、就业和 Fed 事件放在同一张清单里，写文章前先看事件风险。</p>
-        </div>
-        <div class="calendar-board">
-          <div class="calendar-head">
-            <div>
-              <strong>11/23 - 11/27 感恩节前 PCE 与 AI 服务器验货周</strong>
-              <p>周三是 PCE、GDP 与褐皮书共同验货；周一 HPE、周二 DELL/HP/Workday 财报。感恩节休市，周五 Black Friday 提前收盘。时间均为美东时间（ET）。<a href="articles/2026-11-22-thanksgiving-week-pce-gold.html#event-sources">查看日程来源</a></p>
-            </div>
-            <div class="calendar-status" id="calendar-status">等待日历渲染</div>
-          </div>
-          <div class="calendar-focus-grid" aria-label="未来两天三大观察重点">
-                      <div class="calendar-focus-card">
-                        <span>Macro Gate</span>
-                        <strong>11/25 PCE / GDP / 褐皮书</strong>
-                        <p>周三 08:30 公布 PCE、GDP 修正值和耐用品订单，14:00 看褐皮书。若通胀偏热，10Y 对科技估值仍会形成压力。</p>
-                      </div>
-                      <div class="calendar-focus-card">
-                        <span>Earnings Gate</span>
-                        <strong>11/23 HPE / 11/24 DELL、HP、WDAY</strong>
-                        <p>重点看 AI 服务器交付、毛利率、库存、现金流和订单能否兑现，而不只看盘后拉升。</p>
-                      </div>
-                      <div class="calendar-focus-card">
-                        <span>Liquidity Gate</span>
-                        <strong>11/26 休市 / 11/27 提前收盘</strong>
-                        <p>感恩节美股全天休市；Black Friday 交易至 13:00 ET，低流动性下大单更容易制造极端跳动。</p>
-                      </div>
-                    </div>
-                    <div class="calendar-radar-wrapper">
-                                          <svg id="calendar-radar-svg" viewBox="0 0 800 320" aria-hidden="true">
-                                            <defs>
-                                              <linearGradient id="cal-gradient-macro" x1="0%" y1="0%" x2="100%" y2="0%">
-                                                <stop offset="0%" stop-color="var(--neon-red)" stop-opacity="0.2" />
-                                                <stop offset="100%" stop-color="var(--neon-red)" stop-opacity="0.05" />
-                                              </linearGradient>
-                                              <linearGradient id="cal-gradient-earnings" x1="0%" y1="0%" x2="100%" y2="0%">
-                                                <stop offset="0%" stop-color="var(--neon-cyan)" stop-opacity="0.2" />
-                                                <stop offset="100%" stop-color="var(--neon-cyan)" stop-opacity="0.05" />
-                                              </linearGradient>
-                                              <linearGradient id="cal-gradient-liquidity" x1="0%" y1="0%" x2="100%" y2="0%">
-                                                <stop offset="0%" stop-color="var(--neon-amber)" stop-opacity="0.2" />
-                                                <stop offset="100%" stop-color="var(--neon-amber)" stop-opacity="0.05" />
-                                              </linearGradient>
-                                            </defs>
-
-                                            <!-- Grid lines (vertical = days, horizontal = type rows) -->
-                                            <g id="calendar-radar-grid" class="calendar-radar-grid"></g>
-
-                                            <!-- Axis (date labels at top) -->
-                                            <g id="calendar-radar-axis" class="calendar-radar-axis"></g>
-
-                                            <!-- Today vertical line -->
-                                            <line id="calendar-radar-today" class="calendar-radar-today-line" x1="0" y1="0" x2="0" y2="320" />
-
-                                            <!-- Event markers -->
-                                            <g id="calendar-radar-events" class="calendar-radar-events"></g>
-                                          </svg>
-                                        </div>
-                                        <div id="calendar-radar-legend" class="calendar-radar-legend"></div>
-                    <div class="calendar-grid" id="calendar-grid" aria-live="polite">
-            <article class="event-card">
-              <div class="event-topline">
-                <span class="event-date">Loading</span>
-                <span class="event-type">Calendar</span>
-              </div>
-              <h3>正在加载事件日历...</h3>
-              <p>宏观和财报事件会显示在这里。</p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section alt" id="stocks">
-      <div class="section-inner">
-        <div class="section-head">
-          <h2>每日美股数据</h2>
-          <p>每天美股收盘后自动更新一组常看的指数、ETF 和主流个股，方便写文章和做视频复盘时快速引用。</p>
-        </div>
-        <div class="stock-board">
-          <div class="stock-toolbar">
-            <div>
-              <strong>观察列表</strong>
-              <p>默认覆盖 SPX、SPY、QQQ、SPCX、MU、NVDA、AAPL、MSFT、GOOGL、AMZN、META、TSLA、AMD、AVGO、PLTR、TSM。</p>
-            </div>
-            <div class="stock-status">
-              <div id="stocks-updated">等待数据更新</div>
-              <div id="stocks-source">data/stocks.json</div>
-              <div id="stocks-live-status" class="stock-live-status">实时刷新待配置</div>
-            </div>
-          </div>
-          <div class="stock-grid" id="stock-grid" aria-live="polite">
-            <article class="stock-card">
-              <div class="stock-symbol">
-                <strong>Loading</strong>
-                <span>Daily</span>
-              </div>
-              <p class="stock-name">正在加载美股数据...</p>
-              <div class="stock-price">--</div>
-              <div class="stock-change flat">等待更新</div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="options-flow">
-      <div class="section-inner">
-        <div class="section-head">
-          <h2>关注股票期权活动雷达</h2>
-          <p>先找 Call 活跃且成交异常的候选，再结合股价趋势和基本面确认。雷达只决定观察顺序，不直接决定买入。</p>
-        </div>
-        <div class="flow-board">
-          <div class="flow-toolbar">
-            <div>
-              <strong>今日优先观察榜</strong>
-              <p id="flow-source-note">延迟期权统计不识别主动买卖，Call 成交多也可能来自卖出 Call。</p>
-            </div>
-            <div class="flow-status" id="flow-status">等待最新期权数据</div>
-          </div>
-          <div class="flow-kpis" id="flow-kpis">
-                      <div class="flow-kpi"><span>优先观察</span><strong>--</strong></div>
-                      <div class="flow-kpi"><span>Call 偏强</span><strong>--</strong></div>
-                      <div class="flow-kpi"><span>Put 偏强</span><strong>--</strong></div>
-                      <div class="flow-kpi"><span>整体 Call / Put</span><strong>--</strong></div>
-                    </div>
-                    <div class="flow-radar-wrapper">
-                                          <svg id="flow-radar-svg" viewBox="0 0 400 400" aria-hidden="true">
-                                            <!-- Gradient for data polygon -->
-                                            <defs>
-                                              <linearGradient id="flow-data-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                                <stop offset="0%" stop-color="var(--neon-green)" stop-opacity="0.2" />
-                                                <stop offset="100%" stop-color="var(--neon-cyan)" stop-opacity="0.1" />
-                                              </linearGradient>
-                                              <linearGradient id="flow-sweep-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                                <stop offset="0%" stop-color="var(--neon-cyan)" stop-opacity="0" />
-                                                <stop offset="50%" stop-color="var(--neon-cyan)" stop-opacity="0.6" />
-                                                <stop offset="100%" stop-color="var(--neon-cyan)" stop-opacity="0" />
-                                              </linearGradient>
-                                            </defs>
-
-                                            <!-- Grid circles (concentric rings) -->
-                                            <g id="flow-radar-grid" class="flow-radar-grid">
-                                              <circle cx="200" cy="200" r="40" class="flow-grid-circle" />
-                                              <circle cx="200" cy="200" r="80" class="flow-grid-circle" />
-                                              <circle cx="200" cy="200" r="120" class="flow-grid-circle" />
-                                              <circle cx="200" cy="200" r="160" class="flow-grid-circle" />
-                                            </g>
-
-                                            <!-- Axis lines -->
-                                            <g id="flow-radar-axes" class="flow-radar-axes"></g>
-
-                                            <!-- Axis labels -->
-                                            <g id="flow-radar-labels" class="flow-radar-labels"></g>
-
-                                            <!-- Historical trail (previous readings) -->
-                                            <g id="flow-radar-trail" class="flow-radar-trail"></g>
-
-                                            <!-- Current data polygon -->
-                                            <polygon id="flow-radar-polygon" class="flow-radar-polygon" points="" />
-
-                                            <!-- Current data points -->
-                                            <g id="flow-radar-points" class="flow-radar-points"></g>
-
-                                            <!-- Sweep line -->
-                                            <g id="flow-radar-sweep" class="flow-radar-sweep">
-                                              <path id="flow-sweep-path" d="" />
-                                            </g>
-
-                                            <!-- Center marker -->
-                                            <circle id="flow-radar-center" cx="200" cy="200" r="6" class="flow-radar-center" />
-                                          </svg>
-                                        </div>
-                                        <div id="flow-radar-legend" class="flow-radar-legend"></div>
-                    <div class="flow-rule">
-            <strong>判断顺序</strong>
-            <span>Call 偏强 + 异常活跃 = 优先观察；Put 偏强 = 风险提醒；方向均衡 = 等待确认。</span>
-          </div>
-          <div class="flow-watchlist" id="flow-watchlist" aria-live="polite">
-            <div class="flow-empty">正在加载期权活动...</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="section alt" id="articles">
       <div class="section-inner">
-        <div class="section-head">
-          <h2>文章归档</h2>
-          <p>最近十篇市场观察。<a href="archive.html">完整文章归档</a> · <a href="stock.html?symbol=NVDA">股票专题</a></p>
+        <div class="section-head section-head-row">
+          <div>
+            <span class="kicker">Latest Notes</span>
+            <h2>最新文章</h2>
+            <p>最近十篇市场观察，按发布时间排列。</p>
+          </div>
+          <form class="article-search" action="archive.html" method="get" role="search">
+            <label class="sr-only" for="home-search">搜索文章或股票代码</label>
+            <input id="home-search" name="q" type="search" placeholder="搜索文章 / 股票代码，如 NVDA" autocomplete="off" />
+            <button class="button primary" type="submit">搜索</button>
+          </form>
         </div>
         <div class="article-grid">
           <article class="article-card">
@@ -906,6 +664,365 @@
       </div>
     </section>
 
+    <section class="section alt" id="wechat-sync">
+      <div class="section-inner sync-layout">
+        <div class="sync-copy">
+          <span class="kicker">Subscribe</span>
+          <h2>不错过下一期美股剧本</h2>
+          <p>
+            公众号「东左耳清濛」是首发渠道：周末发布下周展望，周中发布复盘。扫码关注即可第一时间收到推送，网站负责长期归档、标签和股票池追踪。
+          </p>
+          <ul class="value-list">
+            <li><strong>下周展望</strong><span>每周末：关键事件、个股支撑压力位</span></li>
+            <li><strong>周中总结</strong><span>每周三前后：验证预测、调整计划</span></li>
+            <li><strong>完全免费</strong><span>不荐股、不收费，只分享观察与思路</span></li>
+          </ul>
+          <div class="sync-highlight">
+            <h3>最新同步</h3>
+            <p>2026-11-16：下周美股预测--会先跌后涨吗？</p>
+            <div class="sync-actions">
+              <a class="button primary" href="articles/2026-11-16-nvda-fed-ipo-week.html">阅读网页版本</a>
+              <a class="button secondary" href="https://mp.weixin.qq.com/s/oaHo-MWdACqYTixaV5XwIQ" target="_blank" rel="noopener">打开公众号原文</a>
+            </div>
+          </div>
+        </div>
+        <aside class="newsletter" id="contact">
+          <div class="wechat-qr-block">
+            <strong>扫码关注公众号：东左耳清濛</strong>
+            <img src="qrcode.jpg" alt="东左耳清濛公众号二维码" onerror="this.closest('.wechat-qr-block').classList.add('missing')" />
+            <span class="qr-fallback">请把二维码图片保存到项目根目录。</span>
+          </div>
+          <h3>订阅与留言</h3>
+          <p>想看某家公司、财报或行业线，可以直接留言。我会优先整理成文章或复盘。</p>
+          <form action="https://formspree.io/f/xwpbgzna" method="POST">
+            <input type="email" name="email" placeholder="你的邮箱" aria-label="你的邮箱" required />
+            <textarea name="message" placeholder="想看什么主题，例如 NVDA 财报、软件股估值、周末复盘" aria-label="留言" required></textarea>
+            <button class="button primary" type="submit">发送</button>
+          </form>
+        </aside>
+      </div>
+    </section>
+
+    <div class="data-divider" id="dashboard">
+      <div class="section-inner">
+        <span class="kicker">Market Dashboard</span>
+        <h2>数据看板</h2>
+        <p>写文章前我会先看的几块屏：宏观风险、事件日历、观察列表和期权活动，全部公开。</p>
+      </div>
+    </div>
+
+    <section class="section" id="risk-radar">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>风险雷达</h2>
+          <p>把 VIX、10年期美债、美元指数、油价和黄金放在同一屏，用来判断 AI 硬件和成长股的外部压力。</p>
+        </div>
+        <div class="risk-radar">
+                  <div class="risk-radar-head">
+                    <div>
+                      <strong>宏观压力面板</strong>
+                      <p>VIX 看波动，10Y 看估值压力，DXY 看美元流动性，WTI 和 Gold 看通胀与避险。</p>
+                    </div>
+                    <div class="risk-radar-status">
+                      <div id="risk-updated">等待风险数据</div>
+                      <div id="risk-source">Live quote endpoint</div>
+                    </div>
+                  </div>
+                  <div class="risk-summary" aria-live="polite">
+                    <div>
+                      <strong id="risk-summary-title">等待风险雷达判断</strong>
+                      <span id="risk-summary-detail">VIX、10Y、DXY、WTI、GOLD 加载后自动生成。</span>
+                    </div>
+                    <span class="risk-badge" id="risk-summary-badge">Loading</span>
+                  </div>
+          
+                  <!-- SVG Radar Visualization -->
+                  <div class="radar-wrapper" id="radar-wrapper" role="img" aria-label="宏观风险雷达扫描图">
+                    <svg id="radar-svg" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
+                      <defs>
+                        <!-- Radar sweep gradient -->
+                        <linearGradient id="sweep-gradient" x1="0" y1="0" x2="1" y2="0">
+                          <stop offset="0%" stop-color="var(--neon-cyan)" stop-opacity="0"/>
+                          <stop offset="50%" stop-color="var(--neon-cyan)" stop-opacity="0.6"/>
+                          <stop offset="100%" stop-color="var(--neon-cyan)" stop-opacity="0"/>
+                        </linearGradient>
+                        <!-- Grid circles gradient -->
+                        <radialGradient id="grid-gradient" cx="50%" cy="50%" r="50%">
+                          <stop offset="0%" stop-color="var(--neon-cyan)" stop-opacity="0.08"/>
+                          <stop offset="100%" stop-color="var(--neon-cyan)" stop-opacity="0"/>
+                        </radialGradient>
+                        <!-- Data polygon gradient -->
+                        <radialGradient id="data-gradient" cx="50%" cy="50%" r="50%">
+                          <stop offset="0%" stop-color="var(--neon-green)" stop-opacity="0.25"/>
+                          <stop offset="100%" stop-color="var(--neon-cyan)" stop-opacity="0.05"/>
+                        </radialGradient>
+                        <!-- Glow filter -->
+                        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                          <feGaussianBlur stdDeviation="2" result="blur"/>
+                          <feMerge>
+                            <feMergeNode in="blur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                          </feMerge>
+                        </filter>
+                        <!-- Pulse filter for current values -->
+                        <filter id="pulse" x="-50%" y="-50%" width="200%" height="200%">
+                          <feGaussianBlur stdDeviation="4" result="blur"/>
+                          <feMerge>
+                            <feMergeNode in="blur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                          </feMerge>
+                        </filter>
+                      </defs>
+              
+                      <!-- Background grid circles -->
+                      <g id="radar-grid" class="radar-grid">
+                        <circle class="grid-circle" cx="200" cy="200" r="160" />
+                        <circle class="grid-circle" cx="200" cy="200" r="120" />
+                        <circle class="grid-circle" cx="200" cy="200" r="80" />
+                        <circle class="grid-circle" cx="200" cy="200" r="40" />
+                      </g>
+              
+                      <!-- Axis lines -->
+                      <g id="radar-axes" class="radar-axes"></g>
+              
+                      <!-- Axis labels -->
+                      <g id="radar-labels" class="radar-labels"></g>
+              
+                      <!-- Historical trail (previous readings) -->
+                      <g id="radar-trail" class="radar-trail"></g>
+              
+                      <!-- Current data polygon -->
+                      <polygon id="radar-polygon" class="radar-polygon" points="" />
+              
+                      <!-- Current data points -->
+                      <g id="radar-points" class="radar-points"></g>
+              
+                      <!-- Sweep line -->
+                      <g id="radar-sweep" class="radar-sweep">
+                        <path id="sweep-path" d="" />
+                      </g>
+              
+                      <!-- Center marker -->
+                      <circle id="radar-center" cx="200" cy="200" r="6" class="radar-center" />
+                    </svg>
+            
+                    <!-- Legend / Value readout -->
+                    <div id="radar-legend" class="radar-legend" aria-live="polite"></div>
+                  </div>
+          
+                  <!-- Keep cards as detailed view (collapsible) -->
+                  <details class="risk-cards-detail" id="risk-cards-detail">
+                    <summary class="risk-cards-toggle">
+                      <span>展开详细数值卡片</span>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
+                    </summary>
+                    <div class="risk-grid" id="risk-grid" aria-live="polite">
+                      <article class="risk-card">
+                        <div class="risk-card-top">
+                          <strong>Loading</strong>
+                          <span>Risk</span>
+                        </div>
+                        <p class="risk-name">正在加载风险雷达...</p>
+                        <div class="risk-value">--</div>
+                        <div class="risk-change flat">等待更新</div>
+                      </article>
+                    </div>
+                  </details>
+                </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="event-calendar">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>财报与宏观日历</h2>
+          <p>把会影响美股定价的财报、通胀、就业和 Fed 事件放在同一张清单里，写文章前先看事件风险。</p>
+        </div>
+        <div class="calendar-board">
+          <div class="calendar-head">
+            <div>
+              <strong>11/16 - 11/20 NVDA 财报、Fed 纪要与 IPO 周</strong>
+              <p>零售与工业生产、NVDA/PANW/WMT 财报接力，叠加 Fed 纪要、Anthropic 预计挂牌和月度期权到期。时间均为美东时间（ET）。<a href="articles/2026-11-16-nvda-fed-ipo-week.html#event-sources">查看日程来源</a></p>
+            </div>
+            <div class="calendar-status" id="calendar-status">等待日历渲染</div>
+          </div>
+          <div class="calendar-focus-grid" aria-label="下周三大观察重点">
+                      <div class="calendar-focus-card">
+                        <span>Macro Gate</span>
+                        <strong>11/17 零售 / 11/18 Fed 纪要</strong>
+                        <p>周二 08:30 零售、09:15 工业生产，周三 14:00 Fed 纪要，观察消费与利率压力。</p>
+                      </div>
+                      <div class="calendar-focus-card">
+                        <span>Earnings Gate</span>
+                        <strong>11/17 NVDA / 11/18 PANW</strong>
+                        <p>NVDA 周二约 16:20 发布、17:00 电话会；PANW 周三盘后，验证订单、盈利与现金流。</p>
+                      </div>
+                      <div class="calendar-focus-card">
+                        <span>Liquidity Gate</span>
+                        <strong>11/19 预计 IPO / 11/20 到期</strong>
+                        <p>Anthropic 预计挂牌仍待最终安排；周五密大终值与月度期权到期，留意资金分流和波动。</p>
+                      </div>
+                    </div>
+                    <div class="calendar-radar-wrapper">
+                                          <svg id="calendar-radar-svg" viewBox="0 0 800 320" aria-hidden="true">
+                                            <defs>
+                                              <linearGradient id="cal-gradient-macro" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                <stop offset="0%" stop-color="var(--neon-red)" stop-opacity="0.2" />
+                                                <stop offset="100%" stop-color="var(--neon-red)" stop-opacity="0.05" />
+                                              </linearGradient>
+                                              <linearGradient id="cal-gradient-earnings" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                <stop offset="0%" stop-color="var(--neon-cyan)" stop-opacity="0.2" />
+                                                <stop offset="100%" stop-color="var(--neon-cyan)" stop-opacity="0.05" />
+                                              </linearGradient>
+                                              <linearGradient id="cal-gradient-liquidity" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                <stop offset="0%" stop-color="var(--neon-amber)" stop-opacity="0.2" />
+                                                <stop offset="100%" stop-color="var(--neon-amber)" stop-opacity="0.05" />
+                                              </linearGradient>
+                                            </defs>
+
+                                            <!-- Grid lines (vertical = days, horizontal = type rows) -->
+                                            <g id="calendar-radar-grid" class="calendar-radar-grid"></g>
+
+                                            <!-- Axis (date labels at top) -->
+                                            <g id="calendar-radar-axis" class="calendar-radar-axis"></g>
+
+                                            <!-- Today vertical line -->
+                                            <line id="calendar-radar-today" class="calendar-radar-today-line" x1="0" y1="0" x2="0" y2="320" />
+
+                                            <!-- Event markers -->
+                                            <g id="calendar-radar-events" class="calendar-radar-events"></g>
+                                          </svg>
+                                        </div>
+                                        <div id="calendar-radar-legend" class="calendar-radar-legend"></div>
+                    <div class="calendar-grid" id="calendar-grid" aria-live="polite">
+            <article class="event-card">
+              <div class="event-topline">
+                <span class="event-date">Loading</span>
+                <span class="event-type">Calendar</span>
+              </div>
+              <h3>正在加载事件日历...</h3>
+              <p>宏观和财报事件会显示在这里。</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="stocks">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>每日美股数据</h2>
+          <p>每天美股收盘后自动更新一组常看的指数、ETF 和主流个股，方便写文章和做视频复盘时快速引用。</p>
+        </div>
+        <div class="stock-board">
+          <div class="stock-toolbar">
+            <div>
+              <strong>观察列表</strong>
+              <p>默认覆盖 SPX、SPY、QQQ、SPCX、MU、NVDA、AAPL、MSFT、GOOGL、AMZN、META、TSLA、AMD、AVGO、PLTR、TSM。</p>
+            </div>
+            <div class="stock-status">
+              <div id="stocks-updated">等待数据更新</div>
+              <div id="stocks-source">data/stocks.json</div>
+              <div id="stocks-live-status" class="stock-live-status">实时刷新待配置</div>
+            </div>
+          </div>
+          <div class="stock-grid" id="stock-grid" aria-live="polite">
+            <article class="stock-card">
+              <div class="stock-symbol">
+                <strong>Loading</strong>
+                <span>Daily</span>
+              </div>
+              <p class="stock-name">正在加载美股数据...</p>
+              <div class="stock-price">--</div>
+              <div class="stock-change flat">等待更新</div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="options-flow">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>关注股票期权活动雷达</h2>
+          <p>先找 Call 活跃且成交异常的候选，再结合股价趋势和基本面确认。雷达只决定观察顺序，不直接决定买入。</p>
+        </div>
+        <div class="flow-board">
+          <div class="flow-toolbar">
+            <div>
+              <strong>今日优先观察榜</strong>
+              <p id="flow-source-note">延迟期权统计不识别主动买卖，Call 成交多也可能来自卖出 Call。</p>
+            </div>
+            <div class="flow-status" id="flow-status">等待最新期权数据</div>
+          </div>
+          <div class="flow-kpis" id="flow-kpis">
+                      <div class="flow-kpi"><span>优先观察</span><strong>--</strong></div>
+                      <div class="flow-kpi"><span>Call 偏强</span><strong>--</strong></div>
+                      <div class="flow-kpi"><span>Put 偏强</span><strong>--</strong></div>
+                      <div class="flow-kpi"><span>整体 Call / Put</span><strong>--</strong></div>
+                    </div>
+                    <div class="flow-radar-wrapper">
+                                          <svg id="flow-radar-svg" viewBox="0 0 400 400" aria-hidden="true">
+                                            <!-- Gradient for data polygon -->
+                                            <defs>
+                                              <linearGradient id="flow-data-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" stop-color="var(--neon-green)" stop-opacity="0.2" />
+                                                <stop offset="100%" stop-color="var(--neon-cyan)" stop-opacity="0.1" />
+                                              </linearGradient>
+                                              <linearGradient id="flow-sweep-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                <stop offset="0%" stop-color="var(--neon-cyan)" stop-opacity="0" />
+                                                <stop offset="50%" stop-color="var(--neon-cyan)" stop-opacity="0.6" />
+                                                <stop offset="100%" stop-color="var(--neon-cyan)" stop-opacity="0" />
+                                              </linearGradient>
+                                            </defs>
+
+                                            <!-- Grid circles (concentric rings) -->
+                                            <g id="flow-radar-grid" class="flow-radar-grid">
+                                              <circle cx="200" cy="200" r="40" class="flow-grid-circle" />
+                                              <circle cx="200" cy="200" r="80" class="flow-grid-circle" />
+                                              <circle cx="200" cy="200" r="120" class="flow-grid-circle" />
+                                              <circle cx="200" cy="200" r="160" class="flow-grid-circle" />
+                                            </g>
+
+                                            <!-- Axis lines -->
+                                            <g id="flow-radar-axes" class="flow-radar-axes"></g>
+
+                                            <!-- Axis labels -->
+                                            <g id="flow-radar-labels" class="flow-radar-labels"></g>
+
+                                            <!-- Historical trail (previous readings) -->
+                                            <g id="flow-radar-trail" class="flow-radar-trail"></g>
+
+                                            <!-- Current data polygon -->
+                                            <polygon id="flow-radar-polygon" class="flow-radar-polygon" points="" />
+
+                                            <!-- Current data points -->
+                                            <g id="flow-radar-points" class="flow-radar-points"></g>
+
+                                            <!-- Sweep line -->
+                                            <g id="flow-radar-sweep" class="flow-radar-sweep">
+                                              <path id="flow-sweep-path" d="" />
+                                            </g>
+
+                                            <!-- Center marker -->
+                                            <circle id="flow-radar-center" cx="200" cy="200" r="6" class="flow-radar-center" />
+                                          </svg>
+                                        </div>
+                                        <div id="flow-radar-legend" class="flow-radar-legend"></div>
+                    <div class="flow-rule">
+            <strong>判断顺序</strong>
+            <span>Call 偏强 + 异常活跃 = 优先观察；Put 偏强 = 风险提醒；方向均衡 = 等待确认。</span>
+          </div>
+          <div class="flow-watchlist" id="flow-watchlist" aria-live="polite">
+            <div class="flow-empty">正在加载期权活动...</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
     <!-- <section class="section" id="vlog">
       <div class="section-inner">
         <div class="section-head">
@@ -931,38 +1048,6 @@
       </div>
     </section> -->
 
-    <section class="section alt" id="wechat-sync">
-      <div class="section-inner sync-layout">
-        <div class="sync-copy">
-          <h2>微信公众号同步</h2>
-          <p>
-            公众号“东左耳清濛”是首发渠道，网站用来做长期归档和复盘。我会把重点文章整理成网页版本，保留原文链接，并补上更清晰的标签、股票池和后续追踪入口。
-          </p>
-          <div class="sync-highlight">
-            <h3>最新同步</h3>
-            <p>2026-11-22：感恩节前，会继续慢慢见底，还是一直涨回来一半以上呢？</p>
-            <div class="sync-actions">
-              <a class="button primary" href="articles/2026-11-22-thanksgiving-week-pce-gold.html">阅读网页版本</a>
-              <a class="button secondary" href="https://mp.weixin.qq.com/s/og_Lg4XqH-FNJnM4I4WIiA" target="_blank" rel="noopener">打开公众号原文</a>
-            </div>
-          </div>
-        </div>
-        <aside class="newsletter" id="contact">
-          <div class="wechat-qr-block">
-            <strong>扫码关注公众号：东左耳清濛</strong>
-            <img src="qrcode.jpg" alt="东左耳清濛公众号二维码" onerror="this.closest('.wechat-qr-block').classList.add('missing')" />
-            <span class="qr-fallback">请把二维码图片保存到项目根目录。</span>
-          </div>
-          <h3>订阅与留言</h3>
-          <p>想看某家公司、财报或行业线，可以直接留言。我会优先整理成文章或复盘。</p>
-          <form action="https://formspree.io/f/xwpbgzna" method="POST">
-            <input type="email" name="email" placeholder="你的邮箱" aria-label="你的邮箱" required />
-            <textarea name="message" placeholder="想看什么主题，例如 NVDA 财报、软件股估值、周末复盘" aria-label="留言" required></textarea>
-            <button class="button primary" type="submit">发送</button>
-          </form>
-        </aside>
-      </div>
-    </section>
 
     <section class="section" id="bitcoin">
       <div class="section-inner crypto-wrap">
@@ -992,14 +1077,20 @@
         <span id="visitor-counter-status">统计待配置</span>
       </div>
       <div class="footer-links">
+        <a href="archive.html">文章归档</a>
+        <a href="feed.xml">RSS 订阅</a>
         <a href="https://discord.com/channels/@me" target="_blank" rel="noopener">Discord: lemon_cc_lol</a>
         <a href="mailto:charlesdataaws@gmail.com">Email</a>
       </div>
     </div>
+    <p class="footer-disclaimer">本站内容仅为个人市场观察与学习记录，不构成任何投资建议。投资有风险，决策需独立。</p>
   </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
   <script src="site-config.js"></script>
   <script src="market-calendar.js"></script>
-  <script src="app.js"></script>
+  <script src="app.js?v=20261124"></script>
+  <script src="home.js" defer></script>
 </body>
 </html>
