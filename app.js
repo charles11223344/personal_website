@@ -1098,9 +1098,8 @@ function updateCalendarRadarVisualization(events) {
       const x = padding.left + (dayIdx / totalDays) * plotWidth + spread;
 
       // Determine type row
-      const type = event.type || "observation";
-      let row = typeRows.find((r) => r.key === type);
-      if (!row) row = typeRows.find((r) => r.key === "observation");
+      const type = event.type || "观察";
+      const row = typeRows.find((r) => r.key === type) || typeRows.find((r) => r.key === "观察") || typeRows[0];
 
       const y = row.y;
       const radius = 8;
@@ -1519,9 +1518,14 @@ fetchStockSnapshot()
     renderStocks(fallbackStockData, "本地数据未加载，等待自动任务生成");
     startLiveStockRefresh();
   });
-startRiskRadarRefresh();
-startOptionsFlowRefresh();
-renderMarketCalendar();
+// A failure in one dashboard section must not stop the weather/FX widgets below from initializing.
+[startRiskRadarRefresh, startOptionsFlowRefresh, renderMarketCalendar].forEach(function (init) {
+  try {
+    init();
+  } catch (error) {
+    console.error("Dashboard section failed:", init.name, error);
+  }
+});
 
 const weatherDescriptions = {
   0: "晴朗",
