@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T20:22:21+00:00",
+  "updatedAt": "2026-11-24T02:10:40+00:00",
   "source": "Yahoo Finance chart endpoint",
   "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart",
   "symbols": [
@@ -9,16 +9,15 @@
       "kind": "index",
       "sourceSymbol": "^GSPC",
       "currency": "USD",
-      "date": "2026-11-20",
-      "open": 7150.39,
-      "high": 7198.67,
-      "low": 6882.66,
-      "close": 6910.39,
-      "volume": 6679680000,
-      "change": -265.44,
-      "changePercent": -3.7,
+      "date": "2026-11-23",
+      "open": 7227.41,
+      "high": 7295.6,
+      "low": 7152.66,
+      "close": 7237.17,
+      "volume": 4245654000,
+      "change": 326.78,
+      "changePercent": 4.73,
       "history": [
-        7676.77,
         7722.6,
         7743.98,
         7720.39,
@@ -37,7 +36,8 @@
         7340.53,
         7323.63,
         7175.83,
-        6910.39
+        6910.39,
+        7237.17
       ]
     },
     {
