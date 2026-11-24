@@ -8,6 +8,8 @@ const { chromium } = require(process.env.PLAYWRIGHT_MODULE || "playwright");
 const root = path.resolve(__dirname, "..");
 const content = JSON.parse(fs.readFileSync(path.join(root, "data/research.json"), "utf8"));
 const stocks = JSON.parse(fs.readFileSync(path.join(root, "data/stocks.json"), "utf8"));
+const calendar = require("node:vm").runInNewContext(fs.readFileSync(path.join(root, "market-calendar.js"), "utf8") + "; marketCalendarEvents");
+const latestDate = content.latestArticleDate;
 const artifacts = process.env.TEST_ARTIFACTS || path.join(os.tmpdir(), "lemon-research-tests");
 const errors = [];
 const mime = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css", ".json": "application/json", ".png": "image/png", ".jpg": "image/jpeg", ".svg": "image/svg+xml", ".woff2": "font/woff2" };
@@ -31,7 +33,7 @@ const server = http.createServer((req, res) => {
       const context = await browser.newContext({ viewport: options.viewport || { width: 1440, height: 1000 }, reducedMotion: "reduce" });
       const page = await context.newPage();
       page.on("pageerror", (error) => { errors.push(error.message); console.error("PAGE ERROR: " + error.message); });
-      await page.clock.install({ time: new Date("2026-11-16T15:30:00Z") });
+      await page.clock.install({ time: new Date(latestDate + "T15:30:00Z") });
       await context.route("**/*", async (route) => {
         const url = new URL(route.request().url());
         if (url.origin === origin) {
@@ -92,9 +94,11 @@ const server = http.createServer((req, res) => {
     assert.equal(await p.locator("#stock-title").innerText(), "NVDA");
     assert.equal(await p.locator("#quote-price").innerText(), "$160.25");
     assert.match(await p.locator("#quote-time").innerText(), /10:29 ET/);
-    assert.match(await p.locator("#stock-levels").innerText(), /2026-11-16/);
-    assert.match(await p.locator("#stock-levels").innerText(), /158.4/);
-    assert.match(await p.locator("#stock-events").innerText(), /NVDA 周二盘后/);
+    const latestLevels = content.articles.find((article) => article.levels.some((level) => level.symbol === "NVDA"));
+    assert.ok((await p.locator("#stock-levels").innerText()).includes(latestLevels.date));
+    assert.ok((await p.locator("#stock-levels").innerText()).includes(latestLevels.levels.find((level) => level.symbol === "NVDA").support));
+    const nextEarnings = calendar.find((event) => event.date >= latestDate && event.type === "财报" && (event.symbol === "NVDA" || event.tags.includes("NVDA")));
+    assert.ok((await p.locator("#stock-events").innerText()).includes(nextEarnings ? nextEarnings.title : "暂未收录该标的"));
     assert.equal(await p.locator("#stock-timeline .article-row").count(), content.articles.filter((article) => article.symbols.includes("NVDA")).length);
     await p.screenshot({ path: path.join(artifacts, "stock-desktop.png"), fullPage: false });
     await p.locator("#stock-picker").selectOption("MU");
@@ -150,10 +154,25 @@ const server = http.createServer((req, res) => {
     await p.goto(origin + "/index.html");
     await p.locator("#articles .article-card").first().waitFor();
     assert.equal(await p.locator("#articles .article-card:visible").count(), 10);
+    assert.equal(await p.locator("#articles .article-card h3 a").first().getAttribute("href"), content.articles[0].url);
     assert.equal(await p.locator('.nav-links a[href="archive.html"]').count(), 1);
     await p.locator("#stocks").scrollIntoViewIfNeeded();
     await p.locator('#stock-grid a[href="stock.html?symbol=NVDA"]').waitFor();
     assert.ok(await p.locator("#calendar-grid").count() || await p.locator(".calendar-card").count());
+    const upcoming = calendar.filter((event) => event.date >= latestDate);
+    assert.equal(await p.locator("#calendar-grid .event-card").count(), upcoming.length);
+    for (const event of upcoming) assert.ok((await p.locator("#calendar-grid").innerText()).includes(event.title));
+    for (const width of [375, 1440]) {
+      await p.setViewportSize({ width, height: 1000 });
+      await p.goto(origin + "/articles/2026-11-18-midweek-nvda-ant-ipo.html");
+      assert.ok(await p.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+      assert.equal(await p.locator(".data-table tbody tr").count(), 6);
+      if (width === 375) assert.ok(await p.locator(".table-wrap").evaluate((element) => element.scrollWidth > element.clientWidth));
+      assert.equal(await p.locator(".qr-card img").evaluate((image) => image.complete && image.naturalWidth > 0), true);
+      assert.equal(await p.locator('a[href="https://mp.weixin.qq.com/s/pwtTTCmQp6gXYrABux74xQ"]').count(), 1);
+      await p.screenshot({ path: path.join(artifacts, "article-1118-" + width + ".png"), fullPage: true });
+    }
+    console.log("PASS new article, original link, six stock levels, QR image, updated two-day calendar");
     assert.deepEqual(errors, []);
     console.log("PASS responsive layouts, brand assets, homepage latest-ten and stock links; no JS errors");
     console.log("Screenshots: " + artifacts);

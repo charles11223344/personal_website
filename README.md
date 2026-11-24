@@ -50,6 +50,7 @@ py -m unittest discover -s tests -p test_content_index.py
 
 当前已添加：
 
+- `articles/2026-11-18-midweek-nvda-ant-ipo.html`
 - `articles/2026-11-16-nvda-fed-ipo-week.html`
 - `articles/2026-11-08-cpi-ai-earnings-volatility.html`
 - `articles/2026-11-04-midweek-ai-regulation-cashflow.html`
