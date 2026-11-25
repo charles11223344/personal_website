@@ -91,7 +91,7 @@ def seo_block(a: dict) -> str:
         "mainEntityOfPage": url,
         "image": OG_IMAGE,
         "keywords": ", ".join(a.get("tags", []) + a.get("symbols", [])),
-        "author": {"@type": "Person", "name": "Charles · 东左耳清濛"},
+        "author": {"@type": "Person", "name": "Lemon 清濛 · 东左耳清濛"},
         "publisher": {"@type": "Organization", "name": SITE_NAME, "logo": {"@type": "ImageObject", "url": f"{SITE_URL}/lemon.png"}},
     }
     lines = [
