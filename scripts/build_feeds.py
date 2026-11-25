@@ -65,6 +65,7 @@ def build_feed(articles: list[dict]) -> str:
     build_date = rfc822(articles[0]["date"]) if articles else format_datetime(datetime.now(timezone.utc))
     return (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<?xml-stylesheet type="text/xsl" href="/feed.xsl"?>\n'
         '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n  <channel>\n'
         f"    <title>{SITE_NAME}</title>\n    <link>{SITE_URL}/</link>\n"
         f"    <description>{escape(SITE_DESC)}</description>\n    <language>zh-CN</language>\n"
