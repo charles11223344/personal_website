@@ -22,18 +22,58 @@
         text: "每周美股预测与 AI 科技股复盘，推荐给你：",
         url: location.origin + location.pathname,
       };
-      try {
-        if (navigator.share) {
+      const shareText = shareData.title + " " + shareData.url;
+      const ua = navigator.userAgent || "";
+
+      if (/MicroMessenger/i.test(ua)) {
+        const copied = await copyText(shareText);
+        showToast(copied ? "链接已复制，也可点右上角「···」直接分享" : "请点右上角「···」分享给朋友");
+        return;
+      }
+
+      // Desktop browsers expose navigator.share but the OS share sheet often never appears, so only use it on touch devices.
+      const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+      if (isTouchDevice && navigator.share) {
+        try {
           await navigator.share(shareData);
           return;
+        } catch (error) {
+          if (error && error.name === "AbortError") return;
         }
-        await navigator.clipboard.writeText(shareData.title + " " + shareData.url);
+      }
+
+      if (await copyText(shareText)) {
         showToast("链接已复制，快去分享给朋友吧");
-      } catch (error) {
-        if (error && error.name === "AbortError") return;
-        showToast("复制失败，请手动复制地址栏链接");
+      } else {
+        window.prompt("复制下面的链接分享给朋友：", shareData.url);
       }
     });
+  }
+
+  async function copyText(text) {
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return true;
+      }
+    } catch (error) {
+      // Fall through to the legacy copy path.
+    }
+    const field = document.createElement("textarea");
+    field.value = text;
+    field.setAttribute("readonly", "");
+    field.style.position = "fixed";
+    field.style.opacity = "0";
+    document.body.appendChild(field);
+    field.select();
+    let copied = false;
+    try {
+      copied = document.execCommand("copy");
+    } catch (error) {
+      copied = false;
+    }
+    field.remove();
+    return copied;
   }
 
   function formatTitle(title) {
