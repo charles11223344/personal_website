@@ -39,7 +39,7 @@
       previousMonth = month;
       return `${heading}<article class="article-row">
         <div class="article-date"><time datetime="${escape(article.date)}">${escape(article.date)}</time><br><span>${article.readingMinutes} 分钟</span></div>
-        <div><h3><a href="${escape(article.url)}">${escape(article.title)}</a></h3>
+        <div>${article.kind ? `<p class="article-kind">${escape(article.kind)}</p>` : ""}<h3><a href="${escape(article.url)}">${escape(article.title)}</a></h3>
           <p class="article-summary">${escape(article.description)}</p>
           <div class="article-topics">${article.topics.map((topic) => `<span>${escape(topicMap.get(topic))}</span>`).join("")}</div>
           <div class="article-symbols">${article.symbols.slice(0, 8).map((symbol) => `<a href="stock.html?symbol=${encodeURIComponent(symbol)}">${escape(symbol)}</a>`).join("")}${article.symbols.length > 8 ? `<span class="muted">+${article.symbols.length - 8}</span>` : ""}</div>
@@ -58,15 +58,16 @@
     for (const item of index.topics) $("topic-filter").append(option(item.id, item.label));
     for (const month of [...new Set(index.articles.map((article) => article.date.slice(0, 7)))]) $("month-filter").append(option(month, monthLabel(month)));
     $("index-meta").textContent = `${index.articleCount} 篇文章 · 收录至 ${index.latestArticleDate}`;
-    const controls = { q: $("query"), symbol: $("symbol-filter"), topic: $("topic-filter"), month: $("month-filter"), sort: $("sort-filter") };
+    const controls = { q: $("query"), kind: $("kind-filter"), symbol: $("symbol-filter"), topic: $("topic-filter"), month: $("month-filter"), sort: $("sort-filter") };
 
     function render(writeUrl = false, replace = false) {
       const values = Object.fromEntries(Object.entries(controls).map(([key, control]) => [key, control.value]));
       const tokens = values.q.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);
       const articles = index.articles.filter((article) => {
         const aliases = article.symbols.flatMap((symbol) => symbolMap.get(symbol)?.aliases || []);
-        const haystack = [article.title, article.description, article.searchText, ...article.symbols, ...aliases].join(" ").toLocaleLowerCase();
+        const haystack = [article.title, article.description, article.searchText, ...(article.tags || []), ...article.symbols, ...aliases].join(" ").toLocaleLowerCase();
         return tokens.every((token) => haystack.includes(token))
+          && (!values.kind || article.kind === values.kind)
           && (!values.symbol || article.symbols.includes(values.symbol))
           && (!values.topic || article.topics.includes(values.topic))
           && (!values.month || article.date.startsWith(values.month));

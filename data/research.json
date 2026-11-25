@@ -739,7 +739,9 @@
     {
       "url": "articles/2026-11-22-thanksgiving-week-pce-gold.html",
       "date": "2026-11-22",
-      "title": "20261122感恩节前，会继续慢慢见底，还是一直涨回来一半以上呢？",
+      "title": "感恩节前，会继续慢慢见底，还是一直涨回来一半以上呢？",
+      "category": "感恩节前展望",
+      "kind": "周度剧本",
       "description": "清濛的2026年11月22日感恩节前美股展望：夜盘反弹是否可信、PCE与长债压力、AI服务器财报，以及NVDA、MSFT、AAPL、DELL、MU、TSM、AMZN和黄金的支撑压力。",
       "tags": [
         "PCE 与长债",
@@ -805,7 +807,9 @@
     {
       "url": "articles/2026-11-18-midweek-nvda-ant-ipo.html",
       "date": "2026-11-18",
-      "title": "20261118美股周中财报很好，大市没有涨，ANT上市会救场吗？",
+      "title": "美股周中财报很好，大市没有涨，ANT上市会救场吗？",
+      "category": "周中总结",
+      "kind": "周中总结",
       "description": "清濛的2026年11月18日美股周中总结：NVDA财报与毛利率、ANT首日交易情景、六只股票支撑压力及黄金区间，附11月19日至20日重点事件。",
       "tags": [
         "NVDA 财报",
@@ -864,7 +868,9 @@
     {
       "url": "articles/2026-11-16-nvda-fed-ipo-week.html",
       "date": "2026-11-16",
-      "title": "20261116下周美股预测--会先跌后涨吗？",
+      "title": "下周美股预测：会先跌后涨吗？",
+      "category": "下周展望",
+      "kind": "周度剧本",
       "description": "清濛的2026年11月16日美股周前展望：利率与AI融资链、NVDA财报、Fed纪要和Anthropic预计挂牌，七只股票及黄金支撑压力，附11月16日至20日大事记。",
       "tags": [
         "NVDA 财报",
@@ -931,7 +937,9 @@
     {
       "url": "articles/2026-11-11-midweek-gossip-risk.html",
       "date": "2026-11-11",
-      "title": "20261111周中总结：真正的风险是八卦新闻",
+      "title": "周中总结：真正的风险是八卦新闻",
+      "category": "周中总结",
+      "kind": "周中总结",
       "description": "清濛的2026年11月11日美股周中总结：标普纳指大涨但夜盘回落，黄仁勋婚外情传闻引发NVDA不确定性，Anthropic供应商认购260亿，七只重点股支撑压力与黄金区间，11月12-17日大事记。",
       "tags": [
         "NVDA 八卦冲击",
@@ -1000,7 +1008,9 @@
     {
       "url": "articles/2026-11-08-cpi-ai-earnings-volatility.html",
       "date": "2026-11-08",
-      "title": "20261108下周美股预测",
+      "title": "下周美股预测",
+      "category": "下周展望",
+      "kind": "周度剧本",
       "description": "清濛的2026年11月8日美股下周预测：急跌后的反弹、VIX与长债风险，CPI/PPI及AI财报观察，七只股票与黄金的支撑压力，以及11月9日至13日大事记。",
       "tags": [
         "CPI / PPI",
@@ -1071,7 +1081,9 @@
     {
       "url": "articles/2026-11-04-midweek-ai-regulation-cashflow.html",
       "date": "2026-11-04",
-      "title": "20261104周中总结和预测",
+      "title": "周中总结和预测",
+      "category": "周中总结",
+      "kind": "周中总结",
       "description": "清濛的2026年11月4日美股周中总结：选举后的AI监管与现金流观察、七只股票支撑压力、黄金区间及11月5日至6日大事记。",
       "tags": [
         "AI 监管",
@@ -1141,7 +1153,9 @@
     {
       "url": "articles/2026-11-01-election-amd-jobs-week.html",
       "date": "2026-11-01",
-      "title": "20261101美股的科技暴跌后的选举，AMD与非农的故事",
+      "title": "美股的科技暴跌后的选举，AMD与非农的故事",
+      "category": "下周展望",
+      "kind": "周度剧本",
       "description": "清濛的2026年11月1日美股展望：科技暴跌后的中期选举、AMD财报与非农，七只股票支撑压力、黄金区间及11月2日至6日大事记。",
       "tags": [
         "中期选举",
@@ -1210,7 +1224,9 @@
     {
       "url": "articles/2026-10-28-midweek-rates-ai-earnings.html",
       "date": "2026-10-28",
-      "title": "20261028周中总结和预测",
+      "title": "周中总结和预测",
+      "category": "周中总结",
+      "kind": "周中总结",
       "description": "清濛的2026年10月28日美股周中总结：利率与AI财报、微软和谷歌的现金流观察、七只股票支撑压力、黄金与10月29日至30日大事记。",
       "tags": [
         "利率与融资",
@@ -1286,7 +1302,9 @@
     {
       "url": "articles/2026-10-25-fomc-earnings-gap-up-fade.html",
       "date": "2026-10-25",
-      "title": "20261025美股下周走势之高开低走",
+      "title": "美股下周走势之高开低走",
+      "category": "下周展望",
+      "kind": "周度剧本",
       "description": "清濛的2026年10月25日下周展望：高开低走的原文判断、FOMC与科技财报、加拿大和欧洲央行决议，以及七只股票和黄金的观察价位。",
       "tags": [
         "FOMC",
@@ -1316,7 +1334,9 @@
     {
       "url": "articles/2026-10-21-midweek-tech-earnings-volatility.html",
       "date": "2026-10-21",
-      "title": "20261021周中美股总结之文字越短波动越大",
+      "title": "周中美股总结之文字越短波动越大",
+      "category": "周中总结",
+      "kind": "周中总结",
       "description": "清濛的2026年10月21日美股周中总结：META、TSLA与IBM财报观察，QQQ关键位置、七只股票技术位、黄金及未来两天大事记。",
       "tags": [
         "科技财报",
@@ -1383,7 +1403,9 @@
     {
       "url": "articles/2026-10-18-earnings-rebound-outlook.html",
       "date": "2026-10-18",
-      "title": "20261018上周预警的大屠杀，这周美股能涨回来吗？",
+      "title": "上周预警的大屠杀，这周美股能涨回来吗？",
+      "category": "下周展望",
+      "kind": "周度剧本",
       "description": "清濛的2026年10月18日下周展望：急跌后的科技修复、Netflix、Meta、Tesla、LRCX与WDC财报、六只股票技术位及黄金观察。",
       "tags": [
         "修复与反转",
@@ -1442,7 +1464,9 @@
     {
       "url": "articles/2026-10-14-cpi-ai-financing-selloff.html",
       "date": "2026-10-14",
-      "title": "20261014这周是美股大屠杀吗？",
+      "title": "这周是美股大屠杀吗？",
+      "category": "周中总结",
+      "kind": "周中总结",
       "description": "清濛的2026年10月14日周中总结：CPI与AI融资压力、七只股票的盘后参考价和支撑压力，以及黄金与未来48小时事件记录。",
       "tags": [
         "CPI",
@@ -1513,7 +1537,9 @@
     {
       "url": "articles/2026-10-11-cpi-earnings-week.html",
       "date": "2026-10-11",
-      "title": "20261011下周美股预测之CPI来了",
+      "title": "下周美股预测之CPI来了",
+      "category": "下周预测",
+      "kind": "周度剧本",
       "description": "清濛的2026年10月11日下周美股预测：CPI、5.18%与5.36%美债利率观察线、银行和半导体财报，以及七只股票和黄金的支撑压力。",
       "tags": [
         "CPI",
@@ -1581,7 +1607,9 @@
     {
       "url": "articles/2026-10-07-midweek-bond-auction-ai.html",
       "date": "2026-10-07",
-      "title": "20261007周中总结和预测",
+      "title": "周中总结和预测",
+      "category": "周中总结",
+      "kind": "周中总结",
       "description": "清濛的2026年10月7日美股周中总结：5.3%长债、FOMC纪要、30年期美债拍卖与消费者通胀预期，以及八只股票和黄金的支撑压力。",
       "tags": [
         "10Y 5.3%",
@@ -1652,7 +1680,9 @@
     {
       "url": "articles/2026-10-04-ai-concentration-week.html",
       "date": "2026-10-04",
-      "title": "20261004下周的疯狂时光美股预测和总结",
+      "title": "下周的疯狂时光美股预测和总结",
+      "category": "下周剧本",
+      "kind": "周度剧本",
       "description": "2026-10-04下周美股预测：就业降温后资金继续向AI集中，清濛观察NVDA、AMD、MU、SNDK、LITE、COHR、TSLA与黄金的关键位置。",
       "tags": [
         "AI 抱团",
@@ -1720,7 +1750,9 @@
     {
       "url": "articles/2026-09-30-midweek-pce-mu-gold.html",
       "date": "2026-09-30",
-      "title": "20260930周中总结和预测",
+      "title": "周中总结和预测",
+      "category": "周中总结",
+      "kind": "周中总结",
       "description": "2026-09-30美股周中总结：PCE、10年期美债与MU财报落地后，清濛观察MU、NVDA、AMD、AVGO、HPE、CCJ和黄金的关键位置。",
       "tags": [
         "PCE 3.4%",
@@ -1749,6 +1781,8 @@
       "url": "articles/2026-09-27-pce-mu-jobs-week.html",
       "date": "2026-09-27",
       "title": "下周美股大盘总结和预测",
+      "category": "下周剧本",
+      "kind": "周度剧本",
       "description": "2026-09-27下周美股预测：油价、10年期美债与黄金形成高通胀组合，重点关注JOLTS、PCE、MU财报、ISM制造业和非农。",
       "tags": [
         "PCE",
@@ -1798,7 +1832,9 @@
     {
       "url": "articles/2026-09-23-midweek-yields-ai-levels.html",
       "date": "2026-09-23",
-      "title": "20260923周中总结和预测",
+      "title": "周中总结和预测",
+      "category": "周中总结",
+      "kind": "周中总结",
       "description": "2026-09-23美股周中总结：10年期美债升至5.11%，PMI超预期，清濛观察NVDA、AMD、MU、AVGO、META、MSFT与PLTR的关键支撑和压力。",
       "tags": [
         "10Y 5.11%",
@@ -1864,6 +1900,8 @@
       "url": "articles/2026-09-20-tech-rebound-gold-defense.html",
       "date": "2026-09-20",
       "title": "下周可能会涨啊，喜欢听到吗？",
+      "category": "下周剧本",
+      "kind": "周度剧本",
       "description": "2026-09-20下周美股预测：10年期美债站上5%后，观察科技股修复、油价回落与黄金防守价值，并跟踪MU、SNDK和SOXL关键价位。",
       "tags": [
         "科技修复",
@@ -1906,6 +1944,8 @@
       "url": "articles/2026-09-15-fed-48h-defense-guide.html",
       "date": "2026-09-15",
       "title": "美股未来48小时的Fed大考与攻防大战指南",
+      "category": "Fed 48小时攻防",
+      "kind": "周中总结",
       "description": "2026-09-15 美股未来48小时指南：FOMC决议、Warsh记者会、10年期美债5.04%、油价105美元，以及NVDA、AVGO、MU、MRVL、NBIS、GDX支撑压力。",
       "tags": [
         "FOMC",
@@ -1965,6 +2005,8 @@
       "url": "articles/2026-09-13-fomc-oil-ai-valuation.html",
       "date": "2026-09-13",
       "title": "下周可能会跌很多，你害怕吗？",
+      "category": "下周剧本",
+      "kind": "周度剧本",
       "description": "2026-09-13 下周美股剧本：Brent站上106美元、10年期美债逼近5%，FOMC成为AI估值和科技股能否修复的关键。",
       "tags": [
         "FOMC",
@@ -1994,6 +2036,8 @@
       "url": "articles/2026-09-09-midweek-cpi-oil-rates.html",
       "date": "2026-09-09",
       "title": "周中总结和未来两天预测",
+      "category": "周中总结和未来两天预测",
+      "kind": "周中总结",
       "description": "2026-09-09 周中总结：油价站上100美元、10年期美债摸到4.84%-4.85%，未来两天重点看 PPI、CPI、黄金和 AI 硬件支撑压力。",
       "tags": [
         "主题：PPI / CPI / Brent 100 / 10Y美债 / AI硬件 / 黄金"
@@ -2046,6 +2090,8 @@
       "url": "articles/2026-09-07-cpi-oil-ai-rotation.html",
       "date": "2026-09-07",
       "title": "下周的美股故事又是很精彩，大家盘一盘啊",
+      "category": "下周美股故事",
+      "kind": "周度剧本",
       "description": "2026-09-07 下周美股故事：非农强于预期后，市场继续看 CPI、PPI、油价、10Y 美债和 AI 龙头的承接。",
       "tags": [
         "主题：CPI / PPI / Brent / 10Y / AI盈利能力 / 黄金"
@@ -2099,6 +2145,8 @@
       "url": "articles/2026-09-02-midweek-jobs-gold-ai.html",
       "date": "2026-09-02",
       "title": "美股周中总结和预测",
+      "category": "美股周中总结和预测",
+      "kind": "周中总结",
       "description": "2026-09-02 美股周中总结：ADP就业降温带来反弹，但10年期美债、油价、黄金和非农仍是未来两天关键变量。",
       "tags": [
         "主题：ADP就业 / 10Y美债 / 油价 / 黄金 / 非农 / AI硬件"
@@ -2156,6 +2204,8 @@
       "url": "articles/2026-08-30-jobs-rates-oil-ai.html",
       "date": "2026-08-30",
       "title": "非农和利率，谁更欺负人呢？",
+      "category": "下周美股预测",
+      "kind": "周度剧本",
       "description": "2026-08-30 下周美股预测：非农、利率、油价和 AVGO/DELL 财报一起决定 AI 反弹能否延续。",
       "tags": [
         "主题：非农 / 利率 / 油价 / AI硬件 / AVGO与DELL财报"
@@ -2184,6 +2234,8 @@
       "url": "articles/2026-08-26-nvda-ai-demand-financing.html",
       "date": "2026-08-26",
       "title": "周中总结：谁能赚更多的钱呢？",
+      "category": "周中总结",
+      "kind": "周中总结",
       "description": "2026-08-26 周中总结：NVDA 财报证明 AI 算力需求没坏，但市场下一步会追问谁来为长期算力合同、数据中心资本开支和融资成本买单。",
       "tags": [
         "主题：NVDA财报 / AI算力 / HBM / 光通信 / 融资链条"
@@ -2210,6 +2262,8 @@
       "url": "articles/2026-08-23-pce-nvda-ai-capex.html",
       "date": "2026-08-23",
       "title": "下周美股关关难过关关过",
+      "category": "下周美股剧本",
+      "kind": "周度剧本",
       "description": "2026-08-23 下周美股剧本：PCE、GDP、NVDA财报、Jackson Hole 和非农年度基准修订一起检验 AI 仓位与长债压力。",
       "tags": [
         "主题：PCE / GDP / NVDA财报 / Jackson Hole / AI资本回报率"
@@ -2284,6 +2338,8 @@
       "url": "articles/2026-08-19-treasury-buyback-yields-gold-ai.html",
       "date": "2026-08-19",
       "title": "财政部出手，但是总觉得治标不治本",
+      "category": "美股周中剧本",
+      "kind": "周中总结",
       "description": "2026-08-19 美股周中剧本：财政部提高长期美债回购规模，收益率回落、黄金和比特币反弹，但 AI 估值压力仍在。",
       "tags": [
         "主题：美债回购 / 收益率 / 黄金 / AI估值 / 初请与PMI"
@@ -2341,6 +2397,8 @@
       "url": "articles/2026-08-16-10y-retail-earnings-oil.html",
       "date": "2026-08-16",
       "title": "当4.7%美债撞上零售财报",
+      "category": "下周美股剧本",
+      "kind": "周度剧本",
       "description": "2026-08-16 下周美股剧本：当 4.7% 美债撞上零售财报，观察油价、长债、FOMC 纪要和消费数据。",
       "tags": [
         "主题：10Y / Brent / 零售财报 / FOMC纪要 / 熊市风险"
@@ -2406,6 +2464,8 @@
       "url": "articles/2026-08-12-midweek-ai-bottleneck-burry.html",
       "date": "2026-08-12",
       "title": "周中美股总结和预测剧本",
+      "category": "周中美股总结和预测剧本",
+      "kind": "周中总结",
       "description": "2026-08-12 周中美股总结和预测剧本：CPI 正常发挥后，市场重新靠向 AI 瓶颈、InP、CPO、HBM 和防御资产。",
       "tags": [
         "主题：AI瓶颈 / InP / CPO / Burry / 防御资产"
@@ -2499,7 +2559,9 @@
     {
       "url": "articles/2026-08-10-market-recap-cpi-ai-compute-finance.html",
       "date": "2026-08-10",
-      "title": "20260810美股总结和预测",
+      "title": "美股总结和预测",
+      "category": "美股总结和预测",
+      "kind": "周度剧本",
       "description": "2026-08-10 美股总结和预测：油价回升、NVDA 算力资产化、CPI 与 AI 云厂财报进入关键 48 小时。Lemon 美股手记文章归档。",
       "tags": [
         "主题：Brent / NVDA / CPI / CoreWeave / 支撑压力位"
@@ -2551,6 +2613,8 @@
       "url": "articles/2026-08-09-cpi-brent-10y-ai-second-test.html",
       "date": "2026-08-09",
       "title": "就业降温之后，真正的大考是 CPI",
+      "category": "下周剧本",
+      "kind": "周度剧本",
       "description": "2026-08-09 下周美股剧本预测：就业降温之后，真正的大考是 CPI。Lemon 美股手记文章归档。",
       "tags": [
         "主题：CPI / Brent / 10Y / AI第二轮验货"
@@ -2578,6 +2642,8 @@
       "url": "articles/2026-08-05-midweek-dow-record-capex.html",
       "date": "2026-08-05",
       "title": "道指创新高，纳指却被资本开支拖住",
+      "category": "周中剧本",
+      "kind": "周中总结",
       "description": "2026-08-05 周中美股剧本预测和总结：道指创新高，纳指却被资本开支拖住。Lemon 美股手记文章归档。",
       "tags": [
         "主题：AI CapEx / 弱就业 / 油价风险 / 个股剧本"
@@ -2603,6 +2669,8 @@
       "url": "articles/2026-08-02-oil-cooling-jobs-rates-cashflow.html",
       "date": "2026-08-02",
       "title": "油价降温可能只是止痛药",
+      "category": "下周剧本",
+      "kind": "周度剧本",
       "description": "2026-08-02 下周美股剧本：油价降温可能只是止痛药。Lemon 美股手记文章归档。",
       "tags": [
         "主题：就业 / 利率 / AI现金流 / 油价"
@@ -2632,6 +2700,8 @@
       "url": "articles/2026-07-29-midweek-bloodbath-model.html",
       "date": "2026-07-29",
       "title": "美股周中剧本：血流成河",
+      "category": "周中剧本",
+      "kind": "周中总结",
       "description": "2026-07-29 美股周中剧本：血流成河。Lemon 美股手记文章归档。",
       "tags": [
         "主题：FOMC / GDP-PCE / AAPL-AMZN / 小模型"
@@ -2660,6 +2730,8 @@
       "url": "articles/2026-07-26-fomc-gdp-pce-ai-cashflow.html",
       "date": "2026-07-26",
       "title": "油价退烧，FOMC登场",
+      "category": "下周剧本",
+      "kind": "周度剧本",
       "description": "2026-07-26 下周剧本走向：油价退烧，FOMC登场。Lemon 美股手记文章归档。",
       "tags": [
         "主题：FOMC / GDP-PCE / 科技巨头财报 / AI现金流"
@@ -2692,6 +2764,8 @@
       "url": "articles/2026-07-22-google-cloud-cash-flow.html",
       "date": "2026-07-22",
       "title": "谷歌云爆发，现金流却转负",
+      "category": "周中剧本",
+      "kind": "周中总结",
       "description": "2026-07-22 周中剧本：谷歌云爆发，现金流却转负。Lemon 美股手记文章归档。",
       "tags": [
         "主题：GOOGL / TSLA / 自由现金流 / AI CapEx"
@@ -2717,6 +2791,8 @@
       "url": "articles/2026-07-19-oil-earnings-ai-stopfall.html",
       "date": "2026-07-19",
       "title": "油价破90，财报周决定AI能否止跌",
+      "category": "下周剧本",
+      "kind": "周度剧本",
       "description": "2026-07-19 下周美股剧本：油价破90，财报周决定AI能否止跌。Lemon 美股手记文章归档。",
       "tags": [
         "主题：油价 / 财报周 / AI止跌 / 半导体"
@@ -2748,6 +2824,8 @@
       "url": "articles/2026-07-12-oil-inflation-ai-orders.html",
       "date": "2026-07-12",
       "title": "油价、通胀和AI订单一起验货",
+      "category": "下周剧本",
+      "kind": "周度剧本",
       "description": "2026-07-12 下周不是单纯赌财报，而是油价、通胀和AI订单一起验货。Lemon 美股手记文章归档。",
       "tags": [
         "主题：油价 / CPI / AI订单 / 财报季"
@@ -2780,6 +2858,8 @@
       "url": "articles/2026-07-07-midweek-rotation.html",
       "date": "2026-07-07",
       "title": "周中剧本，别灰心：美股没死，只是在换手",
+      "category": "周中剧本",
+      "kind": "周中总结",
       "description": "2026-07-07 周中剧本，别灰心：美股没死，只是在换手。Lemon 美股手记文章归档。",
       "tags": [
         "主题：AI换手 / 软件承接 / 高 beta 去杠杆"
@@ -2808,6 +2888,8 @@
       "url": "articles/2026-07-05-weekly-script-ai-rotation.html",
       "date": "2026-07-05",
       "title": "7月6日—7月10日，美股下周剧本怎么走",
+      "category": "下周剧本",
+      "kind": "周度剧本",
       "description": "2026-07-05 7月6日—7月10日，美股下周剧本怎么走。Lemon 美股手记文章归档。",
       "tags": [
         "主题：AI修复 / 半导体 / 宏观"
@@ -2840,6 +2922,8 @@
       "url": "articles/2026-06-28-ai-power-infrastructure.html",
       "date": "2026-06-28",
       "title": "下周的剧本走向：AI不是结束，是开始看电拉",
+      "category": "下周剧本",
+      "kind": "周度剧本",
       "description": "2026-06-28 下周的剧本走向：AI不是结束，是开始看电拉。Lemon 美股手记文章归档。",
       "tags": [
         "主题：AI基础设施 / 核电 / 电力"
@@ -2875,6 +2959,8 @@
       "url": "articles/2026-06-24-mu-pce-exam.html",
       "date": "2026-06-24",
       "title": "MU点燃AI硬件，但是PCE才是真正考官啊",
+      "category": "美股盘前剧本",
+      "kind": "周度剧本",
       "description": "2026-06-24 MU点燃AI硬件，但是PCE才是真正考官啊。Lemon 美股手记文章归档。",
       "tags": [
         "主题：MU / PCE / AI硬件"
@@ -2920,6 +3006,8 @@
       "url": "articles/2026-06-23-midweek-mu-earnings.html",
       "date": "2026-06-23",
       "title": "周中总结：美光财报前，我们先别急着否定自己",
+      "category": "周中总结",
+      "kind": "周中总结",
       "description": "2026-06-23 周中总结：美光财报前，我们先别急着否定自己。Lemon 美股手记文章归档。",
       "tags": [
         "主题：MU / AI硬件 / 风险控制"
@@ -2948,6 +3036,8 @@
       "url": "articles/2026-06-21-ai-hardware-week.html",
       "date": "2026-06-21",
       "title": "下周美股市场的剧本：AI硬件进入验货周",
+      "category": "美股周度剧本",
+      "kind": "周度剧本",
       "description": "2026-06-21 下周美股市场的剧本：AI硬件进入验货周。Lemon 美股手记文章归档。",
       "tags": [
         "主题：AI硬件 / 宏观 / 股票池"

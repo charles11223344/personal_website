@@ -483,10 +483,175 @@ body {
 }
 
 .market-chip.weather-chip strong,
-.market-chip.fx-chip strong {
+.market-chip.fx-chip strong,
+.market-chip.trade-chip strong {
   color: var(--ink);
   font-family: var(--font-mono);
   font-size: 1.2rem;
+}
+
+.market-strip-inner:has(.trade-chip) {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.trade-chip strong {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+.trade-chip strong b {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.trade-chip em {
+  font-variant-numeric: tabular-nums;
+}
+
+.trade-chip em[data-trend="up"] { color: var(--green); }
+.trade-chip em[data-trend="down"] { color: var(--red); }
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--muted);
+}
+
+#market-status[data-state="open"] .status-dot { background: var(--green); box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.18); }
+#market-status[data-state="pre"] .status-dot,
+#market-status[data-state="after"] .status-dot { background: var(--accent); }
+#market-status[data-state="closed"] .status-dot { background: var(--red); }
+
+@media (max-width: 860px) {
+  .market-strip-inner:has(.trade-chip) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* ---- Brand line ---- */
+.brand-line {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.brand-line strong { color: var(--ink); font-weight: 600; }
+
+/* ---- Tag filter ---- */
+.tag-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 22px;
+}
+
+.tag-filter-label {
+  margin-right: 4px;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.tag-chip {
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  padding: 6px 14px;
+  color: var(--ink);
+  font-size: 0.84rem;
+  text-decoration: none;
+  transition: border-color 0.15s, background-color 0.15s, color 0.15s;
+}
+
+.tag-chip:hover,
+.tag-chip:focus-visible {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* ---- Track record ---- */
+.record-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.record-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.record-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.record-badge {
+  border-radius: 999px;
+  padding: 3px 10px;
+  background: rgba(52, 211, 153, 0.14);
+  color: var(--green);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.record-topic {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+}
+
+.record-step {
+  border-left: 2px solid var(--line-strong);
+  padding-left: 14px;
+}
+
+.record-step.verified { border-left-color: var(--green); }
+
+.record-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.record-step.verified .record-label { color: var(--green); }
+
+.record-label a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.record-step p {
+  margin: 0;
+  color: #c3ccd9;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.record-note {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.record-note a { color: var(--accent); }
+
+@media (max-width: 960px) {
+  .record-grid { grid-template-columns: 1fr; }
 }
 
 /* ---- Sections ---- */
@@ -818,6 +983,40 @@ body {
 
 .footer-links {
   flex-wrap: wrap;
+}
+
+.footer-local {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 18px;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.footer-local-label {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.local-item {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.local-item strong {
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+
+.local-item em {
+  font-style: normal;
+  font-size: 0.74rem;
 }
 
 .footer-disclaimer {

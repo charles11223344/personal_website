@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://ccccccharles.dpdns.org/</loc><lastmod>2026-11-16</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
-  <url><loc>https://ccccccharles.dpdns.org/archive.html</loc><lastmod>2026-11-16</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://ccccccharles.dpdns.org/stock.html</loc><lastmod>2026-11-16</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ccccccharles.dpdns.org/</loc><lastmod>2026-11-22</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://ccccccharles.dpdns.org/archive.html</loc><lastmod>2026-11-22</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ccccccharles.dpdns.org/stock.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ccccccharles.dpdns.org/articles/2026-11-22-thanksgiving-week-pce-gold.html</loc><lastmod>2026-11-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ccccccharles.dpdns.org/articles/2026-11-18-midweek-nvda-ant-ipo.html</loc><lastmod>2026-11-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ccccccharles.dpdns.org/articles/2026-11-16-nvda-fed-ipo-week.html</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ccccccharles.dpdns.org/articles/2026-11-11-midweek-gossip-risk.html</loc><lastmod>2026-11-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ccccccharles.dpdns.org/articles/2026-11-08-cpi-ai-earnings-volatility.html</loc><lastmod>2026-11-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
