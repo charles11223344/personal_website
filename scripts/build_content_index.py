@@ -30,6 +30,7 @@ SYMBOL_NAMES = {
     "CRM": "Salesforce", "CRWD": "CrowdStrike", "ORCL": "Oracle", "IBM": "IBM",
     "TXN": "Texas Instruments", "MPWR": "Monolithic Power Systems", "HPE": "Hewlett Packard Enterprise",
     "DELL": "Dell Technologies", "SHOP": "Shopify", "APLD": "Applied Digital",
+    "MSTR": "Strategy", "RGTI": "Rigetti Computing",
     "XOM": "Exxon Mobil", "CVX": "Chevron", "SLB": "SLB", "XLE": "Energy Select Sector SPDR ETF",
     "GDX": "VanEck Gold Miners ETF", "GLD": "SPDR Gold Shares", "AEM": "Agnico Eagle Mines",
     "SU": "Suncor Energy", "ENB": "Enbridge", "WMT": "Walmart", "C": "Citigroup",

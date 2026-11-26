@@ -153,8 +153,10 @@ const server = http.createServer((req, res) => {
     }
     await p.goto(origin + "/index.html");
     await p.locator("#articles .article-card").first().waitFor();
-    assert.equal(await p.locator("#articles .article-card:visible").count(), 10);
+    assert.equal(await p.locator("#articles .article-card:visible").count(), 7);
     assert.equal(await p.locator("#articles .article-card h3 a").first().getAttribute("href"), content.articles[0].url);
+    assert.equal(await p.locator("#hero-latest-link").getAttribute("href"), content.articles[0].url);
+    assert.equal(await p.locator("#hero-feature-date").innerText(), latestDate);
     assert.equal(await p.locator('.nav-links a[href="archive.html"]').count(), 1);
     await p.locator("#stocks").scrollIntoViewIfNeeded();
     await p.locator('#stock-grid a[href="stock.html?symbol=NVDA"]').waitFor();
@@ -164,17 +166,36 @@ const server = http.createServer((req, res) => {
     for (const event of upcoming) assert.ok((await p.locator("#calendar-grid").innerText()).includes(event.title));
     for (const width of [375, 1440]) {
       await p.setViewportSize({ width, height: 1000 });
-      await p.goto(origin + "/articles/2026-11-18-midweek-nvda-ant-ipo.html");
+      await p.locator("#event-calendar").scrollIntoViewIfNeeded();
       assert.ok(await p.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
-      assert.equal(await p.locator(".data-table tbody tr").count(), 6);
-      if (width === 375) assert.ok(await p.locator(".table-wrap").evaluate((element) => element.scrollWidth > element.clientWidth));
-      assert.equal(await p.locator(".qr-card img").evaluate((image) => image.complete && image.naturalWidth > 0), true);
-      assert.equal(await p.locator('a[href="https://mp.weixin.qq.com/s/pwtTTCmQp6gXYrABux74xQ"]').count(), 1);
-      await p.screenshot({ path: path.join(artifacts, "article-1118-" + width + ".png"), fullPage: true });
+      await p.locator(".calendar-board").screenshot({ path: path.join(artifacts, "calendar-1125-" + width + ".png") });
     }
-    console.log("PASS new article, original link, six stock levels, QR image, updated two-day calendar");
+    for (const [time, state, count] of [
+      ["2026-11-26T15:00:00Z", "节假日休市", 3],
+      ["2026-11-27T17:59:00Z", "交易中 · 提前收盘日", 2],
+      ["2026-11-27T18:01:00Z", "盘后交易", 2],
+      ["2026-11-30T15:00:00Z", "交易中", 1],
+    ]) {
+      await p.clock.setFixedTime(new Date(time));
+      await p.reload();
+      await p.waitForFunction((expected) => document.getElementById("market-status-text").textContent === expected, state);
+      assert.equal(await p.locator("#calendar-grid .event-card").count(), count);
+    }
+    console.log("PASS Thanksgiving closure, Black Friday early close, Monday reopening and expired-event filtering");
+    for (const width of [375, 1440]) {
+      await p.setViewportSize({ width, height: 1000 });
+      await p.goto(origin + "/articles/2026-11-25-thanksgiving-deep-v-ai-risk.html");
+      assert.ok(await p.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+      assert.equal(await p.locator(".data-table tbody tr").count(), 7);
+      if (width === 375) assert.ok(await p.locator(".table-wrap").evaluate((element) => element.scrollWidth <= element.clientWidth));
+      assert.equal(await p.locator(".qr-card img").evaluate((image) => image.complete && image.naturalWidth > 0), true);
+      assert.equal(await p.locator('a[href="https://mp.weixin.qq.com/s/Y-kNIJ1E_JL_vu1rNl6NRQ"]').count(), 1);
+      assert.equal(await p.locator('link[rel="canonical"]').getAttribute("href"), "https://ccccccharles.dpdns.org/articles/2026-11-25-thanksgiving-deep-v-ai-risk.html");
+      await p.screenshot({ path: path.join(artifacts, "article-1125-" + width + ".png"), fullPage: true });
+    }
+    console.log("PASS new article, original link, seven stock levels, QR image and canonical metadata");
     assert.deepEqual(errors, []);
-    console.log("PASS responsive layouts, brand assets, homepage latest-ten and stock links; no JS errors");
+    console.log("PASS responsive layouts, brand assets, homepage featured list and stock links; no JS errors");
     console.log("Screenshots: " + artifacts);
   } finally {
     await browser.close();

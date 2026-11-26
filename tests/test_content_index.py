@@ -74,6 +74,17 @@ class ContentIndexTests(unittest.TestCase):
         self.assertEqual(nvda["resistance"], "155.5—160")
         self.assertEqual(article["date"], "2026-11-18")
 
+    def test_thanksgiving_midweek_stock_levels(self):
+        article = parse_article(ROOT / "articles" / "2026-11-25-thanksgiving-deep-v-ai-risk.html")
+        self.assertEqual(article["date"], "2026-11-25")
+        self.assertEqual(article["kind"], "周中总结")
+        levels = {level["symbol"]: level for level in article["levels"]}
+        self.assertEqual(set(levels), {"NVDA", "MU", "AMD", "COHR", "CRWV", "MSTR", "RGTI"})
+        self.assertEqual(levels["MSTR"]["support"], "70.4、74.3")
+        self.assertEqual(levels["RGTI"]["resistance"], "8.07、8.23")
+        self.assertIn("COMEX", article["searchText"])
+        self.assertIn("3,589 / 3,562", article["searchText"])
+
 
 if __name__ == "__main__":
     unittest.main()

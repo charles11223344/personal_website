@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "articleCount": 45,
-  "latestArticleDate": "2026-11-22",
+  "articleCount": 46,
+  "latestArticleDate": "2026-11-25",
   "topics": [
     {
       "id": "ai",
@@ -46,7 +46,7 @@
     {
       "symbol": "NVDA",
       "name": "NVIDIA",
-      "articleCount": 42,
+      "articleCount": 43,
       "aliases": [
         "英伟达",
         "英偉達"
@@ -56,7 +56,7 @@
     {
       "symbol": "MU",
       "name": "Micron Technology",
-      "articleCount": 41,
+      "articleCount": 42,
       "aliases": [
         "美光",
         "Micron"
@@ -66,7 +66,7 @@
     {
       "symbol": "AMD",
       "name": "Advanced Micro Devices",
-      "articleCount": 16,
+      "articleCount": 17,
       "aliases": [],
       "kind": "stock"
     },
@@ -98,7 +98,7 @@
     {
       "symbol": "COHR",
       "name": "Coherent",
-      "articleCount": 11,
+      "articleCount": 12,
       "aliases": [],
       "kind": "stock"
     },
@@ -212,7 +212,7 @@
     {
       "symbol": "QQQ",
       "name": "Invesco QQQ ETF",
-      "articleCount": 24,
+      "articleCount": 25,
       "aliases": [],
       "kind": "etf"
     },
@@ -226,7 +226,7 @@
     {
       "symbol": "SMH",
       "name": "VanEck Semiconductor ETF",
-      "articleCount": 10,
+      "articleCount": 11,
       "aliases": [],
       "kind": "etf"
     },
@@ -373,7 +373,7 @@
     {
       "symbol": "CRWV",
       "name": "CoreWeave",
-      "articleCount": 6,
+      "articleCount": 7,
       "aliases": [],
       "kind": "stock"
     },
@@ -546,6 +546,20 @@
       "kind": "stock"
     },
     {
+      "symbol": "MSTR",
+      "name": "Strategy",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
+      "symbol": "RGTI",
+      "name": "Rigetti Computing",
+      "articleCount": 1,
+      "aliases": [],
+      "kind": "stock"
+    },
+    {
       "symbol": "XOM",
       "name": "Exxon Mobil",
       "articleCount": 5,
@@ -576,7 +590,7 @@
     {
       "symbol": "GDX",
       "name": "VanEck Gold Miners ETF",
-      "articleCount": 4,
+      "articleCount": 5,
       "aliases": [],
       "kind": "etf"
     },
@@ -736,6 +750,75 @@
     }
   ],
   "articles": [
+    {
+      "url": "articles/2026-11-25-thanksgiving-deep-v-ai-risk.html",
+      "date": "2026-11-25",
+      "title": "感恩节前深V，机构的资金是在抄底还是又在诱多呢？你猜猜？",
+      "category": "周中总结",
+      "kind": "周中总结",
+      "description": "清濛的2026年11月25日美股周中总结：感恩节前深V、PCE与AI融资风险，七只股票支撑压力及COMEX期金区间，附感恩节休市、黑五提前收盘与11月30日交易安排。",
+      "tags": [
+        "感恩节流动性",
+        "AI 融资风险",
+        "COMEX 期金"
+      ],
+      "topics": [
+        "ai",
+        "cashflow",
+        "review"
+      ],
+      "symbols": [
+        "AMD",
+        "COHR",
+        "CRWV",
+        "GDX",
+        "MSTR",
+        "MU",
+        "NVDA",
+        "QQQ",
+        "RGTI",
+        "SMH"
+      ],
+      "readingMinutes": 4,
+      "searchText": "本文按 2026-11-25 公众号原文归档。行情、技术位、市场解释及预测均保留作者当时观点，未逐项独立验证，不代表实时数据或确定结果。文末交易日程另附交易所来源；COMEX 期金区间按原文记录，不补推具体合约月份。 大家好啊，清濛又来啦！周三美股先杀后拉升起来拉，盘中看着像熊市，收盘又像什么都没发生：道指涨 0.33% 至 50,182.95，标普跌 0.25% 至 7,182.78，纳指跌 0.62% 至 23,585.80。其实 AI 的背后基金仍然很弱的，深V不等于见底，不要一看见反弹就想开始买买买。 经济不差，通胀也不低 为什么跌呢？很多小作文的事情我就不说了。民主党的作妖，其实最主要的是，机构想杀多和杀空，总的来说就是，无论你买 put 还是 call 都会输。 10 月总体 PCE 同比 3.8%、核心 3.3%，三季度 GDP 年化增长 4.3%。经济不差啊，通胀也不低啊，但是市场担心美联储继续加息啊。美国还提出对 14 个经济体采取新 301 关税，台湾最高拟 15%，部分科技产品可获豁免。 这是提案，尚未实施。 NVDA 与 AI 融资链 然后再再看 NVDA。黄教主回归确实减少了关键人物风险，但标普全球把英伟达 AA 评级列入负面观察，问题在公司治理，而不是 GPU 卖不动。NVDA 跌 3.91%，MU 跌 4.53%。CoreWeave 另有 45 亿美元、以服务 Meta 项目的 GPU 作抵押的融资计划。 七只股票支撑与压力 以下价位按原文记录，单位为美元；支撑与压力用于观察资金反应，不是确定的买卖或反转信号。 股票 支撑 压力 NVDA 141、149 155、160 MU 548、585 622、630 AMD 370、402 429、441 COHR 175、191 204、209 CRWV 37.4、41.2 47、49.6 MSTR 70.4、74.3 81、90 RGTI 6.87、7.16 8.07、8.23 MSTR 和 RGTI 是另一种风险。MSTR 最新 SEC 披露持有 851,305 枚比特币，股价还受融资、发股和 BTC 波动影响；RGTI 收在 7.85 美元，量子技术发展不等于商业利润已经成熟。所谓 2027 年腰斩，只能当压力测试，不能当确定预测。 黄金：按 COMEX 期金观察 黄金：我按 COMEX 期金观察，不把现货与不同月份合约混在一起。支撑 3,589 / 3,562，压力 3,677 / 3,760。如果美元和实际利率继续强势，反弹也可能被压回去；GDX 强于部分科技股，值得继续看资金流向。 假期后的反弹，先看承接 未来两天大事记：11 月 26 日感恩节休市；27 日黑五 13:00 提前收盘，半日上涨我先当试探；30 日周一正常交易，QQQ 看 638、SMH 看 443 能否收复。 若周五高开低走、周一继续失守，就不是反转，而是又一轮诱多。注意周三晚美股个股夜盘停市，期指上涨不等于个股真有买盘。 我还是那句话：宁愿少赚底部 10%，也不要把现金都抄在半山腰。不懂的就买大盘股吧。 11 月 26—30 日交易安排与来源 以下为网页补充日程，截至 2026-11-25 核对，时间均为美东时间（ET）。股票常规交易、期权、延长时段及指数期货不能混用同一套开收盘时间。 11/26 周四： 美国感恩节，NYSE 与 Nasdaq 美股市场休市。 NYSE 假期日历 · Nasdaq 假期日历 11/27 周五，09:30—13:00： 黑五股票常规交易提前结束。部分符合条件的期权于 13:15 收盘，延长时段及其他产品须按对应交易所和券商公告执行，不能一律视为 13:00 结束。 NYSE 提前收盘说明 · Nasdaq 感恩节交易通知 11/30 周一，09:30—16:00： 恢复正常股票常规交易；这不是额外的经济数据发布。QQQ 638、SMH 443 为作者 11/25 原文观察线，不代表实时价格或必然突破。 Nasdaq 常规交易时间 夜盘补充：原文的周三晚夜盘提醒按作者表述保留；实际是否可交易及恢复时间，须核对所用券商与交易场所的假期通知。期指上涨不等于个股夜盘存在同等成交与流动性。 回看 11 月 22 日：感恩节前，会继续慢慢见底，还是一直涨回来一半以上呢？ 本文仅记录个人研究与市场观察，不构成投资建议。假期、低流动性、融资与个股波动均可能放大风险；预测情景、技术位和压力测试不保证发生，请独立判断并控制仓位。",
+      "levels": [
+        {
+          "symbol": "NVDA",
+          "support": "141、149",
+          "resistance": "155、160"
+        },
+        {
+          "symbol": "MU",
+          "support": "548、585",
+          "resistance": "622、630"
+        },
+        {
+          "symbol": "AMD",
+          "support": "370、402",
+          "resistance": "429、441"
+        },
+        {
+          "symbol": "COHR",
+          "support": "175、191",
+          "resistance": "204、209"
+        },
+        {
+          "symbol": "CRWV",
+          "support": "37.4、41.2",
+          "resistance": "47、49.6"
+        },
+        {
+          "symbol": "MSTR",
+          "support": "70.4、74.3",
+          "resistance": "81、90"
+        },
+        {
+          "symbol": "RGTI",
+          "support": "6.87、7.16",
+          "resistance": "8.07、8.23"
+        }
+      ]
+    },
     {
       "url": "articles/2026-11-22-thanksgiving-week-pce-gold.html",
       "date": "2026-11-22",
