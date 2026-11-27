@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T22:29:23+00:00",
+  "updatedAt": "2026-11-27T23:25:27+00:00",
   "source": "Yahoo Finance chart endpoint",
   "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart",
   "symbols": [
@@ -159,7 +159,7 @@
       "currency": "USD",
       "date": "2026-11-27",
       "open": 630.28,
-      "high": 654.44,
+      "high": 654.33,
       "low": 607.27,
       "close": 646.95,
       "volume": 26904909,
@@ -455,7 +455,7 @@
       "currency": "USD",
       "date": "2026-11-27",
       "open": 419.74,
-      "high": 426.88,
+      "high": 426.81,
       "low": 398.59,
       "close": 424.54,
       "volume": 22329180,
